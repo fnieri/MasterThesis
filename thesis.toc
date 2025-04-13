@@ -1,0 +1,14 @@
+\babel@toc {english}{}\relax 
+\contentsline {chapter}{\numberline {1}Defining a grammar for an outcome diagram}{2}{}%
+\contentsline {section}{\numberline {1.1}A}{2}{}%
+\contentsline {subsection}{\numberline {1.1.1}Primitives}{2}{}%
+\contentsline {subsubsection}{Causal link}{2}{}%
+\contentsline {subsection}{\numberline {1.1.2}Components' names}{2}{}%
+\contentsline {subsection}{\numberline {1.1.3}Observables}{2}{}%
+\contentsline {subsubsection}{Probes}{2}{}%
+\contentsline {subsubsection}{Outcome}{3}{}%
+\contentsline {subsection}{\numberline {1.1.4}Operators}{3}{}%
+\contentsline {subsubsection}{All-to-finish operator}{3}{}%
+\contentsline {subsubsection}{First-to-finish operator}{3}{}%
+\contentsline {subsubsection}{Probabilistic choice operator}{4}{}%
+\contentsline {subsection}{\numberline {1.1.5}Parsing and syntax}{4}{}%

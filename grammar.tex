@@ -1,0 +1,96 @@
+\chapter{Defining a grammar for an outcome diagram}
+    \section{A}
+    \subsection{Primitives}
+        \subsubsection{Causal link}
+            A causal link between two components can be defined by a right arrow from \texttt{component\_i} to \texttt{component\_j}
+        \begin{minted}{text}
+            component_i -> component_j 
+        \end{minted}
+
+        \subsection{Components' names}
+            Components' names must follow the following regex pattern: \verb|/[a-zA-Z0-9_]+/|
+
+    \subsection{Observables}
+        We define two observable parts in our system, probes and outcomes.
+
+
+    \subsubsection{Probes}
+        A probe is an observable of the system, represented by a start and end event, measuring the delay of an execution of ....
+
+        A probe can contain one component or a sequence of causally linked components. \\
+
+        The user can define as many probes as they want, they have to be declared as follows:
+   \begin{minted}{text}
+        probe = component [-> component2];
+        probe2 = newComponent -> anotherComponent;
+   \end{minted}
+
+    Probes will not be parsed after the system has been defined, in the case below, an error will be thrown.
+    \begin{minted}{text}
+        probe = ...;
+        probe2 = ...;
+        system = ...;
+        probe3 = ...;
+    \end{minted}
+    
+    Proes can be reused in other probes or in the system by adding a s: before they are used.
+    \begin{minted}{text}
+        probe3 = s:probe -> s:probe2;
+    \end{minted}
+    \subsubsection{Outcome}
+        Outcomes are the smallest observable unit in the system, an outcome can be followed by another component, indicating a causal link between the two. \\
+        In the definition of the system or a probe, an outcome is defined with its name.
+        \begin{minted}{text}
+            probe = outcomeName;
+        \end{minted}
+
+    \subsection{Operators}
+        
+        All operators must contain at least two components, this is because the operations to calculate the DeltaQ of these operators rely on using the CDF of the components that define the operator.
+
+    All components inside an operator must be separated by a comma.
+        \subsubsection{All-to-finish operator}
+            An all-to-finish operator needs to be defined as follows:
+            \begin{minted}{text}
+                a:operator(component1, component2...)
+            \end{minted}
+
+        \subsubsection{First-to-finish operator}
+            A first-to-finish operator needs to be defined as follows.
+            \begin{minted}{text}
+                f:operator(component1, component2...)
+            \end{minted} 
+
+        \subsubsection{Probabilistic choice operator}
+            A probabilistic choice operator needs to be defined as follows:
+            \begin{minted}{text}
+                p:operator[probability_1, probability_2, ... probability_i](component_1, component_2, ..., component_i) 
+            \end{minted}
+            In addition to being comma separated, the number of probabilities inside the brackets must match the number of components inside the parentheses. 
+    
+    \subsection{Parsing and syntax}
+        We perform parsing using Lark in python, the grammar is based on an ENBF syntax (add citation here). 
+        The grammar we defined in this section can be summarised by the following syntax.
+        \begin{minted}{text}
+            \%ignore WS
+
+
+            start: definition* system?  //Subsystem first, system second
+            definition: IDENTIFIER "=" component+ ";"
+
+            system: "system" "=" component+
+
+            component: outcome ("->" component)?  
+                    | BEHAVIOR_TYPE ":" IDENTIFIER "(" component_list ")" ("->" component)?  
+                    | probe ("->" component)?
+
+            outcome: IDENTIFIER
+            probe: PROBE_IDENTIFIER ":" IDENTIFIER 
+            component_list: component ("," component)+
+
+            PROBE_IDENTIFIER: "s"
+            BEHAVIOR_TYPE: "f" | "a" | "p"
+
+            IDENTIFIER: /[a-zA-Z0-9_]+/
+                        
+        \end{minted}

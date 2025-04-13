@@ -1,0 +1,48 @@
+% EPL master thesis covers template
+\documentclass{EPL-master-thesis-covers-EN}
+
+%% Includes
+%%Minted for code
+\usepackage{minted}
+
+\setminted[text]{breaklines, autogobble}
+\usemintedstyle{borland}
+
+%% Math
+\usepackage{amsmath}
+\usepackage{relsize}
+\usepackage{dsfont}
+\usepackage{listings}
+% Please fill in the following boxes
+% Title of the thesis
+\title{Observing the detailed behaviour of large distributed applications in real time using $\Delta$QSD}
+
+% Subtitle - remove this line if not applicable
+%\subtitle{Optional subtitle}
+
+% Name of the student author(s)
+\author{Francesco \textsc{Nieri}}
+\degreetitle{Master [120] in Computer Science}
+
+% Name of the supervisor(s)
+\supervisor{Peter \textsc{Van Roy}}
+
+% Name of the reader(s)
+\readerone{Tom \textsc{Barbette}}
+\readertwo{Peer \textsc{Stritzinger}}			% remove if not applicable
+\readerthree{Neil \textsc{Davies}}			% remove if not applicable
+
+% Academic year (update if necessary)
+\years{2024--2025}
+
+% Document
+\begin{document}
+  % Front cover page
+  \maketitle
+    \tableofcontents
+    \input{grammar}
+    \input{conf_int}
+    % Back cover page
+  \backcoverpage
+
+\end{document}
