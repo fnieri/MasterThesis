@@ -1,0 +1,4 @@
+\begin{MintedVerbatim}[commandchars=\\\{\}]
+probe = component [\PYGZhy{}\PYGZgt{} component2];
+probe2 = newComponent \PYGZhy{}\PYGZgt{} anotherComponent;
+\end{MintedVerbatim}

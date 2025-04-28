@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.4.3)  4 APR 2025 13:48
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.4.3)  28 APR 2025 17:00
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -774,34 +774,110 @@ Package: float 2001/11/08 v1.3d Float enhancements (AL)
 \@float@every@listing=\toks31
 \c@listing=\count305
 )
+(/opt/texlive/2025/texmf-dist/tex/latex/amsmath/amsmath.sty
+Package: amsmath 2024/11/05 v2.17t AMS math features
+\@mathmargin=\skip56
+
+For additional information on amsmath, use the `?' option.
+(/opt/texlive/2025/texmf-dist/tex/latex/amsmath/amstext.sty
+Package: amstext 2021/08/26 v2.01 AMS text
+
+(/opt/texlive/2025/texmf-dist/tex/latex/amsmath/amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0 generic functions
+\@emptytoks=\toks32
+\ex@=\dimen167
+))
+(/opt/texlive/2025/texmf-dist/tex/latex/amsmath/amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d Bold Symbols
+\pmbraise@=\dimen168
+)
+(/opt/texlive/2025/texmf-dist/tex/latex/amsmath/amsopn.sty
+Package: amsopn 2022/04/08 v2.04 operator names
+)
+\inf@bad=\count306
+LaTeX Info: Redefining \frac on input line 233.
+\uproot@=\count307
+\leftroot@=\count308
+LaTeX Info: Redefining \overline on input line 398.
+LaTeX Info: Redefining \colon on input line 409.
+\classnum@=\count309
+\DOTSCASE@=\count310
+LaTeX Info: Redefining \ldots on input line 495.
+LaTeX Info: Redefining \dots on input line 498.
+LaTeX Info: Redefining \cdots on input line 619.
+\Mathstrutbox@=\box62
+\strutbox@=\box63
+LaTeX Info: Redefining \big on input line 721.
+LaTeX Info: Redefining \Big on input line 722.
+LaTeX Info: Redefining \bigg on input line 723.
+LaTeX Info: Redefining \Bigg on input line 724.
+\big@size=\dimen169
+LaTeX Font Info:    Redeclaring font encoding OML on input line 742.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 743.
+\macc@depth=\count311
+LaTeX Info: Redefining \bmod on input line 904.
+LaTeX Info: Redefining \pmod on input line 909.
+LaTeX Info: Redefining \smash on input line 939.
+LaTeX Info: Redefining \relbar on input line 969.
+LaTeX Info: Redefining \Relbar on input line 970.
+\c@MaxMatrixCols=\count312
+\dotsspace@=\muskip17
+\c@parentequation=\count313
+\dspbrk@lvl=\count314
+\tag@help=\toks33
+\row@=\count315
+\column@=\count316
+\maxfields@=\count317
+\andhelp@=\toks34
+\eqnshift@=\dimen170
+\alignsep@=\dimen171
+\tagshift@=\dimen172
+\tagwidth@=\dimen173
+\totwidth@=\dimen174
+\lineht@=\dimen175
+\@envbody=\toks35
+\multlinegap=\skip57
+\multlinetaggap=\skip58
+\mathdisplay@stack=\toks36
+LaTeX Info: Redefining \[ on input line 2953.
+LaTeX Info: Redefining \] on input line 2954.
+)
+\@LN@amsmath@ams@eqpen=\count318
+
+(/opt/texlive/2025/texmf-dist/tex/latex/relsize/relsize.sty
+Package: relsize 2013/03/29 ver 4.1
+)
+(/opt/texlive/2025/texmf-dist/tex/latex/doublestroke/dsfont.sty
+Package: dsfont 1995/08/01 v0.1 Double stroke roman fonts
+)
 (/opt/texlive/2025/texmf-dist/tex/latex/listings/listings.sty
-\lst@mode=\count306
-\lst@gtempboxa=\box62
-\lst@token=\toks32
-\lst@length=\count307
-\lst@currlwidth=\dimen167
-\lst@column=\count308
-\lst@pos=\count309
-\lst@lostspace=\dimen168
-\lst@width=\dimen169
-\lst@newlines=\count310
-\lst@lineno=\count311
-\lst@maxwidth=\dimen170
+\lst@mode=\count319
+\lst@gtempboxa=\box64
+\lst@token=\toks37
+\lst@length=\count320
+\lst@currlwidth=\dimen176
+\lst@column=\count321
+\lst@pos=\count322
+\lst@lostspace=\dimen177
+\lst@width=\dimen178
+\lst@newlines=\count323
+\lst@lineno=\count324
+\lst@maxwidth=\dimen179
 
 (/opt/texlive/2025/texmf-dist/tex/latex/listings/lstpatch.sty
 File: lstpatch.sty 2024/09/23 1.10c (Carsten Heinz)
 )
 (/opt/texlive/2025/texmf-dist/tex/latex/listings/lstmisc.sty
 File: lstmisc.sty 2024/09/23 1.10c (Carsten Heinz)
-\c@lstnumber=\count312
-\lst@skipnumbers=\count313
-\lst@framebox=\box63
+\c@lstnumber=\count325
+\lst@skipnumbers=\count326
+\lst@framebox=\box65
 )
 (/opt/texlive/2025/texmf-dist/tex/latex/listings/listings.cfg
 File: listings.cfg 2024/09/23 1.10c listings configuration
 ))
 Package: listings 2024/09/23 1.10c (Carsten Heinz)
-LaTeX Font Info:    Trying to load font information for T1+lmr on input line 35
+LaTeX Font Info:    Trying to load font information for T1+lmr on input line 39
 .
 
 (/opt/texlive/2025/texmf-dist/tex/latex/lm/t1lmr.fd
@@ -809,40 +885,40 @@ File: t1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 (/opt/texlive/2025/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2024-05-08 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count314
-\l__pdf_internal_box=\box64
+\l__color_backend_stack_int=\count327
+\l__pdf_internal_box=\box66
 )
 (./thesis.aux)
 \openout1 = `thesis.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Info: Redefining \microtypecontext on input line 35.
-Package microtype Info: Applying patch `item' on input line 35.
-Package microtype Info: Applying patch `toc' on input line 35.
-Package microtype Info: Applying patch `eqnum' on input line 35.
-Package microtype Info: Applying patch `footnote' on input line 35.
-Package microtype Info: Applying patch `verbatim' on input line 35.
-LaTeX Info: Redefining \microtypesetup on input line 35.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 39.
+LaTeX Font Info:    ... okay on input line 39.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 39.
+LaTeX Font Info:    ... okay on input line 39.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 39.
+LaTeX Font Info:    ... okay on input line 39.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 39.
+LaTeX Font Info:    ... okay on input line 39.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 39.
+LaTeX Font Info:    ... okay on input line 39.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 39.
+LaTeX Font Info:    ... okay on input line 39.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 39.
+LaTeX Font Info:    ... okay on input line 39.
+LaTeX Info: Redefining \microtypecontext on input line 39.
+Package microtype Info: Applying patch `item' on input line 39.
+Package microtype Info: Applying patch `toc' on input line 39.
+Package microtype Info: Applying patch `eqnum' on input line 39.
+Package microtype Info: Applying patch `footnote' on input line 39.
+Package microtype Info: Applying patch `verbatim' on input line 39.
+LaTeX Info: Redefining \microtypesetup on input line 39.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
 Package microtype Info: Automatic font expansion enabled (level 2),
 (microtype)             stretch: 20, shrink: 20, step: 1, non-selected.
 Package microtype Info: Using default expansion set `alltext-nott'.
-LaTeX Info: Redefining \showhyphens on input line 35.
+LaTeX Info: Redefining \showhyphens on input line 39.
 Package microtype Info: No adjustment of tracking.
 Package microtype Info: No adjustment of interword spacing.
 Package microtype Info: No adjustment of character kerning.
@@ -852,17 +928,17 @@ File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman
 )
 (/opt/texlive/2025/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count315
-\scratchdimen=\dimen171
-\scratchbox=\box65
-\nofMPsegments=\count316
-\nofMParguments=\count317
-\everyMPshowfont=\toks33
-\MPscratchCnt=\count318
-\MPscratchDim=\dimen172
-\MPnumerator=\count319
-\makeMPintoPDFobject=\count320
-\everyMPtoPDFconversion=\toks34
+\scratchcounter=\count328
+\scratchdimen=\dimen180
+\scratchbox=\box67
+\nofMPsegments=\count329
+\nofMParguments=\count330
+\everyMPshowfont=\toks38
+\MPscratchCnt=\count331
+\MPscratchDim=\dimen181
+\MPnumerator=\count332
+\makeMPintoPDFobject=\count333
+\everyMPtoPDFconversion=\toks39
 ) (/opt/texlive/2025/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
@@ -906,7 +982,7 @@ e
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-\c@lstlisting=\count321
+\c@lstlisting=\count334
 *geometry* verbose mode - [ newgeometry ] result:
 * driver: pdftex
 * paper: <default>
@@ -943,14 +1019,14 @@ e
 File: _frontbanner_EPL-master-thesis.pdf Graphic file (type pdf)
 <use _frontbanner_EPL-master-thesis.pdf>
 Package pdftex.def Info: _frontbanner_EPL-master-thesis.pdf  used on input line
- 37.
+ 41.
 (pdftex.def)             Requested size: 597.22978pt x 833.11047pt.
 
-Overfull \hbox (73.46486pt too wide) in paragraph at lines 37--37
+Overfull \hbox (73.46486pt too wide) in paragraph at lines 41--41
   [] 
  []
 
-LaTeX Font Info:    Trying to load font information for T1+phv on input line 37
+LaTeX Font Info:    Trying to load font information for T1+phv on input line 41
 .
 (/opt/texlive/2025/texmf-dist/tex/latex/psnfss/t1phv.fd
 File: t1phv.fd 2020/03/25 scalable font definitions for T1/phv.
@@ -959,43 +1035,43 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `phv' (encoding: T1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
-LaTeX Font Info:    Calculating math sizes for size <26> on input line 37.
-LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 3
-7.
+LaTeX Font Info:    Calculating math sizes for size <26> on input line 41.
+LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 4
+1.
 
 (/opt/texlive/2025/texmf-dist/tex/latex/lm/ot1lmr.fd
 File: ot1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OML+lmm on input line 3
-7.
+LaTeX Font Info:    Trying to load font information for OML+lmm on input line 4
+1.
 
 (/opt/texlive/2025/texmf-dist/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 
-37.
+41.
 
 (/opt/texlive/2025/texmf-dist/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 
-37.
+41.
 
 (/opt/texlive/2025/texmf-dist/tex/latex/lm/omxlmex.fd
 File: omxlmex.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <26> on input line 37.
+(Font)              <26> on input line 41.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <18.19992> on input line 37.
+(Font)              <18.19992> on input line 41.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <13> on input line 37.
+(Font)              <13> on input line 41.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <12> on input line 37.
+(Font)              <12> on input line 41.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 37.
+(Font)              <8> on input line 41.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 37.
+(Font)              <6> on input line 41.
 
 
 [1
@@ -1003,114 +1079,112 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 
 {/opt/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/opt/texlive/2
 025/texmf-dist/fonts/enc/dvips/base/8r.enc}{/opt/texlive/2025/texmf-dist/fonts/
-enc/dvips/lm/lm-rm.enc} <./_frontbanner_EPL-master-thesis.pdf>] (./thesis.toc)
-\tf@toc=\write4
-\openout4 = `thesis.toc'.
+enc/dvips/lm/lm-rm.enc} <./_frontbanner_EPL-master-thesis.pdf>]
+*geometry* verbose mode - [ newgeometry ] result:
+* driver: pdftex
+* paper: <default>
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: 
+* h-part:(L,W,R)=(85.35826pt, 441.01773pt, 71.13188pt)
+* v-part:(T,H,B)=(85.35826pt, 674.33032pt, 85.35826pt)
+* \paperwidth=597.50787pt
+* \paperheight=845.04684pt
+* \textwidth=441.01773pt
+* \textheight=674.33032pt
+* \oddsidemargin=13.08827pt
+* \evensidemargin=13.08827pt
+* \topmargin=-23.91173pt
+* \headheight=12.0pt
+* \headsep=25.0pt
+* \topskip=12.0pt
+* \footskip=30.0pt
+* \marginparwidth=35.0pt
+* \marginparsep=10.0pt
+* \columnsep=10.0pt
+* \skip\footins=10.8pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidefalse
+* \@mparswitchfalse
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
- (./grammar.tex
+ (./thesis.toc
 
 [1
 
-{/opt/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}]
+
+{/opt/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}])
+\tf@toc=\write4
+\openout4 = `thesis.toc'.
+
+
+
+[2] (./chapters/intro.tex
 Chapter 1.
-LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 5
-.
-(/opt/texlive/2025/texmf-dist/tex/latex/lm/t1lmtt.fd
-File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-)
-Package microtype Info: Loading generic protrusion settings for font family
-(microtype)             `lmtt' (encoding: T1).
-(microtype)             For optimal results, create family-specific settings.
-(microtype)             See the microtype manual for details.
-\pydata@fh@0=\write5
-\openout5 = `_2EF71E68B4AD97F630480BCEBC1842FB.data.minted'.
+) (./chapters/design.tex
 
-runsystem(latexminted config  --timestamp 20250404134842 2EF71E68B4AD97F630480B
-CEBC1842FB)...executed safely (allowed).
+[1
 
 
-(./_2EF71E68B4AD97F630480BCEBC1842FB.config.minted)
-runsystem(latexminted cleanconfig  --timestamp 20250404134842 2EF71E68B4AD97F63
-0480BCEBC1842FB)...executed safely (allowed).
 
-
-(./_minted/borland.style.minted)
-\openout5 = `_2EF71E68B4AD97F630480BCEBC1842FB.data.minted'.
-
-runsystem(latexminted highlight  --timestamp 20250404134842 2EF71E68B4AD97F6304
-80BCEBC1842FB)...executed safely (allowed).
-
-
-(./_minted/F171B0BEF95731B9A55EAB9370FC2CD9.highlight.minted)
-Underfull \hbox (badness 10000) in paragraph at lines 20--21
-
- []
-
-\openout5 = `_2EF71E68B4AD97F630480BCEBC1842FB.data.minted'.
-
-runsystem(latexminted highlight  --timestamp 20250404134842 2EF71E68B4AD97F6304
-80BCEBC1842FB)...executed safely (allowed).
-
-(./_minted/65A56DC9514977C3BABDC189F0723FF2.highlight.minted
+]
+Chapter 2.
+) (./chapters/dq.tex
 
 [2
 
-])
-\openout5 = `_2EF71E68B4AD97F630480BCEBC1842FB.data.minted'.
-
-runsystem(latexminted highlight  --timestamp 20250404134842 2EF71E68B4AD97F6304
-80BCEBC1842FB)...executed safely (allowed).
-
- (./_minted/A2121C48EDE56F3B55F9BD371028182C.highlight.minted)
-\openout5 = `_2EF71E68B4AD97F630480BCEBC1842FB.data.minted'.
-
-runsystem(latexminted highlight  --timestamp 20250404134842 2EF71E68B4AD97F6304
-80BCEBC1842FB)...executed safely (allowed).
-
-
-(./_minted/E79B98E60A17686125489DD86E47F7E3.highlight.minted)
-\openout5 = `_2EF71E68B4AD97F630480BCEBC1842FB.data.minted'.
-
-runsystem(latexminted highlight  --timestamp 20250404134842 2EF71E68B4AD97F6304
-80BCEBC1842FB)...executed safely (allowed).
-
-
-(./_minted/7A4544380373D48B094CA120BCA2498A.highlight.minted)
-\openout5 = `_2EF71E68B4AD97F630480BCEBC1842FB.data.minted'.
-
-runsystem(latexminted highlight  --timestamp 20250404134842 2EF71E68B4AD97F6304
-80BCEBC1842FB)...executed safely (allowed).
-
-
-(./_minted/630F581467707053B99C4A343F78F613.highlight.minted)
-\openout5 = `_2EF71E68B4AD97F630480BCEBC1842FB.data.minted'.
-
-runsystem(latexminted highlight  --timestamp 20250404134842 2EF71E68B4AD97F6304
-80BCEBC1842FB)...executed safely (allowed).
-
-
-(./_minted/C5E79F7C560EE646EA4D4437C76A9888.highlight.minted)
-\openout5 = `_2EF71E68B4AD97F630480BCEBC1842FB.data.minted'.
-
-runsystem(latexminted highlight  --timestamp 20250404134842 2EF71E68B4AD97F6304
-80BCEBC1842FB)...executed safely (allowed).
-
-
-(./_minted/2745E094CBC9E57FFAA3C5544A9CD8E1.highlight.minted
+]
+Chapter 3.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 2.
+(Font)              <24.88> on input line 1.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <20.74> on input line 1.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <17.28> on input line 1.
+) (./chapters/wrapper.tex
+
+[3
+
+]
+Chapter 4.
+) (./chapters/oscilloscope.tex
+
+[4
+
+]
+Chapter 5.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <10> on input line 2.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <14.4> on input line 7.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <7> on input line 7.
+) (./chapters/synt.tex
+
+[5
+
+]
+Overfull \vbox (565.26988pt too high) has occurred while \output is active []
 
 
-[3])
-\openout5 = `_2EF71E68B4AD97F630480BCEBC1842FB.data.minted'.
 
-runsystem(latexminted highlight  --timestamp 20250404134842 2EF71E68B4AD97F6304
-80BCEBC1842FB)...executed safely (allowed).
+[6]
+Chapter 6.
+) (./chapters/eval.tex
 
- (./_minted/109D855FEA19BEB098D4382AB38000B0.highlight.minted))
+[7
 
-[4{/opt/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/opt/texlive/
-2025/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}]
+]
+Chapter 7.
+)
+
+[8
+
+]
 *geometry* verbose mode - [ newgeometry ] result:
 * driver: pdftex
 * paper: <default>
@@ -1143,26 +1217,24 @@ runsystem(latexminted highlight  --timestamp 20250404134842 2EF71E68B4AD97F6304
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-<_backbanner_EPL-master-thesis.pdf, id=40, 597.23125pt x 833.1125pt>
+<_backbanner_EPL-master-thesis.pdf, id=57, 597.23125pt x 833.1125pt>
 File: _backbanner_EPL-master-thesis.pdf Graphic file (type pdf)
 <use _backbanner_EPL-master-thesis.pdf>
 Package pdftex.def Info: _backbanner_EPL-master-thesis.pdf  used on input line 
-41.
+63.
 (pdftex.def)             Requested size: 597.22978pt x 833.11047pt.
 
-Overfull \hbox (17.34673pt too wide) in paragraph at lines 41--41
+Overfull \hbox (17.34673pt too wide) in paragraph at lines 63--63
 [][] 
  []
 
 
 
-[5
+[9
 
  <./_backbanner_EPL-master-thesis.pdf>]
-\openout5 = `_2EF71E68B4AD97F630480BCEBC1842FB.data.minted'.
-
-runsystem(latexminted clean  --timestamp 20250404134842 2EF71E68B4AD97F630480BC
-EBC1842FB)...executed safely (allowed).
+runsystem(latexminted cleantemp  --timestamp 20250428170019 2EF71E68B4AD97F6304
+80BCEBC1842FB)...executed safely (allowed).
 
  (./thesis.aux)
  ***********
@@ -1171,24 +1243,22 @@ L3 programming layer <2025-01-18>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 12394 strings out of 473190
- 258651 string characters out of 5691320
- 795560 words of memory out of 5000000
- 35350 multiletter control sequences out of 15000+600000
- 631350 words of font info for 115 fonts, out of 8000000 for 9000
+ 12944 strings out of 473190
+ 262336 string characters out of 5691320
+ 811969 words of memory out of 5000000
+ 35889 multiletter control sequences out of 15000+600000
+ 646367 words of font info for 132 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 85i,9n,93p,1003b,713s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 85i,6n,93p,1003b,353s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </opt/texlive/2025/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></opt/texlive/
-2025/texmf-dist/fonts/type1/public/lm/lmmi6.pfb></opt/texlive/2025/texmf-dist/f
-onts/type1/public/lm/lmr12.pfb></opt/texlive/2025/texmf-dist/fonts/type1/public
-/lm/lmr17.pfb></opt/texlive/2025/texmf-dist/fonts/type1/public/lm/lmsy6.pfb></o
-pt/texlive/2025/texmf-dist/fonts/type1/public/lm/lmtt12.pfb></opt/texlive/2025/
-texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></opt/texlive/2025/texmf-dist/fo
-nts/type1/urw/helvetic/uhvr8a.pfb>
-Output written on thesis.pdf (6 pages, 171050 bytes).
+2025/texmf-dist/fonts/type1/public/lm/lmr12.pfb></opt/texlive/2025/texmf-dist/f
+onts/type1/public/lm/lmr17.pfb></opt/texlive/2025/texmf-dist/fonts/type1/urw/he
+lvetic/uhvb8a.pfb></opt/texlive/2025/texmf-dist/fonts/type1/urw/helvetic/uhvr8a
+.pfb>
+Output written on thesis.pdf (12 pages, 141952 bytes).
 PDF statistics:
- 102 PDF objects out of 1000 (max. 8388607)
- 67 compressed objects within 1 object stream
+ 108 PDF objects out of 1000 (max. 8388607)
+ 72 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 36363 words of extra memory for PDF output out of 42996 (max. 10000000)
+ 43531 words of extra memory for PDF output out of 51595 (max. 10000000)
 

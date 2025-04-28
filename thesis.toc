@@ -1,14 +1,76 @@
 \babel@toc {english}{}\relax 
-\contentsline {chapter}{\numberline {1}Defining a grammar for an outcome diagram}{2}{}%
-\contentsline {section}{\numberline {1.1}A}{2}{}%
-\contentsline {subsection}{\numberline {1.1.1}Primitives}{2}{}%
-\contentsline {subsubsection}{Causal link}{2}{}%
-\contentsline {subsection}{\numberline {1.1.2}Components' names}{2}{}%
-\contentsline {subsection}{\numberline {1.1.3}Observables}{2}{}%
-\contentsline {subsubsection}{Probes}{2}{}%
-\contentsline {subsubsection}{Outcome}{3}{}%
-\contentsline {subsection}{\numberline {1.1.4}Operators}{3}{}%
-\contentsline {subsubsection}{All-to-finish operator}{3}{}%
-\contentsline {subsubsection}{First-to-finish operator}{3}{}%
-\contentsline {subsubsection}{Probabilistic choice operator}{4}{}%
-\contentsline {subsection}{\numberline {1.1.5}Parsing and syntax}{4}{}%
+\contentsline {chapter}{\numberline {1}Introduction}{1}{}%
+\contentsline {chapter}{\numberline {2}Design}{2}{}%
+\contentsline {section}{\numberline {2.1}Objective}{2}{}%
+\contentsline {subsection}{\numberline {2.1.1}Choices}{2}{}%
+\contentsline {subsection}{\numberline {2.1.2}Limitations}{2}{}%
+\contentsline {section}{\numberline {2.2}Design diagram}{2}{}%
+\contentsline {subsection}{\numberline {2.2.1}System under test}{2}{}%
+\contentsline {subsection}{\numberline {2.2.2}Stub}{2}{}%
+\contentsline {subsection}{\numberline {2.2.3}Oscilloscope}{2}{}%
+\contentsline {chapter}{\numberline {3}An overview of $\Delta $Q}{3}{}%
+\contentsline {section}{\numberline {3.1}Timeliness}{3}{}%
+\contentsline {section}{\numberline {3.2}Outcome}{3}{}%
+\contentsline {section}{\numberline {3.3}Quality attenuation}{3}{}%
+\contentsline {section}{\numberline {3.4}Convolution}{3}{}%
+\contentsline {section}{\numberline {3.5}Operators}{3}{}%
+\contentsline {subsection}{\numberline {3.5.1}First to finish}{3}{}%
+\contentsline {subsection}{\numberline {3.5.2}All to finish}{3}{}%
+\contentsline {subsection}{\numberline {3.5.3}Probabilistic choice}{3}{}%
+\contentsline {section}{\numberline {3.6}Outcome diagram}{3}{}%
+\contentsline {chapter}{\numberline {4}Wrapper/Stub}{4}{}%
+\contentsline {section}{\numberline {4.1}Design}{4}{}%
+\contentsline {section}{\numberline {4.2}API}{4}{}%
+\contentsline {subsection}{\numberline {4.2.1}Samples}{4}{}%
+\contentsline {subsection}{\numberline {4.2.2}Start span}{4}{}%
+\contentsline {subsection}{\numberline {4.2.3}End span}{4}{}%
+\contentsline {subsection}{\numberline {4.2.4}Fail span}{4}{}%
+\contentsline {subsection}{\numberline {4.2.5}Timeout}{4}{}%
+\contentsline {section}{\numberline {4.3}Communication}{4}{}%
+\contentsline {section}{\numberline {4.4}Internal workings}{4}{}%
+\contentsline {chapter}{\numberline {5}Oscilloscope}{5}{}%
+\contentsline {section}{\numberline {5.1}Representation of $\Delta $Q}{6}{}%
+\contentsline {subsection}{\numberline {5.1.1}Internals}{6}{}%
+\contentsline {subsubsection}{PDF}{6}{}%
+\contentsline {subsubsection}{CDF}{6}{}%
+\contentsline {subsection}{\numberline {5.1.2}dMax}{6}{}%
+\contentsline {subsection}{\numberline {5.1.3}Operations on $\Delta $Q}{6}{}%
+\contentsline {subsection}{\numberline {5.1.4}Algebraic operations}{6}{}%
+\contentsline {subsection}{\numberline {5.1.5}Convolution}{6}{}%
+\contentsline {subsubsection}{Naïve convolution}{6}{}%
+\contentsline {subsubsection}{Fast Fourier Transform convolution}{6}{}%
+\contentsline {subsection}{\numberline {5.1.6}Confidence intervals}{6}{}%
+\contentsline {section}{\numberline {5.2}Server}{6}{}%
+\contentsline {section}{\numberline {5.3}Outcome diagram grammar}{6}{}%
+\contentsline {subsection}{\numberline {5.3.1}Primitives}{6}{}%
+\contentsline {subsection}{\numberline {5.3.2}Observables}{6}{}%
+\contentsline {subsubsection}{Outcome}{6}{}%
+\contentsline {subsubsection}{Probes}{6}{}%
+\contentsline {subsection}{\numberline {5.3.3}Operators}{6}{}%
+\contentsline {subsection}{\numberline {5.3.4}System}{6}{}%
+\contentsline {section}{\numberline {5.4}Parser}{6}{}%
+\contentsline {subsection}{\numberline {5.4.1}Syntax}{6}{}%
+\contentsline {subsection}{\numberline {5.4.2}ANTLR}{6}{}%
+\contentsline {subsubsection}{Limitations}{6}{}%
+\contentsline {section}{\numberline {5.5}System}{6}{}%
+\contentsline {subsection}{\numberline {5.5.1}Observables}{6}{}%
+\contentsline {subsubsection}{Probes}{6}{}%
+\contentsline {subsubsection}{Outcomes}{6}{}%
+\contentsline {subsection}{\numberline {5.5.2}Operators}{6}{}%
+\contentsline {section}{\numberline {5.6}Dashboard}{6}{}%
+\contentsline {subsection}{\numberline {5.6.1}Design}{6}{}%
+\contentsline {subsection}{\numberline {5.6.2}Sidebar}{6}{}%
+\contentsline {subsubsection}{Managing the system}{6}{}%
+\contentsline {subsubsection}{Adding a plot}{6}{}%
+\contentsline {subsubsection}{Editing a plot}{6}{}%
+\contentsline {subsubsection}{Changing a plot}{6}{}%
+\contentsline {subsubsection}{Changing an observable's parameters}{6}{}%
+\contentsline {subsection}{\numberline {5.6.3}Plot display window}{6}{}%
+\contentsline {subsubsection}{Removing a plot}{6}{}%
+\contentsline {chapter}{\numberline {6}Application on synthethic programs}{7}{}%
+\contentsline {section}{\numberline {6.1}M/M/1/K queue}{7}{}%
+\contentsline {section}{\numberline {6.2}Cache}{7}{}%
+\contentsline {chapter}{\numberline {7}Performance study}{8}{}%
+\contentsline {section}{\numberline {7.1}Convolution comparison}{8}{}%
+\contentsline {section}{\numberline {7.2}Server performance}{8}{}%
+\contentsline {section}{\numberline {7.3}Stub performance}{8}{}%

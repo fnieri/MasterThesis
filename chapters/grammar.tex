@@ -1,0 +1,117 @@
+\chapter{Defining a grammar for an outcome diagram}
+    \section{A}
+    \subsection{Primitives}
+        \subsubsection{Causal link}
+            A causal link between two components can be defined by a right arrow from \texttt{component\_i} to \texttt{component\_j}
+        \begin{minted}{text}
+            component_i -> component_j 
+        \end{minted}
+
+        \subsection{Components' names}
+            Components' names must follow the following regex pattern: \verb|/[a-zA-Z0-9_]+/|
+
+    \subsection{Observables}
+        We define two observable parts in our system, probes and outcomes.
+
+
+    \subsubsection{Probes}
+        A probe is an observable of the system, represented by a start and end event, measuring the delay of an execution of ....
+
+        A probe can contain one component or a sequence of causally linked components. \\
+
+        The user can define as many probes as they want, they have to be declared as follows:
+   \begin{minted}{text}
+        probe = component [-> component2];
+        probe2 = newComponent -> anotherComponent;
+   \end{minted}
+
+    Probes will not be parsed after the system has been defined, in the case below, an error will be thrown.
+    \begin{minted}{text}
+        probe = ...;
+        probe2 = ...;
+        system = ...;
+        probe3 = ...;
+    \end{minted}
+    
+    Proes can be reused in other probes or in the system by adding a s: before they are used.
+    \begin{minted}{text}
+        probe3 = s:probe -> s:probe2;
+    \end{minted}
+    \subsubsection{Outcome}
+        Outcomes are the smallest observable unit in the system, an outcome can be followed by another component, indicating a causal link between the two. \\
+        In the definition of the system or a probe, an outcome is defined with its name.
+        \begin{minted}{text}
+            probe = outcomeName;
+        \end{minted}
+
+    \subsection{Operators}
+        
+        All operators must contain at least two components, this is because the operations to calculate the DeltaQ of these operators rely on using the CDF of the components that define the operator.
+
+    All components inside an operator must be separated by a comma.
+        \subsubsection{All-to-finish operator}
+            An all-to-finish operator needs to be defined as follows:
+            \begin{minted}{text}
+                a:operator(component1, component2...)
+            \end{minted}
+
+        \subsubsection{First-to-finish operator}
+            A first-to-finish operator needs to be defined as follows.
+            \begin{minted}{text}
+                f:operator(component1, component2...)
+            \end{minted} 
+
+        \subsubsection{Probabilistic choice operator}
+            A probabilistic choice operator needs to be defined as follows:
+            \begin{minted}{text}
+                p:operator[probability_1, probability_2, ... probability_i](component_1, component_2, ..., component_i) 
+            \end{minted}
+            In addition to being comma separated, the number of probabilities inside the brackets must match the number of components inside the parentheses. 
+    
+    \subsection{Parsing and syntax}
+        We perform parsing using an ANTLR generator, the grammar is based on an ENBF syntax (add citation here).
+        The grammar we defined in this section can be summarised by the following syntax and can be found in \texttt{src/parser/DQGrammar.g4}.
+        \begin{minted}{text}
+           grammar DQGrammar;
+
+// Lexer Rules
+
+PROBE_ID: 's';
+BEHAVIOR_TYPE: 'f' | 'a' | 'p';
+NUMBER: [0-9]*'.'[0-9]+ | [0-9]+;
+IDENTIFIER: [a-zA-Z_][a-zA-Z0-9_]*;
+WS: [ \t\r\n]+ -> skip;
+
+
+// Parser Rules
+start: definition* system? EOF;
+
+definition: IDENTIFIER '=' component+   ('->' component)* ';';
+
+system: 'system' '=' component+ ('->' component)*  ';'?;
+
+
+component
+    : behaviorComponent
+    | probeComponent
+    | outcome
+;
+
+behaviorComponent
+    : BEHAVIOR_TYPE ':' IDENTIFIER ('[' probability_list ']')? '(' component_list ')'
+;
+
+probeComponent
+    : PROBE_ID ':' IDENTIFIER
+;
+
+
+probability_list: NUMBER (',' NUMBER)+;
+component_list: component (',' component)+;
+
+outcome: IDENTIFIER;
+        \end{minted}
+
+        This solution prevents certain limitations, as ANTLR's parsing strategy is based on LL(*) parsing decisions, certain ambiguities appear, namely, the identifiers cannot have be named "s", "f", "a" or "p", as they would be parsed as either \texttt{PROBE\_ID} or \texttt{BEHAVIOR\_TYPE}, resulting in an error. \\
+
+        A previous solution adopted Lark, a parsing toolkit for python, this solution required less code and presented no ambiguities as its strategy was based on Earley(SPPF) decisions, but it  brought on the burden of embedding python into C++ and having to go through Jsons to then create a System.

@@ -1,0 +1,74 @@
+\section{CDF confidence band}
+
+    Let $x_1, \dots, x_n$ be i.i.d. real valued random variables with an unknown continuous distribution function F.
+    Let $F_n$ be the empirical distribution function defined by: 
+    \begin{equation}
+        F_n(x) = \frac{1}{n}\mathlarger\sum^n_{i = 1}  \mathds{1}(x_i \le x)
+            \label{eq:ecdf}
+    \end{equation}
+    
+    The Dvoretzky-Kiefer-Molkovitz inequality, later refined by Massart, gives uniform probabilistic bounds on the deviation between $F_n$ and $F$ such that:
+    \begin{equation}
+        P(\sup_x | F_n (x) - F(x) | > \varepsilon) \le 2e^{-2n\varepsilon^2} \qquad{\forall F, \varepsilon > 0}
+        \label{eq:DKW}
+    \end{equation}
+
+    We can then define a confidence level $ 1 - \alpha$ and find $\varepsilon$ such that the inequality holds with probability of at least $ 1 - \alpha $
+    \begin{center}
+        $2e^{-2n\varepsilon^2} = \alpha$
+    \end{center}
+
+    Solving for $\varepsilon$:
+    \begin{center}
+        $\varepsilon = \sqrt{\dfrac{1}{2n}ln(\dfrac{2}{\alpha})}$
+    \end{center}
+
+    We can then define an uniform confidence band around the empirical CDF:
+    \begin{center}
+        $F_n(x) - \varepsilon \le F(x) \le F_n(x) + \varepsilon$
+    \end{center}
+
+    Then, since a CDF, and by consequence an ECDF, are constrained to the interval $\lbrack 0, 1 \rbrack$, we can derive the following lower and upper confidence bands.
+    \begin{equation}
+        \lbrack\text{max}(0, F_n(x) - \varepsilon), \text{min}(1, F_n(x) + \varepsilon)\rbrack \qquad \forall x
+        \label{eq:bounds}
+    \end{equation}
+
+    \subsection{Generalizing confidence bounds to aggregated $\Delta$Qs}
+    
+        Since the $\Delta$Q of an observable component fluctuates over time, we define confidence bounds of $\Delta$Q over a window of $x$ (to be defined) previous executions. (To be rewritten) \\
+
+        Given $j$ $\Delta$Q with empirical CDFs discretized into $B$ ordered bins $b_1, b_2, \dots, b_B$ such that $b_1 < b_2 < \dots b_B$. \\
+    For each $\Delta$Q$_j$, we obtain a cumulative histogram $H^{(j)}$, such that:
+    \begin{center}
+        $H^{(j)} = (H_1^{(j)}, H_2^{(j)}, \dots, H_B^{(j)})$
+    \end{center}
+    where $H_i^{(j)}$ representents the cumulative count of samples less than or equal to a bin $b_i$, and let $n_j = H_B^{(j)}$ represent the total number of samples in the $j^{th}$ distribution.
+    We aggregate the cumulative histograms of all $\Delta$Q$_j$ to form a total cumulative histogram:
+    \begin{equation}
+        S_{H_i} = \sum_{j=1}^{M} H_i^{(j)} \qquad \forall i = 1, \dots, \text{B}
+    \end{equation}
+    with $N$ then corresponding to the total samples over all $\Delta$Qs included in the window.
+    \begin{center}
+    $N = \sum_{j=1}^{M} n_j$
+    \end{center}
+
+    The aggregated ECDF at bin $b_i$ is defined as:
+    \begin{equation}
+        \hat{F}_n(b_i) = \dfrac{S_{H_i}}{N}, \qquad i = 1, \dots, B
+        \label{eq:}
+    \end{equation}
+
+    We can then bound the deviation of $\hat{F}_N$ from $F$, which is unknown, thanks to the DKWM inequality. \\
+    Given a confidence level $1 - \alpha \in \lbrack 0, 1 \rbrack$, we define $\varepsilon$ as:
+    \begin{center}
+        $\varepsilon = \sqrt{\dfrac{1}{2N}ln(\dfrac{2}{\alpha})}$
+    \end{center}
+
+    Consequently, we can build $i$ lower ($L_i$) and upper ($U_i$) bands at each bin $b_i$ with:
+    \begin{equation}
+        \lbrack L_i, U_i \rbrack = \lbrack \text{max} (0, \hat{F}_n(b_i) - \varepsilon), min (1, \hat{F}_N(b_i) + \varepsilon) \rbrack, \qquad i = 1, \dots, B
+        \label{eq:}
+    \end{equation}
+
+    This method allows us to dinamically update the confidence bands around $\hat{F}_N$ by updating $S_{H_i}$ and $N$, and then recomputing the bands.
