@@ -2,17 +2,25 @@
 \documentclass{EPL-master-thesis-covers-EN}
 
 %% Includes
+%%Images
+\usepackage{graphicx}
 %%Minted for code
 \usepackage{minted}
-
 \setminted[text]{breaklines, autogobble}
 \usemintedstyle{borland}
+\setminted[erlang]{breaklines, autogobble}
 
 %% Math
 \usepackage{amsmath}
+\usepackage{amssymb}
 \usepackage{relsize}
 \usepackage{dsfont}
+\usepackage{bigints}
+
 \usepackage{listings}
+
+%% Figures
+\usepackage{float}
 % Please fill in the following boxes
 % Title of the thesis
 \title{Observing the detailed behaviour of large distributed applications in real time using $\Delta$QSD}
@@ -45,17 +53,17 @@
 \renewcommand{\thepage}{\roman{page}}
 \newgeometry{left=3cm, right=2.5cm, top=3cm, bottom=3cm} % Adjust as needed
 \tableofcontents
-\restoregeometry
 \cleardoublepage
 \pagenumbering{arabic}% Reset page numbering and style
 
-\input{chapters/intro}
+    %%\input{chapters/intro}
+    \input{chapters/background}
     \input{chapters/design}
-    \input{chapters/dq}
-    \input{chapters/wrapper}
+   % \input{chapters/dq}
+    \input{chapters/impl}
     \input{chapters/oscilloscope}
-    \input{chapters/synt.tex}
-    \input{chapters/eval.tex}
+    \input{chapters/synt}
+    \input{chapters/eval}
     %\input{grammar}
     %\input{conf_int}
    % \input{deltaq}

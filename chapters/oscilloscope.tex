@@ -1,30 +1,16 @@
 \chapter{Oscilloscope}
-    \section{Representation of $\Delta$Q}
-        \subsection{Internals}
-            \subsubsection{PDF}
-            \subsubsection{CDF}
-        \subsection{dMax}
-    \subsection{Operations on $\Delta$Q}
-        \subsection{Algebraic operations}
-        \subsection{Convolution}
-            \subsubsection{Naïve convolution}
-            \subsubsection{Fast Fourier Transform convolution}
-    \subsection{Confidence intervals}
+    \input{chapters/oscilloscope/dqimpl}
+    
+    \input{chapters/oscilloscope/dqdispl}
     \section{Server}
      
-    \section{Outcome diagram grammar}
-        \subsection{Primitives}
-        \subsection{Observables}
-            \subsubsection{Outcome}
-            \subsubsection{Probes}
-        \subsection{Operators}
-        \subsection{System}
-        
-    \section{Parser}
-        \subsection{Syntax}
-        \subsection{ANTLR}
-            \subsubsection{Limitations}
-   
+    \section{Triggers}
+        \subsection{Load}
+        \subsection{QTA}
+
+    \input{chapters/oscilloscope/outd}
+    \input{chapters/oscilloscope/timeseries}
+    \input{chapters/oscilloscope/dashboard}
     \section{System}
         \subsection{Observables}
             \subsubsection{Probes}
@@ -39,6 +25,8 @@
             \subsubsection{Editing a plot}
             \subsubsection{Changing a plot}
             \subsubsection{Changing an observable's parameters}
-        \subsection{Plot display window}
+    \input{chapters/oscilloscope/triggers}
+        
+    \subsection{Plot display window}
             \subsubsection{Removing a plot}
         

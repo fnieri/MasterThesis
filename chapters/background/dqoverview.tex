@@ -1,18 +1,22 @@
-\chapter{An overview of $\Delta$QSD}
-    \section{Quality attenuation}
+\section{An overview of $\Delta$QSD}
+    \subsection{Quality attenuation}
         In an ideal system, an outcome would deliver a desidered behaviour without error, failure, delay, but this is not the case. The quality of an outcome response "attenuated to the relative ideal" is called "quality attenuation" ($\Delta$Q). Since it can depend on many factors (geographical, physical \dots), $\Delta$Q is modeled as a random variable. \\
     As $\Delta$Q incorporates delay, which is a continuous random variable, and failures/timeouts, which are discrete variables, it can be described mathematically as an \textit{Improper Random Variable}, where the probability of a delay $<$ 1. \\
     $\Delta$Q(x) will be the probability that an outcome $O$ will occur in time $t \le x$. The \textbf{\textit{intangible mass}} $1 - \lim_{x\to\infty}\Delta Q(x)$ of a $\Delta$Q will encode the probability of failure/timeout/exception.
 
 
-    \section{Timeliness}
+    \subsection{Timeliness}
         Timeliness is defined as a relation between an observed $\Delta Q_{obs}$ and a required $\Delta Q_{req}$
-    \section{Outcome}
+     \subsection{QTA, required $\Delta$Q}
+         The Quantitative Timeliness Agreement maps objective measurements to the subjective perception of application performance [cite].
+         \paragraph{QTA example}: Imagine a system where 50\% of the executions should take $<$ 5 ms, 75\% of executions should take $<$ 7.5 ms , all queries have a maximum delay of 10ms and 5\% of executions can timeout, the QTA can be represented as a step function .%[cite algebraic]
+         % https://wiki.broadband-forum.org/display/RESOURCES/Broadband+Forum+Published+Resources#tf-filters=%7B%22selectfilters%22%3A%5B%5D%2C%22userfilters%22%3A%5B%22Number%22%5D%2C%22numberfilters%22%3A%5B%5D%2C%22datefilters%22%3A%5B%5D%2C%22globalfilter%22%3Atrue%2C%22columnhider%22%3Afalse%2C%22iconfilters%22%3A%5B%5D%2C%22defaults%22%3A%5B%22TR-452.1%22%2C%22%22%5D%2C%22width%22%3A%5B%22150%22%2C%22150%22%5D%2C%22inverse%22%3A%5Bfalse%2Cfalse%5D%2C%22order%22%3A%5B0%2C1%5D%2C%22ddSeparator%22%3A%5B%5D%2C%22ddOperator%22%3A%5B%5D%2C%22sorts%22%3A%5B%22Date%20%E2%87%A9%22%5D%7D
+
+    \subsection{Outcome}
         An outcome $O$ is a specific system behaviour with a start event $s$ and end event $e$, formally, what the system obtains by performing one of its tasks. One task corresponds to one outcome and viceversa
-    \section{Outcome diagram}
+    \subsection{Outcome diagram}
         An outcome diagram captures the causal relationships between the outcomes, each outcome diagram can be presented algeraically with an outcome expression, there are four different ways to represent the relationships between outcomes.
 
-    \subsection{Outcome expressions}
     \subsubsection{Sequential composition}
         If we assume two outcomes $O_A$, $O_B$ where end event of $O_A$ is the start event of $O_B$, the probability distribution of $O_A$ and $O_B$ is given by the convolution of the probability distributions (PDF) of $O_A$ and $O_B$.
         Where convolution ($\circledast$) between two PDF is :
@@ -30,14 +34,14 @@
     \subsubsection{First to finish}
             If we assume two independent outcomes $O_A$, $O_B$ with the same start event, first-to-finish occurs when at least one end event occurs, it can be calculated as:
         \begin{equation}
-            \Delta Q_{FTF(A, B)} = \Delta Q_A + \Delta Q_B - \Delta Q_A x \Delta Q_B  
+            \Delta Q_{FTF(A, B)} = \Delta Q_A + \Delta Q_B - \Delta Q_A \cdot \Delta Q_B  
             \label{eq:ftf}
         \end{equation}
             
     \subsubsection{All to finish}
         If we assume two independent outcomes $O_A$, $O_B$ with the same start event, all-to-finish occurs when both end events occur, it can be calculated as:
         \begin{equation}
-            \Delta Q_{ATF(A, B)} = \Delta Q_A x \Delta Q_B 
+            \Delta Q_{ATF(A, B)} = \Delta Q_A \cdot \Delta Q_B 
             \label{eq:atf}
         \end{equation}
         \subsubsection{Probabilistic choice}
@@ -47,6 +51,8 @@
             \item $O_B$ happens with probability $\dfrac{q}{p + q}$
         \end{itemize}
         \begin{equation}
-           \Delta Q_PC(A, B) = \dfrac{p}{p + q}\Delta Q_A + \dfrac{q}{p + q}\Delta Q_B 
+           \Delta Q_{PC}(A, B) = \dfrac{p}{p + q}\Delta Q_A + \dfrac{q}{p + q}\Delta Q_B 
             \label{eq:pc}
         \end{equation} 
+
+   

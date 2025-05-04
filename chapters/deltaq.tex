@@ -5,22 +5,6 @@ We then extend the original definition to fit real time constraints, needing to 
 
 For a given observable, $\Delta$Q($t_l$, $t_u$, $dMax$) is the probability that between time $t_l < t_u$, an observable occurs in time t $\le$ dMax.
 
-
-\subsection{Samples}
-    Given an event $e$ with its start event $e_s$ and an end event $e_e$ in an observable $o$, a sample contains:
-    \begin{itemize}
-        \item The start time $t_s$
-        \item The end time $t_e$
-        \item Its status 
-        \item Its elapsed time of execution
-    \end{itemize}
-    The sample has three possible statuses: \texttt{success, timeout, failure}, it can thus be broken down in three possible states, based on its status:
-    \begin{itemize}
-        \item \textbf{($t_s$,$t_e$)}: This representation indicates that the execution was successful (t $<$ dMax), the sample contains the start time and end time of the event.
-        \item \textbf{($t_s, \mathcal{T}$)}: This representation indicates that the execution has timed out (t $>$ dMax). The samples does not contain the end time, it is irrelevant as we know that its execution has taken more than dMax, thus, its execution was ended prematurely in the stub.
-            \item \textbf{($t_s, \mathcal{F}$)}: This representation indicates the execution has failed given a user defined requirement (i.e. a dropped message given buffer overload in a queue system). It must not be confused with a program failure (crash), if a program crashes during the execution of event $e$, it will timeout since the stub will not receive an end message. As was the case for the timeout, we do not need to know the end time as the sample encodes a failure.
-    \end{itemize}
-
 \subsection{Internal representation of a $\Delta$Q}
 
         Inside our $\Delta$Q class we store the probability density function (PDF) and its empirical cumulative distribution function (ECDF) given $n$ samples. 

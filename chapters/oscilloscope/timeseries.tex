@@ -1,0 +1,24 @@
+\subsection{Time series}
+    Consider an observable $O$ with two distinct sets of events, the starting set of events $s$ and ending set of event $e$, the time series of an observable can be defined by $n$ samples $s_i$ with the following structure:
+    \begin{itemize}
+        \item The observable's name
+        \item The start time $t_s$
+        \item The end time $t_e$
+        \item Its status 
+        \item Its elapsed time of execution
+    \end{itemize}
+    The sample has three possible statuses: \texttt{success, timeout, failure}, it can thus be broken down in the representations, based on its status:
+    \begin{itemize}
+        \item \textbf{($t_s$,$t_e$)}: This representation indicates that the execution was successful (t $<$ $dMax$), the sample contains the start time and end time of the event.
+        \item \textbf{($t_s, \mathcal{T}$)}: This representation indicates that the execution has timed out (t $>$ $dMax$). The sample does not contain the end time, it is irrelevant as we know that its execution has taken more than $dMax$.
+            \item \textbf{($t_s, \mathcal{F}$)}: This representation indicates the execution has failed given a user defined requirement (i.e. a dropped message given buffer overload in a queue system). It must not be confused with a program failure (crash), if a program crashes during the execution of event $e$, it will timeout since the stub will not receive an end message. As was the case for the timeout, we do not need to know the end time as the sample encodes a failure.
+    \end{itemize}
+
+    The stub will send a standard message with the following format:
+    \begin{minted}{text}
+        "n:name,s:start_time,e:end_time,s:status"
+        The status can be "ok", "fa", "to"
+    \end{minted}
+    The C++ receiving server will then calculate the elapsed time if the execution was successful.
+
+

@@ -1,0 +1,27 @@
+\section{Dashboard}
+    The dashboard is devised of multiple sections where the user can interact with the oscilloscope, create the system, observe the behaviour of its components, set triggers.
+
+    \subsection{Sidebar}
+        The sidebar has two tabs, in one tab the user can interact with the system, in the other tab the user can place triggers on the observabes and observe the fired ones.
+
+    \subsubsection{System tab}
+    \paragraph{System creation}
+        In the system tab the user can create its system using the grammar defined (before (change here)), he can save the text he used to define the system or load it, the system is saved to a file with the extension \texttt{.dq}.
+        If the definition he input is wrong, he will be warned with a pop up giving the error the parser generator encountered in the creation of a system.
+
+    \paragraph{Adding a plot}
+        The user can decide to display the plot of an observable or not, he's given the opportunity to add them to the display window (decide how).
+    \paragraph{Set a QTA}
+        The user is given the choice to set a QTA for a given observable, he has 4 fields he can fill in which correspond to the percentiles and the maximum amount of failures allowed, he can change this dynamically during execution.
+
+    \paragraph{dMax, bins}
+        The user has a slider which goes from -10 to 10, where he can set the exponent of $\Delta_\text{T}$ and another field where he can set the number of bins. When these informations are saved by the user, the new $dMax$ is transmitted to the stub and saved for the selected observable.
+
+    \subsubsection{Trigger tab}
+        In the trigger tab the user can set triggers and observe those that have been fired.
+
+    \paragraph{Set triggers}
+        The user can set which triggers to fire for a certain observable, he is given checkboxes to decide which ones to set as active or not (by default, the triggers are deactivated).
+
+    \paragraph{Fired triggers}
+        WIP.
