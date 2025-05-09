@@ -1,28 +1,26 @@
 \section{Wrapper}
-    The wrapper, called \texttt{otel\_wrapper} is a rebar3 application built on top of OpenTelemetry, designed to be paired with the oscilloscope to observe an erlang application.
-    \subsection{Motivation}
-        To make our oscilloscope work, we must create custom spans. OpenTelemetry spans are not satisfying, imagine an overloaded system where a span is taking 10 seconds to complete, you wouldn't know it until the span is exported after 10 seconds! Thus the need to have a custom wrapper that can notify the oscilloscope when an outcome execution is taking longer than what was required by the user.
+    The wrapper, called \texttt{otel\_wrapper} is a rebar3 application built to replace OpenTelemetry calls and create custom spans, it is designed to be paired with the oscilloscope to observe an erlang application.
+    
     \subsection{API}
-        The wrapper exposes four functions to be used by the user, the wrapper is made to partially replace OpenTelemetry calls as for start and end. This is to make the open source less encumbrant. \\
+        The wrapper functions to be used by the user are made to replace OpenTelemetry calls to macros as for \texttt{?start\_span} and \texttt{?with\_span} and \texttt{?end\_span}. This is to make the wrapper less of an encumbrance for the user. \\
         Moreover, the wrapper will always start OpenTelemetry spans but only start custom spans if the stub has been activated. The wrapper can be activated by: WIP 
-        \subsubsection{span\_process}
-                \texttt{span\_process} is the process responsible for handling the three statuses an execution can have: \texttt{success, fail, timeout}. The process is spawned by start\_span, upon being called, it will start a timer with time equal to the $dMax$ set by an user for the observable. 
-        The process can receive three kinds of messages:
-        \begin{itemize}
-            \item \texttt{fail\_span}: This will send a custom span to the oscilloscope indicating that an execution of an observable has failed.
-            \item \texttt{\{end\_span, end\_time\}}: This will send a custom span to the oscilloscope with the start and end time of the execution of the observable.
-            \item \texttt{timeout}: If the program hasn't ended the span before $dMax$, the timer will send a \texttt{timeout} message and it will send a custom span to the oscilloscope indicating that an execution of an observable has taken $> dMax$.
-        \end{itemize}
-        The process is able to receive one and only message, if the execution times out and subsequently the span is ended, the oscilloscope will not be notified.
-        \subsubsection{start\_span}
+        
+       
+        \subsubsection{start\_span/1, start\_span/2}
+        
         \begin{minted}{erlang}        
--spec start_span(binary()) -> {opentelemetry:span_ctx(), pid() | ignore}.
+start_span/1: -spec start_span(binary()) -> {opentelemetry:span_ctx(), pid() | ignore}.
+start_span/2: -spec start_span(binary(), map()) -> {opentelemetry:span_ctx(), pid() | ignore}.  
         \end{minted}
-        \paragraph{Parameter:}
+        
+        \paragraph{Parameters:}
         \begin{itemize}
             \item Name: Binary name of the observable
+            \item Attributes: The OpenTelemetry span attributes (Only for start\_span/2)
         \end{itemize} 
-        \texttt{start\_span} incorporates OpenTelemetry \texttt{?start\_span(Name)} macro. If the wrapper has ben set as active and the user set a timeout for the name of the observable, the function will spawn a \texttt{span\_process} process with the timeout ($dMax$) of the observable. \\
+        
+        \texttt{start\_span} incorporates OpenTelemetry \texttt{?start\_span(Name)} macro.
+        
         \paragraph{Return:} 
         The function returns either:
         \begin{itemize}
@@ -30,16 +28,22 @@
             \item \texttt{\{SpanCtx, ignore\}} if one of the two previous conditions was not respected.
         \end{itemize}
         With SpanCtx being the context of the span created by OpenTelemetry.
-        \subsubsection{with\_span}
-            \begin{minted}{erlang}
--spec with_span(binary(), fun(() -> any())) -> any().
-            \end{minted}
-            \paragraph{Parameters:}
+        
+        \subsubsection{with\_span/1, with\_span/2}
+        
+        \begin{minted}{erlang}
+with_span/1: -spec with_span(binary(), fun(() -> any())) -> any().
+with_span/2: -spec with_span(binary(), map(), fun(() -> any())) -> any().
+        \end{minted}
+         
+        \paragraph{Parameters:}
             \begin{itemize}
                 \item Name: Binary name of the observable
                 \item Fun: Zero-arity function representing the code of block that should run inside the \texttt{?with\_span} macro
+                \item Attributes: The OpenTelemetry span attributes (Only for with\_span/3)
             \end{itemize}
-    \texttt{with\_span} incorporates OpenTelemetry \texttt{with\_span} macro. \\
+
+        \texttt{with\_span} incorporates OpenTelemetry \texttt{with\_span} macro. \\
         \paragraph{Return:}
             \texttt{with\_span} returns what \texttt{Fun} returns (\texttt{any()}).
         
@@ -64,4 +68,30 @@
                 \item Pid: \texttt{ignore} || \texttt{span\_process\_PID}
             \end{itemize}
             \texttt{fail\_span} does not incorporate any OpenTelemetry macro, it is let up to the user to decide how to handle failures in execution. \\
-           
+        
+
+        \subsubsection{span\_process}
+            \texttt{span\_process} is the process, spawned by \texttt{start\_span}, responsible for handling the \texttt{end\_span, fail\_span, timeout} messages. \\
+            Upon being spawned, the process starts a timer with time equal to the $dMax$ set by an user for the observable being observed, thanks to \texttt{erlang:send\_after}. when the timer runs out, it sends a \texttt{timeout} message to the process.
+        The process can receive three kinds of messages:
+        \begin{itemize}
+            \item \texttt{\{end\_span, end\_time\}}: This will send a custom span to the oscilloscope with the start and end time of the execution of the observable.
+            \item \texttt{fail\_span}: This will send a custom span to the oscilloscope indicating that an execution of an observable has failed.
+            \item \texttt{timeout}: If the program hasn't ended the span before $dMax$, the timer will send a \texttt{timeout} message and it will send a custom span to the oscilloscope indicating that an execution of an observable has taken $> dMax$.
+        \end{itemize}
+        The process is able to receive one and only message, if the execution times out and subsequently the span is ended, the oscilloscope will not be notified as the process is defunct. This is assured by Erlang documentation: \\
+        \textit{If the message signal was sent using a process alias that is no longer active, the message signal will be dropped}. %https://www.erlang.org/doc/system/ref_man_processes#sync-comm
+
+    \subsection{Handling sample spans}
+        To create custom spans we must obtain three important informations:
+        \begin{itemize}
+            \item The name of the observed outcome or probe
+            \item The time when the span was started
+            \item The $dMax$ of the observed
+        \end{itemize}
+        
+        They are all supplied upon starting a span with \texttt{otel\_wrapper:[start\_span, with\_span]}. The custom span is created only if two conditions are met: the wrapper has been set as active and the user set a timeout for the name of the observable, the functions will spawn a \texttt{span\_process} process, passing along all the necessary informations. \\
+        Once the span is subsequently ended/timed out/failed, the function \texttt{send\_span} creates a message carrying all the informations and sends it to the C++ server. The formatting of the messages is the following:
+        \begin{minted}{bash}
+            n:Observed name, b: Start time (beginning), e: End time (if end_span was received), s: The status
+        \end{minted}

@@ -4,6 +4,10 @@
 %% Includes
 %%Images
 \usepackage{graphicx}
+\usepackage{pgf}
+\usepackage{caption}
+\usepackage{subcaption}
+
 %%Minted for code
 \usepackage{minted}
 \setminted[text]{breaklines, autogobble}
@@ -18,7 +22,7 @@
 \usepackage{bigints}
 
 \usepackage{listings}
-
+\usepackage{accents}
 %% Figures
 \usepackage{float}
 % Please fill in the following boxes
@@ -58,8 +62,10 @@
 
     %%\input{chapters/intro}
     \input{chapters/background}
-    \input{chapters/design}
+
+\input{chapters/design}
    % \input{chapters/dq}
+
     \input{chapters/impl}
     \input{chapters/oscilloscope}
     \input{chapters/synt}

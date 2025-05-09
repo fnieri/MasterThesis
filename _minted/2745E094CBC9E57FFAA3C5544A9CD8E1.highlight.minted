@@ -1,3 +1,0 @@
-\begin{MintedVerbatim}[commandchars=\\\{\}]
-p:operator[probability\PYGZus{}1, probability\PYGZus{}2, ... probability\PYGZus{}i](component\PYGZus{}1, component\PYGZus{}2, ..., component\PYGZus{}i)
-\end{MintedVerbatim}

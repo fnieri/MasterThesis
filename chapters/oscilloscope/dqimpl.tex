@@ -1,6 +1,6 @@
 \section{$\Delta$Q implementation}
 
-Originally, $\Delta$Q(x) denotes the probability that an outcome occures in a time $t \le x$, defining then the "intangible mass" of such IRV as $1 - \lim_{x\to\infty} \Delta Q (x)$.
+Originally, $\Delta$Q(x) denotes the probability that an outcome occurs in a time $t \le x$, defining then the "intangible mass" of such IRV as $1 - \lim_{x\to\infty} \Delta Q (x)$.
 We then extend the original definition to fit real time constraints, needing to calculate $\Delta$Qs continuously.
 
 For a given observable, $\Delta$Q($t_l$, $t_u$, $dMax$) is the probability that the time of series with samples between time $t_l < t_u$, an observable occurs in time t $\le$ dMax.
@@ -32,8 +32,7 @@ For a given observable, $\Delta$Q($t_l$, $t_u$, $dMax$) is the probability that 
         \end{cases}
         \label{eq:cdf}
     \end{equation}
-    \begin{center}
-    \end{center}
+    
     \subsection{dMax}
         The key concept of $\Delta$QSD is having a maximum delay after which we consider that the execution is failed, this is represented in an observable as $dMax$. The user defines, for each observable the maximum delay its execution can have. \\ 
 Setting a maximum delay for an observable is not a job that can be done one-off and blindly, it is something that is done with an underlying knowledge of the system inner-workings and must be thoroughly fine tuned during the execution of the system by observing the resulting distributions of the obtained $\Delta$Qs. \\
@@ -49,7 +48,14 @@ Where:
     \item $N$ the number of bins.
 \end{itemize}
 
-Some tradeoffs must though be acknowledged when setting these parameters, a higher number of bins corresponds to a higher number of calculationsand space complexity, a lower $dMax$ may correspond to more failures. These are all tradeoffs that must be considered by the system engineer andset accordingly.
+Some tradeoffs must though be acknowledged when setting these parameters, a higher number of bins corresponds to a higher number of calculations and space complexity, a lower $dMax$ may correspond to more failures. These are all tradeoffs that must be considered by the system engineer and set accordingly.
+    \begin{figure}[H]
+        \begin{center}
+            \includegraphics[width=\textwidth, scale = 0.6]{tikz/cdf_dmax.pdf}
+        \end{center}
+        \caption{$\Delta$Q: $dMax$ = 50ms, the CDF will stay constant when delay $> dMax$}
+    \end{figure}
+
     \subsection{QTA}
         A simplified QTA is defined for observables. We define 4 points for the step function at 25, 50, 75 percentile and the maximum amount of failures accepted for an observable. An observed $\Delta$Q will calculate that based on the samples collected. 
 \subsection{Operations}
@@ -84,7 +90,7 @@ Some tradeoffs must though be acknowledged when setting these parameters, a high
             \Delta \text{Q}_{AB}(i) = \hat{f_A}(i) [\cdot, +, -] \hat{f_B}(i)
             \label{eq:op_dq}
         \end{equation}
-\subsection{Confidence bounds}
+    \subsection{Confidence bounds}
     To observe the stationarity of a system we must observe a window of $\Delta$Qs of an observable and calculate confidence bounds over said windows. We present here the formulae required to give such bounds with 95\% confidence level. \\
         For a bin $i$, its mean over a window is:
             \begin{equation}
@@ -103,3 +109,32 @@ Some tradeoffs must though be acknowledged when setting these parameters, a high
             \label{eq:ci_i}
         \end{equation}
     The bounds can be updated dynamically by inserting or removing a $\Delta$Q, this allows us to consider a small window of execution rather than observing the whole execution.
+
+    \subsection{Rebinning}
+        Rebinning refers to the aggregation of multiple bins of a bin width $i$ to another bin width $j$. \\  
+        Operations between $\Delta$Qs can be done on $\Delta$Qs that have the same bin width, this is why it is fundamental that all observables have a common $\Delta_{tbase}$. This allows for fast rebinning to a common bin width. \\
+        Given two $\Delta$Qs $\Delta$Q$_i$, $\Delta$Q$_j$:
+        \begin{center}
+            $\Delta_{Tij}$ = max \{$\Delta_{Ti}, \Delta_{Tj} \}$
+        \end{center}
+        and the PDF of the rebinned $\Delta$Q at bin $b$, from the original PDF of $n$ bins, where $k$ = $\frac{\Delta{_Ti}}{\Delta_{Tj}}$:
+        \begin{equation}
+            p'_b = \sum_{n=b \cdot k}^{b+ 1 \cdot k - 1} p_n, \quad b=0,1,\dots \lceil \frac{N}{k} \rceil  
+        \end{equation}
+        We perform rebinning to a higher bin width for a simple reason, while this leads to loss of information for the bin with the lowest bin width, rebinning to a lower bin width would imply inventing new values for the $\Delta$Q with the highest bin width.
+       
+        
+        \begin{figure}[H]
+            \begin{center}
+                \includegraphics[width=\textwidth]{tikz/cdf.pdf}
+            \end{center}
+            \caption{Sample $\Delta$Q with 1ms bins}
+        \end{figure}
+
+ 
+        \begin{figure}[H]
+            \begin{center}
+                \includegraphics[width=\textwidth]{tikz/rebinned_cdf.pdf}
+            \end{center}
+            \caption{Previous $\Delta$Q after rebinning to 4ms bins}
+        \end{figure}

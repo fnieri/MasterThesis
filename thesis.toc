@@ -1,76 +1,102 @@
 \babel@toc {english}{}\relax 
-\contentsline {chapter}{\numberline {1}Introduction}{1}{}%
-\contentsline {chapter}{\numberline {2}Design}{2}{}%
-\contentsline {section}{\numberline {2.1}Objective}{2}{}%
-\contentsline {subsection}{\numberline {2.1.1}Choices}{2}{}%
-\contentsline {subsection}{\numberline {2.1.2}Limitations}{2}{}%
-\contentsline {section}{\numberline {2.2}Design diagram}{2}{}%
-\contentsline {subsection}{\numberline {2.2.1}System under test}{2}{}%
-\contentsline {subsection}{\numberline {2.2.2}Stub}{2}{}%
-\contentsline {subsection}{\numberline {2.2.3}Oscilloscope}{2}{}%
-\contentsline {chapter}{\numberline {3}An overview of $\Delta $Q}{3}{}%
-\contentsline {section}{\numberline {3.1}Timeliness}{3}{}%
-\contentsline {section}{\numberline {3.2}Outcome}{3}{}%
-\contentsline {section}{\numberline {3.3}Quality attenuation}{3}{}%
-\contentsline {section}{\numberline {3.4}Convolution}{3}{}%
-\contentsline {section}{\numberline {3.5}Operators}{3}{}%
-\contentsline {subsection}{\numberline {3.5.1}First to finish}{3}{}%
-\contentsline {subsection}{\numberline {3.5.2}All to finish}{3}{}%
-\contentsline {subsection}{\numberline {3.5.3}Probabilistic choice}{3}{}%
-\contentsline {section}{\numberline {3.6}Outcome diagram}{3}{}%
-\contentsline {chapter}{\numberline {4}Wrapper/Stub}{4}{}%
-\contentsline {section}{\numberline {4.1}Design}{4}{}%
-\contentsline {section}{\numberline {4.2}API}{4}{}%
-\contentsline {subsection}{\numberline {4.2.1}Samples}{4}{}%
-\contentsline {subsection}{\numberline {4.2.2}Start span}{4}{}%
-\contentsline {subsection}{\numberline {4.2.3}End span}{4}{}%
-\contentsline {subsection}{\numberline {4.2.4}Fail span}{4}{}%
-\contentsline {subsection}{\numberline {4.2.5}Timeout}{4}{}%
-\contentsline {section}{\numberline {4.3}Communication}{4}{}%
-\contentsline {section}{\numberline {4.4}Internal workings}{4}{}%
-\contentsline {chapter}{\numberline {5}Oscilloscope}{5}{}%
-\contentsline {section}{\numberline {5.1}Representation of $\Delta $Q}{6}{}%
-\contentsline {subsection}{\numberline {5.1.1}Internals}{6}{}%
-\contentsline {subsubsection}{PDF}{6}{}%
-\contentsline {subsubsection}{CDF}{6}{}%
-\contentsline {subsection}{\numberline {5.1.2}dMax}{6}{}%
-\contentsline {subsection}{\numberline {5.1.3}Operations on $\Delta $Q}{6}{}%
-\contentsline {subsection}{\numberline {5.1.4}Algebraic operations}{6}{}%
-\contentsline {subsection}{\numberline {5.1.5}Convolution}{6}{}%
-\contentsline {subsubsection}{Naïve convolution}{6}{}%
-\contentsline {subsubsection}{Fast Fourier Transform convolution}{6}{}%
-\contentsline {subsection}{\numberline {5.1.6}Confidence intervals}{6}{}%
-\contentsline {section}{\numberline {5.2}Server}{6}{}%
-\contentsline {section}{\numberline {5.3}Outcome diagram grammar}{6}{}%
-\contentsline {subsection}{\numberline {5.3.1}Primitives}{6}{}%
-\contentsline {subsection}{\numberline {5.3.2}Observables}{6}{}%
-\contentsline {subsubsection}{Outcome}{6}{}%
-\contentsline {subsubsection}{Probes}{6}{}%
-\contentsline {subsection}{\numberline {5.3.3}Operators}{6}{}%
-\contentsline {subsection}{\numberline {5.3.4}System}{6}{}%
-\contentsline {section}{\numberline {5.4}Parser}{6}{}%
-\contentsline {subsection}{\numberline {5.4.1}Syntax}{6}{}%
-\contentsline {subsection}{\numberline {5.4.2}ANTLR}{6}{}%
-\contentsline {subsubsection}{Limitations}{6}{}%
-\contentsline {section}{\numberline {5.5}System}{6}{}%
-\contentsline {subsection}{\numberline {5.5.1}Observables}{6}{}%
-\contentsline {subsubsection}{Probes}{6}{}%
-\contentsline {subsubsection}{Outcomes}{6}{}%
-\contentsline {subsection}{\numberline {5.5.2}Operators}{6}{}%
-\contentsline {section}{\numberline {5.6}Dashboard}{6}{}%
-\contentsline {subsection}{\numberline {5.6.1}Design}{6}{}%
-\contentsline {subsection}{\numberline {5.6.2}Sidebar}{6}{}%
-\contentsline {subsubsection}{Managing the system}{6}{}%
-\contentsline {subsubsection}{Adding a plot}{6}{}%
-\contentsline {subsubsection}{Editing a plot}{6}{}%
-\contentsline {subsubsection}{Changing a plot}{6}{}%
-\contentsline {subsubsection}{Changing an observable's parameters}{6}{}%
-\contentsline {subsection}{\numberline {5.6.3}Plot display window}{6}{}%
-\contentsline {subsubsection}{Removing a plot}{6}{}%
-\contentsline {chapter}{\numberline {6}Application on synthethic programs}{7}{}%
-\contentsline {section}{\numberline {6.1}M/M/1/K queue}{7}{}%
-\contentsline {section}{\numberline {6.2}Cache}{7}{}%
-\contentsline {chapter}{\numberline {7}Performance study}{8}{}%
-\contentsline {section}{\numberline {7.1}Convolution comparison}{8}{}%
-\contentsline {section}{\numberline {7.2}Server performance}{8}{}%
-\contentsline {section}{\numberline {7.3}Stub performance}{8}{}%
+\contentsline {chapter}{\numberline {1}Background}{1}{}%
+\contentsline {section}{\numberline {1.1}Observability}{1}{}%
+\contentsline {subsection}{\numberline {1.1.1}erlang:trace}{1}{}%
+\contentsline {subsection}{\numberline {1.1.2}OpenTelemetry}{2}{}%
+\contentsline {subsubsection}{Traces}{2}{}%
+\contentsline {paragraph}{Span}{2}{}%
+\contentsline {subsubsection}{Exporters}{2}{}%
+\contentsline {subsubsection}{Macros}{3}{}%
+\contentsline {paragraph}{?with\_span}{3}{}%
+\contentsline {paragraph}{?start\_span}{3}{}%
+\contentsline {paragraph}{?end\_span}{4}{}%
+\contentsline {section}{\numberline {1.2}An overview of $\Delta $QSD}{4}{}%
+\contentsline {subsection}{\numberline {1.2.1}Outcome}{4}{}%
+\contentsline {subsection}{\numberline {1.2.2}Probes}{4}{}%
+\contentsline {subsection}{\numberline {1.2.3}Quality attenuation ($\Delta $Q)}{5}{}%
+\contentsline {subsection}{\numberline {1.2.4}Timeliness}{5}{}%
+\contentsline {subsection}{\numberline {1.2.5}QTA, required $\Delta $Q}{6}{}%
+\contentsline {paragraph}{QTA example}{6}{}%
+\contentsline {subsection}{\numberline {1.2.6}Outcome diagram}{6}{}%
+\contentsline {subsubsection}{Sequential composition}{6}{}%
+\contentsline {subsubsection}{First to finish}{7}{}%
+\contentsline {subsubsection}{All to finish}{7}{}%
+\contentsline {subsubsection}{Probabilistic choice}{7}{}%
+\contentsline {subsection}{\numberline {1.2.7}Independence hypothesis}{8}{}%
+\contentsline {chapter}{\numberline {2}Design}{9}{}%
+\contentsline {section}{\numberline {2.1}Scenario}{9}{}%
+\contentsline {paragraph}{System under test}{9}{}%
+\contentsline {paragraph}{Stub/wrapper}{9}{}%
+\contentsline {paragraph}{Server}{9}{}%
+\contentsline {paragraph}{Oscilloscope}{9}{}%
+\contentsline {chapter}{\numberline {3}Implementation}{11}{}%
+\contentsline {section}{\numberline {3.1}Wrapper}{11}{}%
+\contentsline {subsection}{\numberline {3.1.1}API}{11}{}%
+\contentsline {subsubsection}{start\_span/1, start\_span/2}{11}{}%
+\contentsline {paragraph}{Parameters:}{11}{}%
+\contentsline {paragraph}{Return:}{11}{}%
+\contentsline {subsubsection}{with\_span/1, with\_span/2}{12}{}%
+\contentsline {paragraph}{Parameters:}{12}{}%
+\contentsline {paragraph}{Return:}{12}{}%
+\contentsline {subsubsection}{end\_span}{12}{}%
+\contentsline {paragraph}{Parameters:}{12}{}%
+\contentsline {subsubsection}{fail\_span}{12}{}%
+\contentsline {paragraph}{Parameter:}{12}{}%
+\contentsline {subsubsection}{span\_process}{13}{}%
+\contentsline {subsection}{\numberline {3.1.2}Handling sample spans}{13}{}%
+\contentsline {section}{\numberline {3.2}Parser}{13}{}%
+\contentsline {subsection}{\numberline {3.2.1}ANTLR}{14}{}%
+\contentsline {subsection}{\numberline {3.2.2}Grammar}{14}{}%
+\contentsline {subsubsection}{Limitations}{15}{}%
+\contentsline {section}{\numberline {3.3}Oscilloscope}{15}{}%
+\contentsline {chapter}{\numberline {4}Oscilloscope}{16}{}%
+\contentsline {section}{\numberline {4.1}$\Delta $Q implementation}{16}{}%
+\contentsline {subsection}{\numberline {4.1.1}Internal representation of a $\Delta $Q}{16}{}%
+\contentsline {subsubsection}{PDF}{16}{}%
+\contentsline {subsubsection}{ECDF}{17}{}%
+\contentsline {subsection}{\numberline {4.1.2}dMax}{17}{}%
+\contentsline {subsection}{\numberline {4.1.3}QTA}{18}{}%
+\contentsline {subsection}{\numberline {4.1.4}Operations}{18}{}%
+\contentsline {subsubsection}{Convolution}{18}{}%
+\contentsline {paragraph}{Naïve convolution}{18}{}%
+\contentsline {paragraph}{Fast Fourier Transform Convolution}{18}{}%
+\contentsline {subsubsection}{Arithmetical operations}{19}{}%
+\contentsline {paragraph}{Scaling (multiplication)}{19}{}%
+\contentsline {paragraph}{Operations between $\Delta $Qs}{19}{}%
+\contentsline {subsection}{\numberline {4.1.5}Confidence bounds}{19}{}%
+\contentsline {subsection}{\numberline {4.1.6}Rebinning}{20}{}%
+\contentsline {section}{\numberline {4.2}$\Delta $Q display}{21}{}%
+\contentsline {section}{\numberline {4.3}Outcome diagram}{21}{}%
+\contentsline {subsection}{\numberline {4.3.1}Observables}{22}{}%
+\contentsline {subsubsection}{Outcome}{22}{}%
+\contentsline {subsubsection}{Probes}{22}{}%
+\contentsline {subsection}{\numberline {4.3.2}Operators}{23}{}%
+\contentsline {subsubsection}{Causal link}{23}{}%
+\contentsline {subsubsection}{All-to-finish operator}{23}{}%
+\contentsline {subsubsection}{First-to-finish operator}{23}{}%
+\contentsline {subsubsection}{Probabilistic choice operator}{23}{}%
+\contentsline {subsection}{\numberline {4.3.3}Limitations}{23}{}%
+\contentsline {subsection}{\numberline {4.3.4}Time series}{24}{}%
+\contentsline {section}{\numberline {4.4}Dashboard}{24}{}%
+\contentsline {subsection}{\numberline {4.4.1}Sidebar}{24}{}%
+\contentsline {subsubsection}{System tab}{25}{}%
+\contentsline {paragraph}{System creation}{25}{}%
+\contentsline {paragraph}{Adding a plot}{25}{}%
+\contentsline {paragraph}{Set a QTA}{25}{}%
+\contentsline {paragraph}{dMax, bins}{25}{}%
+\contentsline {subsubsection}{Trigger tab}{25}{}%
+\contentsline {paragraph}{Set triggers}{25}{}%
+\contentsline {paragraph}{Fired triggers}{25}{}%
+\contentsline {section}{\numberline {4.5}Triggers}{25}{}%
+\contentsline {subsection}{\numberline {4.5.1}Load}{25}{}%
+\contentsline {subsection}{\numberline {4.5.2}QTA}{25}{}%
+\contentsline {subsubsection}{Percentiles}{26}{}%
+\contentsline {subsubsection}{Failure}{26}{}%
+\contentsline {subsection}{\numberline {4.5.3}Time series snapshots}{26}{}%
+\contentsline {chapter}{\numberline {5}Application on synthethic programs}{27}{}%
+\contentsline {section}{\numberline {5.1}M/M/1/K queue}{27}{}%
+\contentsline {section}{\numberline {5.2}Cache}{27}{}%
+\contentsline {chapter}{\numberline {6}Performance study}{28}{}%
+\contentsline {section}{\numberline {6.1}Convolution performance}{28}{}%
+\contentsline {section}{\numberline {6.2}Server performance}{29}{}%
+\contentsline {section}{\numberline {6.3}Stub performance}{29}{}%

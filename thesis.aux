@@ -2,94 +2,149 @@
 \providecommand \babel@aux [2]{\global \let \babel@toc \@gobbletwo }
 \@nameuse{bbl@beforestart}
 \babel@aux{english}{}
-\@writefile{toc}{\contentsline {chapter}{\numberline {1}Introduction}{1}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {chapter}{\numberline {1}Background}{1}{}\protected@file@percent }
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\@writefile{toc}{\contentsline {chapter}{\numberline {2}Design}{2}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {1.1}Observability}{1}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.1.1}erlang:trace}{1}{}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {1.1}{\ignorespaces erlang:trace\textbackslash 3 specification}}{1}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.1.2}OpenTelemetry}{2}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{Traces}{2}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Span}{2}{}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {1.2}{\ignorespaces Example of span with a parent, indicating a causal link between parent and children span}}{2}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{Exporters}{2}{}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {1.3}{\ignorespaces Jaeger interface example}}{3}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{Macros}{3}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{?with\_span}{3}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{?start\_span}{3}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{?end\_span}{4}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {1.2}An overview of $\Delta $QSD}{4}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.2.1}Outcome}{4}{}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {1.4}{\ignorespaces The outcome (circle) and the starting set (left) and terminating set (right) of events}}{4}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.2.2}Probes}{4}{}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {1.5}{\ignorespaces A probe that observes the sequential composition of $o_1$ and $o_2$, from the starting set of events of $o_1$ to the terminating set of $o_2$.}}{5}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.2.3}Quality attenuation ($\Delta $Q)}{5}{}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {1.6}{\ignorespaces Intangible mass (red) of a $\Delta $Q, the observable had a failure rate of about 5\% }}{5}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.2.4}Timeliness}{5}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.2.5}QTA, required $\Delta $Q}{6}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{QTA example}{6}{}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {1.7}{\ignorespaces The system in blue is showing slack and satisfies the requirement, the system in orange is showing signs that it cannot handle the stress, it is not respecting the $\Delta $Q$_{req}$}}{6}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.2.6}Outcome diagram}{6}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{Sequential composition}{6}{}\protected@file@percent }
+\newlabel{eq:}{{1.1}{7}{}{equation.1.1}{}}
+\newlabel{eq:}{{1.2}{7}{}{equation.1.2}{}}
+\@writefile{toc}{\contentsline {subsubsection}{First to finish}{7}{}\protected@file@percent }
+\newlabel{eq:ftf}{{1.3}{7}{}{equation.1.3}{}}
+\@writefile{toc}{\contentsline {subsubsection}{All to finish}{7}{}\protected@file@percent }
+\newlabel{eq:atf}{{1.4}{7}{}{equation.1.4}{}}
+\@writefile{toc}{\contentsline {subsubsection}{Probabilistic choice}{7}{}\protected@file@percent }
+\newlabel{eq:pc}{{1.5}{7}{}{equation.1.5}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {1.8}{\ignorespaces The possible relationships in an outcome diagram: Sequential composition, probabilistic choice, first-to-finish, all-to-finish}}{7}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.2.7}Independence hypothesis}{8}{}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {1.9}{\ignorespaces When the components are independent, what is observed (blue) and calculated (red) can be superposed, whilst when $o_1$ and $o_2$ show initial signs of dependency, what is observed (green) can be seen deviating from the calculated $\Delta $Q.}}{8}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {chapter}{\numberline {2}Design}{9}{}\protected@file@percent }
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\@writefile{toc}{\contentsline {section}{\numberline {2.1}Objective}{2}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.1.1}Choices}{2}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.1.2}Limitations}{2}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {2.2}Design diagram}{2}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.2.1}System under test}{2}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.2.2}Stub}{2}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.2.3}Oscilloscope}{2}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {chapter}{\numberline {3}An overview of $\Delta $Q}{3}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {2.1}Scenario}{9}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{System under test}{9}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Stub/wrapper}{9}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Server}{9}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Oscilloscope}{9}{}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {2.1}{\ignorespaces Global system diagram: the SUT calls the wrapper when starting, ending and failing spans. The spans are received by the server which processes them and sends them to the oscilloscope. The server communicates with the stub to update informations about the system under test ($dMax$)}}{10}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {chapter}{\numberline {3}Implementation}{11}{}\protected@file@percent }
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\@writefile{toc}{\contentsline {section}{\numberline {3.1}Timeliness}{3}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {3.2}Outcome}{3}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {3.3}Quality attenuation}{3}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {3.4}Convolution}{3}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {3.5}Operators}{3}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.5.1}First to finish}{3}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.5.2}All to finish}{3}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.5.3}Probabilistic choice}{3}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {3.6}Outcome diagram}{3}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {chapter}{\numberline {4}Wrapper/Stub}{4}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {3.1}Wrapper}{11}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.1.1}API}{11}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{start\_span/1, start\_span/2}{11}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Parameters:}{11}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Return:}{11}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{with\_span/1, with\_span/2}{12}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Parameters:}{12}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Return:}{12}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{end\_span}{12}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Parameters:}{12}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{fail\_span}{12}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Parameter:}{12}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{span\_process}{13}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.1.2}Handling sample spans}{13}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {3.2}Parser}{13}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2.1}ANTLR}{14}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2.2}Grammar}{14}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{Limitations}{15}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {3.3}Oscilloscope}{15}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {chapter}{\numberline {4}Oscilloscope}{16}{}\protected@file@percent }
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\@writefile{toc}{\contentsline {section}{\numberline {4.1}Design}{4}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {4.2}API}{4}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.2.1}Samples}{4}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.2.2}Start span}{4}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.2.3}End span}{4}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.2.4}Fail span}{4}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.2.5}Timeout}{4}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {4.3}Communication}{4}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {4.4}Internal workings}{4}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {chapter}{\numberline {5}Oscilloscope}{5}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {4.1}$\Delta $Q implementation}{16}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.1.1}Internal representation of a $\Delta $Q}{16}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{PDF}{16}{}\protected@file@percent }
+\newlabel{eq:pdf}{{4.1}{16}{}{equation.4.1}{}}
+\@writefile{toc}{\contentsline {subsubsection}{ECDF}{17}{}\protected@file@percent }
+\newlabel{eq:cdf}{{4.2}{17}{}{equation.4.2}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.1.2}dMax}{17}{}\protected@file@percent }
+\newlabel{eq:dMax}{{4.3}{17}{}{equation.4.3}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.1}{\ignorespaces $\Delta $Q: $dMax$ = 50ms, the CDF will stay constant when delay $> dMax$}}{18}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.1.3}QTA}{18}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.1.4}Operations}{18}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{Convolution}{18}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Naïve convolution}{18}{}\protected@file@percent }
+\newlabel{eq:discconv}{{4.4}{18}{}{equation.4.4}{}}
+\@writefile{toc}{\contentsline {paragraph}{Fast Fourier Transform Convolution}{18}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{Arithmetical operations}{19}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Scaling (multiplication)}{19}{}\protected@file@percent }
+\newlabel{eq:mul_ecdf}{{4.5}{19}{}{equation.4.5}{}}
+\@writefile{toc}{\contentsline {paragraph}{Operations between $\Delta $Qs}{19}{}\protected@file@percent }
+\newlabel{eq:op_dq}{{4.6}{19}{}{equation.4.6}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.1.5}Confidence bounds}{19}{}\protected@file@percent }
+\newlabel{eq:mean_ecdf}{{4.7}{19}{}{equation.4.7}{}}
+\newlabel{eq:var_ecdf}{{4.8}{19}{}{equation.4.8}{}}
+\newlabel{eq:ci_i}{{4.9}{19}{}{equation.4.9}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.1.6}Rebinning}{20}{}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {4.2}{\ignorespaces Sample $\Delta $Q with 1ms bins}}{20}{}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {4.3}{\ignorespaces Previous $\Delta $Q after rebinning to 4ms bins}}{21}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {4.2}$\Delta $Q display}{21}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {4.3}Outcome diagram}{21}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.3.1}Observables}{22}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{Outcome}{22}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{Probes}{22}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.3.2}Operators}{23}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{Causal link}{23}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{All-to-finish operator}{23}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{First-to-finish operator}{23}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{Probabilistic choice operator}{23}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.3.3}Limitations}{23}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.3.4}Time series}{24}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {4.4}Dashboard}{24}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.4.1}Sidebar}{24}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{System tab}{25}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{System creation}{25}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Adding a plot}{25}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Set a QTA}{25}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{dMax, bins}{25}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{Trigger tab}{25}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Set triggers}{25}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Fired triggers}{25}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {4.5}Triggers}{25}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.5.1}Load}{25}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.5.2}QTA}{25}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{Percentiles}{26}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{Failure}{26}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.5.3}Time series snapshots}{26}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {chapter}{\numberline {5}Application on synthethic programs}{27}{}\protected@file@percent }
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\@writefile{toc}{\contentsline {section}{\numberline {5.1}Representation of $\Delta $Q}{6}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.1.1}Internals}{6}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{PDF}{6}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{CDF}{6}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.1.2}dMax}{6}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.1.3}Operations on $\Delta $Q}{6}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.1.4}Algebraic operations}{6}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.1.5}Convolution}{6}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{Naïve convolution}{6}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{Fast Fourier Transform convolution}{6}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.1.6}Confidence intervals}{6}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {5.2}Server}{6}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {5.3}Outcome diagram grammar}{6}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.3.1}Primitives}{6}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.3.2}Observables}{6}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{Outcome}{6}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{Probes}{6}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.3.3}Operators}{6}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.3.4}System}{6}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {5.4}Parser}{6}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.4.1}Syntax}{6}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.4.2}ANTLR}{6}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{Limitations}{6}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {5.5}System}{6}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.5.1}Observables}{6}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{Probes}{6}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{Outcomes}{6}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.5.2}Operators}{6}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {5.6}Dashboard}{6}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.6.1}Design}{6}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.6.2}Sidebar}{6}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{Managing the system}{6}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{Adding a plot}{6}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{Editing a plot}{6}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{Changing a plot}{6}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{Changing an observable's parameters}{6}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.6.3}Plot display window}{6}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{Removing a plot}{6}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {chapter}{\numberline {6}Application on synthethic programs}{7}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {5.1}M/M/1/K queue}{27}{}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {5.1}{\ignorespaces Outcome diagram of the M/M/1/K queue}}{27}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {5.2}Cache}{27}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {chapter}{\numberline {6}Performance study}{28}{}\protected@file@percent }
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\@writefile{toc}{\contentsline {section}{\numberline {6.1}M/M/1/K queue}{7}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {6.2}Cache}{7}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {chapter}{\numberline {7}Performance study}{8}{}\protected@file@percent }
-\@writefile{lof}{\addvspace {10\p@ }}
-\@writefile{lot}{\addvspace {10\p@ }}
-\@writefile{toc}{\contentsline {section}{\numberline {7.1}Convolution comparison}{8}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {7.2}Server performance}{8}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {7.3}Stub performance}{8}{}\protected@file@percent }
-\xdef \mintedoldcachechecksum{\detokenize{\minted@cachechecksum }}
-\gdef \@abspage@last{12}
+\@writefile{toc}{\contentsline {section}{\numberline {6.1}Convolution performance}{28}{}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {6.1}{\ignorespaces Performance comparison of two convolution algorithms}}{28}{}\protected@file@percent }
+\providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
+\newlabel{fig:conv_perf}{{6.1}{28}{}{figure.6.1}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {6.2}Server performance}{29}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {6.3}Stub performance}{29}{}\protected@file@percent }
+\xdef \mintedoldcachechecksum{\detokenize{4661D7B0C2D2731185415E96C0BB299A:22}}
+\gdef \@abspage@last{33}
