@@ -51,7 +51,7 @@ Where:
 Some tradeoffs must though be acknowledged when setting these parameters, a higher number of bins corresponds to a higher number of calculations and space complexity, a lower $dMax$ may correspond to more failures. These are all tradeoffs that must be considered by the system engineer and set accordingly.
     \begin{figure}[H]
         \begin{center}
-            \includegraphics[width=\textwidth, scale = 0.6]{tikz/cdf_dmax.pdf}
+            \includegraphics[scale = 1.4]{tikz/cdf_dmax.pdf}
         \end{center}
         \caption{$\Delta$Q: $dMax$ = 50ms, the CDF will stay constant when delay $> dMax$}
     \end{figure}
@@ -109,7 +109,12 @@ Some tradeoffs must though be acknowledged when setting these parameters, a high
             \label{eq:ci_i}
         \end{equation}
     The bounds can be updated dynamically by inserting or removing a $\Delta$Q, this allows us to consider a small window of execution rather than observing the whole execution.
-
+        \begin{figure}[H]
+            \begin{center}
+                \includegraphics[scale=1.5]{tikz/ci.pdf} 
+            \end{center}
+            \caption{Upper and lower bounds of the mean of multiple $\Delta$Qs. In a system that behaves linearly, the bounds will be close to the mean, once the overload is approaching, or a system is showing behaviour that diverges from a linear one, the bounds will be larger.}
+        \end{figure}
     \subsection{Rebinning}
         Rebinning refers to the aggregation of multiple bins of a bin width $i$ to another bin width $j$. \\  
         Operations between $\Delta$Qs can be done on $\Delta$Qs that have the same bin width, this is why it is fundamental that all observables have a common $\Delta_{tbase}$. This allows for fast rebinning to a common bin width. \\
@@ -126,7 +131,7 @@ Some tradeoffs must though be acknowledged when setting these parameters, a high
         
         \begin{figure}[H]
             \begin{center}
-                \includegraphics[width=\textwidth]{tikz/cdf.pdf}
+                \includegraphics[scale=1.4]{tikz/cdf.pdf}
             \end{center}
             \caption{Sample $\Delta$Q with 1ms bins}
         \end{figure}
@@ -134,7 +139,7 @@ Some tradeoffs must though be acknowledged when setting these parameters, a high
  
         \begin{figure}[H]
             \begin{center}
-                \includegraphics[width=\textwidth]{tikz/rebinned_cdf.pdf}
+                \includegraphics[scale=1.4]{tikz/rebinned_cdf.pdf}
             \end{center}
             \caption{Previous $\Delta$Q after rebinning to 4ms bins}
         \end{figure}

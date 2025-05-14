@@ -14,6 +14,7 @@
         \caption{The outcome (circle) and the starting set (left) and terminating set (right) of events}
     \end{figure}
 
+    \iffalse
 \subsection{Probes}
     While outcomes have distinct starting and terminating events, a probe can be "placed" anywhere in a system to observe the behavior of a part of the system. They share the set of starting events of the first outcome of the part of the system they observe and the terminating set of events of the last outcome of the system they observe. A probe can observe at least one outcome. 
     
@@ -23,7 +24,7 @@
         \end{center}
         \caption{A probe that observes the sequential composition of $o_1$ and $o_2$, from the starting set of events of $o_1$ to the terminating set of $o_2$.}
     \end{figure}
-
+\fi
 \subsection{Quality attenuation ($\Delta$Q)}
         In an ideal system, an outcome would deliver a desidered behaviour without error, failure, delay, but this is not the case. The quality of an outcome response "attenuated to the relative ideal" is called "quality attenuation" ($\Delta$Q). Since it can depend on many factors (geographical, physical \dots), $\Delta$Q is modeled as a random variable. \\
     As $\Delta$Q captures deviation from ideal behavior, and incorporates delay, which is a continuous random variable, and failures/timeouts, which are discrete variables, it can be described mathematically as an \textit{Improper Random Variable}, where the probability of a delay $<$ 1. \\
@@ -37,15 +38,19 @@
     \end{figure}
 
     \subsection{Timeliness}
-        Timeliness is defined as a relation between an observed $\Delta Q_{obs}$ and a required $\Delta Q_{req}$
+        Timeliness is defined as a relation between an observed $\Delta Q_{obs}$ and a required $\Delta Q_{req}$. Timeliness is delivering results within required time bounds (sufficiently often).
      
     \subsection{QTA, required $\Delta$Q}
          The Quantitative Timeliness Agreement maps objective measurements to the subjective perception of application performance [cite]. It specifies what the base system does and its limits
-         \paragraph{QTA example}: Imagine a system where 50\% of the executions should take $<$ 5 ms, 75\% of executions should take $<$ 7.5 ms, all queries have a maximum delay of 10ms and 5\% of executions can timeout, the QTA can be represented as a step function.
+         \paragraph{QTA example}: Imagine a system where 25\% of the executions should take $<$ 15 ms, 50\% $<$ 25 ms and 75\% $<$ 35 ms, all queries have a maximum delay of 50ms and 5\% of executions can timeout, the QTA can be represented as a step function.
+    
+        \paragraph{Slack} When $\Delta$Q is strictly less than the requirement, we say there is performance \textit{slack}
+
+        \paragraph{Hazard} When $\Delta$Q is strictly greater than the requirement, there is performance hazard.
 
         \begin{figure}[H]
             \begin{center}
-                \includegraphics[width=\textwidth]{tikz/cdf_qta_slack.pdf}
+                \includegraphics[scale=1.4]{tikz/cdf_qta_slack.pdf}
             \end{center}
             \caption{The system in blue is showing slack and satisfies the requirement, the system in orange is showing signs that it cannot handle the stress, it is not respecting the $\Delta$Q$_{req}$}
         \end{figure}
@@ -54,7 +59,9 @@
 
    
     \subsection{Outcome diagram}
-        An outcome diagram captures the causal relationships between the outcomes, each outcome diagram can be presented algebraically with an outcome expression, there are four different ways to represent the relationships between outcomes.
+        An outcome diagram captures the causal relationships between the outcomes, each outcome diagram can be presented algebraically with an outcome expression.
+        It allows computing the $\Delta$Q for the whole system.
+        there are four different ways to represent the relationships between outcomes.
 
     \subsubsection{Sequential composition}
         If we assume two outcomes $O_A$, $O_B$ where end event of $O_A$ is the start event of $O_B$, the probability distribution of $O_A$ and $O_B$ is given by the convolution of the PDFs of $O_A$ and $O_B$.
@@ -106,7 +113,7 @@
         Assume two sequentially composed outcomes $o_1$, $o_2$ running on the same processor. A probe $p$ observing the execution from the start event of $o_1$ to the end event of $o_2$. 
         \begin{figure}[H]
             \begin{center}
-                \includegraphics{tikz/indep.pdf}
+                \includegraphics[scale=1.6]{tikz/indep.pdf}
             \end{center}
         \end{figure}
         
