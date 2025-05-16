@@ -2,6 +2,13 @@
 \documentclass{EPL-master-thesis-covers-EN}
 
 %% Includes
+
+%Acronyms
+\usepackage[acronym]{glossaries}
+
+%Format
+\usepackage{parskip}
+
 %%Images
 \usepackage{graphicx}
 \usepackage{pgf}
@@ -29,9 +36,6 @@
 % Title of the thesis
 \title{Observing the detailed behaviour of large distributed applications in real time using $\Delta$QSD}
 
-% Subtitle - remove this line if not applicable
-%\subtitle{Optional subtitle}
-
 % Name of the student author(s)
 \author{Francesco \textsc{Nieri}}
 \degreetitle{Master [120] in Computer Science}
@@ -47,28 +51,37 @@
 % Academic year (update if necessary)
 \years{2024--2025}
 
+\makeglossaries
 % Document
 \begin{document}
   % Front cover page
-  \maketitle
+    \maketitle
     \newpage
+   
+
+    \renewcommand{\thepage}{\roman{page}}
+
+    \newgeometry{left=3cm, right=2.5cm, top=3cm, bottom=3cm} % Adjust as needed
+
+    \tableofcontents
+
+    \cleardoublepage
+ 
+    \section*{Acronyms}
+    \glsaddall
+    \printglossary[type=\acronymtype,style=long]
+    \pagenumbering{arabic}% Reset page numbering and style
     
 
-\renewcommand{\thepage}{\roman{page}}
-\newgeometry{left=3cm, right=2.5cm, top=3cm, bottom=3cm} % Adjust as needed
-\tableofcontents
-\cleardoublepage
-\pagenumbering{arabic}% Reset page numbering and style
-    
-    \input{chapters/intro}
-    \input{chapters/background}
-    \input{chapters/design}
+    \input{chapters/1-intro}
+    \input{chapters/2-background}
+    \input{chapters/3-design}
    % \input{chapters/dq}
 
-    \input{chapters/impl}
-    \input{chapters/oscilloscope}
-    \input{chapters/synt}
-    \input{chapters/eval}
+    \input{chapters/4-impl}
+    \input{chapters/5-oscilloscope}
+    \input{chapters/6-synt}
+    \input{chapters/7-eval}
     % Back cover page
   \backcoverpage
 

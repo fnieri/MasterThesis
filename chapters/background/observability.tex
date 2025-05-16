@@ -1,6 +1,8 @@
 \section{Observability}
-        Observability refers to the ability to understand the internal state by examining its output, in the context of a distributed system, being able to understand the internal state of the system examining its telemetry data. [CITE OTEL] \\
+        Observability refers to the ability to understand the internal state by examining its output, in the context of a distributed system, being able to understand the internal state of the system examining its telemetry data. [CITE OTEL]
+
     In the case of the Erlang programming language, we explain below two tools that can be used to observe an Erlang program.
+    
     \subsection{erlang:trace}
         The Erlang programming language gives the users different ways to observe the behaviour of the code, one of those is the function \texttt{erlang:trace/3}. The erlang run-time system exposes several trace points that can be observe, observing the trace points allows users to be notified when they are triggered [CITE CITE CITE]. One can observe function calls, messages being sent and received, process being spawned, garbage collecting \dots. 
         \begin{figure}[!ht]
@@ -22,11 +24,14 @@
     Nevertheless, Erlang Tracing, according to our use case, has a major flaw: no notion of causality. If two messages $a, b$ are sent and then received in disorder, the tracer has no default way of knowing which is which, this is a missing feature that is crucial for observing a program functioning and being able to connect an application to our oscilloscope.  This is where the OpenTelemetry standard comes in.
 
 \subsection{OpenTelemetry}
-    OpenTelemetry is an open-source, vendor agnostic observability framework and toolkit designed to generate, export and collect telemetry data, in particular traces, metrics and logs. \\ 
-    OpenTelemetry is available for a plethora of languages, including Erlang, although, as of writing this, only traces are available in Erlang. \\
+    OpenTelemetry is an open-source, vendor agnostic observability framework and toolkit designed to generate, export and collect telemetry data, in particular traces, metrics and logs. 
+
+    OpenTelemetry is available for a plethora of languages, including Erlang, although, as of writing this, only traces are available in Erlang. 
+    
     OpenTelemetry provides a standard protocol, a single set of API and conventions and lets you own the generated data, allowing to switch between observability backends freely.
-    The Erlang Ecosystem Foundation has a working group focused on evolving the tools related to observability. \\
-     \subsubsection{Traces}
+    
+    The Erlang Ecosystem Foundation has a working group focused on evolving the tools related to observability. 
+    \subsubsection{Traces}
         Traces are why we are basing our program on top of OpenTelemetry, traces follow the whole "path" of a request in an application, traces are comprised of one or more spans.
         \paragraph{Span} A span is a unit  of work or operation. Spans can be correlated to each other and can be assembled into a trace.
     The notion of spans and traces allows us to follow the execution of a "request" and carry a context, allowing us to get the causal links of messages[cite cite]. %[HERE CITE ALL SITE] https://opentelemetry.io/docs/concepts/signals/traces/

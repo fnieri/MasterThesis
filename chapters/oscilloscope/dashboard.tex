@@ -21,7 +21,7 @@
         In the trigger tab the user can set triggers and observe those that have been fired.
 
     \paragraph{Set triggers}
-        The user can set which triggers to fire for a certain observable, he is given checkboxes to decide which ones to set as active or not (by default, the triggers are deactivated).
-
+        The user can set which triggers to fire for the probes they desire, they are given checkboxes to decide which ones to set as active or not (by default, the triggers are deactivated).
+    
     \paragraph{Fired triggers}
-        WIP.
+        Once a trigger is fired, the system start a timer, during which all probes start recording the observed $\Delta$Qs (and the calculated ones if applicable) without discarding older ones. Once the timer expires, the snapshot is saved for the user in the triggers tab. In the dashboard, it indicates when the trigger was fired (timestamp) and the name of the probe which fired it.

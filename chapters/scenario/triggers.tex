@@ -1,0 +1,12 @@
+\section{Triggers}
+    The concept of triggers is key to the oscilloscope, much like an oscilloscope that has a trigger mechanism that fires when a signal of interest is recognized by the oscilloscope, the \textit{$\Delta$Q oscilloscope} has a similar mechanism that can recognize when an observed $\Delta$Q violates certain conditions regarding required behaviour.
+
+    Each time an observed $\Delta$Q is calculated by the oscilloscope, it is checked against the requirements set by the user. If these requirements are not met, a trigger is fired and a snapshot of the system is saved to be shown to the user. 
+    
+    \subsection{Snapshot}
+    A snapshot of the system gives insights into the system before and after a trigger was fired.
+
+When an observed $\Delta$Q is calculated for each component being observed in the oscilloscope, they are stored away. In case the probe is observing multiple components, the $\Delta$Q which is the result of the outcome expressions is also stored.
+
+If no trigger is fired, older observed (and calculated) $\Delta$Qs are removed. In the case that a trigger is fired, the oscilloscope keeps recording $\Delta$Qs without removing older ones, to allow the user to look at the state of the system before the trigger and after.
+    
