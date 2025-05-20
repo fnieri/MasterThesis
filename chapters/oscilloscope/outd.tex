@@ -1,39 +1,33 @@
   \section{Outcome diagram}
-        An abstract syntax for outcome expressions has already been defined in a previous paper, nevertheless, the oscilloscope provides additional features not included in the original syntax and, moreover, needs a textual way to define an outcome diagram. 
+        An abstract syntax for outcome expressions and consequently outcome diagrams has already been defined in a previous paper \cite{art}, nevertheless, the oscilloscope provides additional features not included in the original syntax and, moreover, needs a textual way to define an outcome diagram. 
        
-       We define thus a grammar to create an outcome diagram in our oscilloscope, our grammar is a textual interpretation of the abstract syntax. \\
-        \subsection{Observables}
-            Below is a way to define the observables in a system.
+        We define thus a grammar to create an outcome diagram in our oscilloscope, our grammar is a textual interpretation of the abstract syntax.
+        \subsection{Probes}
+            To attach probes in the oscilloscope, the user must define outcomes and probes that observe outcome expressions.
             \subsubsection{Outcome}
-                In the definition of the system or of a probe, an outcome is defined with its name
-        \begin{minted}{text}
-            probe = outcomeName;
-        \end{minted}
-            \subsubsection{Probes}
-                
-        A probe can contain one component or a sequence of causally linked components. \\
-        The user can define as many probes as they want, they have to be declared as follows:
-   \begin{minted}{text}
-        probe = component [-> component2];
-        probe2 = newComponent -> anotherComponent;
-   \end{minted}
-
-    Probes will not be parsed after the system has been defined, in the case below, an error will be thrown.
-    \begin{minted}{text}
-        probe = ...;
-        probe2 = ...;
-        system = ...;
-        probe3 = ...;
-    \end{minted}
+                In our system an outcome is defined with its name
+                \begin{minted}{text}
+                    ... = outcomeName;
+                \end{minted}
+        
+        \subsubsection{Probes containing outcome expressions}
+            A probe can contain one component or a sequence of causally linked components.
+            The user can define as many probes that contain outcome expressions as they want, they have to be declared as follows:
+            \begin{minted}{text}
+                probe = component [-> component2];
+                probe2 = newComponent -> anotherComponent;
+            \end{minted}
     
-    Proes can be reused in other probes or in the system by adding a s: before they are used.
-    \begin{minted}{text}
-        probe3 = s:probe -> s:probe2;
-    \end{minted}
+            These probes can be reused in other probes or in the system by adding \texttt{"s:"} (subsystem) before they are used.
+            \begin{minted}{text}
+                probe3 = s:probe -> s:probe2;
+            \end{minted}
  
-        \subsection{Operators}
-        To build a system, we must define some operators, below is how they can be defined. About first-to-finish, all-to-finish and probabilistic choice, they must contain at least two components, this is because the operations to calculate the DeltaQ of these operators rely on using the CDF of the components that define the operator.
+        \subsection{Operators, outcome expressions}
+            To build a system, we must define the relations between outcomes and outcome expressions, below is how they can be defined. 
 
+            First-to-finish, all-to-finish and probabilistic choice must contain at least two components, this is because the operations to calculate the \textit{calculated} $\Delta$Q rely on using the CDF of the components that define the operator.
+            
         \subsubsection{Causal link}
             A causal link between two components can be defined by a right arrow from \texttt{component\_i} to \texttt{component\_j}
         \begin{minted}{text}
@@ -58,11 +52,15 @@
                 p:name[probability_1, probability_2, ... probability_i](component_1, component_2, ..., component_i) 
             \end{minted}
             In addition to being comma separated, the number of probabilities inside the brackets must match the number of components inside the parentheses. For $n$ probabilites $p_i$, $0 < p_i < 1$, $\sum_{i = 0}^{n} p_i = 1$ 
+        
+            
         \subsection{Limitations}
             Our system has a few limitations compared to the theoretical applications of $\Delta$Q, namely, no cycles are allowed in the definition of a system.
+        
         \begin{minted}{text}
             probe = s:probe_2;
             probe_2 = s:probe;
         \end{minted}
-        The above example is not allowed and will raise an error when defined. 
-   
+        The above example is not allowed and will raise an error when defined.  
+
+

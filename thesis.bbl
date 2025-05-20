@@ -1,0 +1,711 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.3 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{none/global//global/global/global}
+    \entry{dq-tut}{online}{}{}
+      \name{author}{2}{}{%
+        {{hash=276e13a920ad375a49902d1697a00450}{%
+           family={Roy},
+           familyi={R\bibinitperiod},
+           given={Peter\bibnamedelima Van},
+           giveni={P\bibinitperiod\bibinitdelim V\bibinitperiod}}}%
+        {{hash=a36236c91930f0ea7ffefd84608566a8}{%
+           family={Haeri.},
+           familyi={H\bibinitperiod},
+           given={Seyed\bibnamedelima Hossein},
+           giveni={S\bibinitperiod\bibinitdelim H\bibinitperiod}}}%
+      }
+      \list{organization}{1}{%
+        {15th ACM/SPEC International Conference on Performance Engineering}%
+      }
+      \strng{namehash}{26c04e06c898f3628b37cc23fde0f94d}
+      \strng{fullhash}{26c04e06c898f3628b37cc23fde0f94d}
+      \strng{fullhashraw}{26c04e06c898f3628b37cc23fde0f94d}
+      \strng{bibnamehash}{26c04e06c898f3628b37cc23fde0f94d}
+      \strng{authorbibnamehash}{26c04e06c898f3628b37cc23fde0f94d}
+      \strng{authornamehash}{26c04e06c898f3628b37cc23fde0f94d}
+      \strng{authorfullhash}{26c04e06c898f3628b37cc23fde0f94d}
+      \strng{authorfullhashraw}{26c04e06c898f3628b37cc23fde0f94d}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{The {$\Delta$QSD} Paradigm: Designing Systems with Predictable Performance at High Load. Full-day tutorial}
+      \field{year}{2024}
+      \verb{urlraw}
+      \verb https://webperso.info.ucl.ac.be/~pvr/ICPE-2024-deltaQSD-full.pdf
+      \endverb
+      \verb{url}
+      \verb https://webperso.info.ucl.ac.be/~pvr/ICPE-2024-deltaQSD-full.pdf
+      \endverb
+    \endentry
+    \entry{myo}{article}{}{}
+      \name{author}{6}{}{%
+        {{hash=bbd35d521bb8c57e69591be7c5e7dcad}{%
+           family={Haeri},
+           familyi={H\bibinitperiod},
+           given={Seyed\bibnamedelima H.},
+           giveni={S\bibinitperiod\bibinitdelim H\bibinitperiod}}}%
+        {{hash=f9d144a5938f9bc76e849a8d4d33e8d9}{%
+           family={Thompson},
+           familyi={T\bibinitperiod},
+           given={Peter},
+           giveni={P\bibinitperiod}}}%
+        {{hash=d65f4b7e7a950ce2cfa820b7770c1a68}{%
+           family={Davies},
+           familyi={D\bibinitperiod},
+           given={Neil\bibnamedelima J.},
+           giveni={N\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+        {{hash=276e13a920ad375a49902d1697a00450}{%
+           family={Roy},
+           familyi={R\bibinitperiod},
+           given={Peter\bibnamedelima Van},
+           giveni={P\bibinitperiod\bibinitdelim V\bibinitperiod}}}%
+        {{hash=d194aa809f2ab0de6f86bff4c235be09}{%
+           family={Hammond},
+           familyi={H\bibinitperiod},
+           given={Kevin},
+           giveni={K\bibinitperiod}}}%
+        {{hash=ccdd3669aff26ae10f05232050c4c807}{%
+           family={Chapman},
+           familyi={C\bibinitperiod},
+           given={James},
+           giveni={J\bibinitperiod}}}%
+      }
+      \strng{namehash}{915bd06e3d68326c6b7424519646d71c}
+      \strng{fullhash}{68b1c0b30277501aa742d6df3ebff961}
+      \strng{fullhashraw}{68b1c0b30277501aa742d6df3ebff961}
+      \strng{bibnamehash}{915bd06e3d68326c6b7424519646d71c}
+      \strng{authorbibnamehash}{915bd06e3d68326c6b7424519646d71c}
+      \strng{authornamehash}{915bd06e3d68326c6b7424519646d71c}
+      \strng{authorfullhash}{68b1c0b30277501aa742d6df3ebff961}
+      \strng{authorfullhashraw}{68b1c0b30277501aa742d6df3ebff961}
+      \field{extraname}{1}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Comput.}
+      \field{number}{3}
+      \field{title}{Mind Your Outcomes: The {\(\Delta\)}QSD Paradigm for Quality-Centric Systems Development and Its Application to a Blockchain Case Study}
+      \field{volume}{11}
+      \field{year}{2022}
+      \field{pages}{45}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.3390/COMPUTERS11030045
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.3390/computers11030045
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.3390/computers11030045
+      \endverb
+    \endentry
+    \entry{art}{inproceedings}{}{}
+      \name{author}{8}{}{%
+        {{hash=a36236c91930f0ea7ffefd84608566a8}{%
+           family={Haeri},
+           familyi={H\bibinitperiod},
+           given={Seyed\bibnamedelima Hossein},
+           giveni={S\bibinitperiod\bibinitdelim H\bibinitperiod}}}%
+        {{hash=acb8b88a9597b763c31eca6ef9cff3ec}{%
+           family={Thompson},
+           familyi={T\bibinitperiod},
+           given={Peter\bibnamedelima W.},
+           giveni={P\bibinitperiod\bibinitdelim W\bibinitperiod}}}%
+        {{hash=276e13a920ad375a49902d1697a00450}{%
+           family={Roy},
+           familyi={R\bibinitperiod},
+           given={Peter\bibnamedelima Van},
+           giveni={P\bibinitperiod\bibinitdelim V\bibinitperiod}}}%
+        {{hash=9b84387eb5d927e98a985b8527876d72}{%
+           family={Haveraaen},
+           familyi={H\bibinitperiod},
+           given={Magne},
+           giveni={M\bibinitperiod}}}%
+        {{hash=d65f4b7e7a950ce2cfa820b7770c1a68}{%
+           family={Davies},
+           familyi={D\bibinitperiod},
+           given={Neil\bibnamedelima J.},
+           giveni={N\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+        {{hash=177d31c43f223f0f27130c54036554eb}{%
+           family={Barash},
+           familyi={B\bibinitperiod},
+           given={Mikhail},
+           giveni={M\bibinitperiod}}}%
+        {{hash=d194aa809f2ab0de6f86bff4c235be09}{%
+           family={Hammond},
+           familyi={H\bibinitperiod},
+           given={Kevin},
+           giveni={K\bibinitperiod}}}%
+        {{hash=ccdd3669aff26ae10f05232050c4c807}{%
+           family={Chapman},
+           familyi={C\bibinitperiod},
+           given={James},
+           giveni={J\bibinitperiod}}}%
+      }
+      \name{editor}{4}{}{%
+        {{hash=5f064b8d3c0424b7bf493da93bd51942}{%
+           family={Aubert},
+           familyi={A\bibinitperiod},
+           given={Clément},
+           giveni={C\bibinitperiod}}}%
+        {{hash=188dcf5e4c651ec00f8c60b90ad196c7}{%
+           family={Giusto},
+           familyi={G\bibinitperiod},
+           given={Cinzia\bibnamedelima Di},
+           giveni={C\bibinitperiod\bibinitdelim D\bibinitperiod}}}%
+        {{hash=973f8668c8b52a0c8c8f7822d9f6e2eb}{%
+           family={Fowler},
+           familyi={F\bibinitperiod},
+           given={Simon},
+           giveni={S\bibinitperiod}}}%
+        {{hash=4fce574c6bb2206fb51f0feeab19c762}{%
+           family={Safina},
+           familyi={S\bibinitperiod},
+           given={Larisa},
+           giveni={L\bibinitperiod}}}%
+      }
+      \strng{namehash}{a3f6d15d93a6b51de6e4e357dbdaee02}
+      \strng{fullhash}{140bd2141c7fc4329bbb3d8c5609f2e5}
+      \strng{fullhashraw}{140bd2141c7fc4329bbb3d8c5609f2e5}
+      \strng{bibnamehash}{a3f6d15d93a6b51de6e4e357dbdaee02}
+      \strng{authorbibnamehash}{a3f6d15d93a6b51de6e4e357dbdaee02}
+      \strng{authornamehash}{a3f6d15d93a6b51de6e4e357dbdaee02}
+      \strng{authorfullhash}{140bd2141c7fc4329bbb3d8c5609f2e5}
+      \strng{authorfullhashraw}{140bd2141c7fc4329bbb3d8c5609f2e5}
+      \strng{editorbibnamehash}{60e858f13bceeba0af35aaaa9f07a976}
+      \strng{editornamehash}{60e858f13bceeba0af35aaaa9f07a976}
+      \strng{editorfullhash}{c107a1d8d1580e0581e5d350919be0b3}
+      \strng{editorfullhashraw}{c107a1d8d1580e0581e5d350919be0b3}
+      \field{extraname}{2}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Proceedings 16th Interaction and Concurrency Experience, {ICE} 2023, Lisbon, Portugal, 19th June 2023}
+      \field{series}{{EPTCS}}
+      \field{title}{Algebraic Reasoning About Timeliness}
+      \field{volume}{383}
+      \field{year}{2023}
+      \field{pages}{35\bibrangedash 54}
+      \range{pages}{20}
+      \verb{doi}
+      \verb 10.4204/EPTCS.383.3
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.4204/EPTCS.383.3
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.4204/EPTCS.383.3
+      \endverb
+    \endentry
+    \entry{dq-ucl}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=276e13a920ad375a49902d1697a00450}{%
+           family={Roy},
+           familyi={R\bibinitperiod},
+           given={Peter\bibnamedelima Van},
+           giveni={P\bibinitperiod\bibinitdelim V\bibinitperiod}}}%
+      }
+      \list{organization}{1}{%
+        {UCLouvain}%
+      }
+      \strng{namehash}{276e13a920ad375a49902d1697a00450}
+      \strng{fullhash}{276e13a920ad375a49902d1697a00450}
+      \strng{fullhashraw}{276e13a920ad375a49902d1697a00450}
+      \strng{bibnamehash}{276e13a920ad375a49902d1697a00450}
+      \strng{authorbibnamehash}{276e13a920ad375a49902d1697a00450}
+      \strng{authornamehash}{276e13a920ad375a49902d1697a00450}
+      \strng{authorfullhash}{276e13a920ad375a49902d1697a00450}
+      \strng{authorfullhashraw}{276e13a920ad375a49902d1697a00450}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Accessed: (19/05/2025)}
+      \field{title}{LINFO2345 lessons on {$\Delta$QSD}}
+      \field{year}{2023}
+      \verb{urlraw}
+      \verb https://www.youtube.com/watch?v=tF7fbU9Gce8
+      \endverb
+      \verb{url}
+      \verb https://www.youtube.com/watch?v=tF7fbU9Gce8
+      \endverb
+    \endentry
+    \entry{dqsd-wkb}{misc}{}{}
+      \name{author}{2}{}{%
+        {{hash=213a5eb02ad622047a246185bece09ee}{%
+           family={N.},
+           familyi={N\bibinitperiod},
+           given={Davies},
+           giveni={D\bibinitperiod}}}%
+        {{hash=69251735378bb11a3c481ee8f8fb846f}{%
+           family={P.},
+           familyi={P\bibinitperiod},
+           given={Thompson},
+           giveni={T\bibinitperiod}}}%
+      }
+      \strng{namehash}{347eee073f1218204f353e09d45c9e7f}
+      \strng{fullhash}{347eee073f1218204f353e09d45c9e7f}
+      \strng{fullhashraw}{347eee073f1218204f353e09d45c9e7f}
+      \strng{bibnamehash}{347eee073f1218204f353e09d45c9e7f}
+      \strng{authorbibnamehash}{347eee073f1218204f353e09d45c9e7f}
+      \strng{authornamehash}{347eee073f1218204f353e09d45c9e7f}
+      \strng{authorfullhash}{347eee073f1218204f353e09d45c9e7f}
+      \strng{authorfullhashraw}{347eee073f1218204f353e09d45c9e7f}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Accessed: (19/05/2025}
+      \field{title}{{$\Delta$QSD} workbench - GitHub}
+      \field{year}{2022}
+      \verb{urlraw}
+      \verb https://github.com/DeltaQ-SD/dqsd-workbench
+      \endverb
+      \verb{url}
+      \verb https://github.com/DeltaQ-SD/dqsd-workbench
+      \endverb
+    \endentry
+    \entry{erl-t}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=03cf7cd7c81236d0a2200c41d5cb794d}{%
+           family={language},
+           familyi={l\bibinitperiod},
+           given={Erlang},
+           giveni={E\bibinitperiod},
+           prefix={programming},
+           prefixi={p\bibinitperiod}}}%
+      }
+      \strng{namehash}{03cf7cd7c81236d0a2200c41d5cb794d}
+      \strng{fullhash}{03cf7cd7c81236d0a2200c41d5cb794d}
+      \strng{fullhashraw}{03cf7cd7c81236d0a2200c41d5cb794d}
+      \strng{bibnamehash}{03cf7cd7c81236d0a2200c41d5cb794d}
+      \strng{authorbibnamehash}{03cf7cd7c81236d0a2200c41d5cb794d}
+      \strng{authornamehash}{03cf7cd7c81236d0a2200c41d5cb794d}
+      \strng{authorfullhash}{03cf7cd7c81236d0a2200c41d5cb794d}
+      \strng{authorfullhashraw}{03cf7cd7c81236d0a2200c41d5cb794d}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Accessed: (19/05/2025)}
+      \field{title}{Erlang tracing}
+      \field{year}{2024}
+      \verb{urlraw}
+      \verb https://www.erlang.org/doc/apps/erts/tracing.html
+      \endverb
+      \verb{url}
+      \verb https://www.erlang.org/doc/apps/erts/tracing.html
+      \endverb
+    \endentry
+    \entry{otel-e}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=9c17bef3be6c0feb9f7e5b99b097c6b7}{%
+           family={OpenTelemetry},
+           familyi={O\bibinitperiod}}}%
+      }
+      \strng{namehash}{9c17bef3be6c0feb9f7e5b99b097c6b7}
+      \strng{fullhash}{9c17bef3be6c0feb9f7e5b99b097c6b7}
+      \strng{fullhashraw}{9c17bef3be6c0feb9f7e5b99b097c6b7}
+      \strng{bibnamehash}{9c17bef3be6c0feb9f7e5b99b097c6b7}
+      \strng{authorbibnamehash}{9c17bef3be6c0feb9f7e5b99b097c6b7}
+      \strng{authornamehash}{9c17bef3be6c0feb9f7e5b99b097c6b7}
+      \strng{authorfullhash}{9c17bef3be6c0feb9f7e5b99b097c6b7}
+      \strng{authorfullhashraw}{9c17bef3be6c0feb9f7e5b99b097c6b7}
+      \field{extraname}{1}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Accessed: (19/05/2025)}
+      \field{title}{OpenTelemetry in Erlang/Elixir}
+      \field{year}{2025}
+      \verb{urlraw}
+      \verb https://opentelemetry.io/docs/languages/erlang/
+      \endverb
+      \verb{url}
+      \verb https://opentelemetry.io/docs/languages/erlang/
+      \endverb
+    \endentry
+    \entry{otel-o}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=9c17bef3be6c0feb9f7e5b99b097c6b7}{%
+           family={OpenTelemetry},
+           familyi={O\bibinitperiod}}}%
+      }
+      \strng{namehash}{9c17bef3be6c0feb9f7e5b99b097c6b7}
+      \strng{fullhash}{9c17bef3be6c0feb9f7e5b99b097c6b7}
+      \strng{fullhashraw}{9c17bef3be6c0feb9f7e5b99b097c6b7}
+      \strng{bibnamehash}{9c17bef3be6c0feb9f7e5b99b097c6b7}
+      \strng{authorbibnamehash}{9c17bef3be6c0feb9f7e5b99b097c6b7}
+      \strng{authornamehash}{9c17bef3be6c0feb9f7e5b99b097c6b7}
+      \strng{authorfullhash}{9c17bef3be6c0feb9f7e5b99b097c6b7}
+      \strng{authorfullhashraw}{9c17bef3be6c0feb9f7e5b99b097c6b7}
+      \field{extraname}{2}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Accessed: (19/05/2025)}
+      \field{title}{What is OpenTelemetry?}
+      \field{year}{2025}
+      \verb{urlraw}
+      \verb https://opentelemetry.io/docs/what-is-opentelemetry/
+      \endverb
+      \verb{url}
+      \verb https://opentelemetry.io/docs/what-is-opentelemetry/
+      \endverb
+    \endentry
+    \entry{otel-t}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=9c17bef3be6c0feb9f7e5b99b097c6b7}{%
+           family={OpenTelemetry},
+           familyi={O\bibinitperiod}}}%
+      }
+      \strng{namehash}{9c17bef3be6c0feb9f7e5b99b097c6b7}
+      \strng{fullhash}{9c17bef3be6c0feb9f7e5b99b097c6b7}
+      \strng{fullhashraw}{9c17bef3be6c0feb9f7e5b99b097c6b7}
+      \strng{bibnamehash}{9c17bef3be6c0feb9f7e5b99b097c6b7}
+      \strng{authorbibnamehash}{9c17bef3be6c0feb9f7e5b99b097c6b7}
+      \strng{authornamehash}{9c17bef3be6c0feb9f7e5b99b097c6b7}
+      \strng{authorfullhash}{9c17bef3be6c0feb9f7e5b99b097c6b7}
+      \strng{authorfullhashraw}{9c17bef3be6c0feb9f7e5b99b097c6b7}
+      \field{extraname}{3}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Accessed: (19/05/2025)}
+      \field{title}{OpenTelemetry - Traces}
+      \field{year}{2025}
+      \verb{urlraw}
+      \verb https://opentelemetry.io/docs/concepts/signals/traces/
+      \endverb
+      \verb{url}
+      \verb https://opentelemetry.io/docs/concepts/signals/traces/
+      \endverb
+    \endentry
+    \entry{jg}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=99843117a36cd53a2358856e619efe2a}{%
+           family={Authors},
+           familyi={A\bibinitperiod},
+           given={The\bibnamedelima Jaeger},
+           giveni={T\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+      }
+      \strng{namehash}{99843117a36cd53a2358856e619efe2a}
+      \strng{fullhash}{99843117a36cd53a2358856e619efe2a}
+      \strng{fullhashraw}{99843117a36cd53a2358856e619efe2a}
+      \strng{bibnamehash}{99843117a36cd53a2358856e619efe2a}
+      \strng{authorbibnamehash}{99843117a36cd53a2358856e619efe2a}
+      \strng{authornamehash}{99843117a36cd53a2358856e619efe2a}
+      \strng{authorfullhash}{99843117a36cd53a2358856e619efe2a}
+      \strng{authorfullhashraw}{99843117a36cd53a2358856e619efe2a}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Accessed: (19/05/2025)}
+      \field{title}{Jaeger}
+      \field{year}{2025}
+      \verb{urlraw}
+      \verb https://www.jaegertracing.io/
+      \endverb
+      \verb{url}
+      \verb https://www.jaegertracing.io/
+      \endverb
+    \endentry
+    \entry{otel-p}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=92d4a90bb461cfbc6215c8fac5f4ecb4}{%
+           family={Horovits},
+           familyi={H\bibinitperiod},
+           given={Dotan},
+           giveni={D\bibinitperiod}}}%
+      }
+      \strng{namehash}{92d4a90bb461cfbc6215c8fac5f4ecb4}
+      \strng{fullhash}{92d4a90bb461cfbc6215c8fac5f4ecb4}
+      \strng{fullhashraw}{92d4a90bb461cfbc6215c8fac5f4ecb4}
+      \strng{bibnamehash}{92d4a90bb461cfbc6215c8fac5f4ecb4}
+      \strng{authorbibnamehash}{92d4a90bb461cfbc6215c8fac5f4ecb4}
+      \strng{authornamehash}{92d4a90bb461cfbc6215c8fac5f4ecb4}
+      \strng{authorfullhash}{92d4a90bb461cfbc6215c8fac5f4ecb4}
+      \strng{authorfullhashraw}{92d4a90bb461cfbc6215c8fac5f4ecb4}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Accessed: (19/05/2025)}
+      \field{title}{From Distributed Tracing to APM: Taking OpenTelemetry \& Jaeger Up a Level}
+      \field{year}{2021}
+      \verb{urlraw}
+      \verb https://logz.io/blog/monitoring-microservices-opentelemetry-jaeger/
+      \endverb
+      \verb{url}
+      \verb https://logz.io/blog/monitoring-microservices-opentelemetry-jaeger/
+      \endverb
+    \endentry
+    \entry{tr-e}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=85068a9d3967226abeb21467c20e5386}{%
+           family={Boddeti},
+           familyi={B\bibinitperiod},
+           given={Sampath\bibnamedelimb Siva\bibnamedelima Kumar},
+           giveni={S\bibinitperiod\bibinitdelim S\bibinitperiod\bibinitdelim K\bibinitperiod}}}%
+      }
+      \strng{namehash}{85068a9d3967226abeb21467c20e5386}
+      \strng{fullhash}{85068a9d3967226abeb21467c20e5386}
+      \strng{fullhashraw}{85068a9d3967226abeb21467c20e5386}
+      \strng{bibnamehash}{85068a9d3967226abeb21467c20e5386}
+      \strng{authorbibnamehash}{85068a9d3967226abeb21467c20e5386}
+      \strng{authornamehash}{85068a9d3967226abeb21467c20e5386}
+      \strng{authorfullhash}{85068a9d3967226abeb21467c20e5386}
+      \strng{authorfullhashraw}{85068a9d3967226abeb21467c20e5386}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Accessed: (19/05/2025)}
+      \field{title}{Tracing Made Easy: A Beginner's Guide to Jaeger and Distributed Systems}
+      \field{year}{2024}
+      \verb{urlraw}
+      \verb https://openobserve.ai/blog/tracing-made-easy-a-beginners-guide-to-jaeger-and-distributed-systems/
+      \endverb
+      \verb{url}
+      \verb https://openobserve.ai/blog/tracing-made-easy-a-beginners-guide-to-jaeger-and-distributed-systems/
+      \endverb
+    \endentry
+    \entry{otel-in}{online}{}{}
+      \name{author}{1}{}{%
+        {{hash=9c17bef3be6c0feb9f7e5b99b097c6b7}{%
+           family={OpenTelemetry},
+           familyi={O\bibinitperiod}}}%
+      }
+      \strng{namehash}{9c17bef3be6c0feb9f7e5b99b097c6b7}
+      \strng{fullhash}{9c17bef3be6c0feb9f7e5b99b097c6b7}
+      \strng{fullhashraw}{9c17bef3be6c0feb9f7e5b99b097c6b7}
+      \strng{bibnamehash}{9c17bef3be6c0feb9f7e5b99b097c6b7}
+      \strng{authorbibnamehash}{9c17bef3be6c0feb9f7e5b99b097c6b7}
+      \strng{authornamehash}{9c17bef3be6c0feb9f7e5b99b097c6b7}
+      \strng{authorfullhash}{9c17bef3be6c0feb9f7e5b99b097c6b7}
+      \strng{authorfullhashraw}{9c17bef3be6c0feb9f7e5b99b097c6b7}
+      \field{extraname}{4}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Accessed: (19/05/2025)}
+      \field{title}{Instrumentation for OpenTelemetry Erlang/Elixir}
+      \field{year}{2025}
+      \verb{urlraw}
+      \verb https://opentelemetry.io/docs/languages/erlang/instrumentation/
+      \endverb
+      \verb{url}
+      \verb https://opentelemetry.io/docs/languages/erlang/instrumentation/
+      \endverb
+    \endentry
+    \entry{active-s}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=9c17bef3be6c0feb9f7e5b99b097c6b7}{%
+           family={OpenTelemetry},
+           familyi={O\bibinitperiod}}}%
+      }
+      \strng{namehash}{9c17bef3be6c0feb9f7e5b99b097c6b7}
+      \strng{fullhash}{9c17bef3be6c0feb9f7e5b99b097c6b7}
+      \strng{fullhashraw}{9c17bef3be6c0feb9f7e5b99b097c6b7}
+      \strng{bibnamehash}{9c17bef3be6c0feb9f7e5b99b097c6b7}
+      \strng{authorbibnamehash}{9c17bef3be6c0feb9f7e5b99b097c6b7}
+      \strng{authornamehash}{9c17bef3be6c0feb9f7e5b99b097c6b7}
+      \strng{authorfullhash}{9c17bef3be6c0feb9f7e5b99b097c6b7}
+      \strng{authorfullhashraw}{9c17bef3be6c0feb9f7e5b99b097c6b7}
+      \field{extraname}{5}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Accessed: (19/05/2025)}
+      \field{title}{Active spans, C++ Instrumentation}
+      \field{year}{2025}
+      \verb{urlraw}
+      \verb https://opentelemetry.io/docs/languages/cpp/instrumentation/
+      \endverb
+      \verb{url}
+      \verb https://opentelemetry.io/docs/languages/cpp/instrumentation/
+      \endverb
+    \endentry
+    \entry{dq-br}{report}{}{}
+      \name{author}{2}{}{%
+        {{hash=f9d144a5938f9bc76e849a8d4d33e8d9}{%
+           family={Thompson},
+           familyi={T\bibinitperiod},
+           given={Peter},
+           giveni={P\bibinitperiod}}}%
+        {{hash=122118cf8308e035728be113bfb13523}{%
+           family={Hernandez},
+           familyi={H\bibinitperiod},
+           given={Rudy},
+           giveni={R\bibinitperiod}}}%
+      }
+      \strng{namehash}{c90d77d06234249e2ed9d886cd586562}
+      \strng{fullhash}{c90d77d06234249e2ed9d886cd586562}
+      \strng{fullhashraw}{c90d77d06234249e2ed9d886cd586562}
+      \strng{bibnamehash}{c90d77d06234249e2ed9d886cd586562}
+      \strng{authorbibnamehash}{c90d77d06234249e2ed9d886cd586562}
+      \strng{authornamehash}{c90d77d06234249e2ed9d886cd586562}
+      \strng{authorfullhash}{c90d77d06234249e2ed9d886cd586562}
+      \strng{authorfullhashraw}{c90d77d06234249e2ed9d886cd586562}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{9}
+      \field{number}{MSU-CSE-06-2}
+      \field{title}{Quality Attenuation Measurement Architecture and Requirements}
+      \field{type}{techreport}
+      \field{year}{2020}
+      \verb{urlraw}
+      \verb https://www.broadband-forum.org/pdfs/tr-452.1-1-0-0.pdf
+      \endverb
+      \verb{url}
+      \verb https://www.broadband-forum.org/pdfs/tr-452.1-1-0-0.pdf
+      \endverb
+    \endentry
+    \entry{fftw3}{online}{}{}
+      \name{author}{1}{}{%
+        {{hash=c91bdfd4de5d2ed142377c34b92e83c2}{%
+           family={FFTW3},
+           familyi={F\bibinitperiod}}}%
+      }
+      \strng{namehash}{c91bdfd4de5d2ed142377c34b92e83c2}
+      \strng{fullhash}{c91bdfd4de5d2ed142377c34b92e83c2}
+      \strng{fullhashraw}{c91bdfd4de5d2ed142377c34b92e83c2}
+      \strng{bibnamehash}{c91bdfd4de5d2ed142377c34b92e83c2}
+      \strng{authorbibnamehash}{c91bdfd4de5d2ed142377c34b92e83c2}
+      \strng{authornamehash}{c91bdfd4de5d2ed142377c34b92e83c2}
+      \strng{authorfullhash}{c91bdfd4de5d2ed142377c34b92e83c2}
+      \strng{authorfullhashraw}{c91bdfd4de5d2ed142377c34b92e83c2}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Accessed: (19/05/2025)}
+      \field{title}{Fastest Fourier Transform in The West}
+      \field{year}{2025}
+      \verb{urlraw}
+      \verb https://www.fftw.org/
+      \endverb
+      \verb{url}
+      \verb https://www.fftw.org/
+      \endverb
+    \endentry
+    \entry{antlr4}{online}{}{}
+      \name{author}{1}{}{%
+        {{hash=1b665da45dc9aa260864b6047bfea42e}{%
+           family={ANTLR},
+           familyi={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{1b665da45dc9aa260864b6047bfea42e}
+      \strng{fullhash}{1b665da45dc9aa260864b6047bfea42e}
+      \strng{fullhashraw}{1b665da45dc9aa260864b6047bfea42e}
+      \strng{bibnamehash}{1b665da45dc9aa260864b6047bfea42e}
+      \strng{authorbibnamehash}{1b665da45dc9aa260864b6047bfea42e}
+      \strng{authornamehash}{1b665da45dc9aa260864b6047bfea42e}
+      \strng{authorfullhash}{1b665da45dc9aa260864b6047bfea42e}
+      \strng{authorfullhashraw}{1b665da45dc9aa260864b6047bfea42e}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Accessed: (19/05/2025)}
+      \field{title}{What is ANTLR4?}
+      \field{year}{2025}
+      \verb{urlraw}
+      \verb https://www.antlr.org/
+      \endverb
+      \verb{url}
+      \verb https://www.antlr.org/
+      \endverb
+    \endentry
+    \entry{antlr}{inproceedings}{}{}
+      \name{author}{2}{}{%
+        {{hash=c47f872d41a4441186be0d66723a9e57}{%
+           family={Parr},
+           familyi={P\bibinitperiod},
+           given={Terence},
+           giveni={T\bibinitperiod}}}%
+        {{hash=da1b19e5d5688323cf6dc713732ac4fb}{%
+           family={Fisher},
+           familyi={F\bibinitperiod},
+           given={Kathleen},
+           giveni={K\bibinitperiod}}}%
+      }
+      \name{editor}{2}{}{%
+        {{hash=4f0b503de00df0cfb4a959b9e26b7cad}{%
+           family={Hall},
+           familyi={H\bibinitperiod},
+           given={Mary\bibnamedelima W.},
+           giveni={M\bibinitperiod\bibinitdelim W\bibinitperiod}}}%
+        {{hash=59ceb38b7f10bd245ebb24132e2899b9}{%
+           family={Padua},
+           familyi={P\bibinitperiod},
+           given={David\bibnamedelima A.},
+           giveni={D\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {ACM}%
+      }
+      \strng{namehash}{686e4943d949b6765bcd8abbabf08e09}
+      \strng{fullhash}{686e4943d949b6765bcd8abbabf08e09}
+      \strng{fullhashraw}{686e4943d949b6765bcd8abbabf08e09}
+      \strng{bibnamehash}{686e4943d949b6765bcd8abbabf08e09}
+      \strng{authorbibnamehash}{686e4943d949b6765bcd8abbabf08e09}
+      \strng{authornamehash}{686e4943d949b6765bcd8abbabf08e09}
+      \strng{authorfullhash}{686e4943d949b6765bcd8abbabf08e09}
+      \strng{authorfullhashraw}{686e4943d949b6765bcd8abbabf08e09}
+      \strng{editorbibnamehash}{5631d18b62cc5e9ff492dce79c393f5a}
+      \strng{editornamehash}{5631d18b62cc5e9ff492dce79c393f5a}
+      \strng{editorfullhash}{5631d18b62cc5e9ff492dce79c393f5a}
+      \strng{editorfullhashraw}{5631d18b62cc5e9ff492dce79c393f5a}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Proceedings of the 32nd {ACM} {SIGPLAN} Conference on Programming Language Design and Implementation, {PLDI} 2011, San Jose, CA, USA, June 4-8, 2011}
+      \field{title}{LL(*): the foundation of the {ANTLR} parser generator}
+      \field{year}{2011}
+      \field{pages}{425\bibrangedash 436}
+      \range{pages}{12}
+      \verb{doi}
+      \verb 10.1145/1993498.1993548
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1145/1993498.1993548
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1145/1993498.1993548
+      \endverb
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+

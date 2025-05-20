@@ -1,15 +1,25 @@
 \section{An overview of $\Delta$QSD}
-    $\Delta$QSD is a metrics-based, quality-centric paradigm that uses formalised outcome diagrams to explore the performance consequences of design decisions.
+    $\Delta$QSD is a metrics-based, quality-centric paradigm that uses formalised outcome diagrams to explore the performance consequences of design decisions. \cite{myo}
+    
+    Key concepts of $\Delta$QSD are \textbf{quality attenuation ($\Delta$Q)} and \textbf{outcome diagram}
 
     Outcome diagrams capture observational properties of the system. The $\Delta$QSD paradigm derives bounds on performance expressed as probability distribution, encompassing all possible executions of the system. 
  
-    The following sections are a summary of multiple articles and presentation formalizing the paradigm.
- 
+    The following sections are a summary of multiple articles and presentation formalizing the paradigm. \cite{myo} \cite{dq-tut} \cite{art} \cite{dq-br} 
+     
  \subsection{Outcome}
-        An outcome $O$ is a specific system behaviour with a start event $s$ and end event $e$, formally, what the system obtains by performing one of its tasks. One task corresponds to one outcome and viceversa. When an outcome is performed, it means that the task of an outcome is performed.
+    Assume a component $C$ which receives a message $m_{in}$ and outputs a message $m_{out}$ after a delay $d$. Over multiple executions, we will have observed multiple delays which can be represented as a cumulative definition where $p$ percent of delays have delay $\le d$. \cite{art} Each outcome has a $\Delta$Q.
 
-    The distinct set of starting and terminating events is called the observables. Once an observable from the starting set occurs, there is no guarantee that a corresponding event in the terminating set will occur within the duration limit (required time to complete). An observable is \textit{done}  when it occurs during the time limit.
+        An outcome $O$ is a specific system behaviour that can be observed to start at some point in time and \textit{\textbf{may}} be observed to complete at some later time. \cite{dq-br}
+        Formally, what the system obtains by performing one of its tasks. One task corresponds to one outcome and viceversa. When an outcome is performed, it means that the task of an outcome is performed.
     
+    \paragraph{Observables}
+    Each outcome has two starting sets of events: the starting sets and the ending sets. Such sets are called the \textit{observables}. Once an event from the starting set occurs, there is no guarantee that a corresponding event in the terminating set will occur within the duration limit (required time to complete). An observable is \textit{done}  when it occurs during the time limit.
+
+    \paragraph{Outcome instance}
+    Given a starting event $e_{in}$ and an end event $e_{out}$, an \textit{outcome instance} is what the system gains within ($e_{in}, e_{out}$). 
+
+    \paragraph{Representation}
     Outcome are represented as circles, with the starting and terminating set of events being represented by boxes.
     \begin{figure}[H]
         \begin{center}
@@ -19,11 +29,15 @@
     \end{figure}
 
 \subsection{Quality attenuation ($\Delta$Q)}
-        In an ideal system, an outcome would deliver a desidered behaviour without error, failure, delay, but this is not the case. The quality of an outcome response "attenuated to the relative ideal" is called "quality attenuation" ($\Delta$Q). Since it can depend on many factors (geographical, physical \dots), $\Delta$Q is modeled as a random variable.
+        $\Delta$Q is a cumulative distribution function that defines both latency and failure probability between a start and end event \cite{dq-tut}
 
-    As $\Delta$Q captures deviation from ideal behavior, and incorporates delay, which is a continuous random variable, and failures/timeouts, which are discrete variables, it can be described mathematically as an \textit{Improper Random Variable}, where the probability of a delay $<$ 1.
+        In an ideal system, an outcome would deliver a desidered behaviour without error, failure, delay, but this is not the case. The quality of an outcome response "attenuated to the relative ideal" (the cumulative distribution function) is called "quality attenuation" ($\Delta$Q). Since it can depend on many factors (geographical, physical \dots), $\Delta$Q is modeled as a random variable.
 
-    $\Delta$Q(x) will be the probability that an outcome $O$ will occur in time $t \le x$. The \textbf{\textit{intangible mass}} $1 - \lim_{x\to\infty}\Delta Q(x)$ of a $\Delta$Q will encode the probability of failure/timeout/exception.
+    As $\Delta$Q captures deviation from ideal behavior, and incorporates delay, which is a continuous random variable, and failures/timeouts, which are discrete variables, it can be described mathematically as an \textit{Improper Random Variable}, where the probability of a delay $<$ 1. Combining latency and failure together makes it easy to examine the tradeoffs between them.
+
+    $\Delta$Q(x) will be the probability that an outcome $O$ will occur in time $t \le x$.
+
+    The \textbf{\textit{intangible mass}} $1 - \lim_{x\to\infty}\Delta Q(x)$ of a $\Delta$Q will encode the probability of failure/timeout/exception occuring.
     
     \begin{figure}[H]
         \begin{center}
@@ -31,14 +45,23 @@
         \end{center}
         \caption{Intangible mass (red) of a $\Delta$Q, the observable had a failure rate of about 5\% }
     \end{figure}
-    
+   
+  \subsection{Failure semantics}
+        Quality attenuation models both delay and failure. In the CDF representation of a $\Delta$Q, there is an \textit{f} percent probability that the delay is infinite, this is what failure models. 
+
+        Concretely, it means that an input message $m_{in}$ has no output message $m_{out}$.
+
+        Combining delay and failure in a single quantity is what makes $\Delta$QSD a great choice to explore feasibility in system design.
+   
     \subsection{Partial ordering}
         A CDF of a $\Delta$Q is \textit{less than} the other if its CDF is everywhere to the left and above the other. Mathematically, it is a partial order. 
         
-        If two $\Delta$Qs instersect, they are not ordered.
+        If two $\Delta$Qs intersect, they are not ordered.
 
     \subsection{Timeliness}
-        Timeliness is defined as a relation between an observed $\Delta Q_{obs}$ and a required $\Delta Q_{req}$. Timeliness is delivering results within required time bounds (sufficiently often).
+        Timeliness is defined as a relation between an observed $\Delta Q_{obs}$ and a required $\Delta Q_{req}$. Timeliness is delivering results within required time bounds (sufficiently often). 
+
+        A system \textit{satisfies timeliness} if $\Delta$Q$_{obs}$ $\le$ $\Delta$Q$_{req}$.
      
     \subsection{QTA, required $\Delta$Q}
          The Quantitative Timeliness Agreement maps objective measurements to the subjective perception of application performance [cite]. It specifies what the base system does and its limits
@@ -54,16 +77,13 @@
             \end{center}
             \caption{The system in blue is showing slack and satisfies the requirement, the system in orange is showing signs that it cannot handle the stress, it is not respecting the $\Delta$Q$_{req}$}.
         \end{figure}
-         %[cite algebraic]
-         % https://wiki.broadband-forum.org/display/RESOURCES/Broadband+Forum+Published+Resources#tf-filters=%7B%22selectfilters%22%3A%5B%5D%2C%22userfilters%22%3A%5B%22Number%22%5D%2C%22numberfilters%22%3A%5B%5D%2C%22datefilters%22%3A%5B%5D%2C%22globalfilter%22%3Atrue%2C%22columnhider%22%3Afalse%2C%22iconfilters%22%3A%5B%5D%2C%22defaults%22%3A%5B%22TR-452.1%22%2C%22%22%5D%2C%22width%22%3A%5B%22150%22%2C%22150%22%5D%2C%22inverse%22%3A%5Bfalse%2Cfalse%5D%2C%22order%22%3A%5B0%2C1%5D%2C%22ddSeparator%22%3A%5B%5D%2C%22ddOperator%22%3A%5B%5D%2C%22sorts%22%3A%5B%22Date%20%E2%87%A9%22%5D%7D
-
 
     \subsection{Outcome diagram}
-        An outcome diagram captures the causal relationships between the outcomes, each outcome diagram can be presented algebraically with an outcome expression. It allows computing the $\Delta$Q for the whole system.
+        An outcome diagram captures the causal relationships between the outcomes, each outcome diagram can be presented algebraically with an outcome expression. It allows computing the $\Delta$Q for the whole system. The outcome diagram should capture the essential observational properties of a system.
         There are four different ways to represent the relationships between outcomes.
 
     \subsubsection{Sequential composition}
-        If we assume two outcomes $O_A$, $O_B$ where end event of $O_A$ is the start event of $O_B$, the probability distribution of $O_A$ and $O_B$ is given by the convolution of the PDFs of $O_A$ and $O_B$.
+        If we assume two outcomes $O_A$, $O_B$ where end event of $O_A$ is the start event of $O_B$, the $\Delta$Q of $O_A$ and $O_B$ is given by the convolution of the PDFs of $O_A$ and $O_B$.
         Where convolution ($\circledast$) between two PDF is :
         \begin{equation}
             PDF_{AB}(t) =\int\limits_0^t PDF_A(\delta) \cdot PDF_B(t-\delta)d\delta 
@@ -79,17 +99,59 @@
     \subsubsection{First to finish}
             If we assume two independent outcomes $O_A$, $O_B$ with the same start event, first-to-finish occurs when at least one end event occurs, it can be calculated as:
         \begin{equation}
-            \Delta Q_{FTF(A, B)} = \Delta Q_A + \Delta Q_B - \Delta Q_A \cdot \Delta Q_B  
-            \label{eq:ftf}
+            \begin{split}
+                \Delta Q_{FTF(A, B)} &= Pr[d_A > t \wedge d_B > t] \\
+                & = Pr[d_A > t] \cdot Pr[d_B > t] = (1 - \Delta Q_A) \cdot (1 - \Delta Q_B) \\
+                \Delta Q_{FTF(A, B)} &= \Delta Q_A + \Delta Q_B - \Delta Q_A \cdot \Delta Q_B  
+            \end{split}    
+            \label{eq:ftf} 
         \end{equation}
-            
+
+       \begin{figure}[H]
+            \centering
+            \begin{subfigure}{.5\textwidth}
+                \centering
+                \includegraphics[scale = 0.7]{tikz/ftf_1.pdf}
+                \label{fig:sub1}
+            \end{subfigure}%
+            \begin{subfigure}{.5\textwidth}
+                \centering
+                \includegraphics[scale = 0.7]{tikz/ftf_2.pdf}
+                \label{fig:sub2}
+            \end{subfigure}
+            \caption{Left: Two $\Delta$Qs, A and B. Right: The result of the all to finish operator applied on A and B}%
+            \label{fig:test}
+            \end{figure}
+
+
     \subsubsection{All to finish}
         If we assume two independent outcomes $O_A$, $O_B$ with the same start event, all-to-finish occurs when both end events occur, it can be calculated as:
         \begin{equation}
-            \Delta Q_{ATF(A, B)} = \Delta Q_A \cdot \Delta Q_B 
+            \begin{split}
+                \Delta Q_{ATF(A, B)} &= Pr[d_A \le t \wedge d_B \le t] \\
+                & = Pr[d_A \le t] \cdot Pr[d_B \le t] = \Delta Q_A \cdot \Delta Q_B \\
+                \Delta Q_{ATF(A, B)} &= \Delta Q_A \cdot \Delta Q_B 
+            \end{split}
             \label{eq:atf}
         \end{equation}
-        \subsubsection{Probabilistic choice}
+        
+        \begin{figure}[H]
+            \centering
+            \begin{subfigure}{.5\textwidth}
+                \centering
+                \includegraphics[scale = 0.7]{tikz/atf_1.pdf}
+                \label{fig:sub1}
+            \end{subfigure}%
+            \begin{subfigure}{.5\textwidth}
+                \centering
+                \includegraphics[scale = 0.7]{tikz/atf_2.pdf}
+                \label{fig:sub2}
+            \end{subfigure}
+            \caption{Left: Two $\Delta$Qs, A and B. Right: The result of the all to finish operator applied on A and B}%
+            \label{fig:test}
+            \end{figure}
+
+    \subsubsection{Probabilistic choice}
         If we assume two possible outcomes $O_A$ and $O_B$ and exactly one outcome is chosen during each occurence of a start event and:
         \begin{itemize}
             \item $O_A$ happens with probability $\dfrac{p}{p+q}$
@@ -107,12 +169,14 @@
         \caption{The possible relationships in an outcome diagram: Sequential composition, probabilistic choice, first-to-finish, all-to-finish}
     \end{figure}
     First-to-finish, All-to-finish and probabilistic-choice are calculated on the CDF of the $\Delta$Q.
-    \subsection{Independence hypothesis}
-        
+    
+    These outcome expressions can be assembled together to create an outcome diagram, later on, we will see how one can put translate the graphical representation to outcome diagrams which can be used in the $\Delta$Q oscilloscope.
+    
+    \subsection{Independence hypothesis}    
         Assume two sequentially composed outcomes $o_1$, $o_2$ running on the same processor. A probe $p$ observing the execution from the start event of $o_1$ to the end event of $o_2$. 
         \begin{figure}[H]
             \begin{center}
-                \includegraphics[scale=1.6]{tikz/indep.pdf}
+                \includegraphics[scale=1.2]{tikz/indep.pdf}
             \end{center}
         \end{figure}
         
@@ -121,7 +185,7 @@
         When load increases, the two components will start to show dependent behaviour due to the processor utilisation increasing, the observed $\Delta$Q will then deviate from what is calculated.
         \begin{figure}[H]
             \begin{center}
-                \includegraphics[scale=1.1]{tikz/cdf_indep.pdf}
+                \includegraphics[scale=1]{tikz/cdf_indep.pdf}
             \end{center}
             \caption{When the components are independent, what is observed (blue) and calculated (red) can be superposed, whilst when $o_1$ and $o_2$ show initial signs of dependency, what is observed (green) can be seen deviating from the calculated $\Delta$Q.}
         \end{figure}

@@ -3,7 +3,7 @@
 
     To tackle these problems, PNSol Ltd. developed the $\Delta$QSD paradigm a novel metrics-based and quality-centric paradigm that uses formalised outcome diagrams to explore the performance consequences of design decisions, as a performance blueprint of the system. PNSol Ltd. analyses the behaviour of existing systems using $\Delta$QSD, but the technology only works a posteriori, there is no way yet to analyse a system’s behaviour in real time. 
 
-    To advance the usage of $\Delta$QSD in distributed projects, we developed the $\Delta$Q oscilloscope, a dashboard to observe a running Erlang system in real time. The oscilloscope works by communicating to a stub which is attached to an Erlang system, the "system under test", which sends outcome instances to the oscilloscope. 
+    To advance the usage of $\Delta$QSD in distributed projects, we developed the $\Delta$Q oscilloscope, a dashboard to observe a running Erlang system in real time. The oscilloscope works by communicating to a stub which is attached to an Erlang system, the system under test, which sends outcome instances to the oscilloscope. 
 
 In order to use the $\Delta$Q Oscilloscope, the first step is to determine the system's outcome diagram. The system's outcome diagram is a directed graph that shows the causal relationships between the system's internal operations (called outcomes) and its overall inputs and outputs. Each outcome corresponds to a system component. It has a start event and stop event, when the component is called and when it returns.
 

@@ -1,6 +1,0 @@
-\begin{MintedVerbatim}[commandchars=\\\{\}]
-probe = ...;
-probe2 = ...;
-system = ...;
-probe3 = ...;
-\end{MintedVerbatim}

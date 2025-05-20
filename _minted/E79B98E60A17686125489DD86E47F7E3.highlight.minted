@@ -1,3 +1,0 @@
-\begin{MintedVerbatim}[commandchars=\\\{\}]
-probe3 = s:probe \PYGZhy{}\PYGZgt{} s:probe2;
-\end{MintedVerbatim}

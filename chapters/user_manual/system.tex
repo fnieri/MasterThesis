@@ -1,5 +1,4 @@
-\section{Defining the outcome diagram}
-    To use the oscilloscope, you first have to launch the application, once opened, you will have a space on the right to define the outcome diagram. 
+\section{Sidebar: Outcome diagram and plots}
 
     \subsection{Creating the system}
 
@@ -16,35 +15,26 @@
 
     The button \textbf{Load system to} gives you the possibility to load the textual definition of the outcome diagram you may have previously saved to a file, as for saving, you can load any file extension.
 
-\section{Managing the plots} 
+    
+    \begin{figure}[H]
+        \begin{center}
+            \includegraphics[width = \textwidth]{img/save_system.png}
+        \end{center}
+    \end{figure}
+        
+\subsection{Managing the plots} 
     Once you have your system defined you can start adding plots of the $\Delta$Qs of the probes you inserted in your system.
     
-    \subsection{Adding a plot}
+    \subsubsection{Adding a plot}
 
     Multiple probes can be added at once in your plot, you can select the probes you want to add to a new plot by selecting them in the \textbf{"Add a new plot"} section. Then by clicking the \textbf{"Add plot"} button, the selected probes will be added to the plot.
 
-\subsection{Editing a plot}
+\subsubsection{Editing a plot}
     You can remove the probes you have added to the plot by first clicking to it, this sets the plot as the \textbf{selected plot}. Once you have clicked the plot, a section will pop up beneath the rest of the controls on the sidebar. 
     
     In the section there are two subsections, one which shows the selected components which form the plot (those you have added previously), and the available components. You can select the probes you want to remove in the \textbf{"selected components"} zone, by clicking \textbf{"Remove selected components"} the components will be removed from the plot. Inversely, in the \textbf{"Available components"} section, you can select the plots you want to add, and by clicking \textbf{"Add selected components"} you can add the selected components to the selected plot.
 
 \subsection{Removing a plot}
-    By left clicking the plot, a popup appears, you can click \textbf{"Remove plot"}, this removes it from the selected plot.
-
-\section{Setting a QTA}
-    You can set a QTA in the \textbf{"Set a QTA"} section, there you are presented with the possibility to:
-    \begin{itemize}
-        \item Select the probe for which you want to set the QTA.
-        \item Set the QTA at the three percentiles (25\%, 50\%, 75\%), the text to the left indicates which percentile is which. You need to set the delay in seconds.
-        \item The minimum amount of successful events you can allow, which is bigger than 75\%.
-    \end{itemize}
-    Of course, for the delay of the QTA at three percentiles, the delay at the percentile must be higher or equal than the delay at the previous percentile and higher than 0.
-
-\section{Setting the parameters of a probe}
-    You can set the parameters for a probe in its section.
-    To the left you can select the probe you want to set the parameter for. 
-    We provide a slider (which goes from -10 to 10) for the $n$ parameters, to the right of the slider, you can select the number of bins for the probe. The maximum delay calculated will be shown below.
-
-    Once you press \textbf{"Save delay"}, a message to the erlang wrapper will be sent, which will set the maximum delay you have set in the wrapper.
+    By left-clicking the plot, a popup appears, you can click \textbf{"Remove plot"}, this removes it from the selected plot.
 
 

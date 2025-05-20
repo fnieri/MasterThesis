@@ -82,16 +82,40 @@ with_span/2: -spec with_span(binary(), map(), fun(() -> any())) -> any().
         The process is able to receive one and only message, if the execution times out and subsequently the span is ended, the oscilloscope will not be notified as the process is defunct. This is assured by Erlang documentation: \\
         \textit{If the message signal was sent using a process alias that is no longer active, the message signal will be dropped}. %https://www.erlang.org/doc/system/ref_man_processes#sync-comm
 
-    \subsection{Handling sample spans}
-        To create custom spans we must obtain three important informations:
+    \subsection{Handling outcome instances}
+        To create custom spans of the outcome instances we must obtain three important informations:
         \begin{itemize}
             \item The name of the observed outcome or probe
             \item The time when the span was started
             \item The $dMax$ of the observed
         \end{itemize}
         
-        They are all supplied upon starting a span with \texttt{otel\_wrapper:[start\_span, with\_span]}. The custom span is created only if two conditions are met: the wrapper has been set as active and the user set a timeout for the name of the observable, the functions will spawn a \texttt{span\_process} process, passing along all the necessary informations. \\
+        They are all supplied upon starting a span with \texttt{otel\_wrapper:[start\_span, with\_span]} by calling 
+        
+        \begin{minted}{erlang}
+        StartTime = erlang:system_time(nanosecond),
+        \end{minted}
+
+            The custom span is created only if two conditions are met: the wrapper has been set as active and the user set a timeout for the name of the observable, the functions will spawn a \texttt{span\_process} process, passing along all the necessary informations. \\
         Once the span is subsequently ended/timed out/failed, the function \texttt{send\_span} creates a message carrying all the informations and sends it to the C++ server. The formatting of the messages is the following:
-        \begin{minted}{bash}
+        \begin{minted}{text}
             n:Observed name, b: Start time (beginning), e: End time (if end_span was received), s: The status
         \end{minted}
+
+    \subsection{TCP connection}
+        The wrapper is composed of two \texttt{gen\_server} which handle communication to and from the oscilloscope. This gen\_server behaviour allows the wrapper to send spans asynchronously to the oscilloscope.
+
+        \subsubsection{TCP server}
+            The TCP server listens by default on localhost at port 8081, the user can define a port and ip to listen at.
+
+            The oscilloscope can send commands to the stub, these commands are:
+            \begin{itemize}
+                \item \texttt{start\_stub}: This command sets the stub as active, it can now send spans to the oscilloscope if the items are defined.
+                \item \texttt{stop\_stub}: This commands sets the stub as inactive, it will no longer send spans to the oscilloscope
+                \item \texttt{set\_timeout;probeName;timeout}: This command indicates to the stub to set the $dMax$ for a probe to timeOut, a limit of the stub is that erlang:send\_after does not accept floats as timeouts, so the timeout will be rounded to the nearest integer
+            \end{itemize}
+
+        \subsubsection{TCP client}
+            The TCP client allows the stub to send the spans to the oscilloscope, by default the oscilloscope is on localhost:8080, but that can be changed by the user.
+
+            The client connects over TCP to the oscilloscope and opens a socket where it can send the spans.
