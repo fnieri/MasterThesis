@@ -705,6 +705,36 @@
       \verb https://doi.org/10.1145/1993498.1993548
       \endverb
     \endentry
+    \entry{ctx}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=9a30d9e0e65cd68ed533d5305f8cd1a7}{%
+           family={Sloughter},
+           familyi={S\bibinitperiod},
+           given={Tristan},
+           giveni={T\bibinitperiod}}}%
+      }
+      \strng{namehash}{9a30d9e0e65cd68ed533d5305f8cd1a7}
+      \strng{fullhash}{9a30d9e0e65cd68ed533d5305f8cd1a7}
+      \strng{fullhashraw}{9a30d9e0e65cd68ed533d5305f8cd1a7}
+      \strng{bibnamehash}{9a30d9e0e65cd68ed533d5305f8cd1a7}
+      \strng{authorbibnamehash}{9a30d9e0e65cd68ed533d5305f8cd1a7}
+      \strng{authornamehash}{9a30d9e0e65cd68ed533d5305f8cd1a7}
+      \strng{authorfullhash}{9a30d9e0e65cd68ed533d5305f8cd1a7}
+      \strng{authorfullhashraw}{9a30d9e0e65cd68ed533d5305f8cd1a7}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Accessed: (21/05/2025)}
+      \field{title}{ctx}
+      \field{year}{2023}
+      \verb{urlraw}
+      \verb https://github.com/tsloughter/ctx
+      \endverb
+      \verb{url}
+      \verb https://github.com/tsloughter/ctx
+      \endverb
+    \endentry
   \enddatalist
 \endrefsection
 \endinput

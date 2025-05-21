@@ -38,6 +38,7 @@
             {ProbeCtx, Pid} = dqsd_otel:start_span(<<"probe">>, #{attributes => [{attr, <<"my_attr_5o5s10">>}]}),
         \end{minted}
         This will give you the OpenTelemetry context of the probe and the Pid of the process to call upon end. It is left up to you to decide how to carry both in the execution.
+        The function calls OpenTelemetry \texttt{?start\_span} macro, effectively replacing it.
 
     \subsection{Ending spans}
         To end spans you need to call:
@@ -45,6 +46,7 @@
             dqsd_otel:end_span(ProbeCtx, ProbePid)
         \end{minted}
         This will end the span on the OpenTelemetry side and end the outcome instance if it hasn't timedout
+        The function calls OpenTelemetry \texttt{?end\_span} macro, effectively replacing it.
 
     \subsection{Failing outcome instances}
         To fail \textbf{custom} spans you need to call:

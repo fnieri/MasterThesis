@@ -24,9 +24,10 @@ The following project is the beginning of the $\Delta$Q oscilloscope, our initia
             
                 \item \textbf{Better communication between stub - server - oscilloscope}. The current way of sending outcome instances may be a limiting factor under high load, if hundred of thousands of spans were to be sent, the current way the server and oscilloscope are tied together may throttle communications. TCP socket connections could quickly become the chokepoint which makes the oscilloscope temporarily unusable.
 
-            Future improvements on the server side could implement epoll system server calls to make the server more efficient; \textbf{Detaching server from client}, as of right now, the oscilloscope and the server are tied together, using ZeroMQ to assure real time server-client communications.
+            Future improvements on the server side could implement epoll system server calls to make the server more efficient; \textbf{Detaching server from client}, as of right now, the oscilloscope and the server are tied together, using ZeroMQ to assure real time server-client communications could be an interesting solution to explore.
 
                 \item \textbf{Improve real time graphs}. The class QtCharts does not perform correctly with high frequencies update. Moreover, since we are plotting multiple series (from a minimum 4 to a maximum of 9) per probe, which allows up to 1000 bins per probe, the performance quickly degrades with more probes being displayed. A better graphing class for Qt could definitely improve the experience.
+
                 \item \textbf{Saving probe parameters}: As of writing this thesis, there is no way to save the parameters one may have set. 
            \end{itemize} 
             
