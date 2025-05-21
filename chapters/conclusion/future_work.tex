@@ -1,0 +1,26 @@
+    The following project is the beginning of the $\Delta$Q oscilloscope, our initial goal was to create an application to observe running distributed applications, namely, Erlang ones.
+    This was successfully done thanks to the following feats:
+    \begin{itemize}
+        \item The graphical dashboard for the $\Delta$Q oscilloscope, built in C++, which allows real time display of $\Delta$Qs for the probes inserted in the system.
+        \item Fast convolution algorithms to perform statistical analysis on probes.
+        \item The creation of a textual syntax to create outcome diagrams.
+        \item The \texttt{dqsd\_otel} Erlang wrapper to connect an OpenTelemetry instrumented Erlang app to the oscilloscope.
+    \end{itemize}
+    The user has full control over the system and can update it dynamically to add or remove probes, this allows full control of what the user decides to include, allowing a finer grained outcome diagram or a more general view of the system.  
+
+    The oscilloscope and the Erlang can communicate via TCP socket connections to exchange outcome instances and probe parameters,
+
+    we showed how it can be useful in detecting early signs of overload many crucial features are still missing from the dashboard and it could be made less encumbrant in the Erlang side. 
+
+    \section{Future improvement}
+        We believe the oscilloscope and the Erlang application can be drastically improved, the size of the project and its intended goal is too big to be encompassed in a single master thesis. We list here some improvements which could be made to both the oscilloscope and the wrapper.
+        
+        \begin{itemize}
+            \item The oscilloscope could be turned into a \textbf{web app}, we feel that a C++ oscilloscope is a good prototype and proof of concept, but its usability would be greater in a browser context.
+            \item As suggested by Bryan Naegele, a member of the observability group of Erlang, the wrapper, instead of working on top of OpenTelemetry, could be directly included inside the context of a span by using the ctx library \cite{ctx}, which provides deadlines for contexts, propagating the value in otel\_ctx, making it available to the OpenTelemetry span processor. Leveraging \texttt{erlang:send\_after} as we already do, we could create outcome instances with telemetry events to handle successful executions and timeouts. The span processor will then be responsible for creating outcome instances, without creating the need for custom functions in the wrapper, like we have now.
+            \item A wider selection of \textbf{triggers}, as of writing this thesis, only the QTA trigger is available, this is a limitation due to time constraints. Nevertheless, triggers can be easily implemented in the available codebase.
+            \item \textbf{Better communication between stub - server - oscilloscope}. The current way of sending outcome instances may be a limiting factor under high load, if hundred of thousands of spans were to be sent, the current way the server and oscilloscope are tied together may throttle communications. TCP socket connections could quickly become the chokepoint which makes the oscilloscope temporarily unusable.
+
+            Future improvements on the server side could implement epoll system server calls to make the server more efficient; \textbf{Detaching server from client}, as of right now, the oscilloscope and the server are tied together, using ZeroMQ to assure real time server-client communications.
+            \item \textbf{Improve real time graphs}. The class QtCharts does not perform correctly with high frequencies update. Moreover, since we are plotting multiple series (from a minimum 4 to a maximum of 9) per probe, which allows up to 1000 bins per probe, the performance quickly degrades with more probes being displayed.
+        \end{itemize}

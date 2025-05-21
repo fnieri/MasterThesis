@@ -1,7 +1,7 @@
 \section{M/M/1/K queue}
     We devised a simple Erlang system that can act as a simple M/M/1/K.
 
-        The system has two components \texttt{worker\_1}, \texttt{worker\_2}, the components are made of a buffer queue of size $K$ and a worker process.
+    The system has two components \texttt{worker\_1}, \texttt{worker\_2}, the components are made of a buffer queue of size $K$ and a worker process.
     
     The system sends $n$ messages per second following a Poisson distribution to \texttt{worker\_1}'s queue, the queue then reduces its available buffer size. \\
     
@@ -17,4 +17,49 @@
         \caption{Outcome diagram of the M/M/1/K queue}
     \end{figure}
 
-    At low load, we can observe how worker\_1 and worker\_2 mean $\Delta$Qs overlap and the same can be said for 
+    \subsection{Determining parameters dynamically}
+        We stated previously that determining parameters is something that must be done with an underlying knowledge of the system. The oscilloscope can provide knowledge of the system, here is an example of worker\_1 and worker\_2 as observed in the oscilloscope.
+
+        Imagine the engineer supposes the workers executions should take around 6.5 ms to complete. The engineer, after having set the required parameters observes in the following graph in the oscilloscope.
+
+        \begin{figure}[H]
+            \begin{center}
+                \includegraphics[scale=0.6]{img/w1w2.png}
+            \end{center}
+        \end{figure}
+    The oscilloscope shows the engineer that their assumptions do not correspond to the actual system $\Delta$Q, the user can then modify the parameters to observe the actual system's behaviour. By setting $dmax$ to 25 ms, he can observe the worker's $\Delta$Qs approaching 1.
+        \begin{figure}[H]
+            \begin{center}
+                \includegraphics[scale=0.6]{img/w1w2hb.png}
+            \end{center}
+        \end{figure}
+
+    On the other hand, the engineer's assumption could have been what he actually expected from the system, in this case, the oscilloscope tells him that the system is not behaving as expected.
+
+    \paragraph{Low Load}
+
+    At low load, we can observe in the oscilloscope how worker\_1 and worker\_2 mean $\Delta$Qs overlap. This is expected, even under overload or dependency conditions, worker\_1 and worker\_2 should have the same $\Delta$Qs.
+    \begin{figure}[H]
+        \begin{center}
+            \includegraphics[scale=0.6]{img/superp21.png}
+        \end{center}
+        \caption{worker\_1 (blue) and worker\_2 (purple) $\Delta$Q plots as shown in the oscilloscope}
+    \end{figure}
+
+If the system is not showing dependent behaviour, the probe \textbf{observed $\Delta$Q} and \textbf{calculated $\Delta$Q} should overlap. We can observe that in the graph below, as the mean CDF of both $\Delta$Qs overlap.
+
+    \begin{figure}[H]
+        \begin{center}
+            \includegraphics[scale=0.6]{img/superp22.png}
+        \end{center}
+        \caption{probe $\Delta$Q plots as shown in the oscilloscope}
+    \end{figure}
+
+    \paragraph{Early signs of overload}
+    
+    Once the system is approaching overload, we can see the two means starting to diverge. As shown in a previous chapter, the observed (1) $\Delta$Q of the probe is below the calculated (2) $\Delta$Q. (explain better) 
+    \begin{figure}[H]
+        \begin{center}
+            \includegraphics[scale=0.6]{img/diverging11.png}
+        \end{center}
+    \end{figure}

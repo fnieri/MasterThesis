@@ -1,0 +1,57 @@
+\section{Instrumenting the Erlang application}
+    \subsection{Including the wrapper}
+
+    The Erlang project you need to instrument needs to include the wrapper in its dependencies, to do that, you need to include it in your dependencies.
+
+    \begin{minted}{text}
+        %your_app.app.src
+    {application, otel_getting_started, [
+        ...
+        {applications, [
+            kernel,
+            stdlib,
+            opentelemetry,
+            opentelemetry_api,
+        opentelemetry_exporter,
+        dqsd_otel
+        ]},
+        ...
+        ]}.
+    \end{minted}
+
+    \begin{minted}{text}
+    {deps, [
+    {opentelemetry, "~> 1.3"},
+    {opentelemetry_api, "~> 1.2"},
+    {opentelemetry_exporter, "~> 1.0"},
+    {dqsd_otel, {git, "https://github.com/fnieri/dqsd_otel.git", {tag, "the_latest_version_on_git"}}}
+]}.
+    \end{minted}
+    
+    Once you have the dependencies set up you can begin creating outcome instances for the oscilloscope.
+
+    (\textbf{Note:} If the project were to change name, you can still find the project in https://github.com/fnieri/).
+
+    \subsection{Starting spans}
+        To start spans you need to call:
+        \begin{minted}{erlang}
+            {ProbeCtx, Pid} = dqsd_otel:start_span(<<"probe">>, #{attributes => [{attr, <<"my_attr_5o5s10">>}]}),
+        \end{minted}
+        This will give you the OpenTelemetry context of the probe and the Pid of the process to call upon end. It is left up to you to decide how to carry both in the execution.
+
+    \subsection{Ending spans}
+        To end spans you need to call:
+        \begin{minted}{erlang}
+            dqsd_otel:end_span(ProbeCtx, ProbePid)
+        \end{minted}
+        This will end the span on the OpenTelemetry side and end the outcome instance if it hasn't timedout
+
+    \subsection{Failing outcome instances}
+        To fail \textbf{custom} spans you need to call:
+        \begin{minted}{erlang}
+            dqsd_otel:fail_span(WorkerPid),
+        \end{minted}
+        Contrary to the other methods, this does not end OpenTelemetry spans, it is let up to you to decide how to handle failure in spans.
+
+\section{Establishing connection to the oscilloscope}
+    WIP
