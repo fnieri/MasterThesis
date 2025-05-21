@@ -1,5 +1,6 @@
 \section{M/M/1/K queue}
     We devised a simple Erlang system that can act as a simple M/M/1/K.
+    \paragraph{Why M/M/1/K?} An average component in a distributed system can be modeled as an M/M/1/K, due to the exponential inter-arrival rate of messages, the exponential distribution of the execution delay and the message buffer size of a component.
 
     The system has two components \texttt{worker\_1}, \texttt{worker\_2}, the components are made of a buffer queue of size $K$ and a worker process.
     
