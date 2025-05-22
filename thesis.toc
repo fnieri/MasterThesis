@@ -43,115 +43,120 @@
 \contentsline {paragraph}{Server}{16}{section*.36}%
 \contentsline {paragraph}{Oscilloscope}{16}{section*.37}%
 \contentsline {section}{\numberline {3.2}Extending the notion of failure}{16}{section.3.2}%
-\contentsline {section}{\numberline {3.3}Time series}{16}{section.3.3}%
+\contentsline {section}{\numberline {3.3}Time series}{17}{section.3.3}%
+\contentsline {paragraph}{What can be considered a failed execution?}{17}{section*.39}%
 \contentsline {section}{\numberline {3.4}Probes}{17}{section.3.4}%
 \contentsline {subsection}{\numberline {3.4.1}Inserting probes in the oscilloscope}{18}{subsection.3.4.1}%
 \contentsline {subsection}{\numberline {3.4.2}Probes: from spans to outcome instances}{19}{subsection.3.4.2}%
 \contentsline {section}{\numberline {3.5}Triggers}{19}{section.3.5}%
-\contentsline {subsection}{\numberline {3.5.1}Snapshot}{19}{subsection.3.5.1}%
-\contentsline {chapter}{\numberline {4}Oscilloscope: User level concepts}{20}{chapter.4}%
-\contentsline {section}{\numberline {4.1}$\Delta $QSD implementation}{20}{section.4.1}%
-\contentsline {subsection}{\numberline {4.1.1}Internal representation of a $\Delta $Q}{20}{subsection.4.1.1}%
-\contentsline {paragraph}{Observed $\Delta $Q}{20}{section*.42}%
-\contentsline {paragraph}{Calculated $\Delta $Q}{21}{section*.43}%
-\contentsline {subsection}{\numberline {4.1.2}dMax}{21}{subsection.4.1.2}%
-\contentsline {subsection}{\numberline {4.1.3}QTA}{22}{subsection.4.1.3}%
-\contentsline {subsection}{\numberline {4.1.4}Operations}{22}{subsection.4.1.4}%
-\contentsline {subsubsection}{Convolution}{22}{section*.45}%
-\contentsline {subsubsection}{Arithmetical operations}{22}{section*.47}%
-\contentsline {paragraph}{Scaling (multiplication)}{23}{section*.48}%
-\contentsline {paragraph}{Operations between $\Delta $Qs}{23}{section*.49}%
-\contentsline {subsection}{\numberline {4.1.5}Confidence bounds}{23}{subsection.4.1.5}%
-\contentsline {section}{\numberline {4.2}$\Delta $Q display}{23}{section.4.2}%
-\contentsline {section}{\numberline {4.3}Outcome diagram}{24}{section.4.3}%
-\contentsline {subsection}{\numberline {4.3.1}Probes}{24}{subsection.4.3.1}%
-\contentsline {subsubsection}{Outcome}{24}{section*.52}%
-\contentsline {subsubsection}{Probes containing outcome expressions}{25}{section*.53}%
-\contentsline {subsection}{\numberline {4.3.2}Operators, outcome expressions}{25}{subsection.4.3.2}%
-\contentsline {subsubsection}{Causal link}{25}{section*.54}%
-\contentsline {subsubsection}{All-to-finish operator}{25}{section*.55}%
-\contentsline {subsubsection}{First-to-finish operator}{25}{section*.56}%
-\contentsline {subsubsection}{Probabilistic choice operator}{25}{section*.57}%
-\contentsline {subsection}{\numberline {4.3.3}Limitations}{26}{subsection.4.3.3}%
-\contentsline {section}{\numberline {4.4}Dashboard}{26}{section.4.4}%
-\contentsline {subsection}{\numberline {4.4.1}Sidebar}{26}{subsection.4.4.1}%
-\contentsline {subsubsection}{System/Plots tab}{26}{section*.58}%
-\contentsline {paragraph}{System creation}{26}{section*.59}%
-\contentsline {paragraph}{Adding a plot}{26}{section*.60}%
-\contentsline {subsubsection}{Parameters tab}{26}{section*.61}%
-\contentsline {paragraph}{Set a QTA}{26}{section*.62}%
-\contentsline {paragraph}{dMax, bins}{26}{section*.63}%
-\contentsline {subsubsection}{Triggers tab}{26}{section*.64}%
-\contentsline {paragraph}{Set triggers}{27}{section*.65}%
-\contentsline {paragraph}{Fired triggers}{27}{section*.66}%
-\contentsline {subsection}{\numberline {4.4.2}Stub controls}{27}{subsection.4.4.2}%
-\contentsline {chapter}{\numberline {5}Oscilloscope implementation}{28}{chapter.5}%
-\contentsline {section}{\numberline {5.1}$\Delta $QSD implementation}{28}{section.5.1}%
-\contentsline {subsubsection}{PDF}{28}{section*.67}%
-\contentsline {subsubsection}{ECDF}{28}{section*.68}%
-\contentsline {subsection}{\numberline {5.1.1}dMax}{29}{subsection.5.1.1}%
-\contentsline {subsection}{\numberline {5.1.2}Operations}{29}{subsection.5.1.2}%
-\contentsline {subsubsection}{Convolution}{29}{section*.69}%
-\contentsline {paragraph}{Naïve convolution}{29}{section*.70}%
-\contentsline {paragraph}{Fast Fourier Transform Convolution}{29}{section*.71}%
-\contentsline {subsubsection}{Arithmetical operations}{29}{section*.72}%
-\contentsline {paragraph}{Scaling (multiplication)}{30}{section*.73}%
-\contentsline {paragraph}{Operations between $\Delta $Qs}{30}{section*.74}%
-\contentsline {subsection}{\numberline {5.1.3}Confidence bounds}{30}{subsection.5.1.3}%
-\contentsline {subsection}{\numberline {5.1.4}Rebinning}{30}{subsection.5.1.4}%
+\contentsline {subsection}{\numberline {3.5.1}Snapshot}{20}{subsection.3.5.1}%
+\contentsline {section}{\numberline {3.6}Polling window}{20}{section.3.6}%
+\contentsline {chapter}{\numberline {4}Oscilloscope: User level concepts}{21}{chapter.4}%
+\contentsline {section}{\numberline {4.1}$\Delta $QSD implementation}{21}{section.4.1}%
+\contentsline {subsection}{\numberline {4.1.1}Internal representation of a $\Delta $Q}{21}{subsection.4.1.1}%
+\contentsline {paragraph}{Observed $\Delta $Q}{21}{section*.44}%
+\contentsline {paragraph}{Calculated $\Delta $Q}{22}{section*.45}%
+\contentsline {subsection}{\numberline {4.1.2}dMax}{22}{subsection.4.1.2}%
+\contentsline {subsection}{\numberline {4.1.3}QTA}{23}{subsection.4.1.3}%
+\contentsline {subsection}{\numberline {4.1.4}Operations}{23}{subsection.4.1.4}%
+\contentsline {subsubsection}{Convolution}{23}{section*.47}%
+\contentsline {subsubsection}{Arithmetical operations}{23}{section*.49}%
+\contentsline {paragraph}{Scaling (multiplication)}{24}{section*.50}%
+\contentsline {paragraph}{Operations between $\Delta $Qs}{24}{section*.51}%
+\contentsline {subsection}{\numberline {4.1.5}Confidence bounds}{24}{subsection.4.1.5}%
+\contentsline {section}{\numberline {4.2}$\Delta $Q display}{24}{section.4.2}%
+\contentsline {section}{\numberline {4.3}Outcome diagram}{25}{section.4.3}%
+\contentsline {subsection}{\numberline {4.3.1}Probes}{25}{subsection.4.3.1}%
+\contentsline {subsubsection}{Outcome}{25}{section*.54}%
+\contentsline {subsubsection}{Probes containing outcome expressions}{26}{section*.55}%
+\contentsline {subsection}{\numberline {4.3.2}Operators, outcome expressions}{26}{subsection.4.3.2}%
+\contentsline {subsubsection}{Causal link}{26}{section*.56}%
+\contentsline {subsubsection}{All-to-finish operator}{26}{section*.57}%
+\contentsline {subsubsection}{First-to-finish operator}{26}{section*.58}%
+\contentsline {subsubsection}{Probabilistic choice operator}{26}{section*.59}%
+\contentsline {subsection}{\numberline {4.3.3}Limitations}{27}{subsection.4.3.3}%
+\contentsline {section}{\numberline {4.4}Dashboard}{27}{section.4.4}%
+\contentsline {subsection}{\numberline {4.4.1}Sidebar}{27}{subsection.4.4.1}%
+\contentsline {subsubsection}{System/Plots tab}{27}{section*.60}%
+\contentsline {paragraph}{System creation}{27}{section*.61}%
+\contentsline {paragraph}{Adding a plot}{27}{section*.62}%
+\contentsline {subsubsection}{Parameters tab}{27}{section*.63}%
+\contentsline {paragraph}{Set a QTA}{27}{section*.64}%
+\contentsline {paragraph}{dMax, bins}{27}{section*.65}%
+\contentsline {subsubsection}{Triggers tab}{27}{section*.66}%
+\contentsline {paragraph}{Set triggers}{28}{section*.67}%
+\contentsline {paragraph}{Fired triggers}{28}{section*.68}%
+\contentsline {subsection}{\numberline {4.4.2}Stub controls}{28}{subsection.4.4.2}%
+\contentsline {chapter}{\numberline {5}Oscilloscope implementation}{29}{chapter.5}%
+\contentsline {section}{\numberline {5.1}$\Delta $QSD implementation}{29}{section.5.1}%
+\contentsline {subsubsection}{PDF}{29}{section*.69}%
+\contentsline {subsubsection}{ECDF}{29}{section*.70}%
+\contentsline {subsection}{\numberline {5.1.1}dMax}{30}{subsection.5.1.1}%
+\contentsline {subsection}{\numberline {5.1.2}Operations}{30}{subsection.5.1.2}%
+\contentsline {subsubsection}{Convolution}{30}{section*.71}%
+\contentsline {paragraph}{Naïve convolution}{30}{section*.72}%
+\contentsline {paragraph}{Fast Fourier Transform Convolution}{30}{section*.73}%
+\contentsline {subsubsection}{Arithmetical operations}{30}{section*.74}%
+\contentsline {paragraph}{Scaling (multiplication)}{31}{section*.75}%
+\contentsline {paragraph}{Operations between $\Delta $Qs}{31}{section*.76}%
+\contentsline {subsection}{\numberline {5.1.3}Confidence bounds}{31}{subsection.5.1.3}%
+\contentsline {subsection}{\numberline {5.1.4}Rebinning}{31}{subsection.5.1.4}%
 \contentsline {section}{\numberline {5.2}Wrapper}{32}{section.5.2}%
 \contentsline {subsection}{\numberline {5.2.1}API}{32}{subsection.5.2.1}%
-\contentsline {subsubsection}{start\_span/1, start\_span/2}{32}{section*.77}%
-\contentsline {paragraph}{Parameters:}{32}{section*.78}%
-\contentsline {paragraph}{Return:}{32}{section*.79}%
-\contentsline {subsubsection}{with\_span/1, with\_span/2}{32}{section*.80}%
-\contentsline {paragraph}{Parameters:}{32}{section*.81}%
-\contentsline {paragraph}{Return:}{33}{section*.82}%
-\contentsline {subsubsection}{end\_span}{33}{section*.83}%
-\contentsline {paragraph}{Parameters:}{33}{section*.84}%
-\contentsline {subsubsection}{fail\_span}{33}{section*.85}%
-\contentsline {paragraph}{Parameter:}{33}{section*.86}%
-\contentsline {subsubsection}{span\_process}{33}{section*.87}%
+\contentsline {subsubsection}{start\_span/1, start\_span/2}{32}{section*.78}%
+\contentsline {paragraph}{Parameters:}{32}{section*.79}%
+\contentsline {paragraph}{Return:}{32}{section*.80}%
+\contentsline {subsubsection}{with\_span/1, with\_span/2}{33}{section*.81}%
+\contentsline {paragraph}{Parameters:}{33}{section*.82}%
+\contentsline {paragraph}{Return:}{33}{section*.83}%
+\contentsline {subsubsection}{end\_span}{33}{section*.84}%
+\contentsline {paragraph}{Parameters:}{33}{section*.85}%
+\contentsline {subsubsection}{fail\_span}{33}{section*.86}%
+\contentsline {paragraph}{Parameter:}{33}{section*.87}%
+\contentsline {subsubsection}{span\_process}{33}{section*.88}%
 \contentsline {subsection}{\numberline {5.2.2}Handling outcome instances}{34}{subsection.5.2.2}%
 \contentsline {subsection}{\numberline {5.2.3}TCP connection}{34}{subsection.5.2.3}%
-\contentsline {subsubsection}{TCP server}{34}{section*.88}%
-\contentsline {subsubsection}{TCP client}{35}{section*.89}%
+\contentsline {subsubsection}{TCP server}{35}{section*.89}%
+\contentsline {subsubsection}{TCP client}{35}{section*.90}%
 \contentsline {section}{\numberline {5.3}Parser}{35}{section.5.3}%
 \contentsline {subsection}{\numberline {5.3.1}ANTLR}{35}{subsection.5.3.1}%
 \contentsline {subsection}{\numberline {5.3.2}Grammar}{35}{subsection.5.3.2}%
-\contentsline {subsubsection}{Limitations}{36}{section*.90}%
-\contentsline {section}{\numberline {5.4}Oscilloscope GUI}{36}{section.5.4}%
-\contentsline {chapter}{\numberline {6}Application on synthetic programs}{37}{chapter.6}%
-\contentsline {section}{\numberline {6.1}M/M/1/K queue}{37}{section.6.1}%
-\contentsline {paragraph}{Why M/M/1/K?}{37}{section*.91}%
-\contentsline {subsection}{\numberline {6.1.1}Determining parameters dynamically}{38}{subsection.6.1.1}%
-\contentsline {paragraph}{Low Load}{39}{section*.94}%
-\contentsline {paragraph}{Early signs of overload}{39}{section*.96}%
-\contentsline {chapter}{\numberline {7}Performance study}{40}{chapter.7}%
-\contentsline {section}{\numberline {7.1}Convolution performance}{40}{section.7.1}%
-\contentsline {section}{\numberline {7.2}Stub performance}{41}{section.7.2}%
-\contentsline {chapter}{\numberline {8}Conclusions and future work}{42}{chapter.8}%
-\contentsline {section}{\numberline {8.1}Future improvements}{42}{section.8.1}%
-\contentsline {subsection}{\numberline {8.1.1}Oscilloscope improvement}{43}{subsection.8.1.1}%
-\contentsline {subsection}{\numberline {8.1.2}Wrapper improvements}{43}{subsection.8.1.2}%
-\contentsline {subsection}{\numberline {8.1.3}Real applications}{44}{subsection.8.1.3}%
-\contentsline {subsection}{\numberline {8.1.4}Licensing limitations}{44}{subsection.8.1.4}%
-\contentsline {chapter}{\numberline {A}User manual}{47}{appendix.A}%
-\contentsline {section}{\numberline {A.1}Sidebar: Outcome diagram and plots}{47}{section.A.1}%
-\contentsline {subsection}{\numberline {A.1.1}Creating the system}{47}{subsection.A.1.1}%
-\contentsline {subsection}{\numberline {A.1.2}Saving the system definition}{47}{subsection.A.1.2}%
-\contentsline {subsection}{\numberline {A.1.3}Loading the system definition}{47}{subsection.A.1.3}%
-\contentsline {subsection}{\numberline {A.1.4}Managing the plots}{48}{subsection.A.1.4}%
-\contentsline {subsubsection}{Adding a plot}{48}{section*.102}%
-\contentsline {subsubsection}{Editing a plot}{48}{section*.103}%
-\contentsline {subsection}{\numberline {A.1.5}Removing a plot}{49}{subsection.A.1.5}%
-\contentsline {section}{\numberline {A.2}Sidebar: Probes settings}{49}{section.A.2}%
-\contentsline {subsection}{\numberline {A.2.1}Setting a QTA}{49}{subsection.A.2.1}%
-\contentsline {subsection}{\numberline {A.2.2}Setting the parameters of a probe}{49}{subsection.A.2.2}%
-\contentsline {section}{\numberline {A.3}Triggers}{51}{section.A.3}%
-\contentsline {section}{\numberline {A.4}Instrumenting the Erlang application}{51}{section.A.4}%
-\contentsline {subsection}{\numberline {A.4.1}Including the wrapper}{51}{subsection.A.4.1}%
-\contentsline {subsection}{\numberline {A.4.2}Starting spans}{51}{subsection.A.4.2}%
-\contentsline {subsection}{\numberline {A.4.3}Ending spans}{52}{subsection.A.4.3}%
-\contentsline {subsection}{\numberline {A.4.4}Failing outcome instances}{52}{subsection.A.4.4}%
-\contentsline {section}{\numberline {A.5}Establishing connection to the oscilloscope}{52}{section.A.5}%
+\contentsline {subsubsection}{Limitations}{36}{section*.91}%
+\contentsline {section}{\numberline {5.4}Oscilloscope GUI}{37}{section.5.4}%
+\contentsline {chapter}{\numberline {6}Application on synthetic programs}{38}{chapter.6}%
+\contentsline {section}{\numberline {6.1}M/M/1/K queue}{38}{section.6.1}%
+\contentsline {paragraph}{Why M/M/1/K?}{38}{section*.93}%
+\contentsline {subsection}{\numberline {6.1.1}Determining parameters dynamically}{39}{subsection.6.1.1}%
+\contentsline {paragraph}{Low Load}{40}{section*.96}%
+\contentsline {paragraph}{Early signs of overload}{40}{section*.98}%
+\contentsline {section}{\numberline {6.2}First to finish application}{41}{section.6.2}%
+\contentsline {paragraph}{Why first to finish?}{41}{section*.100}%
+\contentsline {subsection}{\numberline {6.2.1}Using the wrong operator}{41}{subsection.6.2.1}%
+\contentsline {chapter}{\numberline {7}Performance study}{42}{chapter.7}%
+\contentsline {section}{\numberline {7.1}Convolution performance}{42}{section.7.1}%
+\contentsline {section}{\numberline {7.2}Stub performance}{43}{section.7.2}%
+\contentsline {chapter}{\numberline {8}Conclusions and future work}{44}{chapter.8}%
+\contentsline {section}{\numberline {8.1}Future improvements}{44}{section.8.1}%
+\contentsline {subsection}{\numberline {8.1.1}Oscilloscope improvement}{45}{subsection.8.1.1}%
+\contentsline {subsection}{\numberline {8.1.2}Wrapper improvements}{45}{subsection.8.1.2}%
+\contentsline {subsection}{\numberline {8.1.3}Real applications}{46}{subsection.8.1.3}%
+\contentsline {subsection}{\numberline {8.1.4}Licensing limitations}{46}{subsection.8.1.4}%
+\contentsline {chapter}{\numberline {A}User manual}{49}{appendix.A}%
+\contentsline {section}{\numberline {A.1}Sidebar: Outcome diagram and plots}{49}{section.A.1}%
+\contentsline {subsection}{\numberline {A.1.1}Creating the system}{49}{subsection.A.1.1}%
+\contentsline {subsection}{\numberline {A.1.2}Saving the system definition}{49}{subsection.A.1.2}%
+\contentsline {subsection}{\numberline {A.1.3}Loading the system definition}{49}{subsection.A.1.3}%
+\contentsline {subsection}{\numberline {A.1.4}Managing the plots}{50}{subsection.A.1.4}%
+\contentsline {subsubsection}{Adding a plot}{50}{section*.106}%
+\contentsline {subsubsection}{Editing a plot}{50}{section*.107}%
+\contentsline {subsection}{\numberline {A.1.5}Removing a plot}{51}{subsection.A.1.5}%
+\contentsline {section}{\numberline {A.2}Sidebar: Probes settings}{51}{section.A.2}%
+\contentsline {subsection}{\numberline {A.2.1}Setting a QTA}{51}{subsection.A.2.1}%
+\contentsline {subsection}{\numberline {A.2.2}Setting the parameters of a probe}{51}{subsection.A.2.2}%
+\contentsline {section}{\numberline {A.3}Triggers}{53}{section.A.3}%
+\contentsline {section}{\numberline {A.4}Instrumenting the Erlang application}{53}{section.A.4}%
+\contentsline {subsection}{\numberline {A.4.1}Including the wrapper}{53}{subsection.A.4.1}%
+\contentsline {subsection}{\numberline {A.4.2}Starting spans}{53}{subsection.A.4.2}%
+\contentsline {subsection}{\numberline {A.4.3}Ending spans}{54}{subsection.A.4.3}%
+\contentsline {subsection}{\numberline {A.4.4}Failing outcome instances}{54}{subsection.A.4.4}%
+\contentsline {section}{\numberline {A.5}Establishing connection to the oscilloscope}{54}{section.A.5}%

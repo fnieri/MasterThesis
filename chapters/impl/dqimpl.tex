@@ -29,7 +29,6 @@
             dMax = \Delta_{t base} * 2^n * N  
             \label{eq:dMaxU}
         \end{equation}
-
         Where:
         \begin{itemize}
             \item $\Delta_{t base}$ represents the base width of a bin, equal to 1ms.
@@ -74,30 +73,24 @@
 
 
     \subsection{Confidence bounds}
-        Here is how confidence bounds are calculated for a $\Delta$Q based on its PDF.        
+       To observe the stationarity of a system we must observe a window of $\Delta$Qs of an observable and calculate confidence bounds over said windows. We present here the formulae required to give such bounds with 95\% confidence level. 
 
-        The mean of the PDF at bin $i$ over a window is:
+        For a bin $i$ and an ECDF $j$, the mean of the bin over a window is:
             \begin{equation}
                 \mu_i = \dfrac{1}{n_i} \sum_{j=1}^{n_i} x_{ij}
-                \label{eq:mean_pdf}
+                \label{eq:mean_ecdf}
             \end{equation}
-        Where $x_{ij}$ is a bin's $i$ value for a PDF $j$.
-        
+        Where $x_{ij}$ is a bin's $i$ value for an ECDF $j$.
         Its variance:
             \begin{equation}
                 \sigma^2_i = \dfrac{1}{n_i} \sum_{j=1}^{n_i} x^2_{ij} - \mu^2_i
-                \label{eq:var_pdf}
+                \label{eq:var_ecdf}
             \end{equation}
-        
-        The confidence intervals $CI_{i}$ of the ECDF over for a bin $i$ can then be calculated based on $\mu_i$ and $\sigma^2_i$ calculated for the PDF:
+        The confidence intervals $CI_i$ for a bin $i$ can then be calculated as:
         \begin{equation}
-            CI_i = \sum_{i=1}^{n_i} \mu_i \pm \dfrac{\sqrt{\sum_{i=1}^{n_i} \sigma_i}}{\sqrt{N}} 
-            \label{eq:ci_ccdff}
+            CI_i = \mu_i \pm z_{\alpha/2} \cdot \dfrac{\sigma_i}{\sqrt{n_i}}      
+            \label{eq:ci_i}
         \end{equation}
-    The bounds can be updated dynamically by inserting or removing a $\Delta$Q, this allows us to consider a small window of execution rather than observing the whole execution.
-
-    We based the calculation on the PDF, as the value of a bin $i$ is independent of the value before. The same can not be said for the ECDF, as the value at bin $i$ will depend on the previous bins.
-        
 
         \subsection{Rebinning}
             Rebinning refers to the aggregation of multiple bins of a bin width $i$ to another bin width $j$. 
@@ -111,19 +104,21 @@
                 p'_b = \sum_{n=b \cdot k}^{b+ 1 \cdot k - 1} p_n, \quad b=0,1,\dots \lceil \frac{N}{k} \rceil  
             \end{equation}
             We perform rebinning to a higher bin width for a simple reason, while this leads to loss of information for the bin with the lowest bin width, rebinning to a lower bin width would imply inventing new values for the $\Delta$Q with the highest bin width.
-           
-            \begin{figure}[H]
-                \begin{center}
-                    \includegraphics[scale=1.2]{tikz/cdf.pdf}
-                \end{center}
-                \caption{Sample $\Delta$Q with 1ms bins}
-            \end{figure}%
-     
-            \begin{figure}[H]%
-                \begin{center}
-                    \includegraphics[scale=1.2]{tikz/rebinned_cdf.pdf}
-                \end{center}
-                \caption{Previous $\Delta$Q after rebinning to 4ms bins}
+                      \begin{figure}[H]
+            \centering
+            \begin{subfigure}{.5\textwidth}
+                \centering
+                \includegraphics[width =0.98\textwidth]{tikz/cdf.pdf}
+                \label{fig:nrb}
+                \subcaption{Sample $\Delta$Q with 1ms bins}%
+            \end{subfigure}%
+            \begin{subfigure}{.5\textwidth}%
+                \centering%
+                \includegraphics[width =0.98\textwidth]{tikz/rebinned_cdf.pdf}%
+                \label{fig:sub2}%
+                \subcaption{$\Delta$Q on the left after rebinning to 4ms bins}%
+            \end{subfigure}%
+            \label{fig:w1w2hb}%
             \end{figure}%
 
 

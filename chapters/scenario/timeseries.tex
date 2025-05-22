@@ -9,8 +9,15 @@
     \end{itemize}
     The sample has three possible statuses: \texttt{success, timeout, failure}, it can thus be broken down in the representations, based on its status:
     \begin{itemize}
-        \item \textbf{($t_s$,$t_e$)}: This representation indicates that the execution was successful (t $<$ $dMax$), the nstance contains the start time and end time of the event.
-        \item \textbf{($t_s, \mathcal{T}$)}: This representation indicates that the execution has timed out (t $>$ $dMax$). The instance does not contain the end time, it is irrelevant as we know that its execution has taken more than $dMax$.
-            \item \textbf{($t_s, \mathcal{F}$)}: This representation indicates the execution has failed given a user defined requirement (i.e. a dropped message given buffer overload in a queue system). It must not be confused with a program failure (crash), if a program crashes during the execution of event $e$, it will timeout since the stub will not receive an end message. As was the case for the timeout, we do not need to know the end time as the sample encodes a failure.
+        \item \textbf{($t_s$,$t_e$)}: This representation indicates that the execution was successful (t $<$ $dMax$). 
+        \item \textbf{($t_s, \mathcal{T}$)}: This representation indicates that the execution has timed out (t $>$ $dMax$). 
+        \item \textbf{($t_s, \mathcal{F}$)}: This representation indicates the execution has failed given a user defined requirement (i.e. a dropped message given buffer overload in a queue system). It must not be confused with a program failure (crash), if a program crashes during the execution of event $e$, it will timeout since the stub will not receive an end message. The end time is equal to $t_s + \text{timeout}$ 
     \end{itemize}
     The $\Delta$Q can then be modelled easily with $n$ outcome instances by calculating its PDF and consequently the ECDF.
+
+    \paragraph{What can be considered a failed execution?} Imagine a queue with a buffer: the buffer queue being full and dropping incoming messages can be modeled as a failure.
+
+    More generally, the choice of what is considered a failed execution is left up to the user who is handling the spans and is program-dependent. Exceptions, crashing, errors can be kinds of failure. 
+
+    On another note, the way of handling errored spans in OpenTelemetry can differ from user to user, so the wrapper will not handle ending and setting statuses for "failed" spans.
+   
