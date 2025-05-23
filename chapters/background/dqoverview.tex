@@ -8,11 +8,12 @@
     The following sections are a summary of multiple articles and presentation formalizing the paradigm. \cite{myo} \cite{dq-tut} \cite{art} \cite{dq-br} 
      
  \subsection{Outcome}
-    Assume a component $C$ which receives a message $m_{in}$ and outputs a message $m_{out}$ after a delay $d$. Over multiple executions, we will have observed multiple delays which can be represented as a cumulative definition where $p$ percent of delays have delay $\le d$. \cite{art} Each outcome has a $\Delta$Q.
-
-        An outcome $O$ is a specific system behaviour that can be observed to start at some point in time and \textit{\textbf{may}} be observed to complete at some later time. \cite{dq-br}
+           An outcome $O$ is a specific system behaviour that can be observed to start at some point in time and \textit{\textbf{may}} be observed to complete at some later time. \cite{dq-br}
         Formally, what the system obtains by performing one of its tasks. One task corresponds to one outcome and viceversa. When an outcome is performed, it means that the task of an outcome is performed.
-    
+     
+     Assume a component $C$ which receives a message $m_{in}$ and outputs a message $m_{out}$ after a delay $d$. Over multiple executions, we will have observed multiple delays which can be represented as a cumulative definition where $p$ percent of delays have delay $\le d$. \cite{art} Each outcome has a $\Delta$Q.
+
+
     \paragraph{Observables}
     Each outcome has two starting sets of events: the starting sets and the ending sets. Such sets are called the \textit{observables}. Once an event from the starting set occurs, there is no guarantee that a corresponding event in the terminating set will occur within the duration limit (required time to complete). An observable is \textit{done}  when it occurs during the time limit.
 
@@ -23,9 +24,9 @@
     Outcome are represented as circles, with the starting and terminating set of events being represented by boxes.
     \begin{figure}[H]
         \begin{center}
-            \includegraphics[scale=1.3]{tikz/outcome.pdf}
+            \includegraphics[scale=1.2]{tikz/outdq.pdf}
         \end{center}
-        \caption{The outcome (circle) and the starting set (left) and terminating set (right) of events}
+        \caption{The outcome (circle) and the starting set (left) and terminating set (right) of events. We characterize a message travelling through the outcome with a $\Delta$Q.}
     \end{figure}
 
 \subsection{Quality attenuation ($\Delta$Q)}
@@ -64,7 +65,7 @@
         A system \textit{satisfies timeliness} if $\Delta$Q$_{obs}$ $\le$ $\Delta$Q$_{req}$.
      
     \subsection{QTA, required $\Delta$Q}
-         The Quantitative Timeliness Agreement maps objective measurements to the subjective perception of application performance [cite]. It specifies what the base system does and its limits
+         The Quantitative Timeliness Agreement maps objective measurements to the subjective perception of application performance \cite{dq-br}. It specifies what the base system does and its limits
          \paragraph{QTA example}: Imagine a system where 25\% of the executions should take $<$ 15 ms, 50\% $<$ 25 ms and 75\% $<$ 35 ms, all queries have a maximum delay of 50ms and 5\% of executions can timeout, the QTA can be represented as a step function.
     
         \paragraph{Slack} When $\Delta$Q is strictly less than the requirement, we say there is performance \textit{slack}.

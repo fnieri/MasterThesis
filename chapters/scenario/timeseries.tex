@@ -1,5 +1,5 @@
 \section{Time series}
-    Consider an observable $O$ with two distinct sets of events, the starting set of events $s$ and ending set of event $e$, the time series of an observable can be defined by $n$ outcome instances $s_i$ with the following structure:
+    Consider a probe $p$ with two distinct sets of events, the starting set of events $s$ and ending set of event $e$, the time series of the probe can be defined by $n$ outcome instances $s_i$ with the following structure:
     \begin{itemize}
         \item The probe's name
         \item The start time $t_s$
@@ -17,7 +17,7 @@
 
     \paragraph{What can be considered a failed execution?} Imagine a queue with a buffer: the buffer queue being full and dropping incoming messages can be modeled as a failure.
 
-    More generally, the choice of what is considered a failed execution is left up to the user who is handling the spans and is program-dependent. Exceptions, crashing, errors can be kinds of failure. 
+    More generally, the choice of what is considered a failed execution is left up to the user who is handling the spans and is program-dependent. Exceptions or errors can be kinds of failure. 
 
     On another note, the way of handling errored spans in OpenTelemetry can differ from user to user, so the wrapper will not handle ending and setting statuses for "failed" spans.
    

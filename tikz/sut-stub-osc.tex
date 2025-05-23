@@ -15,12 +15,15 @@
 
     \draw [->] (stub.east) -- (server.west) node[midway, above] {\small send outcome instances info};
 
+
+    \draw [->] ([yshift=-0.3cm]server.west) -- ([yshift=-0.3cm]stub.east) node[midway, below] {\small send parameters and controls};
+
+
     \draw [->] ([yshift=0.5cm, xshift=0.5cm]stub.west) to [bend right = 90] node [above left, midway ] {\tiny probe} ([yshift=0.3cm, xshift=-0.5cm] sut.east) ;
 
     \draw [->] ([yshift=-0.3cm, xshift=0.5cm]stub.west) to [bend left = 90] node [below left, midway ] {\tiny probe} ([yshift=-0.3cm, xshift=-0.5cm] sut.east);
 
     \node [rectangle, draw, minimum height = 3cm, minimum width = 4cm, anchor = west] (osc) at(5.1, 0) {$\Delta$Q oscilloscope};
-
 
     \draw [->] (server.south) to [bend right = 90] (osc.south)  node[below left=20pt] {\footnotesize send Samples};
 

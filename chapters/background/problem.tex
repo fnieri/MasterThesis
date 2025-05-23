@@ -2,7 +2,7 @@
 
     A legitimate question would ask why one would need an additional tool to observe their system, observability tools are already plenty and provide useful insights into an application's behaviour.
     
-    While they may seem adequate enough to provide a global oversight of applications, they fail to diagnose real time problems like overload, dependent behaviour early enough and in a quick manner. 
+    While they may seem adequate to provide a global oversight of applications, they fail to diagnose real time problems like overload, dependent behaviour early enough and in a quick manner. 
     
     The problem we are trying to tackle can be described by the following situation: 
 
@@ -23,8 +23,8 @@ Imagine an Erlang application instrumented with OpenTelemetry, suddenly, the app
     \subsection{Handling of long span}
         OpenTelemetry presents a bigger problem, what happens when there are long-running spans? Worse, what happens when spans are not actually terminated?
 
-        OpenTelemetry limits the length of OpenTelemetry spans, moreover, spans who are not terminated are lost and not exported. Why? All spans must be ended!
+        OpenTelemetry limits the length of its spans, moreover, those who are not terminated are lost and not exported. Why? All spans must be ended!
 
         If the span is the parent/root spans, its effect could trickle down to child spans. We can quickly see how this becomes problematic, all the information about an execution of your program \dots lost. Moreover, a span could not be terminated for trivial reasons: refreshing a tab, network failures, crashes \dots \cite{otel-l}. There are a few hacks that can be implemented, having shorter spans, carrying data in child spans, saving spans in a log to track spans which were not ended to manually set an end time.
 
-        These problems are a big limitation of OpenTelemetry, we believe that the wrapper we provide can be a great start to improve observability requirements in OpenTelemtry.
+        These problems are a big limitation of OpenTelemetry, we believe that the wrapper we provide can be a great start to improve observability requirements in OpenTelemetry.

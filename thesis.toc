@@ -39,7 +39,7 @@
 \contentsline {chapter}{\numberline {3}Design}{15}{chapter.3}%
 \contentsline {section}{\numberline {3.1}Scenario}{15}{section.3.1}%
 \contentsline {paragraph}{System under test}{15}{section*.34}%
-\contentsline {paragraph}{Stub/wrapper}{15}{section*.35}%
+\contentsline {paragraph}{Wrapper/Adapter}{15}{section*.35}%
 \contentsline {paragraph}{Server}{16}{section*.36}%
 \contentsline {paragraph}{Oscilloscope}{16}{section*.37}%
 \contentsline {section}{\numberline {3.2}Extending the notion of failure}{16}{section.3.2}%
@@ -67,96 +67,102 @@
 \contentsline {section}{\numberline {4.2}$\Delta $Q display}{24}{section.4.2}%
 \contentsline {section}{\numberline {4.3}Outcome diagram}{25}{section.4.3}%
 \contentsline {subsection}{\numberline {4.3.1}Probes}{25}{subsection.4.3.1}%
-\contentsline {subsubsection}{Outcome}{25}{section*.54}%
-\contentsline {subsubsection}{Probes containing outcome expressions}{26}{section*.55}%
-\contentsline {subsection}{\numberline {4.3.2}Operators, outcome expressions}{26}{subsection.4.3.2}%
-\contentsline {subsubsection}{Causal link}{26}{section*.56}%
-\contentsline {subsubsection}{All-to-finish operator}{26}{section*.57}%
-\contentsline {subsubsection}{First-to-finish operator}{26}{section*.58}%
-\contentsline {subsubsection}{Probabilistic choice operator}{26}{section*.59}%
-\contentsline {subsection}{\numberline {4.3.3}Limitations}{27}{subsection.4.3.3}%
-\contentsline {section}{\numberline {4.4}Dashboard}{27}{section.4.4}%
-\contentsline {subsection}{\numberline {4.4.1}Sidebar}{27}{subsection.4.4.1}%
-\contentsline {subsubsection}{System/Plots tab}{27}{section*.60}%
-\contentsline {paragraph}{System creation}{27}{section*.61}%
-\contentsline {paragraph}{Adding a plot}{27}{section*.62}%
-\contentsline {subsubsection}{Parameters tab}{27}{section*.63}%
-\contentsline {paragraph}{Set a QTA}{27}{section*.64}%
-\contentsline {paragraph}{dMax, bins}{27}{section*.65}%
-\contentsline {subsubsection}{Triggers tab}{27}{section*.66}%
-\contentsline {paragraph}{Set triggers}{28}{section*.67}%
-\contentsline {paragraph}{Fired triggers}{28}{section*.68}%
-\contentsline {subsection}{\numberline {4.4.2}Stub controls}{28}{subsection.4.4.2}%
+\contentsline {subsubsection}{Outcome}{25}{section*.53}%
+\contentsline {subsubsection}{Probes containing outcome expressions}{25}{section*.54}%
+\contentsline {subsection}{\numberline {4.3.2}Operators, outcome expressions}{25}{subsection.4.3.2}%
+\contentsline {subsubsection}{Causal link}{26}{section*.55}%
+\contentsline {subsubsection}{All-to-finish operator}{26}{section*.56}%
+\contentsline {subsubsection}{First-to-finish operator}{26}{section*.57}%
+\contentsline {subsubsection}{Probabilistic choice operator}{26}{section*.58}%
+\contentsline {subsection}{\numberline {4.3.3}Limitations}{26}{subsection.4.3.3}%
+\contentsline {section}{\numberline {4.4}Dashboard}{26}{section.4.4}%
+\contentsline {subsection}{\numberline {4.4.1}Sidebar}{26}{subsection.4.4.1}%
+\contentsline {subsubsection}{System/Handle plots tab}{27}{section*.59}%
+\contentsline {paragraph}{System creation}{27}{section*.60}%
+\contentsline {paragraph}{Adding a plot}{27}{section*.61}%
+\contentsline {paragraph}{Polling rate}{27}{section*.62}%
+\contentsline {paragraph}{Editing a plot}{27}{section*.63}%
+\contentsline {subsubsection}{Parameters tab}{27}{section*.64}%
+\contentsline {paragraph}{Set a QTA}{27}{section*.65}%
+\contentsline {paragraph}{dMax, bins}{27}{section*.66}%
+\contentsline {subsubsection}{Triggers tab}{27}{section*.67}%
+\contentsline {paragraph}{Set triggers}{27}{section*.68}%
+\contentsline {paragraph}{Fired triggers}{27}{section*.69}%
+\contentsline {subsection}{\numberline {4.4.2}Plots window}{28}{subsection.4.4.2}%
+\contentsline {subsection}{\numberline {4.4.3}Stub controls}{28}{subsection.4.4.3}%
 \contentsline {chapter}{\numberline {5}Oscilloscope implementation}{29}{chapter.5}%
 \contentsline {section}{\numberline {5.1}$\Delta $QSD implementation}{29}{section.5.1}%
-\contentsline {subsubsection}{PDF}{29}{section*.69}%
-\contentsline {subsubsection}{ECDF}{29}{section*.70}%
+\contentsline {subsubsection}{PDF}{29}{section*.70}%
+\contentsline {subsubsection}{ECDF}{29}{section*.71}%
 \contentsline {subsection}{\numberline {5.1.1}dMax}{30}{subsection.5.1.1}%
 \contentsline {subsection}{\numberline {5.1.2}Operations}{30}{subsection.5.1.2}%
-\contentsline {subsubsection}{Convolution}{30}{section*.71}%
-\contentsline {paragraph}{Naïve convolution}{30}{section*.72}%
-\contentsline {paragraph}{Fast Fourier Transform Convolution}{30}{section*.73}%
-\contentsline {subsubsection}{Arithmetical operations}{30}{section*.74}%
-\contentsline {paragraph}{Scaling (multiplication)}{31}{section*.75}%
-\contentsline {paragraph}{Operations between $\Delta $Qs}{31}{section*.76}%
+\contentsline {subsubsection}{Convolution}{30}{section*.72}%
+\contentsline {paragraph}{Naïve convolution}{30}{section*.73}%
+\contentsline {paragraph}{Fast Fourier Transform Convolution}{30}{section*.74}%
+\contentsline {subsubsection}{Arithmetical operations}{30}{section*.75}%
+\contentsline {paragraph}{Scaling (multiplication)}{31}{section*.76}%
+\contentsline {paragraph}{Operations between $\Delta $Qs}{31}{section*.77}%
 \contentsline {subsection}{\numberline {5.1.3}Confidence bounds}{31}{subsection.5.1.3}%
 \contentsline {subsection}{\numberline {5.1.4}Rebinning}{31}{subsection.5.1.4}%
 \contentsline {section}{\numberline {5.2}Wrapper}{32}{section.5.2}%
 \contentsline {subsection}{\numberline {5.2.1}API}{32}{subsection.5.2.1}%
-\contentsline {subsubsection}{start\_span/1, start\_span/2}{32}{section*.78}%
-\contentsline {paragraph}{Parameters:}{32}{section*.79}%
-\contentsline {paragraph}{Return:}{32}{section*.80}%
-\contentsline {subsubsection}{with\_span/1, with\_span/2}{33}{section*.81}%
-\contentsline {paragraph}{Parameters:}{33}{section*.82}%
-\contentsline {paragraph}{Return:}{33}{section*.83}%
-\contentsline {subsubsection}{end\_span}{33}{section*.84}%
-\contentsline {paragraph}{Parameters:}{33}{section*.85}%
-\contentsline {subsubsection}{fail\_span}{33}{section*.86}%
-\contentsline {paragraph}{Parameter:}{33}{section*.87}%
-\contentsline {subsubsection}{span\_process}{33}{section*.88}%
+\contentsline {subsubsection}{start\_span/1, start\_span/2}{32}{section*.79}%
+\contentsline {paragraph}{Parameters:}{32}{section*.80}%
+\contentsline {paragraph}{Return:}{32}{section*.81}%
+\contentsline {subsubsection}{with\_span/1, with\_span/2}{33}{section*.82}%
+\contentsline {paragraph}{Parameters:}{33}{section*.83}%
+\contentsline {paragraph}{Return:}{33}{section*.84}%
+\contentsline {subsubsection}{end\_span}{33}{section*.85}%
+\contentsline {paragraph}{Parameters:}{33}{section*.86}%
+\contentsline {subsubsection}{fail\_span}{33}{section*.87}%
+\contentsline {paragraph}{Parameter:}{33}{section*.88}%
+\contentsline {subsubsection}{span\_process}{33}{section*.89}%
 \contentsline {subsection}{\numberline {5.2.2}Handling outcome instances}{34}{subsection.5.2.2}%
 \contentsline {subsection}{\numberline {5.2.3}TCP connection}{34}{subsection.5.2.3}%
-\contentsline {subsubsection}{TCP server}{35}{section*.89}%
-\contentsline {subsubsection}{TCP client}{35}{section*.90}%
+\contentsline {subsubsection}{TCP server}{35}{section*.90}%
+\contentsline {subsubsection}{TCP client}{35}{section*.91}%
 \contentsline {section}{\numberline {5.3}Parser}{35}{section.5.3}%
 \contentsline {subsection}{\numberline {5.3.1}ANTLR}{35}{subsection.5.3.1}%
 \contentsline {subsection}{\numberline {5.3.2}Grammar}{35}{subsection.5.3.2}%
-\contentsline {subsubsection}{Limitations}{36}{section*.91}%
+\contentsline {subsubsection}{Limitations}{36}{section*.92}%
 \contentsline {section}{\numberline {5.4}Oscilloscope GUI}{37}{section.5.4}%
 \contentsline {chapter}{\numberline {6}Application on synthetic programs}{38}{chapter.6}%
 \contentsline {section}{\numberline {6.1}M/M/1/K queue}{38}{section.6.1}%
-\contentsline {paragraph}{Why M/M/1/K?}{38}{section*.93}%
-\contentsline {subsection}{\numberline {6.1.1}Determining parameters dynamically}{39}{subsection.6.1.1}%
-\contentsline {paragraph}{Low Load}{40}{section*.96}%
-\contentsline {paragraph}{Early signs of overload}{40}{section*.98}%
+\contentsline {paragraph}{Why M/M/1/K?}{38}{section*.94}%
+\contentsline {subsection}{\numberline {6.1.1}System composition}{38}{subsection.6.1.1}%
+\contentsline {subsection}{\numberline {6.1.2}Determining parameters dynamically}{39}{subsection.6.1.2}%
+\contentsline {paragraph}{Low Load}{40}{section*.97}%
+\contentsline {paragraph}{Early signs of overload}{40}{section*.99}%
 \contentsline {section}{\numberline {6.2}First to finish application}{41}{section.6.2}%
-\contentsline {paragraph}{Why first to finish?}{41}{section*.100}%
+\contentsline {paragraph}{Why first to finish?}{41}{section*.101}%
 \contentsline {subsection}{\numberline {6.2.1}Using the wrong operator}{41}{subsection.6.2.1}%
-\contentsline {chapter}{\numberline {7}Performance study}{42}{chapter.7}%
-\contentsline {section}{\numberline {7.1}Convolution performance}{42}{section.7.1}%
-\contentsline {section}{\numberline {7.2}Stub performance}{43}{section.7.2}%
-\contentsline {chapter}{\numberline {8}Conclusions and future work}{44}{chapter.8}%
-\contentsline {section}{\numberline {8.1}Future improvements}{44}{section.8.1}%
-\contentsline {subsection}{\numberline {8.1.1}Oscilloscope improvement}{45}{subsection.8.1.1}%
-\contentsline {subsection}{\numberline {8.1.2}Wrapper improvements}{45}{subsection.8.1.2}%
-\contentsline {subsection}{\numberline {8.1.3}Real applications}{46}{subsection.8.1.3}%
-\contentsline {subsection}{\numberline {8.1.4}Licensing limitations}{46}{subsection.8.1.4}%
-\contentsline {chapter}{\numberline {A}User manual}{49}{appendix.A}%
-\contentsline {section}{\numberline {A.1}Sidebar: Outcome diagram and plots}{49}{section.A.1}%
-\contentsline {subsection}{\numberline {A.1.1}Creating the system}{49}{subsection.A.1.1}%
-\contentsline {subsection}{\numberline {A.1.2}Saving the system definition}{49}{subsection.A.1.2}%
-\contentsline {subsection}{\numberline {A.1.3}Loading the system definition}{49}{subsection.A.1.3}%
-\contentsline {subsection}{\numberline {A.1.4}Managing the plots}{50}{subsection.A.1.4}%
-\contentsline {subsubsection}{Adding a plot}{50}{section*.106}%
-\contentsline {subsubsection}{Editing a plot}{50}{section*.107}%
-\contentsline {subsection}{\numberline {A.1.5}Removing a plot}{51}{subsection.A.1.5}%
-\contentsline {section}{\numberline {A.2}Sidebar: Probes settings}{51}{section.A.2}%
-\contentsline {subsection}{\numberline {A.2.1}Setting a QTA}{51}{subsection.A.2.1}%
-\contentsline {subsection}{\numberline {A.2.2}Setting the parameters of a probe}{51}{subsection.A.2.2}%
-\contentsline {section}{\numberline {A.3}Triggers}{53}{section.A.3}%
-\contentsline {section}{\numberline {A.4}Instrumenting the Erlang application}{53}{section.A.4}%
-\contentsline {subsection}{\numberline {A.4.1}Including the wrapper}{53}{subsection.A.4.1}%
-\contentsline {subsection}{\numberline {A.4.2}Starting spans}{53}{subsection.A.4.2}%
-\contentsline {subsection}{\numberline {A.4.3}Ending spans}{54}{subsection.A.4.3}%
-\contentsline {subsection}{\numberline {A.4.4}Failing outcome instances}{54}{subsection.A.4.4}%
-\contentsline {section}{\numberline {A.5}Establishing connection to the oscilloscope}{54}{section.A.5}%
+\contentsline {subsection}{\numberline {6.2.2}Introducing a slower component}{41}{subsection.6.2.2}%
+\contentsline {chapter}{\numberline {7}Performance study}{43}{chapter.7}%
+\contentsline {section}{\numberline {7.1}Convolution performance}{43}{section.7.1}%
+\contentsline {section}{\numberline {7.2}Stub performance}{44}{section.7.2}%
+\contentsline {section}{\numberline {7.3}GUI plotting performance}{44}{section.7.3}%
+\contentsline {chapter}{\numberline {8}Conclusions and future work}{46}{chapter.8}%
+\contentsline {section}{\numberline {8.1}Future improvements}{46}{section.8.1}%
+\contentsline {subsection}{\numberline {8.1.1}Oscilloscope improvement}{47}{subsection.8.1.1}%
+\contentsline {subsection}{\numberline {8.1.2}Wrapper improvements}{47}{subsection.8.1.2}%
+\contentsline {subsection}{\numberline {8.1.3}Real applications}{48}{subsection.8.1.3}%
+\contentsline {subsection}{\numberline {8.1.4}Licensing limitations}{48}{subsection.8.1.4}%
+\contentsline {chapter}{\numberline {A}User manual}{51}{appendix.A}%
+\contentsline {section}{\numberline {A.1}Sidebar: Outcome diagram and plots}{51}{section.A.1}%
+\contentsline {subsection}{\numberline {A.1.1}Creating the system}{51}{subsection.A.1.1}%
+\contentsline {subsection}{\numberline {A.1.2}Saving the system definition}{51}{subsection.A.1.2}%
+\contentsline {subsection}{\numberline {A.1.3}Loading the system definition}{51}{subsection.A.1.3}%
+\contentsline {subsection}{\numberline {A.1.4}Managing the plots}{52}{subsection.A.1.4}%
+\contentsline {subsubsection}{Adding a plot}{52}{section*.109}%
+\contentsline {subsubsection}{Editing a plot}{52}{section*.110}%
+\contentsline {subsection}{\numberline {A.1.5}Removing a plot}{53}{subsection.A.1.5}%
+\contentsline {section}{\numberline {A.2}Sidebar: Probes settings}{53}{section.A.2}%
+\contentsline {subsection}{\numberline {A.2.1}Setting a QTA}{53}{subsection.A.2.1}%
+\contentsline {subsection}{\numberline {A.2.2}Setting the parameters of a probe}{53}{subsection.A.2.2}%
+\contentsline {section}{\numberline {A.3}Triggers}{55}{section.A.3}%
+\contentsline {section}{\numberline {A.4}Instrumenting the Erlang application}{55}{section.A.4}%
+\contentsline {subsection}{\numberline {A.4.1}Including the wrapper}{55}{subsection.A.4.1}%
+\contentsline {subsection}{\numberline {A.4.2}Starting spans}{55}{subsection.A.4.2}%
+\contentsline {subsection}{\numberline {A.4.3}Ending spans}{56}{subsection.A.4.3}%
+\contentsline {subsection}{\numberline {A.4.4}Failing outcome instances}{56}{subsection.A.4.4}%
+\contentsline {section}{\numberline {A.5}Establishing connection to the oscilloscope}{56}{section.A.5}%

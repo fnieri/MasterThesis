@@ -16,6 +16,7 @@ Thanks to this probe, the user can observe the $\Delta$Q \textit{"observed at $p
             \includegraphics[scale=1.8]{tikz/probes.pdf}
         \end{center}
         \label{fig:probes}
+        \caption{Probes inserted in a component diagram.}
     \end{figure}
 
     \subsection{Inserting probes in the oscilloscope}
@@ -27,6 +28,8 @@ Thanks to this probe, the user can observe the $\Delta$Q \textit{"observed at $p
             \begin{center}
                 \includegraphics[scale=1.3]{tikz/probe_1.pdf}
             \end{center}
+            \label{fig:probes_o}
+            \caption{Probes inserted in the outcome diagram of the previous component diagram. \ref{fig:probes}}
         \end{figure}
        
        As for operators (outcome expression), probes are automatically attached to the components inside them and to the start event and end events of the operators. 
@@ -35,10 +38,11 @@ Thanks to this probe, the user can observe the $\Delta$Q \textit{"observed at $p
            \begin{center}
                 \includegraphics[scale = 1.3]{tikz/probe_2.pdf}
             \end{center}
-        \end{figure}
+            \label{fig:probes_op}
+            \caption{Probes inserted into an operator.}
+       \end{figure}
     
     The \textbf{observed $\Delta$Q} for the first-to-finish operator is the $\Delta$Q from the instances (\textbf{start}, \textbf{end}). The \textbf{calculated $\Delta$Q} is the $\Delta$Q which is the result of the first-to-finish operator being applied on $o_1, o_2$
-
         
     \subsection{Probes: from spans to outcome instances}
         OpenTelemetry spans are useful to carry context, attributes and baggage in a program, the plethora of attributes they have is nevertheless too much for the oscilloscope.

@@ -4,7 +4,7 @@
     \subsection{Sidebar}
         The sidebar has multiple tabs, we explain here the responsibility of each one.
 
-    \subsubsection{System/Plots tab}
+    \subsubsection{System/Handle plots tab}
 
     \paragraph{System creation}
         In this tab the user can create its system using the grammar defined before, he can save the text he used to define the system or load it, the system is saved to a file with any extension, we nevertheless define an extension to save the system to, the extension \texttt{.dq}.
@@ -12,6 +12,12 @@
 
     \paragraph{Adding a plot}
         Once the system is defined, the user can choose the probes he wants to plot. They can select multiple probes per plot and display multiple plots on the oscilloscope window.
+    
+    \paragraph{Polling rate}
+        The user can choose the polling rate of the system: How often $\Delta$Qs are calculated and displayed in the oscilloscope.
+
+    \paragraph{Editing a plot}
+        By clicking onto a plot that is being shown, the user can choose to add or remove probes to and from it. Multiple probes can be selected to either be removed or added.
 
     \subsubsection{Parameters tab}
         In this tab, the user can define parameters for the probes they have defined.
@@ -30,6 +36,9 @@
     
     \paragraph{Fired triggers}
         Once a trigger is fired, the system start a timer, during which all probes start recording the observed $\Delta$Qs (and the calculated ones if applicable) without discarding older ones. Once the timer expires, the snapshot is saved for the user in the triggers tab. In the dashboard, it indicates when the trigger was fired (timestamp) and the name of the probe which fired it.
+    
+    \subsection{Plots window}
+        To the left, the main window shows the plots of the probes being updated in real time. 
 
     \subsection{Stub controls}
         Below the sidebar, two buttons are present, these buttons communicate to the stub. 
