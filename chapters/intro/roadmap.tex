@@ -3,11 +3,11 @@
 
     We divided the thesis in multiple chapters, below is the roadmap of the content:
     \begin{itemize}
-        \item The background chapter gives the reader an introduction to the tools we leverage in our program, namely, OpenTelemetry and an extensive background into the theoretical foundations of $\Delta$QSD, which are the basis of the oscilloscope and are fundamental to understand how to correctly use and analyse the output given by the oscilloscope.
-        \item The design chapter delves into how the parts of the system interact together.
-        \item The implementation part is split in two. First, we provide a high level abstraction of how $\Delta$QSD is implemented in the oscilloscope. Secondly, a more low level explanation, which goes into more technical details of the parts that compose the oscilloscope.
-        \item Lastly, we provide synthetic applications which have been tested with the oscilloscope and an evaluation of the performance of the oscilloscope.
-
+        \item The background chapter gives the reader an extensive background into the theoretical foundations of $\Delta$QSD, which are the basis of the oscilloscope and are fundamental to understand how to correctly use and analyse the output given by the oscilloscope. Secondly, an introduction to OpenTelemetry, the library we base our Erlang adapter on, and the problems that are present in the observability library.
+        \item The design chapter initially delves into how the parts of the system interact together. We later on, thanks to the extensive background, introduce novel aspects which are an extension to the current formalisms and give a global picture of the notions which are required for the different parts of the system to work together.
+        \item The part concering the oscilloscope is split in two. First, we provide user level concepts of how $\Delta$QSD is used in the oscilloscope and what the user should expect graphically from the oscilloscope.
+            Secondly, a more low level explanation, which goes into more technical details of the parts that compose the oscilloscope.
+        \item We then provide synthetic applications which have been tested with the oscilloscope that demonstrate the usefulness of the oscilloscope in a distributed setting. We also perform evaluations of the performance of the different parts we have developed to understand the overhead that are present.
     \end{itemize}
 
     We end by providing future possibilities which can be explored, and concepts which we believe ought to be implemented in observabilities tools. 

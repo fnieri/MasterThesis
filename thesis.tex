@@ -15,7 +15,7 @@
 \usepackage{caption}
 \usepackage{subcaption}
 \usepackage{float}
-
+\usepackage{wrapfig}
 %%Minted for code
 \usepackage{minted}
 \setminted[text]{breaklines, autogobble}
@@ -51,6 +51,7 @@ sorting=none
 % Title of the thesis
 \title{Observing the detailed behaviour of large distributed applications in real time using $\Delta$QSD}
 
+\subtitle{The $\Delta$Q Oscilloscope for Erlang applications}
 % Name of the student author(s)
 \author{Francesco \textsc{Nieri}}
 \degreetitle{Master [120] in Computer Science}
@@ -59,16 +60,13 @@ sorting=none
 \supervisor{Peter \textsc{Van Roy}}
 
 % Name of the reader(s)
-\readerone{Tom \textsc{Barbette}}
-\readertwo{Peer \textsc{Stritzinger}}			% remove if not applicable
-\readerthree{Neil \textsc{Davies}}			% remove if not applicable
+\readertwo{Tom \textsc{Barbette}}
+\readerthree{Peer \textsc{Stritzinger}}			% remove if not applicable
+\readerone{Neil \textsc{Davies}}			% remove if not applicable
 
-% Academic year (update if necessary)
 \years{2024--2025}
 
-% Document
 \begin{document}
-  % Front cover page
     \maketitle
    
     \renewcommand{\thepage}{\roman{page}}

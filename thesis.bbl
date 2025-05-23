@@ -620,6 +620,41 @@
       \verb https://thenewstack.io/opentelemetry-challenges-handling-long-running-spans/
       \endverb
     \endentry
+    \entry{conv}{book}{}{}
+      \name{author}{2}{}{%
+        {{hash=79745d398db7a123f627185130765dc9}{%
+           family={Damelin},
+           familyi={D\bibinitperiod},
+           given={Steven\bibnamedelima B.},
+           giveni={S\bibinitperiod\bibinitdelim B\bibinitperiod}}}%
+        {{hash=fa42466fe8bea9d3e2a28efae1c4e8d5}{%
+           family={Jr},
+           familyi={J\bibinitperiod},
+           given={Willard\bibnamedelima Miller},
+           giveni={W\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {USA}%
+      }
+      \list{publisher}{1}{%
+        {Cambridge University Press}%
+      }
+      \strng{namehash}{619ec3a16435ea921d38adfd785407d1}
+      \strng{fullhash}{619ec3a16435ea921d38adfd785407d1}
+      \strng{fullhashraw}{619ec3a16435ea921d38adfd785407d1}
+      \strng{bibnamehash}{619ec3a16435ea921d38adfd785407d1}
+      \strng{authorbibnamehash}{619ec3a16435ea921d38adfd785407d1}
+      \strng{authornamehash}{619ec3a16435ea921d38adfd785407d1}
+      \strng{authorfullhash}{619ec3a16435ea921d38adfd785407d1}
+      \strng{authorfullhashraw}{619ec3a16435ea921d38adfd785407d1}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{isbn}{1107601045}
+      \field{title}{The Mathematics of Signal Processing}
+      \field{year}{2012}
+    \endentry
     \entry{fftw3}{online}{}{}
       \name{author}{1}{}{%
         {{hash=c91bdfd4de5d2ed142377c34b92e83c2}{%
@@ -676,6 +711,19 @@
       \endverb
       \verb{url}
       \verb https://github.com/jeremyfix/FFTConvolution/blob/master/Convolution/src/convolution_fftw.h
+      \endverb
+    \endentry
+    \entry{fft-h}{misc}{}{}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labeltitlesource}{title}
+      \field{note}{Accessed: (23/05/2025)}
+      \field{title}{Planning-rigor flags}
+      \verb{urlraw}
+      \verb https://www.fftw.org/doc/Planner-Flags.html
+      \endverb
+      \verb{url}
+      \verb https://www.fftw.org/doc/Planner-Flags.html
       \endverb
     \endentry
     \entry{antlr4}{online}{}{}

@@ -44,7 +44,7 @@ Thanks to this probe, the user can observe the $\Delta$Q \textit{"observed at $p
     
     The \textbf{observed $\Delta$Q} for the first-to-finish operator is the $\Delta$Q from the instances (\textbf{start}, \textbf{end}). The \textbf{calculated $\Delta$Q} is the $\Delta$Q which is the result of the first-to-finish operator being applied on $o_1, o_2$
         
-    \subsection{Probes: from spans to outcome instances}
+    \subsection{Inserting probes in Erlang - From spans to outcome instances}
         OpenTelemetry spans are useful to carry context, attributes and baggage in a program, the plethora of attributes they have is nevertheless too much for the oscilloscope.
 
         To get the equivalent of spans for the oscilloscope, the stub needs to be called at the starting events of a probe to start an instance, and at the ending events to end the outcome instance and send the data to the oscilloscope.
