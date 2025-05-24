@@ -11,7 +11,7 @@
            An outcome $O$ is a specific system behaviour that can be observed to start at some point in time and \textit{\textbf{may}} be observed to complete at some later time. \cite{dq-br}
         Formally, what the system obtains by performing one of its tasks. One task corresponds to one outcome and viceversa. When an outcome is performed, it means that the task of an outcome is performed.
      
-     Assume a component $C$ which receives a message $m_{in}$ and outputs a message $m_{out}$ after a delay $d$. Over multiple executions, we will have observed multiple delays which can be represented as a cumulative definition where $p$ percent of delays have delay $\le d$. \cite{art} Each outcome has a $\Delta$Q.
+     Assume a component $C$ which receives a message $m_{in}$ and outputs a message $m_{out}$ after a delay $d$. Over multiple executions, we will have observed multiple delays which can be represented as a cumulative definition where $p$ percent of delays have delay $\le d$, the \textbf{$\Delta$Q}. \cite{art} 
 
 
     \paragraph{Observables}
@@ -26,19 +26,17 @@
         \begin{center}
             \includegraphics[scale=1.2]{tikz/outdq.pdf}
         \end{center}
-        \caption{The outcome (circle) and the starting set (left) and terminating set (right) of events. We characterize a message travelling through the outcome with a $\Delta$Q.}
+        \caption{The outcome (circle) and the starting set (left) and terminating set (right) of events.}
     \end{figure}
 
 \subsection{Quality attenuation ($\Delta$Q)}
-        $\Delta$Q is a cumulative distribution function that defines both latency and failure probability between a start and end event \cite{dq-tut}
+        \textbf{$\Delta$Q} is a cumulative distribution function that defines both \textit{latency} and \textit{failure probability} between a start and end event \cite{dq-tut}
 
-        In an ideal system, an outcome would deliver a desidered behaviour without error, failure, delay, but this is not the case. The quality of an outcome response "attenuated to the relative ideal" (the cumulative distribution function) is called "quality attenuation" ($\Delta$Q). Since it can depend on many factors (geographical, physical \dots), $\Delta$Q is modeled as a random variable.
+        In an ideal system, an outcome would deliver a desired behaviour without error, failure, delay, but this is not the case. The quality of an outcome response "attenuated to the relative ideal" (the cumulative distribution function) is called "quality attenuation" ($\Delta$Q). Since it can depend on many factors (geographical, physical \dots), $\Delta$Q is modeled as a random variable.
 
     As $\Delta$Q captures deviation from ideal behavior, and incorporates delay, which is a continuous random variable, and failures/timeouts, which are discrete variables, it can be described mathematically as an \textit{Improper Random Variable}, where the probability of a delay $<$ 1. Combining latency and failure together makes it easy to examine the tradeoffs between them.
 
-    $\Delta$Q(x) will be the probability that an outcome $O$ will occur in time $t \le x$.
-
-    The \textbf{\textit{intangible mass}} $1 - \lim_{x\to\infty}\Delta Q(x)$ of a $\Delta$Q will encode the probability of failure/timeout/exception occuring.
+    \textbf{$\Delta$Q(x)} is the probability that an outcome $O$ occurs in time $t \le x$. The \textbf{\textit{intangible mass}} $1 - \lim_{x\to\infty}\Delta Q(x)$ of a $\Delta$Q will encode the probability of failure/timeout/exception occuring.
     
     \begin{figure}[H]
         \begin{center}
@@ -48,9 +46,8 @@
     \end{figure}
    
   \subsection{Failure semantics}
-        Quality attenuation models both delay and failure. In the CDF representation of a $\Delta$Q, there is an \textit{f} percent probability that the delay is infinite, this is what failure models. 
-
-        Concretely, it means that an input message $m_{in}$ has no output message $m_{out}$.
+       In the CDF representation of a $\Delta$Q, there is an \textit{f} percent probability that the delay is infinite, this is what failure models. 
+        Concretely, it means that an input message $m_{in}$ \textbf{has no output message} $m_{out}$.
 
         Combining delay and failure in a single quantity is what makes $\Delta$QSD a great choice to explore feasibility in system design.
    
@@ -65,13 +62,14 @@
         A system \textit{satisfies timeliness} if $\Delta$Q$_{obs}$ $\le$ $\Delta$Q$_{req}$.
      
     \subsection{QTA, required $\Delta$Q}
-         The Quantitative Timeliness Agreement maps objective measurements to the subjective perception of application performance \cite{dq-br}. It specifies what the base system does and its limits
-         \paragraph{QTA example}: Imagine a system where 25\% of the executions should take $<$ 15 ms, 50\% $<$ 25 ms and 75\% $<$ 35 ms, all queries have a maximum delay of 50ms and 5\% of executions can timeout, the QTA can be represented as a step function.
+         The \textit{Quantitative Timeliness Agreement} (QTA) maps objective measurements to the subjective perception of application performance \cite{dq-br}. It specifies what the base system does and its limits.
     
-        \paragraph{Slack} When $\Delta$Q is strictly less than the requirement, we say there is performance \textit{slack}.
+    \paragraph{Slack} When $\Delta$Q is strictly less than the requirement, we say there is performance \textit{slack}.
 
         \paragraph{Hazard} When $\Delta$Q is strictly greater than the requirement, there is performance hazard.
-
+    
+    \paragraph{QTA example}: Imagine a system where 25\% of the executions should take $<$ 15 ms, 50\% $<$ 25 ms and 75\% $<$ 35 ms, all queries have a maximum delay of 50ms and 5\% of executions can timeout, the QTA can be represented as a step function.
+    
         \begin{figure}[H]
             \begin{center}
                 \includegraphics[scale=1.2]{tikz/cdf_qta_slack.pdf}
@@ -178,7 +176,7 @@
         Assume two sequentially composed outcomes $o_1$, $o_2$ running on the same processor. A probe $p$ observing the execution from the start event of $o_1$ to the end event of $o_2$. 
         \begin{figure}[H]
             \begin{center}
-                \includegraphics[scale=1.2]{tikz/indep.pdf}
+                \includegraphics[scale=1]{tikz/indep.pdf}
             \end{center}
         \end{figure}
         

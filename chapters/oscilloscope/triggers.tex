@@ -1,24 +1,13 @@
 \section{Triggers}
-    Like an oscilloscope that has a trigger mechanism that fires when a signal of interest is recognized by the oscilloscope, our $\Delta$Q oscilloscope has a similar mechanism of triggers that are fired when an observed $\Delta$Q violates certain conditions. Let us define what these triggers are.
-
+    There are two available triggers
     \subsection{Load}
-        A trigger on an observed $\Delta$Q can be fired if 
+        A trigger on an observed $\Delta$Q can be fired if the amount of outcome instances received in a polling rate is greater than what the user defines:
     \begin{center}
-        nSamples($\Delta$Q($t_l, t_u, dMax$)) > maxAllowedSamples 
+        nSamples($\Delta$Q($t_l, t_u, dMax$)) > maxAllowedInstances 
     \end{center}
 
     \subsection{QTA}
-        There are two possible [can change] triggers that can be fired based on the observable defined $\Delta$Q's QTA.   
-        \subsubsection{Percentiles}
-            A trigger can be fired if:
+        A trigger on an observed $\Delta$Q can be fired if:
         \begin{center}
-            $\Delta$Q$_{obs}$[percentile] $<$ observableQTA$_{req}$[percentile] \quad $\forall \text{ percentile } \{0.25, 0.5, 0.72\}$
+            $\Delta$Q$_{obs}$ $<$ observableQTA
         \end{center}
-        \subsubsection{Failure}
-            A trigger can be fired on the percentage of failed samples for $\Delta$Q($t_l, t_u, dMax$) if:
-        \begin{center}
-            success($\Delta$Q$_{obs}$) $<$ success(observableQTA$_{req}$)
-        \end{center}
-
-    \subsection{Time series snapshots}
-        When a trigger is fired, the oscilloscope will capture ...

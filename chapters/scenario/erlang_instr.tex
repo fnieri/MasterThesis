@@ -1,0 +1,24 @@
+\section{Erlang system} 
+    
+    \subsection{System under test} The system under test \textbf{(S.U.T)} is the Erlang system the engineer wishes to observe, it ideally is a system which already is instrumented with OpenTelemetry. The ideal system where $\Delta$QSD is more useful is a system that executes many independent instances of the same action. 
+    
+    \subsection{Wrapper/Adapter} The adapter is the \texttt{dqsd\_otel} Erlang application, a wrapper that starts and ends OpenTelemetry spans and translates them to outcome instances which are useful for the oscilloscope. This can be done thanks to probes being attached to the system under test, like an oscilloscope would! The outcome instances end normally like OpenTelemetry spans or, additionally, can timeout, given a custom timeout, and fail, according to user's definition of failure. 
+    
+    Handling of OpenTelemetry spans which goes beyond starting and ending them is delegated to the user, who may wish to do further operations with their spans. 
+    The wrapper is called from the system under test and communicates outcome instances data to the oscilloscope via TCP. 
+    
+    The wrapper can receive messages from the oscilloscope, the messages are about updating observable's $dMax$ or starting and stopping the sending of data to the oscilloscope.
+    \subsection{Inserting probes in Erlang - From spans to outcome instances}
+        OpenTelemetry spans are useful to carry context, attributes and baggage in a program. The plethora of attributes they have is nevertheless too much for the oscilloscope.
+
+        To get the equivalent of spans for the oscilloscope, the wrapper needs to be called at the starting events of a probe to start an instance of a probe, and at the ending events to end the outcome instance and send the data to the oscilloscope. The name given with \texttt{"start\_span"} is the name of the probe.
+
+        \begin{minted}{erlang}
+        % Start the outcome instance of worker_2 
+        {WorkerCtx, WorkerPid} = otel_wrapper:start_span(<<"worker_2">>),
+        
+        % Do work here ...
+
+        %End the outcome instance of worker_2
+        otel_wrapper:end_span(WorkerCtx, WorkerPid),
+        \end{minted}

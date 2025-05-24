@@ -83,28 +83,26 @@ If the system is not showing dependent behaviour, the probe \textbf{observed $\D
     \subsection{Triggers - QTA}
         Triggers and QTAs are an important part of the oscilloscope and $\Delta$QSD, we will show here how they can be used and what $\Delta$Q can tell about the state of the system.
 
-        \paragraph{Feeling overload approaching}
+        \paragraph{Satisfying timeliness, a tale of typical queue behaviour}
 
-        $\Delta$Q can be used to feel overload approaching, let's first set a QTA for the probe. 25\% of instances should take $< 6.5$ ms, 50\% $<12 ms$, 75\% $<17 ms$. Let's run the program and analyze the captured snapshots when triggers are fired. 
+        $\Delta$Q can be used to feel overload approaching and analyse a system's behaviour. To do so, we set a QTA for the probe. 25\% of instances should take $< 6.5$ ms, 50\% $<12 ms$, 75\% $<17 ms$. We run the program and wait for triggers to be fired. To do so, we synthetically overload the CPU to degrade the system's performance.
          
         \begin{wrapfigure}{R}{0.3\textwidth}
             \caption{The snapshots fired during execution, we will select the snapshot triggered at 17:52:33}\label{wrap-fig:1}
             \includegraphics[width=0.25\textwidth]{img/snapshots.png}
         \end{wrapfigure} 
 
-
         From the $\Delta$Qs we have in the snapshot we can observe:
         \begin{enumerate}
-            \item \textbf{Business as usual}: The $\Delta$Q behaves better or between than the confidence bounds.
-            \item \textbf{Overload approaching}: The component is slowing down and the $\Delta$Q is performing slightly worse than previously, but it is still approaching overload.
+            \item \textbf{Business as usual}: The system is not showing signs of stress, the $\Delta$Q is better than or between than the confidence bounds.
+            \item \textbf{Overload approaching}: The component is slowing down and the $\Delta$Q is  slightly worse than previously, but we can still feel overload is approaching.
             \item \textbf{QTA violation}: The queue, overloaded, quickly violates the QTA.
             \item \textbf{Get in trouble quickly, get out of it slowly}: The buffering filling up quickly and emptying slowly is a typical queue pattern, this can be observed on the oscilloscope
         \end{enumerate}
         
         For the following graphs, the \textbf{blue} line, annotated as \textbf{(1)} is the \textbf{observed $\Delta$Q}, the \textbf{red} line, annotated as \textbf{(2)}, is the \textbf{calculated $\Delta$Q}. 
         \subsubsection{Business as usual}
-            We can observe the system behaving correctly before the trigger being fired.
-             
+            During normal execution, we can observe the system behaving correctly for a long time before the trigger is fired. This is what the user who connects the oscilloscope to a system which correctly behaves should see most of the time.
         \begin{figure}[H]
             \centering
             \begin{subfigure}{.5\textwidth}
@@ -122,7 +120,7 @@ If the system is not showing dependent behaviour, the probe \textbf{observed $\D
             \end{figure}
         
         \subsubsection{Overload approaching}
-            We can remark the system approaching overload just before the system violates the QTA.
+            We can remark the system approaching overload just before the system violates the QTA. While no triggers are yet fired, as the system is still respecting QTA, we canfeel something is starting to go wrong.
         \begin{figure}[H]
             \centering
             \begin{subfigure}{.5\textwidth}
@@ -140,39 +138,41 @@ If the system is not showing dependent behaviour, the probe \textbf{observed $\D
             \end{figure}
         
         \subsubsection{QTA violation}
-            Just moments after the system performance degrading, the observed $\Delta$Q violates the QTA. We point in blue where the violations happen. The system behaves dangerously close right after violating the QTA.
-             \begin{figure}[H]
+            Just moments after the system performance degrading, the observed $\Delta$Q violates the QTA. We point in blue where the violations happen.
+
+            We can observe how the system $\Delta$Q is dangerously close to the QTA bounds right after violating the QTA. This is because the queue will fill up quickly and empty slowly. We can observe in the next section how the repercussions of such violations linger on for some time after the violation happens.
+            \begin{figure}[H]
             \centering
             \begin{subfigure}{.5\textwidth}
                 \centering
                 \includegraphics[width=0.98\textwidth]{img/violation1.png}
-                \label{fig:appr_ov_2}
+                \label{fig:violat_1}
             \end{subfigure}%
             \begin{subfigure}{.5\textwidth}
                 \centering
                 \includegraphics[width =0.98\textwidth]{img/right_after1.png}
-                \label{fig:appr_ov}
+                \label{fig:violat_2}
             \end{subfigure}
-            \label{fig:appr_ov_t}
-            \caption{The system is slowly degrading just seconds before overload.}
+            \label{fig:violat}
+                \caption{Left: The system violates the QTA. Right: The system is slowly recuperating from overload.}
             \end{figure}
  
 
         \subsubsection{Get in trouble quickly, get out of it slowly}
-            By recording a snapshot the system \textbf{after} the violation happens, we can observe how long it takes to get out.
+            By recording a snapshot the system \textbf{after} the violation happens, we can observe how long it takes to get out. 
         \begin{figure}[H]
             \centering
             \begin{subfigure}{.5\textwidth}
                 \centering
                 \includegraphics[width=0.98\textwidth]{img/getting_bacl1.png}
-                \label{fig:appr_ov_2}
+                \label{fig:recup_1}
             \end{subfigure}%
             \begin{subfigure}{.5\textwidth}
                 \centering
                 \includegraphics[width =0.98\textwidth]{img/still_bad12.png}
-                \label{fig:appr_ov}
+                \label{fig:recup_2}
             \end{subfigure}
-            \label{fig:appr_ov_t}
+            \label{fig:recup}
             \caption{The system is slowly degrading just seconds before overload.}
             \end{figure}
             
@@ -184,14 +184,6 @@ If the system is not showing dependent behaviour, the probe \textbf{observed $\D
                 \centering
                 \includegraphics[width=0.98\textwidth]{img/return_2g1.png}
                 \label{fig:appr_ov_2}
-            \end{subfigure}%
-            \begin{subfigure}{.5\textwidth}
-                \centering
-                \includegraphics[width =0.98\textwidth]{img/bad_after1.png}
-                \label{fig:appr_ov}
-            \end{subfigure}
-            \label{fig:appr_ov_t}
-            \caption{The system is slowly degrading just seconds before overload.}
-            \end{figure}
-            
+            \end{subfigure}%     
+        \end{figure}%
     

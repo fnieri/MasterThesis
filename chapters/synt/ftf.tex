@@ -10,7 +10,7 @@
             \centering
             \begin{subfigure}{.5\textwidth}
                 \centering
-                \includegraphics[width =0.98\textwidth]{img/bad2.png}
+                \includegraphics[width =0.98\textwidth]{img/bad1.png}
                 \label{fig:bad}
             \end{subfigure}%
             \begin{subfigure}{.5\textwidth}%
@@ -18,11 +18,11 @@
                 \includegraphics[width =0.98\textwidth]{img/good.png}%
                 \label{fig:good}%
             \end{subfigure}%
-            \caption{\textit{(Left)} FTF plot \textbf{with wrong outcome diagram definition} as shown in the oscilloscope. (1) Calculated $\Delta$Q. (2) Observed $\Delta$Q. \\
+            \caption{\textit{(Left)} FTF plot \textbf{with wrong outcome diagram definition} as shown in the oscilloscope. (1) Observed $\Delta$Q. (2) Calculated $\Delta$Q. \\
             \textit{(Right)} FTF plot \textbf{with correct outcome diagram definition} as shown in the oscilloscope. Observed $\Delta$Q and calculated $\Delta$Q overlapping.}
             \label{fig:ftf_osc}%
         \end{figure}%
-    On the left, we can observe how the \textbf{calculated $\Delta$Q} (1) is clearly greater than the \textbf{observed $\Delta$Q} (2). A difference this drastic tells us that the proposed outcome diagram does not correctly represent the actual system. On the right, if no dependencies are present and the correct operator is chosen, the two graphs will overlap.
+    On the left, we can observe how the \textbf{calculated $\Delta$Q} (2) is clearly greater than the \textbf{observed $\Delta$Q} (1). A difference this drastic tells us that the proposed outcome diagram does not correctly represent the actual system. On the right, if no dependencies are present and the correct operator is chosen, the two graphs will overlap.
 
     \subsection{Introducing a slower component}
         Let us introduce a slower worker into the system, we introduce an artificial delay into worker\_2 (about 20ms). If the oscilloscope works correctly, the paradigm operations are sound and no dependencies are present in the system, we should not see any difference in the observed and calculated $\Delta$Qs of the FTF operator.

@@ -76,30 +76,30 @@ with_span/2: -spec with_span(binary(), map(), fun(() -> any())) -> any().
         The process can receive three kinds of messages:
         \begin{itemize}
             \item \texttt{\{end\_span, end\_time\}}: This will send a custom span to the oscilloscope with the start and end time of the execution of the observable.
-            \item \texttt{fail\_span}: This will send a custom span to the oscilloscope indicating that an execution of an observable has failed.
-            \item \texttt{timeout}: If the program hasn't ended the span before $dMax$, the timer will send a \texttt{timeout} message and it will send a custom span to the oscilloscope indicating that an execution of an observable has taken $> dMax$.
+            \item \texttt{\{fail\_span, end\_time\}}: This will send a custom span to the oscilloscope indicating that an execution of an observable has failed.
+            \item \texttt{\{timeout, end\_time(StartTime + $dMax$)\}}: If the program hasn't ended the span before $dMax$, the timer will send a \texttt{timeout} message and it will send a custom span to the oscilloscope indicating that an execution of an observable has taken $> dMax$.
         \end{itemize}
         The process is able to receive one and only message, if the execution times out and subsequently the span is ended, the oscilloscope will not be notified as the process is defunct. This is assured by Erlang documentation: \\
         \textit{If the message signal was sent using a process alias that is no longer active, the message signal will be dropped}. %https://www.erlang.org/doc/system/ref_man_processes#sync-comm
 
     \subsection{Handling outcome instances}
-        To create custom spans of the outcome instances we must obtain three important informations:
+        To create outcome instances of a probe we must obtain three important informations:
         \begin{itemize}
-            \item The name of the observed outcome or probe
+            \item Its name
             \item The time when the span was started
-            \item The $dMax$ of the observed
+            \item Its $dMax$
         \end{itemize}
         
-        They are all supplied upon starting a span with \texttt{otel\_wrapper:[start\_span, with\_span]} by calling 
-        
+        They start time and end time are supplied by calling this function:
         \begin{minted}{erlang}
-        StartTime = erlang:system_time(nanosecond),
+        StartTime/EndTime = erlang:system_time(nanosecond),
         \end{minted}
+        The name is given when starting a span and the $dMax$ is stored in a dictionary in the wrapper. 
 
-            The custom span is created only if two conditions are met: the wrapper has been set as active and the user set a timeout for the name of the observable, the functions will spawn a \texttt{span\_process} process, passing along all the necessary informations. \\
+            The outcome instance is created only if two conditions are met: the wrapper has been set as active and the user set a timeout for the probe, the functions will spawn a \texttt{span\_process} process, passing along all the necessary informations. \\
         Once the span is subsequently ended/timed out/failed, the function \texttt{send\_span} creates a message carrying all the informations and sends it to the C++ server. The formatting of the messages is the following:
         \begin{minted}{text}
-            n:Observed name, b: Start time (beginning), e: End time (if end_span was received), s: The status
+            n:Observed name, b: Start time (beginning), e: End time (end or deadline), s: The status
         \end{minted}
 
     \subsection{TCP connection}

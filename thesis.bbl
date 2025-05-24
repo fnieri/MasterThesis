@@ -620,6 +620,34 @@
       \verb https://thenewstack.io/opentelemetry-challenges-handling-long-running-spans/
       \endverb
     \endentry
+    \entry{osc-t}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=6d3c848ff3868db127e40588306291bb}{%
+           family={KeySight},
+           familyi={K\bibinitperiod}}}%
+      }
+      \strng{namehash}{6d3c848ff3868db127e40588306291bb}
+      \strng{fullhash}{6d3c848ff3868db127e40588306291bb}
+      \strng{fullhashraw}{6d3c848ff3868db127e40588306291bb}
+      \strng{bibnamehash}{6d3c848ff3868db127e40588306291bb}
+      \strng{authorbibnamehash}{6d3c848ff3868db127e40588306291bb}
+      \strng{authornamehash}{6d3c848ff3868db127e40588306291bb}
+      \strng{authorfullhash}{6d3c848ff3868db127e40588306291bb}
+      \strng{authorfullhashraw}{6d3c848ff3868db127e40588306291bb}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Accessed: (23/05/2025)}
+      \field{title}{What is an Oscilloscope Trigger?}
+      \field{year}{2022}
+      \verb{urlraw}
+      \verb https://www.keysight.com/used/id/en/knowledge/glossary/oscilloscopes/what-is-an-oscilloscope-trigger
+      \endverb
+      \verb{url}
+      \verb https://www.keysight.com/used/id/en/knowledge/glossary/oscilloscopes/what-is-an-oscilloscope-trigger
+      \endverb
+    \endentry
     \entry{conv}{book}{}{}
       \name{author}{2}{}{%
         {{hash=79745d398db7a123f627185130765dc9}{%
@@ -829,8 +857,8 @@
       \strng{authornamehash}{9a30d9e0e65cd68ed533d5305f8cd1a7}
       \strng{authorfullhash}{9a30d9e0e65cd68ed533d5305f8cd1a7}
       \strng{authorfullhashraw}{9a30d9e0e65cd68ed533d5305f8cd1a7}
-      \field{sortinit}{3}
-      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{note}{Accessed: (21/05/2025)}

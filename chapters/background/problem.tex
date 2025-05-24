@@ -17,6 +17,7 @@ Imagine an Erlang application instrumented with OpenTelemetry, suddenly, the app
         \begin{center}
             \includegraphics{tikz/start_end_dmax.pdf}
         \end{center}
+        \label{fig:otel_dmax}
     \end{figure} 
     By extending $\Delta$QSD notion of early failure one can now right away when the system is overloaded and showing problems, one can know right away when something is wrong, as soon as the maximum delay is hit, this avoids waiting, in this case, 10 seconds to know that something is wrong with your application. \label{timeout}
 

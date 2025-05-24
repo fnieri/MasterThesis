@@ -20,7 +20,7 @@ The following project is the beginning of the $\Delta$Q oscilloscope, our initia
             
                 \item The oscilloscope could be turned into a \textbf{web app}, we feel that a C++ oscilloscope is a good prototype and proof of concept, but its usability would be greater in a browser context. It would be great as a plugin for already existing observability platforms like Grafana.
             
-                \item A wider selection of \textbf{triggers}, as of writing this thesis, only the QTA trigger is available, this is a limitation due to time constraints. Nevertheless, triggers can be easily implemented in the available codebase.
+                \item A wider selection of \textbf{triggers}, as of writing this thesis, only the QTA trigger and load are available, this is a limitation due to time constraints. Nevertheless, triggers can be easily implemented in the available codebase.
             
                 \item \textbf{Better communication between stub - server - oscilloscope}. The current way of sending outcome instances may be a limiting factor under high load, if hundred of thousands of spans were to be sent, the current way the server and oscilloscope are tied together may throttle communications. TCP socket connections could quickly become the chokepoint which makes the oscilloscope temporarily unusable.
 
@@ -32,7 +32,9 @@ The following project is the beginning of the $\Delta$Q oscilloscope, our initia
            
                 \item \textbf{Deconvolution}: An important aspect of $\Delta$QSD, which was not introduced in this paper is deconvolution. It is used to check for infeasability in system desing. Since convolution has already been implemented, this could be integrated using the FFTW3 library. 
 
+                \item \textbf{Exporting graphs}: The graphs can only be observed in the oscilloscope and have no way to be exported to other programs via standard formats.
 
+                \item \textbf{Many more}: This oscilloscope is just a start, if we were to list everything we may want to add, it would take many pages. What we provide is a sufficient enough basis to provide possibilities to observe a running system and understand the power of $\Delta$QSD in analysing its behaviour.
            \end{itemize} 
                 
       \subsection{Wrapper improvements}
@@ -45,4 +47,4 @@ The following project is the beginning of the $\Delta$Q oscilloscope, our initia
         A flaw of the oscilloscope and wrapper is that they have not been tested on real applications, while their usefulness has been proven on synthetic applications, the lack of real life applications is a weakness.
 
     \subsection{Licensing limitations}
-    Lastly, a notable limitation is created by \textbf{Qt}, namely, QtCharts. The usage of Qt does not allow us to release our project under BSD/MIT licenses, but rather a GPLv3 one (we cannot release it under LGPL due to QtCharts).
+    Lastly, a notable limitation is created by \textbf{Qt}, namely, QtCharts. The usage of Qt does not allow us to release our project under BSD/MIT licenses, but rather a GPLv3 one (we cannot release it under LGPL due to QtCharts). \cite{qt-gpl}
