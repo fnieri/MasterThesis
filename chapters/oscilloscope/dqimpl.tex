@@ -40,9 +40,12 @@ Some tradeoffs must though be acknowledged when setting these parameters, a high
         \caption{$\Delta$Q: $dMax$ = 50ms, the CDF will stay constant when delay $> dMax$}
     \end{figure}
 
+    \subsubsection{dMax limitation}
+        $dMax$ can \textbf{not} be lower than 0 milliseconds and will be rounded to the \textbf{nearest} integer, this is a limitation of Erlang \texttt{send\_after} function which only accepts integers and milliseconds values.
+
     \subsection{QTA}
         A simplified QTA is defined for probes. We define 4 points for the step function at 25, 50, 75 percentiles and the maximum amount of failures accepted for an observable. An observed $\Delta$Q will calculate that based on the samples collected. 
-
+    \iffalse
     \subsection{Convolution}
     Convolution allows calculating the sum of delays of two causally linked $\Delta$Q$_A$ and $\Delta$Q$_B$. 
         \begin{figure}[H]
@@ -50,7 +53,7 @@ Some tradeoffs must though be acknowledged when setting these parameters, a high
                 \includegraphics{tikz/comb_dq_comp.pdf}
             \end{center}
         \end{figure}
-
+    \fi
 
     \subsection{Confidence bounds}
     To observe the stationarity of a system we must observe a window of $\Delta$Qs of an observable and calculate confidence bounds over said windows. The bounds can be updated dynamically by inserting or removing a $\Delta$Q, this allows us to consider a small window of execution rather than observing the whole execution.

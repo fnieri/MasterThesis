@@ -1,13 +1,13 @@
 \section{Triggers}
-    There are two available triggers
+    There are two available triggers which can be selected by the user, the triggers are evaluated on the \textbf{observed $\Delta$Q}.
     \subsection{Load}
         A trigger on an observed $\Delta$Q can be fired if the amount of outcome instances received in a polling rate is greater than what the user defines:
     \begin{center}
-        nSamples($\Delta$Q($t_l, t_u, dMax$)) > maxAllowedInstances 
+        \#instances($\Delta$Q($t_l, t_u, dMax$)) > maxAllowedInstances 
     \end{center}
 
     \subsection{QTA}
         A trigger on an observed $\Delta$Q can be fired if:
         \begin{center}
-            $\Delta$Q$_{obs}$ $<$ observableQTA
+            $\Delta$Q$_{obs}$ $>$ observableQTA
         \end{center}

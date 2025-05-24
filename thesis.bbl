@@ -276,7 +276,7 @@
       \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{note}{Accessed: (19/05/2025}
+      \field{note}{Accessed: (19/05/2025)}
       \field{title}{{$\Delta$QSD} workbench - GitHub}
       \field{year}{2022}
       \verb{urlraw}
@@ -869,6 +869,36 @@
       \endverb
       \verb{url}
       \verb https://github.com/tsloughter/ctx
+      \endverb
+    \endentry
+    \entry{qt-gpl}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=64658d3a36807e9ff9e0d0215b01c97a}{%
+           family={Company},
+           familyi={C\bibinitperiod},
+           given={The\bibnamedelima Qt},
+           giveni={T\bibinitperiod\bibinitdelim Q\bibinitperiod}}}%
+      }
+      \strng{namehash}{64658d3a36807e9ff9e0d0215b01c97a}
+      \strng{fullhash}{64658d3a36807e9ff9e0d0215b01c97a}
+      \strng{fullhashraw}{64658d3a36807e9ff9e0d0215b01c97a}
+      \strng{bibnamehash}{64658d3a36807e9ff9e0d0215b01c97a}
+      \strng{authorbibnamehash}{64658d3a36807e9ff9e0d0215b01c97a}
+      \strng{authornamehash}{64658d3a36807e9ff9e0d0215b01c97a}
+      \strng{authorfullhash}{64658d3a36807e9ff9e0d0215b01c97a}
+      \strng{authorfullhashraw}{64658d3a36807e9ff9e0d0215b01c97a}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Accessed: (23/05/2025)}
+      \field{title}{Add-ons available under Commercial Licenses, or GNU General Public License v3}
+      \field{year}{2025}
+      \verb{urlraw}
+      \verb https://doc.qt.io/qt-5/qtmodules.html
+      \endverb
+      \verb{url}
+      \verb https://doc.qt.io/qt-5/qtmodules.html
       \endverb
     \endentry
   \enddatalist

@@ -1,17 +1,17 @@
 [0] Config.pm:308> INFO - This is Biber 2.20
 [0] Config.pm:311> INFO - Logfile is 'thesis.blg'
-[91] biber:340> INFO - === sab mag 24, 2025, 15:26:13
-[109] Biber.pm:420> INFO - Reading 'thesis.bcf'
-[199] Biber.pm:994> INFO - Found 24 citekeys in bib section 0
-[217] Biber.pm:4463> INFO - Processing section 0
-[234] Biber.pm:4654> INFO - Looking for bibtex file 'biblio.bib' for section 0
-[236] bibtex.pm:1713> INFO - LaTeX decoding ...
-[269] bibtex.pm:1519> INFO - Found BibTeX data source 'biblio.bib'
-[480] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[480] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
-[480] Biber.pm:4283> INFO - Sorting list 'none/global//global/global/global' of type 'entry' with template 'none' and locale 'en-US'
-[480] Biber.pm:4289> INFO - No sort tailoring available for locale 'en-US'
-[503] bbl.pm:676> INFO - Writing 'thesis.bbl' with encoding 'UTF-8'
-[528] bbl.pm:779> INFO - Output to thesis.bbl
-[528] Biber.pm:131> WARN - legacy month field 'September' in entry 'dq-br' is not an integer - this will probably not sort properly.
-[528] Biber.pm:133> INFO - WARNINGS: 1
+[146] biber:340> INFO - === sab mag 24, 2025, 17:19:57
+[172] Biber.pm:420> INFO - Reading 'thesis.bcf'
+[304] Biber.pm:994> INFO - Found 25 citekeys in bib section 0
+[328] Biber.pm:4463> INFO - Processing section 0
+[347] Biber.pm:4654> INFO - Looking for bibtex file 'biblio.bib' for section 0
+[350] bibtex.pm:1713> INFO - LaTeX decoding ...
+[390] bibtex.pm:1519> INFO - Found BibTeX data source 'biblio.bib'
+[713] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[713] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[714] Biber.pm:4283> INFO - Sorting list 'none/global//global/global/global' of type 'entry' with template 'none' and locale 'en-US'
+[714] Biber.pm:4289> INFO - No sort tailoring available for locale 'en-US'
+[748] bbl.pm:676> INFO - Writing 'thesis.bbl' with encoding 'UTF-8'
+[771] bbl.pm:779> INFO - Output to thesis.bbl
+[771] Biber.pm:131> WARN - legacy month field 'September' in entry 'dq-br' is not an integer - this will probably not sort properly.
+[771] Biber.pm:133> INFO - WARNINGS: 1

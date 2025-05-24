@@ -72,7 +72,7 @@
     
         \begin{figure}[H]
             \begin{center}
-                \includegraphics[scale=1.2]{tikz/cdf_qta_slack.pdf}
+                \includegraphics[scale=1]{tikz/cdf_qta_slack.pdf}
             \end{center}
             \caption{The system in blue is showing slack and satisfies the requirement, the system in orange is showing signs that it cannot handle the stress, it is not respecting the $\Delta$Q$_{req}$}.
         \end{figure}
@@ -82,7 +82,14 @@
         There are four different ways to represent the relationships between outcomes.
 
     \subsubsection{Sequential composition}
-        If we assume two outcomes $O_A$, $O_B$ where end event of $O_A$ is the start event of $O_B$, the $\Delta$Q of $O_A$ and $O_B$ is given by the convolution of the PDFs of $O_A$ and $O_B$.
+        If we assume two outcomes $O_A$, $O_B$ where end event of $O_A$ is the start event of $O_B$, the two outcomes can be sequentially composed. The $\Delta$Q of $O_AB$ is given by the convolution of the PDFs of $O_A$ and $O_B$.
+        
+        \begin{figure}[H]
+            \begin{center}
+                \includegraphics[scale=1]{tikz/seq_comp.pdf}
+            \end{center}
+            \caption{Sequential composition of $O_A$ and $O_B$.}
+        \end{figure}
         Where convolution ($\circledast$) between two PDF is :
         \begin{equation}
             PDF_{AB}(t) =\int\limits_0^t PDF_A(\delta) \cdot PDF_B(t-\delta)d\delta 
@@ -118,7 +125,7 @@
                 \includegraphics[scale = 0.7]{tikz/ftf_2.pdf}
                 \label{fig:ftf2}
             \end{subfigure}
-            \caption{Left: Two $\Delta$Qs, A and B. Right: The result of the all to finish operator applied on A and B}%
+            \caption{Left: Two $\Delta$Qs, A and B. Right: The result of the first to finish operator applied on A and B}%
             \label{fig:ftf}
             \end{figure}
 
@@ -165,7 +172,7 @@
         \begin{center}
             \includegraphics[width = \textwidth]{tikz/op.pdf}
         \end{center}
-        \caption{The possible relationships in an outcome diagram: Sequential composition, probabilistic choice, first-to-finish, all-to-finish}
+        \caption{The possible operators in an outcome diagram: Probabilistic choice, first-to-finish, all-to-finish}
         \label{fig:op}
     \end{figure}
     First-to-finish, All-to-finish and probabilistic-choice are calculated on the CDF of the $\Delta$Q.

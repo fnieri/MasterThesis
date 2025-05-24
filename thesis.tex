@@ -78,6 +78,13 @@ sorting=none
 
 \addbibresource{biblio.bib}
 
+% Show chapter
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\renewcommand{\chaptermark}[1]{\markboth{#1}{#1}}
+\fancyhead[R]{}
+\fancyhead[L]{\chaptername\ \thechapter\ --\ \leftmark}
+
 
 % Please fill in the following boxes
 % What if I didn't?
@@ -101,7 +108,7 @@ sorting=none
 
 \begin{document}
     \maketitle
-   
+   \pagestyle{empty}
     \renewcommand{\thepage}{\roman{page}}
 
     \newgeometry{left=3cm, right=2.5cm, top=3cm, bottom=3cm} % Adjust as needed
@@ -114,7 +121,7 @@ sorting=none
  
     %\printglossary[type=\acronymtype,style=long]
     \pagenumbering{arabic}% Reset page numbering and style
-    
+    \pagestyle{fancy} 
     \input{chapters/1-intro}
     \input{chapters/2-background}
     \input{chapters/3-design}

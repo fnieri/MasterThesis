@@ -5,26 +5,17 @@
 
 \usepackage{amssymb} 
 \usetikzlibrary{shapes.geometric}
-\newcommand\px{3}
-\newcommand\ftf{9}
-\newcommand\atf{15}
+\newcommand\px{0}
+\newcommand\ftf{6}
+\newcommand\atf{12}
 \begin{document}
 \begin{tikzpicture}[square/.style={regular polygon,regular polygon sides=4}]
-
-    % Causal link
-    \node at (0, 0) [circle, minimum size = 0.7cm, draw] (o1) {\small $o_1$}; 
-    \node at (1, 0) [square, draw] (e) {};
-    \node at (2, 0) [circle, minimum size = 0.7cm, draw] (o2) {\small $o_2$}; 
-
-    \draw (o1.east) -- (e.west);
-    \draw (e.east) -- (o2.west);
-
 
     % Probability 
     \node at (\px, 0) [square, draw] (s) {}; 
     \node at (\px + 1, 0) [square, draw] (probab) {\small $\rightleftarrows$};
-    \node at (\px + 3, 1) [circle, draw] (o3) {\small $o_3$};
-    \node at (\px + 3, -1) [circle, draw] (o4) {\small $o_4$};
+    \node at (\px + 3, 1) [circle, draw] (o3) {\small $o_1$};
+    \node at (\px + 3, -1) [circle, draw] (o4) {\small $o_2$};
     \node at (\px + 5, 0) [square, draw] (e) {};
 
     \draw (s.east) -- (probab.west);
@@ -37,8 +28,8 @@
 
     \node at (\ftf, 0) [square, draw] (s_f) {}; 
     \node at (\ftf + 1, 0) [square, draw] (ftf) {\small $\exists$};
-    \node at (\ftf + 3, 1) [circle, draw] (o5) {\small $o_5$};
-    \node at (\ftf + 3, -1) [circle, draw] (o6) {\small $o_6$};
+    \node at (\ftf + 3, 1) [circle, draw] (o5) {\small $o_3$};
+    \node at (\ftf + 3, -1) [circle, draw] (o6) {\small $o_4$};
     \node at (\ftf + 5, 0) [square, draw] (e_f) {};
 
     \draw (s_f.east) -- (ftf.west);
@@ -51,8 +42,8 @@
  
     \node at (\atf, 0) [square, draw] (s_a) {}; 
     \node at (\atf + 1, 0) [square, draw] (atf) {\small $\forall$};
-    \node at (\atf + 3, 1) [circle, draw] (o7) {\small $o_7$};
-    \node at (\atf + 3, -1) [circle, draw] (o8) {\small $o_8$};
+    \node at (\atf + 3, 1) [circle, draw] (o7) {\small $o_5$};
+    \node at (\atf + 3, -1) [circle, draw] (o8) {\small $o_6$};
     \node at (\atf + 5, 0) [square, draw] (e_a) {};
 
     \draw (s_a.east) -- (atf.west);
