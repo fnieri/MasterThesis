@@ -109,14 +109,14 @@
 \contentsline {section}{\numberline {5.2}Wrapper}{32}{section.5.2}%
 \contentsline {subsection}{\numberline {5.2.1}API}{32}{subsection.5.2.1}%
 \contentsline {subsubsection}{start\_span/1, start\_span/2}{32}{section*.72}%
-\contentsline {paragraph}{Parameters:}{32}{section*.73}%
+\contentsline {paragraph}{Parameters:}{33}{section*.73}%
 \contentsline {paragraph}{Return:}{33}{section*.74}%
 \contentsline {subsubsection}{with\_span/1, with\_span/2}{33}{section*.75}%
 \contentsline {paragraph}{Parameters:}{33}{section*.76}%
 \contentsline {paragraph}{Return:}{33}{section*.77}%
 \contentsline {subsubsection}{end\_span}{33}{section*.78}%
 \contentsline {paragraph}{Parameters:}{33}{section*.79}%
-\contentsline {subsubsection}{fail\_span}{33}{section*.80}%
+\contentsline {subsubsection}{fail\_span}{34}{section*.80}%
 \contentsline {paragraph}{Parameter:}{34}{section*.81}%
 \contentsline {subsubsection}{span\_process}{34}{section*.82}%
 \contentsline {subsection}{\numberline {5.2.2}Handling outcome instances}{34}{subsection.5.2.2}%

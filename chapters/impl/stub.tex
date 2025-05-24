@@ -24,7 +24,7 @@ start_span/2: -spec start_span(binary(), map()) -> {opentelemetry:span_ctx(), pi
         \paragraph{Return:} 
         The function returns either:
         \begin{itemize}
-            \item  \texttt{\{SpanCtx, span\_process\_PID\}} if the wrapper is active and the observable's $dMax$ has been set.
+            \item  \texttt{\{SpanCtx, span\_process\_PID\}} if the wrapper is active and the probe's $dMax$ has been set.
             \item \texttt{\{SpanCtx, ignore\}} if one of the two previous conditions was not respected.
         \end{itemize}
         With SpanCtx being the context of the span created by OpenTelemetry.
@@ -78,9 +78,9 @@ with_span/2: -spec with_span(binary(), map(), fun(() -> any())) -> any().
         
         The process can receive three kinds of messages:
         \begin{itemize}
-            \item \texttt{\{end\_span, end\_time\}}: This will send a custom span to the oscilloscope with the start and end time of the execution of the observable.
-            \item \texttt{\{fail\_span, end\_time\}}: This will send a custom span to the oscilloscope indicating that an execution of an observable has failed.
-            \item \texttt{\{timeout, end\_time(StartTime + $dMax$)\}}: If the program hasn't ended the span before $dMax$, the timer will send a \texttt{timeout} message and it will send a custom span to the oscilloscope indicating that an execution of an observable has taken $> dMax$.
+            \item \texttt{\{end\_span, end\_time\}}: This will send a custom span to the oscilloscope with the start and end time of the execution of the probe.
+            \item \texttt{\{fail\_span, end\_time\}}: This will send a custom span to the oscilloscope indicating that an execution of a probe has failed.
+            \item \texttt{\{timeout, end\_time(StartTime + $dMax$)\}}: If the program hasn't ended the span before $dMax$, the timer will send a \texttt{timeout} message and it will send a custom span to the oscilloscope indicating that an execution of a probe has taken $> dMax$.
         \end{itemize}
         The process is able to receive one and only message, if the execution times out and subsequently the span is ended, the oscilloscope will not be notified as the process is defunct. This is assured by Erlang documentation:
         \begin{center}

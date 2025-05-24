@@ -2412,8 +2412,11 @@
     <bcf:citekey order="38" intorder="1">erl-s</bcf:citekey>
     <bcf:citekey order="39" intorder="1">antlr4</bcf:citekey>
     <bcf:citekey order="40" intorder="1">antlr</bcf:citekey>
-    <bcf:citekey order="41" intorder="1">ctx</bcf:citekey>
-    <bcf:citekey order="42" intorder="1">qt-gpl</bcf:citekey>
+    <bcf:citekey order="41" intorder="1">antlr</bcf:citekey>
+    <bcf:citekey order="42" intorder="1">lark</bcf:citekey>
+    <bcf:citekey order="43" intorder="1">qt-w</bcf:citekey>
+    <bcf:citekey order="44" intorder="1">ctx</bcf:citekey>
+    <bcf:citekey order="45" intorder="1">qt-gpl</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="none">
