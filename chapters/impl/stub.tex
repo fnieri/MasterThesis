@@ -2,10 +2,10 @@
     The wrapper, called \texttt{dqsd\_otel} is a rebar3 application built to replace OpenTelemetry calls and create custom spans, it is designed to be paired with the oscilloscope to observe an erlang application.
     
     \subsection{API}
-        The wrapper functions to be used by the user are made to replace OpenTelemetry calls to macros as for \texttt{?start\_span} and \texttt{?with\_span} and \texttt{?end\_span}. This is to make the wrapper less of an encumbrance for the user. \\
-        Moreover, the wrapper will always start OpenTelemetry spans but only start custom spans if the stub has been activated. The wrapper can be activated by: WIP 
-        
-       
+        The wrapper functions to be used by the user are made to replace OpenTelemetry calls to macros as for \texttt{?start\_span} and \texttt{?with\_span} and \texttt{?end\_span}. This is to make the wrapper less of an encumbrance for the user. 
+
+        Moreover, the wrapper will always start OpenTelemetry spans but only start custom spans if the stub has been activated. The wrapper can be activated by the oscilloscope by pressing the "start wrapper" button and can be stopped via the "stop wrapper" button.
+         
         \subsubsection{start\_span/1, start\_span/2}
         
         \begin{minted}{erlang}        
@@ -15,8 +15,8 @@ start_span/2: -spec start_span(binary(), map()) -> {opentelemetry:span_ctx(), pi
         
         \paragraph{Parameters:}
         \begin{itemize}
-            \item Name: Binary name of the observable
-            \item Attributes: The OpenTelemetry span attributes (Only for start\_span/2)
+            \item Name: Binary name of the probe.
+            \item Attributes: The OpenTelemetry span attributes (Only for start\_span/2).
         \end{itemize} 
         
         \texttt{start\_span} incorporates OpenTelemetry \texttt{?start\_span(Name)} macro.
@@ -24,7 +24,7 @@ start_span/2: -spec start_span(binary(), map()) -> {opentelemetry:span_ctx(), pi
         \paragraph{Return:} 
         The function returns either:
         \begin{itemize}
-            \item  \texttt{\{SpanCtx, span\_process\_PID\}} if the wrapper is active and the observable's $dMax$ has been set 
+            \item  \texttt{\{SpanCtx, span\_process\_PID\}} if the wrapper is active and the observable's $dMax$ has been set.
             \item \texttt{\{SpanCtx, ignore\}} if one of the two previous conditions was not respected.
         \end{itemize}
         With SpanCtx being the context of the span created by OpenTelemetry.
@@ -38,9 +38,10 @@ with_span/2: -spec with_span(binary(), map(), fun(() -> any())) -> any().
          
         \paragraph{Parameters:}
             \begin{itemize}
-                \item Name: Binary name of the observable
-                \item Fun: Zero-arity function representing the code of block that should run inside the \texttt{?with\_span} macro
-                \item Attributes: The OpenTelemetry span attributes (Only for with\_span/3)
+                \item Name: Binary name of the probe.
+                \item Fun: Zero-arity function representing the code of block that should run inside the \texttt{?with\_span} macro.
+                \item Attributes: The OpenTelemetry span attributes (Only for with\_span/3).
+
             \end{itemize}
 
         \texttt{with\_span} incorporates OpenTelemetry \texttt{with\_span} macro. \\
@@ -54,7 +55,7 @@ with_span/2: -spec with_span(binary(), map(), fun(() -> any())) -> any().
             \paragraph{Parameters:}
             \begin{itemize}
                 \item SpanCtx: The context of the span returned by \texttt{start\_span}.
-                \item Pid: \texttt{span\_process\_PID} || \texttt{ignore}
+                \item Pid: \texttt{span\_process\_PID} || \texttt{ignore}.
             \end{itemize}
 
     As is the case for \texttt{start\_span}, \texttt{end\_span} incorporates an OpenTelemetry macro, in this case \texttt{?end\_span(Ctx)}. \\
@@ -65,34 +66,38 @@ with_span/2: -spec with_span(binary(), map(), fun(() -> any())) -> any().
         \end{minted}
         \paragraph{Parameter:}
              \begin{itemize}
-                \item Pid: \texttt{ignore} || \texttt{span\_process\_PID}
+                \item Pid: \texttt{ignore} || \texttt{span\_process\_PID}.
             \end{itemize}
             \texttt{fail\_span} does not incorporate any OpenTelemetry macro, it is let up to the user to decide how to handle failures in execution. \\
         
 
         \subsubsection{span\_process}
-            \texttt{span\_process} is the process, spawned by \texttt{start\_span}, responsible for handling the \texttt{end\_span, fail\_span, timeout} messages. \\
-            Upon being spawned, the process starts a timer with time equal to the $dMax$ set by an user for the observable being observed, thanks to \texttt{erlang:send\_after}. when the timer runs out, it sends a \texttt{timeout} message to the process.
+            \texttt{span\_process} is the process, spawned by \texttt{start\_span}, responsible for handling the \texttt{end\_span, fail\_span, timeout} messages.
+
+            Upon being spawned, the process starts a timer with time equal to the $dMax$ set by an user for the probe being observed, thanks to \texttt{erlang:send\_after}. When the timer runs out, it sends a \texttt{timeout} message to the process.
+        
         The process can receive three kinds of messages:
         \begin{itemize}
             \item \texttt{\{end\_span, end\_time\}}: This will send a custom span to the oscilloscope with the start and end time of the execution of the observable.
             \item \texttt{\{fail\_span, end\_time\}}: This will send a custom span to the oscilloscope indicating that an execution of an observable has failed.
             \item \texttt{\{timeout, end\_time(StartTime + $dMax$)\}}: If the program hasn't ended the span before $dMax$, the timer will send a \texttt{timeout} message and it will send a custom span to the oscilloscope indicating that an execution of an observable has taken $> dMax$.
         \end{itemize}
-        The process is able to receive one and only message, if the execution times out and subsequently the span is ended, the oscilloscope will not be notified as the process is defunct. This is assured by Erlang documentation: \\
-        \textit{If the message signal was sent using a process alias that is no longer active, the message signal will be dropped}. %https://www.erlang.org/doc/system/ref_man_processes#sync-comm
+        The process is able to receive one and only message, if the execution times out and subsequently the span is ended, the oscilloscope will not be notified as the process is defunct. This is assured by Erlang documentation:
+        \begin{center}
+            \textit{If the message signal was sent using a process alias that is no longer active, the message signal will be dropped.} \cite{erl-s}
+        \end{center}
 
     \subsection{Handling outcome instances}
         To create outcome instances of a probe we must obtain three important informations:
         \begin{itemize}
-            \item Its name
-            \item The time when the span was started
-            \item Its $dMax$
+            \item Its name.
+            \item The time when the span was started.
+            \item Its $dMax$.
         \end{itemize}
         
         They start time and end time are supplied by calling this function:
         \begin{minted}{erlang}
-        StartTime/EndTime = erlang:system_time(nanosecond),
+        StartTime/EndTime = erlang:system_time(nanosecond).
         \end{minted}
         The name is given when starting a span and the $dMax$ is stored in a dictionary in the wrapper. 
 
@@ -111,8 +116,8 @@ with_span/2: -spec with_span(binary(), map(), fun(() -> any())) -> any().
             The oscilloscope can send commands to the stub, these commands are:
             \begin{itemize}
                 \item \texttt{start\_stub}: This command sets the stub as active, it can now send spans to the oscilloscope if the items are defined.
-                \item \texttt{stop\_stub}: This commands sets the stub as inactive, it will no longer send spans to the oscilloscope
-                \item \texttt{set\_timeout;probeName;timeout}: This command indicates to the stub to set the $dMax$ for a probe to timeOut, a limit of the stub is that erlang:send\_after does not accept floats as timeouts, so the timeout will be rounded to the nearest integer
+                \item \texttt{stop\_stub}: This commands sets the stub as inactive, it will no longer send spans to the oscilloscope.
+                \item \texttt{set\_timeout;probeName;timeout}: This command indicates to the stub to set the $dMax$ for a probe to timeOut, a limit of the stub is that erlang:send\_after does not accept floats as timeouts, so the timeout will be rounded to the nearest integer.
             \end{itemize}
 
         \subsubsection{TCP client}

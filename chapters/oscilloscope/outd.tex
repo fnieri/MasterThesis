@@ -9,9 +9,9 @@
                 \begin{minted}{text}
                     ... = outcomeName;
                 \end{minted}
-        
+            Outcomes cannot be defined on their own and must be observed by other probes, we explain below how.
         \subsubsection{Probes containing outcome expressions}
-            A probe can contain one component or a sequence of causally linked components.
+            A probe can contain one outcome or  a sequence of causally linked components.
             The user can define as many probes that contain outcome expressions as they want, they have to be declared as follows:
             \begin{minted}{text}
                 probe = component [-> component2];
@@ -22,7 +22,7 @@
             \begin{minted}{text}
                 probe3 = s:probe -> s:probe2;
             \end{minted}
- 
+        The lines defining these probes must be semicolon terminated. 
         \subsection{Operators, outcome expressions}
             To build a system, we must define the relations between outcomes and outcome expressions, below is how they can be defined. 
 

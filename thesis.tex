@@ -33,7 +33,10 @@
 
 \usepackage{accents}
 \usepackage{hyperref}
+\usepackage[capitalize]{cleveref}
 
+
+\Crefname{figure}{Figure}{Figures}
 %Appendix
 \usepackage[toc,page]{appendix}
 
@@ -122,11 +125,10 @@ sorting=none
     %\printglossary[type=\acronymtype,style=long]
     \pagenumbering{arabic}% Reset page numbering and style
     \pagestyle{fancy} 
+    
     \input{chapters/1-intro}
     \input{chapters/2-background}
     \input{chapters/3-design}
-   % \input{chapters/dq}
-
     \input{chapters/4-oscilloscope}
     \input{chapters/5-impl}
     \input{chapters/6-synt}

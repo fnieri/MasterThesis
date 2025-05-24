@@ -754,6 +754,36 @@
       \verb https://www.fftw.org/doc/Planner-Flags.html
       \endverb
     \endentry
+    \entry{erl-s}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=07bf2ea0b739d056d25ada96f6e845c3}{%
+           family={Documentation},
+           familyi={D\bibinitperiod},
+           given={Erlang\bibnamedelima System},
+           giveni={E\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
+      }
+      \strng{namehash}{07bf2ea0b739d056d25ada96f6e845c3}
+      \strng{fullhash}{07bf2ea0b739d056d25ada96f6e845c3}
+      \strng{fullhashraw}{07bf2ea0b739d056d25ada96f6e845c3}
+      \strng{bibnamehash}{07bf2ea0b739d056d25ada96f6e845c3}
+      \strng{authorbibnamehash}{07bf2ea0b739d056d25ada96f6e845c3}
+      \strng{authornamehash}{07bf2ea0b739d056d25ada96f6e845c3}
+      \strng{authorfullhash}{07bf2ea0b739d056d25ada96f6e845c3}
+      \strng{authorfullhashraw}{07bf2ea0b739d056d25ada96f6e845c3}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Accessed: (24/05/2025)}
+      \field{title}{Signals/Sending signals}
+      \field{year}{2025}
+      \verb{urlraw}
+      \verb https://www.erlang.org/doc/system/ref_man_processes
+      \endverb
+      \verb{url}
+      \verb https://www.erlang.org/doc/system/ref_man_processes
+      \endverb
+    \endentry
     \entry{antlr4}{online}{}{}
       \name{author}{1}{}{%
         {{hash=1b665da45dc9aa260864b6047bfea42e}{%
@@ -822,8 +852,8 @@
       \strng{editornamehash}{5631d18b62cc5e9ff492dce79c393f5a}
       \strng{editorfullhash}{5631d18b62cc5e9ff492dce79c393f5a}
       \strng{editorfullhashraw}{5631d18b62cc5e9ff492dce79c393f5a}
-      \field{sortinit}{3}
-      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{booktitle}{Proceedings of the 32nd {ACM} {SIGPLAN} Conference on Programming Language Design and Implementation, {PLDI} 2011, San Jose, CA, USA, June 4-8, 2011}

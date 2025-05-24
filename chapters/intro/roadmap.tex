@@ -1,14 +1,14 @@
 \section{Roadmap}
-    The following thesis will give the reader everything that is needed to use the Oscilloscope and exploit it to its full potential.
+    The following thesis will give the reader everything that is needed to use the oscilloscope and exploit it to its full potential.
 
     We divided the thesis in multiple chapters, below is the roadmap of the content:
     \begin{itemize}
         \item The background chapter gives the reader an extensive background into the theoretical foundations of $\Delta$QSD, which are the basis of the oscilloscope and are fundamental to understand how to correctly use and analyse the output given by the oscilloscope. Secondly, an introduction to OpenTelemetry, the library we base our Erlang adapter on, and the problems that are present in the observability library.
-        \item The design chapter initially delves into how the parts of the system interact together. We later on, thanks to the extensive background, introduce novel aspects which are an extension to the current formalisms and give a global picture of the notions which are required for the different parts of the system to work together.
-        \item The part concering the oscilloscope is split in two. First, we provide user level concepts of how $\Delta$QSD is used in the oscilloscope and what the user should expect graphically from the oscilloscope.
-            Secondly, a more low level explanation, which goes into more technical details of the parts that compose the oscilloscope.
+        \item The design chapter initially extends the concepts of $\Delta$QSD, introducing novel aspects which are key to understand how to properly instrument the different part of the systems, as they are the basis upon which we build the oscilloscope. We then delve how the parts of the system interact together and how to correctly apply the concepts we just introduced in the oscilloscope and the Erlang system.
+        \item We then present the oscilloscope in two different chapters, first providing "user level concepts" of how $\Delta$QSD is used in the oscilloscope and what the user should expect graphically from the oscilloscope.
+            Secondly, a more low level explanation, which goes into more technical details of the parts that compose the oscilloscope and the $\Delta$QSD concepts explained in the previous chapter.
         \item We then provide synthetic applications which have been tested with the oscilloscope that demonstrate the usefulness of the oscilloscope in a distributed setting. We also perform evaluations of the performance of the different parts we have developed to understand the overhead that are present.
     \end{itemize}
 
     We end by providing future possibilities which can be explored, and concepts which we believe ought to be implemented in observabilities tools. 
-    In the appendix, we provide a user manual to help users use the oscilloscope, along with Erlang and C++ source code of the oscilloscope and the wrapper.
+    In the appendix, we provide a user manual to help users use the oscilloscope, along withC++ and Erlang source code of the oscilloscope and the wrapper.

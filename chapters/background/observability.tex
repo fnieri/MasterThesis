@@ -4,7 +4,7 @@
     In the case of the Erlang programming language, we explain below two tools that can be used to observe an Erlang program.
     
     \subsection{erlang:trace}
-        The Erlang programming language gives the users different ways to observe the behaviour of the code, one of those is the function \texttt{erlang:trace/3}. The erlang run-time system exposes several trace points that can be observe, observing the trace points allows users to be notified when they are triggered \cite{erl-t}. One can observe function calls, messages being sent and received, process being spawned, garbage collecting \dots. 
+        The Erlang programming language gives the users different ways to observe the behaviour of the code, one of those is the function \texttt{erlang:trace/3}. The erlang run-time system exposes several trace points that can be observed, observing the trace points allows users to be notified when they are triggered \cite{erl-t}. One can observe function calls, messages being sent and received, process being spawned, garbage collecting \dots. 
         \begin{figure}[!ht]
         \centering
         \begin{minted}{erlang}
@@ -79,7 +79,7 @@
 
 
     \subsubsection{Macros}
-        OpenTelemetry provides macros to start, end and interact with spans in Erlang. \cite{otel-in}
+        OpenTelemetry provides macros to start, end and interact with spans in Erlang, the following code excerpts are taken from the instrumentation wiki. \cite{otel-in}
         \paragraph{?with\_span}
             \texttt{?with\_span} creates active spans. An active span is the span that is currently set in the execution context and is considered the "current" span for the ongoing operation or thread. \cite{active-s}
         \begin{minted}{erlang}
