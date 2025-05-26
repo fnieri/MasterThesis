@@ -24,7 +24,7 @@
 
         Imagine the engineer supposes the workers executions should take around 6.5 ms to complete, but doesn't actually know how long the executions should take. The engineer, after having set the required parameters observes in the following graph in the oscilloscope \cref{fig:w1w2}.
 
-    The oscilloscope shows the engineer that their assumptions do not correspond to the actual system $\Delta$Q, the user can then modify the parameters to observe the actual system's behaviour. By setting $dmax$ to 25 ms, he can observe the worker's $\Delta$Qs approaching 1.
+    The oscilloscope shows the engineer that their assumptions do not correspond to the actual system $\Delta$Q, the user can then modify the parameters to observe the actual system's behaviour. By setting $dMax$ to 25 ms, they can observe the worker's $\Delta$Qs approaching 1.
 
 \begin{figure}[H]
             \centering
@@ -43,16 +43,11 @@
             \label{fig:w1w2hb}
             \end{figure}
 
-
     On the other hand, the engineer's assumption could have been what he truly expected from the system, in this case, the oscilloscope tells him that the system is not behaving as expected. 
 
-    \paragraph{Low Load}
-
-    At low load, we can observe in the oscilloscope how worker\_1 and worker\_2 mean $\Delta$Qs overlap. This is expected, even under overload or dependency conditions, worker\_1 and worker\_2 should have the same $\Delta$Qs.
+    \paragraph{Low Load} At low load, we can observe in the oscilloscope how worker\_1 and worker\_2 mean $\Delta$Qs overlap. This is expected, even under overload or dependency conditions, worker\_1 and worker\_2 should have the same $\Delta$Qs.
 
 If the system is not showing dependent behaviour, the probe \textbf{observed $\Delta$Q} and \textbf{calculated $\Delta$Q} should overlap. We can observe that in the graph below, as the mean CDF of both $\Delta$Qs overlap.
-
-
 
 \begin{figure}[H]
             \centering
@@ -83,7 +78,7 @@ If the system is not showing dependent behaviour, the probe \textbf{observed $\D
     \subsection{Triggers - QTA}
         Triggers and QTAs are an important part of the oscilloscope and $\Delta$QSD, we will show here how they can be used and what $\Delta$Q can tell about the state of the system.
 
-        \paragraph{Satisfying timeliness, a tale of typical queue behaviour}
+        \subsubsection{Satisfying timeliness, a tale of typical queue behaviour}
 
         $\Delta$Q can be used to feel overload approaching and analyse a system's behaviour. To do so, we set a QTA for the probe. 25\% of instances should take $< 6.5$ ms, 50\% $<12 ms$, 75\% $<17 ms$. We run the program and wait for triggers to be fired. To do so, we synthetically overload the CPU to degrade the system's performance.
          
@@ -97,7 +92,7 @@ If the system is not showing dependent behaviour, the probe \textbf{observed $\D
             \item \textbf{Business as usual}: The system is not showing signs of stress, the $\Delta$Q is better than or between than the confidence bounds.
             \item \textbf{Overload approaching}: The component is slowing down and the $\Delta$Q is  slightly worse than previously, but we can still feel overload is approaching.
             \item \textbf{QTA violation}: The queue, overloaded, quickly violates the QTA.
-            \item \textbf{Get in trouble quickly, get out of it slowly}: The buffering filling up quickly and emptying slowly is a typical queue pattern, this can be observed on the oscilloscope
+            \item \textbf{Get in trouble quickly, get out of it slowly}: The buffering filling up quickly and emptying slowly is a typical queue pattern, this can be observed on the oscilloscope.
         \end{enumerate}
         
         For the following graphs, the \textbf{blue} line, annotated as \textbf{(1)} is the \textbf{observed $\Delta$Q}, the \textbf{red} line, annotated as \textbf{(2)}, is the \textbf{calculated $\Delta$Q}. 
@@ -173,7 +168,7 @@ If the system is not showing dependent behaviour, the probe \textbf{observed $\D
                 \label{fig:recup_2}
             \end{subfigure}
             \label{fig:recup}
-            \caption{The system is slowly degrading just seconds before overload.}
+            \caption{The system takes more than a second to get out.}
             \end{figure}
             
             The system gets out of dangerous grounds \textbf{2 seconds} after violating the QTA, and still shows the consequences of overload 3 seconds after.

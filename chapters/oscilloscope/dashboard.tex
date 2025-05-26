@@ -26,7 +26,7 @@
         The user is given the choice to set a QTA for a given observable, they have 4 fields where they can fill in which correspond to the percentiles and the maximum amount of failures allowed, they can change this dynamically during execution.
 
     \paragraph{dMax, bins}
-        The user has a slider which goes from -10 to 10, where they can set the parameters we explained previously, $n$, the exponent of $\Delta_{tbase} \cdot 2^n$ and the bins $N$. When these informations are saved by the user, the new $dMax$ is transmitted to the stub and saved for the selected observable.
+        The user has a slider which goes from -10 to 10, where they can set the parameters we explained previously, $n$, the exponent of $\Delta_{tbase} \cdot 2^n$ and the bins $N$. When this information is saved by the user, the new $dMax$ is transmitted to the wrapper and saved for the selected observable.
 
     \subsubsection{Triggers tab}
         In the triggers tab the user can set triggers and observe the snapshots of the system.
@@ -35,12 +35,14 @@
         The user can set which triggers to fire for the probes they desire, they are given checkboxes to decide which ones to set as active or not (by default, the triggers are deactivated).
     
     \paragraph{Fired triggers}
-        Once a trigger is fired, the system start a timer, during which all probes start recording the observed $\Delta$Qs (and the calculated ones if applicable) without discarding older ones. Once the timer expires, the snapshot is saved for the user in the triggers tab. In the dashboard, it indicates when the trigger was fired (timestamp) and the name of the probe which fired it.
+        Once a trigger is fired, the oscilloscope starts a timer, during which all probes start recording the observed $\Delta$Qs (and the calculated ones if applicable) without discarding older ones. Once the timer expires, the snapshot is saved for the user in the triggers tab. In the dashboard, it indicates when the trigger was fired (timestamp) and the name of the probe which fired it.
+   \subsubsection{Connection controls}
     
-    \subsection{Plots window}
-        To the left, the main window shows the plots of the probes being updated in real time. 
+        \paragraph{Erlang controls}
+            The user can set the IP and the port where the Erlang wrapper is listening from. Two additional buttons communicate with the wrapper by sending messages, they can start and stop the wrapper's sending of outcome instances.
+        
+        \paragraph{C++ server controls}
+            The user can set the IP and the port for the oscilloscope's server.
 
-    \subsection{Stub controls}
-        Below the sidebar, two buttons are present, these buttons communicate to the stub. 
-         
-        The \textbf{start stub} button sends a message to the stub, telling it to start sending spans. The \textbf{stop stub} button stops it.
+\subsection{Plots window}
+        To the left, the main window shows the plots of the probes being updated in real time. 

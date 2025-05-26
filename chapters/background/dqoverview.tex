@@ -3,25 +3,22 @@
     
     Key concepts of $\Delta$QSD are \textbf{quality attenuation ($\Delta$Q)} and \textbf{outcome diagram}
 
-    Outcome diagrams capture observational properties of the system. The $\Delta$QSD paradigm derives bounds on performance expressed as probability distribution, encompassing all possible executions of the system. 
+    Outcome diagrams capture dependency and causality properties of the system. The $\Delta$QSD paradigm derives bounds on performance expressed as probability distribution, encompassing all possible executions of the system. 
  
-    The following sections are a summary of multiple articles and presentation formalizing the paradigm. \cite{myo} \cite{dq-tut} \cite{art} \cite{dq-br} 
+    The following sections are a summary of multiple articles and presentation formalizing the paradigm. \cite{dq-tut} \cite{myo} \cite{art} \cite{dq-br} 
      
  \subsection{Outcome}
            An outcome $O$ is a specific system behaviour that can be observed to start at some point in time and \textit{\textbf{may}} be observed to complete at some later time. \cite{dq-br}
         Formally, what the system obtains by performing one of its tasks. One task corresponds to one outcome and viceversa. When an outcome is performed, it means that the task of an outcome is performed.
      
-     Assume a component $C$ which receives a message $m_{in}$ and outputs a message $m_{out}$ after a delay $d$. Over multiple executions, we will have observed multiple delays which can be represented as a cumulative definition where $p$ percent of delays have delay $\le d$, the \textbf{$\Delta$Q}. \cite{art} 
-
-
-    \paragraph{Observables}
-    Each outcome has two starting sets of events: the starting sets and the ending sets. Such sets are called the \textit{observables}. Once an event from the starting set occurs, there is no guarantee that a corresponding event in the terminating set will occur within the duration limit (required time to complete). An observable is \textit{done}  when it occurs during the time limit.
+     \paragraph{Observables}
+    Each outcome has two starting sets of events: the starting sets and the ending sets. Such sets are called the \textit{observables}. Once an event from the starting set occurs, there is no guarantee that a corresponding event in the terminating set will occur within the duration limit (required time to complete). An observable is \textit{done}  when it occurs during the time limit. \cite{art}
 
     \paragraph{Outcome instance}
-    Given a starting event $e_{in}$ and an end event $e_{out}$, an \textit{outcome instance} is what the system gains within ($e_{in}, e_{out}$). 
+    An outcome instance is the result of an execution of an outcome given a starting event $e_{in}$ and an end event $e_{out}$. 
 
-    \paragraph{Representation}
-    Outcome are represented as circles, with the starting and terminating set of events being represented by boxes.
+    \paragraph{Graphical Representation}
+    Outcomes are represented as circles, with the starting and terminating set of events being represented by boxes.
     \begin{figure}[H]
         \begin{center}
             \includegraphics[scale=1.2]{tikz/outdq.pdf}
@@ -30,13 +27,15 @@
     \end{figure}
 
 \subsection{Quality attenuation ($\Delta$Q)}
+        Assume a component $C$ which receives a message $m_{in}$ and outputs a message $m_{out}$ after a delay $d$. Over multiple executions, we will have observed multiple delays which can be represented as a cumulative definition where $p$ percent of delays have delay $\le d$. \cite{art} 
+
         \textbf{$\Delta$Q} is a cumulative distribution function that defines both \textit{latency} and \textit{failure probability} between a start and end event \cite{dq-tut}
 
-        In an ideal system, an outcome would deliver a desired behaviour without error, failure, delay, but this is not the case. The quality of an outcome response "attenuated to the relative ideal" (the cumulative distribution function) is called "quality attenuation" ($\Delta$Q). Since it can depend on many factors (geographical, physical \dots), $\Delta$Q is modeled as a random variable.
+        In an ideal system, an outcome would deliver a desired behaviour without error, failure, delay, but this is not the case. The quality of an outcome response "attenuated to the relative ideal" (the cumulative distribution function) is called "quality attenuation" ($\Delta$Q) and can depend on many factors (geographical, physical \dots). Its distribution may be modelled by a random variable.
 
-    As $\Delta$Q captures deviation from ideal behavior, and incorporates delay, which is a continuous random variable, and failures/timeouts, which are discrete variables, it can be described mathematically as an \textit{Improper Random Variable}, where the probability of a delay $<$ 1. Combining latency and failure together makes it easy to examine the tradeoffs between them.
+    As $\Delta$Q captures deviation from ideal behavior and incorporates delay, which is a continuous random variable, and failures/timeouts, which are discrete variables, it can be described mathematically as an \textit{Improper Random Variable}, where the probability of a finite or bounded delay $<$ 1. Combining latency and failure together makes it easy to examine the tradeoffs between them.
 
-    \textbf{$\Delta$Q(x)} is the probability that an outcome $O$ occurs in time $t \le x$. The \textbf{\textit{intangible mass}} $1 - \lim_{x\to\infty}\Delta Q(x)$ of a $\Delta$Q will encode the probability of failure/timeout/exception occuring.
+    \textbf{$\Delta$Q(x)} is the probability that an outcome $O$ occurs in time $t \le x$. The \textbf{\textit{intangible mass}} $1 - \lim_{x\to\infty}\Delta Q(x)$ of a $\Delta$Q will encode the probability of failure/timeout/exception occuring. \cite{myo}
     
     \begin{figure}[H]
         \begin{center}
@@ -47,26 +46,26 @@
    
   \subsection{Failure semantics}
        In the CDF representation of a $\Delta$Q, there is an \textit{f} percent probability that the delay is infinite, this is what failure models. 
-        Concretely, it means that an input message $m_{in}$ \textbf{has no output message} $m_{out}$.
+        Concretely, it means that an input message $m_{in}$ \textbf{has no output message} $m_{out}$. \cite{art}
 
-        Combining delay and failure in a single quantity is what makes $\Delta$QSD a great choice to explore feasibility in system design.
+        Combining delay and failure in a single quantity is what makes $\Delta$QSD a great choice to explore feasibility in system design. \cite{dq-tut}
    
     \subsection{Partial ordering}
         A CDF of a $\Delta$Q is \textit{less than} the other if its CDF is everywhere to the left and above the other. Mathematically, it is a partial order. 
         
-        If two $\Delta$Qs intersect, they are not ordered.
+        If two $\Delta$Qs intersect, they are not ordered. \cite{dq-tut}
 
     \subsection{Timeliness}
         Timeliness is defined as a relation between an observed $\Delta Q_{obs}$ and a required $\Delta Q_{req}$. Timeliness is delivering results within required time bounds (sufficiently often). 
 
-        A system \textit{satisfies timeliness} if $\Delta$Q$_{obs}$ $\le$ $\Delta$Q$_{req}$.
+        A system \textit{satisfies timeliness} if $\Delta$Q$_{obs}$ $\le$ $\Delta$Q$_{req}$. \cite{art}
      
     \subsection{QTA, required $\Delta$Q}
          The \textit{Quantitative Timeliness Agreement} (QTA) maps objective measurements to the subjective perception of application performance \cite{dq-br}. It specifies what the base system does and its limits.
     
-    \paragraph{Slack} When $\Delta$Q is strictly less than the requirement, we say there is performance \textit{slack}.
+    \paragraph{Slack} There is performance \textit{slack} when a $\Delta$Q is strictly less than the requirement,.
 
-        \paragraph{Hazard} When $\Delta$Q is strictly greater than the requirement, there is performance hazard.
+        \paragraph{Hazard} There is performance \textit{hazard} when a $\Delta$Q is strictly greater than the requirement.
     
     \paragraph{QTA example}: Imagine a system where 25\% of the executions should take $<$ 15 ms, 50\% $<$ 25 ms and 75\% $<$ 35 ms, all queries have a maximum delay of 50ms and 5\% of executions can timeout, the QTA can be represented as a step function.
     
@@ -74,12 +73,13 @@
             \begin{center}
                 \includegraphics[scale=1]{tikz/cdf_qta_slack.pdf}
             \end{center}
-            \caption{The system in blue is showing slack and satisfies the requirement, the system in orange is showing signs that it cannot handle the stress, it is not respecting the $\Delta$Q$_{req}$}.
+            \caption{The system in blue is showing slack and satisfies the requirement, the system in orange is showing signs that it cannot handle the stress, it is not respecting the $\Delta$Q$_{req}$.}%
         \end{figure}
 
     \subsection{Outcome diagram}
-        An outcome diagram captures the causal relationships between the outcomes, each outcome diagram can be presented algebraically with an outcome expression. It allows computing the $\Delta$Q for the whole system. The outcome diagram should capture the essential observational properties of a system.
-        There are four different ways to represent the relationships between outcomes.
+        An outcome diagram is central to capture the causal relationships between the outcomes. It shows the causal connections between all the outcomes we are interested in, and it allows computing the $\Delta$Q for the whole system \cite{dq-tut}. The outcome diagram captures the essential observational properties of a system. It maps a system's behaviour as seen from outside to concrete outcomes. \cite{art}
+
+        There are four different operators that represent the relationships between outcomes. \cite{dq-tut}
 
     \subsubsection{Sequential composition}
         If we assume two outcomes $O_A$, $O_B$ where end event of $O_A$ is the start event of $O_B$, the two outcomes can be sequentially composed. The $\Delta$Q of $O_{AB}$ is given by the convolution of the PDFs of $O_A$ and $O_B$.
@@ -90,7 +90,7 @@
             \end{center}
             \caption{Sequential composition of $O_A$ and $O_B$.}
         \end{figure}
-        Where convolution ($\circledast$) between two PDF is :
+        Where convolution ($\circledast$) between two PDF is:
         \begin{equation}
             PDF_{AB}(t) =\int\limits_0^t PDF_A(\delta) \cdot PDF_B(t-\delta)d\delta 
             \label{eq:}
@@ -102,7 +102,7 @@
             \label{eq:}
         \end{equation}
         
-    \subsubsection{First to finish}
+    \subsubsection{First to finish (FTF)}
             If we assume two independent outcomes $O_A$, $O_B$ with the same start event, first-to-finish occurs when at least one end event occurs, it can be calculated as:
         \begin{equation}
             \begin{split}
@@ -125,12 +125,12 @@
                 \includegraphics[scale = 0.7]{tikz/ftf_2.pdf}
                 \label{fig:ftf2}
             \end{subfigure}
-            \caption{Left: Two $\Delta$Qs, A and B. Right: The result of the first to finish operator applied on A and B}%
+            \caption{Left: $\Delta$Q$_{(A, B)}$. Right: FTF$_{(A, B)}$ = $\Delta$Q$_{AB}$}%
             \label{fig:ftf}
             \end{figure}
 
 
-    \subsubsection{All to finish}
+    \subsubsection{All to finish (ATF)}
         If we assume two independent outcomes $O_A$, $O_B$ with the same start event, all-to-finish occurs when both end events occur, it can be calculated as:
         \begin{equation}
             \begin{split}
@@ -153,11 +153,11 @@
                 \includegraphics[scale = 0.7]{tikz/atf_2.pdf}
                 \label{fig:atf2}
             \end{subfigure}
-            \caption{Left: Two $\Delta$Qs, A and B. Right: The result of the all to finish operator applied on A and B}%
+            \caption{Left: $\Delta$Q$_{(A, B)}$. Right: ATF$_{(A, B)}$ = $\Delta$Q$_{AB}$}%
             \label{fig:atf}
             \end{figure}
 
-    \subsubsection{Probabilistic choice}
+    \subsubsection{Probabilistic choice (PC)}
         If we assume two possible outcomes $O_A$ and $O_B$ and exactly one outcome is chosen during each occurence of a start event and:
         \begin{itemize}
             \item $O_A$ happens with probability $\dfrac{p}{p+q}$
@@ -175,26 +175,26 @@
         \caption{The possible operators in an outcome diagram: Probabilistic choice, first-to-finish, all-to-finish}
         \label{fig:op}
     \end{figure}
-    First-to-finish, All-to-finish and probabilistic-choice are calculated on the CDF of the $\Delta$Q.
+    First-to-finish, All-to-finish and probabilistic-choice are calculated on the CDF of the $\Delta$Q of their components.
     
-    These outcome expressions can be assembled together to create an outcome diagram, later on, we will see how one can put translate the graphical representation to outcome diagrams which can be used in the $\Delta$Q oscilloscope.
+    These operators can be assembled together to create an outcome diagram, later on, we will see how one can go from the graphical representation to outcome diagrams which can be used in the $\Delta$Q oscilloscope.
     
     \subsection{Independence hypothesis}    
-        Assume two sequentially composed outcomes $o_1$, $o_2$ running on the same processor. A probe $p$ observing the execution from the start event of $o_1$ to the end event of $o_2$. 
+        Assume two sequentially composed outcomes $o_1$, $o_2$ running on the same processor. We observe the delay of execution from the start event of $o_1$ to the end event of $o_2$. 
         \begin{figure}[H]
             \begin{center}
                 \includegraphics[scale=1]{tikz/indep.pdf}
             \end{center}
         \end{figure}
         
-        At low load, the two components behavior will be independent, the system will behave linearly, the observed delay of the probe $p$ will be equal to the convolution of $o_1$, $o_2$ ($o_1 \circledast o_2$). \\
+        At low load, the two components behavior will be independent, the system will behave linearly, the observed total delay of execution will be equal to the result of convolution of $o_1$, $o_2$ ($o_1 \circledast o_2$). \\
         
-        When load increases, the two components will start to show dependent behaviour due to the processor utilisation increasing, the observed $\Delta$Q will then deviate from what is calculated.
+        When load increases, the two components will start to show dependent behaviour due to the processor utilisation increasing. The $\Delta$Q of the observed delay will then deviate from the $\Delta$Q which is the result of the convolution of $o_1, o_2$
         \begin{figure}[H]
             \begin{center}
                 \includegraphics[scale=1]{tikz/cdf_indep.pdf}
             \end{center}
-            \caption{When the components are independent, what is observed (blue) and calculated (red) can be superposed, whilst when $o_1$ and $o_2$ show initial signs of dependency, what is observed (green) can be seen deviating from the calculated $\Delta$Q.}
+            \caption{When the components are independent, what is observed (blue) and calculated (red) can be superposed, whilst when $o_1$ and $o_2$ show initial signs of dependency, what is observed (green) can be seen deviating from the $\Delta$Q$_{o1, o2}$.}
         \end{figure}
 
         When the system is far from being overloaded, the effect is noticeable thanks to $\Delta$QSD even if the system is far from being overloaded. As the cliff edge of overload is approached, the nonlinearity will increase.

@@ -3,12 +3,10 @@
 Originally, $\Delta$Q(x) denotes the probability that an outcome occurs in a time $t \le x$, defining then the "intangible mass" of such IRV as $1 - \lim_{x\to\infty} \Delta Q (x)$.
 We then extend the original definition to fit real time constraints, needing to calculate $\Delta$Qs continuously.
 
-For a given probe, $\Delta$Q($t_l$, $t_u$, $dMax$) is the probability that the time of series with $n$ outcome instances with end time $t_l \le t_e \le t_u$, an outcome or probe occurs in time t $\le dMax$.
+For a given probe, $\Delta$Q($t_l$, $t_u$, $dMax$) is the probability that its instances with end time $t_l \le t_e \le t_u$ occur in time $t \le dMax$.
 
 \subsection{Internal representation of a $\Delta$Q}
-    We provide a $\Delta$Q class to calculate the $\Delta$Q of a probe between a lower time bound $t_l$ and an upper time bound $t_u$.
-    
-    The $\Delta$Q can be calculated in various ways: 
+    We provide a class to calculate the $\Delta$Q of a probe between a lower time bound $t_l$ and an upper time bound $t_u$. It can be calculated in two ways: 
     
     \paragraph{Observed $\Delta$Q}
     
@@ -16,12 +14,12 @@ For a given probe, $\Delta$Q($t_l$, $t_u$, $dMax$) is the probability that the t
     
     \paragraph{Calculated $\Delta$Q}
     
-    A $\Delta$Q can also be calculated by performing operations which are the result of outcome expressions on two or more $\Delta$Qs, the notion of outcome instances is then lost between calculations, as the interest shifts towards calculating the resulting PDFs and ECDFs. This is called the \textbf{Calculated $\Delta$Q}.
+    A $\Delta$Q can also be calculated by performing operations which are the result of operations on two or more $\Delta$Qs, the notion of outcome instances is then lost between calculations, as the interest shifts towards calculating the resulting PDFs and ECDFs. This is called the \textbf{Calculated $\Delta$Q}.
     
     \subsection{dMax}
         The key concept of $\Delta$QSD is having a maximum delay after which we consider that the execution is failed, this is represented in a prove as $dMax$. The user defines, for each prove the maximum delay its execution can have.
 
-Setting a maximum delay for an prove is not a job that can be done one-off and blindly, it is something that is done with an underlying knowledge of the system inner-workings and must be thoroughly fine tuned during the execution of the system by observing the resulting distributions of the obtained $\Delta$Qs. 
+Setting a maximum delay for a probe is not a job that can be done one-off and blindly, it is something that is done with an underlying knowledge of the system inner-workings and must be thoroughly fine-tuned during the execution of the system by observing the resulting distributions of the obtained $\Delta$Qs. 
 
 We define in our oscilloscope a formula to dynamically define a maximum delay:
 \begin{equation}
@@ -41,22 +39,13 @@ Some tradeoffs must though be acknowledged when setting these parameters, a high
     \end{figure}
 
     \subsubsection{dMax limitation}
-        $dMax$ can \textbf{not} be lower than 0 milliseconds and will be rounded to the \textbf{nearest} integer, this is a limitation of Erlang \texttt{send\_after} function which only accepts integers and milliseconds values.
+        $dMax$ can \textbf{not} be lower than 1 millisecond and will be rounded to the \textbf{nearest} integer, this is a limitation of Erlang \texttt{send\_after} function which only accepts integers and milliseconds values.
 
     \subsection{QTA}
         A simplified QTA is defined for probes. We define 4 points for the step function at 25, 50, 75 percentiles and the maximum amount of failures accepted for an observable. An observed $\Delta$Q will calculate that based on the samples collected. 
-    \iffalse
-    \subsection{Convolution}
-    Convolution allows calculating the sum of delays of two causally linked $\Delta$Q$_A$ and $\Delta$Q$_B$. 
-        \begin{figure}[H]
-            \begin{center}
-                \includegraphics{tikz/comb_dq_comp.pdf}
-            \end{center}
-        \end{figure}
-    \fi
 
-    \subsection{Confidence bounds}
-    To observe the stationarity of a system we must observe a window of $\Delta$Qs of an observable and calculate confidence bounds over said windows. The bounds can be updated dynamically by inserting or removing a $\Delta$Q, this allows us to consider a small window of execution rather than observing the whole execution.
+\subsection{Confidence bounds}
+    To observe the stationarity of a system we must observe a window of $\Delta$Qs of a probe and calculate confidence bounds over said windows. The bounds can be updated dynamically by inserting or removing a $\Delta$Q, this allows us to consider a small window of execution rather than observing the whole execution.
         \begin{figure}[H]
             \begin{center}
                 \includegraphics[scale=1]{tikz/ci.pdf} 

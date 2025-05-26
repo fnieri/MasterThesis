@@ -1,40 +1,41 @@
   \section{Outcome diagram}
-        An abstract syntax for outcome expressions and consequently outcome diagrams has already been defined in a previous paper \cite{art}, nevertheless, the oscilloscope provides additional features not included in the original syntax and, moreover, needs a textual way to define an outcome diagram. 
+        An abstract syntax for constructing outcome diagrams has already been defined in a previous paper \cite{art}, nevertheless, the oscilloscope needs a textual way to define an outcome diagram. 
        
         We define thus a grammar to create an outcome diagram in our oscilloscope, our grammar is a textual interpretation of the abstract syntax.
-        \subsection{Probes}
-            To attach probes in the oscilloscope, the user must define outcomes and probes that observe outcome expressions.
-            \subsubsection{Outcome}
-                In our system an outcome is defined with its name
-                \begin{minted}{text}
-                    ... = outcomeName;
-                \end{minted}
-            Outcomes cannot be defined on their own and must be observed by other probes, we explain below how.
-        \subsubsection{Probes containing outcome expressions}
-            A probe can contain one outcome or  a sequence of causally linked components.
-            The user can define as many probes that contain outcome expressions as they want, they have to be declared as follows:
-            \begin{minted}{text}
-                probe = component [-> component2];
-                probe2 = newComponent -> anotherComponent;
-            \end{minted}
-    
-            These probes can be reused in other probes or in the system by adding \texttt{"s:"} (subsystem) before they are used.
-            \begin{minted}{text}
-                probe3 = s:probe -> s:probe2;
-            \end{minted}
-        The lines defining these probes must be semicolon terminated. 
-        \subsection{Operators, outcome expressions}
-            To build a system, we must define the relations between outcomes and outcome expressions, below is how they can be defined. 
-
-            First-to-finish, all-to-finish and probabilistic choice must contain at least two components, this is because the operations to calculate the \textit{calculated} $\Delta$Q rely on using the CDF of the components that define the operator.
-            
-        \subsubsection{Causal link}
+        
+      
+        \subsection{Causal link}
             A causal link between two components can be defined by a right arrow from \texttt{component\_i} to \texttt{component\_j}
         \begin{minted}{text}
             component_i -> component_j 
         \end{minted}
         
-        \subsubsection{All-to-finish operator}
+        \subsection{Sub-outcome diagrams }
+            Multiple sub-outcome diagrams can be created for multiple parts of the system, these "sub-outcome diagrams" can then be linked together to from the global system outcome diagram.  
+        Recall \cref{fig:probes_o}, we defined a probe which observes the sequential composition of $o_1, o_2$. The probe (sub-outcome diagram) $p_1$ can be defined as:
+        \begin{minted}{text}
+            p_1 = o_1 -> o_2;
+        \end{minted}
+
+        A probe is attached at the begin and end of $p_1$, it will observe the whole system and the calculated $\Delta$Q will be the convolution of $o_1, o_2$.
+
+        The lines defining these diagrams must be semicolon terminated. Outcomes and operators cannot be defined on their own, they must be observed in a sub-outcome diagram.
+        
+        Sub-outcome diagrams can be reused in other diagrams by adding \texttt{s:} (sub-outcome diagram) before they are used.
+
+            \begin{minted}{text}
+                p_3 = s:p_1 -> s:p_2;
+            \end{minted}
+            This allows for easy composition and reuse of different parts of the system, allowing for independent refining of diagrams.
+
+        \subsection{Outcomes}
+            To attach a probe to an outcome observables, it is enough to declare an outcome with its name inside a diagram.
+                \begin{minted}{text}
+                    ... = outcomeName;
+                \end{minted}
+        \subsection{Operators}
+            First-to-finish, all-to-finish and probabilistic choice operators must contain at least two components.
+              \subsubsection{All-to-finish operator}
             An all-to-finish operator needs to be defined as follows:
             \begin{minted}{text}
                 a:name(component1, component2...)
@@ -55,11 +56,11 @@
         
             
         \subsection{Limitations}
-            Our system has a few limitations compared to the theoretical applications of $\Delta$Q, namely, no cycles are allowed in the definition of a system.
+            Our system has a few limitations compared to the theoretical applications of $\Delta$Q, namely, no cycles are allowed in the definition of outcome diagrams. 
         
         \begin{minted}{text}
-            probe = s:probe_2;
-            probe_2 = s:probe;
+            p_1 = s:p_2;
+            p_2 = s:p_1;
         \end{minted}
         The above example is not allowed and will raise an error when defined.  
 

@@ -4,9 +4,5 @@
     Each time an observed $\Delta$Q is calculated by the oscilloscope, it is checked against the requirements set by the user. If these requirements are not met, a trigger is fired and a snapshot of the system is saved to be shown to the user. 
     
     \subsection{Snapshot}
-    A snapshot of the system gives insights into the system before and after a trigger was fired. It gives the user a still of the system, as if it was frozen in time.
-
-When an observed $\Delta$Q is calculated for each component being observed in the oscilloscope, they are stored away. In case the probe is observing multiple components, the $\Delta$Q which is the result of the outcome expressions is also stored.
-
-If no trigger is fired, older observed (and calculated) $\Delta$Qs are removed. In the case that a trigger is fired, the oscilloscope keeps recording $\Delta$Qs without removing older ones, to allow the user to look at the state of the system before the trigger and after.
+    A snapshot of the system gives insights into the system before and after a trigger was fired. It gives the user a still of the system, as if it was frozen in time. All the $\Delta$Qs which are calculated during the system's execution are stored away. Then, if no trigger is fired, older $\Delta$Qs are removed. Otherwise, the oscilloscope keeps recording $\Delta$Qs without removing older ones, to allow the user to look at the state of the system before and after the trigger.
     

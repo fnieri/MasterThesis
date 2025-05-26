@@ -15,10 +15,10 @@
 
         \begin{minted}{erlang}
         % Start the outcome instance of worker_2 
-        {WorkerCtx, WorkerPid} = otel_wrapper:start_span(<<"worker_2">>),
+        {WorkerCtx, WorkerPid} = dqsd_otel:start_span(<<"worker_2">>),
         
         % Do work here ...
 
         %End the outcome instance of worker_2
-        otel_wrapper:end_span(WorkerCtx, WorkerPid),
+        dqsd_otel:end_span(WorkerCtx, WorkerPid),
         \end{minted}

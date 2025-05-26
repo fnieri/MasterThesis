@@ -11,6 +11,14 @@
 %Format
 \usepackage{parskip}
 \newcommand{\forceindent}{\parindent=1em\indent\parindent=0pt\relax}
+\usepackage{afterpage}
+
+\newcommand\blankpage{%
+    \null
+    \thispagestyle{empty}%
+    \addtocounter{page}{-1}%
+    \newpage}
+
 %%Images
 \usepackage{graphicx}
 \usepackage{pgf}
@@ -92,9 +100,8 @@ sorting=none
 % Please fill in the following boxes
 % What if I didn't?
 % Title of the thesis
-\title{Observing the detailed behaviour of large distributed applications in real time using $\Delta$QSD}
+\title{The $\Delta$Q Oscilloscope: Real-Time Observation of Large Erlang Applications using $\Delta$QSD}
 
-\subtitle{The $\Delta$Q Oscilloscope for Erlang applications}
 % Name of the student author(s)
 \author{Francesco \textsc{Nieri}}
 \degreetitle{Master [120] in Computer Science}
@@ -111,12 +118,13 @@ sorting=none
 
 \begin{document}
     \maketitle
-   \pagestyle{empty}
+    \afterpage{\blankpage}
+    \pagestyle{empty}
     \renewcommand{\thepage}{\roman{page}}
 
     \newgeometry{left=3cm, right=2.5cm, top=3cm, bottom=3cm} % Adjust as needed
     \input{chapters/0-abstract}
-   % \input{chapters/misc/acknowledgments}
+    \input{chapters/misc/acknowledgments}
     \input{chapters/misc/ai}
     \tableofcontents 
 
@@ -141,7 +149,7 @@ sorting=none
         
     \appendix
 
-   % \input{chapters/manual}
+    %\input{chapters/manual}
 
     \backcoverpage
 

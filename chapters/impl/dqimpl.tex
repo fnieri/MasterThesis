@@ -2,16 +2,16 @@
     A probe's $\Delta$Q can be represented internally by a PDF and displayed as an ECDF. Here is how both can be calculated given $n$ outcome instances.
     
     \subsubsection{PDF}
-  We approximate the PDF of the a $\Delta$Q via a histogram. We partition the values into $N$ bins of equal width, this is required to ease future calculations.
+  We approximate the PDF of the observed $\Delta$Q via a histogram. We partition the values into $N$ bins of equal width, this is required to ease future calculations.
         Given $\lbrack x_i, x_{i+1} \rbrack$ the interval of a bin $i$, where $x_i = i\Delta x$, and $\hat{p}(x_i)$ the value of the PDF at bin $i$, for $n$ bins:
         \begin{equation}
             \begin{cases}
-                \hat{p}(i) = \dfrac{n_i}{n}, \text{if } i \le n \\
+                \hat{p}(i) = \dfrac{s_i}{n}, \text{if } i \le n \\
                 \hat{p}(i) = 0, \text{if } i > n \\
             \end{cases}
             \label{eq:pdf}
         \end{equation}
-    Where $n_i$ the number of successful outcome instances whose elapsed time is contained in the bin $i$, $n$ the total number of instances.
+    Where $s_i$ the number of successful outcome instances whose elapsed time is contained in the bin $i$, $n$ the total number of instances.
 
     \subsubsection{ECDF}
         The value $\hat{f}(x_i)$ of the ECDF at bin $i$ with $n$ bins can be calculated as:
@@ -37,7 +37,9 @@
 
 
       \subsection{Operations}
-    In a previous section we talked about the possible operations that can be performed on and between $\Delta$Qs, the time complexity of FTF, ATF and PC is trivially $\mathcal{O}(N)$ where N is the number of bins. As to convolution, the naïve way of calculating convolution has a time complexity of $\mathcal{O}(N^2)$, this quickly becomes a problem as soon as the user wants to have a more fine-grained understanding of a component. Below we present two ways to perform convolution.
+    In a previous section we talked about the possible operations that can be performed on and between $\Delta$Qs, the time complexity of FTF, ATF and PC is trivially $\mathcal{O}(N)$ where N is the number of bins.
+    
+    As to convolution, the naïve way of calculating convolution has a time complexity of $\mathcal{O}(N^2)$, this quickly becomes a problem as soon as the user wants to have a more fine-grained understanding of a component. Below we present two ways to perform convolution.
 
         \subsubsection{Convolution}
         
@@ -59,7 +61,7 @@
 
     \subsubsection{Arithmetical operations}
         We can apply a set of arithmetical operations between $\Delta$Qs ECDFs, and on a $\Delta$Q.
-    \paragraph{Scaling (multiplication)} A $\Delta$Q can be scaled w.r.t a constant $0 \le j \le 1$. It is equal to binwise multiplication on ECDF bins.
+    \paragraph{Scaling (multiplication)} A $\Delta$Q can be scaled w.r.t. a constant $0 \le j \le 1$. It is equal to binwise multiplication on ECDF bins.
     \begin{equation}
         \hat{f_r}(i) = \hat{f}(i) \cdot j
         \label{eq:mul_ecdf}
@@ -76,12 +78,11 @@
     \subsection{Confidence bounds}
        To observe the stationarity of a system we must observe a window of $\Delta$Qs of an observable and calculate confidence bounds over said windows. We present here the formulae required to give such bounds with 68\% confidence level. 
 
-        For a bin $i$ and an ECDF $j$, the mean of the bin over a window is:
+        For $x_{ij}$ the value of an ECDF $j$ at bin $i$, the mean of all ECDFs for the bin over a window is:
             \begin{equation}
                 \mu_i = \dfrac{1}{n_i} \sum_{j=1}^{n_i} x_{ij}
                 \label{eq:mean_ecdf}
             \end{equation}
-        Where $x_{ij}$ is a bin's $i$ value for an ECDF $j$.
         Its variance:
             \begin{equation}
                 \sigma^2_i = \dfrac{1}{n_i} \sum_{j=1}^{n_i} x^2_{ij} - \mu^2_i
@@ -104,7 +105,7 @@
             \begin{equation}
                 p'_b = \sum_{n=b \cdot k}^{b+ 1 \cdot k - 1} p_n, \quad b=0,1,\dots \lceil \frac{N}{k} \rceil  
             \end{equation}
-            We perform rebinning to a higher bin width for a simple reason, while this leads to loss of information for the bin with the lowest bin width, rebinning to a lower bin width would imply inventing new values for the $\Delta$Q with the highest bin width.
+            We perform rebinning to a higher bin width for a simple reason, while this leads to loss of information for the $\Delta$Q with the lowest bin width, rebinning to a lower bin width would imply inventing new values for the $\Delta$Q with the highest bin width.
         \begin{figure}[H]
             \centering
             \begin{subfigure}{.5\textwidth}
