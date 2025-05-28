@@ -1,10 +1,10 @@
-\section{Wrapper}
-    The wrapper, called \texttt{dqsd\_otel} is a rebar3 \cite{rebar3} application built to replace OpenTelemetry calls and create outcome instances, it is designed to be paired with the oscilloscope to observe an Erlang application.
+\section{Adapter}
+    The adapter, called \texttt{dqsd\_otel} is a rebar3 \cite{rebar3} application built to replace OpenTelemetry calls and create outcome instances, it is designed to be paired with the oscilloscope to observe an Erlang application.
     
     \subsection{API}
-        The wrapper functions to be used by the user are made to replace OpenTelemetry calls to macros as for \texttt{?start\_span} and \texttt{?with\_span} and \texttt{?end\_span}. This is to make the wrapper less of an encumbrance for the user. 
+        The adapter functions to be used by the user are made to replace OpenTelemetry calls to macros as for \texttt{?start\_span} and \texttt{?with\_span} and \texttt{?end\_span}. This is to make the adapter less of an encumbrance for the user. 
 
-        Moreover, the wrapper will always start OpenTelemetry spans but only start outcome instances if the wrapper has been activated. The wrapper can be activated by the oscilloscope by pressing the "start wrapper" button and can be stopped via the "stop wrapper" button.
+        Moreover, the adapter will always start OpenTelemetry spans but only start outcome instances if the adapter has been activated. The adapter can be activated by the oscilloscope by pressing the "start adapter" button and can be stopped via the "stop adapter" button.
          
         \subsubsection{start\_span/1, start\_span/2}
         
@@ -24,7 +24,7 @@ start_span/2: -spec start_span(binary(), map()) -> {opentelemetry:span_ctx(), pi
         \paragraph{Return:} 
         The function returns either:
         \begin{itemize}
-            \item  \texttt{\{SpanCtx, span\_process\_PID\}} if the wrapper is active and the probe's $dMax$ has been set.
+            \item  \texttt{\{SpanCtx, span\_process\_PID\}} if the adapter is active and the probe's $dMax$ has been set.
             \item \texttt{\{SpanCtx, ignore\}} if one of the two previous conditions was not respected.
         \end{itemize}
         With SpanCtx being the context of the span created by OpenTelemetry.
@@ -99,32 +99,32 @@ with_span/2: -spec with_span(binary(), map(), fun(() -> any())) -> any().
         \begin{minted}{erlang}
         StartTime/EndTime = erlang:system_time(nanosecond).
         \end{minted}
-        The name is given when starting a span and the $dMax$ is stored in a dictionary in the wrapper. 
+        The name is given when starting a span and the $dMax$ is stored in a dictionary in the adapter. 
 
-            The outcome instance is created only if two conditions are met: the wrapper has been set as active and the user set a timeout for the probe, the functions will spawn a \texttt{span\_process} process, passing along all the necessary informations. \\
+            The outcome instance is created only if two conditions are met: the adapter has been set as active and the user set a timeout for the probe, the functions will spawn a \texttt{span\_process} process, passing along all the necessary informations. \\
         Once the span is subsequently ended/timed out/failed, the function \texttt{send\_span} creates a message carrying all the informations and sends it to the C++ server. The formatting of the messages is the following:
         \begin{minted}{text}
             n:Observed name, b: Start time (beginning), e: End time (end or deadline), s: The status
         \end{minted}
 
     \subsection{TCP connection}
-        The wrapper is composed of two \texttt{gen\_server} which handle communication to and from the oscilloscope. This gen\_server behaviour allows the wrapper to send spans asynchronously to the oscilloscope.
+        The adapter is composed of two \texttt{gen\_server} which handle communication to and from the oscilloscope. This gen\_server behaviour allows the adapter to send spans asynchronously to the oscilloscope.
 
         \subsubsection{TCP server}
             The TCP server is responsible for receiving commands from the oscilloscope. It can be run by setting its IP and port via:
             \begin{minted}{erlang}
                 -spec start_server(string() | binary() | tuple(), integer()) -> ok | {error, Reason}
             \end{minted}
-            The oscilloscope can send commands to the wrapper, these commands are:
+            The oscilloscope can send commands to the adapter, these commands are:
             \begin{itemize}
-                \item \texttt{start\_stub}: This command sets the wrapper as active, it can now send outcome instances to the oscilloscope if the probe's $dMax$s are defined.
-                \item \texttt{stop\_stub}: This commands sets the wrapper as inactive, it will no longer send outcome instances to the oscilloscope.
-                \item \texttt{set\_timeout;probeName;timeout}: This command indicates to the wrapper to set the $dMax = \text{timeout}$ for a probe, a limit of the wrapper is that erlang:send\_after does not accept floats as timeouts, so the timeout will be rounded to the nearest integer.
+                \item \texttt{start\_stub}: This command sets the adapter as active, it can now send outcome instances to the oscilloscope if the probe's $dMax$s are defined.
+                \item \texttt{stop\_stub}: This commands sets the adapter as inactive, it will no longer send outcome instances to the oscilloscope.
+                \item \texttt{set\_timeout;probeName;timeout}: This command indicates to the adapter to set the $dMax = \text{timeout}$ for a probe, a limit of the adapter is that erlang:send\_after does not accept floats as timeouts, so the timeout will be rounded to the nearest integer.
             \end{itemize}
 
         \subsubsection{TCP client}
-            The TCP client allows the wrapper to send the spans to the oscilloscope.
-            The client connects over TCP to the oscilloscope by connecting to the oscilloscope server'address and opens a socket where it can send the outcome instances.
+            The TCP client allows the adapter to send the spans to the oscilloscope.
+            The client connects over TCP to the oscilloscope by connecting to the oscilloscope server's address and opens a socket where it can send the outcome instances.
             \begin{minted}{erlang}
                 -spec try_connect(string() | binary(), integer()) -> ok.
             \end{minted}

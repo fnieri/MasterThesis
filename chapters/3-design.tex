@@ -1,11 +1,11 @@
 \chapter{Design}
     This chapter aims to first extend the concepts of $\Delta$QSD, giving more insights into how the systems need to be instrumented to correctly work together, and how the different parts need to be integrated to interact together.
     \begin{itemize}
-        \item We first provide concepts of probes, we extend the $\Delta$QSD notion of failure and describe how time series will work in our oscilloscope, this part is crucial to understand how the different parts of the system work together.
-        \item We then split the design of the oscilloscope in two. First explaining the Erlang side, where the system to be tested is. Secondly, we explain the C++ side. Both chapters explain how probes can be inserted and made to work together. We conclude the sections by showing the system diagram of the different parts.
-        \item Lastly, we provide high level concepts of the key elements of the oscilloscope. 
+        \item We first provide concepts of probes, we extend the $\Delta$QSD notion of failure and describe how time series will work in our oscilloscope, this part is crucial to understand how the measurements are done in real time.
+        \item We then split the design of the oscilloscope in two. First explaining the Erlang side, where the system to be tested is. Secondly, we explain the C++ side. Both chapters explain how probes can be inserted and made to work together.
+        \item Lastly, we provide high level concepts of triggers and execution windows, the key elements of the oscilloscope. 
     \end{itemize}
-
+    \section{Measurement concepts}
     \input{chapters/scenario/probes.tex}
     \input{chapters/scenario/to.tex}
     \input{chapters/scenario/timeseries.tex}

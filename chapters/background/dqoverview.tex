@@ -1,21 +1,21 @@
 \section{An overview of $\Delta$QSD}
     $\Delta$QSD is a metrics-based, quality-centric paradigm that uses formalised outcome diagrams to explore the performance consequences of design decisions. \cite{myo}
     
-    Key concepts of $\Delta$QSD are \textbf{quality attenuation ($\Delta$Q)} and \textbf{outcome diagram}
+    Key concepts of $\Delta$QSD are \textbf{quality attenuation ($\Delta$Q)} and \textbf{outcome diagram} \cite{dq-tut}.
 
-    Outcome diagrams capture dependency and causality properties of the system. The $\Delta$QSD paradigm derives bounds on performance expressed as probability distribution, encompassing all possible executions of the system. 
+    Outcome diagrams capture dependency and causality properties of the system. The $\Delta$QSD paradigm derives bounds on performance expressed as probability distribution, encompassing all possible executions of the system. \cite{myo}
  
-    The following sections are a summary of multiple articles and presentation formalizing the paradigm. \cite{dq-tut} \cite{myo} \cite{art} \cite{dq-br} 
+    The following sections are a summary of multiple articles and presentation formalising the paradigm.
      
  \subsection{Outcome}
            An outcome $O$ is a specific system behaviour that can be observed to start at some point in time and \textit{\textbf{may}} be observed to complete at some later time. \cite{dq-br}
-        Formally, what the system obtains by performing one of its tasks. One task corresponds to one outcome and viceversa. When an outcome is performed, it means that the task of an outcome is performed.
+        Formally, what the system obtains by performing one of its tasks. One task corresponds to one outcome and viceversa. When an outcome is performed, it means that the task of an outcome is performed. \cite{myo}
      
      \paragraph{Observables}
     Each outcome has two starting sets of events: the starting sets and the ending sets. Such sets are called the \textit{observables}. Once an event from the starting set occurs, there is no guarantee that a corresponding event in the terminating set will occur within the duration limit (required time to complete). An observable is \textit{done}  when it occurs during the time limit. \cite{art}
 
     \paragraph{Outcome instance}
-    An outcome instance is the result of an execution of an outcome given a starting event $e_{in}$ and an end event $e_{out}$. 
+    An outcome instance is the result of an execution of an outcome given a starting event $e_{in}$ and an end event $e_{out}$. \cite{art}
 
     \paragraph{Graphical Representation}
     Outcomes are represented as circles, with the starting and terminating set of events being represented by boxes.
@@ -23,7 +23,7 @@
         \begin{center}
             \includegraphics[scale=1.2]{tikz/outdq.pdf}
         \end{center}
-        \caption{The outcome (circle) and the starting set (left) and terminating set (right) of events.}
+        \caption{The outcome (circle) and the starting set (left) and terminating set (right) of events. \cite{myo}}
     \end{figure}
 
 \subsection{Quality attenuation ($\Delta$Q)}
@@ -61,9 +61,9 @@
         A system \textit{satisfies timeliness} if $\Delta$Q$_{obs}$ $\le$ $\Delta$Q$_{req}$. \cite{art}
      
     \subsection{QTA, required $\Delta$Q}
-         The \textit{Quantitative Timeliness Agreement} (QTA) maps objective measurements to the subjective perception of application performance \cite{dq-br}. It specifies what the base system does and its limits.
+         The \textit{Quantitative Timeliness Agreement} (QTA) maps objective measurements to the subjective perception of application performance. It specifies what the base system does and its limits \cite{dq-br} \cite{myo}.
     
-    \paragraph{Slack} There is performance \textit{slack} when a $\Delta$Q is strictly less than the requirement,.
+    \paragraph{Slack} There is performance \textit{slack} when a $\Delta$Q is strictly less than the requirement,
 
         \paragraph{Hazard} There is performance \textit{hazard} when a $\Delta$Q is strictly greater than the requirement.
     
@@ -77,7 +77,7 @@
         \end{figure}
 
     \subsection{Outcome diagram}
-        An outcome diagram is central to capture the causal relationships between the outcomes. It shows the causal connections between all the outcomes we are interested in, and it allows computing the $\Delta$Q for the whole system \cite{dq-tut}. The outcome diagram captures the essential observational properties of a system. It maps a system's behaviour as seen from outside to concrete outcomes. \cite{art}
+        An outcome diagram is central to capture the causal relationships between the outcomes. It shows the causal connections between all the outcomes we are interested in, and it allows computing the $\Delta$Q for the whole system \cite{dq-tut}. It maps a system's behaviour as seen from outside to concrete outcomes \cite{art}.
 
         There are four different operators that represent the relationships between outcomes. \cite{dq-tut}
 
@@ -96,7 +96,7 @@
             \label{eq:}
         \end{equation}
 
-            and thus $\Delta$Q$_{AB}$:
+        Thus $\Delta$Q$_{AB}$:
         \begin{equation}
             \Delta Q_{AB} = \Delta Q_A \circledast \Delta Q_B
             \label{eq:}
@@ -187,7 +187,7 @@
             \end{center}
         \end{figure}
         
-        At low load, the two components behavior will be independent, the system will behave linearly, the observed total delay of execution will be equal to the result of convolution of $o_1$, $o_2$ ($o_1 \circledast o_2$). \\
+        At low load, the two components behavior will be independent, the system will behave linearly, the observed total delay of execution will be equal to the result of convolution of $o_1$, $o_2$ ($o_1 \circledast o_2$).
         
         When load increases, the two components will start to show dependent behaviour due to the processor utilisation increasing. The $\Delta$Q of the observed delay will then deviate from the $\Delta$Q which is the result of the convolution of $o_1, o_2$
         \begin{figure}[H]
@@ -198,4 +198,4 @@
             \label{fig:cdf_indep}
         \end{figure}
 
-        When the system is far from being overloaded, the effect is noticeable thanks to $\Delta$QSD even if the system is far from being overloaded. As the cliff edge of overload is approached, the nonlinearity will increase.
+        When the system is far from being overloaded, the effect is noticeable thanks to $\Delta$QSD even if the system is far from being overloaded. As the cliff edge of overload is approached, the nonlinearity will increase. \cite{post}

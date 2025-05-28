@@ -8,16 +8,16 @@
 
     \paragraph{System creation}
         In this tab the user can create its system using the grammar defined before, he can save the text he used to define the system or load it, the system is saved to a file with any extension, we nevertheless define an extension to save the system to, the extension \texttt{.dq}.
-        If the definition of the input is wrong, he will be warned with a pop up giving the error the parser generator encountered in the creation of a system.
+        If the definition of the input is wrong, he will be warned with a pop-up giving the error the parser generator encountered in the creation of a system.
 
     \paragraph{Adding a plot}
         Once the system is defined, the user can choose the probes he wants to plot. They can select multiple probes per plot and display multiple plots on the oscilloscope window.
     
-    \paragraph{Polling rate}
-        The user can choose the polling rate of the system: How often $\Delta$Qs are calculated and displayed in the oscilloscope.
+    \paragraph{Sampling rate}
+        The user can choose the sampling rate of the system: How often $\Delta$Qs are calculated and displayed in the oscilloscope.
 
     \paragraph{Editing a plot}
-        By clicking onto a plot that is being shown, the user can choose to add or remove probes to and from it. Multiple probes can be selected to either be removed or added.
+        By clicking onto a plot that is being shown, the user can choose to add or remove probes to and from it, thanks to the widget in the lower right corner. Multiple probes can be selected to either be removed or added.
 
     \subsubsection{Parameters tab}
         In this tab, the user can define parameters for the probes they have defined.
@@ -26,7 +26,7 @@
         The user is given the choice to set a QTA for a given observable, they have 4 fields where they can fill in which correspond to the percentiles and the maximum amount of failures allowed, they can change this dynamically during execution.
 
     \paragraph{dMax, bins}
-        The user has a slider which goes from -10 to 10, where they can set the parameters we explained previously, $n$, the exponent of $\Delta_{tbase} \cdot 2^n$ and the bins $N$. When this information is saved by the user, the new $dMax$ is transmitted to the wrapper and saved for the selected observable.
+        The user has a slider which goes from -10 to 10, where they can set the parameters we explained previously, $n$, the exponent of $\Delta_{tbase} \cdot 2^n$ and the bins $N$. When this information is saved by the user, the new $dMax$ is transmitted to the adapter and saved for the selected observable.
 
     \subsubsection{Triggers tab}
         In the triggers tab the user can set triggers and observe the snapshots of the system.
@@ -36,10 +36,11 @@
     
     \paragraph{Fired triggers}
         Once a trigger is fired, the oscilloscope starts a timer, during which all probes start recording the observed $\Delta$Qs (and the calculated ones if applicable) without discarding older ones. Once the timer expires, the snapshot is saved for the user in the triggers tab. In the dashboard, it indicates when the trigger was fired (timestamp) and the name of the probe which fired it.
+   
    \subsubsection{Connection controls}
     
         \paragraph{Erlang controls}
-            The user can set the IP and the port where the Erlang wrapper is listening from. Two additional buttons communicate with the wrapper by sending messages, they can start and stop the wrapper's sending of outcome instances.
+            The user can set the IP and the port where the $\Delta$Q adapter is listening from. Two additional buttons communicate with the adapter by sending messages, they can start and stop the adapter's sending of outcome instances.
         
         \paragraph{C++ server controls}
             The user can set the IP and the port for the oscilloscope's server.

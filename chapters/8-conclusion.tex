@@ -5,7 +5,7 @@ The following project is the beginning of the $\Delta$Q oscilloscope, our initia
         \item The graphical dashboard for the $\Delta$Q oscilloscope, built in C++, which allows real time display of $\Delta$Qs for the probes inserted in the system.
         \item Fast convolution algorithms to perform statistical analysis on probes.
         \item The creation of a textual syntax to create outcome diagrams.
-        \item The \texttt{dqsd\_otel} Erlang wrapper to connect an OpenTelemetry instrumented Erlang app to the oscilloscope.
+        \item The \texttt{dqsd\_otel} Erlang adapter to connect an OpenTelemetry instrumented Erlang app to the oscilloscope.
     \end{itemize}
 
     The user has full control over the outcome diagrams and can update them dynamically to add or remove probes, this allows full control of what the user decides to include, allowing a finer grained representation or a more general view of the system.  
@@ -15,7 +15,7 @@ The following project is the beginning of the $\Delta$Q oscilloscope, our initia
     We showed how it can be useful in detecting early signs of overload many crucial features are still missing from the dashboard, and it could require less code modifications in the Erlang side. The next important step of the oscilloscope is its trial in a true distributed application. This would further reinforce the solidity of the paradigm in detecting problems in design of large systems. 
 
     \section{Future improvements}
-        We believe the oscilloscope and the Erlang application can be drastically improved, the size of the project and its intended goal is too big to be encompassed in a single master thesis. We list here some improvements which could be made to both the oscilloscope and the wrapper.
+        We believe the oscilloscope and the Erlang application can be drastically improved, the size of the project and its intended goal is too big to be encompassed in a single master thesis. We list here some improvements which could be made to both the oscilloscope and the adapter.
         \subsection{Oscilloscope improvements}
            \begin{itemize}
             
@@ -38,14 +38,14 @@ The following project is the beginning of the $\Delta$Q oscilloscope, our initia
                 \item \textbf{Many more}: This oscilloscope is just a start, if we were to list everything we may want to add, it would take many pages. What we provide is a sufficient enough basis to provide possibilities to observe a running system and understand the power of $\Delta$QSD in analysing its behaviour.
            \end{itemize} 
                 
-      \subsection{Wrapper improvements}
+      \subsection{Adapter improvements}
 
         \begin{itemize}
-            \item As suggested by Bryan Naegele, a member of the observability group of Erlang, the wrapper, instead of working on top of OpenTelemetry, could be directly included inside the context of a span by using the ctx library \cite{ctx}, which provides deadlines for contexts, propagating the value in otel\_ctx, making it available to the OpenTelemetry span processor. Leveraging \texttt{erlang:send\_after} as we already do, we could create outcome instances with telemetry events to handle successful executions and timeouts. The span processor will then be responsible for creating outcome instances, without creating the need for custom functions in the wrapper, like we have now.
+            \item As suggested by Bryan Naegele, a member of the observability group of Erlang, the adapter, instead of working on top of OpenTelemetry, could be directly included inside the context of a span by using the ctx library \cite{ctx}, which provides deadlines for contexts, propagating the value in otel\_ctx, making it available to the OpenTelemetry span processor. Leveraging \texttt{erlang:send\_after} as we already do, we could create outcome instances with telemetry events to handle successful executions and timeouts. The span processor will then be responsible for creating outcome instances, without creating the need for custom functions in the adapter, like we have now.
         \end{itemize}
    
     \subsection{Real applications}
-        A flaw of the oscilloscope and wrapper is that they have not been tested on real applications, while their usefulness has been proven on synthetic applications, the lack of real life applications is a weakness.
+        A flaw of the oscilloscope and adapter is that they have not been tested on real applications, while their usefulness has been proven on synthetic applications, the lack of real life applications is a weakness.
 
     \subsection{Licensing limitations}
     Lastly, a notable limitation is created by \textbf{Qt}, namely, QtCharts. The usage of Qt does not allow us to release our project under BSD/MIT licenses, but rather a GPLv3 one (we cannot release it under LGPL due to QtCharts). \cite{qt-gpl}

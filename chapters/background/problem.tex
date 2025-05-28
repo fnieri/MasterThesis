@@ -25,11 +25,11 @@
     \end{figure} 
 
 
-    \subsection{Handling of long span}
+    \subsection{Handling of long spans}
         OpenTelemetry presents a bigger problem, what happens when there are long-running spans? Worse, what happens when spans are not actually terminated?
         
         OpenTelemetry limits the length of its spans, moreover, those who are not terminated are lost and not exported. Why? Failed executions are those that tell more about a program's execution!
 
         If the span is the parent/root span, its effect could trickle down to child spans. We can quickly see how this becomes problematic, all the information about an execution of your program \dots lost. Moreover, a span could not be terminated for trivial reasons: refreshing a tab, network failures, crashes \dots \cite{otel-l}. There are a few hacks that can be implemented, having shorter spans, carrying data in child spans, saving spans in a log to track spans which were not ended to manually set an end time; why the need to circumvent limitations when observing a system?
 
-     We believe that the wrapper we provide can be a great start to improve observability requirements surrounding OpenTelemetry. We will show in the evaluation on synthetic applications how $\Delta$QSD's notion of failure can help to detect overload problems in running systems right away. The oscilloscope can be an addition to be put next to monitoring platforms to give further statistical insights about a running system with high precision.
+     We believe that the adapter we provide can be a great start to improve observability requirements surrounding OpenTelemetry. We will show in the evaluation on synthetic applications how $\Delta$QSD's notion of failure can help to detect overload problems in running systems right away.

@@ -1,9 +1,13 @@
-\section{Extending the notion of failure}
-   Recall the definition of failure: \textit{"an input message $m_{in}$ that has no output message $m_{out}$"}. If you recall the previous section \ref{timeout}, we introduced the notion of a maximum delay.
+\subsection{Extending failure}
+   Recall the definition of failure: \textit{"an input message $m_{in}$ that has no output message $m_{out}$"}. If you recall the previous section \ref{fig:otel_dmax}, we introduced the notion of a maximum delay. 
 
-    We extend the notion of failure to the following definition:
+   By extending the notion of failure, we can know right away when execution is straying away from engineer defined behaviour, avoiding having to wait until the execution is done. In $\Delta$QSD, an execution may as well take 10 or 15 seconds, but if the delay of execution is $> dMax$, we consider that failed right away, we do not need to know the total execution time. Moreover, the full span will be exported regardless to monitoring tools which were set up by the user. 
+
+   The user can observe both real time information with $\Delta$QSD notion of failure on the $\Delta$Q oscilloscope, and observe those spans in their monitoring tools if they wish.
+
+The notion of failure is extended to the following definition:
         \begin{center}
-            \textit{"An input message $m_{in}$ that has no output message $m_{out}$ after $x$ seconds"}
+            \textit{"An input message $m_{in}$ that has no output message $m_{out}$ after $dMax$"} 
         \end{center}
-    Where $x$ is the $dMax$ defined by the user. We can leverage this new definition to observe $\Delta$Qs in real time.
+    We can leverage this new definition to observe the system and the $\Delta$Qs in real time.
 

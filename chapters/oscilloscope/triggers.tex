@@ -1,13 +1,13 @@
 \section{Triggers}
     There are two available triggers which can be selected by the user, the triggers are evaluated on the \textbf{observed $\Delta$Q}.
     \subsection{Load}
-        A trigger on an observed $\Delta$Q can be fired if the amount of outcome instances received in a polling rate is greater than what the user defines:
+        A trigger on an observed $\Delta$Q can be fired if the amount of outcome instances received for a probe in a sampling window is greater than what the user defines:
     \begin{center}
-        \#instances($\Delta$Q($t_l, t_u, dMax$)) > maxAllowedInstances 
+        \#instances$_{probe}$($\Delta$Q($t_l, t_u, dMax$)) > maxAllowedInstances 
     \end{center}
 
     \subsection{QTA}
         A trigger on an observed $\Delta$Q can be fired if:
         \begin{center}
-            $\Delta$Q$_{obs}$ $>$ observableQTA
+            $\Delta$Q$_{obs}$ $\nless$ observableQTA
         \end{center}

@@ -206,8 +206,8 @@
       \strng{authornamehash}{496b43051f848006c7276bb1d770a7fd}
       \strng{authorfullhash}{496b43051f848006c7276bb1d770a7fd}
       \strng{authorfullhashraw}{496b43051f848006c7276bb1d770a7fd}
-      \field{sortinit}{4}
-      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{note}{Accessed: (26/05/2025)}
@@ -219,6 +219,30 @@
       \verb{url}
       \verb https://www.erlang.org/faq/introduction.html
       \endverb
+    \endentry
+    \entry{post}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=f669f61ee8de1a8b7351d817ea423497}{%
+           family={Nieri},
+           familyi={N\bibinitperiod},
+           given={Francesco},
+           giveni={F\bibinitperiod}}}%
+      }
+      \strng{namehash}{f669f61ee8de1a8b7351d817ea423497}
+      \strng{fullhash}{f669f61ee8de1a8b7351d817ea423497}
+      \strng{fullhashraw}{f669f61ee8de1a8b7351d817ea423497}
+      \strng{bibnamehash}{f669f61ee8de1a8b7351d817ea423497}
+      \strng{authorbibnamehash}{f669f61ee8de1a8b7351d817ea423497}
+      \strng{authornamehash}{f669f61ee8de1a8b7351d817ea423497}
+      \strng{authorfullhash}{f669f61ee8de1a8b7351d817ea423497}
+      \strng{authorfullhashraw}{f669f61ee8de1a8b7351d817ea423497}
+      \field{extraname}{1}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Master thesis presentation poster UCLouvain - $\Delta$Q oscilloscope}
+      \field{year}{2024}
     \endentry
     \entry{myo}{article}{}{}
       \name{author}{6}{}{%
@@ -262,8 +286,8 @@
       \strng{authorfullhash}{68b1c0b30277501aa742d6df3ebff961}
       \strng{authorfullhashraw}{68b1c0b30277501aa742d6df3ebff961}
       \field{extraname}{2}
-      \field{sortinit}{6}
-      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Comput.}
@@ -302,8 +326,8 @@
       \strng{authornamehash}{276e13a920ad375a49902d1697a00450}
       \strng{authorfullhash}{276e13a920ad375a49902d1697a00450}
       \strng{authorfullhashraw}{276e13a920ad375a49902d1697a00450}
-      \field{sortinit}{8}
-      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{note}{Accessed: (19/05/2025)}
@@ -337,8 +361,8 @@
       \strng{authornamehash}{09783251b2a1b72ca386cfcac69d48e6}
       \strng{authorfullhash}{09783251b2a1b72ca386cfcac69d48e6}
       \strng{authorfullhashraw}{09783251b2a1b72ca386cfcac69d48e6}
-      \field{sortinit}{9}
-      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{note}{Accessed: (19/05/2025)}
@@ -441,183 +465,6 @@
       \verb https://opentelemetry.io/docs/what-is-opentelemetry/
       \endverb
     \endentry
-    \entry{otel-t}{misc}{}{}
-      \name{author}{1}{}{%
-        {{hash=9c17bef3be6c0feb9f7e5b99b097c6b7}{%
-           family={OpenTelemetry},
-           familyi={O\bibinitperiod}}}%
-      }
-      \strng{namehash}{9c17bef3be6c0feb9f7e5b99b097c6b7}
-      \strng{fullhash}{9c17bef3be6c0feb9f7e5b99b097c6b7}
-      \strng{fullhashraw}{9c17bef3be6c0feb9f7e5b99b097c6b7}
-      \strng{bibnamehash}{9c17bef3be6c0feb9f7e5b99b097c6b7}
-      \strng{authorbibnamehash}{9c17bef3be6c0feb9f7e5b99b097c6b7}
-      \strng{authornamehash}{9c17bef3be6c0feb9f7e5b99b097c6b7}
-      \strng{authorfullhash}{9c17bef3be6c0feb9f7e5b99b097c6b7}
-      \strng{authorfullhashraw}{9c17bef3be6c0feb9f7e5b99b097c6b7}
-      \field{extraname}{3}
-      \field{sortinit}{3}
-      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{note}{Accessed: (19/05/2025)}
-      \field{title}{OpenTelemetry - Traces}
-      \field{year}{2025}
-      \verb{urlraw}
-      \verb https://opentelemetry.io/docs/concepts/signals/traces/
-      \endverb
-      \verb{url}
-      \verb https://opentelemetry.io/docs/concepts/signals/traces/
-      \endverb
-    \endentry
-    \entry{jg}{misc}{}{}
-      \name{author}{1}{}{%
-        {{hash=99843117a36cd53a2358856e619efe2a}{%
-           family={Authors},
-           familyi={A\bibinitperiod},
-           given={The\bibnamedelima Jaeger},
-           giveni={T\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
-      }
-      \strng{namehash}{99843117a36cd53a2358856e619efe2a}
-      \strng{fullhash}{99843117a36cd53a2358856e619efe2a}
-      \strng{fullhashraw}{99843117a36cd53a2358856e619efe2a}
-      \strng{bibnamehash}{99843117a36cd53a2358856e619efe2a}
-      \strng{authorbibnamehash}{99843117a36cd53a2358856e619efe2a}
-      \strng{authornamehash}{99843117a36cd53a2358856e619efe2a}
-      \strng{authorfullhash}{99843117a36cd53a2358856e619efe2a}
-      \strng{authorfullhashraw}{99843117a36cd53a2358856e619efe2a}
-      \field{sortinit}{3}
-      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{note}{Accessed: (19/05/2025)}
-      \field{title}{Jaeger}
-      \field{year}{2025}
-      \verb{urlraw}
-      \verb https://www.jaegertracing.io/
-      \endverb
-      \verb{url}
-      \verb https://www.jaegertracing.io/
-      \endverb
-    \endentry
-    \entry{otel-p}{misc}{}{}
-      \name{author}{1}{}{%
-        {{hash=92d4a90bb461cfbc6215c8fac5f4ecb4}{%
-           family={Horovits},
-           familyi={H\bibinitperiod},
-           given={Dotan},
-           giveni={D\bibinitperiod}}}%
-      }
-      \strng{namehash}{92d4a90bb461cfbc6215c8fac5f4ecb4}
-      \strng{fullhash}{92d4a90bb461cfbc6215c8fac5f4ecb4}
-      \strng{fullhashraw}{92d4a90bb461cfbc6215c8fac5f4ecb4}
-      \strng{bibnamehash}{92d4a90bb461cfbc6215c8fac5f4ecb4}
-      \strng{authorbibnamehash}{92d4a90bb461cfbc6215c8fac5f4ecb4}
-      \strng{authornamehash}{92d4a90bb461cfbc6215c8fac5f4ecb4}
-      \strng{authorfullhash}{92d4a90bb461cfbc6215c8fac5f4ecb4}
-      \strng{authorfullhashraw}{92d4a90bb461cfbc6215c8fac5f4ecb4}
-      \field{sortinit}{3}
-      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{note}{Accessed: (19/05/2025)}
-      \field{title}{From Distributed Tracing to APM: Taking OpenTelemetry \& Jaeger Up a Level}
-      \field{year}{2021}
-      \verb{urlraw}
-      \verb https://logz.io/blog/monitoring-microservices-opentelemetry-jaeger/
-      \endverb
-      \verb{url}
-      \verb https://logz.io/blog/monitoring-microservices-opentelemetry-jaeger/
-      \endverb
-    \endentry
-    \entry{tr-e}{misc}{}{}
-      \name{author}{1}{}{%
-        {{hash=85068a9d3967226abeb21467c20e5386}{%
-           family={Boddeti},
-           familyi={B\bibinitperiod},
-           given={Sampath\bibnamedelimb Siva\bibnamedelima Kumar},
-           giveni={S\bibinitperiod\bibinitdelim S\bibinitperiod\bibinitdelim K\bibinitperiod}}}%
-      }
-      \strng{namehash}{85068a9d3967226abeb21467c20e5386}
-      \strng{fullhash}{85068a9d3967226abeb21467c20e5386}
-      \strng{fullhashraw}{85068a9d3967226abeb21467c20e5386}
-      \strng{bibnamehash}{85068a9d3967226abeb21467c20e5386}
-      \strng{authorbibnamehash}{85068a9d3967226abeb21467c20e5386}
-      \strng{authornamehash}{85068a9d3967226abeb21467c20e5386}
-      \strng{authorfullhash}{85068a9d3967226abeb21467c20e5386}
-      \strng{authorfullhashraw}{85068a9d3967226abeb21467c20e5386}
-      \field{sortinit}{3}
-      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{note}{Accessed: (19/05/2025)}
-      \field{title}{Tracing Made Easy: A Beginner's Guide to Jaeger and Distributed Systems}
-      \field{year}{2024}
-      \verb{urlraw}
-      \verb https://openobserve.ai/blog/tracing-made-easy-a-beginners-guide-to-jaeger-and-distributed-systems/
-      \endverb
-      \verb{url}
-      \verb https://openobserve.ai/blog/tracing-made-easy-a-beginners-guide-to-jaeger-and-distributed-systems/
-      \endverb
-    \endentry
-    \entry{otel-in}{online}{}{}
-      \name{author}{1}{}{%
-        {{hash=9c17bef3be6c0feb9f7e5b99b097c6b7}{%
-           family={OpenTelemetry},
-           familyi={O\bibinitperiod}}}%
-      }
-      \strng{namehash}{9c17bef3be6c0feb9f7e5b99b097c6b7}
-      \strng{fullhash}{9c17bef3be6c0feb9f7e5b99b097c6b7}
-      \strng{fullhashraw}{9c17bef3be6c0feb9f7e5b99b097c6b7}
-      \strng{bibnamehash}{9c17bef3be6c0feb9f7e5b99b097c6b7}
-      \strng{authorbibnamehash}{9c17bef3be6c0feb9f7e5b99b097c6b7}
-      \strng{authornamehash}{9c17bef3be6c0feb9f7e5b99b097c6b7}
-      \strng{authorfullhash}{9c17bef3be6c0feb9f7e5b99b097c6b7}
-      \strng{authorfullhashraw}{9c17bef3be6c0feb9f7e5b99b097c6b7}
-      \field{extraname}{4}
-      \field{sortinit}{4}
-      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{note}{Accessed: (19/05/2025)}
-      \field{title}{Instrumentation for OpenTelemetry Erlang/Elixir}
-      \field{year}{2025}
-      \verb{urlraw}
-      \verb https://opentelemetry.io/docs/languages/erlang/instrumentation/
-      \endverb
-      \verb{url}
-      \verb https://opentelemetry.io/docs/languages/erlang/instrumentation/
-      \endverb
-    \endentry
-    \entry{active-s}{misc}{}{}
-      \name{author}{1}{}{%
-        {{hash=9c17bef3be6c0feb9f7e5b99b097c6b7}{%
-           family={OpenTelemetry},
-           familyi={O\bibinitperiod}}}%
-      }
-      \strng{namehash}{9c17bef3be6c0feb9f7e5b99b097c6b7}
-      \strng{fullhash}{9c17bef3be6c0feb9f7e5b99b097c6b7}
-      \strng{fullhashraw}{9c17bef3be6c0feb9f7e5b99b097c6b7}
-      \strng{bibnamehash}{9c17bef3be6c0feb9f7e5b99b097c6b7}
-      \strng{authorbibnamehash}{9c17bef3be6c0feb9f7e5b99b097c6b7}
-      \strng{authornamehash}{9c17bef3be6c0feb9f7e5b99b097c6b7}
-      \strng{authorfullhash}{9c17bef3be6c0feb9f7e5b99b097c6b7}
-      \strng{authorfullhashraw}{9c17bef3be6c0feb9f7e5b99b097c6b7}
-      \field{extraname}{5}
-      \field{sortinit}{4}
-      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{note}{Accessed: (19/05/2025)}
-      \field{title}{Active spans, C++ Instrumentation}
-      \field{year}{2025}
-      \verb{urlraw}
-      \verb https://opentelemetry.io/docs/languages/cpp/instrumentation/
-      \endverb
-      \verb{url}
-      \verb https://opentelemetry.io/docs/languages/cpp/instrumentation/
-      \endverb
-    \endentry
     \entry{otel-l}{misc}{}{}
       \name{author}{1}{}{%
         {{hash=a053036d92aa8736ee3b37dae9c563d8}{%
@@ -648,6 +495,334 @@
       \verb https://thenewstack.io/opentelemetry-challenges-handling-long-running-spans/
       \endverb
     \endentry
+    \entry{otel-in}{online}{}{}
+      \name{author}{1}{}{%
+        {{hash=9c17bef3be6c0feb9f7e5b99b097c6b7}{%
+           family={OpenTelemetry},
+           familyi={O\bibinitperiod}}}%
+      }
+      \strng{namehash}{9c17bef3be6c0feb9f7e5b99b097c6b7}
+      \strng{fullhash}{9c17bef3be6c0feb9f7e5b99b097c6b7}
+      \strng{fullhashraw}{9c17bef3be6c0feb9f7e5b99b097c6b7}
+      \strng{bibnamehash}{9c17bef3be6c0feb9f7e5b99b097c6b7}
+      \strng{authorbibnamehash}{9c17bef3be6c0feb9f7e5b99b097c6b7}
+      \strng{authornamehash}{9c17bef3be6c0feb9f7e5b99b097c6b7}
+      \strng{authorfullhash}{9c17bef3be6c0feb9f7e5b99b097c6b7}
+      \strng{authorfullhashraw}{9c17bef3be6c0feb9f7e5b99b097c6b7}
+      \field{extraname}{3}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Accessed: (19/05/2025)}
+      \field{title}{Instrumentation for OpenTelemetry Erlang/Elixir}
+      \field{year}{2025}
+      \verb{urlraw}
+      \verb https://opentelemetry.io/docs/languages/erlang/instrumentation/
+      \endverb
+      \verb{url}
+      \verb https://opentelemetry.io/docs/languages/erlang/instrumentation/
+      \endverb
+    \endentry
+    \entry{obs-group}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=9dfc33dc9016ab21c82fadf9c8e7838c}{%
+           family={Foundation},
+           familyi={F\bibinitperiod},
+           given={Erlang\bibnamedelima Ecosystem},
+           giveni={E\bibinitperiod\bibinitdelim E\bibinitperiod}}}%
+      }
+      \strng{namehash}{9dfc33dc9016ab21c82fadf9c8e7838c}
+      \strng{fullhash}{9dfc33dc9016ab21c82fadf9c8e7838c}
+      \strng{fullhashraw}{9dfc33dc9016ab21c82fadf9c8e7838c}
+      \strng{bibnamehash}{9dfc33dc9016ab21c82fadf9c8e7838c}
+      \strng{authorbibnamehash}{9dfc33dc9016ab21c82fadf9c8e7838c}
+      \strng{authornamehash}{9dfc33dc9016ab21c82fadf9c8e7838c}
+      \strng{authorfullhash}{9dfc33dc9016ab21c82fadf9c8e7838c}
+      \strng{authorfullhashraw}{9dfc33dc9016ab21c82fadf9c8e7838c}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Accessed: (28/05/2025)}
+      \field{title}{Observability Working Group}
+      \field{year}{2025}
+      \verb{urlraw}
+      \verb https://erlef.org/wg/observability
+      \endverb
+      \verb{url}
+      \verb https://erlef.org/wg/observability
+      \endverb
+    \endentry
+    \entry{otel-t}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=9c17bef3be6c0feb9f7e5b99b097c6b7}{%
+           family={OpenTelemetry},
+           familyi={O\bibinitperiod}}}%
+      }
+      \strng{namehash}{9c17bef3be6c0feb9f7e5b99b097c6b7}
+      \strng{fullhash}{9c17bef3be6c0feb9f7e5b99b097c6b7}
+      \strng{fullhashraw}{9c17bef3be6c0feb9f7e5b99b097c6b7}
+      \strng{bibnamehash}{9c17bef3be6c0feb9f7e5b99b097c6b7}
+      \strng{authorbibnamehash}{9c17bef3be6c0feb9f7e5b99b097c6b7}
+      \strng{authornamehash}{9c17bef3be6c0feb9f7e5b99b097c6b7}
+      \strng{authorfullhash}{9c17bef3be6c0feb9f7e5b99b097c6b7}
+      \strng{authorfullhashraw}{9c17bef3be6c0feb9f7e5b99b097c6b7}
+      \field{extraname}{4}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Accessed: (19/05/2025)}
+      \field{title}{OpenTelemetry - Traces}
+      \field{year}{2025}
+      \verb{urlraw}
+      \verb https://opentelemetry.io/docs/concepts/signals/traces/
+      \endverb
+      \verb{url}
+      \verb https://opentelemetry.io/docs/concepts/signals/traces/
+      \endverb
+    \endentry
+    \entry{otel-exp}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=c9c2d3a24c7583a7e7f7f0789505c4ad}{%
+           family={Authors},
+           familyi={A\bibinitperiod},
+           given={OpenTelemetry},
+           giveni={O\bibinitperiod}}}%
+      }
+      \strng{namehash}{c9c2d3a24c7583a7e7f7f0789505c4ad}
+      \strng{fullhash}{c9c2d3a24c7583a7e7f7f0789505c4ad}
+      \strng{fullhashraw}{c9c2d3a24c7583a7e7f7f0789505c4ad}
+      \strng{bibnamehash}{c9c2d3a24c7583a7e7f7f0789505c4ad}
+      \strng{authorbibnamehash}{c9c2d3a24c7583a7e7f7f0789505c4ad}
+      \strng{authornamehash}{c9c2d3a24c7583a7e7f7f0789505c4ad}
+      \strng{authorfullhash}{c9c2d3a24c7583a7e7f7f0789505c4ad}
+      \strng{authorfullhashraw}{c9c2d3a24c7583a7e7f7f0789505c4ad}
+      \field{extraname}{1}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Accessed: (28/05/2025)}
+      \field{title}{Exporters}
+      \field{year}{2025}
+      \verb{urlraw}
+      \verb https://opentelemetry.io/docs/languages/erlang/exporters/
+      \endverb
+      \verb{url}
+      \verb https://opentelemetry.io/docs/languages/erlang/exporters/
+      \endverb
+    \endentry
+    \entry{jg}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=99843117a36cd53a2358856e619efe2a}{%
+           family={Authors},
+           familyi={A\bibinitperiod},
+           given={The\bibnamedelima Jaeger},
+           giveni={T\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+      }
+      \strng{namehash}{99843117a36cd53a2358856e619efe2a}
+      \strng{fullhash}{99843117a36cd53a2358856e619efe2a}
+      \strng{fullhashraw}{99843117a36cd53a2358856e619efe2a}
+      \strng{bibnamehash}{99843117a36cd53a2358856e619efe2a}
+      \strng{authorbibnamehash}{99843117a36cd53a2358856e619efe2a}
+      \strng{authornamehash}{99843117a36cd53a2358856e619efe2a}
+      \strng{authorfullhash}{99843117a36cd53a2358856e619efe2a}
+      \strng{authorfullhashraw}{99843117a36cd53a2358856e619efe2a}
+      \field{extraname}{2}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Accessed: (19/05/2025)}
+      \field{title}{Jaeger}
+      \field{year}{2025}
+      \verb{urlraw}
+      \verb https://www.jaegertracing.io/
+      \endverb
+      \verb{url}
+      \verb https://www.jaegertracing.io/
+      \endverb
+    \endentry
+    \entry{datadog}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=3983159b26a23291e755be54ac03be23}{%
+           family={Datadog},
+           familyi={D\bibinitperiod}}}%
+      }
+      \strng{namehash}{3983159b26a23291e755be54ac03be23}
+      \strng{fullhash}{3983159b26a23291e755be54ac03be23}
+      \strng{fullhashraw}{3983159b26a23291e755be54ac03be23}
+      \strng{bibnamehash}{3983159b26a23291e755be54ac03be23}
+      \strng{authorbibnamehash}{3983159b26a23291e755be54ac03be23}
+      \strng{authornamehash}{3983159b26a23291e755be54ac03be23}
+      \strng{authorfullhash}{3983159b26a23291e755be54ac03be23}
+      \strng{authorfullhashraw}{3983159b26a23291e755be54ac03be23}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Accessed: (28/05/2025)}
+      \field{title}{Datadog - Product}
+      \field{year}{2025}
+      \verb{urlraw}
+      \verb https://www.datadoghq.com/product/
+      \endverb
+      \verb{url}
+      \verb https://www.datadoghq.com/product/
+      \endverb
+    \endentry
+    \entry{otel-p}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=92d4a90bb461cfbc6215c8fac5f4ecb4}{%
+           family={Horovits},
+           familyi={H\bibinitperiod},
+           given={Dotan},
+           giveni={D\bibinitperiod}}}%
+      }
+      \strng{namehash}{92d4a90bb461cfbc6215c8fac5f4ecb4}
+      \strng{fullhash}{92d4a90bb461cfbc6215c8fac5f4ecb4}
+      \strng{fullhashraw}{92d4a90bb461cfbc6215c8fac5f4ecb4}
+      \strng{bibnamehash}{92d4a90bb461cfbc6215c8fac5f4ecb4}
+      \strng{authorbibnamehash}{92d4a90bb461cfbc6215c8fac5f4ecb4}
+      \strng{authornamehash}{92d4a90bb461cfbc6215c8fac5f4ecb4}
+      \strng{authorfullhash}{92d4a90bb461cfbc6215c8fac5f4ecb4}
+      \strng{authorfullhashraw}{92d4a90bb461cfbc6215c8fac5f4ecb4}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Accessed: (19/05/2025)}
+      \field{title}{From Distributed Tracing to APM: Taking OpenTelemetry \& Jaeger Up a Level}
+      \field{year}{2021}
+      \verb{urlraw}
+      \verb https://logz.io/blog/monitoring-microservices-opentelemetry-jaeger/
+      \endverb
+      \verb{url}
+      \verb https://logz.io/blog/monitoring-microservices-opentelemetry-jaeger/
+      \endverb
+    \endentry
+    \entry{tr-e}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=85068a9d3967226abeb21467c20e5386}{%
+           family={Boddeti},
+           familyi={B\bibinitperiod},
+           given={Sampath\bibnamedelimb Siva\bibnamedelima Kumar},
+           giveni={S\bibinitperiod\bibinitdelim S\bibinitperiod\bibinitdelim K\bibinitperiod}}}%
+      }
+      \strng{namehash}{85068a9d3967226abeb21467c20e5386}
+      \strng{fullhash}{85068a9d3967226abeb21467c20e5386}
+      \strng{fullhashraw}{85068a9d3967226abeb21467c20e5386}
+      \strng{bibnamehash}{85068a9d3967226abeb21467c20e5386}
+      \strng{authorbibnamehash}{85068a9d3967226abeb21467c20e5386}
+      \strng{authornamehash}{85068a9d3967226abeb21467c20e5386}
+      \strng{authorfullhash}{85068a9d3967226abeb21467c20e5386}
+      \strng{authorfullhashraw}{85068a9d3967226abeb21467c20e5386}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Accessed: (19/05/2025)}
+      \field{title}{Tracing Made Easy: A Beginner's Guide to Jaeger and Distributed Systems}
+      \field{year}{2024}
+      \verb{urlraw}
+      \verb https://openobserve.ai/blog/tracing-made-easy-a-beginners-guide-to-jaeger-and-distributed-systems/
+      \endverb
+      \verb{url}
+      \verb https://openobserve.ai/blog/tracing-made-easy-a-beginners-guide-to-jaeger-and-distributed-systems/
+      \endverb
+    \endentry
+    \entry{active-s}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=9c17bef3be6c0feb9f7e5b99b097c6b7}{%
+           family={OpenTelemetry},
+           familyi={O\bibinitperiod}}}%
+      }
+      \strng{namehash}{9c17bef3be6c0feb9f7e5b99b097c6b7}
+      \strng{fullhash}{9c17bef3be6c0feb9f7e5b99b097c6b7}
+      \strng{fullhashraw}{9c17bef3be6c0feb9f7e5b99b097c6b7}
+      \strng{bibnamehash}{9c17bef3be6c0feb9f7e5b99b097c6b7}
+      \strng{authorbibnamehash}{9c17bef3be6c0feb9f7e5b99b097c6b7}
+      \strng{authornamehash}{9c17bef3be6c0feb9f7e5b99b097c6b7}
+      \strng{authorfullhash}{9c17bef3be6c0feb9f7e5b99b097c6b7}
+      \strng{authorfullhashraw}{9c17bef3be6c0feb9f7e5b99b097c6b7}
+      \field{extraname}{5}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Accessed: (19/05/2025)}
+      \field{title}{Active spans, C++ Instrumentation}
+      \field{year}{2025}
+      \verb{urlraw}
+      \verb https://opentelemetry.io/docs/languages/cpp/instrumentation/
+      \endverb
+      \verb{url}
+      \verb https://opentelemetry.io/docs/languages/cpp/instrumentation/
+      \endverb
+    \endentry
+    \entry{wrapper}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=f669f61ee8de1a8b7351d817ea423497}{%
+           family={Nieri},
+           familyi={N\bibinitperiod},
+           given={Francesco},
+           giveni={F\bibinitperiod}}}%
+      }
+      \strng{namehash}{f669f61ee8de1a8b7351d817ea423497}
+      \strng{fullhash}{f669f61ee8de1a8b7351d817ea423497}
+      \strng{fullhashraw}{f669f61ee8de1a8b7351d817ea423497}
+      \strng{bibnamehash}{f669f61ee8de1a8b7351d817ea423497}
+      \strng{authorbibnamehash}{f669f61ee8de1a8b7351d817ea423497}
+      \strng{authornamehash}{f669f61ee8de1a8b7351d817ea423497}
+      \strng{authorfullhash}{f669f61ee8de1a8b7351d817ea423497}
+      \strng{authorfullhashraw}{f669f61ee8de1a8b7351d817ea423497}
+      \field{extraname}{2}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Accessed: (28/05/2025)}
+      \field{title}{dqsd\_otel}
+      \field{year}{2025}
+      \verb{urlraw}
+      \verb https://github.com/fnieri/dqsd_otel
+      \endverb
+      \verb{url}
+      \verb https://github.com/fnieri/dqsd_otel
+      \endverb
+    \endentry
+    \entry{osc-g}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=f669f61ee8de1a8b7351d817ea423497}{%
+           family={Nieri},
+           familyi={N\bibinitperiod},
+           given={Francesco},
+           giveni={F\bibinitperiod}}}%
+      }
+      \strng{namehash}{f669f61ee8de1a8b7351d817ea423497}
+      \strng{fullhash}{f669f61ee8de1a8b7351d817ea423497}
+      \strng{fullhashraw}{f669f61ee8de1a8b7351d817ea423497}
+      \strng{bibnamehash}{f669f61ee8de1a8b7351d817ea423497}
+      \strng{authorbibnamehash}{f669f61ee8de1a8b7351d817ea423497}
+      \strng{authornamehash}{f669f61ee8de1a8b7351d817ea423497}
+      \strng{authorfullhash}{f669f61ee8de1a8b7351d817ea423497}
+      \strng{authorfullhashraw}{f669f61ee8de1a8b7351d817ea423497}
+      \field{extraname}{3}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Accessed: (28/05/2025)}
+      \field{title}{DeltaQOscilloscope}
+      \verb{urlraw}
+      \verb https://github.com/fnieri/DeltaQOscilloscope
+      \endverb
+      \verb{url}
+      \verb https://github.com/fnieri/DeltaQOscilloscope
+      \endverb
+    \endentry
     \entry{osc-t}{misc}{}{}
       \name{author}{1}{}{%
         {{hash=6d3c848ff3868db127e40588306291bb}{%
@@ -662,8 +837,8 @@
       \strng{authornamehash}{6d3c848ff3868db127e40588306291bb}
       \strng{authorfullhash}{6d3c848ff3868db127e40588306291bb}
       \strng{authorfullhashraw}{6d3c848ff3868db127e40588306291bb}
-      \field{sortinit}{4}
-      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{note}{Accessed: (23/05/2025)}
@@ -703,8 +878,8 @@
       \strng{authornamehash}{619ec3a16435ea921d38adfd785407d1}
       \strng{authorfullhash}{619ec3a16435ea921d38adfd785407d1}
       \strng{authorfullhashraw}{619ec3a16435ea921d38adfd785407d1}
-      \field{sortinit}{4}
-      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{isbn}{1107601045}
@@ -725,8 +900,8 @@
       \strng{authornamehash}{c91bdfd4de5d2ed142377c34b92e83c2}
       \strng{authorfullhash}{c91bdfd4de5d2ed142377c34b92e83c2}
       \strng{authorfullhashraw}{c91bdfd4de5d2ed142377c34b92e83c2}
-      \field{sortinit}{4}
-      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{note}{Accessed: (19/05/2025)}
@@ -755,8 +930,8 @@
       \strng{authornamehash}{424cb1e1c0315dbde42951125a3180aa}
       \strng{authorfullhash}{424cb1e1c0315dbde42951125a3180aa}
       \strng{authorfullhashraw}{424cb1e1c0315dbde42951125a3180aa}
-      \field{sortinit}{4}
-      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{note}{Accessed: (21/05/2025)}
@@ -770,8 +945,8 @@
       \endverb
     \endentry
     \entry{fft-h}{misc}{}{}
-      \field{sortinit}{4}
-      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
       \field{labeltitlesource}{title}
       \field{note}{Accessed: (23/05/2025)}
       \field{title}{Planning-rigor flags}
@@ -796,8 +971,8 @@
       \strng{authornamehash}{c8bc37ca621d8749f287610aaf9f7e4a}
       \strng{authorfullhash}{c8bc37ca621d8749f287610aaf9f7e4a}
       \strng{authorfullhashraw}{c8bc37ca621d8749f287610aaf9f7e4a}
-      \field{sortinit}{5}
-      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{note}{Accessed: (25/05/2025)}
@@ -826,8 +1001,8 @@
       \strng{authornamehash}{07bf2ea0b739d056d25ada96f6e845c3}
       \strng{authorfullhash}{07bf2ea0b739d056d25ada96f6e845c3}
       \strng{authorfullhashraw}{07bf2ea0b739d056d25ada96f6e845c3}
-      \field{sortinit}{5}
-      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{note}{Accessed: (24/05/2025)}
@@ -854,8 +1029,8 @@
       \strng{authornamehash}{1b665da45dc9aa260864b6047bfea42e}
       \strng{authorfullhash}{1b665da45dc9aa260864b6047bfea42e}
       \strng{authorfullhashraw}{1b665da45dc9aa260864b6047bfea42e}
-      \field{sortinit}{5}
-      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{note}{Accessed: (19/05/2025)}
@@ -908,8 +1083,8 @@
       \strng{editornamehash}{5631d18b62cc5e9ff492dce79c393f5a}
       \strng{editorfullhash}{5631d18b62cc5e9ff492dce79c393f5a}
       \strng{editorfullhashraw}{5631d18b62cc5e9ff492dce79c393f5a}
-      \field{sortinit}{5}
-      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{booktitle}{Proceedings of the 32nd {ACM} {SIGPLAN} Conference on Programming Language Design and Implementation, {PLDI} 2011, San Jose, CA, USA, June 4-8, 2011}
@@ -941,8 +1116,8 @@
       \strng{authornamehash}{8f42dd3172e77485851c3c10dddbe3b6}
       \strng{authorfullhash}{8f42dd3172e77485851c3c10dddbe3b6}
       \strng{authorfullhashraw}{8f42dd3172e77485851c3c10dddbe3b6}
-      \field{sortinit}{5}
-      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{note}{Accessed: (24/05/2025)}
@@ -969,8 +1144,8 @@
       \strng{authornamehash}{9c677286866aad38f8e9b660f5411814}
       \strng{authorfullhash}{9c677286866aad38f8e9b660f5411814}
       \strng{authorfullhashraw}{9c677286866aad38f8e9b660f5411814}
-      \field{sortinit}{5}
-      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{note}{Accessed: (24/05/2025)}
@@ -999,8 +1174,8 @@
       \strng{authornamehash}{9a30d9e0e65cd68ed533d5305f8cd1a7}
       \strng{authorfullhash}{9a30d9e0e65cd68ed533d5305f8cd1a7}
       \strng{authorfullhashraw}{9a30d9e0e65cd68ed533d5305f8cd1a7}
-      \field{sortinit}{6}
-      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{note}{Accessed: (21/05/2025)}
@@ -1029,8 +1204,8 @@
       \strng{authornamehash}{64658d3a36807e9ff9e0d0215b01c97a}
       \strng{authorfullhash}{64658d3a36807e9ff9e0d0215b01c97a}
       \strng{authorfullhashraw}{64658d3a36807e9ff9e0d0215b01c97a}
-      \field{sortinit}{6}
-      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{note}{Accessed: (23/05/2025)}
