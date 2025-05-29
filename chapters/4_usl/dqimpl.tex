@@ -10,19 +10,23 @@ For a given probe, $\Delta$Q($t_l$, $t_u$, $dMax$) is the probability that its i
     
     \paragraph{Observed $\Delta$Q}
     
-    The first way is by having $n$ collected outcome instances between $t_l$ and $t_u$, calculating its PDF and then calculating the \textit{empirical cumulative distribution function} (ECDF) based on its PDF. This is called the \textbf{Observed $\Delta$Q}.
+    The first way is by having $n$ collected outcome instances between $t_l$ and $t_u$, calculating its \textit{probability density function} (PDF) and then calculating the \textit{empirical cumulative distribution function} (ECDF) based on its PDF. This is called the \textbf{Observed $\Delta$Q}.
     
     \paragraph{Calculated $\Delta$Q}
     
-    A $\Delta$Q can also be calculated by performing operations on two or more $\Delta$Qs (convolution, operators operations), the notion of outcome instances is then lost between calculations, as the interest shifts towards calculating the resulting PDFs and ECDFs. This is called the \textbf{Calculated $\Delta$Q}.
+    A $\Delta$Q can also be calculated by performing operations on two or more observed $\Delta$Qs (convolution, operators operations), the notion of outcome instances is then lost between calculations, as the interest shifts towards calculating the resulting PDFs and ECDFs. This is called the \textbf{Calculated $\Delta$Q}. A simple outcome can \textbf{not} have a "calculated $\Delta$Q", we can only observe the delay from its observables.
+
+    If you recall \cref{fig:probes_o}, the probes $p_2$ and $p_3$ observe simple outcomes, they can only display the observed $\Delta$Qs of $o_2, o_3$. The probe $p_1$ instead observes the sequential composition of said outcomes. We can display its "observed $\Delta$Q" from the execution from $start$ to $end$ and the "calculated $\Delta$Q" as the convolution of the observed $\Delta$Qs of $o_1, o_2$
     
     \begin{figure}[H]
             \begin{center}
                 \includegraphics[scale=1]{tikz/pdf_dq.pdf} 
             \end{center}
-            \caption{Blue bins: PDF of a sample $\Delta$Q. Red: Resulting CDF of $\Delta$Q PDF, the CDF is displayed on the dashboard.}
+            \caption{Blue bins: PDF of a sample $\Delta$Q. Red: Resulting CDF of $\Delta$Q PDF, the ECDF is displayed on the dashboard.}
         \end{figure}
- 
+    
+    The PDFs of the observed and calculated $\Delta$Qs($t_l$, $t_u$, $dMax$) are not shown on screen, only the ECDFs are plotted. Moreover, confidence bounds can then be calculated over multiple $\Delta$Qs, we will see how in following sections.
+
     \subsection{dMax = $\Delta$t $\cdot$ N}
         The key concept of $\Delta$QSD is having a maximum delay after which we consider that the execution is timed out. This is represented in the oscilloscope as $dMax$. Understanding this equation is key to correctly using the oscilloscope and exploring tradeoffs
 

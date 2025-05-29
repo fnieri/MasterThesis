@@ -6,7 +6,7 @@
 \begin{document}
 \begin{tikzpicture}
 \begin{axis}[
-    title={$\Delta$Q calculated and observed},
+    title={Signs of dependency on $\Delta$Qs},
     xlabel={Delay(s)},
     ylabel={$\Delta$Q(x)},
     xmin=0, xmax=0.05,
@@ -16,9 +16,10 @@
     ymajorgrids=true,
     xmajorgrids=true,
     grid style=dashed,
-    width=12cm,
-    height=8cm,
+    width=10cm,
+    height=6cm,
     legend pos=south east,
+    legend style={nodes={scale=0.8, transform shape}},
 ]
 
 
@@ -74,7 +75,7 @@
     (0.049, 0.988750)
     (0.050, 1)
 };
-\addlegendentry{Calculated at probe}
+\addlegendentry{Sum of two delays}
 
 % First CDF (blue)
 \addplot[color=blue, mark=none, smooth, thick] coordinates {
@@ -129,7 +130,7 @@
     (0.049, 0.984375)
     (0.050, 1.000000)
 };
-\addlegendentry{Observed at probe, independent}
+\addlegendentry{Overall delay, independent}
 
 
 \addplot[color=green!70!black, mark=none, thick] coordinates {
@@ -184,7 +185,7 @@
     (0.049, 0.883721)
     (0.050, 0.899535)
 };
-\addlegendentry{Observed, signs of dependency}
+\addlegendentry{Overall delay, dependency}
 
 \end{axis}
 \end{tikzpicture}

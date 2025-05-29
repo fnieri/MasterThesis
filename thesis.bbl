@@ -436,6 +436,39 @@
       \verb https://opentelemetry.io/docs/languages/erlang/
       \endverb
     \endentry
+    \entry{sup-p}{book}{}{}
+      \name{author}{2}{}{%
+        {{hash=43e1082245b28829d3853cf5dc8cfdc4}{%
+           family={Mayergoyz},
+           familyi={M\bibinitperiod},
+           given={Isaak\bibnamedelima D.},
+           giveni={I\bibinitperiod\bibinitdelim D\bibinitperiod}}}%
+        {{hash=3e015ac2f06399894292b0e9ae3bb8a6}{%
+           family={(Auth.)},
+           familyi={(\bibinitperiod},
+           given={W.\bibnamedelimi Lawson},
+           giveni={W\bibinitperiod\bibinitdelim L\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Academic Press}%
+      }
+      \strng{namehash}{9230c7901a30e249c28772d25dceeaa7}
+      \strng{fullhash}{9230c7901a30e249c28772d25dceeaa7}
+      \strng{fullhashraw}{9230c7901a30e249c28772d25dceeaa7}
+      \strng{bibnamehash}{9230c7901a30e249c28772d25dceeaa7}
+      \strng{authorbibnamehash}{9230c7901a30e249c28772d25dceeaa7}
+      \strng{authornamehash}{9230c7901a30e249c28772d25dceeaa7}
+      \strng{authorfullhash}{9230c7901a30e249c28772d25dceeaa7}
+      \strng{authorfullhashraw}{9230c7901a30e249c28772d25dceeaa7}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{isbn}{9780080572284; 0080572286; 9780124808652; 0124808654}
+      \field{note}{pg. 116}
+      \field{title}{Basic Electric Circuit Theory. A One-Semester Text}
+      \field{year}{1996}
+    \endentry
     \entry{otel-o}{misc}{}{}
       \name{author}{1}{}{%
         {{hash=9c17bef3be6c0feb9f7e5b99b097c6b7}{%
@@ -631,8 +664,8 @@
       \strng{authorfullhash}{c9c2d3a24c7583a7e7f7f0789505c4ad}
       \strng{authorfullhashraw}{c9c2d3a24c7583a7e7f7f0789505c4ad}
       \field{extraname}{2}
-      \field{sortinit}{4}
-      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{note}{Accessed: (28/05/2025)}
@@ -793,6 +826,36 @@
       \verb https://opentelemetry.io/docs/languages/cpp/instrumentation/
       \endverb
     \endentry
+    \entry{otel-err}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=cf4fa8e5e026ca73ffd2a660516d8561}{%
+           family={authors},
+           familyi={a\bibinitperiod},
+           given={OpenTelemetry},
+           giveni={O\bibinitperiod}}}%
+      }
+      \strng{namehash}{cf4fa8e5e026ca73ffd2a660516d8561}
+      \strng{fullhash}{cf4fa8e5e026ca73ffd2a660516d8561}
+      \strng{fullhashraw}{cf4fa8e5e026ca73ffd2a660516d8561}
+      \strng{bibnamehash}{cf4fa8e5e026ca73ffd2a660516d8561}
+      \strng{authorbibnamehash}{cf4fa8e5e026ca73ffd2a660516d8561}
+      \strng{authornamehash}{cf4fa8e5e026ca73ffd2a660516d8561}
+      \strng{authorfullhash}{cf4fa8e5e026ca73ffd2a660516d8561}
+      \strng{authorfullhashraw}{cf4fa8e5e026ca73ffd2a660516d8561}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Accessed: (29/05)}
+      \field{title}{Error handling}
+      \field{year}{2022}
+      \verb{urlraw}
+      \verb https://opentelemetry.io/docs/specs/otel/error-handling/
+      \endverb
+      \verb{url}
+      \verb https://opentelemetry.io/docs/specs/otel/error-handling/
+      \endverb
+    \endentry
     \entry{wrapper}{misc}{}{}
       \name{author}{1}{}{%
         {{hash=f669f61ee8de1a8b7351d817ea423497}{%
@@ -882,6 +945,49 @@
       \verb https://www.keysight.com/used/id/en/knowledge/glossary/oscilloscopes/what-is-an-oscilloscope-trigger
       \endverb
     \endentry
+    \entry{stat}{book}{}{}
+      \name{author}{4}{}{%
+        {{hash=ed1e9005c6f50b80bbfc8d34c0e29814}{%
+           family={Dekking},
+           familyi={D\bibinitperiod},
+           given={FM},
+           giveni={F\bibinitperiod}}}%
+        {{hash=3e0007d1841fbbc8c8181b3683899dbf}{%
+           family={Kraaikamp},
+           familyi={K\bibinitperiod},
+           given={C},
+           giveni={C\bibinitperiod}}}%
+        {{hash=da1ef129029e061a8fdce0da5fc8edbf}{%
+           family={Lopuhaä},
+           familyi={L\bibinitperiod},
+           given={{Hendrik Paul}},
+           giveni={H\bibinitperiod}}}%
+        {{hash=7d03b57fac50f6c4260b0e58200b7413}{%
+           family={Meester},
+           familyi={M\bibinitperiod},
+           given={LE},
+           giveni={L\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Springer}%
+      }
+      \strng{namehash}{1d8f2f20e24784082fbded2689238358}
+      \strng{fullhash}{2d0c084307a910f7d49418922d63c511}
+      \strng{fullhashraw}{2d0c084307a910f7d49418922d63c511}
+      \strng{bibnamehash}{1d8f2f20e24784082fbded2689238358}
+      \strng{authorbibnamehash}{1d8f2f20e24784082fbded2689238358}
+      \strng{authornamehash}{1d8f2f20e24784082fbded2689238358}
+      \strng{authorfullhash}{2d0c084307a910f7d49418922d63c511}
+      \strng{authorfullhashraw}{2d0c084307a910f7d49418922d63c511}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{isbn}{1-85233-896-2}
+      \field{title}{A modern introduction to probability theory and statistics}
+      \field{volume}{Springer texts in statistics}
+      \field{year}{2005}
+    \endentry
     \entry{conv}{book}{}{}
       \name{author}{2}{}{%
         {{hash=79745d398db7a123f627185130765dc9}{%
@@ -931,8 +1037,8 @@
       \strng{authornamehash}{c91bdfd4de5d2ed142377c34b92e83c2}
       \strng{authorfullhash}{c91bdfd4de5d2ed142377c34b92e83c2}
       \strng{authorfullhashraw}{c91bdfd4de5d2ed142377c34b92e83c2}
-      \field{sortinit}{6}
-      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{note}{Accessed: (19/05/2025)}
@@ -961,8 +1067,8 @@
       \strng{authornamehash}{424cb1e1c0315dbde42951125a3180aa}
       \strng{authorfullhash}{424cb1e1c0315dbde42951125a3180aa}
       \strng{authorfullhashraw}{424cb1e1c0315dbde42951125a3180aa}
-      \field{sortinit}{6}
-      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{note}{Accessed: (21/05/2025)}
@@ -976,8 +1082,8 @@
       \endverb
     \endentry
     \entry{fft-h}{misc}{}{}
-      \field{sortinit}{6}
-      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
       \field{labeltitlesource}{title}
       \field{note}{Accessed: (23/05/2025)}
       \field{title}{Planning-rigor flags}
@@ -1002,8 +1108,8 @@
       \strng{authornamehash}{c8bc37ca621d8749f287610aaf9f7e4a}
       \strng{authorfullhash}{c8bc37ca621d8749f287610aaf9f7e4a}
       \strng{authorfullhashraw}{c8bc37ca621d8749f287610aaf9f7e4a}
-      \field{sortinit}{6}
-      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{note}{Accessed: (25/05/2025)}
@@ -1175,8 +1281,8 @@
       \strng{authornamehash}{9c677286866aad38f8e9b660f5411814}
       \strng{authorfullhash}{9c677286866aad38f8e9b660f5411814}
       \strng{authorfullhashraw}{9c677286866aad38f8e9b660f5411814}
-      \field{sortinit}{7}
-      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{note}{Accessed: (24/05/2025)}
@@ -1205,8 +1311,8 @@
       \strng{authornamehash}{9a30d9e0e65cd68ed533d5305f8cd1a7}
       \strng{authorfullhash}{9a30d9e0e65cd68ed533d5305f8cd1a7}
       \strng{authorfullhashraw}{9a30d9e0e65cd68ed533d5305f8cd1a7}
-      \field{sortinit}{7}
-      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{note}{Accessed: (21/05/2025)}

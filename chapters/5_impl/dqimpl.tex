@@ -10,7 +10,7 @@
             \end{cases}
             \label{eq:pdf}
         \end{equation}
-    Where $s_i$ the number of successful outcome instances whose elapsed time is contained in the bin $i$, $n$ the total number of instances.
+    Where $s_i$ the number of successful outcome instances whose elapsed time is contained in the bin $i$, $n$ the total number of instances. \cite{stat}
 
     \subsubsection{ECDF}
         The value $\hat{f}(x_i)$ of the ECDF at bin $i$ with $n$ bins can be calculated as:
@@ -75,7 +75,7 @@
 
 
     \subsection{Confidence bounds}
-       To observe the stationarity of a system we must observe a window of $\Delta$Qs of a probe e and calculate the confidence bounds of the observed and calculated $\Delta$Qs over said windows. We present here the formulae required to give such bounds with 68\% confidence level. 
+        Here is how we calculate the mean and lower/upper confidence for the $\Delta$Qs ECDF at bin $i \quad \forall i < N$. \cite{stat}
 
         For $x_{ij}$ the value of an ECDF $j$ at bin $i$, the mean of all ECDFs for the bin over a window is:
             \begin{equation}

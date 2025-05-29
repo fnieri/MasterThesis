@@ -14,9 +14,11 @@
         \item \textbf{($t_s, \mathcal{F}$)}: This representation indicates the execution has failed given a user defined requirement (i.e. a dropped message given buffer overload in a queue system). It must not be confused with a program failure (crash), if a program crashes during the execution of event $e$, it will time out since the adapter will not receive an end message.
     \end{itemize}
     The \textbf{time series} of a probe is the sequence of $n$ outcome instances and can then be easily modeled by $\Delta$Q.
+
     \paragraph{What can be considered a failed execution?} Imagine a queue with a buffer: the buffer queue being full and dropping incoming messages can be modeled as a failure.
 
     More generally, the choice of what is considered a failed execution is left up to the user who is handling the spans and is program-dependent. Exceptions or errors can be kinds of failure. 
 
-    On another note, the way of handling errored spans in OpenTelemetry can differ from user to user, so the adapter will not handle ending and setting statuses for "failed" spans.
+    On another note, the way of handling errored spans in OpenTelemetry can differ from user to user, so the adapter will not handle ending and setting statuses for "failed" spans. \cite{otel-err}
    
+   In any case, by the new definition of failure, \textbf{timed out and failed will both be considered as a failure} in the calculation of a $\Delta$Q.

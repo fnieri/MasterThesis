@@ -5,7 +5,7 @@
 
     Outcome diagrams capture dependency and causality properties of the system. The $\Delta$QSD paradigm derives bounds on performance expressed as probability distribution, encompassing all possible executions of the system. \cite{myo}
  
-    The following sections are a summary of multiple articles and presentation formalising the paradigm.
+    The following sections are a summary of multiple articles and presentations formalising the paradigm.
      
  \subsection{Outcome}
            An outcome $o$ is a specific system behaviour that can be observed to start at some point in time and \textit{\textbf{may}} be observed to complete at some later time. \cite{dq-br}
@@ -36,7 +36,7 @@
 
         In an ideal system, an outcome would deliver a desired behaviour without error, failure, delay, but this is not the case. The quality of an outcome response "attenuated to the relative ideal" (the cumulative distribution function) is called "quality attenuation" ($\Delta$Q) and can depend on many factors (geographical, physical \dots). Its distribution may be modelled by a random variable.
 
-    As $\Delta$Q captures deviation from ideal behavior and incorporates delay, which is a continuous random variable, and failures/timeouts, which are discrete variables, it can be described mathematically as an \textit{Improper Random Variable}, where the probability of a finite or bounded delay $<$ 1. Combining latency and failure together makes it easy to examine the tradeoffs between them.
+    As $\Delta$Q captures deviation from ideal behavior and incorporates delay, which is a continuous random variable, and failures/timeouts, which are discrete variables, it can be described mathematically as an \textit{Improper Random Variable}, where the probability of a finite or bounded delay $<$ 1. 
 
     \textbf{$\Delta$Q(x)} is the probability that an outcome $O$ occurs in time $t \le x$. The \textbf{\textit{intangible mass}} $1 - \lim_{x\to\infty}\Delta Q(x)$ of a $\Delta$Q will encode the probability of failure/timeout/exception occuring. \cite{myo}
     
@@ -64,11 +64,11 @@
         A system \textit{satisfies timeliness} if $\Delta$Q$_{obs}$ $\le$ $\Delta$Q$_{req}$. \cite{art}
      
     \subsection{QTA, required $\Delta$Q}
-         The \textit{Quantitative Timeliness Agreement} (QTA) maps objective measurements to the subjective perception of application performance. It specifies what the base system does and its limits. \cite{dq-br} \cite{myo}
+         The \textit{Quantitative Timeliness Agreement} (QTA) maps objective measurements to the subjective perception of application performance. It specifies what the base system does and its limits. \cite{dq-br}
     
     \paragraph{Slack} There is performance \textit{slack} when a $\Delta$Q is strictly less than the requirement,
 
-        \paragraph{Hazard} There is performance \textit{hazard} when a $\Delta$Q is strictly greater than the requirement.
+        \paragraph{Hazard} There is performance \textit{hazard} when a $\Delta$Q is strictly greater than the requirement. \cite{myo}
     
     \paragraph{QTA example}: Imagine a system where 25\% of the executions should take $<$ 15 ms, 50\% $<$ 25 ms and 75\% $<$ 35 ms, all queries have a maximum delay of 50ms and 5\% of executions can timeout, the QTA can be represented as a step function.
     
@@ -207,7 +207,7 @@
             \label{fig:2_hops}
         \end{figure}
 
-        We can also model the chance of executing two tasks as a probabilistic choice, where there is p2 probability that the execution from A to Z will execute two tasks. The outcome diagram can be refined as a probabilistic choice.
+        We can also model the chance of executing two tasks as a probabilistic choice, where there is $p_2$ probability that the execution from A to Z will execute two tasks. The outcome diagram can be refined as a probabilistic choice.
 
    \begin{figure}[H]
             \begin{center}
@@ -216,25 +216,29 @@
             \caption{Refinement as probabilistic choice of executing either one or two tasks.}
             \label{fig:prob_ref}
         \end{figure}
-    In essence, the refinement could model a very fine-grained representation of the system by further refining the system. The model could be further refined to represent the probability of executing $n$ tasks. This represents the power of outcome diagrams to represent system diagrams with high precision.
-    \subsection{Independence hypothesis}    
-        Assume two sequentially composed outcomes $o_1$, $o_2$ running on the same processor. The delay of execution can be observed from the start event of $o_1$ to the end event of $o_2$. 
+    In essence, the refinement could model a very fine-grained representation of the system by further refining the system, to represent the possibility of executing $n$ tasks. This demonstrates the power of outcome diagrams to represent system diagrams with high precision. They can help explore design decisions thanks to outcomes and operators.
+
+    \subsection{Independence hypothesis}  
+        An important aspect of sequential composition is the assumption of outcomes having independent behaviour. Let us explain the following assumption clearly.
+
+        Assume two sequentially composed outcomes $o_1$, $o_2$ running on the same processor. The overall delay of execution can be observed from the start event of $o_1$ ($u_1$) to the end event of $o_2$ ($r_1$). 
         \begin{figure}[H]
             \begin{center}
                 \includegraphics[scale=1]{tikz/indep.pdf}
             \end{center}
         \end{figure}
         
-        At low load, the two components behavior will be independent, the system will behave linearly, the observed total delay of execution will be equal to the result of convolution of $o_1$, $o_2$ ($o_1 \circledast o_2$).
+        At low load, the two components behavior will be independent, the system will behave \textbf{linearly}. According to the superposition principle, the overall delay will be the sum of the two delays, as will the processor utilisation. \cite{sup-p}
         
-        When load increases, the two components will start to show dependent behaviour due to the processor utilisation increasing. The $\Delta$Q of the observed delay will then deviate from the $\Delta$Q which is the result of the convolution of $o_1, o_2$
+        When load increases, the two components will start to show dependent behaviour due to the processor utilisation increasing. The $\Delta$Q of the observed total delay will then deviate from the sum of the two delays ($\Delta$Q$_1$, $\Delta$Q$_2$). 
         
         \begin{figure}[H]
             \begin{center}
                 \includegraphics[scale=1]{tikz/cdf_indep.pdf}
             \end{center}
-            \caption{When the components are independent, what is observed (blue) and calculated (red) can be superposed, whilst when $o_1$ and $o_2$ show initial signs of dependency, what is observed (green) can be seen deviating from the $\Delta$Q$_{o1, o2}$.}
+            \caption{When the components are independent, the sum of the two delays (blue) and the overall delay (red) can be superposed. \\
+            When $o_1$ and $o_2$ show initial signs of dependency, the sum of the two delays (green) can be seen deviating from the overall delay.}
             \label{fig:cdf_indep}
         \end{figure}
 
-        When the system is far from being overloaded, the effect is noticeable thanks to $\Delta$QSD even if the system is far from being overloaded. As the cliff edge of overload is approached, the nonlinearity will increase \cite{post}. These theoretical results can be observed in practice in the oscilloscope.
+        When the system is far from being overloaded, the effect is noticeable thanks to $\Delta$QSD. As the cliff edge of overload is approached, the nonlinearity will increase \cite{post}. These theoretical results can be observed in practice in the oscilloscope. We will explore such cases in the synthetic applications section.
