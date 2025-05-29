@@ -1229,8 +1229,8 @@
       \strng{editornamehash}{5631d18b62cc5e9ff492dce79c393f5a}
       \strng{editorfullhash}{5631d18b62cc5e9ff492dce79c393f5a}
       \strng{editorfullhashraw}{5631d18b62cc5e9ff492dce79c393f5a}
-      \field{sortinit}{8}
-      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{booktitle}{Proceedings of the 32nd {ACM} {SIGPLAN} Conference on Programming Language Design and Implementation, {PLDI} 2011, San Jose, CA, USA, June 4-8, 2011}
@@ -1365,6 +1365,7 @@
       \endverb
     \endentry
   \enddatalist
+  \missing{pc_spec}
 \endrefsection
 \endinput
 

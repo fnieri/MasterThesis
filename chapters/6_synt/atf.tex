@@ -3,31 +3,12 @@
 
         \subsubsection{Introducing a slower component}
             Like we did for the FTF operator, let's introduce a slower work into the mix. We introduce a slight delay to show how even a few milliseconds can be noticeable right away by a keen eye (or by triggers, which avoids having to look constantly at the graphs). The delay is a 2ms sleep on worker\_2.
-
-        \paragraph{Worker's performance}
-            We present here the worker's graphs as shown on the oscilloscope.
-
-            \begin{figure}[H]
-                \centering
-                \begin{subfigure}{.5\textwidth}
-                    \centering
-                    \includegraphics[width =0.98\textwidth]{img/atfw1.png}
-                    \label{fig:atfw1}
-                \end{subfigure}%
-                \begin{subfigure}{.5\textwidth}%
-                    \centering%
-                    \includegraphics[width =0.98\textwidth]{img/atfw2.png}%
-                    \label{fig:atfw2}%
-                \end{subfigure}%
-                \caption{Left: worker\_1 plot. Right: worker\_2 plot.}
-                \label{fig:atf}%
-            \end{figure}%
-
-            The difference in the worker's $\Delta$Q can be noticed with $\Delta \text{Q}_w2 > \Delta \text{Q}_w1$. The difference can then be observed in the all-to-finish plot, where the operator's $\Delta$Qs (both observed and calculated) can be overlaid on top of worker\_2 $\Delta$Q, showing once again that the $\Delta$QSD foundation is sound.
+ 
+            The difference in the worker's $\Delta$Q can be noticed with $\Delta \text{Q}_{w2} > \Delta \text{Q}_{w1}$. The difference can then be observed in the all-to-finish plot, where the operator's $\Delta$Qs (both observed and calculated) can be overlaid on top of worker\_2 $\Delta$Q, showing once again that the $\Delta$QSD algebraic foundation is sound.
 
             \begin{figure}[H]
                 \begin{center}
-                    \includegraphics[scale = 0.5]{img/atfw1w2.png}
+                    \includegraphics[scale = 0.5]{img/overload_2/w1w2atf.png}
                 \end{center}
             \end{figure}
 

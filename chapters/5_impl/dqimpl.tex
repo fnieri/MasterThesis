@@ -1,6 +1,8 @@
 \section{$\Delta$QSD implementation}
     A probe's $\Delta$Q can be represented internally by a PDF and displayed as an ECDF. Here is how both can be calculated given $n$ outcome instances.
     
+    \subsection{Histogram representation}
+        The $\Delta$Q representation is one of a histogram for its PDF and a cumulative histogram for its ECDF.
     \subsubsection{PDF}
   We approximate the PDF of the observed $\Delta$Q via a histogram. We partition the values into $N$ bins of equal width, Given $\lbrack x_i, x_{i+1} \rbrack$ the interval of a bin $i$, where $x_i = i\Delta t$, and $\hat{p}(x_i)$ the value of the PDF at bin $i$, for $n$ bins:
         \begin{equation}
@@ -21,20 +23,27 @@
             \end{cases}
             \label{eq:cdf}
         \end{equation}
+ 
+    \begin{figure}[H]
+            \begin{center}
+                \includegraphics[scale=1]{tikz/pdf_dq.pdf} 
+            \end{center}
+            \caption{Blue bins: PDF of a sample $\Delta$Q. Red: Resulting ECDF of $\Delta$Q PDF, the ECDF is what is displayed on the dashboard.}
+        \end{figure}
 
     \subsection{dMax}
-        We introduced $dMax$ in the previous section, we provide here the full equation that allows $dMax$ to be calculated:
+        We introduced $dMax$ in the previous chapters, we provide here the full equation that allows $dMax$ to be calculated:
         \begin{equation}
-            dMax = \Delta_{t base} * 2^n * N  
+            dMax = \Delta t_{base} * 2^n * N  
             \label{eq:dMaxU}
         \end{equation}
         Where:
         \begin{itemize}
             \item $\Delta_{t base}$ represents the base width of a bin, equal to 1ms.
+            \item $n$ the exponent that is set by the user in the dashboard.
             \item $N$ the number of bins.
         \end{itemize}
-
-
+        We chose 1 ms as a starting block as it provides a nice base to scale the bin width. As for $2^n$, it provides a nice enough factor to scale bin widths and keep a common factor between them, to allow for easier calculations between them.
       \subsection{Operations}
     In a previous section we talked about the possible operations that can be performed on and between $\Delta$Qs, the time complexity of FTF, ATF and PC is trivially $\mathcal{O}(N)$ where N is the number of bins.
     
