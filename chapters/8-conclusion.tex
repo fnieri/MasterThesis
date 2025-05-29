@@ -1,18 +1,17 @@
 \chapter{Conclusions and future work}
-The following project is the beginning of the $\Delta$Q oscilloscope, our initial goal was to create an application to observe running distributed applications, namely, Erlang ones.
-    A prototype was successfully created thanks to the following feats:
-    \begin{itemize}
-        \item The graphical dashboard for the $\Delta$Q oscilloscope, built in C++, which allows real time display of $\Delta$Qs for the probes inserted in the system.
-        \item Fast convolution algorithms to perform statistical analysis on probes.
-        \item The creation of a textual syntax to create outcome diagrams.
-        \item The \texttt{dqsd\_otel} Erlang adapter to connect an OpenTelemetry instrumented Erlang app to the oscilloscope.
-    \end{itemize}
 
-    The user has full control over the outcome diagrams and can update them dynamically to add or remove probes, this allows full control of what the user decides to include, allowing a finer grained representation or a more general view of the system.  
+    As we introduced the thesis, its background and current problems we think exist in observability tools, we set out a clear goal: design a graphical dashboard, the \textbf{$\Delta$Q oscilloscope}, to observe running Erlang applications and plot the system behaviour in real time thanks to the $\Delta$QSD paradigm to diagnose performance issues and to optimise performance over lifetime. \\
+    While we can not say that we are finished with the development of the oscilloscope, we can clearly say that a \textbf{working prototype} that reflects the theoretical findings of the paradigm and fulfills the initial goals was created. \\
+    This was successfully achieved thanks to multiple important implementations which make it fast, reliable and moreover capable of accurately detecting deviations from required behaviour.
+    
+    The $\Delta$Q adapter, named \texttt{dqsd\_otel}, an Erlang application which is able to work alongside OpenTelemetry to add the notion of failure according to $\Delta$QSD to spans. The adapter can communicate data about outcome instances from a running system directly to the oscilloscope and can directly receive commands from the oscilloscope. The \texttt{gen\_server} behaviour allows for this to be done fast and asynchronously.
 
-    The oscilloscope and the Erlang can communicate via TCP socket connections to exchange outcome instances and probe parameters,
 
-    We showed how it can be useful in detecting early signs of overload many crucial features are still missing from the dashboard, and it could require less code modifications in the Erlang side. The next important step of the oscilloscope is its trial in a true distributed application. This would further reinforce the solidity of the paradigm in detecting problems in design of large systems. 
+    The $\Delta$Q oscilloscope, a fully fledged Qt dashboard application that is able to observe running systems and provide real time plotting capabilities to the user. Moreover, it provides full control over to the user of the outcome diagrams, the parameters of probes, their QTAs, the triggers they want to set for a given probe, a system of snapshots which allows observing the system as if it was frozen in time. In fine, the FFT convolution algorithms allows us to scale down from $\mathcal{O}(n^2)$ complexity to $\mathcal{O}(n\text{ log }n)$, bringing the time to provide precise insights significantly down.
+
+    The synthetic applications further prove the oscilloscope's usefulness in detecting early signs of overload and dependent behaviour. This reinforces the solid theoretical basis of $\Delta$QSD, which we remind has already been applied in many industrial projects.
+
+    Many crucial features are still missing from the dashboard, and it could require less code modifications in the Erlang side. The next important step of the oscilloscope is its trial in a true distributed application. Thise
 
     \section{Future improvements}
         We believe the oscilloscope and the Erlang application can be drastically improved, the size of the project and its intended goal is too big to be encompassed in a single master thesis. We list here some improvements which could be made to both the oscilloscope and the adapter.

@@ -1,5 +1,6 @@
-import pandas as pd
 import matplotlib.pyplot as plt
+import pandas as pd
+
 
 def remove_outliers(series):
     Q1 = series.quantile(0.05)
@@ -8,6 +9,7 @@ def remove_outliers(series):
     lower_bound = Q1 - 1.5 * IQR
     upper_bound = Q3 + 1.5 * IQR
     return series[(series >= lower_bound) & (series <= upper_bound)]
+
 
 filenames = ["start_span.csv", "with_span.csv", "fail_span.csv"]
 labels = []
@@ -20,7 +22,7 @@ for file, name in zip(filenames, names):
     labels.append(name)
 
 plt.boxplot(cleaned_data, labels=labels)
-plt.title("Execution time for stub (25000 requests)")
+plt.title("Execution time for adapter (25000 requests)")
 plt.ylabel("Time (µs)")
 plt.grid(True)
 

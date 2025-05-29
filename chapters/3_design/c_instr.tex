@@ -5,10 +5,11 @@
     The oscilloscope has a graphical interface which allows the user to create an outcome diagram of the system under test, display real time graphs which show detail about the execution of the system and allow the user to set custom timeouts for probes. It can also display snapshots of the system as if it was frozen in time 
 
     \subsection{Inserting probes in the oscilloscope}
-        Probes are automatically inserted in the oscilloscope when creating outcome diagrams, more in following sections. They are inserted on the outcomes observables, operators and to the causal result of operations, we will see later on how they can be defined and how an outcome diagram can be created. 
-        
-        In the system below, which is equal to the one defined above, probes are automatically attached to outcomes $o_1, o_2$. The user who wants to observe the result of the sequential composition can insert probes at the start and end of the routine. 
+        Probes are automatically inserted in the oscilloscope when creating outcome diagrams. They are inserted on the outcomes observables, operators and to the sub-outcome diagrams (probes that observe the causal links of multiple outcomes/operators), we will see later on how they can be defined and how an outcome diagram can be created. \\
+    The names that are given to outcome, operators and sub-outcome diagrams are the names of the probes that observe them. Giving these probes a name allows the oscilloscope to match the outcome instances to the probes' time series.
 
+        In the system below, which is equal to the one defined above, probes are automatically attached to outcomes $o_1, o_2$. The user who wants to observe the result of the sequential composition can insert probes at the start and end of the routine. 
+    
         \begin{figure}[H]
             \begin{center}
                 \includegraphics[scale=1.3]{tikz/probe_1.pdf}
@@ -29,4 +30,5 @@
     
     The \textbf{observed $\Delta$Q} for the first-to-finish operator is the $\Delta$Q for the observables (\textbf{start}, \textbf{end}). The \textbf{calculated $\Delta$Q} is the $\Delta$Q which is the result of the first-to-finish operator being applied on $o_1, o_2$
         
+
 

@@ -35,7 +35,7 @@
         
         \paragraph{Span} A span is a unit of work or operation. Spans can be correlated to each other and can be assembled into a trace. The spans can have a hierarchy, where \textit{root spans} represent a request from start to finish \cite{otel-dt}. We will see in later sections how this can relate to what the oscilloscope does.
 
-    The notion of spans and traces allows us to follow the execution of a "request" and carry a context. Spans can be linked to mark causal relationships between multiple spans \cite{otel-t}. As is the case for root spans, this can be represented in the oscilloscope and we will present an example in following sections.
+    The notion of spans and traces allows us to follow the execution of a "request" and carry a context. Spans can be linked to mark causal relationships between multiple spans \cite{otel-t}, as is the case for root spans. This relation can be represented in the oscilloscope via probes and we will present an example in following sections.
     \begin{figure}[H]
     \begin{minted}{json} 
 {
@@ -58,11 +58,11 @@
     \end{figure}
 
     \subsubsection{Monitoring OpenTelemetry spans}
-            OpenTelemetry gives the possibility to export traces to backends such as Jaeger, Zipkin, Datadog \cite{otel-exp}. A user can monitor their workflows, analyse dependencies, troubleshoot their programs by observing the flow of the requests in such backends\cite{jg}. These monitoring tools give extensive details about a running system, but may fail to capture essential requirements early enough.
+            OpenTelemetry gives the possibility to export traces to backends and monitoring such as Jaeger, Zipkin, Datadog \cite{otel-exp}. There, a user can monitor their workflows, analyse dependencies, troubleshoot their programs by observing the flow of the requestscite{jg}. These monitoring tools give extensive details about a running system, but may fail to capture essential requirements and performances issues early enough.
         
         Our oscilloscope is a kind of monitoring tool, one that gives precise statistical insights about a running system. It is clear that the oscilloscope does not have the same capabilities as Datadog \cite{datadog} might have, where you can observe cloud instances, instances cost, dependency graphs \dots but the oscilloscope can nevertheless provide precise insights about dependency, overload thanks to the $\Delta$QSD paradigm. 
 
-        This is also the reason that we incorporate OpenTelemetry in our application, the oscilloscope can be put next to a monitoring tool where one might export spans to. An engineer might consult the main monitoring tool to get the global picture of a running app, and the oscilloscope to give more precise insights about feasibility and system performance.
+        This is also the reason that we work alongside OpenTelemetry, the oscilloscope can be put next to a monitoring tool where one might export spans to. An engineer might consult the main monitoring tool to get the global picture of a running app, and the oscilloscope to give more precise insights to understand the system's behaviour. 
        \begin{figure}[H]
             \centering
             \begin{subfigure}{.5\textwidth}
@@ -80,7 +80,7 @@
             \label{fig:test}
             \end{figure}
 
-    \subsubsection{Macros}
+    \subsubsection{Span macros}
         OpenTelemetry provides macros to start, end and interact with spans in Erlang, the following code excerpts are taken from the instrumentation wiki. \cite{otel-in}
         \paragraph{?with\_span}
             \texttt{?with\_span} creates active spans. An active span is the span that is currently set in the execution context and is considered the "current" span for the ongoing operation or thread. \cite{active-s}

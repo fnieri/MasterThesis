@@ -1,14 +1,25 @@
 \section{$\Delta$Q display}
-    A probe's displayed graph must contain the following functions:
+    Now that we have introduced the required concepts, we can put everything together to be plotted. In summary, a probe's displayed graph must contain the following functions:
     \begin{itemize}
-        \item The mean and confidence bounds of a window of previous $\Delta$Qs.
-        \item The observed $\Delta$Q.
-        \item If applicable, the calculated $\Delta$Q from the components showing the causal links of a probe.
+        \item The observed $\Delta$Q at time t, with a mean and confidence bounds of previous observed $\Delta$Qs.
+        \item If applicable, the calculated $\Delta$Q from the causally linked components observed in a probe, with a mean and confidence bounds of previous calculated $\Delta$Qs.
         \item Its QTA (if defined).
     \end{itemize}
     This allows for the user to observe if a $\Delta$Q has deviated from normal execution, analyse its stationarity, nonlinearity and observe its execution.
-    \iffalse 
-    \begin{figure}[!ht]    
-    \includegraphics[scale =0.8, width=\textwidth]{img/dqdispl.png}
+
+    In the photo below we can observe the multiple elements which are displayed in real time in the oscilloscope.
+    \begin{itemize}
+        \item (1): The \textbf{Observed $\Delta$Q}.
+        \item (2): The \textbf{Calculated $\Delta$Q}.
+        \item (3): The \textbf{QTA}.
+        \item Arrow, blue, below: The mean of the observed $\Delta$Qs (yellow) with the confidence bounds of the mean. Upper bound (dark green) and lower bound (light green).
+        \item Arrow, red, above: The mean of the calculated $\Delta$Qs (ochre) with the confidence bounds of the mean. Upper bound (purple) and lower bound (magenta).
+    \end{itemize}
+     \begin{figure}[H]
+        \begin{center}
+            \includegraphics[scale = 0.8]{img/overload_2/qta_triggerd2.png}
+        \end{center}
+         \caption{$\Delta$Qs, confidence bounds, means and QTA for a probe observing the causal link of multiple components.}
     \end{figure}
-    \fi
+        
+

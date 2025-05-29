@@ -1,6 +1,6 @@
 \section{Application side} 
     
-    Before delving deeper into the parts, we present the global system design diagram. We recognise two separate parts, the Erlang side, where the system under test is, and the C++ side, where the $\Delta$Q oscilloscope receives information from the system under test to display graphs.
+    Before delving deeper into the parts, we present the global system design diagram. We recognise two separate parts, the application side, where the Erlang system under test is, and the oscilloscope side, where the $\Delta$Q oscilloscope receives information from the system under test to display graphs.
 
     \begin{figure}[H]
         \begin{center}
@@ -24,9 +24,13 @@
         To get the equivalent of spans for the oscilloscope, the adapter needs to be called at the starting events of a probe to start an instance of a probe, and at the ending events to end the outcome instance and send the data to the oscilloscope. The name given with \texttt{"start\_span"} is the name of the probe.
 
         \begin{minted}{erlang}
-        % Start the outcome instance of worker_2 
-        {WorkerCtx, WorkerPid} = dqsd_otel:start_span(<<"worker_2">>),   
+        % Start the outcome instance of probe. The call to dqsd_otel starts an OpenTelemetry span, as it contains a call to ?start_span(Name)
+        {ProbeCtx, ProbePid} = dqsd_otel:start_span(<<"probe">>),   
         % Do work here ...
-        %End the outcome instance of worker_2
-        dqsd_otel:end_span(WorkerCtx, WorkerPid),
+        %Example of with_span, the call to OpenTelemetry ?with_span is inside the adapter function, the function fun() -> ok end is executed inside dqsd_otel.
+        dqsd_otel:with_span(<<"worker_2">>, fun() -> ok end), 
+        %End the outcome instance of probe. This ends the OpenTelemetry span aswell. If the outcome instance has already timed out, the oscilloscope receives no message where the status is successful. Otherwise, this sends a message with startTime, endTime, the name "probe" and success status.
+        dqsd_otel:end_span(ProbeCtx, ProbePid),
+
+        
         \end{minted}

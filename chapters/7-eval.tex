@@ -1,5 +1,10 @@
 \chapter{Performance study}
-    This chapter evaluates the components and operations we introduced in previous sections, analysing their performances
+    This chapter evaluates the components and operations we introduced in previous sections, analysing their performances.
+    \begin{itemize}
+        \item We first evaluate the convolutions algorithms we previously introduced. We stated that naïve convolution would have $\mathcal{O}$($n^2$) time complexity, while FFT convolution would have $\mathcal{O}$($n$log$n$) complexity. We will evalute to see if what we observe corresponds to theory.
+        \item We then evaluate the $\Delta$Q adapter API performances, to see the overhead it introduces into a system.
+        \item Lastly, we want to evaluate the QT framework plotting performances, we believe it is the weakest link in the oscilloscope and thus want to evaluate the QtCharts class when plotting $\Delta$Qs. 
+    \end{itemize}
 
     \input{chapters/7_eval/conv_perf}
     \input{chapters/7_eval/stub_perf} 
