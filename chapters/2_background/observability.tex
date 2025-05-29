@@ -33,9 +33,9 @@
     \subsubsection{Traces}
         Traces are why we are basing our program on top of OpenTelemetry, traces follow the whole "path" of a request in an application, traces are comprised of one or more spans. Traces can propagate to multiple services and record multiple paths in different microservices \cite{otel-dt}. 
         
-        \paragraph{Span} A span is a unit of work or operation. Spans can be correlated to each other and can be assembled into a trace. The spans can have a hierarchy, where \textit{root spans} represent a request from start to finish \cite{otel-dt}. We will see in later sections how this can relate to what the oscilloscope does.
+        \paragraph{Span} A span is a unit of work or operation. Spans can be correlated to each other and can be assembled into a trace. The spans can have a hierarchy, where \textit{root spans} represent a request from start to finish and a child span the requests that are completed inside the root span \cite{otel-dt}. We will see in later sections how this can relate to what the oscilloscope does.
 
-    The notion of spans and traces allows us to follow the execution of a "request" and carry a context. Spans can be linked to mark causal relationships between multiple spans \cite{otel-t}, as is the case for root spans. This relation can be represented in the oscilloscope via probes and we will present an example in following sections.
+    The notion of spans and traces allows us to follow the execution of a "request" and carry a context. Spans can be linked to mark causal relationships between multiple spans \cite{otel-t}. This relation can be represented in the oscilloscope via \textbf{probes}, we will present how spans relate to probes in following sections.
     \begin{figure}[H]
     \begin{minted}{json} 
 {
@@ -62,7 +62,7 @@
         
         Our oscilloscope is a kind of monitoring tool, one that gives precise statistical insights about a running system. It is clear that the oscilloscope does not have the same capabilities as Datadog \cite{datadog} might have, where you can observe cloud instances, instances cost, dependency graphs \dots but the oscilloscope can nevertheless provide precise insights about dependency, overload thanks to the $\Delta$QSD paradigm. 
 
-        This is also the reason that we work alongside OpenTelemetry, the oscilloscope can be put next to a monitoring tool where one might export spans to. An engineer might consult the main monitoring tool to get the global picture of a running app, and the oscilloscope to give more precise insights to understand the system's behaviour. 
+        This is also the reason why we work alongside OpenTelemetry, the oscilloscope can be put next to a monitoring tool where one might export spans to. An engineer might consult the main monitoring tool to get the global picture of a running app, and the oscilloscope to give more precise insights to understand the system's behaviour. 
        \begin{figure}[H]
             \centering
             \begin{subfigure}{.5\textwidth}

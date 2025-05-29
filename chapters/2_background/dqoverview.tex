@@ -1,7 +1,7 @@
 \section{An overview of $\Delta$QSD}
     $\Delta$QSD is a metrics-based, quality-centric paradigm that uses formalised outcome diagrams to explore the performance consequences of design decisions. \cite{myo}
     
-    Key concepts of $\Delta$QSD are \textbf{quality attenuation ($\Delta$Q)} and \textbf{outcome diagram} \cite{dq-tut}.
+    Key concepts of $\Delta$QSD are \textbf{quality attenuation ($\Delta$Q)} and \textbf{outcome diagrams} \cite{dq-tut}.
 
     Outcome diagrams capture dependency and causality properties of the system. The $\Delta$QSD paradigm derives bounds on performance expressed as probability distribution, encompassing all possible executions of the system. \cite{myo}
  
@@ -11,7 +11,7 @@
            An outcome $o$ is a specific system behaviour that can be observed to start at some point in time and \textit{\textbf{may}} be observed to complete at some later time. \cite{dq-br}
         Formally, what the system obtains by performing one of its tasks. One task corresponds to one outcome and viceversa. When an outcome is performed, it means that the task of an outcome is performed.
      
-        The particularity of outcomes is that they can represent multiple levels of granularity, suppose an outcome may be beyond the current system's control (e.g. a database/cloud request), is non-atomic (can be broken down in multiple sub-outcomes). These outcomes can be represented as black-boxes (you can observe their start and end, but do not know what is being executed), as the system gets refined, these outcomes can then be refined to model a single outcome or multiple outcomes, if needed. \\ 
+        The particularity of outcomes is that they can represent multiple levels of granularity. Suppose an outcome is beyond the current system's control (e.g. a database/cloud request), is non-atomic (can be broken down in multiple sub-outcomes). These outcomes can be represented as black-boxes (you can observe their start and end, but do not know what is being executed). As the system gets refined, these outcomes can then be refined to model a single outcome or multiple outcomes, if needed. \\ 
         Even though these outcomes are defined as "black boxes", they still have timeliness constraints like any other outcome. \cite{myo}
 
      \paragraph{Observables}
@@ -228,9 +228,9 @@
             \end{center}
         \end{figure}
         
-        At low load, the two components behavior will be independent, the system will behave \textbf{linearly}. According to the superposition principle, the overall delay will be the sum of the two delays, as will the processor utilisation. \cite{sup-p}
+        At low load, the two components behavior will be independent, the system will behave \textbf{linearly}. According to the superposition principle, the overall delay will be the sum of the two delays, as will the overall processor utilisation. \cite{sup-p}
         
-        When load increases, the two components will start to show dependent behaviour due to the processor utilisation increasing. The $\Delta$Q of the observed total delay will then deviate from the sum of the two delays ($\Delta$Q$_1 \circledast \Delta$Q$_2$). 
+        When load increases, the two components will start to show dependent behaviour due to the processor utilisation increasing. The $\Delta$Q of the observed total delay will then deviate from the sum of the two delays ($o_1 \circledast o_2$). 
         
         \begin{figure}[H]
             \begin{center}

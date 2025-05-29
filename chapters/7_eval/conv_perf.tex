@@ -1,6 +1,6 @@
 \section{Convolution performance}
-    We implemented two versions of the convolution algorithm as described before, the naïve version and the FFT version. We compared their performance when performing convolution on two $\Delta$Qs of equal bins. In theory, we should observe the naïve version delay quickly grow, while the FFT version have a log-linear growth.
-    \begin{figure}[H]
+    We implemented two versions of the convolution algorithm as described before, the naïve version and the FFT version \ref{code:dqop}. We compared their performance when performing convolution on two $\Delta$Qs of equal bins. In theory, we should observe the naïve version delay quickly grow, while the FFT version have a log-linear growth.
+    \begin{figure}[h]
         \begin{center}
             \includegraphics[width=0.85\textwidth]{img/conv_perf.pdf}
         \end{center}

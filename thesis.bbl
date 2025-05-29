@@ -171,8 +171,8 @@
       \strng{editorfullhash}{c107a1d8d1580e0581e5d350919be0b3}
       \strng{editorfullhashraw}{c107a1d8d1580e0581e5d350919be0b3}
       \field{extraname}{1}
-      \field{sortinit}{3}
-      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{booktitle}{Proceedings 16th Interaction and Concurrency Experience, {ICE} 2023, Lisbon, Portugal, 19th June 2023}
@@ -409,18 +409,20 @@
     \endentry
     \entry{otel-e}{misc}{}{}
       \name{author}{1}{}{%
-        {{hash=9c17bef3be6c0feb9f7e5b99b097c6b7}{%
-           family={OpenTelemetry},
-           familyi={O\bibinitperiod}}}%
+        {{hash=c9c2d3a24c7583a7e7f7f0789505c4ad}{%
+           family={Authors},
+           familyi={A\bibinitperiod},
+           given={OpenTelemetry},
+           giveni={O\bibinitperiod}}}%
       }
-      \strng{namehash}{9c17bef3be6c0feb9f7e5b99b097c6b7}
-      \strng{fullhash}{9c17bef3be6c0feb9f7e5b99b097c6b7}
-      \strng{fullhashraw}{9c17bef3be6c0feb9f7e5b99b097c6b7}
-      \strng{bibnamehash}{9c17bef3be6c0feb9f7e5b99b097c6b7}
-      \strng{authorbibnamehash}{9c17bef3be6c0feb9f7e5b99b097c6b7}
-      \strng{authornamehash}{9c17bef3be6c0feb9f7e5b99b097c6b7}
-      \strng{authorfullhash}{9c17bef3be6c0feb9f7e5b99b097c6b7}
-      \strng{authorfullhashraw}{9c17bef3be6c0feb9f7e5b99b097c6b7}
+      \strng{namehash}{c9c2d3a24c7583a7e7f7f0789505c4ad}
+      \strng{fullhash}{c9c2d3a24c7583a7e7f7f0789505c4ad}
+      \strng{fullhashraw}{c9c2d3a24c7583a7e7f7f0789505c4ad}
+      \strng{bibnamehash}{c9c2d3a24c7583a7e7f7f0789505c4ad}
+      \strng{authorbibnamehash}{c9c2d3a24c7583a7e7f7f0789505c4ad}
+      \strng{authornamehash}{c9c2d3a24c7583a7e7f7f0789505c4ad}
+      \strng{authorfullhash}{c9c2d3a24c7583a7e7f7f0789505c4ad}
+      \strng{authorfullhashraw}{c9c2d3a24c7583a7e7f7f0789505c4ad}
       \field{extraname}{1}
       \field{sortinit}{1}
       \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
@@ -471,18 +473,20 @@
     \endentry
     \entry{otel-o}{misc}{}{}
       \name{author}{1}{}{%
-        {{hash=9c17bef3be6c0feb9f7e5b99b097c6b7}{%
-           family={OpenTelemetry},
-           familyi={O\bibinitperiod}}}%
+        {{hash=c9c2d3a24c7583a7e7f7f0789505c4ad}{%
+           family={Authors},
+           familyi={A\bibinitperiod},
+           given={OpenTelemetry},
+           giveni={O\bibinitperiod}}}%
       }
-      \strng{namehash}{9c17bef3be6c0feb9f7e5b99b097c6b7}
-      \strng{fullhash}{9c17bef3be6c0feb9f7e5b99b097c6b7}
-      \strng{fullhashraw}{9c17bef3be6c0feb9f7e5b99b097c6b7}
-      \strng{bibnamehash}{9c17bef3be6c0feb9f7e5b99b097c6b7}
-      \strng{authorbibnamehash}{9c17bef3be6c0feb9f7e5b99b097c6b7}
-      \strng{authornamehash}{9c17bef3be6c0feb9f7e5b99b097c6b7}
-      \strng{authorfullhash}{9c17bef3be6c0feb9f7e5b99b097c6b7}
-      \strng{authorfullhashraw}{9c17bef3be6c0feb9f7e5b99b097c6b7}
+      \strng{namehash}{c9c2d3a24c7583a7e7f7f0789505c4ad}
+      \strng{fullhash}{c9c2d3a24c7583a7e7f7f0789505c4ad}
+      \strng{fullhashraw}{c9c2d3a24c7583a7e7f7f0789505c4ad}
+      \strng{bibnamehash}{c9c2d3a24c7583a7e7f7f0789505c4ad}
+      \strng{authorbibnamehash}{c9c2d3a24c7583a7e7f7f0789505c4ad}
+      \strng{authornamehash}{c9c2d3a24c7583a7e7f7f0789505c4ad}
+      \strng{authorfullhash}{c9c2d3a24c7583a7e7f7f0789505c4ad}
+      \strng{authorfullhashraw}{c9c2d3a24c7583a7e7f7f0789505c4ad}
       \field{extraname}{2}
       \field{sortinit}{3}
       \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
@@ -530,18 +534,20 @@
     \endentry
     \entry{otel-in}{online}{}{}
       \name{author}{1}{}{%
-        {{hash=9c17bef3be6c0feb9f7e5b99b097c6b7}{%
-           family={OpenTelemetry},
-           familyi={O\bibinitperiod}}}%
+        {{hash=c9c2d3a24c7583a7e7f7f0789505c4ad}{%
+           family={Authors},
+           familyi={A\bibinitperiod},
+           given={OpenTelemetry},
+           giveni={O\bibinitperiod}}}%
       }
-      \strng{namehash}{9c17bef3be6c0feb9f7e5b99b097c6b7}
-      \strng{fullhash}{9c17bef3be6c0feb9f7e5b99b097c6b7}
-      \strng{fullhashraw}{9c17bef3be6c0feb9f7e5b99b097c6b7}
-      \strng{bibnamehash}{9c17bef3be6c0feb9f7e5b99b097c6b7}
-      \strng{authorbibnamehash}{9c17bef3be6c0feb9f7e5b99b097c6b7}
-      \strng{authornamehash}{9c17bef3be6c0feb9f7e5b99b097c6b7}
-      \strng{authorfullhash}{9c17bef3be6c0feb9f7e5b99b097c6b7}
-      \strng{authorfullhashraw}{9c17bef3be6c0feb9f7e5b99b097c6b7}
+      \strng{namehash}{c9c2d3a24c7583a7e7f7f0789505c4ad}
+      \strng{fullhash}{c9c2d3a24c7583a7e7f7f0789505c4ad}
+      \strng{fullhashraw}{c9c2d3a24c7583a7e7f7f0789505c4ad}
+      \strng{bibnamehash}{c9c2d3a24c7583a7e7f7f0789505c4ad}
+      \strng{authorbibnamehash}{c9c2d3a24c7583a7e7f7f0789505c4ad}
+      \strng{authornamehash}{c9c2d3a24c7583a7e7f7f0789505c4ad}
+      \strng{authorfullhash}{c9c2d3a24c7583a7e7f7f0789505c4ad}
+      \strng{authorfullhashraw}{c9c2d3a24c7583a7e7f7f0789505c4ad}
       \field{extraname}{3}
       \field{sortinit}{4}
       \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
@@ -603,7 +609,7 @@
       \strng{authornamehash}{c9c2d3a24c7583a7e7f7f0789505c4ad}
       \strng{authorfullhash}{c9c2d3a24c7583a7e7f7f0789505c4ad}
       \strng{authorfullhashraw}{c9c2d3a24c7583a7e7f7f0789505c4ad}
-      \field{extraname}{1}
+      \field{extraname}{4}
       \field{sortinit}{4}
       \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
       \field{labelnamesource}{author}
@@ -620,19 +626,21 @@
     \endentry
     \entry{otel-t}{misc}{}{}
       \name{author}{1}{}{%
-        {{hash=9c17bef3be6c0feb9f7e5b99b097c6b7}{%
-           family={OpenTelemetry},
-           familyi={O\bibinitperiod}}}%
+        {{hash=c9c2d3a24c7583a7e7f7f0789505c4ad}{%
+           family={Authors},
+           familyi={A\bibinitperiod},
+           given={OpenTelemetry},
+           giveni={O\bibinitperiod}}}%
       }
-      \strng{namehash}{9c17bef3be6c0feb9f7e5b99b097c6b7}
-      \strng{fullhash}{9c17bef3be6c0feb9f7e5b99b097c6b7}
-      \strng{fullhashraw}{9c17bef3be6c0feb9f7e5b99b097c6b7}
-      \strng{bibnamehash}{9c17bef3be6c0feb9f7e5b99b097c6b7}
-      \strng{authorbibnamehash}{9c17bef3be6c0feb9f7e5b99b097c6b7}
-      \strng{authornamehash}{9c17bef3be6c0feb9f7e5b99b097c6b7}
-      \strng{authorfullhash}{9c17bef3be6c0feb9f7e5b99b097c6b7}
-      \strng{authorfullhashraw}{9c17bef3be6c0feb9f7e5b99b097c6b7}
-      \field{extraname}{4}
+      \strng{namehash}{c9c2d3a24c7583a7e7f7f0789505c4ad}
+      \strng{fullhash}{c9c2d3a24c7583a7e7f7f0789505c4ad}
+      \strng{fullhashraw}{c9c2d3a24c7583a7e7f7f0789505c4ad}
+      \strng{bibnamehash}{c9c2d3a24c7583a7e7f7f0789505c4ad}
+      \strng{authorbibnamehash}{c9c2d3a24c7583a7e7f7f0789505c4ad}
+      \strng{authornamehash}{c9c2d3a24c7583a7e7f7f0789505c4ad}
+      \strng{authorfullhash}{c9c2d3a24c7583a7e7f7f0789505c4ad}
+      \strng{authorfullhashraw}{c9c2d3a24c7583a7e7f7f0789505c4ad}
+      \field{extraname}{5}
       \field{sortinit}{4}
       \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
       \field{labelnamesource}{author}
@@ -663,7 +671,7 @@
       \strng{authornamehash}{c9c2d3a24c7583a7e7f7f0789505c4ad}
       \strng{authorfullhash}{c9c2d3a24c7583a7e7f7f0789505c4ad}
       \strng{authorfullhashraw}{c9c2d3a24c7583a7e7f7f0789505c4ad}
-      \field{extraname}{2}
+      \field{extraname}{6}
       \field{sortinit}{5}
       \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
       \field{labelnamesource}{author}
@@ -768,19 +776,21 @@
     \endentry
     \entry{active-s}{misc}{}{}
       \name{author}{1}{}{%
-        {{hash=9c17bef3be6c0feb9f7e5b99b097c6b7}{%
-           family={OpenTelemetry},
-           familyi={O\bibinitperiod}}}%
+        {{hash=c9c2d3a24c7583a7e7f7f0789505c4ad}{%
+           family={Authors},
+           familyi={A\bibinitperiod},
+           given={OpenTelemetry},
+           giveni={O\bibinitperiod}}}%
       }
-      \strng{namehash}{9c17bef3be6c0feb9f7e5b99b097c6b7}
-      \strng{fullhash}{9c17bef3be6c0feb9f7e5b99b097c6b7}
-      \strng{fullhashraw}{9c17bef3be6c0feb9f7e5b99b097c6b7}
-      \strng{bibnamehash}{9c17bef3be6c0feb9f7e5b99b097c6b7}
-      \strng{authorbibnamehash}{9c17bef3be6c0feb9f7e5b99b097c6b7}
-      \strng{authornamehash}{9c17bef3be6c0feb9f7e5b99b097c6b7}
-      \strng{authorfullhash}{9c17bef3be6c0feb9f7e5b99b097c6b7}
-      \strng{authorfullhashraw}{9c17bef3be6c0feb9f7e5b99b097c6b7}
-      \field{extraname}{5}
+      \strng{namehash}{c9c2d3a24c7583a7e7f7f0789505c4ad}
+      \strng{fullhash}{c9c2d3a24c7583a7e7f7f0789505c4ad}
+      \strng{fullhashraw}{c9c2d3a24c7583a7e7f7f0789505c4ad}
+      \strng{bibnamehash}{c9c2d3a24c7583a7e7f7f0789505c4ad}
+      \strng{authorbibnamehash}{c9c2d3a24c7583a7e7f7f0789505c4ad}
+      \strng{authornamehash}{c9c2d3a24c7583a7e7f7f0789505c4ad}
+      \strng{authorfullhash}{c9c2d3a24c7583a7e7f7f0789505c4ad}
+      \strng{authorfullhashraw}{c9c2d3a24c7583a7e7f7f0789505c4ad}
+      \field{extraname}{7}
       \field{sortinit}{5}
       \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
       \field{labelnamesource}{author}
@@ -1219,8 +1229,8 @@
       \strng{editornamehash}{5631d18b62cc5e9ff492dce79c393f5a}
       \strng{editorfullhash}{5631d18b62cc5e9ff492dce79c393f5a}
       \strng{editorfullhashraw}{5631d18b62cc5e9ff492dce79c393f5a}
-      \field{sortinit}{7}
-      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{booktitle}{Proceedings of the 32nd {ACM} {SIGPLAN} Conference on Programming Language Design and Implementation, {PLDI} 2011, San Jose, CA, USA, June 4-8, 2011}

@@ -2,11 +2,11 @@
     There are a few contributions that make the master thesis and thus, the oscilloscope, possible:
     \begin{itemize}
         \item A graphical interface to display probes' $\Delta$Qs.
-        \item An Erlang OpenTelemetry adapter to give OpenTelemetry spans a notion of failure and to communicate with the oscilloscope.
+        \item An Erlang OpenTelemetry adapter to give OpenTelemetry spans a notion of failure, to translate them to outcome instances and to communicate with the oscilloscope.
         \item The implementation of $\Delta$QSD concepts from theory to practice, including a textual syntax to create outcome diagrams, derived from the original algebraic syntax.
-        \item An efficient convolution algorithm based on the FFTW3 library.
-        \item A system of triggers to catch rare events when system behaviour fails to meet quality requirements, creating a snapshot of the system, giving the user insights about their system's behaviour.
+        \item An efficient Fast Fourier Transform convolution algorithm based on the FFTW3 library.
+        \item A system of triggers to catch rare events when system behaviour fails to meet quality requirements. The triggers being fired create a snapshot of the system, which gives users insights about their system's behaviour.
         \item Synthetic applications to test the effectiveness of $\Delta$QSD on diagnosing running systems.
     \end{itemize}
-    These contributions can show that the $\Delta$QSD paradigm can be translated to real-time observation of running system. Furthemore, it proves that the paradigm has its practical applications and is not limited to a theoretical view of system design.
+    These contributions can show that the $\Delta$QSD paradigm can be translated to real-time observation of running system. Furthermore, it proves that the paradigm has its practical applications and is not limited to a theoretical view of system design.
 

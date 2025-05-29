@@ -7,18 +7,17 @@
         \item Its status 
         \item Its elapsed time of execution
     \end{itemize}
-    The instance has three possible statuses: \texttt{success, timeout, failure}, it can thus be broken down in the representations, based on its status:
+    The instance has three possible statuses: \texttt{success, timeout, failure}, it can thus be broken down in three possible representations, based on its status:
     \begin{itemize}
         \item \textbf{($t_s$,$t_e$)}: This representation indicates that the execution was successful (t $<$ $dMax$). 
-        \item \textbf{($t_s, \mathcal{T}$)}: This representation indicates that the execution has timed out (t $>$ $dMax$). The end time and elapsed time is equal to $t_s + \text{timeout}$ 
+        \item \textbf{($t_s, \mathcal{T}$)}: This representation indicates that the execution has timed out (t $>$ $dMax$). The end time is equal to $t_s + \text{timeout}$ 
         \item \textbf{($t_s, \mathcal{F}$)}: This representation indicates the execution has failed given a user defined requirement (i.e. a dropped message given buffer overload in a queue system). It must not be confused with a program failure (crash), if a program crashes during the execution of event $e$, it will time out since the adapter will not receive an end message.
     \end{itemize}
-    The \textbf{time series} of a probe is the sequence of $n$ outcome instances and can then be easily modeled by $\Delta$Q.
+    The \textbf{time series} of a probe is the sequence of $n$ outcome instances. The collected elapsed times of execution (delay) from the outcome instances can be represented as a CDF, which is a $\Delta$Q!
 
     \paragraph{What can be considered a failed execution?} Imagine a queue with a buffer: the buffer queue being full and dropping incoming messages can be modeled as a failure.
 
     More generally, the choice of what is considered a failed execution is left up to the user who is handling the spans and is program-dependent. Exceptions or errors can be kinds of failure. 
 
-    On another note, the way of handling errored spans in OpenTelemetry can differ from user to user, so the adapter will not handle ending and setting statuses for "failed" spans. \cite{otel-err}
-   
-   In any case, by the new definition of failure, \textbf{timed out and failed will both be considered as a failure} in the calculation of a $\Delta$Q.
+    On another note, the way of handling "errored" spans in OpenTelemetry can differ from user to user  \cite{otel-err}, so the adapter will not handle ending and setting statuses for "failed" spans. \\
+   In any case, by the new definition of failure, \textbf{timed out and failed will both be considered as a failure} in the calculation of a $\Delta$Q. The distinction in an outcome instance is there for future refinements of the oscilloscope, where more statistics can be displayed about a $\Delta$Q.
