@@ -78,8 +78,8 @@ with_span/2: -spec with_span(binary(), map(), fun(() -> any())) -> any().
         
         The process can receive three kinds of messages:
         \begin{itemize}
-            \item \texttt{\{end\_span, end\_time\}}: This will send a custom span to the oscilloscope with the start and end time of the execution of the probe.
-            \item \texttt{\{fail\_span, end\_time\}}: This will send a custom span to the oscilloscope indicating that an execution of a probe has failed.
+            \item \texttt{\{end\_span, end\_time\}}: This will send an outcome instance to the oscilloscope with the start and end time of the execution of the probe and success status.
+            \item \texttt{\{fail\_span, end\_time\}}: This will send an outcome status to the oscilloscope indicating that an execution of a probe has failed.
             \item \texttt{\{timeout, end\_time(StartTime + $dMax$)\}}: If the program hasn't ended the span before $dMax$, the timer will send a \texttt{timeout} message and it will send an outcome instance to the oscilloscope indicating that an execution of a probe has timed out.
         \end{itemize}
         The process is able to receive one and only message, if the execution times out and subsequently the span is ended, the oscilloscope will not be notified as the process is defunct. This is assured by Erlang documentation:

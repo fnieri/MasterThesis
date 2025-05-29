@@ -60,7 +60,9 @@
     \subsubsection{Monitoring OpenTelemetry spans}
             OpenTelemetry gives the possibility to export traces to backends such as Jaeger, Zipkin, Datadog \cite{otel-exp}. A user can monitor their workflows, analyse dependencies, troubleshoot their programs by observing the flow of the requests in such backends\cite{jg}. These monitoring tools give extensive details about a running system, but may fail to capture essential requirements early enough.
         
-        Our oscilloscope is a kind of monitoring tool, one that gives precise statistical insights about a running system, it is clear that the oscilloscope does not have the same capabilities as Datadog \cite{datadog} might have, where you can observe cloud instances, instances cost, dependency graphs \dots but the oscilloscope can nevertheless provide precise insights about depependency, overload thanks to the $\Delta$QSD paradigm. This is also the reason that we incorporate OpenTelemetry in our application, the oscilloscope can be put next to a monitoring tool where one might export spans to. An engineer might consult the main monitoring tool to get the global picture of a running app, and the oscilloscope to give more precise insights about feasibility and system performance.
+        Our oscilloscope is a kind of monitoring tool, one that gives precise statistical insights about a running system. It is clear that the oscilloscope does not have the same capabilities as Datadog \cite{datadog} might have, where you can observe cloud instances, instances cost, dependency graphs \dots but the oscilloscope can nevertheless provide precise insights about dependency, overload thanks to the $\Delta$QSD paradigm. 
+
+        This is also the reason that we incorporate OpenTelemetry in our application, the oscilloscope can be put next to a monitoring tool where one might export spans to. An engineer might consult the main monitoring tool to get the global picture of a running app, and the oscilloscope to give more precise insights about feasibility and system performance.
        \begin{figure}[H]
             \centering
             \begin{subfigure}{.5\textwidth}

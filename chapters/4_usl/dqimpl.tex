@@ -1,11 +1,11 @@
 \section{$\Delta$QSD concepts}
 
-Originally, $\Delta$Q(x) denotes the probability that an outcome occurs in a time $t \le x$, defining then the "intangible mass" of such IRV as $1 - \lim_{x\to\infty} \Delta Q (x)$.
+Originally, $\Delta$Q(x) denotes the probability that an outcome occurs in a time $t \le x$, defining then the "intangible mass" of such IRV as $1 - \lim_{x\to\infty} \Delta Q (x)$. \cite{myo}
 We then extend the original definition to fit real time constraints, needing to calculate $\Delta$Qs continuously.
 
 For a given probe, $\Delta$Q($t_l$, $t_u$, $dMax$) is the probability that its instances with end time $t_l \le t_e \le t_u$ occur in time $t \le dMax$.
 
-\subsection{Histogram representation of a $\Delta$Q}
+\subsection{Representation of a $\Delta$Q}
     We provide a class to calculate the $\Delta$Q of a probe between a lower time bound $t_l$ and an upper time bound $t_u$. It can be calculated in two ways: 
     
     \paragraph{Observed $\Delta$Q}
@@ -20,11 +20,11 @@ For a given probe, $\Delta$Q($t_l$, $t_u$, $dMax$) is the probability that its i
             \begin{center}
                 \includegraphics[scale=1]{tikz/pdf_dq.pdf} 
             \end{center}
-            \caption{Blue bins: PDF of a sample $\Delta$Q. Red: Resulting CDF of $\Delta$Q PDF.}
+            \caption{Blue bins: PDF of a sample $\Delta$Q. Red: Resulting CDF of $\Delta$Q PDF, the CDF is displayed on the dashboard.}
         \end{figure}
  
     \subsection{dMax = $\Delta$t $\cdot$ N}
-        The key concept of $\Delta$QSD is having a maximum delay after which we consider that the execution is timed out, consequently, it represents a failure. This is represented in the oscilloscope as $dMax$. Understanding this equation is key to correctly using the oscilloscope and exploring tradeoffs
+        The key concept of $\Delta$QSD is having a maximum delay after which we consider that the execution is timed out. This is represented in the oscilloscope as $dMax$. Understanding this equation is key to correctly using the oscilloscope and exploring tradeoffs
 
 Setting a maximum delay for a probe is not a job that can be done one-off and blindly, it is something that is done with an underlying knowledge of the system inner-workings and must be thoroughly fine-tuned during the execution of the system by observing the resulting distributions of the obtained $\Delta$Qs. 
 
@@ -75,8 +75,8 @@ Some tradeoffs must though be acknowledged when setting these parameters, a high
         A simplified QTA is defined for probes. We define 4 points for the step function at 25, 50, 75 percentiles and the maximum amount of failures accepted for an observable. An observed $\Delta$Q will calculate that based on the samples collected. 
 
 \subsection{Confidence bounds}
-    To observe the stationarity of a system we must observe the $\Delta$Qs of a probe over a polling window and calculate confidence bounds over those $\Delta$Qs. The bounds can be updated dynamically by inserting or removing a $\Delta$Q. They are removed when \#$\Delta$Qs(window) $>$ limit and added when calculating a new $\Delta$Q in a sampling window. \\
-    This allows us to consider a small window of execution rather than observing the whole execution, this can help in observing stationarity of the system.
+    To observe the stationarity of a system we must observe the $\Delta$Qs of a probe over a polling window and calculate confidence bounds over those $\Delta$Qs. The bounds can be updated dynamically by inserting or removing a $\Delta$Q. They are removed when \#$\Delta$Qs(polling window) $>$ limit and added when calculating a new $\Delta$Q in a sampling window. \\
+    This allows us to consider a small window of execution rather than observing the execution since the start, this can help in observing stationarity of the system.
         \begin{figure}[H]
             \begin{center}
                 \includegraphics[scale=1]{tikz/ci.pdf} 
