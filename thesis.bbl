@@ -678,37 +678,6 @@
       \verb https://opentelemetry.io/docs/languages/erlang/exporters/
       \endverb
     \endentry
-    \entry{jg}{misc}{}{}
-      \name{author}{1}{}{%
-        {{hash=99843117a36cd53a2358856e619efe2a}{%
-           family={Authors},
-           familyi={A\bibinitperiod},
-           given={The\bibnamedelima Jaeger},
-           giveni={T\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
-      }
-      \strng{namehash}{99843117a36cd53a2358856e619efe2a}
-      \strng{fullhash}{99843117a36cd53a2358856e619efe2a}
-      \strng{fullhashraw}{99843117a36cd53a2358856e619efe2a}
-      \strng{bibnamehash}{99843117a36cd53a2358856e619efe2a}
-      \strng{authorbibnamehash}{99843117a36cd53a2358856e619efe2a}
-      \strng{authornamehash}{99843117a36cd53a2358856e619efe2a}
-      \strng{authorfullhash}{99843117a36cd53a2358856e619efe2a}
-      \strng{authorfullhashraw}{99843117a36cd53a2358856e619efe2a}
-      \field{extraname}{3}
-      \field{sortinit}{5}
-      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{note}{Accessed: (19/05/2025)}
-      \field{title}{Jaeger}
-      \field{year}{2025}
-      \verb{urlraw}
-      \verb https://www.jaegertracing.io/
-      \endverb
-      \verb{url}
-      \verb https://www.jaegertracing.io/
-      \endverb
-    \endentry
     \entry{datadog}{misc}{}{}
       \name{author}{1}{}{%
         {{hash=3983159b26a23291e755be54ac03be23}{%
@@ -846,7 +815,7 @@
       \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{note}{Accessed: (29/05)}
+      \field{note}{Accessed: (29/05/2025)}
       \field{title}{Error handling}
       \field{year}{2022}
       \verb{urlraw}
@@ -945,6 +914,36 @@
       \verb https://www.keysight.com/used/id/en/knowledge/glossary/oscilloscopes/what-is-an-oscilloscope-trigger
       \endverb
     \endentry
+    \entry{conf-b}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=dd795316f98db78ca0bcf6f53d45f06c}{%
+           family={Tsun},
+           familyi={T\bibinitperiod},
+           given={Alex},
+           giveni={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{dd795316f98db78ca0bcf6f53d45f06c}
+      \strng{fullhash}{dd795316f98db78ca0bcf6f53d45f06c}
+      \strng{fullhashraw}{dd795316f98db78ca0bcf6f53d45f06c}
+      \strng{bibnamehash}{dd795316f98db78ca0bcf6f53d45f06c}
+      \strng{authorbibnamehash}{dd795316f98db78ca0bcf6f53d45f06c}
+      \strng{authornamehash}{dd795316f98db78ca0bcf6f53d45f06c}
+      \strng{authorfullhash}{dd795316f98db78ca0bcf6f53d45f06c}
+      \strng{authorfullhashraw}{dd795316f98db78ca0bcf6f53d45f06c}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Accessed: (29/05/2025)}
+      \field{title}{Statistical inference - Confidence intervals}
+      \field{year}{2020}
+      \verb{urlraw}
+      \verb https://courses.cs.washington.edu/courses/cse312/20su/files/student_drive/8.1.pdf
+      \endverb
+      \verb{url}
+      \verb https://courses.cs.washington.edu/courses/cse312/20su/files/student_drive/8.1.pdf
+      \endverb
+    \endentry
     \entry{stat}{book}{}{}
       \name{author}{4}{}{%
         {{hash=ed1e9005c6f50b80bbfc8d34c0e29814}{%
@@ -979,8 +978,8 @@
       \strng{authornamehash}{1d8f2f20e24784082fbded2689238358}
       \strng{authorfullhash}{2d0c084307a910f7d49418922d63c511}
       \strng{authorfullhashraw}{2d0c084307a910f7d49418922d63c511}
-      \field{sortinit}{6}
-      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{isbn}{1-85233-896-2}

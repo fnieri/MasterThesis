@@ -1,374 +1,310 @@
 
-\chapter{Source Code Appendix}
+\part{Source Code Appendix}
 
-\section{C++ Source Files}
+\chapter{C++ Source Files}
 
-\subsection*{Root}
+\section{Root}
 
-\subsubsection*{Application.cpp}
+\subsection{Application.cpp}
+
+This is a singleton that handles the global state of the application.
 \lstinputlisting[style=mystyle, language=C++]{../RealTimeDeltaQSD/src/Application.cpp}
+\section{dashboard}
 
-\subsubsection*{main.cpp}
-\lstinputlisting[style=mystyle, language=C++]{../RealTimeDeltaQSD/src/main.cpp}
-
-\subsection*{cmake-build-debug/CMakeFiles/3.31.6/CompilerIdCXX}
-
-\subsubsection*{CMakeCXXCompilerId.cpp}
-\lstinputlisting[style=mystyle, language=C++]{../RealTimeDeltaQSD/src/cmake-build-debug/CMakeFiles/3.31.6/CompilerIdCXX/CMakeCXXCompilerId.cpp}
-
-\subsection*{cmake-build-debug/parser/generated}
-
-\subsubsection*{DQGrammarBaseVisitor.cpp}
-\lstinputlisting[style=mystyle, language=C++]{../RealTimeDeltaQSD/src/cmake-build-debug/parser/generated/DQGrammarBaseVisitor.cpp}
-
-\subsubsection*{DQGrammarLexer.cpp}
-\lstinputlisting[style=mystyle, language=C++]{../RealTimeDeltaQSD/src/cmake-build-debug/parser/generated/DQGrammarLexer.cpp}
-
-\subsubsection*{DQGrammarParser.cpp}
-\lstinputlisting[style=mystyle, language=C++]{../RealTimeDeltaQSD/src/cmake-build-debug/parser/generated/DQGrammarParser.cpp}
-
-\subsubsection*{DQGrammarVisitor.cpp}
-\lstinputlisting[style=mystyle, language=C++]{../RealTimeDeltaQSD/src/cmake-build-debug/parser/generated/DQGrammarVisitor.cpp}
-
-\subsection*{dashboard}
-
-\subsubsection*{ColorRegistry.cpp}
+\subsection{ColorRegistry.cpp}
+\sloppy This class stores all the colors for all the QtSeries, moreover, it generates HSV colors based on the algorithm taken from \url{https://martin.ankerl.com/2009/12/09/how-to-create-random-colors-programmatically/}.
 \lstinputlisting[style=mystyle, language=C++]{../RealTimeDeltaQSD/src/dashboard/ColorRegistry.cpp}
 
-\subsubsection*{CustomLegendEntry.cpp}
+\subsection{CustomLegendEntry.cpp}
+This class represents an entry in the plot legend.
 \lstinputlisting[style=mystyle, language=C++]{../RealTimeDeltaQSD/src/dashboard/CustomLegendEntry.cpp}
 
-\subsubsection*{CustomLegendPanel.cpp}
+\subsection{CustomLegendPanel.cpp}
+This class represents the legend panel for a plot, with entries corresponding to each series.
 \lstinputlisting[style=mystyle, language=C++]{../RealTimeDeltaQSD/src/dashboard/CustomLegendPanel.cpp}
 
-\subsubsection*{DQPlotController.cpp}
+\subsection{DQPlotController.cpp}
+This class is the controller of DeltaQPlot, based on the MVC design pattern.
 \lstinputlisting[style=mystyle, language=C++]{../RealTimeDeltaQSD/src/dashboard/DQPlotController.cpp}
 
-\subsubsection*{DQPlotList.cpp}
+\subsection{DQPlotList.cpp}
+This class handles the adding and removing of probes series from a plot.
 \lstinputlisting[style=mystyle, language=C++]{../RealTimeDeltaQSD/src/dashboard/DQPlotList.cpp}
 
-\subsubsection*{DelaySettingsWidget.cpp}
+\subsection{DelaySettingsWidget.cpp}
+This class represent the slider widget to modify the parameters $dMax$, $\Delta$t and N.
 \lstinputlisting[style=mystyle, language=C++]{../RealTimeDeltaQSD/src/dashboard/DelaySettingsWidget.cpp}
 
-\subsubsection*{DeltaQPlot.cpp}
+\subsection{DeltaQPlot.cpp}
+This class is the widget containing a plot and its legend.
 \lstinputlisting[style=mystyle, language=C++]{../RealTimeDeltaQSD/src/dashboard/DeltaQPlot.cpp}
 
-\subsubsection*{MainWindow.cpp}
+\subsection{MainWindow.cpp}
+This class is the main window of the application, it has a tab to the side where the widgets to control the oscilloscope are. To the left, the panel where all plots are shown.
 \lstinputlisting[style=mystyle, language=C++]{../RealTimeDeltaQSD/src/dashboard/MainWindow.cpp}
 
-\subsubsection*{NewPlotList.cpp}
+\subsection{NewPlotList.cpp}
+This class is the widget to add a new plot to the plots panel.
 \lstinputlisting[style=mystyle, language=C++]{../RealTimeDeltaQSD/src/dashboard/NewPlotList.cpp}
 
-\subsubsection*{ObservableSettings.cpp}
+\subsection{ObservableSettings.cpp}
+This widget is a tab that contains the settings for the probes (Setting a QTA, setting $dMax$).
 \lstinputlisting[style=mystyle, language=C++]{../RealTimeDeltaQSD/src/dashboard/ObservableSettings.cpp}
 
-\subsubsection*{PollingRateWidget.cpp}
+\subsection{PollingRateWidget.cpp}
+This class
 \lstinputlisting[style=mystyle, language=C++]{../RealTimeDeltaQSD/src/dashboard/PollingRateWidget.cpp}
 
-\subsubsection*{QTAInputWidget.cpp}
+\subsection{QTAInputWidget.cpp}
 \lstinputlisting[style=mystyle, language=C++]{../RealTimeDeltaQSD/src/dashboard/QTAInputWidget.cpp}
 
-\subsubsection*{Sidebar.cpp}
+\subsection{Sidebar.cpp}
 \lstinputlisting[style=mystyle, language=C++]{../RealTimeDeltaQSD/src/dashboard/Sidebar.cpp}
 
-\subsubsection*{SnapshotViewerWindow.cpp}
+\subsection{SnapshotViewerWindow.cpp}
 \lstinputlisting[style=mystyle, language=C++]{../RealTimeDeltaQSD/src/dashboard/SnapshotViewerWindow.cpp}
 
-\subsubsection*{StubControlWidget.cpp}
+\subsection{StubControlWidget.cpp}
 \lstinputlisting[style=mystyle, language=C++]{../RealTimeDeltaQSD/src/dashboard/StubControlWidget.cpp}
 
-\subsubsection*{SystemCreationWidget.cpp}
+\subsection{SystemCreationWidget.cpp}
 \lstinputlisting[style=mystyle, language=C++]{../RealTimeDeltaQSD/src/dashboard/SystemCreationWidget.cpp}
 
-\subsubsection*{TriggersTab.cpp}
+\subsection{TriggersTab.cpp}
 \lstinputlisting[style=mystyle, language=C++]{../RealTimeDeltaQSD/src/dashboard/TriggersTab.cpp}
 
-\subsection*{diagram}
+\section{diagram}
 
-\subsubsection*{Observable.cpp}
+\subsection{Observable.cpp}
 \lstinputlisting[style=mystyle, language=C++]{../RealTimeDeltaQSD/src/diagram/Observable.cpp}
 
-\subsubsection*{Operator.cpp}
+\subsection{Operator.cpp}
 \lstinputlisting[style=mystyle, language=C++]{../RealTimeDeltaQSD/src/diagram/Operator.cpp}
 
-\subsubsection*{Outcome.cpp}
+\subsection{Outcome.cpp}
 \lstinputlisting[style=mystyle, language=C++]{../RealTimeDeltaQSD/src/diagram/Outcome.cpp}
 
-\subsubsection*{Probe.cpp}
+\subsection{Probe.cpp}
 \lstinputlisting[style=mystyle, language=C++]{../RealTimeDeltaQSD/src/diagram/Probe.cpp}
 
-\subsubsection*{System.cpp}
+\subsection{System.cpp}
 \lstinputlisting[style=mystyle, language=C++]{../RealTimeDeltaQSD/src/diagram/System.cpp}
 
-\subsubsection*{main.cpp}
-\lstinputlisting[style=mystyle, language=C++]{../RealTimeDeltaQSD/src/diagram/main.cpp}
+\section{maths}
 
-\subsection*{maths}
-
-\subsubsection*{ConfidenceInterval.cpp}
+\subsection{ConfidenceInterval.cpp}
 \lstinputlisting[style=mystyle, language=C++]{../RealTimeDeltaQSD/src/maths/ConfidenceInterval.cpp}
 
-\subsubsection*{DeltaQ.cpp}
+\subsection{DeltaQ.cpp}
 \lstinputlisting[style=mystyle, language=C++]{../RealTimeDeltaQSD/src/maths/DeltaQ.cpp}
 
-\subsubsection*{DeltaQOperations.cpp}
+\subsection{DeltaQOperations.cpp}
 \lstinputlisting[style=mystyle, language=C++]{../RealTimeDeltaQSD/src/maths/DeltaQOperations.cpp}
 
-\subsubsection*{Snapshot.cpp}
+\subsection{Snapshot.cpp}
 \lstinputlisting[style=mystyle, language=C++]{../RealTimeDeltaQSD/src/maths/Snapshot.cpp}
 
-\subsubsection*{TriggerManager.cpp}
+\subsection{TriggerManager.cpp}
 \lstinputlisting[style=mystyle, language=C++]{../RealTimeDeltaQSD/src/maths/TriggerManager.cpp}
 
-\subsubsection*{Triggers.cpp}
+\subsection{Triggers.cpp}
 \lstinputlisting[style=mystyle, language=C++]{../RealTimeDeltaQSD/src/maths/Triggers.cpp}
 
-\subsubsection*{main.cpp}
-\lstinputlisting[style=mystyle, language=C++]{../RealTimeDeltaQSD/src/maths/main.cpp}
+\section{parser}
 
-\subsection*{parser}
-
-\subsubsection*{SystemBuilder.cpp}
+\subsection{SystemBuilder.cpp}
 \lstinputlisting[style=mystyle, language=C++]{../RealTimeDeltaQSD/src/parser/SystemBuilder.cpp}
 
-\subsubsection*{SystemParserInterface.cpp}
+\subsection{SystemParserInterface.cpp}
 \lstinputlisting[style=mystyle, language=C++]{../RealTimeDeltaQSD/src/parser/SystemParserInterface.cpp}
 
-\subsubsection*{main.cpp}
-\lstinputlisting[style=mystyle, language=C++]{../RealTimeDeltaQSD/src/parser/main.cpp}
+\section{server}
 
-\subsection*{parser/generated}
-
-\subsubsection*{DQGrammarBaseVisitor.cpp}
-\lstinputlisting[style=mystyle, language=C++]{../RealTimeDeltaQSD/src/parser/generated/DQGrammarBaseVisitor.cpp}
-
-\subsubsection*{DQGrammarLexer.cpp}
-\lstinputlisting[style=mystyle, language=C++]{../RealTimeDeltaQSD/src/parser/generated/DQGrammarLexer.cpp}
-
-\subsubsection*{DQGrammarParser.cpp}
-\lstinputlisting[style=mystyle, language=C++]{../RealTimeDeltaQSD/src/parser/generated/DQGrammarParser.cpp}
-
-\subsubsection*{DQGrammarVisitor.cpp}
-\lstinputlisting[style=mystyle, language=C++]{../RealTimeDeltaQSD/src/parser/generated/DQGrammarVisitor.cpp}
-
-\subsection*{server}
-
-\subsubsection*{Server.cpp}
+\subsection{Server.cpp}
 \lstinputlisting[style=mystyle, language=C++]{../RealTimeDeltaQSD/src/server/Server.cpp}
 
-\subsubsection*{main.cpp}
-\lstinputlisting[style=mystyle, language=C++]{../RealTimeDeltaQSD/src/server/main.cpp}
+\chapter{C++ Header Files}
 
-\section{C++ Header Files}
+\section{Root}
 
-\subsection*{Root}
-
-\subsubsection*{Application.h}
+\subsection{Application.h}
 \lstinputlisting[style=mystyle, language=C++]{../RealTimeDeltaQSD/src/Application.h}
 
-\subsection*{cmake-build-debug/parser/generated}
+\section{dashboard}
 
-\subsubsection*{DQGrammarBaseVisitor.h}
-\lstinputlisting[style=mystyle, language=C++]{../RealTimeDeltaQSD/src/cmake-build-debug/parser/generated/DQGrammarBaseVisitor.h}
-
-\subsubsection*{DQGrammarLexer.h}
-\lstinputlisting[style=mystyle, language=C++]{../RealTimeDeltaQSD/src/cmake-build-debug/parser/generated/DQGrammarLexer.h}
-
-\subsubsection*{DQGrammarParser.h}
-\lstinputlisting[style=mystyle, language=C++]{../RealTimeDeltaQSD/src/cmake-build-debug/parser/generated/DQGrammarParser.h}
-
-\subsubsection*{DQGrammarVisitor.h}
-\lstinputlisting[style=mystyle, language=C++]{../RealTimeDeltaQSD/src/cmake-build-debug/parser/generated/DQGrammarVisitor.h}
-
-\subsection*{dashboard}
-
-\subsubsection*{ColorRegistry.h}
+\subsection{ColorRegistry.h}
 \lstinputlisting[style=mystyle, language=C++]{../RealTimeDeltaQSD/src/dashboard/ColorRegistry.h}
 
-\subsubsection*{CustomLegendEntry.h}
+\subsection{CustomLegendEntry.h}
 \lstinputlisting[style=mystyle, language=C++]{../RealTimeDeltaQSD/src/dashboard/CustomLegendEntry.h}
 
-\subsubsection*{CustomLegendPanel.h}
+\subsection{CustomLegendPanel.h}
 \lstinputlisting[style=mystyle, language=C++]{../RealTimeDeltaQSD/src/dashboard/CustomLegendPanel.h}
 
-\subsubsection*{DQPlotController.h}
+\subsection{DQPlotController.h}
 \lstinputlisting[style=mystyle, language=C++]{../RealTimeDeltaQSD/src/dashboard/DQPlotController.h}
 
-\subsubsection*{DQPlotList.h}
+\subsection{DQPlotList.h}
 \lstinputlisting[style=mystyle, language=C++]{../RealTimeDeltaQSD/src/dashboard/DQPlotList.h}
 
-\subsubsection*{DelaySettingsWidget.h}
+\subsection{DelaySettingsWidget.h}
 \lstinputlisting[style=mystyle, language=C++]{../RealTimeDeltaQSD/src/dashboard/DelaySettingsWidget.h}
 
-\subsubsection*{DeltaQPlot.h}
+\subsection{DeltaQPlot.h}
 \lstinputlisting[style=mystyle, language=C++]{../RealTimeDeltaQSD/src/dashboard/DeltaQPlot.h}
 
-\subsubsection*{MainWindow.h}
+\subsection{MainWindow.h}
 \lstinputlisting[style=mystyle, language=C++]{../RealTimeDeltaQSD/src/dashboard/MainWindow.h}
 
-\subsubsection*{NewPlotList.h}
+\subsection{NewPlotList.h}
 \lstinputlisting[style=mystyle, language=C++]{../RealTimeDeltaQSD/src/dashboard/NewPlotList.h}
 
-\subsubsection*{ObservableSettings.h}
+\subsection{ObservableSettings.h}
 \lstinputlisting[style=mystyle, language=C++]{../RealTimeDeltaQSD/src/dashboard/ObservableSettings.h}
 
-\subsubsection*{PollingRateWidget.h}
+\subsection{PollingRateWidget.h}
 \lstinputlisting[style=mystyle, language=C++]{../RealTimeDeltaQSD/src/dashboard/PollingRateWidget.h}
 
-\subsubsection*{QTAInputWidget.h}
+\subsection{QTAInputWidget.h}
 \lstinputlisting[style=mystyle, language=C++]{../RealTimeDeltaQSD/src/dashboard/QTAInputWidget.h}
 
-\subsubsection*{Sidebar.h}
+\subsection{Sidebar.h}
 \lstinputlisting[style=mystyle, language=C++]{../RealTimeDeltaQSD/src/dashboard/Sidebar.h}
 
-\subsubsection*{SnapshotViewerWindow.h}
+\subsection{SnapshotViewerWindow.h}
 \lstinputlisting[style=mystyle, language=C++]{../RealTimeDeltaQSD/src/dashboard/SnapshotViewerWindow.h}
 
-\subsubsection*{StubControlWidget.h}
+\subsection{StubControlWidget.h}
 \lstinputlisting[style=mystyle, language=C++]{../RealTimeDeltaQSD/src/dashboard/StubControlWidget.h}
 
-\subsubsection*{SystemCreationWidget.h}
+\subsection{SystemCreationWidget.h}
 \lstinputlisting[style=mystyle, language=C++]{../RealTimeDeltaQSD/src/dashboard/SystemCreationWidget.h}
 
-\subsubsection*{TriggersTab.h}
+\subsection{TriggersTab.h}
 \lstinputlisting[style=mystyle, language=C++]{../RealTimeDeltaQSD/src/dashboard/TriggersTab.h}
 
-\subsection*{diagram}
+\section{diagram}
 
-\subsubsection*{Observable.h}
+\subsection{Observable.h}
 \lstinputlisting[style=mystyle, language=C++]{../RealTimeDeltaQSD/src/diagram/Observable.h}
 
-\subsubsection*{Operator.h}
+\subsection{Operator.h}
 \lstinputlisting[style=mystyle, language=C++]{../RealTimeDeltaQSD/src/diagram/Operator.h}
 
-\subsubsection*{OperatorType.h}
+\subsection{OperatorType.h}
 \lstinputlisting[style=mystyle, language=C++]{../RealTimeDeltaQSD/src/diagram/OperatorType.h}
 
-\subsubsection*{Outcome.h}
+\subsection{Outcome.h}
 \lstinputlisting[style=mystyle, language=C++]{../RealTimeDeltaQSD/src/diagram/Outcome.h}
 
-\subsubsection*{Probe.h}
+\subsection{Probe.h}
 \lstinputlisting[style=mystyle, language=C++]{../RealTimeDeltaQSD/src/diagram/Probe.h}
 
-\subsubsection*{Sample.h}
+\subsection{Sample.h}
 \lstinputlisting[style=mystyle, language=C++]{../RealTimeDeltaQSD/src/diagram/Sample.h}
 
-\subsubsection*{System.h}
+\subsection{System.h}
 \lstinputlisting[style=mystyle, language=C++]{../RealTimeDeltaQSD/src/diagram/System.h}
 
-\subsection*{maths}
+\section{maths}
 
-\subsubsection*{ConfidenceInterval.h}
+\subsection{ConfidenceInterval.h}
 \lstinputlisting[style=mystyle, language=C++]{../RealTimeDeltaQSD/src/maths/ConfidenceInterval.h}
 
-\subsubsection*{DeltaQ.h}
+\subsection{DeltaQ.h}
 \lstinputlisting[style=mystyle, language=C++]{../RealTimeDeltaQSD/src/maths/DeltaQ.h}
 
-\subsubsection*{DeltaQOperations.h}
+\subsection{DeltaQOperations.h}
 \lstinputlisting[style=mystyle, language=C++]{../RealTimeDeltaQSD/src/maths/DeltaQOperations.h}
 
-\subsubsection*{DeltaQRepr.h}
+\subsection{DeltaQRepr.h}
 \lstinputlisting[style=mystyle, language=C++]{../RealTimeDeltaQSD/src/maths/DeltaQRepr.h}
 
-\subsubsection*{QTA.h}
+\subsection{QTA.h}
 \lstinputlisting[style=mystyle, language=C++]{../RealTimeDeltaQSD/src/maths/QTA.h}
 
-\subsubsection*{Snapshot.h}
+\subsection{Snapshot.h}
 \lstinputlisting[style=mystyle, language=C++]{../RealTimeDeltaQSD/src/maths/Snapshot.h}
 
-\subsubsection*{TriggerManager.h}
+\subsection{TriggerManager.h}
 \lstinputlisting[style=mystyle, language=C++]{../RealTimeDeltaQSD/src/maths/TriggerManager.h}
 
-\subsubsection*{TriggerTypes.h}
+\subsection{TriggerTypes.h}
 \lstinputlisting[style=mystyle, language=C++]{../RealTimeDeltaQSD/src/maths/TriggerTypes.h}
 
-\subsubsection*{Triggers.h}
+\subsection{Triggers.h}
 \lstinputlisting[style=mystyle, language=C++]{../RealTimeDeltaQSD/src/maths/Triggers.h}
 
-\subsection*{parser}
+\section{parser}
 
-\subsubsection*{SystemBuilder.h}
+\subsection{SystemBuilder.h}
 \lstinputlisting[style=mystyle, language=C++]{../RealTimeDeltaQSD/src/parser/SystemBuilder.h}
 
-\subsubsection*{SystemErrorListener.h}
+\subsection{SystemErrorListener.h}
 \lstinputlisting[style=mystyle, language=C++]{../RealTimeDeltaQSD/src/parser/SystemErrorListener.h}
 
-\subsubsection*{SystemParserInterface.h}
+\subsection{SystemParserInterface.h}
 \lstinputlisting[style=mystyle, language=C++]{../RealTimeDeltaQSD/src/parser/SystemParserInterface.h}
 
-\subsection*{parser/generated}
+\section{server}
 
-\subsubsection*{DQGrammarBaseVisitor.h}
-\lstinputlisting[style=mystyle, language=C++]{../RealTimeDeltaQSD/src/parser/generated/DQGrammarBaseVisitor.h}
-
-\subsubsection*{DQGrammarLexer.h}
-\lstinputlisting[style=mystyle, language=C++]{../RealTimeDeltaQSD/src/parser/generated/DQGrammarLexer.h}
-
-\subsubsection*{DQGrammarParser.h}
-\lstinputlisting[style=mystyle, language=C++]{../RealTimeDeltaQSD/src/parser/generated/DQGrammarParser.h}
-
-\subsubsection*{DQGrammarVisitor.h}
-\lstinputlisting[style=mystyle, language=C++]{../RealTimeDeltaQSD/src/parser/generated/DQGrammarVisitor.h}
-
-\subsection*{server}
-
-\subsubsection*{Server.h}
+\subsection{Server.h}
 \lstinputlisting[style=mystyle, language=C++]{../RealTimeDeltaQSD/src/server/Server.h}
 
-\section{Build Configuration Files}
+\chapter{Build Configuration Files}
 
-\subsection*{Root}
+\section{Root}
 
-\subsubsection*{CMakeLists.txt}
+\subsection{CMakeLists.txt}
 \lstinputlisting[style=mystyle, ]{../RealTimeDeltaQSD/src/CMakeLists.txt}
 
-\subsection*{dashboard}
+\section{dashboard}
 
-\subsubsection*{CMakeLists.txt}
+\subsection{CMakeLists.txt}
 \lstinputlisting[style=mystyle, ]{../RealTimeDeltaQSD/src/dashboard/CMakeLists.txt}
 
-\subsection*{diagram}
+\section{diagram}
 
-\subsubsection*{CMakeLists.txt}
+\subsection{CMakeLists.txt}
 \lstinputlisting[style=mystyle, ]{../RealTimeDeltaQSD/src/diagram/CMakeLists.txt}
 
-\subsection*{maths}
+\section{maths}
 
-\subsubsection*{CMakeLists.txt}
+\subsection{CMakeLists.txt}
 \lstinputlisting[style=mystyle, ]{../RealTimeDeltaQSD/src/maths/CMakeLists.txt}
 
-\subsection*{parser}
+\section{parser}
 
-\subsubsection*{CMakeLists.txt}
+\subsection{CMakeLists.txt}
 \lstinputlisting[style=mystyle, ]{../RealTimeDeltaQSD/src/parser/CMakeLists.txt}
 
-\subsection*{server}
+\section{server}
 
-\subsubsection*{CMakeLists.txt}
+\subsection{CMakeLists.txt}
 \lstinputlisting[style=mystyle, ]{../RealTimeDeltaQSD/src/server/CMakeLists.txt}
 
-\section{Erlang Source Files}
+\chapter{Erlang Source Files}
 
-\subsection*{Root}
+\section{Root}
 
-\subsubsection*{dqsd\_otel.erl}
+\subsection{dqsd\_otel.erl}
 \lstinputlisting[style=mystyle, language=erlang]{../dqsd_otel/src/dqsd_otel.erl}
 
-\subsubsection*{dqsd\_otel\_app.erl}
+\subsection{dqsd\_otel\_app.erl}
 \lstinputlisting[style=mystyle, language=erlang]{../dqsd_otel/src/dqsd_otel_app.erl}
 
-\subsubsection*{dqsd\_otel\_sup.erl}
+\subsection{dqsd\_otel\_sup.erl}
 \lstinputlisting[style=mystyle, language=erlang]{../dqsd_otel/src/dqsd_otel_sup.erl}
 
-\subsubsection*{dqsd\_otel\_tcp\_client.erl}
+\subsection{dqsd\_otel\_tcp\_client.erl}
 \lstinputlisting[style=mystyle, language=erlang]{../dqsd_otel/src/dqsd_otel_tcp_client.erl}
 
-\subsubsection*{dqsd\_otel\_tcp\_server.erl}
+\subsection{dqsd\_otel\_tcp\_server.erl}
 \lstinputlisting[style=mystyle, language=erlang]{../dqsd_otel/src/dqsd_otel_tcp_server.erl}
 
-\section{Erlang Application Files}
+\chapter{Erlang Application Files}
 
-\subsection*{Root}
+\section{Root}
 
-\subsubsection*{dqsd\_otel.app.src}
+\subsection{dqsd\_otel.app.src}
 \lstinputlisting[style=mystyle, language=erlang]{../dqsd_otel/src/dqsd_otel.app.src}

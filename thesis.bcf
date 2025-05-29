@@ -2439,25 +2439,26 @@
     <bcf:citekey order="65" intorder="1">osc-g</bcf:citekey>
     <bcf:citekey order="66" intorder="1">osc-t</bcf:citekey>
     <bcf:citekey order="67" intorder="1">myo</bcf:citekey>
-    <bcf:citekey order="68" intorder="1">art</bcf:citekey>
-    <bcf:citekey order="69" intorder="1">stat</bcf:citekey>
-    <bcf:citekey order="70" intorder="1">conv</bcf:citekey>
-    <bcf:citekey order="71" intorder="1">fftw3</bcf:citekey>
-    <bcf:citekey order="72" intorder="1">fft</bcf:citekey>
-    <bcf:citekey order="73" intorder="1">fft-h</bcf:citekey>
-    <bcf:citekey order="74" intorder="1">stat</bcf:citekey>
-    <bcf:citekey order="75" intorder="1">rebar3</bcf:citekey>
-    <bcf:citekey order="76" intorder="1">erl-s</bcf:citekey>
-    <bcf:citekey order="77" intorder="1">antlr4</bcf:citekey>
-    <bcf:citekey order="78" intorder="1">antlr</bcf:citekey>
+    <bcf:citekey order="68" intorder="1">conf-b</bcf:citekey>
+    <bcf:citekey order="69" intorder="1">art</bcf:citekey>
+    <bcf:citekey order="70" intorder="1">stat</bcf:citekey>
+    <bcf:citekey order="71" intorder="1">conv</bcf:citekey>
+    <bcf:citekey order="72" intorder="1">fftw3</bcf:citekey>
+    <bcf:citekey order="73" intorder="1">fft</bcf:citekey>
+    <bcf:citekey order="74" intorder="1">fft-h</bcf:citekey>
+    <bcf:citekey order="75" intorder="1">stat</bcf:citekey>
+    <bcf:citekey order="76" intorder="1">rebar3</bcf:citekey>
+    <bcf:citekey order="77" intorder="1">erl-s</bcf:citekey>
+    <bcf:citekey order="78" intorder="1">antlr4</bcf:citekey>
     <bcf:citekey order="79" intorder="1">antlr</bcf:citekey>
-    <bcf:citekey order="80" intorder="1">lark</bcf:citekey>
-    <bcf:citekey order="81" intorder="1">qt-w</bcf:citekey>
-    <bcf:citekey order="82" intorder="1">dq-tut</bcf:citekey>
+    <bcf:citekey order="80" intorder="1">antlr</bcf:citekey>
+    <bcf:citekey order="81" intorder="1">lark</bcf:citekey>
+    <bcf:citekey order="82" intorder="1">qt-w</bcf:citekey>
     <bcf:citekey order="83" intorder="1">dq-tut</bcf:citekey>
     <bcf:citekey order="84" intorder="1">dq-tut</bcf:citekey>
-    <bcf:citekey order="85" intorder="1">ctx</bcf:citekey>
-    <bcf:citekey order="86" intorder="1">qt-gpl</bcf:citekey>
+    <bcf:citekey order="85" intorder="1">dq-tut</bcf:citekey>
+    <bcf:citekey order="86" intorder="1">ctx</bcf:citekey>
+    <bcf:citekey order="87" intorder="1">qt-gpl</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="none">

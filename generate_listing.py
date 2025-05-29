@@ -14,12 +14,12 @@ def generate_latex_appendix(source_dirs, output_file, file_types):
     with open(output_file, 'w') as f:
         # Write LaTeX header
         f.write(r"""
-\chapter{Source Code Appendix}
+\part{Source Code Appendix}
 """)
 
         # Process each file type category
         for ext, options in file_types.items():
-            f.write(f"\n\\section{{{options['section']}}}\n")
+            f.write(f"\n\\chapter{{{options['section']}}}\n")
 
             # Dictionary to store files by their relative subfolder path
             files_by_subfolder = defaultdict(list)
@@ -43,7 +43,7 @@ def generate_latex_appendix(source_dirs, output_file, file_types):
             for subfolder in sorted(files_by_subfolder.keys()):
                 # Escape special LaTeX characters in subfolder name
                 safe_subfolder = subfolder.replace('_', r'\_')
-                f.write(f"\n\\subsection*{{{safe_subfolder}}}\n")
+                f.write(f"\n\\section{{{safe_subfolder}}}\n")
 
                 # Sort files in this subfolder
                 files_in_subfolder = sorted(files_by_subfolder[subfolder], key=lambda x: x[0])
@@ -52,7 +52,7 @@ def generate_latex_appendix(source_dirs, output_file, file_types):
                     # Escape special LaTeX characters in filename
                     safe_filename = filename.replace('_', r'\_')
 
-                    f.write(f"\n\\subsubsection*{{{safe_filename}}}\n")
+                    f.write(f"\n\\subsection{{{safe_filename}}}\n")
                     f.write(f"\\lstinputlisting[style=mystyle, {options['language']}]{{{rel_path}}}\n")
 
 # Configuration for C++/Erlang files

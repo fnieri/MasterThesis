@@ -11,11 +11,11 @@
            An outcome $o$ is a specific system behaviour that can be observed to start at some point in time and \textit{\textbf{may}} be observed to complete at some later time. \cite{dq-br}
         Formally, what the system obtains by performing one of its tasks. One task corresponds to one outcome and viceversa. When an outcome is performed, it means that the task of an outcome is performed.
      
-        The particularity of outcomes is that they can represent multiple levels of granularity, suppose an outcome may be beyond the current system's control (e.g. a database/cloud request), is non-atomic (can be broken down in multiple sub-outcomes). These outcomes can be represented as black-boxes, as the system gets refined, these outcomes can then be modeled by multiple outcomes. \\ 
+        The particularity of outcomes is that they can represent multiple levels of granularity, suppose an outcome may be beyond the current system's control (e.g. a database/cloud request), is non-atomic (can be broken down in multiple sub-outcomes). These outcomes can be represented as black-boxes (you can observe their start and end, but do not know what is being executed), as the system gets refined, these outcomes can then be refined to model a single outcome or multiple outcomes, if needed. \\ 
         Even though these outcomes are defined as "black boxes", they still have timeliness constraints like any other outcome. \cite{myo}
 
      \paragraph{Observables}
-    Each outcome has two starting sets of events: the starting sets and the ending sets. Such sets are called the \textit{observables}. Once an event from the starting set occurs, there is no guarantee that a corresponding event in the terminating set will occur within the duration limit (required time to complete). An observable is \textit{done}  when it occurs during the time limit. \cite{art}
+    Each outcome has two starting sets of events: the starting sets and the ending sets. Such sets are called the \textit{observables}. Once an event from the starting set occurs, there is no guarantee that a corresponding event in the terminating set will occur within the duration limit (required time to complete). An observable is \textit{done} when it occurs during the time limit. \cite{art}
 
     \paragraph{Outcome instance}
     An outcome instance is the result of an execution of an outcome given a starting event $e_{in}$ and an end event $e_{out}$. \cite{art}
@@ -237,7 +237,7 @@
                 \includegraphics[scale=1]{tikz/cdf_indep.pdf}
             \end{center}
             \caption{When the components are independent, the sum of the two delays (blue) and the overall delay (red) can be superposed. \\
-            When $o_1$ and $o_2$ show initial signs of dependency, the sum of the two delays (green) can be seen deviating from the overall delay.}
+            When $o_1$ and $o_2$ show initial signs of dependency, the overall delay (green) can be seen deviating from the sum of the two delays.}
             \label{fig:cdf_indep}
         \end{figure}
 

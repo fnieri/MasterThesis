@@ -79,13 +79,19 @@ Some tradeoffs must though be acknowledged when setting these parameters, a high
         A simplified QTA is defined for probes. We define 4 points for the step function at 25, 50, 75 percentiles and the maximum amount of failures accepted for an observable. An observed $\Delta$Q will calculate that based on the samples collected. 
 
 \subsection{Confidence bounds}
-    To observe the stationarity of a system we must observe the $\Delta$Qs of a probe over a polling window and calculate confidence bounds over those $\Delta$Qs. The bounds can be updated dynamically by inserting or removing a $\Delta$Q. They are removed when \#$\Delta$Qs(polling window) $>$ limit and added when calculating a new $\Delta$Q in a sampling window. \\
-    This allows us to consider a small window of execution rather than observing the execution since the start, this can help in observing stationarity of the system.
+    To observe the stationarity of a probe we must observe its $\Delta$Qs over a polling window and calculate confidence bounds over said $\Delta$Qs. A single $\Delta$Q may fluctuate, moreover, as it is an ECDF, it is not as precise as a CDF and, based on the number of bins, may not be precise. This is why we include the mean and confidence bounds of $\Delta$Qs in the plot.
+
+    We first calculate a mean of the $\Delta$Qs in the polling window, this gives an idea of how the probe has been behaving during the polling window. \\
+    Given this mean, we can calculate its confidence bounds, which give a probability range over which the true CDF of the $\Delta$Q should fall. \cite{conf-b}
+
+    The bounds are updated dynamically by inserting or removing a $\Delta$Q. Every time a new $\Delta$Q is calculated, the oldest $\Delta$Q in a window is removed if \#$\Delta$Qs(polling window) $>$ limit. The new $\Delta$Q is added to the calculation of the mean and confidence bounds as it is calculated. \\
+    This allows us to consider a small window of execution rather than observing the execution since the start for the bounds, this can help in observing stationarity of the system, where less sampled $\Delta$Qs can help observe short term behaviour. \\
+    With a big window of $\Delta$Qs, temporary overload may not greatly affect the mean and bounds, while, if we consider the current size of the polling window (30 $\Delta$Qs), a few $\Delta$Qs which deviate from stationary behaviour have a greater impact on the bounds and mean.
         \begin{figure}[H]
             \begin{center}
                 \includegraphics[scale=1]{tikz/ci.pdf} 
             \end{center}
-            \caption{Upper and lower bounds (dashed, red) of the mean (blue) of multiple $\Delta$Qs. In a system that behaves linearly, the bounds will be close to the mean, once the overload is approaching, or a system is showing behaviour that diverges from a linear one, the bounds will be larger.}
+            \caption{Upper and lower bounds (dashed, red) of the mean (blue) of multiple $\Delta$Qs. In a system that behaves linearly, the bounds will be close to the mean, once the overload is approaching, or a system is showing behaviour that diverges from a linear one, the bounds will appear larger.}
         \end{figure}
 
   
