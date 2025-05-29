@@ -3,124 +3,152 @@
 
 \chapter{C++ Source Files}
 
-\section{Root}
+\section{Root folder}
+
+\subsection{main.cpp}
+\lstinputlisting[style=mystyle, language=C++]{../RealTimeDeltaQSD/src/main.cpp}
 
 \subsection{Application.cpp}
 
 This is a singleton that handles the global state of the application.
 \lstinputlisting[style=mystyle, language=C++]{../RealTimeDeltaQSD/src/Application.cpp}
-\section{dashboard}
 
-\subsection{ColorRegistry.cpp}
+\section{Dashboard}
+This folder contains the widgets that compose the dashboard.
+
+\subsection{ColorRegistry.cpp} \label{code:coder}
 \sloppy This class stores all the colors for all the QtSeries, moreover, it generates HSV colors based on the algorithm taken from \url{https://martin.ankerl.com/2009/12/09/how-to-create-random-colors-programmatically/}.
 \lstinputlisting[style=mystyle, language=C++]{../RealTimeDeltaQSD/src/dashboard/ColorRegistry.cpp}
 
-\subsection{CustomLegendEntry.cpp}
+\subsection{CustomLegendEntry.cpp} \label{code:cle}
 This class represents an entry in the plot legend.
 \lstinputlisting[style=mystyle, language=C++]{../RealTimeDeltaQSD/src/dashboard/CustomLegendEntry.cpp}
 
-\subsection{CustomLegendPanel.cpp}
-This class represents the legend panel for a plot, with entries corresponding to each series.
+\subsection{CustomLegendPanel.cpp} \label{code:clp}
+This widget represents the legend panel for a plot, with entries corresponding to each series.
 \lstinputlisting[style=mystyle, language=C++]{../RealTimeDeltaQSD/src/dashboard/CustomLegendPanel.cpp}
 
-\subsection{DQPlotController.cpp}
+\subsection{DQPlotController.cpp} \label{code:dqpc}
 This class is the controller of DeltaQPlot, based on the MVC design pattern.
 \lstinputlisting[style=mystyle, language=C++]{../RealTimeDeltaQSD/src/dashboard/DQPlotController.cpp}
 
-\subsection{DQPlotList.cpp}
-This class handles the adding and removing of probes series from a plot.
+\subsection{DQPlotList.cpp} \label{code:dqpl}
+This widget handles the adding and removing of probes series from a plot.
 \lstinputlisting[style=mystyle, language=C++]{../RealTimeDeltaQSD/src/dashboard/DQPlotList.cpp}
 
-\subsection{DelaySettingsWidget.cpp}
-This class represent the slider widget to modify the parameters $dMax$, $\Delta$t and N.
+\subsection{DelaySettingsWidget.cpp} \label{code:dsw}
+This widget represent the slider widget to modify the parameters $dMax$, $\Delta$t and N.
 \lstinputlisting[style=mystyle, language=C++]{../RealTimeDeltaQSD/src/dashboard/DelaySettingsWidget.cpp}
 
-\subsection{DeltaQPlot.cpp}
-This class is the widget containing a plot and its legend.
+\subsection{DeltaQPlot.cpp} \label{code:dqp}
+This widget is the widget containing a plot and its legend.
 \lstinputlisting[style=mystyle, language=C++]{../RealTimeDeltaQSD/src/dashboard/DeltaQPlot.cpp}
 
-\subsection{MainWindow.cpp}
-This class is the main window of the application, it has a tab to the side where the widgets to control the oscilloscope are. To the left, the panel where all plots are shown.
+\subsection{MainWindow.cpp} \label{code:mw}
+This widget is the main window of the application, it has a tab to the side where the widgets to control the oscilloscope are. To the left, the panel where all plots are shown.
 \lstinputlisting[style=mystyle, language=C++]{../RealTimeDeltaQSD/src/dashboard/MainWindow.cpp}
 
-\subsection{NewPlotList.cpp}
-This class is the widget to add a new plot to the plots panel.
+\subsection{NewPlotList.cpp} \label{code:npl}
+This widget is the widget to add a new plot to the plots panel.
 \lstinputlisting[style=mystyle, language=C++]{../RealTimeDeltaQSD/src/dashboard/NewPlotList.cpp}
 
-\subsection{ObservableSettings.cpp}
+\subsection{ObservableSettings.cpp} \label{code:os}
 This widget is a tab that contains the settings for the probes (Setting a QTA, setting $dMax$).
 \lstinputlisting[style=mystyle, language=C++]{../RealTimeDeltaQSD/src/dashboard/ObservableSettings.cpp}
 
-\subsection{PollingRateWidget.cpp}
-This class
-\lstinputlisting[style=mystyle, language=C++]{../RealTimeDeltaQSD/src/dashboard/PollingRateWidget.cpp}
+\subsection{SamplingRateWidget.cpp} \label{code:srw}
+This widget allows the sampling rate to be changed via a slider.
+\lstinputlisting[style=mystyle, language=C++]{../RealTimeDeltaQSD/src/dashboard/SamplingRateWidget.cpp}
 
-\subsection{QTAInputWidget.cpp}
+\subsection{QTAInputWidget.cpp} \label{code:qiw}
+This widget allows the QTA to be set for a probe
 \lstinputlisting[style=mystyle, language=C++]{../RealTimeDeltaQSD/src/dashboard/QTAInputWidget.cpp}
 
-\subsection{Sidebar.cpp}
+\subsection{Sidebar.cpp} \label{code:side}
+This widget is a tab where the user can handle the system, add/remove plots and change the sampling rate.
 \lstinputlisting[style=mystyle, language=C++]{../RealTimeDeltaQSD/src/dashboard/Sidebar.cpp}
 
-\subsection{SnapshotViewerWindow.cpp}
+\subsection{SnapshotViewerWindow.cpp} \label{code:svw}
+This is a window to observe a snapshot from the triggers tab.
 \lstinputlisting[style=mystyle, language=C++]{../RealTimeDeltaQSD/src/dashboard/SnapshotViewerWindow.cpp}
 
-\subsection{StubControlWidget.cpp}
+\subsection{StubControlWidget.cpp} \label{code:scw}
+This widget allows to open the server on the IP and Port defined by the user and to connect to the adapter on the IP and port specified by the user.
 \lstinputlisting[style=mystyle, language=C++]{../RealTimeDeltaQSD/src/dashboard/StubControlWidget.cpp}
 
-\subsection{SystemCreationWidget.cpp}
+\subsection{SystemCreationWidget.cpp} \label{code:syscw}
+This widget allows the creation/update of a system, loading an already existing one or saving one.
 \lstinputlisting[style=mystyle, language=C++]{../RealTimeDeltaQSD/src/dashboard/SystemCreationWidget.cpp}
 
-\subsection{TriggersTab.cpp}
+\subsection{TriggersTab.cpp} \label{code:tt}
+This tab holds the widgets to set/remove triggers and view fired ones. 
 \lstinputlisting[style=mystyle, language=C++]{../RealTimeDeltaQSD/src/dashboard/TriggersTab.cpp}
 
-\section{diagram}
+\section{Outcome diagram}
 
-\subsection{Observable.cpp}
+The "diagram" folder contains everything related to outcome diagrams. Due to time related issues, there are some issues with the names. We will explain what each class represents, but it differs from the definitions which are explained in the thesis
+
+\subsection{Observable.cpp} \label{code:obs}
+The observable class represents a generic "observable" element of the outcome diagram, it is the base class for probes, outcome and operators. In this class one can calculate the observed $\Delta$Q, store the outcome instances (samples), set the parameters, set a QTA, add/remove triggers and get a snapshot. It is what we described throughout the whole paper as a probe.
+
 \lstinputlisting[style=mystyle, language=C++]{../RealTimeDeltaQSD/src/diagram/Observable.cpp}
-
-\subsection{Operator.cpp}
+\subsection{Operator.cpp} \label{code:op}
+This class represent a generic operator, it can be either a FTF, ATF or PC. It allows calculating the "calculated $\Delta$Q".
 \lstinputlisting[style=mystyle, language=C++]{../RealTimeDeltaQSD/src/diagram/Operator.cpp}
 
-\subsection{Outcome.cpp}
+\subsection{Outcome.cpp} \label{code:outc}
+This class represents a simple outcome.
 \lstinputlisting[style=mystyle, language=C++]{../RealTimeDeltaQSD/src/diagram/Outcome.cpp}
 
-\subsection{Probe.cpp}
+\subsection{Probe.cpp} \label{code:probe}
+This class represents what we described as "sub-outcome diagram". As the operator class, it allows calculating the "calculated $\Delta$Q".
 \lstinputlisting[style=mystyle, language=C++]{../RealTimeDeltaQSD/src/diagram/Probe.cpp}
 
-\subsection{System.cpp}
+\subsection{System.cpp} \label{code:sys}
+This class represents the system, the whole outcome diagram. It coordinates the various parts of the outcome diagram.
 \lstinputlisting[style=mystyle, language=C++]{../RealTimeDeltaQSD/src/diagram/System.cpp}
 
-\section{maths}
+\section{$\Delta$Q}
+The "maths" folder represents all the classes related to $\Delta$Q, where mathematical operations are being done (hence the "maths" name).
 
-\subsection{ConfidenceInterval.cpp}
+\subsection{ConfidenceInterval.cpp} \label{code:ci}
+This class represents the confidence bounds described earlier.
 \lstinputlisting[style=mystyle, language=C++]{../RealTimeDeltaQSD/src/maths/ConfidenceInterval.cpp}
 
-\subsection{DeltaQ.cpp}
+\subsection{DeltaQ.cpp} \label{code:dq}
+This class represents a $\Delta$Q. It supports calculating a $\Delta$Q given multiple samples, calculating the quartiles of a $\Delta$Q, it supports various arithmetical transformations.
 \lstinputlisting[style=mystyle, language=C++]{../RealTimeDeltaQSD/src/maths/DeltaQ.cpp}
 
-\subsection{DeltaQOperations.cpp}
+\subsection{DeltaQOperations.cpp} \label{code:dqop}
+This file contains the definition of all the operations that can be done on a $\Delta$Q or on $\Delta$Qs, specified in the implementation chapter. Convolution (naive, FFT), FTF, ATF, PC operators, rebinning.
 \lstinputlisting[style=mystyle, language=C++]{../RealTimeDeltaQSD/src/maths/DeltaQOperations.cpp}
 
-\subsection{Snapshot.cpp}
+\subsection{Snapshot.cpp} \label{code:snaps}
+This class represents a single snapshot of a probe. It contains the QTA, observable $\Delta$Q and calculated $\Delta$Q at time t.
 \lstinputlisting[style=mystyle, language=C++]{../RealTimeDeltaQSD/src/maths/Snapshot.cpp}
 
-\subsection{TriggerManager.cpp}
+\subsection{TriggerManager.cpp} \label{code:trigman}
+This class is the manager of triggers for a probe. It can add/remove/evaluate triggers.
 \lstinputlisting[style=mystyle, language=C++]{../RealTimeDeltaQSD/src/maths/TriggerManager.cpp}
 
-\subsection{Triggers.cpp}
+\subsection{Triggers.cpp} \label{code:trigg}
+This class contains the conditions of the triggers selected by the user. The trigger manager evaluates the conditions at runtime. The Actions namespace is WIP.
 \lstinputlisting[style=mystyle, language=C++]{../RealTimeDeltaQSD/src/maths/Triggers.cpp}
 
 \section{parser}
 
-\subsection{SystemBuilder.cpp}
+\subsection{SystemBuilder.cpp} \label{code:sysb}
+This class builds a new outcome diagram (system class) given an AST biult when parsing.
 \lstinputlisting[style=mystyle, language=C++]{../RealTimeDeltaQSD/src/parser/SystemBuilder.cpp}
 
-\subsection{SystemParserInterface.cpp}
+\subsection{SystemParserInterface.cpp} \label{code:syspi}
+This class is an interface to be called by the dashboard to avoid communicating directly to ANTLR. It throws errors which are caught by the caller if the parsing was unsuccessful.
 \lstinputlisting[style=mystyle, language=C++]{../RealTimeDeltaQSD/src/parser/SystemParserInterface.cpp}
 
 \section{server}
 
-\subsection{Server.cpp}
+\subsection{Server.cpp} \label{code:serv}
+This class represents the server which receives and sends messages from Erlang.
 \lstinputlisting[style=mystyle, language=C++]{../RealTimeDeltaQSD/src/server/Server.cpp}
 
 \chapter{C++ Header Files}
@@ -162,8 +190,8 @@ This class
 \subsection{ObservableSettings.h}
 \lstinputlisting[style=mystyle, language=C++]{../RealTimeDeltaQSD/src/dashboard/ObservableSettings.h}
 
-\subsection{PollingRateWidget.h}
-\lstinputlisting[style=mystyle, language=C++]{../RealTimeDeltaQSD/src/dashboard/PollingRateWidget.h}
+\subsection{SamplingRateWidget.h}
+\lstinputlisting[style=mystyle, language=C++]{../RealTimeDeltaQSD/src/dashboard/SamplingRateWidget.h}
 
 \subsection{QTAInputWidget.h}
 \lstinputlisting[style=mystyle, language=C++]{../RealTimeDeltaQSD/src/dashboard/QTAInputWidget.h}
@@ -253,34 +281,22 @@ This class
 
 \chapter{Build Configuration Files}
 
-\section{Root}
-
-\subsection{CMakeLists.txt}
+\subsection{src/CMakeLists.txt}
 \lstinputlisting[style=mystyle, ]{../RealTimeDeltaQSD/src/CMakeLists.txt}
 
-\section{dashboard}
-
-\subsection{CMakeLists.txt}
+\section{dashboard/CMakeLists.txt}
 \lstinputlisting[style=mystyle, ]{../RealTimeDeltaQSD/src/dashboard/CMakeLists.txt}
 
-\section{diagram}
-
-\subsection{CMakeLists.txt}
+\section{diagram/CMakeLists.txt}
 \lstinputlisting[style=mystyle, ]{../RealTimeDeltaQSD/src/diagram/CMakeLists.txt}
 
-\section{maths}
-
-\subsection{CMakeLists.txt}
+\section{maths/CMakeLists.txt}
 \lstinputlisting[style=mystyle, ]{../RealTimeDeltaQSD/src/maths/CMakeLists.txt}
 
-\section{parser}
-
-\subsection{CMakeLists.txt}
+\section{parser/CMakeLists.txt}
 \lstinputlisting[style=mystyle, ]{../RealTimeDeltaQSD/src/parser/CMakeLists.txt}
 
-\section{server}
-
-\subsection{CMakeLists.txt}
+\section{server/CMakeLists.txt}
 \lstinputlisting[style=mystyle, ]{../RealTimeDeltaQSD/src/server/CMakeLists.txt}
 
 \chapter{Erlang Source Files}
@@ -288,18 +304,22 @@ This class
 \section{Root}
 
 \subsection{dqsd\_otel.erl}
+The $\Delta$Q adapter, it can start, fail, end spans and start and end with\_spans, communicates to the TCP client to send outcome instances to the oscilloscope.
 \lstinputlisting[style=mystyle, language=erlang]{../dqsd_otel/src/dqsd_otel.erl}
 
 \subsection{dqsd\_otel\_app.erl}
 \lstinputlisting[style=mystyle, language=erlang]{../dqsd_otel/src/dqsd_otel_app.erl}
 
 \subsection{dqsd\_otel\_sup.erl}
+The supervisor of the adapter. It start the TCP server, client and adapter.
 \lstinputlisting[style=mystyle, language=erlang]{../dqsd_otel/src/dqsd_otel_sup.erl}
 
 \subsection{dqsd\_otel\_tcp\_client.erl}
+The TCP client, it can send outcome instances to the oscilloscope.
 \lstinputlisting[style=mystyle, language=erlang]{../dqsd_otel/src/dqsd_otel_tcp_client.erl}
 
 \subsection{dqsd\_otel\_tcp\_server.erl}
+The TCP server accepts messages from the oscilloscope and forwards them to the adapter to set the various settings.
 \lstinputlisting[style=mystyle, language=erlang]{../dqsd_otel/src/dqsd_otel_tcp_server.erl}
 
 \chapter{Erlang Application Files}
@@ -307,4 +327,5 @@ This class
 \section{Root}
 
 \subsection{dqsd\_otel.app.src}
+The app.src file of the adapter.
 \lstinputlisting[style=mystyle, language=erlang]{../dqsd_otel/src/dqsd_otel.app.src}
