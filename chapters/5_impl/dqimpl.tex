@@ -2,8 +2,7 @@
     A probe's $\Delta$Q can be represented internally by a PDF and displayed as an ECDF. Here is how both can be calculated given $n$ outcome instances.
     
     \subsubsection{PDF}
-  We approximate the PDF of the observed $\Delta$Q via a histogram. We partition the values into $N$ bins of equal width, this is required to ease future calculations.
-        Given $\lbrack x_i, x_{i+1} \rbrack$ the interval of a bin $i$, where $x_i = i\Delta x$, and $\hat{p}(x_i)$ the value of the PDF at bin $i$, for $n$ bins:
+  We approximate the PDF of the observed $\Delta$Q via a histogram. We partition the values into $N$ bins of equal width, Given $\lbrack x_i, x_{i+1} \rbrack$ the interval of a bin $i$, where $x_i = i\Delta t$, and $\hat{p}(x_i)$ the value of the PDF at bin $i$, for $n$ bins:
         \begin{equation}
             \begin{cases}
                 \hat{p}(i) = \dfrac{s_i}{n}, \text{if } i \le n \\
@@ -76,7 +75,7 @@
 
 
     \subsection{Confidence bounds}
-       To observe the stationarity of a system we must observe a window of $\Delta$Qs of an observable and calculate confidence bounds over said windows. We present here the formulae required to give such bounds with 68\% confidence level. 
+       To observe the stationarity of a system we must observe a window of $\Delta$Qs of a probe e and calculate the confidence bounds of the observed and calculated $\Delta$Qs over said windows. We present here the formulae required to give such bounds with 68\% confidence level. 
 
         For $x_{ij}$ the value of an ECDF $j$ at bin $i$, the mean of all ECDFs for the bin over a window is:
             \begin{equation}

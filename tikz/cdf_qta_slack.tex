@@ -7,7 +7,7 @@
 \begin{document}
 \begin{tikzpicture}[ dot/.style = {circle, fill, semitransparent, inner sep=2pt}]
 \begin{axis}[
-        title={QTA and $\Delta$Q$_{req}$: slack and hazard},
+        title={QTA: slack and hazard},
     xlabel={Delay (s)},
     ylabel={$\Delta$Q(x)},
     xmin=0, xmax=0.052,
@@ -138,10 +138,10 @@
     (0.05, 0.75)
     (0.05, 0.9)
 }
-node[pos=0.25,below right] {$\Delta Q_{req}$}
+node[pos=0.25,below right] {QTA}
 ;
 
-\draw[line width = 0.25mm,color=green, dashed, <->, ] (0.016, 0.5) -- (0.025,0.5) node[above left, black] {slack};
+\draw[line width = 0.25mm,color=violet, dashed, <->, ] (0.016, 0.5) -- (0.025,0.5) node[above left, black] {slack};
 
 
 \path[name intersections={of=A1 and A2,name=i,total=\t}]

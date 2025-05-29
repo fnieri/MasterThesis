@@ -8,9 +8,12 @@
     The following sections are a summary of multiple articles and presentation formalising the paradigm.
      
  \subsection{Outcome}
-           An outcome $O$ is a specific system behaviour that can be observed to start at some point in time and \textit{\textbf{may}} be observed to complete at some later time. \cite{dq-br}
-        Formally, what the system obtains by performing one of its tasks. One task corresponds to one outcome and viceversa. When an outcome is performed, it means that the task of an outcome is performed. \cite{myo}
+           An outcome $o$ is a specific system behaviour that can be observed to start at some point in time and \textit{\textbf{may}} be observed to complete at some later time. \cite{dq-br}
+        Formally, what the system obtains by performing one of its tasks. One task corresponds to one outcome and viceversa. When an outcome is performed, it means that the task of an outcome is performed.
      
+        The particularity of outcomes is that they can represent multiple levels of granularity, suppose an outcome may be beyond the current system's control (e.g. a database/cloud request), is non-atomic (can be broken down in multiple sub-outcomes). These outcomes can be represented as black-boxes, as the system gets refined, these outcomes can then be modeled by multiple outcomes. \\ 
+        Even though these outcomes are defined as "black boxes", they still have timeliness constraints like any other outcome. \cite{myo}
+
      \paragraph{Observables}
     Each outcome has two starting sets of events: the starting sets and the ending sets. Such sets are called the \textit{observables}. Once an event from the starting set occurs, there is no guarantee that a corresponding event in the terminating set will occur within the duration limit (required time to complete). An observable is \textit{done}  when it occurs during the time limit. \cite{art}
 
@@ -29,7 +32,7 @@
 \subsection{Quality attenuation ($\Delta$Q)}
         Assume a component $C$ which receives a message $m_{in}$ and outputs a message $m_{out}$ after a delay $d$. Over multiple executions, we will have observed multiple delays which can be represented as a cumulative definition where $p$ percent of delays have delay $\le d$. \cite{art} 
 
-        \textbf{$\Delta$Q} is a cumulative distribution function that defines both \textit{latency} and \textit{failure probability} between a start and end event \cite{dq-tut}
+        \textbf{$\Delta$Q} is a cumulative distribution function that defines both \textit{latency} and \textit{failure probability} between a start and end event. \cite{dq-tut}
 
         In an ideal system, an outcome would deliver a desired behaviour without error, failure, delay, but this is not the case. The quality of an outcome response "attenuated to the relative ideal" (the cumulative distribution function) is called "quality attenuation" ($\Delta$Q) and can depend on many factors (geographical, physical \dots). Its distribution may be modelled by a random variable.
 
@@ -41,7 +44,7 @@
         \begin{center}
             \includegraphics{tikz/intangible.pdf}
         \end{center}
-        \caption{Intangible mass (red) of a $\Delta$Q, the observable had a failure rate of about 5\% }
+        \caption{Intangible mass (red) of a $\Delta$Q with failure rate of about 5\% }
     \end{figure}
    
   \subsection{Failure semantics}
@@ -61,7 +64,7 @@
         A system \textit{satisfies timeliness} if $\Delta$Q$_{obs}$ $\le$ $\Delta$Q$_{req}$. \cite{art}
      
     \subsection{QTA, required $\Delta$Q}
-         The \textit{Quantitative Timeliness Agreement} (QTA) maps objective measurements to the subjective perception of application performance. It specifies what the base system does and its limits \cite{dq-br} \cite{myo}.
+         The \textit{Quantitative Timeliness Agreement} (QTA) maps objective measurements to the subjective perception of application performance. It specifies what the base system does and its limits. \cite{dq-br} \cite{myo}
     
     \paragraph{Slack} There is performance \textit{slack} when a $\Delta$Q is strictly less than the requirement,
 
@@ -73,16 +76,15 @@
             \begin{center}
                 \includegraphics[scale=1]{tikz/cdf_qta_slack.pdf}
             \end{center}
-            \caption{The system in blue is showing slack and satisfies the requirement, the system in orange is showing signs that it cannot handle the stress, it is not respecting the $\Delta$Q$_{req}$.}%
+            \caption{The system in blue is showing slack and satisfies the requirement. The system in orange is showing signs that it cannot handle the stress, it is not respecting the system requirements imposed by the QTA.}%
         \end{figure}
 
     \subsection{Outcome diagram}
         An outcome diagram is central to capture the causal relationships between the outcomes. It shows the causal connections between all the outcomes we are interested in, and it allows computing the $\Delta$Q for the whole system \cite{dq-tut}. It maps a system's behaviour as seen from outside to concrete outcomes \cite{art}.
-
         There are four different operators that represent the relationships between outcomes. \cite{dq-tut}
 
     \subsubsection{Sequential composition}
-        If we assume two outcomes $O_A$, $O_B$ where end event of $O_A$ is the start event of $O_B$, the two outcomes can be sequentially composed. The $\Delta$Q of $O_{AB}$ is given by the convolution of the PDFs of $O_A$ and $O_B$.
+        If we assume two outcomes $O_A$, $O_B$ where the end event of $O_A$ is the start event of $O_B$, the two outcomes can be sequentially composed. The total delay $\Delta$Q$_{AB}$ is given by the convolution of the PDFs of $O_A$ and $O_B$ ($O_A \circledast O_B$).
         
         \begin{figure}[H]
             \begin{center}
@@ -93,14 +95,16 @@
         Where convolution ($\circledast$) between two PDF is:
         \begin{equation}
             PDF_{AB}(t) =\int\limits_0^t PDF_A(\delta) \cdot PDF_B(t-\delta)d\delta 
-            \label{eq:}
+            \label{eq:conv_1}
         \end{equation}
 
-        Thus $\Delta$Q$_{AB}$:
+        Thus, $\Delta$Q$_{AB}$:
         \begin{equation}
-            \Delta Q_{AB} = \Delta Q_A \circledast \Delta Q_B
-            \label{eq:}
+            \Delta Q_{AB} = PDF_{A} \circledast PDF_{B}
+            \label{eq:convolution_pdf}
         \end{equation}
+
+        Convolution is the only operation which is based on the PDFs, the following operations are based on the CDF of the $\Delta$Qs (hence the use of the $\Delta$Q notation).
         
     \subsubsection{First to finish (FTF)}
             If we assume two independent outcomes $O_A$, $O_B$ with the same start event, first-to-finish occurs when at least one end event occurs, it can be calculated as:
@@ -179,8 +183,42 @@
     
     These operators can be assembled together to create an outcome diagram, later on, we will see how one can go from the graphical representation to outcome diagrams which can be used in the $\Delta$Q oscilloscope.
     
+    \subsection{Outcome diagrams refinement}
+        An important feature of outcome diagrams is the ability to be able to design a system even with \textit{"black-boxes"}, before the complete details of it are known. \\
+        An outcome diagram can be "unboxed" by refining the outcomes that compose it. We can adapt a situation described in Mind your Outcomes to understand how refinement can allow the user to have a very precise representation of a system. \cite{myo}
+        
+        We first start with a black-box, unnamed outcome with start event $A$ and end event $Z$, somewhere in the system. The first refinement step would be giving the outcome a name.
+
+      \begin{figure}[H]
+            \begin{center}
+                \includegraphics[scale = 1]{tikz/black_box.pdf}
+            \end{center}
+            \caption{Refinement from black box to named outcome.}
+            \label{fig:bb}
+        \end{figure}
+
+    The system can be further refined by adding outcomes that represent tasks. For example, the engineer might believe that it will take two tasks to get from A to Z. We can then add another outcome, sequentially composed, to represent this situation.
+
+       \begin{figure}[H]
+            \begin{center}
+                \includegraphics[scale = 1]{tikz/out_2.pdf}
+            \end{center}
+            \caption{Further refinement from one task to two tasks.}
+            \label{fig:2_hops}
+        \end{figure}
+
+        We can also model the chance of executing two tasks as a probabilistic choice, where there is p2 probability that the execution from A to Z will execute two tasks. The outcome diagram can be refined as a probabilistic choice.
+
+   \begin{figure}[H]
+            \begin{center}
+                \includegraphics[scale = 1]{tikz/ref_op.pdf}
+            \end{center}
+            \caption{Refinement as probabilistic choice of executing either one or two tasks.}
+            \label{fig:prob_ref}
+        \end{figure}
+    In essence, the refinement could model a very fine-grained representation of the system by further refining the system. The model could be further refined to represent the probability of executing $n$ tasks. This represents the power of outcome diagrams to represent system diagrams with high precision.
     \subsection{Independence hypothesis}    
-        Assume two sequentially composed outcomes $o_1$, $o_2$ running on the same processor. We observe the delay of execution from the start event of $o_1$ to the end event of $o_2$. 
+        Assume two sequentially composed outcomes $o_1$, $o_2$ running on the same processor. The delay of execution can be observed from the start event of $o_1$ to the end event of $o_2$. 
         \begin{figure}[H]
             \begin{center}
                 \includegraphics[scale=1]{tikz/indep.pdf}
@@ -190,6 +228,7 @@
         At low load, the two components behavior will be independent, the system will behave linearly, the observed total delay of execution will be equal to the result of convolution of $o_1$, $o_2$ ($o_1 \circledast o_2$).
         
         When load increases, the two components will start to show dependent behaviour due to the processor utilisation increasing. The $\Delta$Q of the observed delay will then deviate from the $\Delta$Q which is the result of the convolution of $o_1, o_2$
+        
         \begin{figure}[H]
             \begin{center}
                 \includegraphics[scale=1]{tikz/cdf_indep.pdf}
@@ -198,4 +237,4 @@
             \label{fig:cdf_indep}
         \end{figure}
 
-        When the system is far from being overloaded, the effect is noticeable thanks to $\Delta$QSD even if the system is far from being overloaded. As the cliff edge of overload is approached, the nonlinearity will increase. \cite{post}
+        When the system is far from being overloaded, the effect is noticeable thanks to $\Delta$QSD even if the system is far from being overloaded. As the cliff edge of overload is approached, the nonlinearity will increase \cite{post}. These theoretical results can be observed in practice in the oscilloscope.
