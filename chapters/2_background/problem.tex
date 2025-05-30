@@ -6,20 +6,13 @@
     Imagine an Erlang application instrumented with OpenTelemetry, suddenly, the application starts slowing down, and the execution of a function takes 10 seconds instead of the usual 1 second. Between its start and its end, the user instrumenting the application sees nothing in their dashboard.
     
     This is a big problem! One would like to know right away if something is wrong with their application. This is where the $\Delta$QSD paradigm and the $\Delta$Q oscilloscope come in handy. \\ 
-   By leveraging $\Delta$QSD notion of early failure and QTAs, problems can be detected right away in the oscilloscope. 
-    
-    \begin{figure}[H]
-        \begin{center}
-            \includegraphics{tikz/start_end.pdf}
-        \end{center}
-        \caption{Execution of a long span in OpenTelemetry, the user will only be notified after 10 seconds that the function has ended (and taken too long).}
-    \end{figure}
-
-    \begin{figure}[H]
+   Using $\Delta$QSD, we can set a maximum delay ($dMax$) to be notified quickly that there is a problem. This allows for them to be detected right away in the oscilloscope.
+   
+   \begin{figure}[H]
         \begin{center}
             \includegraphics{tikz/start_end_dmax.pdf}
         \end{center}
-        \caption{Execution of a long span in OpenTelemetry, the $dMax$ deadline allows knowing that the span has taken too long.}
+        \caption{Execution of a long span in OpenTelemetry. Normally, the user will be notified after 10 seconds that the function has ended. The $dMax$ deadline allows knowing that the span has taken too long.}
         \label{fig:otel_dmax}
     \end{figure} 
 
@@ -28,6 +21,6 @@
         OpenTelemetry presents a bigger problem, what happens when there are long-running spans? Worse, what happens when spans are not actually terminated?
         
         OpenTelemetry limits the length of its spans, moreover, those who are not terminated are lost and not exported. Why? They are the ones that tell more about a program execution.
-        If the span is the parent/root span, its effect could trickle down to child spans. We can quickly see how this can become problematic, all the information about an execution of your program \dots lost. Moreover, a span could not be terminated for trivial reasons: refreshing a tab, network failures, crashes \dots \cite{otel-l}. Hazel Weakly, the author of the cited article states that there are a few hacks that can be implemented: having shorter spans, carrying data in child spans, saving spans in a log to track spans which were not ended to manually set an end time; why the need to circumvent limitations when observing a system?
+        If the span is the parent/root span, its effect could trickle down to child spans. We can quickly see how this can become problematic, all the information about an execution of your program \dots lost. Moreover, a span could not be terminated for trivial reasons: refreshing a tab, network failures, crashes \dots \cite{otel-l}. Hazel Weakly, the author of the cited article, states that there are a few solutions that can be implemented: having shorter spans, carrying data in child spans, saving spans in a log to track spans which were not ended to manually set an end time; why the need to circumvent limitations when observing a system?
 
      We believe that the adapter we provide can be a great start to improve observability requirements surrounding OpenTelemetry. Data about spans will always be carried to the oscilloscope, whether the span is long or non-terminated.

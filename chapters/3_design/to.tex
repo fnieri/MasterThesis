@@ -1,5 +1,5 @@
 \subsection{Extending failure}
-   Recall the definition of failure: \textit{"an input message $m_{in}$ that has no output message $m_{out}$"} \cite{art}. In the previous section \ref{fig:otel_dmax}, we also introduced the notion of a maximum delay. 
+   Recall the definition of failure: \textit{``an input message $m_{in}$ that has no output message $m_{out}$''} \cite{art}. In the previous section \ref{fig:otel_dmax}, we also introduced the notion of a maximum delay. 
 
    By extending the notion of failure to include $dMax$, we can know right away when execution is straying away from engineer defined behaviour, avoiding having to wait until the execution is done. In $\Delta$QSD, an execution may as well take 10 or 15 seconds, but if the delay of execution is $> dMax$, we consider that \textbf{failed} right away, we do not need to know the total execution time, the execution has already taken too much! Moreover, the full span will be exported regardless to monitoring tools which were set up by the user. 
 
@@ -7,7 +7,7 @@
 
 The notion of failure is extended to the following definition:
         \begin{center}
-            \textit{"An input message $m_{in}$ that has no output message $m_{out}$ after $dMax$"} 
+            \textit{``An input message $m_{in}$ that has no output message $m_{out}$ after $dMax$''} 
         \end{center}
     We can leverage this new definition to observe the system and the $\Delta$Qs in real time.
 

@@ -5,6 +5,23 @@
         \item We then split the design of the oscilloscope in two. First explaining the Erlang side, where the system to be tested is. Secondly, we explain the C++ side. Both chapters explain how probes can be inserted and made to work together.
         \item Lastly, we provide high level concepts of triggers and execution windows, the key elements of the oscilloscope. 
     \end{itemize}
+
+    Before delving deeper into the chapter, we present the global system design diagram.
+
+    \begin{figure}[H]
+        \begin{center}
+            \includegraphics[width=\textwidth]{tikz/sut-stub-osc.pdf}
+        \end{center}
+        \caption{Global system design diagram. The two sides communicate via TCP sockets to share information about outcome instances and probe parameters.}
+    \end{figure}
+
+    We can recognise two distinct parts:
+    \begin{itemize}
+        \item The application side, where the Erlang system under test is. Consequently, it's where the $\Delta$Q adapter will be, which performs the translation of spans to outcome instances.
+        \item The oscilloscope side, where the $\Delta$Q oscilloscope receives information from the adapter attached to the system under test to display graphs, define outcome diagrams and set parameters for probes.
+    \end{itemize}
+
+
     \section{Measurement concepts}
     \input{chapters/3_design/probes.tex}
     \input{chapters/3_design/to.tex}

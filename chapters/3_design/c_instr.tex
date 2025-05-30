@@ -18,7 +18,7 @@
             \caption{Probes inserted in the outcome diagram of the previous component diagram in \cref{fig:probes}.}
         \end{figure}
        
-    The \textbf{observables} are an abstract representation of events. Consider the previous code snippet \cref{code:adapter}: the $start$ event of "probe" and worker$_1$'s start event are subsequent instructions. The probe's start event is practically the same as worker$_1$'s start event, indeed, they could be overlapped in the graph above. We nevertheless show the distinction to show that probe and worker$_1$ need to be started differently in Erlang as the information they carry is about two distinct instances. Furthermore, this difference is remarked in the definition of outcome diagrams, for which we provide a syntax in the following chapter. 
+    The \textbf{observables} are an abstract representation of events. Consider the previous code snippet \cref{code:adapter}: the $start$ event of ``probe'' and worker$_1$'s start event are subsequent instructions. The probe's start event is practically the same as worker$_1$'s start event, indeed, they could be overlapped in the graph above. We nevertheless show the distinction to show that probe and worker$_1$ need to be started differently in Erlang as the information they carry is about two distinct instances. Furthermore, this difference is remarked in the definition of outcome diagrams, for which we provide a syntax in the following chapter. 
     
     As for operators, probes are automatically attached to the components inside them and to the start event and end events of the operators (its observables). 
 

@@ -10,8 +10,8 @@
             component_i -> component_j 
         \end{minted}
         
-        \subsection{Sub-outcome diagrams }
-            Multiple sub-outcome diagrams can be created for multiple parts of the system, these "sub-outcome diagrams" can then be linked together to from the global system outcome diagram.  
+        \subsection{Sub-outcome diagrams}
+            Multiple sub-outcome diagrams can be created for multiple parts of the system. They can then be linked together to form the global system outcome diagram. Sub-outcome diagrams can observe one or multiple components.
         Recall \cref{fig:probes_o}, we defined a probe which observes the sequential composition of $o_1, o_2$. The probe (sub-outcome diagram) $p_1$ can be defined as:
         \begin{minted}{text}
             p_1 = o_1 -> o_2;
@@ -42,7 +42,7 @@
             \end{minted}
 
         \subsubsection{First-to-finish operator}
-            A first-to-finish operator needs to be defined as follows.
+            A first-to-finish operator needs to be defined as follows:
             \begin{minted}{text}
                 f:name(component1, component2...)
             \end{minted} 
@@ -64,4 +64,20 @@
         \end{minted}
         The above example is not allowed and will raise an error when defined.  
 
+    \subsection{Outcome diagram example}
+        We provide a sample example of an outcome diagram definition. We also provide its resulting outcome diagram with probes inserted.
+        \begin{figure}[H]
+        \begin{minted}{text}
+            two_hops = o2 -> o3;
+            total = p:pc[0.9, 0.1](o1, s:two_hops);
+        \end{minted}
+            \caption{Sample textual definition of an outcome diagram.}
+        \label{code:outcd}
+        \end{figure}
 
+        \begin{figure}[H]
+            \begin{center}
+                \includegraphics[scale=1.3]{tikz/system.pdf}
+            \end{center}
+            \caption{Resulting outcome diagram for definition \ref{code:outcd}.}%
+        \end{figure}

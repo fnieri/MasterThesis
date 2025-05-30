@@ -5,8 +5,23 @@
     You need to provide a textual description of your outcome diagram following the syntax which was defined previously.
     You can create your system by clicking on the \textbf{Create or edit system} button. If the parser successfully parsed the text, your system will be created and you can start setting the parameters for your probes.
     
+    \begin{figure}[H]
+        \begin{center}
+            \includegraphics[width = \textwidth]{img/manual/after_create.png}
+        \end{center}
+        \caption{After selecting create system, if the system definition is correct, the inserted probes will be available to be plotted.}
+    \end{figure}
+
     If the parser does not correctly parse the text, it will show a popup indicating the line where the error was produced and what it was expecting. 
-    
+     
+    \begin{figure}[H]
+        \begin{center}
+            \includegraphics[width = \textwidth]{img/manual/cycle.png}
+        \end{center}
+        \caption{Creation of a system with a cycle}
+    \end{figure}
+
+
     \subsection{Saving the system definition}
 
     The button \textbf{Save system to} gives you the possibility to save the textual definition of the outcome diagram to a file, you can save the file to any extension, but preferably the file will have the \textbf{.dq} extension.
@@ -27,12 +42,40 @@
     
     \subsubsection{Adding a plot}
 
-    Multiple probes can be added at once in your plot, you can select the probes you want to add to a new plot by selecting them in the \textbf{"Add a new plot"} section. Then by clicking the \textbf{"Add plot"} button, the selected probes will be added to the plot.
+    Multiple probes can be added at once in your plot, you can select the probes you want to add to a new plot by selecting them in the \textbf{``Add a new plot''} section. Then by clicking the \textbf{``Add plot''} button, the selected probes will be added to the plot. 
+ 
+    \begin{figure}[H]
+        \begin{center}
+        \includegraphics[width = \textwidth]{img/manual/add_plot2.png}
+        \end{center}
+        \caption{Selecting the probes to add to a plot}
+    \end{figure}
+
+    \begin{figure}[H]
+        \begin{center}
+        \includegraphics[width = \textwidth]{img/manual/running.png}
+        \end{center}
+        \caption{After adding the probe's to a plot, if the adapter is already sending spans, the plot will show the real time $\Delta$Qs.}
+    \end{figure}
 
 \subsubsection{Editing a plot}
     You can remove the probes you have added to the plot by first clicking to it, this sets the plot as the \textbf{selected plot}. Once you have clicked the plot, a section will pop up beneath the rest of the controls on the sidebar. 
-    
-    In the section there are two subsections, one which shows the selected components which form the plot (those you have added previously), and the available components. You can select the probes you want to remove in the \textbf{"selected components"} zone, by clicking \textbf{"Remove selected components"} the components will be removed from the plot. Inversely, in the \textbf{"Available components"} section, you can select the plots you want to add, and by clicking \textbf{"Add selected components"} you can add the selected components to the selected plot.
+        
+
+    In the section there are two subsections, one which shows the selected components which form the plot (those you have added previously), and the available components. You can select the probes you want to remove in the \textbf{``selected probes''} zone, by clicking \textbf{"Remove selected probes"} the components will be removed from the plot. Inversely, in the \textbf{``Available probes''} section, you can select the plots you want to add, and by clicking \textbf{"Add selected probes"} you can add the selected components to the selected plot.
+
+        \begin{figure}[H]
+            \centering
+            \begin{subfigure}{.5\textwidth}
+                \centering
+                \includegraphics[width=0.98\textwidth]{img/manual/modify_plot.png}
+            \end{subfigure}%
+            \begin{subfigure}{.5\textwidth}
+                \centering
+                \includegraphics[width =0.98\textwidth]{img/manual/added_plot.png}
+            \end{subfigure}
+            \caption{To modify a plot, click on the probe you want to remove or add. Here, for example, worker\_1's probe was added by selecting it below and clicking "Add selected probes".}
+        \end{figure}
 
 \subsection{Removing a plot}
     By left-clicking the plot, a popup appears, you can click \textbf{"Remove plot"}, this removes it from the selected plot.

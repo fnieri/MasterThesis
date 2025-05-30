@@ -21,11 +21,11 @@
     The system has two components \texttt{worker\_1}, \texttt{worker\_2}. Each individual component is composed of a queue of size $K = 1000$ and a worker process.
     
     The system sends $n$ messages per second following a Poisson distribution to \texttt{worker\_1}'s queue. 
-    The queue notifies its worker, which then does $N$ loops, which are defined upon start, of fictional work. Once done, worker\_1 then passes a message to \texttt{worker\_2}'s queue, which has another queue of same size, who passes the message to \texttt{worker\_2}'s worker, which does the same amount of loops as worker\_1. When a worker completes its work, it notifies its queue, freeing one "message" from its buffer size and allowing the next message to be processed.
+    The queue notifies its worker, which then does $N$ loops, which are defined upon start, of fictional work. Once done, worker\_1 then passes a message to \texttt{worker\_2}'s queue, which has another queue of same size, who passes the message to \texttt{worker\_2}'s worker, which does the same amount of loops as worker\_1. When a worker completes its work, it notifies its queue, freeing one message from its buffer size and allowing the next message to be processed.
     
     If the queue's buffer is overloaded, it will drop the incoming message and consider the execution a failure.
     
-    A probe "$probe$" is defined, which observes the execution from when the message is sent to \texttt{worker\_1} up until \texttt{worker\_2} is done.
+    A probe named ``$probe$'' is defined, which observes the execution from when the message is sent to \texttt{worker\_1} up until \texttt{worker\_2} is done.
     \begin{figure}[H]
         \begin{center}
             \includegraphics[scale=1.2, width=\textwidth]{tikz/mm1k.pdf} 
@@ -41,7 +41,7 @@
 
     The oscilloscope shows the engineer that their assumptions do not correspond to the actual system $\Delta$Q, the user can then modify the parameters to observe the actual system's behaviour. By setting $dMax$ to 8 ms, they can observe the worker's $\Delta$Qs failure approaching 0.
 
-    On the other hand, the engineer's assumption could have been what he truly expected from the system, in this case, the oscilloscope tells him that the system is not behaving as expected. 
+    On the other hand, the engineer's assumption could have been what they truly expected from the system, in this case, the oscilloscope tells him that the system is not behaving as expected. 
 \begin{figure}[H]
             \centering
             \begin{subfigure}{.5\textwidth}
@@ -57,7 +57,7 @@
             \label{fig:w1w2hb}
             \caption{Left: worker\_1 $\Delta$Q with $dMax = 4ms$. (Green, between the arrow): Mean and confidence bounds. (1, blue): Observed $\Delta$Q. The worker failure tends to 0.25. \\
             Right: worker\_1 $\Delta$Q with $dMax$ = 8ms. The worker failure now tends to 0. \\
-            In both graphs we can observe how the observed $\Delta$Q at time t is not precise, the step function representation of it fluctuates. The mean and confidence bounds provide a more precise representation of the $\Delta$Qs of worker\_1 over a polling window.}%
+            In both graphs we can observe how the observed $\Delta$Q of the sampling window is not precise. The step function representation of it fluctuates. The mean and confidence bounds provide a more precise representation of the $\Delta$Qs of worker\_1 over a polling window.}%
             \end{figure}
     \subsubsection{Low Load} 
     Let's first observe the system at low load, we will send 50 messages per second to observe the system under test to get key properties.
@@ -97,7 +97,7 @@
  
     
 \subsubsection{High load}
-    Performance at 0.5 offered load are already remarkable, the $\Delta$Qs are shifting.    We can go even further and observe the system under high load situations. We set $\lambda = 200 \rightarrow \rho = 0.83$, just above the high load threshold.
+    Performance degradation at 0.5 offered load is already remarkable, the $\Delta$Qs even if the difference is seemingly minimal. We can go even further and observe the system under high load situations. We set $\lambda = 200 \rightarrow \rho = 0.83$, just above the high load threshold.
     
        \begin{figure}[H]
             \centering

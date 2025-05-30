@@ -672,8 +672,8 @@
       \strng{authorfullhash}{c9c2d3a24c7583a7e7f7f0789505c4ad}
       \strng{authorfullhashraw}{c9c2d3a24c7583a7e7f7f0789505c4ad}
       \field{extraname}{6}
-      \field{sortinit}{5}
-      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{note}{Accessed: (28/05/2025)}
@@ -684,6 +684,37 @@
       \endverb
       \verb{url}
       \verb https://opentelemetry.io/docs/languages/erlang/exporters/
+      \endverb
+    \endentry
+    \entry{jg}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=99843117a36cd53a2358856e619efe2a}{%
+           family={Authors},
+           familyi={A\bibinitperiod},
+           given={The\bibnamedelima Jaeger},
+           giveni={T\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+      }
+      \strng{namehash}{99843117a36cd53a2358856e619efe2a}
+      \strng{fullhash}{99843117a36cd53a2358856e619efe2a}
+      \strng{fullhashraw}{99843117a36cd53a2358856e619efe2a}
+      \strng{bibnamehash}{99843117a36cd53a2358856e619efe2a}
+      \strng{authorbibnamehash}{99843117a36cd53a2358856e619efe2a}
+      \strng{authornamehash}{99843117a36cd53a2358856e619efe2a}
+      \strng{authorfullhash}{99843117a36cd53a2358856e619efe2a}
+      \strng{authorfullhashraw}{99843117a36cd53a2358856e619efe2a}
+      \field{extraname}{7}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Accessed: (19/05/2025)}
+      \field{title}{Jaeger}
+      \field{year}{2025}
+      \verb{urlraw}
+      \verb https://www.jaegertracing.io/
+      \endverb
+      \verb{url}
+      \verb https://www.jaegertracing.io/
       \endverb
     \endentry
     \entry{datadog}{misc}{}{}
@@ -790,7 +821,7 @@
       \strng{authornamehash}{c9c2d3a24c7583a7e7f7f0789505c4ad}
       \strng{authorfullhash}{c9c2d3a24c7583a7e7f7f0789505c4ad}
       \strng{authorfullhashraw}{c9c2d3a24c7583a7e7f7f0789505c4ad}
-      \field{extraname}{7}
+      \field{extraname}{8}
       \field{sortinit}{5}
       \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
       \field{labelnamesource}{author}
@@ -1131,6 +1162,33 @@
       \verb https://rebar3.org/docs/basic_usage/
       \endverb
     \endentry
+    \entry{bin-erl}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=f7e853158b776246c53345b938159cc1}{%
+           family={Erlang},
+           familyi={E\bibinitperiod}}}%
+      }
+      \strng{namehash}{f7e853158b776246c53345b938159cc1}
+      \strng{fullhash}{f7e853158b776246c53345b938159cc1}
+      \strng{fullhashraw}{f7e853158b776246c53345b938159cc1}
+      \strng{bibnamehash}{f7e853158b776246c53345b938159cc1}
+      \strng{authorbibnamehash}{f7e853158b776246c53345b938159cc1}
+      \strng{authornamehash}{f7e853158b776246c53345b938159cc1}
+      \strng{authorfullhash}{f7e853158b776246c53345b938159cc1}
+      \strng{authorfullhashraw}{f7e853158b776246c53345b938159cc1}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Accessed: (30/05/2025)}
+      \field{title}{Binary module}
+      \verb{urlraw}
+      \verb https://www.erlang.org/docs/24/man/binary
+      \endverb
+      \verb{url}
+      \verb https://www.erlang.org/docs/24/man/binary
+      \endverb
+    \endentry
     \entry{erl-s}{misc}{}{}
       \name{author}{1}{}{%
         {{hash=07bf2ea0b739d056d25ada96f6e845c3}{%
@@ -1229,8 +1287,8 @@
       \strng{editornamehash}{5631d18b62cc5e9ff492dce79c393f5a}
       \strng{editorfullhash}{5631d18b62cc5e9ff492dce79c393f5a}
       \strng{editorfullhashraw}{5631d18b62cc5e9ff492dce79c393f5a}
-      \field{sortinit}{7}
-      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{booktitle}{Proceedings of the 32nd {ACM} {SIGPLAN} Conference on Programming Language Design and Implementation, {PLDI} 2011, San Jose, CA, USA, June 4-8, 2011}
@@ -1365,7 +1423,6 @@
       \endverb
     \endentry
   \enddatalist
-  \missing{pc_spec}
 \endrefsection
 \endinput
 

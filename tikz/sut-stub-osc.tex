@@ -1,4 +1,4 @@
-\documentclass[tikz,border=10pt]{standalone}
+\documentclass[tikz,border=2pt]{standalone}
 \usepackage{tikz}
 \usetikzlibrary{positioning, shapes.geometric}
 \usetikzlibrary{patterns,snakes}
@@ -27,11 +27,11 @@
 
     \draw [->] (server.south) to [bend right = 90] (osc.south)  node[below left=20pt] {\footnotesize send Samples};
 
-    \draw [->] (5, 3) -- ([xshift=-1.5cm]osc.north) node[pos=0.1, above] {outcome diagram};
+    \draw [->] (5, 2.5) -- ([xshift=-1.5cm]osc.north) node[pos=0.1, above] {outcome diagram};
 
-    \draw [->] (9, 3) -- ([xshift=0.5cm]osc.north) node[pos=0.1, above] {parameters (incl. triggers)};
+    \draw [->] (9, 2.5) -- ([xshift=0.5cm]osc.north) node[pos=0.1, above] {parameters (incl. triggers)};
 
-    \draw[->] (osc.east) -- (10, 0) node[right] {$\Delta$Q display};
+    \draw[->] (osc.east) -- (9.5, 0) node[right] {$\Delta$Q display};
 
     \draw [
     thick,
@@ -42,7 +42,7 @@
     },
     decorate
 ] (sut.west) -- (stub.east)
-node [pos=0.5,anchor=north,yshift=-3cm] {Erlang};
+    node [pos=0.5,anchor=north,yshift=-3cm] {Application side (Erlang)};
 
 
     \draw [
@@ -66,7 +66,7 @@ node [pos=0.5,anchor=north,yshift=-3cm] {TCP};
     },
     decorate
 ] (server.west) -- (osc.east)
-node [pos=0.5,anchor=north,yshift=-3cm] {C++};
+node [pos=0.5,anchor=north,yshift=-3cm] {Oscilloscope side (C++)};
 
 
     \end{tikzpicture}

@@ -1,12 +1,17 @@
 \section{Contributions}
-    There are a few contributions that make the master thesis and thus, the oscilloscope, possible:
+    We make the following principal contributions in the master thesis:
     \begin{itemize}
-        \item A graphical interface to display probes' $\Delta$Qs.
-        \item An Erlang OpenTelemetry adapter to give OpenTelemetry spans a notion of failure, to translate them to outcome instances and to communicate with the oscilloscope.
-        \item The implementation of $\Delta$QSD concepts from theory to practice, including a textual syntax to create outcome diagrams, derived from the original algebraic syntax.
-        \item An efficient Fast Fourier Transform convolution algorithm based on the FFTW3 library.
-        \item A system of triggers to catch rare events when system behaviour fails to meet quality requirements. The triggers being fired create a snapshot of the system, which gives users insights about their system's behaviour.
-        \item Synthetic applications to test the effectiveness of $\Delta$QSD on diagnosing running systems.
+        \item The $\Delta$Q oscilloscope, from design to implementation, to plot real-time $\Delta$Q graphs. The oscilloscope contributions include:
+        \begin{itemize}
+            \item A graphical interface in Qt.
+            \item The underlying implementation of $\Delta$QSD concepts, including a textual syntax to create oucome diagrams derived from the original algebraic syntax.
+            \item Efficient convolution algorithms.
+            \item A system of triggers to catch rare events when system behaviour fails to meet quality requirements.
+        \end{itemize}
+        \item The $\Delta$Q adapter to communicate from the Erlang application to the oscilloscope.
+        \item The evaluation of the effectiveness of the oscilloscope on synthetic applications.
+        \item The evaluation of the efficiency of the basic operations regarding the oscilloscope, convolution, graphing and the adapter overhead.
     \end{itemize}
-    These contributions can show that the $\Delta$QSD paradigm can be translated to real-time observation of running system. Furthermore, it proves that the paradigm has its practical applications and is not limited to a theoretical view of system design.
+
+    These contributions can show that the $\Delta$QSD paradigm can be translated from a posteriori analysis to real-time observation of running system. Furthermore, it reinforces the validity of the paradigm.
 
