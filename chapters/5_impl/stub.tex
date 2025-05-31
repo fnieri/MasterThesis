@@ -2,9 +2,9 @@
     The adapter, called \texttt{dqsd\_otel} is a rebar3 \cite{rebar3} application built to replace OpenTelemetry calls and create outcome instances. It is designed to be paired with the oscilloscope to observe an Erlang application.
     
     \subsection{API}
-        The adapter functions to be used by the user are made to replace OpenTelemetry calls to macros as for \texttt{?start\_span} and \texttt{?with\_span} and \texttt{?end\_span}. This is to make the adapter less of an encumbrance for the user. 
+        The adapter functions to be used by the user are made to replace OpenTelemetry calls to \texttt{?start\_span} and \texttt{?with\_span} and \texttt{?end\_span} macros. This is to make the adapter less of an encumbrance for the user and to extend the tool usefulness in observing distributed programs. 
 
-        Moreover, the adapter will always start OpenTelemetry spans but only start outcome instances if the adapter has been activated. The adapter can be activated by the oscilloscope by pressing the \textit{``start adapter''} button and can be stopped via the \textit{``stop adapter''} button.
+        The adapter will always start OpenTelemetry spans but only start outcome instances if the adapter has been activated. The adapter can be activated by the oscilloscope by pressing the \textit{``start adapter''} button and can be stopped via the \textit{``stop adapter''} button.
          
         \subsubsection{start\_span/1, start\_span/2}
         
@@ -15,7 +15,7 @@ start_span/2: -spec start_span(binary(), map()) -> {opentelemetry:span_ctx(), pi
         
         \textbf{Parameters:}
         \begin{itemize}
-            \item Name: Name of the probe in Erlang binary representation. For example, if the name of the probe is ``probe'', the binary representation would be constructed with ``<<"probe">>'' \cite{bin-erl}. We will refer to this as ``binary name'' from now on.
+            \item Name: Name of the probe in Erlang binary representation. For example, if the name of the probe is ``probe'', the binary representation would be constructed with ``<<"probe">>'' \cite{bin-erl} \cite{bit-syntax}. We will refer to this as ``binary name'' from now on.
             \item Attributes: The OpenTelemetry span attributes (Only for start\_span/2).
         \end{itemize} 
         
@@ -70,9 +70,7 @@ with_span/3: -spec with_span(binary(), fun(() -> any()), map()) -> any().
              \begin{itemize}
                 \item Pid: \texttt{ignore} || \texttt{span\_process\_PID}.
             \end{itemize}
-            \texttt{fail\_span} does not incorporate any OpenTelemetry macro, it is let up to the user to decide how to handle failures in execution. \\
-        
-
+            \texttt{fail\_span} does not incorporate any OpenTelemetry macro, it is let up to the user to decide how to handle failures in execution.
         \subsubsection{span\_process}
             \texttt{span\_process} is the process, spawned by \texttt{start\_span}, responsible for handling the \texttt{end\_span, fail\_span, timeout} messages.
 
@@ -106,7 +104,10 @@ with_span/3: -spec with_span(binary(), fun(() -> any()), map()) -> any().
             The outcome instance is created only if two conditions are met: the adapter has been set as active and the user set a timeout for the probe, the functions will spawn a \texttt{span\_process} process, passing along all the necessary informations. \\
         Once the span is subsequently ended/timed out/failed, the function \texttt{send\_span} creates a message carrying all the informations and sends it to the C++ server. The formatting of the messages is the following:
         \begin{minted}{text}
-            n:probe name,b:Start time (beginning),e:End time (end or deadline),s:The status
+            n:probe name,
+            b:Start time (beginning),
+            e:End time (end time or deadline),
+            s:The status
         \end{minted}
 
     \subsection{TCP connection}

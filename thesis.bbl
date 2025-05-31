@@ -462,8 +462,8 @@
       \strng{authornamehash}{9230c7901a30e249c28772d25dceeaa7}
       \strng{authorfullhash}{9230c7901a30e249c28772d25dceeaa7}
       \strng{authorfullhashraw}{9230c7901a30e249c28772d25dceeaa7}
-      \field{sortinit}{3}
-      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{isbn}{9780080572284; 0080572286; 9780124808652; 0124808654}
@@ -488,8 +488,8 @@
       \strng{authorfullhash}{c9c2d3a24c7583a7e7f7f0789505c4ad}
       \strng{authorfullhashraw}{c9c2d3a24c7583a7e7f7f0789505c4ad}
       \field{extraname}{2}
-      \field{sortinit}{3}
-      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{note}{Accessed: (19/05/2025)}
@@ -641,8 +641,8 @@
       \strng{authorfullhash}{c9c2d3a24c7583a7e7f7f0789505c4ad}
       \strng{authorfullhashraw}{c9c2d3a24c7583a7e7f7f0789505c4ad}
       \field{extraname}{5}
-      \field{sortinit}{4}
-      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{note}{Accessed: (19/05/2025)}
@@ -672,8 +672,8 @@
       \strng{authorfullhash}{c9c2d3a24c7583a7e7f7f0789505c4ad}
       \strng{authorfullhashraw}{c9c2d3a24c7583a7e7f7f0789505c4ad}
       \field{extraname}{6}
-      \field{sortinit}{4}
-      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{note}{Accessed: (28/05/2025)}
@@ -822,8 +822,8 @@
       \strng{authorfullhash}{c9c2d3a24c7583a7e7f7f0789505c4ad}
       \strng{authorfullhashraw}{c9c2d3a24c7583a7e7f7f0789505c4ad}
       \field{extraname}{8}
-      \field{sortinit}{5}
-      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{note}{Accessed: (19/05/2025)}
@@ -914,8 +914,8 @@
       \strng{authorfullhash}{f669f61ee8de1a8b7351d817ea423497}
       \strng{authorfullhashraw}{f669f61ee8de1a8b7351d817ea423497}
       \field{extraname}{3}
-      \field{sortinit}{6}
-      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{note}{Accessed: (28/05/2025)}
@@ -941,8 +941,8 @@
       \strng{authornamehash}{6d3c848ff3868db127e40588306291bb}
       \strng{authorfullhash}{6d3c848ff3868db127e40588306291bb}
       \strng{authorfullhashraw}{6d3c848ff3868db127e40588306291bb}
-      \field{sortinit}{6}
-      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{note}{Accessed: (23/05/2025)}
@@ -971,8 +971,8 @@
       \strng{authornamehash}{dd795316f98db78ca0bcf6f53d45f06c}
       \strng{authorfullhash}{dd795316f98db78ca0bcf6f53d45f06c}
       \strng{authorfullhashraw}{dd795316f98db78ca0bcf6f53d45f06c}
-      \field{sortinit}{6}
-      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{note}{Accessed: (29/05/2025)}
@@ -1148,8 +1148,8 @@
       \strng{authornamehash}{c8bc37ca621d8749f287610aaf9f7e4a}
       \strng{authorfullhash}{c8bc37ca621d8749f287610aaf9f7e4a}
       \strng{authorfullhashraw}{c8bc37ca621d8749f287610aaf9f7e4a}
-      \field{sortinit}{7}
-      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{note}{Accessed: (25/05/2025)}
@@ -1176,8 +1176,8 @@
       \strng{authornamehash}{f7e853158b776246c53345b938159cc1}
       \strng{authorfullhash}{f7e853158b776246c53345b938159cc1}
       \strng{authorfullhashraw}{f7e853158b776246c53345b938159cc1}
-      \field{sortinit}{7}
-      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{note}{Accessed: (30/05/2025)}
@@ -1205,8 +1205,8 @@
       \strng{authornamehash}{07bf2ea0b739d056d25ada96f6e845c3}
       \strng{authorfullhash}{07bf2ea0b739d056d25ada96f6e845c3}
       \strng{authorfullhashraw}{07bf2ea0b739d056d25ada96f6e845c3}
-      \field{sortinit}{7}
-      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{note}{Accessed: (24/05/2025)}
@@ -1233,8 +1233,8 @@
       \strng{authornamehash}{1b665da45dc9aa260864b6047bfea42e}
       \strng{authorfullhash}{1b665da45dc9aa260864b6047bfea42e}
       \strng{authorfullhashraw}{1b665da45dc9aa260864b6047bfea42e}
-      \field{sortinit}{7}
-      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{note}{Accessed: (19/05/2025)}
@@ -1378,8 +1378,8 @@
       \strng{authornamehash}{9a30d9e0e65cd68ed533d5305f8cd1a7}
       \strng{authorfullhash}{9a30d9e0e65cd68ed533d5305f8cd1a7}
       \strng{authorfullhashraw}{9a30d9e0e65cd68ed533d5305f8cd1a7}
-      \field{sortinit}{8}
-      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{note}{Accessed: (21/05/2025)}
@@ -1408,8 +1408,8 @@
       \strng{authornamehash}{64658d3a36807e9ff9e0d0215b01c97a}
       \strng{authorfullhash}{64658d3a36807e9ff9e0d0215b01c97a}
       \strng{authorfullhashraw}{64658d3a36807e9ff9e0d0215b01c97a}
-      \field{sortinit}{8}
-      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{note}{Accessed: (23/05/2025)}

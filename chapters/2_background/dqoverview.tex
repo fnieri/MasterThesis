@@ -3,73 +3,71 @@
     
     The key concepts that give the paradigm its name are \textbf{quality attenuation ($\Delta$Q)} and \textbf{outcome diagrams}. \cite{dq-tut}
 
-    The dependency and causality properties of a system can be captured by outcome diagrams, while the probability distribution representation can precisely model a system's behaviour. \cite{myo}
+    The dependency and causality properties of a system can be captured by outcome diagrams, while the probability distribution representation ($\Delta$Q) can precisely model a system's behaviour. \cite{myo}
  
-    The following sections are a summary of multiple articles and presentations formalising the paradigm.
+    The following sections are a summary of multiple articles and presentations formalising the paradigm. Some of the graphs we present have too been adapted from the articles.
      
  \subsection{Outcome}
     To build outcome diagrams, we need to first introduce outcomes. 
 
-        Outcomes represent system behaviours that can start at some point in time and \textit{\textbf{may}} be observed to complete at some later time. \cite{dq-br}
+        Outcomes represent system behaviours or tasks that ``can start at some point in time and \textit{\textbf{may}} be observed to complete at some later time''. \cite{dq-br}
         The result produced by performing a system's task is mapped to an outcome. \cite{myo} 
      
-        The particularity of outcomes is that they can represent multiple levels of granularity. Suppose an outcome is beyond the current system's control (e.g. a database/cloud request), is non-atomic (can be broken down in multiple sub-outcomes). These outcomes can be represented as black boxes (you can observe their start and end, but do not know what is being executed). As the system gets refined, these outcomes can then be refined to model a single outcome or multiple outcomes, if needed. \\ 
-        Even though these outcomes are defined as ``black boxes'', they still have timeliness constraints like any other outcome. \cite{myo}
+        The particularity of outcomes is that they can represent multiple levels of granularity. Suppose an outcome is beyond the current system's control (e.g. a database/cloud request), is non-atomic (can be broken down in multiple sub-outcomes). These outcomes can be represented as black boxes (you can observe their start and end, but do not know what is being executed). As the system gets refined, these outcomes can then be refined to model a single outcome or multiple outcomes, if needed. \cite{myo} \\ 
+        Even though these outcomes are defined as ``black boxes'', they still have timeliness constraints like any other outcome. 
 
      \paragraph{Observables}
-     An outcome can start and end at different locations. We can then model the start events and end events as two different sets, which are called ``\textbf{observables}''. \cite{myo}
-Once an event from the starting set occurs, there is no guarantee that a corresponding event in the terminating set will occur within the duration limit (required time to complete). An observable is \textit{done} when it occurs during the time limit. \cite{art}
+     Key to outcomes is the notion of event. \\
+     An outcome has observable starting events end ending events \cite{dq-tut}. As the events may occur in different locations in a distributed setting, we say the outcome has a starting set and ending set of events. They are called ``\textbf{observables}''. \cite{myo}\\
+     We stated previously that an outcome \textbf{may} be observed to complete, this is because a starting event has no guarantee that it will be ended. An outcome can be said ``done'' if an end event occurs for a start event.
 
     \paragraph{Outcome instance}
     An outcome instance is the result of an execution of an outcome given a starting event $e_{in}$ and an end event $e_{out}$. \cite{art}
 
     \paragraph{Graphical Representation}
-    Outcomes are represented as circles, with the starting and terminating set of events being represented by boxes.
+    Outcomes are represented as circles, with the starting and terminating set of events being represented by boxes. \cite{myo}
     \begin{figure}[H]
         \begin{center}
             \includegraphics[scale=1.2]{tikz/outdq.pdf}
         \end{center}
-        \caption{The outcome (circle) and the starting set (left) and terminating set (right) of events. \cite{myo}}
+        \caption{The outcome (circle) and the starting set (left) and terminating set (right) of events.}
     \end{figure}
 
 \subsection{Quality attenuation ($\Delta$Q)}
-        Assume a component $C$ which receives a message $m_{in}$ and outputs a message $m_{out}$ after a delay $d$. Over multiple executions, we will have observed multiple delays which can be represented as a cumulative definition where $p$ percent of delays have delay $\le d$. \cite{art} 
-
-        \textbf{$\Delta$Q} is a cumulative distribution function that defines both \textit{latency} and \textit{failure probability} between a start and end event. \cite{dq-tut}
-
-        In an ideal system, an outcome would deliver a desired behaviour without error, failure, delay, but this is not the case. The quality of an outcome response ``attenuated to the relative ideal'' (the cumulative distribution function) is called ``quality attenuation'' ($\Delta$Q) and can depend on many factors (geographical, physical \dots). Its distribution may be modelled by a random variable.
-
-    As $\Delta$Q captures deviation from ideal behavior and incorporates delay, which is a continuous random variable, and failures/timeouts, which are discrete variables, it can be described mathematically as an \textit{Improper Random Variable}, where the probability of a finite or bounded delay $<$ 1. 
-
-    \textbf{$\Delta$Q(x)} is the probability that an outcome $O$ occurs in time $t \le x$. The \textbf{\textit{intangible mass}} $1 - \lim_{x\to\infty}\Delta Q(x)$ of a $\Delta$Q will encode the probability of failure/timeout/exception occurring \cite{myo}. $\Delta$Q is a CDF, sometimes we use its derivative, which is the probability density function (PDF).
+    $\Delta$Q is defined as ``a cumulative distribution function (CDF) that defines both \textit{latency} and \textit{failure probability} between a start and end event''. \cite{dq-tut}
     
+        As multiple instances of an outcome are executed, multiple delays can be observed for the executions. The delays can be represented as a CDF. In the $\Delta$Q's CDF, \textbf{$\Delta$Q(x)} is the probability that an outcome $O$ occurs in time $t \le x$ \cite{art}.  We may sometimes use the derivative of a $\Delta$Q, which is the probability density function (PDF).
+
+    The key feature that makes $\Delta$Q stands out is the notion of failure incorporated in the representation of an outcome's behaviour. \\
+ Ideally, a system would execute without errors, failure or delay. This is never the case. Since the ideal cannot be attained, the quality of the system's responses are ``\textit{attenuated to the relative ideal}''  \cite{myo}. This quality attenuation gives the name to $\Delta$Q.
+
+    Since multiple factors can influence the delays of a response (geographical, physical), $\Delta$Q can be firstly modeled as a random variable,  Nevertheless, as it incorporates failures, which are discrete variables, and delays, which are discrete variables, the authors describe it as an \text{Improper Random Variable}, as the probability of a finite or bounded delay is $<$ 1. \cite{myo}
+   
+    \paragraph{Intangible mass} The \textbf{\textit{intangible mass}} $1 - \lim_{x\to\infty}\Delta Q(x)$ of a $\Delta$Q will encode the probability of failure/timeout/exception occurring \cite{art}. \label{int_mass}
+        
     \begin{figure}[H]
         \begin{center}
             \includegraphics{tikz/intangible.pdf}
         \end{center}
-        \caption{$\Delta$Q CDF plot with intangible mass (red). The failure rate is about 5\% }
+        \caption{$\Delta$Q CDF representation with intangible mass (red). The failure rate is about 5\% }
     \end{figure}
    
   \subsection{Failure semantics}
-       In the CDF representation of a $\Delta$Q, there is an \textit{f} percent probability that the delay is infinite, this is what failure models. 
-        Concretely, it means that ``an input message $m_{in}$ \textbf{has no output message} $m_{out}$''. \cite{art}
+       Failure indicates ``an input message $m_{in}$ \textbf{that has no output message} $m_{out}$''. \cite{art}
+       Recall the intangible mass defined previously \ref{int_mass}, in the CDF representation of a $\Delta$Q, the failure models the probability that the delay is infinite.
    
     \subsection{Partial ordering}
-        A CDF of a $\Delta$Q is \textit{less than} the other if its CDF is everywhere to the left and above the other. It is represented mathematically as a partial order. 
-        
-        If two $\Delta$Qs intersect, they are not ordered. \cite{dq-tut}
+        $\Delta$Q$_1$ is \textit{less than} another $\Delta$Q$_2$ if its CDF is everywhere to the left and above the other's CDF. This concept is represented mathematically as a partial order. \cite{dq-tut} 
 
     \subsection{Timeliness}
-        Timeliness is delivering results within required time bounds (sufficiently often).
-        Timeliness is defined as ``a relation between an observed $\Delta Q_{obs}$ and a required $\Delta Q_{req}$''. 
-        In $\Delta$QSD, a system \textit{satisfies timeliness} if $\Delta$Q$_{obs}$ $\le$ $\Delta$Q$_{req}$. \cite{art}
+        Timeliness is delivering results within required time bounds (sufficiently often). \cite{dq-tut}
+        Leveraging the definition of partial ordering, we can say that a system \textit{satisfies timeliness} if $\Delta$Q$_{obs}$ $\le$ $\Delta$Q$_{req}$. \cite{art}
      
     \subsection{QTA, required $\Delta$Q}
-         The \textit{Quantitative Timeliness Agreement} (QTA) maps objective measurements to the subjective perception of application performance. It specifies what the base system does and its limits. \cite{dq-br}
+        The Quantitative Timeliness Agreement (QTA) specifies the requirements of a $\Delta$Q and defines precise timeliness bounds on a $\Delta$Q. \cite{dq-br} \cite{art}
     
-    \paragraph{Slack} There is performance \textit{slack} when a $\Delta$Q is strictly less than the requirement,
-
-        \paragraph{Hazard} There is performance \textit{hazard} when an observed $\Delta$Q$_{obs}$ intersects or is strictly greater than the required $\Delta$Q$_{req}$ ($\Delta$Q$_{obs} \nless \Delta$Q$_{req}$). \cite{myo}
+    \paragraph{Slack and hazard} There is performance \textit{slack} when ``a $\Delta$Q is strictly less than the requirement.'' \\
+    There is performance \textit{hazard} when ``an observed $\Delta$Q$_{obs}$ intersects or is strictly greater than the required $\Delta$Q$_{req}$'' ($\Delta$Q$_{obs} \nless \Delta$Q$_{req}$). \cite{myo}
  
     \paragraph{QTA example}: Imagine a system where 25\% of the executions should take $<$ 15 ms, 50\% $<$ 25 ms and 75\% $<$ 35 ms, all queries have a maximum delay of 50ms and 5\% of executions can timeout, the QTA can be represented as a step function.
     
@@ -82,9 +80,8 @@ Once an event from the starting set occurs, there is no guarantee that a corresp
         \end{figure}
 
     \subsection{Outcome diagram}
-        An outcome diagram is central to capture the causal relationships between the outcomes. It shows the causal connections between all the outcomes we are interested in, and it allows computing the $\Delta$Q for the whole system \cite{dq-tut}. It maps a system's behaviour as seen from outside to concrete outcomes \cite{art}.
+        An outcome diagram is central to capture the causal relationships between the outcomes \cite{myo}. It shows the causal connections between all the outcomes we are interested in. Given an outcome diagram, one can compute the $\Delta$Q for the whole system. \cite{dq-tut}
         There are four different operators that represent the relationships between outcomes. 
-
     \subsubsection{Sequential composition}
         If we assume two outcomes $O_A$, $O_B$ where the end event of $O_A$ is the start event of $O_B$, then we say the two outcomes are sequentially composed. The total delay $\Delta$Q$_{AB}$ is given by the convolution of the PDFs of $O_A$ and $O_B$ ($O_A \circledast O_B$).
         
