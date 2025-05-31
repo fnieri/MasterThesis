@@ -99,7 +99,7 @@
 \contentsline {subsection}{\numberline {4.5.2}QTA}{33}{subsection.4.5.2}%
 \contentsline {chapter}{\numberline {5}Oscilloscope: implementation}{34}{chapter.5}%
 \contentsline {section}{\numberline {5.1}$\Delta $QSD implementation}{34}{section.5.1}%
-\contentsline {subsection}{\numberline {5.1.1}Histogram representation}{34}{subsection.5.1.1}%
+\contentsline {subsection}{\numberline {5.1.1}Histogram representation of $\Delta $Q}{34}{subsection.5.1.1}%
 \contentsline {subsubsection}{PDF}{34}{section*.72}%
 \contentsline {subsubsection}{CDF}{35}{section*.73}%
 \contentsline {subsection}{\numberline {5.1.2}dMax}{35}{subsection.5.1.2}%
@@ -114,19 +114,19 @@
 \contentsline {section}{\numberline {5.2}Adapter}{38}{section.5.2}%
 \contentsline {subsection}{\numberline {5.2.1}API}{38}{subsection.5.2.1}%
 \contentsline {subsubsection}{start\_span/1, start\_span/2}{38}{section*.80}%
-\contentsline {subsubsection}{with\_span/2, with\_span/3}{38}{section*.81}%
-\contentsline {paragraph}{Parameters:}{38}{section*.82}%
+\contentsline {subsubsection}{with\_span/2, with\_span/3}{39}{section*.81}%
+\contentsline {paragraph}{Parameters:}{39}{section*.82}%
 \contentsline {subsubsection}{end\_span/2}{39}{section*.83}%
 \contentsline {paragraph}{Parameters:}{39}{section*.84}%
 \contentsline {subsubsection}{fail\_span/1}{39}{section*.85}%
-\contentsline {subsubsection}{span\_process}{39}{section*.86}%
+\contentsline {subsubsection}{span\_process}{40}{section*.86}%
 \contentsline {subsection}{\numberline {5.2.2}Handling outcome instances}{40}{subsection.5.2.2}%
-\contentsline {subsection}{\numberline {5.2.3}TCP connection}{40}{subsection.5.2.3}%
-\contentsline {subsubsection}{TCP server}{40}{section*.87}%
+\contentsline {subsection}{\numberline {5.2.3}TCP connection}{41}{subsection.5.2.3}%
+\contentsline {subsubsection}{TCP server}{41}{section*.87}%
 \contentsline {subsubsection}{TCP client}{41}{section*.88}%
 \contentsline {section}{\numberline {5.3}Parser}{41}{section.5.3}%
 \contentsline {subsection}{\numberline {5.3.1}ANTLR}{41}{subsection.5.3.1}%
-\contentsline {subsection}{\numberline {5.3.2}Grammar}{41}{subsection.5.3.2}%
+\contentsline {subsection}{\numberline {5.3.2}Grammar}{42}{subsection.5.3.2}%
 \contentsline {subsubsection}{Limitations}{42}{section*.89}%
 \contentsline {section}{\numberline {5.4}Oscilloscope GUI}{42}{section.5.4}%
 \contentsline {chapter}{\numberline {6}Application on synthetic programs}{43}{chapter.6}%

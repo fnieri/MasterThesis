@@ -86,7 +86,23 @@
     At load = 0.5 the system should start showing bad behaviour. Let us observe what happens when $\lambda = 150 \rightarrow \rho = 0.5$.
     
     Recall \ref{fig:cdf_indep}, we can start to observe early signs of dependency! At load 0.5 the calculated $\Delta$Q is deviating from the observed one. This is a sign that the performance is degrading. At the 50th percentile the deviation is minimal, around 0.4 ms. Nevertheless, the precision of the paradigm allows even for these minimal deviations to appear on the graphs, being able to recognise early signs of overload approaching.
-
+ 
+       \begin{figure}[H]
+            \centering
+            \begin{subfigure}{.5\textwidth}
+                \centering
+                \includegraphics[width=0.98\textwidth]{img/overload_2/150_probe2.pdf}
+                \label{fig:ovuvv}
+            \end{subfigure}%
+            \begin{subfigure}{.5\textwidth}
+                \centering
+                \includegraphics[width =0.98\textwidth]{img/overload_2/150_probe2zoom_cropped.pdf}
+                \label{fig:ovovv}
+            \end{subfigure}
+            \label{fig:avavv} 
+        \end{figure}
+    
+\iffalse
     \begin{figure}[H]
         \begin{center}
         \includegraphics[scale = 0.25]{img/overload_2/150_probe2.pdf}
@@ -94,7 +110,7 @@
             \caption{probe $\Delta$Qs with $\lambda = 150$. (1, blue): The observed $\Delta$Q. (2, red) the calculated $\Delta$Q. Arrow, above, blue: Observed $\Delta$Q confidence bounds. Arrow, below, red: Calculated $\Delta$Q confidence bounds.}%
         \label{fig:early_ov}
     \end{figure}
- 
+\fi 
     
 \subsubsection{High load}
     Performance degradation at 0.5 offered load is already remarkable, the $\Delta$Qs even if the difference is seemingly minimal. We can go even further and observe the system under high load situations. We set $\lambda = 200 \rightarrow \rho = 0.83$, just above the high load threshold.
