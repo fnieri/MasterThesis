@@ -13,7 +13,7 @@
     
     A $\Delta$Q can also be calculated by performing operations on two or more observed $\Delta$Qs (convolution, operators operations), the notion of outcome instances is lost between calculations, as the interest shifts towards calculating the resulting PDFs and CDFs. This is called the \textbf{Calculated $\Delta$Q}. A simple outcome can \textbf{not} have a ``calculated $\Delta$Q'', we can only observe the delay from its observables.
 
-    If you recall \cref{fig:probes_o}, the probes $p_2$ and $p_3$ observe simple outcomes, they can only display the observed $\Delta$Qs of $o_2, o_3$. The probe $p_1$ instead observes the sequential composition of said outcomes. We can display its ``observed $\Delta$Q'' from the execution from $start$ to $end$ and the ``calculated $\Delta$Q'' as the convolution of the observed $\Delta$Qs of $o_1, o_2$
+    If you recall \cref{fig:probes_o}, the probes $o_2$ and $o_3$ observe simple outcomes, they can only display the observed $\Delta$Qs of $o_2, o_3$. The probe $p_1$ instead observes the sequential composition of said outcomes. We can display its ``observed $\Delta$Q'' from the execution from $start$ to $end$ and the ``calculated $\Delta$Q'' as the convolution of the observed $\Delta$Qs of $o_1, o_2$
         
     \begin{figure}[H]
             \begin{center}
@@ -28,7 +28,7 @@
 Let us explain the following equation:
 \begin{equation}
     dMax = \Delta t \cdot N  
-    \label{eq:dMaxU}
+    \label{eq:dMaxTrue}
 \end{equation}
 
     \begin{itemize}
@@ -68,15 +68,15 @@ Let us explain the following equation:
     \end{figure}
 
     \subsubsection{dMax limitation}
-        $dMax$ can \textbf{not} be lower than 1 millisecond and will be rounded to the \textbf{nearest} integer in the adapter, this is a limitation of Erlang \texttt{send\_after} function which only accepts integers and milliseconds values. For example, if on the oscilloscope the $dMax$ is equal to $1.56 ms$, the adpater will fail spans after 2 ms.
+        $dMax$ can \textbf{not} be lower than 1 millisecond and will be rounded to the \textbf{nearest} integer in the adapter, this is a limitation of Erlang \texttt{send\_after} function which only accepts integers and milliseconds values. For example, if on the oscilloscope the $dMax$ is equal to $1.56 ms$, the adapter will fail spans after 2 ms.
 
     \subsection{QTA}
-        A simplified QTA is defined for probes. We define 4 points for the step function at 25, 50, 75 percentiles and the minimum amount of successful instances accepted for an observable (probability p $0 < p < 1$. The QTA is comparable to the one we have shown in \cref{fig:qta_step}. The user can set the QTAs they want for the probes they have inserted, but the delays at the percentiles must be $< dMax$. \label{subsec:qta_i}
+        A simplified QTA is defined for probes. We define 4 points for the step function at 25, 50, 75 percentiles and the minimum percentage $p$ of successful instances accepted for an observable ($0 < p < 1$). The QTA is comparable to the one we have shown in \cref{fig:qta_step}. The user can set the QTAs they want for the probes they have inserted, but the delays at the percentiles must be $< dMax$. \label{subsec:qta_i}
 
 \subsection{Confidence bounds}
     To observe the stationarity of a probe we must observe its $\Delta$Qs over a polling window and calculate confidence bounds over said $\Delta$Qs. A single $\Delta$Q may fluctuate. This is why we include the mean and confidence bounds of $\Delta$Qs in the plot, which give a probability range over which the true CDF of the $\Delta$Q should fall. \cite{conf-b}
 
-    Confidence bounds are given for \textit{observed} and \textit{calculated} $\Delta$Qs in a polling window (\cref{bi}). \\
+    Confidence bounds are given for \textit{observed} and \textit{calculated} $\Delta$Qs in a polling window (\cref{fig:bi}). \\
     We first calculate a mean of the $\Delta$Qs in the polling window, this gives an idea of how the probe has been behaving during the polling window. Given this mean, we can calculate its confidence bounds.
 
     The bounds are updated dynamically by inserting or removing a $\Delta$Q to the current polling window. Every time a new $\Delta$Q is calculated, the oldest $\Delta$Q in a window is removed if \#$\Delta$Qs(polling window) $>$ limit. The new $\Delta$Q is added to the calculation of the mean and confidence bounds as it is calculated. 

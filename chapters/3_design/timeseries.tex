@@ -13,7 +13,7 @@
         \item \textbf{($t_s, \mathcal{T}$)}: This representation indicates that the execution has timed out (t $>$ $dMax$). The end time is equal to $t_s + \text{timeout}$.
         \item \textbf{($t_s, \mathcal{F}$)}: This representation indicates the execution has failed given a user defined requirement (i.e. a dropped message given buffer overload in a queue system). It must not be confused with a program failure (crash), if a program crashes during the execution of event $e$, it will time out since the adapter will not receive an end message.
     \end{itemize}
-    The \textbf{time series} of a probe is the sequence of $n$ outcome instances. The collected elapsed times of execution (delay) from the outcome instances can be represented as a CDF, which is a $\Delta$Q.
+    The \textbf{time series} of a probe is the sequence of $n$ outcome instances. The collected elapsed times of execution (delays) from the outcome instances can be represented as a CDF, which is a $\Delta$Q.
 
     \paragraph{What can be considered a failed execution?} The choice of what is considered a failed execution is left up to the user who is handling the spans and is program-dependent. Exceptions or errors can be kinds of failure.
 

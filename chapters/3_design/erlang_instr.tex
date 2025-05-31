@@ -2,7 +2,7 @@
     \subsection{System under test} The system under test \textbf{(S.U.T)} is the Erlang system the engineer wishes to observe (\cref{fig:sys_diag}). It ideally is a system which already is instrumented with OpenTelemetry. The ideal system where $\Delta$QSD is more useful is a system that executes many independent instances of the same action \cite{dq-tut}. 
     
     \subsection{$\Delta$Q Adapter} 
-    The $\Delta$Q adapter is the \texttt{dqsd\_otel} Erlang interface \cite{wrapper}. It starts and ends OpenTelemetry spans and translates them to outcome instances which are useful for the oscilloscope. This can be done thanks to probes being attached to the system under test, like an oscilloscope would! The outcome instances end normally like OpenTelemetry spans or, additionally, can timeout after a custom timeout ($dMax$), and fail, \textit{according to user's definition of failure}. 
+    The $\Delta$Q adapter is the \texttt{dqsd\_otel} Erlang interface \cite{wrapper}. It starts and ends OpenTelemetry spans and translates them to outcome instances which are useful for the oscilloscope. This can be done thanks to probes being attached to the system under test, like an oscilloscope would. The outcome instances end normally like OpenTelemetry spans or, additionally, can timeout after a custom timeout ($dMax$), and fail, \textit{according to user's definition of failure}. 
     
     Handling of OpenTelemetry spans which goes beyond starting and ending them is delegated to the user, who may wish to do further operations with their spans. 
     The adapter is called from the system under test and communicates outcome instances data to the oscilloscope via TCP sockets. 
@@ -29,4 +29,4 @@
         \end{minted}
 \caption{Example usage of the adapter}\label{code:adapter}
 \end{figure}
-    Further details about the implementation of the adapter are explained in Chapter 5. A user guide on how to include the adapter in your project and how to instrument your program is found in the appendix (\cref{app:instr_app}). 
+    Further details about the implementation of the adapter are explained in Chapter 5. A user guide on how to include the adapter in your project and how to instrument a program is found in the appendix (\cref{app:instr_app}). 

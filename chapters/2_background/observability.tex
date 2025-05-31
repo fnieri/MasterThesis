@@ -6,7 +6,7 @@
     In the case of the Erlang programming language, we describe respectively two different ways to observe a running Erlang system: erlang:trace and OpenTelemetry.
     
     \subsection{erlang:trace}
-        The Erlang programming language gives the users different ways to observe the behaviour of a system, one of those is the interface \texttt{erlang:trace}. According to the documentation: ``The Erlang run-time system exposes several trace points that can be observed, observing the trace points allows users to be notified when they are triggered'' \cite{erl-t}. One can observe function calls, messages being sent and received, process being spawned, garbage collecting \dots. 
+        The Erlang programming language gives the users different ways to observe the behaviour of a system, one of those is the interface \texttt{erlang:trace}. According to the documentation: ``The Erlang run-time system exposes several trace points that can be observed, observing the trace points allows users to be notified when they are triggered'' \cite{erl-t}. One can observe function calls, messages being sent and received, process being spawned, garbage collecting and more. 
         \begin{figure}[!ht]
         \centering
         \begin{minted}{erlang}
@@ -33,7 +33,7 @@
     The Erlang Ecosystem Foundation has a working group focused on evolving the tools related to observability, including OpenTelemetry and the runtime observability monitoring tools \cite{obs-group}. 
     
     \subsubsection{Traces}
-        Traces are why we are basing our program on top of OpenTelemetry, traces follow the whole path of a request in an application, and they are comprised of one or more spans. Traces can propagate to multiple services and record multiple paths in different microservices \cite{otel-dt}. 
+        Traces are why we are basing our program on top of OpenTelemetry, traces follow the whole path of a request in an application, and they are comprised of one or more spans \cite{otel-t}. Traces can propagate to multiple services and record multiple paths in different microservices \cite{otel-dt}. 
         
         \paragraph{Span} A span is a unit of work or operation. Multiple spans can be assembled into a trace and can be causally linked (\cref{fig:monitor}). The spans can have a hierarchy, where \textit{root spans} represent a request from start to finish and a child span the requests that are completed inside the root span \cite{otel-dt}. We will see in later sections how this can relate to what the oscilloscope does.
 
@@ -60,9 +60,9 @@
     \subsubsection{Monitoring OpenTelemetry spans}
         In OpenTelemetry, the user can export their traces export to backends and monitoring such as Jaeger (\cref{fig:monitor}), Zipkin, Datadog \cite{otel-exp}. There, a user can analyse the traces to troubleshoot their programs by observing the flow of the requests \cite{jg}. These monitoring tools give extensive details about a running system, but may fail to capture essential timeliness requirements and performances issues early enough.
         
-        Our oscilloscope is a kind of monitoring tool, one that gives precise statistical insights about a running system. It is clear that the oscilloscope does not have the same capabilities as Datadog \cite{datadog} might have, where you can observe cloud instances, instances cost, dependency graphs \dots but the oscilloscope can nevertheless provide precise insights about dependency, overload thanks to the $\Delta$QSD paradigm. 
+        Our oscilloscope is a kind of monitoring tool, one that gives precise statistical insights about a running system. It is clear that the oscilloscope does not have the same capabilities as Datadog \cite{datadog} might have, where you can observe cloud instances, instances cost, dependency graphs. But the oscilloscope can nevertheless provide precise insights about dependency, overload thanks to the $\Delta$QSD paradigm. 
 
-        This is also the reason why the adapter includes OpenTelemetry macros. The oscilloscope can be put next to a monitoring tool where one might export spans to, so that an engineer might consult the monitoring tool to get the global picture of a running app. The oscilloscope provides more precise insights to understand the system's behaviour. 
+        This is also the reason why the adapter includes OpenTelemetry macros. The oscilloscope can be put next to a monitoring tool where one might export spans to, so that an engineer might consult the monitoring tool to get the global picture of a running app, as the oscilloscope can provide more precise insights to understand the system's behaviour. 
        \begin{figure}[H]
             \centering
             \begin{subfigure}{.5\textwidth}
@@ -75,7 +75,7 @@
                 \includegraphics[width =0.98\textwidth]{img/jaeger2.jpg}
                 \label{fig:openobs}
             \end{subfigure}
-            \caption{Left: Jaeger interface. Right: Analysis of a span on OpenObserve.}
+            \caption{\textbf{Left}: Jaeger interface \cite{otel-p}. \textbf{Right}: Analysis of a span on OpenObserve. \cite{tr-e}}
             \label{fig:monitor}
             \end{figure}
 
@@ -87,11 +87,11 @@
 parent_function() ->
     ?with_span(parent, #{}, fun child_function/0).
 child_function() ->
-    %% this is the same process, so the span parent set as the active
-    %% span in the with_span call above will be the active span in this function
+%% this is the same process, the span parent set as the active
+%% span in the with_span call above will be the active span in this function
     ?with_span(child, #{},
                fun() ->
-                   %% do work here. when this function returns, child will complete.
+     %% when this function returns, child will complete.
                end).
         \end{minted}
         \paragraph{?start\_span}

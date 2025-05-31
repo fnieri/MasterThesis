@@ -45,7 +45,7 @@
 \subsection{Quality attenuation ($\Delta$Q)}
     $\Delta$Q is defined as ``a cumulative distribution function (CDF) that defines both \textit{latency} and \textit{failure probability} between a start and end event''. \cite{dq-tut}
     
-        As multiple instances of an outcome are executed, multiple delays can be observed for the executions. The observed delays can be represented as a CDF, $\Delta$Q$_{obs}$. In the $\Delta$Q's CDF, \textbf{$\Delta$Q(x)} is the probability that an outcome $O$ occurs in time $t \le x$ \cite{art}.  We may sometimes use the derivative of a $\Delta$Q, which is the probability density function (PDF). We show a typical CDF of a $\Delta$Q in \cref{fig:int_mass}.
+        As multiple instances of an outcome are executed, multiple delays can be observed for the executions. The observed delays can be represented as a CDF, we call it $\Delta$Q$_{obs}$. In the $\Delta$Q's CDF, \textbf{$\Delta$Q(x)} is the probability that an outcome $O$ occurs in time $t \le x$ \cite{art}.  We may sometimes use the derivative of a $\Delta$Q, which is the probability density function (PDF). We show a typical CDF of a $\Delta$Q in \cref{fig:int_mass}.
 
     The key feature that makes $\Delta$Q stands out is the notion of failure incorporated in the representation of an outcome's behaviour. \\
  Ideally, a system would execute without errors, failure or delay. This is never the case. Since the ideal cannot be attained, the quality of the system's responses are ``\textit{attenuated to the relative ideal}''  \cite{myo}. This quality attenuation gives the name to $\Delta$Q.
@@ -77,12 +77,12 @@
     There is performance \textit{hazard} when ``an observed $\Delta$Q$_{obs}$ intersects or is strictly greater than the required $\Delta$Q$_{req}$'' ($\Delta$Q$_{obs} \nless \Delta$Q$_{req}$). \cite{myo}
  
     \paragraph{QTA example}: Imagine a system where 25\% of the executions should take $<$ 15 ms, 50\% $<$ 25 ms and 75\% $<$ 35 ms, all queries have a maximum delay of 50ms and 5\% of executions can timeout, the QTA can be represented as a step function. \\
-    We present in \cref{fig:qta_step} an example of systems satisfying showing slack and presenting hazard.
+    We present in \cref{fig:qta_step} an example of systems showing slack and hazard.
         \begin{figure}[H]
             \begin{center}
                 \includegraphics[scale=1]{tikz/cdf_qta_slack.pdf}
             \end{center}
-            \caption{The system in blue is showing slack and satisfies the requirement. The system in orange is showing signs that it cannot handle the stress, it is not respecting the system requirements imposed by the QTA.}%
+            \caption{The system in blue is showing slack and satisfies the requirement. The system in orange is showing signs that it cannot handle the stress, it is not respecting the system requirements imposed by the QTA. It intersects with the QTA in $p_1, p_2$, so it is not respecting the timeliness requirements. There is performance hazard.}%
             \label{fig:qta_step}
         \end{figure}
 
@@ -100,7 +100,7 @@
         \end{figure}
         Where convolution ($\circledast$) between two PDF is:
         \begin{equation}
-            PDF_A \circledast PDF_B (t) = PDF_{AB}(t) =\int\limits_0^t PDF_A(\delta) \cdot PDF_B(t-\delta)d\delta 
+            PDF_A \circledast PDF_B (t) = PDF_{AB}(t) =\int\limits_0^t PDF_A(\delta) \cdot PDF_B(t-\delta)d \ \delta 
             \label{eq:conv_1}
         \end{equation}
 
@@ -187,7 +187,7 @@
     \end{figure}
     First-to-finish, All-to-finish and probabilistic-choice are calculated on the CDF of the $\Delta$Qs of their components.
     
-    These operators can be assembled together to create an outcome diagram. In chapter 4 we will see how one can go from the graphical representation to outcome diagrams, which can be used in the $\Delta$Q oscilloscope.
+    These operators can be assembled together to create an outcome diagram. In Chapter 4 we will see how one can go from the graphical representation to outcome diagrams which can be used in the $\Delta$Q oscilloscope.
     
     \subsection{Outcome diagrams refinement}
         An important feature of outcome diagrams is the ability to be able to design a system even with \textit{``black boxes''}, before the complete details of it are known. \cite{myo} \\
@@ -244,8 +244,8 @@
             \begin{center}
                 \includegraphics[scale=1]{tikz/cdf_indep.pdf}
             \end{center}
-            \caption{When the components are independent, the sum of the two delays (blue) and the overall delay (red) can be superposed. As $o_1$ and $o_2$ showsigns of dependency, the overall delay (green) can be seen deviating from the sum of the two delays. There is \textbf{non-linearity}.}
+            \caption{When the components are independent, the sum of the two delays (blue) and the overall delay (red) can be superposed. As $o_1$ and $o_2$ show signs of dependency, the overall delay (green) can be seen deviating from the sum of the two delays. There is \textbf{non-linearity}.}
             \label{fig:cdf_indep}%
         \end{figure}%
 
-        When the system is far from being overloaded, the effect is noticeable. As the cliff edge of overload is approached, the nonlinearity will increase \cite{post} \cite{dq-tut}. These theoretical results can be observed in the oscilloscope. We will explore such cases in Chapter 6.
+        When the system is far from being overloaded, the effect is noticeable. As the cliff edge of overload is approached, the non-linearity will increase \cite{post} \cite{dq-tut}. These theoretical results can be observed in the oscilloscope. We will explore such cases in Chapter 6.

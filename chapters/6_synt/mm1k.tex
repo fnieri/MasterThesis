@@ -20,7 +20,7 @@
     The system (\cref{fig:mm1k}) has two components \texttt{worker\_1}, \texttt{worker\_2}. Each individual component is composed of a queue of size $K = 1000$ and a worker process.
     
     The system sends $n$ messages per second following a Poisson distribution to \texttt{worker\_1}'s queue. 
-    The queue notifies its worker, which then does $N$ loops of fictional work, they are defined upon start and are done to simulate a component performing a task. Once done, \texttt{worker\_1} then passes a message to \texttt{worker\_2}'s queue, which has another queue of same size, who passes the message to \texttt{worker\_2}'s worker, which does the same amount of loops as \texttt{worker\_1}. When a worker completes its work, it notifies its queue, freeing one message from its buffer size and allowing the next message to be processed.
+    The queue notifies its worker if the worker is not busy. The worker performs $N$ loops of fictional work, they are defined upon start and are done to simulate a component performing a task. Once done, \texttt{worker\_1} then passes a message to \texttt{worker\_2}'s queue, which has another queue of size = 1000, who passes the message to \texttt{worker\_2}'s worker, which does the same amount of loops as \texttt{worker\_1}. When a worker completes its work, it notifies its queue, freeing one message from its buffer size and allowing the next message to be processed.
     
     If the queue's buffer is overloaded, it will drop the incoming message and consider the execution a failure.
     
@@ -36,10 +36,9 @@
 
     \begin{figure}[H]
         \begin{center}
-            \includegraphics[scale=1.2, width=\textwidth]{tikz/mm1k.pdf} 
+            \includegraphics[scale=1]{tikz/mm1k.pdf} 
         \end{center}
-        \caption{Outcome diagram of the system. The labeled coloured lines represent the probes that were inserted. $q_{1, 2}$ outcomes represent the queues. There the messages are forwarded to the workers. $w_{1,2}$ represent the workers whose task is doing $n$ loops. \\
-        As we do not wish to observe the queues, but the whole behaviour of the worker components, we can insert probes from when the message is received to when the worker loops end.}
+        \caption{Refined outcome diagram of the system. The labeled coloured lines represent the probes that were inserted. $q_{1, 2}$ outcomes represent the queues. $w_{1,2}$ represent the workers. As we do not wish to observe the queues, but the whole behaviour of the worker components, we can insert probes from when the message is received to when the worker loops end. We can imagine that $q_{1,2}$ and $w_{1,2}$ are refinements of outcomes $worker_{1,2}$, this is why the probes names differ from the outcomes they observe.}
         \label{fig:mm1k}
     \end{figure}
 
@@ -61,7 +60,7 @@
             \end{subfigure}%
             \begin{subfigure}{.5\textwidth}
                 \centering
-                \includegraphics[width =0.98\textwidth]{img/overload_2/worker_1_8.png}
+                \includegraphics[width =0.98\textwidth]{img/overload_2/worker_1_8a.png}
                 \label{fig:w18}
             \end{subfigure}
             \caption{\textbf{Left}: worker\_1 $\Delta$Q with $dMax = 4ms$. (Green, between the arrow): Mean and confidence bounds of $\Delta$Qs in polling window. (1, blue): Observed $\Delta$Q in sampling window. The worker failure tends to 0.25. \\
@@ -112,7 +111,7 @@
                 \includegraphics[width =0.98\textwidth]{img/overload_2/150_probe2zoom_cropped.pdf}
                 \label{fig:ovovv}
             \end{subfigure}
-            \caption{\textbf{Left}: The ``probe'' $\Delta$Qs as observed in a snapshot. \textbf{Right}: Zooming in the oscilloscope, we can observe a slight, but noticeable deviation. (1) Observed sampling window $\Delta$Q. (Arrow, blue, above): Its confidence bounds. (2) Calculated sampling window $\Delta$Q. (Arrow, red, below): Its confidence bounds. \\ The observed polling window confidence bounds are $>$ than the calculated $\Delta$Q bounds. The deviation at the median is of 0.4 ms, but it is noticeable in the oscilloscope.}
+            \caption{\textbf{Left}: The ``probe'' $\Delta$Qs as observed in a snapshot. \textbf{Right}: Zooming in the oscilloscope, we can observe a slight, but noticeable deviation. (1) Sampling window observed $\Delta$Q. (Arrow, blue, above): Its confidence bounds. (2) Sampling window calculated $\Delta$Q. (Arrow, red, below): Its confidence bounds. \\ The observed polling window confidence bounds are $>$ than the calculated $\Delta$Q bounds. The deviation at the median is of 0.4 ms, but it is noticeable in the oscilloscope.}
             \label{fig:avavv} 
         \end{figure}
        
@@ -123,7 +122,7 @@
             \centering
             \begin{subfigure}{.5\textwidth}
                 \centering
-                \includegraphics[width=0.98\textwidth]{img/overload_2/250_worker.png}
+                \includegraphics[width=0.98\textwidth]{img/overload_2/250_workera.png}
                 \label{fig:high_load_1}
             \end{subfigure}%
             \begin{subfigure}{.5\textwidth}
@@ -132,7 +131,7 @@
                 \label{fig:high_load_2}
             \end{subfigure}
             \caption{Graphs for $\lambda = 250$. \textbf{Left}: worker\_1 observed $\Delta$Q with its confidence bounds. \\
-            \textbf{Right}: probe $\Delta$Q, in blue (1), the observed $\Delta$Q with its confidence bounds, in red (2) the calculated $\Delta$Q with its confidence bounds.}%
+            \textbf{Right}: probe $\Delta$Qs. (1, blue) Sampling window observed $\Delta$Q with its confidence bounds, (2, red) Sampling window calculated $\Delta$Q inside its confidence bounds.}%
             \label{fig:early_ov}
         \end{figure} 
     This confirms what is expected by queueing theory, $\Delta$Q is capable of observing the basic observation requirements and capable of recognising dependency. While what is expected by the worker's observed $\Delta$Q is a nice normally distributed CDF with little to no failure. What we can observe on the probe is degraded performance in its observed $\Delta$Q mean. \\
@@ -169,7 +168,7 @@
             \centering
             \begin{subfigure}{.5\textwidth}
                 \centering
-                \includegraphics[width=0.98\textwidth]{img/overload_2/snapshots.png}
+                \includegraphics[width=0.98\textwidth]{img/violated.png}
                 \label{fig:high_load_1}
             \end{subfigure}%
             \begin{subfigure}{.5\textwidth}
@@ -178,21 +177,19 @@
                 \label{fig:high_load_2}
             \end{subfigure}
             \caption{\textbf{Left}: Snapshots for fired triggers. \\
-            \textbf{Right}: (1) Observed $\Delta$Q in sampling window violating QTA (3). The confidence bounds for the observed polling window (blue, arrow, below) shows the system deteriorating. The calculated $\Delta$Q (2) is behaving worse than its confidence bounds (red, arrow, above). The system is overloaded, degrading and showing non-linear behaviour, this is captured by the QTA violation.} % 
+            \textbf{Right}: (1, blue) Observed $\Delta$Q in sampling window violating QTA (3). The confidence bounds for the observed polling window (blue, arrow, below) show the system deteriorating. The sampling window calculated $\Delta$Q (2) is behaving worse than its confidence bounds (red, arrow, above). The system is overloaded, degrading and showing non-linear behaviour, this is captured by the QTA violation.} % 
             \label{fig:qta_viol_1}
         \end{figure}
         \paragraph{Instances trigger}
 
         QTA triggers can help detect non-linearity even before it becomes evident. \\
-        By knowing the inner details of the system, setting a QTA on the number of instances can be useful. \cref{fig:qta_trig} is an example of a fired trigger on the number of instances.
+        By knowing the inner details of the system, setting a QTA on the number of instances can be useful. \cref{fig:qta_trig} is an example of a fired trigger on the number of instances. Even though the QTA requirement isn't being violated, the number of instances fires a trigger, where the user can observe that the system is showing early signs of overload.
 
         \begin{figure}[H]
             \begin{center}
                 \includegraphics[scale=0.5]{img/overload_2/fired_samplea.png}
             \end{center}
-            \caption{Graph of a snapshot for a fired trigger observing the load of a probe. (1) Observed $\Delta$Q confidence bounds. (2) Calculated $\Delta$Q confidence bounds. The trigger fires for observed load $> 150$ in a sampling window of 1 second. Even if the QTA requirement (step function) are not being violated, the system is showing early signs of non-linear behaviour.\\
-            With knowledge about the system inner workings, smart triggers can be set on load to detect non-linear behaviour.}%
+            \caption{Graph of a snapshot for a fired trigger observing the load of a probe. (1) Observed $\Delta$Q confidence bounds. (2) Calculated $\Delta$Q confidence bounds. The trigger fires for observed load $> 150$ in a sampling window of 1 second. Even if the QTA requirement (step function) is not being violated, the system is showing early signs of non-linear behaviour.}%
             \label{fig:qta_trig}%
         \end{figure}
-        Even though the QTA requirement isn't being violated, the number of instances fires a trigger, where the user can observe that the system is showing early signs of overload.
   

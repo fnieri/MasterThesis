@@ -2,7 +2,7 @@
 \part{Source Code Appendix}
 
 \chapter{Grammar} \label{app:grammar}
-
+This is the grammar for the ANTLR4 parser.
 \lstinputlisting[style=mystyle, language=C++]{../RealTimeDeltaQSD/src/parser/DQGrammar.g4}
 
 \chapter{C++ Source Files}
@@ -10,6 +10,7 @@
 \section{Root folder}
 
 \subsection{main.cpp}
+This is the main file of the project.
 \lstinputlisting[style=mystyle, language=C++]{../RealTimeDeltaQSD/src/main.cpp}
 
 \subsection{Application.cpp}
@@ -113,7 +114,7 @@ This class represents what we described as "sub-outcome diagram". As the operato
 This class represents the system, the whole outcome diagram. It coordinates the various parts of the outcome diagram.
 \lstinputlisting[style=mystyle, language=C++]{../RealTimeDeltaQSD/src/diagram/System.cpp}
 
-\section{$\Delta$Q}
+\section{$\Delta$Q (maths)}
 The "maths" folder represents all the classes related to $\Delta$Q, where mathematical operations are being done (hence the "maths" name).
 
 \subsection{ConfidenceInterval.cpp} \label{code:ci}
@@ -234,12 +235,13 @@ This class represents the server which receives and sends messages from Erlang.
 \lstinputlisting[style=mystyle, language=C++]{../RealTimeDeltaQSD/src/diagram/Probe.h}
 
 \subsection{Sample.h}
+This struct represents an outcome instance.
 \lstinputlisting[style=mystyle, language=C++]{../RealTimeDeltaQSD/src/diagram/Sample.h}
 
 \subsection{System.h}
 \lstinputlisting[style=mystyle, language=C++]{../RealTimeDeltaQSD/src/diagram/System.h}
 
-\section{maths}
+\section{$\Delta$Q (maths)}
 
 \subsection{ConfidenceInterval.h}
 \lstinputlisting[style=mystyle, language=C++]{../RealTimeDeltaQSD/src/maths/ConfidenceInterval.h}
@@ -254,6 +256,7 @@ This class represents the server which receives and sends messages from Erlang.
 \lstinputlisting[style=mystyle, language=C++]{../RealTimeDeltaQSD/src/maths/DeltaQRepr.h}
 
 \subsection{QTA.h}
+This class represent a sample QTA.
 \lstinputlisting[style=mystyle, language=C++]{../RealTimeDeltaQSD/src/maths/QTA.h}
 
 \subsection{Snapshot.h}

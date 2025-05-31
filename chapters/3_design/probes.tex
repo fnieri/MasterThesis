@@ -5,7 +5,7 @@ A system instrumented with OpenTelemetry has spans and traces to observe the exe
 To observe a system, we must put probes in it. For each outcome of interest, a probe (observation point) is attached to measure the delay of the outcome, like one would in a true oscilloscope \cite{post}.
 
 Consider \cref{fig:probes} below. A probe is attached at every component (for example, a database \cite{dq-tut}) to measure their $\Delta$Qs ($p_2, p_3$). Another probe ($p_1$) is inserted at the beginning and end of the system to measure the global execution delay. Thanks to this probe, the user can observe the $\Delta$Q \textit{``observed at $p_1$''}, which is the $\Delta$Q which was calculated from the data received by inserting probe $p_1$. The \textit{$\Delta$Q ``calculated at $p_1$''} is the resulting $\Delta$Q from the convolution of the observed $\Delta$Qs at $c_2$ and $c_3$. \\
-Probe $p_1$ is the equivalent of a ``root/parent span'' which observe the whole execution of $c_1, c_2$. $p_2$ and $p_3$ are child spans which represent single instances of execution.
+Probe $p_1$ is the equivalent of a ``root/parent span'' which observe the whole execution of $c_1, c_2$. $p_2$ and $p_3$ are child spans which represent single tasks.
 
     \begin{figure}[H]
         \begin{center}

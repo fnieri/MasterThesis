@@ -3,7 +3,7 @@
     \subsection{Histogram representation of $\Delta$Q}
     We approximate the probability distribution of $\Delta$Q via histograms.
    \subsubsection{PDF}
-   We partition the values into $N$ bins of equal width, Given $\lbrack x_i, x_{i+1} \rbrack$ the interval of a bin $i$, where $x_i = i\Delta t$, and $\hat{p}(x_i)$ the value of the PDF at bin $i$, for $n$ bins:
+   We partition the values into $N$ bins of equal width, Given $\lbrack x_i, x_{i+1} \rbrack$ the interval of a bin $i$, where $x_i = i\Delta t$, and $\hat{p}(x_i)$ the value of the PDF at bin $i$, for $n$ bins \cite{stat}:
         \begin{equation}
             \begin{cases}
                 \hat{p}(i) = \dfrac{s_i}{n}, \text{if } i \le n \\
@@ -11,8 +11,7 @@
             \end{cases}
             \label{eq:pdf}
         \end{equation}
-    Where $s_i$ the number of successful outcome instances whose elapsed time is contained in the bin $i$, $n$ the total number of instances. \cite{stat}
-
+    Where $s_i$ the number of successful outcome instances whose elapsed time is contained in the bin $i$, $n$ the total number of instances. 
     \subsubsection{CDF}
         The value $x_i = \hat{f}(i)$ of the CDF at bin $i$ with $n$ bins can be calculated as:
         \begin{equation}
@@ -31,7 +30,7 @@
         \end{figure}
 
     \subsection{dMax}
-        We introduced $dMax$ in the previous chapters (\cref{eq:dMaxU}), we provide here the full equation that allows $dMax$ to be calculated:
+        We introduced $dMax$ in the previous chapters (\cref{eq:dMaxTrue}), we provide here the full equation that allows $dMax$ to be calculated:
         \begin{equation}
             \begin{split}
                 \Delta t &= \Delta t_{base} \cdot 2^n \\ 
@@ -136,6 +135,6 @@
                 CI_{i, l} = \mu_i - \dfrac{\sigma_i}{\sqrt{n}} \ \text{,} \ CI_{i, u} = \mu_i + \dfrac{\sigma_i}{\sqrt{n}}
             \label{eq:ci_i}
         \end{equation}
-        The confidence bounds for the cdf are the lower and confidence bounds for every bin $i$.
+        The confidence bounds for the CDF are the lower and confidence bounds for every bin $i$.
 
      

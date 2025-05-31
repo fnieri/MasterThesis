@@ -1,10 +1,10 @@
 \chapter{Design}
-    This chapter aims to first extend the concepts of $\Delta$QSD, giving more insights into how the systems need to be instrumented to correctly work together, and how the different parts need to be integrated to interact together.
+    This chapter aims to first extend the concepts of $\Delta$QSD, giving more insights into how the different parts of the systemneed to be instrumented to correctly work together.
     \begin{itemize}
         \item We first provide concepts of probes, we extend the $\Delta$QSD notion of failure and describe how time series will work in our oscilloscope, this part is crucial to understand how the measurements are done in real time.
         \item We then explain the global design of the system (see \cref{fig:sys_diag}) in two parts: \\
             Firstly, we explain the application side, where the Erlang running system is. Consequently, it's where the $\Delta$Q adapter interface will be. It performs the translation of spans to outcome instances thanks to the inserted probes. \\
-            Secondly, the oscilloscope side. There, the server receives information about outcome instances from the adapter. The $\Delta$Q oscilloscope can then plot $\Delta$Q graphs from the instances. In the oscilloscope one can define outcome diagrams, set parameters for probes and control the adapter.
+            Secondly, the oscilloscope side. There, the server receives information about outcome instances from the adapter. The $\Delta$Q oscilloscope can then plot $\Delta$Q graphs from the received instances. In the oscilloscope one can define outcome diagrams, set parameters for probes and control the adapter.
         \item Lastly, we provide high level concepts of execution windows, triggers and snapshot. These are the key design elements of the oscilloscope. 
     \end{itemize}
 

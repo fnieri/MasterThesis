@@ -23,7 +23,7 @@
         In this tab, the user can define parameters for the probes they have defined. A photo of this tab can be found in \cref{app:param_tab}.
 
     \paragraph{Set a QTA}
-        The user is given the choice to set a QTA for a given probe. They have 4 fields where they can fill in which correspond to the percentiles and the maximum amount of failures allowed, they can change this dynamically during execution.
+        The user is given the choice to set a QTA for a given probe. They have 4 fields where they can fill in which correspond to the percentiles and the minimum amount of successful instances accepted. They can change this dynamically during execution. If a new $dMax$ is set, where $dMax < $ the defined delays in the QTA, the QTA is reset.
 
     \paragraph{dMax, bins}
         The user can set the parameters we explained previously, $\Delta$t and $N$. When this information is saved by the user, the new $dMax$ is transmitted to the adapter and saved for the selected observable.
@@ -35,7 +35,7 @@
         The user can set which triggers to fire for the probes they desire, they are given checkboxes to decide which ones to set as active or not (by default, the triggers are deactivated).
     
     \paragraph{Fired triggers}
-        Once a trigger is fired, the oscilloscope starts a timer, during which all probes start recording the observed $\Delta$Qs (and the calculated ones if applicable) without discarding older ones. Once the timer expires, the snapshot is saved for the user in the triggers tab. In the dashboard, it indicates when the trigger was fired (timestamp) and the name of the probe which fired it.
+        Once a trigger is fired, the oscilloscope starts a timer for 5 seconds, during which all probes start recording the observed $\Delta$Qs (and the calculated ones if applicable) without discarding older ones. Once the timer expires, the snapshot is saved for the user in the triggers tab. In the dashboard, it indicates when the trigger was fired (timestamp) and the name of the probe which fired it.
     
     \paragraph{Snapshot window}
         Clicking on a snapshot, a new window opens. The user can explore a frozen state of the system, being able to explore all the $\Delta$Qs saved in a snapshot. A screenshot of the snapshot window is provided in \cref{app:snapshot}.
@@ -47,7 +47,7 @@
             The user can set the IP and the port where the $\Delta$Q adapter is listening from. Two additional buttons communicate with the adapter by sending messages, they can start and stop the adapter's sending of outcome instances.
         
         \paragraph{C++ server controls}
-            The user can set the IP and the port for the oscilloscope's server.
+            The user can set the IP and the port for the oscilloscope's server, where it will receive outcome instances from the adapter.
 
 \subsection{Plots window}
-        To the left, the main window shows the plots of the probes being updated in real time. The window can be seen in \cref{app:param_tab}, \cref{app:trg_tab}.
+        To the left, the main window shows the plots of the probes being updated in real time. The window can be seen in \cref{app:param_tab}, \cref{app:trig_tab}.

@@ -59,8 +59,7 @@ with_span/3: -spec with_span(binary(), fun(() -> any()), map()) -> any().
                 \item Pid: \texttt{span\_process\_PID} || \texttt{ignore}.
             \end{itemize}
 
-   \texttt{end\_span} the OpenTelemetry \texttt{?end\_span(Ctx)} macro. \\
-
+   \texttt{end\_span} the OpenTelemetry \texttt{?end\_span(Ctx)} macro. 
         \subsubsection{fail\_span/1}
         \begin{minted}{erlang}        
 -spec fail_span( pid() | ignore) -> ok | term().
@@ -95,7 +94,7 @@ with_span/3: -spec with_span(binary(), fun(() -> any()), map()) -> any().
             \item Its $dMax$.
         \end{itemize}
         
-        They start time and end time are supplied upon starting/ending a span by calling this function:
+        The start time and end time are supplied upon starting/ending a span by calling this function:
         \begin{minted}{erlang}
         StartTime/EndTime = erlang:system_time(nanosecond).
         \end{minted}

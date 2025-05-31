@@ -30,18 +30,30 @@
     
     Once you have the dependencies set up you can begin creating outcome instances for the oscilloscope.
 
-    (\textbf{Note:} If the project were to change name, you can still find the project in https://github.com/fnieri/).
+    (\textbf{Note:} If the project was to change name, you can still find the project in https://github.com/fnieri/).
 
     \subsection{Starting spans}
-        To start spans you need to call:
+        To start spans you need to call: 
         \begin{minted}{erlang}
-            {ProbeCtx, Pid} = dqsd_otel:start_span(<<"probe">>, #{attributes => [{attr, <<"my_attr_5o5s10">>}]}),
+            {ProbeCtx, Pid} = dqsd_otel:start_span(<<"probe">>, #{attributes => [{attr, <<"my_attr_5o5s10">>}]})
+            or without attributes
+            {ProbeCtx, Pid} = dqsd_otel:start_span(<<"probe">>)
         \end{minted}
         This will give you the OpenTelemetry context of the probe and the Pid of the process to call upon end. It is left up to you to decide how to carry both in the execution.
         The function calls OpenTelemetry \texttt{?start\_span} macro, effectively replacing it.
+    
+    \subsection{With spans}
+        To start with spans you need to call:
+        \begin{minted}{erlang}
 
+            dqsd_otel:with_span(<<"worker_2">>, fun() -> ok, #{attributes => [{attr, <<"my_attr">>}]})
+            or without attributes
+            dqsd_otel:with_span(<<"worker_2">>, fun() -> ok end)
+        \end{minted}
+
+        The second attribute is the function you want to evaluate.
     \subsection{Ending spans}
-        To end spans you need to call:
+        To end spans you started with \texttt{dqsd\_otel:start\_span}, you need to call:
         \begin{minted}{erlang}
             dqsd_otel:end_span(ProbeCtx, ProbePid)
         \end{minted}
@@ -51,7 +63,7 @@
     \subsection{Failing outcome instances}
         To fail \textbf{custom} spans you need to call:
         \begin{minted}{erlang}
-            dqsd_otel:fail_span(WorkerPid),
+            dqsd_otel:fail_span(WorkerPid)
         \end{minted}
         Contrary to the other methods, this does not end OpenTelemetry spans, it is let up to you to decide how to handle failure in spans.
 

@@ -2,7 +2,7 @@
     \subsection{Server} The server is responsible for receiving the messages containing the outcome instances from the adapter. The server forwards the instances to the oscilloscope.
     
     \subsection{$\Delta$Q Oscilloscope} The oscilloscope is a C++ graphical application which implements a dashboard to observe $\Delta$Qs of probes inserted in the system under test \cite{osc-g}. It receives the instances corresponding to probes from the server and adds them to the time series of the probes whose instance is being received. 
-    The oscilloscope has a graphical interface which allows the user to create an outcome diagram of the system under test, display real time graphs which show detail about the execution of the system and allow the user to set parameters for probes. It can also display snapshots of the system as if it was frozen in time.
+    The oscilloscope has a graphical interface which allows the user to create an outcome diagram of the system under test, display real time graphs which show detail about the execution of the system, and allows the user to set parameters for probes. It can also display snapshots of the system as if it was frozen in time.
 
     \subsection{Inserting probes in the oscilloscope}
         Probes are automatically inserted in the oscilloscope when creating outcome diagrams. They are inserted on the outcomes observables, operators observables and to the sub-outcome diagrams observables (probes that observe the causal links of multiple outcomes/operators), we will see later on how they can be defined and how an outcome diagram can be created. \\
