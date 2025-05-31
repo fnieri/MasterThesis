@@ -15,7 +15,7 @@ start_span/2: -spec start_span(binary(), map()) -> {opentelemetry:span_ctx(), pi
         
         \textbf{Parameters:}
         \begin{itemize}
-            \item Name: Name of the probe in Erlang binary representation. For example, if the name of the probe is ``probe'', the binary representation would be constructed with ``<<"probe">>'' \cite{bin-erl} \cite{bit-syntax}. We will refer to this as ``binary name'' from now on.
+            \item Name: Name of the probe in Erlang binary representation. For example, if the name of the probe is ``probe'', the binary representation would be constructed with ``\texttt{<<"probe">>}'' \cite{bin-erl} \cite{bit-syntax}. We will refer to this as ``binary name'' from now on.
             \item Attributes: The OpenTelemetry span attributes (Only for start\_span/2).
         \end{itemize} 
         
@@ -44,7 +44,7 @@ with_span/3: -spec with_span(binary(), fun(() -> any()), map()) -> any().
 
             \end{itemize}
 
-        \texttt{with\_span} incorporates OpenTelemetry \texttt{with\_span} macro.
+        \texttt{with\_span} incorporates, thus replaces the OpenTelemetry \texttt{?with\_span} macro.
 
         \textbf{Return:}
             \texttt{with\_span} returns what \texttt{Fun} returns (\texttt{any()}).
@@ -59,7 +59,7 @@ with_span/3: -spec with_span(binary(), fun(() -> any()), map()) -> any().
                 \item Pid: \texttt{span\_process\_PID} || \texttt{ignore}.
             \end{itemize}
 
-    As is the case for \texttt{start\_span}, \texttt{end\_span} incorporates an OpenTelemetry macro, in this case \texttt{?end\_span(Ctx)}. \\
+   \texttt{end\_span} the OpenTelemetry \texttt{?end\_span(Ctx)} macro. \\
 
         \subsubsection{fail\_span/1}
         \begin{minted}{erlang}        
@@ -74,15 +74,15 @@ with_span/3: -spec with_span(binary(), fun(() -> any()), map()) -> any().
         \subsubsection{span\_process}
             \texttt{span\_process} is the process, spawned by \texttt{start\_span}, responsible for handling the \texttt{end\_span, fail\_span, timeout} messages.
 
-            Upon being spawned, the process starts a timer with time equal to the $dMax$ set by an user for the probe being observed, thanks to \texttt{erlang:send\_after}. When the timer runs out, it sends a \texttt{timeout} message to the process.
+            Upon being spawned, the process starts a timer with time equal to the $dMax$ set by a user for the probe being observed, thanks to \texttt{erlang:send\_after}. When the timer runs out, it sends a \texttt{timeout} message to the process.
         
         The process can receive three kinds of messages:
         \begin{itemize}
             \item \texttt{\{end\_span, end\_time\}}: This will send an outcome instance to the oscilloscope with the start and end time of the execution of the probe and success status.
             \item \texttt{\{fail\_span, end\_time\}}: This will send an outcome status to the oscilloscope indicating that an execution of a probe has failed.
-            \item \texttt{\{timeout, end\_time(StartTime + $dMax$)\}}: If the program hasn't ended the span before $dMax$, the timer will send a \texttt{timeout} message and it will send an outcome instance to the oscilloscope indicating that an execution of a probe has timed out.
+            \item \texttt{\{timeout, end\_time(StartTime + $dMax$)\}}: If the program hasn't ended the span before $dMax$, the timer will send a \texttt{timeout} message. It will send an outcome instance to the oscilloscope indicating that an execution of a probe has timed out.
         \end{itemize}
-        The process is able to receive one and only message, if the execution times out and subsequently the span is ended, the oscilloscope will not be notified as the process is defunct. This is assured by Erlang documentation:
+        The \texttt{span\_process} is able to receive one and only message, if the execution times out and subsequently the span is ended, the oscilloscope will not be notified as the process is defunct. This is assured by Erlang documentation:
         \begin{center}
             \textit{If the message signal was sent using a process alias that is no longer active, the message signal will be dropped.} \cite{erl-s}
         \end{center}
@@ -101,7 +101,7 @@ with_span/3: -spec with_span(binary(), fun(() -> any()), map()) -> any().
         \end{minted}
         The name is given when starting a span and the $dMax$ is stored in a dictionary in the adapter. 
 
-            The outcome instance is created only if two conditions are met: the adapter has been set as active and the user set a timeout for the probe, the functions will spawn a \texttt{span\_process} process, passing along all the necessary informations. \\
+            The outcome instance is created only if two conditions are met: the adapter has been set as active and the user set a timeout for the probe. The functions will then spawn a \texttt{span\_process} process, passing along all the necessary informations. \\
         Once the span is subsequently ended/timed out/failed, the function \texttt{send\_span} creates a message carrying all the informations and sends it to the C++ server. The formatting of the messages is the following:
         \begin{minted}{text}
             n:probe name,
@@ -114,7 +114,7 @@ with_span/3: -spec with_span(binary(), fun(() -> any()), map()) -> any().
         The adapter is composed of two \texttt{gen\_server} which handle communication to and from the oscilloscope. This gen\_server behaviour allows the adapter to send spans asynchronously to the oscilloscope.
 
         \subsubsection{TCP server}
-            The TCP server is responsible for receiving commands from the oscilloscope. It can be run by setting its IP and port via:
+            The TCP server \texttt{dqsd\_otel\_tcp\_server} is responsible for receiving commands from the oscilloscope. It can be run by setting its IP and port via:
             \begin{minted}{erlang}
                 -spec start_server(string() | binary() | tuple(), integer()) -> ok | {error, Reason}
             \end{minted}
@@ -126,7 +126,7 @@ with_span/3: -spec with_span(binary(), fun(() -> any()), map()) -> any().
             \end{itemize}
 
         \subsubsection{TCP client}
-            The TCP client allows the adapter to send the spans to the oscilloscope.
+            The TCP client \texttt{dqsd\_otel\_tcp\_client} allows the adapter to send the spans to the oscilloscope.
             The client connects over TCP to the oscilloscope by connecting to the oscilloscope server's address and opens a socket where it can send the outcome instances.
             \begin{minted}{erlang}
                 -spec try_connect(string() | binary(), integer()) -> ok.

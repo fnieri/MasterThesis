@@ -1,5 +1,5 @@
 \section{Application side} 
-    \subsection{System under test} The system under test \textbf{(S.U.T)} is the Erlang system the engineer wishes to observe, it ideally is a system which already is instrumented with OpenTelemetry. The ideal system where $\Delta$QSD is more useful is a system that executes many independent instances of the same action \cite{dq-tut}. 
+    \subsection{System under test} The system under test \textbf{(S.U.T)} is the Erlang system the engineer wishes to observe (\cref{fig:sys_diag}). It ideally is a system which already is instrumented with OpenTelemetry. The ideal system where $\Delta$QSD is more useful is a system that executes many independent instances of the same action \cite{dq-tut}. 
     
     \subsection{$\Delta$Q Adapter} 
     The $\Delta$Q adapter is the \texttt{dqsd\_otel} Erlang interface \cite{wrapper}. It starts and ends OpenTelemetry spans and translates them to outcome instances which are useful for the oscilloscope. This can be done thanks to probes being attached to the system under test, like an oscilloscope would! The outcome instances end normally like OpenTelemetry spans or, additionally, can timeout after a custom timeout ($dMax$), and fail, \textit{according to user's definition of failure}. 
@@ -10,7 +10,7 @@
     The adapter can receive messages from the oscilloscope, the messages are about updating probe's $dMax$ or starting and stopping the sending of data to the oscilloscope.
     \subsection{Inserting probes in Erlang - From spans to outcome instances}
         OpenTelemetry spans are useful to carry context, attributes and baggage in a program \cite{otel-dt}. The plethora of attributes they have is nevertheless too much for the oscilloscope. 
-        To get the equivalent of spans for the oscilloscope, the adapter needs to be called at the starting events of a probe to start an instance of a probe, and at the ending events to end the outcome instance. The name given with \texttt{``start\_span''} is the name of the probe. The PID must be carried throughout the whole execution, and used when ending spans to create the correlation between a probe and an outcome instance.
+        To get the equivalent of spans for the oscilloscope, the adapter needs to be called at the starting events of a probe to start an instance of a probe, and at the ending events to end the outcome instance. The name given with \texttt{``start\_span/with\_span''} is the name of the probe. The PID which is returned by starting a span must be carried throughout the whole execution, and used when ending spans to create the correlation between a probe and an outcome instance.
 \begin{figure}[H]
 \centering
    \begin{minted}{erlang}
@@ -29,4 +29,4 @@
         \end{minted}
 \caption{Example usage of the adapter}\label{code:adapter}
 \end{figure}
-    Further details about the implementation of the adapter are explained in Chapter 5 and a detailed explanation is found in the appendix (\cref{app:instr_app}). 
+    Further details about the implementation of the adapter are explained in Chapter 5. A user guide on how to include the adapter in your project and how to instrument your program is found in the appendix (\cref{app:instr_app}). 

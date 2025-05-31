@@ -1,23 +1,23 @@
 \subsection{Time series of outcome instances}
     Consider a probe $p$ with two distinct sets of events, the starting set of events $s$ and ending set of event $e$. The outcome instance of a message $m_s \rightarrow m_e$ contains:
     \begin{itemize}
-        \item The probe's $p$ name
-        \item The start time $t_s$
-        \item The end time $t_e$
-        \item Its status 
-        \item Its elapsed time of execution
+        \item The probe's $p$ name.
+        \item The start time $t_s$.
+        \item The end time $t_e$.
+        \item Its status.
+        \item Its elapsed time of execution.
     \end{itemize}
-    The instance has three possible statuses: \texttt{success, timeout, failure}, it can thus be broken down in three possible representations, based on its status:
+    The instance has three possible statuses: \texttt{success, timeout, failure}. It can thus be broken down in three possible representations, based on its status:
     \begin{itemize}
         \item \textbf{($t_s$,$t_e$)}: This representation indicates that the execution was successful (t $<$ $dMax$). 
-        \item \textbf{($t_s, \mathcal{T}$)}: This representation indicates that the execution has timed out (t $>$ $dMax$). The end time is equal to $t_s + \text{timeout}$ 
+        \item \textbf{($t_s, \mathcal{T}$)}: This representation indicates that the execution has timed out (t $>$ $dMax$). The end time is equal to $t_s + \text{timeout}$.
         \item \textbf{($t_s, \mathcal{F}$)}: This representation indicates the execution has failed given a user defined requirement (i.e. a dropped message given buffer overload in a queue system). It must not be confused with a program failure (crash), if a program crashes during the execution of event $e$, it will time out since the adapter will not receive an end message.
     \end{itemize}
     The \textbf{time series} of a probe is the sequence of $n$ outcome instances. The collected elapsed times of execution (delay) from the outcome instances can be represented as a CDF, which is a $\Delta$Q.
 
-    \paragraph{What can be considered a failed execution?} Imagine a queue with a buffer: the buffer queue being full and dropping incoming messages can be modeled as a failure.
+    \paragraph{What can be considered a failed execution?} The choice of what is considered a failed execution is left up to the user who is handling the spans and is program-dependent. Exceptions or errors can be kinds of failure.
 
-    More generally, the choice of what is considered a failed execution is left up to the user who is handling the spans and is program-dependent. Exceptions or errors can be kinds of failure. 
+    Imagine a queue with a buffer: the buffer queue being full and dropping incoming messages can be modeled as a failure.
 
     On another note, the way of handling ``errored'' spans in OpenTelemetry can differ from user to user  \cite{otel-err}, so the adapter will not handle ending and setting statuses for ``failed'' spans. \\
    In any case, \textbf{timed out and failed will both be considered as a failure} in a $\Delta$Q. The distinction in an outcome instance is there for future refinements of the oscilloscope, where more statistics can be displayed about a $\Delta$Q.

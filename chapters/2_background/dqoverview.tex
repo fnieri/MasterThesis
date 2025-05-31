@@ -1,5 +1,8 @@
 \section{An overview of $\Delta$QSD}
-    $\Delta$QSD is ``a metrics-based, quality-centric paradigm that uses formalised outcome diagrams to explore the performance consequences of design decisions''. \cite{myo}
+    $\Delta$QSD is defined as \cite{myo}:
+    \begin{quote}
+        ``A metrics-based, quality-centric paradigm that uses formalised outcome diagrams to explore the performance consequences of design decisions''.
+    \end{quote}
     
     The key concepts that give the paradigm its name are \textbf{quality attenuation ($\Delta$Q)} and \textbf{outcome diagrams}. \cite{dq-tut}
 
@@ -35,7 +38,7 @@
         \caption{The outcome (circle) and the starting set (left) and terminating set (right) of events.}
     \end{figure}
    
-  \subsection{Failure semantics}
+  \subsection{Failure semantics} \label{subsec:failure}
        Failure indicates ``an input message $m_{in}$ \textbf{that has no output message} $m_{out}$'' \cite{art}. It models the probability that the delay is infinite.
 
 
@@ -85,7 +88,7 @@
 
     \subsection{Outcome diagram}
         An outcome diagram is central to capture the causal relationships between the outcomes \cite{myo}. It shows the causal connections between all the outcomes we are interested in. Given an outcome diagram, one can compute the $\Delta$Q for the whole system. \\
-        There are four different operators that represent the relationships between outcomes. 
+        There are four different operators that represent the relationships between outcomes. \cite{dq-tut}
     \subsubsection{Sequential composition}
         If we assume two outcomes $O_A$, $O_B$ where the end event of $O_A$ is the start event of $O_B$, then we say the two outcomes are sequentially composed. The total delay $\Delta$Q$_{AB}$ is given by the convolution of the PDFs of $O_A$ and $O_B$ ($O_A \circledast O_B$).
         
@@ -165,7 +168,7 @@
             \end{figure}
 
     \subsubsection{Probabilistic choice (PC)}
-        If we assume two possible outcomes $O_A$ and $O_B$ and exactly one outcome is chosen during each occurence of a start event and:
+        If we assume two possible outcomes $O_A$ and $O_B$ and exactly one outcome is chosen during each occurrence of a start event and:
         \begin{itemize}
             \item $O_A$ happens with probability $\dfrac{p}{p+q}$
             \item $O_B$ happens with probability $\dfrac{q}{p + q}$
@@ -179,12 +182,12 @@
         \begin{center}
             \includegraphics[width = \textwidth]{tikz/op.pdf}
         \end{center}
-        \caption{Graphical representation of the possible operators in an outcome diagram. From the left: Probabilistic choice, first-to-finish, all-to-finish}
+        \caption{Graphical representation of the possible operators in an outcome diagram. From the left: Probabilistic choice, first-to-finish, all-to-finish \cite{myo}}
         \label{fig:op}
     \end{figure}
     First-to-finish, All-to-finish and probabilistic-choice are calculated on the CDF of the $\Delta$Qs of their components.
     
-    These operators can be assembled together to create an outcome diagram, later on, we will see how one can go from the graphical representation to outcome diagrams which can be used in the $\Delta$Q oscilloscope.
+    These operators can be assembled together to create an outcome diagram. In chapter 4 we will see how one can go from the graphical representation to outcome diagrams, which can be used in the $\Delta$Q oscilloscope.
     
     \subsection{Outcome diagrams refinement}
         An important feature of outcome diagrams is the ability to be able to design a system even with \textit{``black boxes''}, before the complete details of it are known. \cite{myo} \\
@@ -224,7 +227,7 @@
     \subsection{Independence hypothesis} \label{indep_hyp} 
         An important aspect of sequential composition is the assumption of outcomes having independent behaviour \cite{post}. Let us explain the following assumption clearly.
 
-        Assume the situation described by \cref{otc_indep}, two sequentially composed outcomes $o_1$, $o_2$ running on the same processor. The overall delay of execution can be observed from the start event of $o_1$ ($u_1$) to the end event of $o_2$ ($r_1$). 
+        Assume the situation described by \cref{fig:otc_indep}, two sequentially composed outcomes $o_1$, $o_2$ running on the same processor. The overall delay of execution can be observed from the start event of $o_1$ ($u_1$) to the end event of $o_2$ ($r_1$). 
         \begin{figure}[H]
             \begin{center}
                 \includegraphics[scale=1]{tikz/indep.pdf}
@@ -233,16 +236,16 @@
             \caption{Two sequentially composed outcomes, $o_1$, $o_2$. The end event of $o_1$ is the start event of $o_2$.}
         \end{figure}
         
-        At low load, the two components behaviour will be independent, the system will behave \textbf{linearly}. According to the superposition principle, the overall delay will be the sum of the two delays, as will the overall processor utilisation. \cite{sup-p}
+        At low load, the two components behaviour will be independent (\cref{fig:cdf_indep}), the system will behave \textbf{linearly}. According to the superposition principle, the overall delay will be the sum of the two delays, as will the overall processor utilisation. \cite{sup-p}
         
-        When load increases, the two components will start to show dependent behaviour due to the processor utilisation increasing. The $\Delta$Q of the observed total delay will then deviate from the sum of the two delays ($o_1 \circledast o_2$). 
+        When load increases, the two components will start to show dependent behaviour due to the processor utilisation increasing. The $\Delta$Q of the observed total delay will then deviate from the sum of the two delays ($o_1 \circledast o_2$). This situation is observed in \cref{fig:cdf_indep}.
         
         \begin{figure}[H]
             \begin{center}
                 \includegraphics[scale=1]{tikz/cdf_indep.pdf}
             \end{center}
-            \caption{When the components are independent, the sum of the two delays (blue) and the overall delay (red) can be superposed. As $o_1$ and $o_2$ show initial signs of dependency, the overall delay (green) can be seen deviating from the sum of the two delays.}
-            \label{fig:cdf_indep}
-        \end{figure}
+            \caption{When the components are independent, the sum of the two delays (blue) and the overall delay (red) can be superposed. As $o_1$ and $o_2$ showsigns of dependency, the overall delay (green) can be seen deviating from the sum of the two delays. There is \textbf{non-linearity}.}
+            \label{fig:cdf_indep}%
+        \end{figure}%
 
-        When the system is far from being overloaded, the effect is noticeable thanks to $\Delta$QSD. As the cliff edge of overload is approached, the nonlinearity will increase \cite{post}. These theoretical results can be observed in practice in the oscilloscope. We will explore such cases in the synthetic applications section.
+        When the system is far from being overloaded, the effect is noticeable. As the cliff edge of overload is approached, the nonlinearity will increase \cite{post} \cite{dq-tut}. These theoretical results can be observed in the oscilloscope. We will explore such cases in Chapter 6.

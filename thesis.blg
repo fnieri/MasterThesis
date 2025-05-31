@@ -1,19 +1,19 @@
 [0] Config.pm:308> INFO - This is Biber 2.20
 [0] Config.pm:311> INFO - Logfile is 'thesis.blg'
-[98] biber:340> INFO - === sab mag 31, 2025, 19:41:47
-[115] Biber.pm:420> INFO - Reading 'thesis.bcf'
-[202] Biber.pm:994> INFO - Found 53 citekeys in bib section 0
-[216] Biber.pm:4463> INFO - Processing section 0
-[232] Biber.pm:4654> INFO - Looking for bibtex file 'biblio.bib' for section 0
-[234] bibtex.pm:1713> INFO - LaTeX decoding ...
-[295] bibtex.pm:1519> INFO - Found BibTeX data source 'biblio.bib'
-[607] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
-[607] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[608] Biber.pm:4283> INFO - Sorting list 'none/global//global/global/global' of type 'entry' with template 'none' and locale 'en-US'
-[608] Biber.pm:4289> INFO - No sort tailoring available for locale 'en-US'
-[649] bbl.pm:676> INFO - Writing 'thesis.bbl' with encoding 'UTF-8'
-[684] bbl.pm:779> INFO - Output to thesis.bbl
-[684] Biber.pm:131> WARN - Duplicate entry key: 'otel-l' in file 'biblio.bib', skipping ...
-[684] Biber.pm:131> WARN - legacy month field 'September' in entry 'dq-br' is not an integer - this will probably not sort properly.
-[684] Biber.pm:131> WARN - ISBN '9780080572284; 0080572286; 9780124808652; 0124808654' in entry 'sup-p' is invalid - run biber with '--validate_datamodel' for details.
-[684] Biber.pm:133> INFO - WARNINGS: 3
+[119] biber:340> INFO - === sab mag 31, 2025, 22:36:25
+[141] Biber.pm:420> INFO - Reading 'thesis.bcf'
+[238] Biber.pm:994> INFO - Found 53 citekeys in bib section 0
+[255] Biber.pm:4463> INFO - Processing section 0
+[270] Biber.pm:4654> INFO - Looking for bibtex file 'biblio.bib' for section 0
+[273] bibtex.pm:1713> INFO - LaTeX decoding ...
+[344] bibtex.pm:1519> INFO - Found BibTeX data source 'biblio.bib'
+[683] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[683] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[683] Biber.pm:4283> INFO - Sorting list 'none/global//global/global/global' of type 'entry' with template 'none' and locale 'en-US'
+[683] Biber.pm:4289> INFO - No sort tailoring available for locale 'en-US'
+[732] bbl.pm:676> INFO - Writing 'thesis.bbl' with encoding 'UTF-8'
+[770] bbl.pm:779> INFO - Output to thesis.bbl
+[771] Biber.pm:131> WARN - Duplicate entry key: 'otel-l' in file 'biblio.bib', skipping ...
+[771] Biber.pm:131> WARN - legacy month field 'September' in entry 'dq-br' is not an integer - this will probably not sort properly.
+[771] Biber.pm:131> WARN - ISBN '9780080572284; 0080572286; 9780124808652; 0124808654' in entry 'sup-p' is invalid - run biber with '--validate_datamodel' for details.
+[771] Biber.pm:133> INFO - WARNINGS: 3

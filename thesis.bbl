@@ -773,8 +773,8 @@
       \strng{authorfullhash}{c9c2d3a24c7583a7e7f7f0789505c4ad}
       \strng{authorfullhashraw}{c9c2d3a24c7583a7e7f7f0789505c4ad}
       \field{extraname}{6}
-      \field{sortinit}{5}
-      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{note}{Accessed: (19/05/2025)}
@@ -803,8 +803,8 @@
       \strng{authornamehash}{9dfc33dc9016ab21c82fadf9c8e7838c}
       \strng{authorfullhash}{9dfc33dc9016ab21c82fadf9c8e7838c}
       \strng{authorfullhashraw}{9dfc33dc9016ab21c82fadf9c8e7838c}
-      \field{sortinit}{5}
-      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{note}{Accessed: (28/05/2025)}
@@ -834,8 +834,8 @@
       \strng{authorfullhash}{c9c2d3a24c7583a7e7f7f0789505c4ad}
       \strng{authorfullhashraw}{c9c2d3a24c7583a7e7f7f0789505c4ad}
       \field{extraname}{7}
-      \field{sortinit}{5}
-      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{note}{Accessed: (28/05/2025)}
@@ -955,8 +955,8 @@
       \strng{authorfullhash}{c9c2d3a24c7583a7e7f7f0789505c4ad}
       \strng{authorfullhashraw}{c9c2d3a24c7583a7e7f7f0789505c4ad}
       \field{extraname}{10}
-      \field{sortinit}{6}
-      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{note}{Accessed: (19/05/2025)}
@@ -985,8 +985,8 @@
       \strng{authornamehash}{e72d3cf65177f6e72cd28c9adf030560}
       \strng{authorfullhash}{e72d3cf65177f6e72cd28c9adf030560}
       \strng{authorfullhashraw}{e72d3cf65177f6e72cd28c9adf030560}
-      \field{sortinit}{6}
-      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{note}{Accessed: (31/05/2025)}
@@ -1046,8 +1046,8 @@
       \strng{authorfullhash}{f669f61ee8de1a8b7351d817ea423497}
       \strng{authorfullhashraw}{f669f61ee8de1a8b7351d817ea423497}
       \field{extraname}{2}
-      \field{sortinit}{7}
-      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{note}{Accessed: (28/05/2025)}
@@ -1191,6 +1191,36 @@
       \field{volume}{Springer texts in statistics}
       \field{year}{2005}
     \endentry
+    \entry{rebin}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=c527e58d2afcc6c508589b14fc9cfc0b}{%
+           family={Pauw},
+           familyi={P\bibinitperiod},
+           given={Brian},
+           giveni={B\bibinitperiod}}}%
+      }
+      \strng{namehash}{c527e58d2afcc6c508589b14fc9cfc0b}
+      \strng{fullhash}{c527e58d2afcc6c508589b14fc9cfc0b}
+      \strng{fullhashraw}{c527e58d2afcc6c508589b14fc9cfc0b}
+      \strng{bibnamehash}{c527e58d2afcc6c508589b14fc9cfc0b}
+      \strng{authorbibnamehash}{c527e58d2afcc6c508589b14fc9cfc0b}
+      \strng{authornamehash}{c527e58d2afcc6c508589b14fc9cfc0b}
+      \strng{authorfullhash}{c527e58d2afcc6c508589b14fc9cfc0b}
+      \strng{authorfullhashraw}{c527e58d2afcc6c508589b14fc9cfc0b}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Accessed: (31/05/2025)}
+      \field{title}{What does rebinning do?}
+      \field{year}{2015}
+      \verb{urlraw}
+      \verb https://lookingatnothing.com/index.php/archives/2097
+      \endverb
+      \verb{url}
+      \verb https://lookingatnothing.com/index.php/archives/2097
+      \endverb
+    \endentry
     \entry{conv}{book}{}{}
       \name{author}{2}{}{%
         {{hash=79745d398db7a123f627185130765dc9}{%
@@ -1240,8 +1270,8 @@
       \strng{authornamehash}{c91bdfd4de5d2ed142377c34b92e83c2}
       \strng{authorfullhash}{c91bdfd4de5d2ed142377c34b92e83c2}
       \strng{authorfullhashraw}{c91bdfd4de5d2ed142377c34b92e83c2}
-      \field{sortinit}{8}
-      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{note}{Accessed: (19/05/2025)}
@@ -1270,8 +1300,8 @@
       \strng{authornamehash}{424cb1e1c0315dbde42951125a3180aa}
       \strng{authorfullhash}{424cb1e1c0315dbde42951125a3180aa}
       \strng{authorfullhashraw}{424cb1e1c0315dbde42951125a3180aa}
-      \field{sortinit}{8}
-      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{note}{Accessed: (21/05/2025)}
@@ -1285,8 +1315,8 @@
       \endverb
     \endentry
     \entry{fft-h}{misc}{}{}
-      \field{sortinit}{8}
-      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
       \field{labeltitlesource}{title}
       \field{note}{Accessed: (23/05/2025)}
       \field{title}{Planning-rigor flags}
@@ -1326,8 +1356,8 @@
       \strng{authornamehash}{f37243c594d895d14f9f3bd4eaa1291d}
       \strng{authorfullhash}{f37243c594d895d14f9f3bd4eaa1291d}
       \strng{authorfullhashraw}{f37243c594d895d14f9f3bd4eaa1291d}
-      \field{sortinit}{8}
-      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{This book presents an introduction to the principles of the fast Fourier transform. This book covers FFTs, frequency domain filtering, and applications to video and audio signal processing. As fields like communications, speech and image processing, and related areas are rapidly developing, the FFT as one of essential parts in digital signal processing has been widely used. Thus there is a pressing need from instructors and students for a book dealing with the latest FFT topics. This book provides thorough and detailed explanation of important or up-to-date FFTs. It also has adopted modern approaches like MATLAB examples and projects for better understanding of diverse FFTs.}
@@ -1335,36 +1365,6 @@
       \field{isbn}{1402066287}
       \field{title}{Fast Fourier Transform - Algorithms and Applications}
       \field{year}{2010}
-    \endentry
-    \entry{rebin}{misc}{}{}
-      \name{author}{1}{}{%
-        {{hash=c527e58d2afcc6c508589b14fc9cfc0b}{%
-           family={Pauw},
-           familyi={P\bibinitperiod},
-           given={Brian},
-           giveni={B\bibinitperiod}}}%
-      }
-      \strng{namehash}{c527e58d2afcc6c508589b14fc9cfc0b}
-      \strng{fullhash}{c527e58d2afcc6c508589b14fc9cfc0b}
-      \strng{fullhashraw}{c527e58d2afcc6c508589b14fc9cfc0b}
-      \strng{bibnamehash}{c527e58d2afcc6c508589b14fc9cfc0b}
-      \strng{authorbibnamehash}{c527e58d2afcc6c508589b14fc9cfc0b}
-      \strng{authornamehash}{c527e58d2afcc6c508589b14fc9cfc0b}
-      \strng{authorfullhash}{c527e58d2afcc6c508589b14fc9cfc0b}
-      \strng{authorfullhashraw}{c527e58d2afcc6c508589b14fc9cfc0b}
-      \field{sortinit}{9}
-      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{note}{Accessed: (31/05/2025)}
-      \field{title}{What does rebinning do?}
-      \field{year}{2015}
-      \verb{urlraw}
-      \verb https://lookingatnothing.com/index.php/archives/2097
-      \endverb
-      \verb{url}
-      \verb https://lookingatnothing.com/index.php/archives/2097
-      \endverb
     \endentry
     \entry{rebar3}{misc}{}{}
       \name{author}{1}{}{%
@@ -1525,8 +1525,8 @@
       \strng{authornamehash}{d197ed976cbce56f965887b3ad17e4ca}
       \strng{authorfullhash}{d197ed976cbce56f965887b3ad17e4ca}
       \strng{authorfullhashraw}{d197ed976cbce56f965887b3ad17e4ca}
-      \field{sortinit}{9}
-      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{note}{Accessed: (31/05/2025)}
@@ -1555,8 +1555,8 @@
       \strng{authornamehash}{143682a348e0d7a5b0ab079570c606e0}
       \strng{authorfullhash}{143682a348e0d7a5b0ab079570c606e0}
       \strng{authorfullhashraw}{143682a348e0d7a5b0ab079570c606e0}
-      \field{sortinit}{9}
-      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{note}{Accessed: (31/05/2025)}

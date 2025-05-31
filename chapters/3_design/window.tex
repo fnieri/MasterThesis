@@ -4,7 +4,7 @@
 
     \subsection{Sampling window}
     Suppose we are at time $t$, the observed $\Delta$Q of a sampling window at time $t$ we will display are the $\Delta$Qs obtained from the outcome instances who ended within a sampling window in the \textbf{window of time $(t-1)_{l}$ - $(t-1)_u$}, with $t-1$ equal to $t - x$, and $x$ the sampling rate. The sampling rate is how often $\Delta$Qs are calculated. \\
-    This is to account for various overheads that need to be taken into consideration. They could be network overhead, the adapter overhead, C++ latency and more. Imagine multiple outcome instances that are ended at a time slightly lower but close to t, and due to the overheads the messages arrive at a time slightly higher but close to t, the outcome instance would not be taken into consideration for the calculation of a $\Delta$Q.
+    This is to account for various overheads that need to be taken into consideration. They could be network overhead, the adapter overhead, C++ latency and more. Imagine multiple outcome instances that are ended at a time slightly lower but close to $t$, and due to the overheads the messages arrive at a time slightly higher but close to $t$, the outcome instance would not be taken into consideration for the calculation of a $\Delta$Q.
     
     \begin{figure}[H]
         \begin{center}

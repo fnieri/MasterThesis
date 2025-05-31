@@ -8,10 +8,10 @@
 
  ANTLR is just one of the many parsers generators available in C++ (flex/bison \cite{flexb}, lex/yacc \cite{lexy}). Although it presents certain limitations, its generated code is simpler to handle and less convoluted with respect to the other possibilities.
 
-        ANTLR uses Adaptive LL(*) \textit{(ALL(*))} parser, namely, it will ``move grammar analysis to parse-time, without the use of static grammar analysis''. \cite{antlr}
+        ANTLR uses an Adaptive LL(*) \textit{(ALL(*))} parsing strategy, namely, it will ``move grammar analysis to parse-time, without the use of static grammar analysis''. \cite{antlr}
 
         \subsection{Grammar}
-            ANTLR provides a yacc-like metalanguage \cite{antlr} to write grammars. The grammar we have written can be found in the appendix \cref{app:grammar}.
+            ANTLR provides a yacc-like metalanguage \cite{antlr} to write grammars. Due to page limitations, the grammar we have written can be found in \cref{app:grammar}.
               
     \subsubsection{Limitations}
         A previous version was implemented in Lark \cite{lark}, a python parsing toolkit. The python version was quickly discarded due to a more complicated integration between Python and C++. Lark provided Earley(SPPF) strategy which allowed for ambiguities to be resolved, which is not possible in ANTLR. \\
