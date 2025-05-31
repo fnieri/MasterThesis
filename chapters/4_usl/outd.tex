@@ -1,11 +1,10 @@
   \section{Outcome diagram}
-        An abstract syntax for constructing outcome diagrams has already been defined in a previous paper \cite{art}, nevertheless, the oscilloscope needs a textual way to define an outcome diagram. 
-       
-        We define thus a grammar to create an outcome diagram in our oscilloscope, our grammar is a textual interpretation of the abstract syntax.
+        An abstract syntax for constructing outcome diagrams has already been defined in a previous paper \cite{art}, nevertheless, the oscilloscope needs a textual way to define an outcome diagram. \\ 
+        We define  a grammar to create an outcome diagram in our oscilloscope, which is a textual interpretation of the abstract syntax.
         
       
         \subsection{Causal link}
-            A causal link between two components can be defined by a right arrow from \texttt{component\_i} to \texttt{component\_j}
+            A causal link between two components can be defined by a right arrow from \texttt{component\_i} to \texttt{component\_j}:
         \begin{minted}{text}
             component_i -> component_j 
         \end{minted}
@@ -17,7 +16,7 @@
             p_1 = o_1 -> o_2;
         \end{minted}
 
-        A probe is attached at the begin and end of $p_1$, it will observe the whole system and the calculated $\Delta$Q will be the convolution of $o_1, o_2$.
+        A probe is attached at the start and end events of $p_1$, it will observe the whole system and the calculated $\Delta$Q will be the convolution of $o_1, o_2$.
 
         The lines defining these diagrams must be semicolon terminated. Outcomes and operators cannot be defined on their own, they must be observed in a sub-outcome diagram.
         

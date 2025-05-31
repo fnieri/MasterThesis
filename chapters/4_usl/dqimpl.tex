@@ -7,11 +7,11 @@
     
     \paragraph{Observed $\Delta$Q}
     
-    The first way is by having $n$ collected outcome instances between $t_l$ and $t_u$, calculating its \textit{probability density function} (PDF) and then calculating the \textit{empirical cumulative distribution function} (CDF) based on its PDF. This is called the \textbf{Observed $\Delta$Q}.
+    The first way is by having $n$ collected outcome instances whose end time is between $t_l$ and $t_u$, calculating the PDF of the delays of the outcome instances, and calculating the resulting CDF based on the PDF. This is called the \textbf{Observed $\Delta$Q}.
     
     \paragraph{Calculated $\Delta$Q}
     
-    A $\Delta$Q can also be calculated by performing operations on two or more observed $\Delta$Qs (convolution, operators operations), the notion of outcome instances is then lost between calculations, as the interest shifts towards calculating the resulting PDFs and CDFs. This is called the \textbf{Calculated $\Delta$Q}. A simple outcome can \textbf{not} have a ``calculated $\Delta$Q'', we can only observe the delay from its observables.
+    A $\Delta$Q can also be calculated by performing operations on two or more observed $\Delta$Qs (convolution, operators operations), the notion of outcome instances is lost between calculations, as the interest shifts towards calculating the resulting PDFs and CDFs. This is called the \textbf{Calculated $\Delta$Q}. A simple outcome can \textbf{not} have a ``calculated $\Delta$Q'', we can only observe the delay from its observables.
 
     If you recall \cref{fig:probes_o}, the probes $p_2$ and $p_3$ observe simple outcomes, they can only display the observed $\Delta$Qs of $o_2, o_3$. The probe $p_1$ instead observes the sequential composition of said outcomes. We can display its ``observed $\Delta$Q'' from the execution from $start$ to $end$ and the ``calculated $\Delta$Q'' as the convolution of the observed $\Delta$Qs of $o_1, o_2$
         
@@ -24,8 +24,6 @@
 
     \subsection{dMax = $\Delta$t $\cdot$ N}
         The key concept of $\Delta$QSD is having a maximum delay after which we consider that the execution is timed out. This is represented in the oscilloscope as $dMax$. Understanding this equation is key to correctly using the oscilloscope and exploring tradeoffs
-
-Setting a maximum delay for a probe is not a job that can be done one-off and blindly, it is something that is done with an underlying knowledge of the system inner-workings and must be thoroughly fine-tuned during the execution of the system by observing the resulting distributions of the obtained $\Delta$Qs. 
 
 Let us explain the following equation:
 \begin{equation}
@@ -58,7 +56,9 @@ Let us explain the following equation:
             Both $\Delta$Qs have the same $dMax$, but the amount of precise information they provide is far different.}
         \end{figure}%
 
-Some tradeoffs must though be acknowledged when setting these parameters, a higher number of bins corresponds to a higher number of calculations and space complexity, a lower $dMax$ may correspond to more failures. The user must set these parameters carefully during execution.
+    Setting a maximum delay for a probe is not a job that can be done one-off and blindly, it is something that is done with an underlying knowledge of the system inner-workings and must be thoroughly fine-tuned during the execution of the system by observing the resulting distributions of the obtained $\Delta$Qs. 
+
+    Some tradeoffs must though be acknowledged when setting these parameters, a higher number of bins corresponds to a higher number of calculations and space complexity, a lower $dMax$ may correspond to more failures. The user must set these parameters carefully during execution.
 
     \begin{figure}[H]
         \begin{center}
@@ -71,7 +71,7 @@ Some tradeoffs must though be acknowledged when setting these parameters, a high
         $dMax$ can \textbf{not} be lower than 1 millisecond and will be rounded to the \textbf{nearest} integer in the adapter, this is a limitation of Erlang \texttt{send\_after} function which only accepts integers and milliseconds values. For example, if on the oscilloscope the $dMax$ is equal to $1.56 ms$, the adpater will fail spans after 2 ms.
 
     \subsection{QTA}
-        A simplified QTA is defined for probes. We define 4 points for the step function at 25, 50, 75 percentiles and the maximum amount of failures accepted for an observable, it is equal to the QTA we have shown in Figure \cref{fig:qta_step}. The user can set the QTAs they want for the probes they have inserted, but the delays at the percentiles must be $< dMax$.
+        A simplified QTA is defined for probes. We define 4 points for the step function at 25, 50, 75 percentiles and the minimum amount of successful instances accepted for an observable (probability p $0 < p < 1$. The QTA is comparable to the one we have shown in Figure \cref{fig:qta_step}. The user can set the QTAs they want for the probes they have inserted, but the delays at the percentiles must be $< dMax$.
 
 \subsection{Confidence bounds}
     To observe the stationarity of a probe we must observe its $\Delta$Qs over a polling window and calculate confidence bounds over said $\Delta$Qs. A single $\Delta$Q may fluctuate, moreover, as it is an CDF, it is not as precise as a CDF. This is why we include the mean and confidence bounds of $\Delta$Qs in the plot, which give a probability range over which the true CDF of the $\Delta$Q should fall. \cite{conf-b}

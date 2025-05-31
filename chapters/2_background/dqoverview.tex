@@ -41,9 +41,9 @@
     The key feature that makes $\Delta$Q stands out is the notion of failure incorporated in the representation of an outcome's behaviour. \\
  Ideally, a system would execute without errors, failure or delay. This is never the case. Since the ideal cannot be attained, the quality of the system's responses are ``\textit{attenuated to the relative ideal}''  \cite{myo}. This quality attenuation gives the name to $\Delta$Q.
 
-    Since multiple factors can influence the delays of a response (geographical, physical), $\Delta$Q can be firstly modeled as a random variable,  Nevertheless, as it incorporates failures, which are discrete variables, and delays, which are discrete variables, the authors describe it as an \text{Improper Random Variable}, as the probability of a finite or bounded delay is $<$ 1. \cite{myo}
+    Since multiple factors can influence the delays of a response (geographical, physical) \cite{dq-tut}, $\Delta$Q can be firstly modeled as a random variable,  Nevertheless, as it incorporates failures, which are discrete variables, and delays, which are continuous variables, the authors describe it as an \text{Improper Random Variable}, as the probability of a finite or bounded delay is $<$ 1. \cite{myo}
    
-    \paragraph{Intangible mass} The \textbf{\textit{intangible mass}} $1 - \lim_{x\to\infty}\Delta Q(x)$ of a $\Delta$Q will encode the probability of failure/timeout/exception occurring \cite{art}. \label{int_mass}
+    \paragraph{Intangible mass} The \textbf{\textit{intangible mass}} $1 - \lim_{x\to\infty}\Delta Q(x)$ of a $\Delta$Q encodes the probability of failure/timeout/exception occurring \cite{art}. \label{int_mass}
         
     \begin{figure}[H]
         \begin{center}
@@ -60,7 +60,7 @@
         $\Delta$Q$_1$ is \textit{less than} another $\Delta$Q$_2$ if its CDF is everywhere to the left and above the other's CDF. This concept is represented mathematically as a partial order. \cite{dq-tut} 
 
     \subsection{Timeliness}
-        Timeliness is delivering results within required time bounds (sufficiently often). \cite{dq-tut}
+        Timeliness is ``delivering results within required time bounds (sufficiently often)''. \cite{dq-tut}
         Leveraging the definition of partial ordering, we can say that a system \textit{satisfies timeliness} if $\Delta$Q$_{obs}$ $\le$ $\Delta$Q$_{req}$. \cite{art}
      
     \subsection{QTA, required $\Delta$Q}
@@ -80,7 +80,7 @@
         \end{figure}
 
     \subsection{Outcome diagram}
-        An outcome diagram is central to capture the causal relationships between the outcomes \cite{myo}. It shows the causal connections between all the outcomes we are interested in. Given an outcome diagram, one can compute the $\Delta$Q for the whole system. \cite{dq-tut}
+        An outcome diagram is central to capture the causal relationships between the outcomes \cite{myo}. It shows the causal connections between all the outcomes we are interested in. Given an outcome diagram, one can compute the $\Delta$Q for the whole system. \\
         There are four different operators that represent the relationships between outcomes. 
     \subsubsection{Sequential composition}
         If we assume two outcomes $O_A$, $O_B$ where the end event of $O_A$ is the start event of $O_B$, then we say the two outcomes are sequentially composed. The total delay $\Delta$Q$_{AB}$ is given by the convolution of the PDFs of $O_A$ and $O_B$ ($O_A \circledast O_B$).
@@ -227,7 +227,7 @@
             \end{center}
         \end{figure}
         
-        At low load, the two components behavior will be independent, the system will behave \textbf{linearly}. According to the superposition principle, the overall delay will be the sum of the two delays, as will the overall processor utilisation. \cite{sup-p}
+        At low load, the two components behaviour will be independent, the system will behave \textbf{linearly}. According to the superposition principle, the overall delay will be the sum of the two delays, as will the overall processor utilisation. \cite{sup-p}
         
         When load increases, the two components will start to show dependent behaviour due to the processor utilisation increasing. The $\Delta$Q of the observed total delay will then deviate from the sum of the two delays ($o_1 \circledast o_2$). 
         

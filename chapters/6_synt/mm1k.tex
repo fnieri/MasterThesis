@@ -26,11 +26,13 @@
     If the queue's buffer is overloaded, it will drop the incoming message and consider the execution a failure.
     
     A probe named ``$probe$'' is defined, which observes the execution from when the message is sent to \texttt{worker\_1} up until \texttt{worker\_2} is done.
+
+    Lastly, both workers share the same processor, to observe potential non-linearity.
     \begin{figure}[H]
         \begin{center}
             \includegraphics[scale=1.2, width=\textwidth]{tikz/mm1k.pdf} 
         \end{center}
-        \caption{Outcome diagram of the M/M/1/K queue with the colored lines representing the probes that were inserted.}
+        \caption{Outcome diagram of the M/M/1/K queue with the label coloured lines representing the probes that were inserted.}
         \label{fig:mm1k}
     \end{figure}
 
@@ -63,7 +65,7 @@
     Let's first observe the system at low load, we will send 50 messages per second to observe the system under test to get key properties.
     We can observe that the average worker's execution takes $\approx$ 30ms. We then have $\mu_{worker} = \dfrac{1}{0.0033} \approx 300$ req/s. Thus, $\rho = \dfrac{50}{322} = 0.16$, we are in nice grounds!
 
-    At low load, we can observe in the oscilloscope the probe \textbf{observed $\Delta$Q} and \textbf{calculated $\Delta$Q} confidence bounds overlap. 
+    At low load, the system is behaving \textbf{linearly}. We can observe in the oscilloscope the probe \textbf{observed $\Delta$Q} and \textbf{calculated $\Delta$Q} confidence bounds overlap. 
         \begin{figure}[H]
             \centering
             \begin{subfigure}{.5\textwidth}
@@ -78,14 +80,16 @@
             \end{subfigure}
             \label{fig:norm_ex}
             \caption{Graphs for $\lambda = 50$. Left: worker\_1 $\Delta$Qs. (1, Blue): The observed $\Delta$Q. (Green, between arrows): The confidence bounds. \\
-            Right: probe $\Delta$Qs. (1, blue): The observed $\Delta$Q. (2, red): The calculated $\Delta$Q. (Magenta, between arrows): the observed and calculated $\Delta$Qs confidence bounds overlapping.}
+            Right: ``probe'' $\Delta$Qs. (1, blue): The observed $\Delta$Q. (2, red): The calculated $\Delta$Q. (Magenta, between arrows): the observed and calculated $\Delta$Qs confidence bounds overlapping.}
         \end{figure}
     
 \subsubsection{Early signs of overload}
     
-    At load = 0.5 the system should start showing bad behaviour. Let us observe what happens when $\lambda = 150 \rightarrow \rho = 0.5$.
+    At load = 0.5 the system should start showing dependent behaviour. Let us observe what happens when $\lambda = 150 \rightarrow \rho = 0.5$.
     
-    Recall \ref{fig:cdf_indep}, we can start to observe early signs of dependency! At load 0.5 the calculated $\Delta$Q is deviating from the observed one. This is a sign that the performance is degrading. At the 50th percentile the deviation is minimal, around 0.4 ms. Nevertheless, the precision of the paradigm allows even for these minimal deviations to appear on the graphs, being able to recognise early signs of overload approaching.
+    Recall \ref{fig:cdf_indep}, a linear system should obey superposition, and the sum of the delay of the workers should be equal to the overall delay of ``probe''. This is not the case! \\
+    We can start to observe early signs of dependency! At load 0.5 the calculated $\Delta$Q is deviating from the observed one. This is a sign that the performance is degrading. At the 50th percentile the deviation is minimal, around 0.4 ms. Nevertheless, the precision of the paradigm allows even for these minimal deviations to appear on the graphs, being able to recognise early signs of overload approaching. \\
+    The superposition principle is not respected anymore, there is apparent \textbf{non-linearity}, and the fact that $\Delta$Q can recognise non-linear behaviour with \textbf{0.4ms precision} is impressive. The oscilloscope is a very powerful tool that can help assess dependent behaviour in running systems!
  
        \begin{figure}[H]
             \centering
@@ -101,17 +105,7 @@
             \end{subfigure}
             \label{fig:avavv} 
         \end{figure}
-    
-\iffalse
-    \begin{figure}[H]
-        \begin{center}
-        \includegraphics[scale = 0.25]{img/overload_2/150_probe2.pdf}
-        \end{center}
-            \caption{probe $\Delta$Qs with $\lambda = 150$. (1, blue): The observed $\Delta$Q. (2, red) the calculated $\Delta$Q. Arrow, above, blue: Observed $\Delta$Q confidence bounds. Arrow, below, red: Calculated $\Delta$Q confidence bounds.}%
-        \label{fig:early_ov}
-    \end{figure}
-\fi 
-    
+       
 \subsubsection{High load}
     Performance degradation at 0.5 offered load is already remarkable, the $\Delta$Qs even if the difference is seemingly minimal. We can go even further and observe the system under high load situations. We set $\lambda = 200 \rightarrow \rho = 0.83$, just above the high load threshold.
     

@@ -46,10 +46,10 @@
             \item $n$ the exponent that is set by the user in the dashboard. It is limited to [-10, 10].
             \item $N$ the number of bins, it is limited to [1, 1000].
         \end{itemize}
-            We chose 1 ms in combination with $2^n$ as it allows us to go from very fine bin widths ($\approx$ 1 $\mu$) to large bin widths ($\approx$ 1 s). Moreover, scaling by a power of 2 allows all the probe's $\Delta$Qs to have a common factor to perform operations on them after rebinning.
+            We chose 1 ms in combination with $2^n$ as it allows us to go from very fine bin widths ($\approx$ 1 $\mu$s) to large bin widths ($\approx$ 1 s). Moreover, scaling by a power of 2 allows all the probe's $\Delta$Qs to have a common factor to perform operations on them after rebinning.
 
     \subsection{Convolution} \label{convol}
-    We present the two solution to perform convolutions we explored during the implementation.  
+    We present the two solutions to perform convolution we explored during the implementation.  
         \subsubsection{Naïve convolution}
         Given two $\Delta$Q binned PDFs $f$ and $g$ with equal bin widths, the result of the convolution $f \circledast g$ is given by \cite{conv}: 
         \begin{equation}
@@ -67,6 +67,8 @@
     FFT and naïve convolution produce the same results in our program, barring $\varepsilon$ differences (around $10^{-18}$) in bins whose result should be 0. This is most likely due to rounding error.
     
     FFTs algorithms are plenty, the choice of the one to use is left up to the subroutine via the parameter \texttt{FFTW\_ESTIMATE} \cite{fft-h}.
+    
+    The explanation of the algorithm is beyond the scope of this master thesis, we refer the reader to the following book as a reference. \cite{fft-book}
 
     \subsection{Arithmetical operations}
         The FTF, ATF and PC operators on $\Delta$Qs use a simple set of arithmetical operations to calculate a $\Delta$Q.   

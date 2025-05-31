@@ -1,7 +1,7 @@
 \subsection{Extending failure}
    Recall the definition of failure: \textit{``an input message $m_{in}$ that has no output message $m_{out}$''} \cite{art}. In the previous section \ref{fig:otel_dmax}, we also introduced the notion of a maximum delay. 
 
-   By extending the notion of failure to include $dMax$, we can know right away when execution is straying away from engineer defined behaviour, avoiding having to wait until the execution is done. In $\Delta$QSD, an execution may as well take 10 or 15 seconds, but if the delay of execution is $> dMax$, we consider that \textbf{failed} right away, we do not need to know the total execution time, the execution has already taken too much! Regardless, the full span will be exported regardless to monitoring tools which were set up by the user. 
+   By extending the notion of failure to include $dMax$, we can know right away when execution is straying away from engineer defined behaviour, avoiding having to wait until the execution is done. In $\Delta$QSD, an execution may as well take 10 or 15 seconds, but if the delay of execution is $> dMax$, we consider that \textbf{failed} right away, we do not need to know the total execution time, the execution has already taken too much \cite{myo}! The full span will be exported regardless to monitoring tools which were set up by the user. 
 
    The user can observe both real time information with $\Delta$QSD notion of failure on the $\Delta$Q oscilloscope, and observe those spans in their monitoring tools if they wish.
 
