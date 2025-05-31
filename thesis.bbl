@@ -229,35 +229,6 @@
       \verb Service%20Performance%20Monitoring%20(SPM)
       \endverb
     \endentry
-    \entry{otel-dep}{misc}{}{}
-      \name{author}{1}{}{%
-        {{hash=3983159b26a23291e755be54ac03be23}{%
-           family={Datadog},
-           familyi={D\bibinitperiod}}}%
-      }
-      \strng{namehash}{3983159b26a23291e755be54ac03be23}
-      \strng{fullhash}{3983159b26a23291e755be54ac03be23}
-      \strng{fullhashraw}{3983159b26a23291e755be54ac03be23}
-      \strng{bibnamehash}{3983159b26a23291e755be54ac03be23}
-      \strng{authorbibnamehash}{3983159b26a23291e755be54ac03be23}
-      \strng{authornamehash}{3983159b26a23291e755be54ac03be23}
-      \strng{authorfullhash}{3983159b26a23291e755be54ac03be23}
-      \strng{authorfullhashraw}{3983159b26a23291e755be54ac03be23}
-      \field{extraname}{1}
-      \field{sortinit}{8}
-      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{note}{Accessed: (31/05/2025)}
-      \field{title}{Visualize live dependencies with the Request Flow Map}
-      \field{year}{2021}
-      \verb{urlraw}
-      \verb https://www.datadoghq.com/blog/apm-request-flow-map-datadog/
-      \endverb
-      \verb{url}
-      \verb https://www.datadoghq.com/blog/apm-request-flow-map-datadog/
-      \endverb
-    \endentry
     \entry{dq-tut}{online}{}{}
       \name{author}{2}{}{%
         {{hash=276e13a920ad375a49902d1697a00450}{%
@@ -282,8 +253,8 @@
       \strng{authornamehash}{26c04e06c898f3628b37cc23fde0f94d}
       \strng{authorfullhash}{26c04e06c898f3628b37cc23fde0f94d}
       \strng{authorfullhashraw}{26c04e06c898f3628b37cc23fde0f94d}
-      \field{sortinit}{9}
-      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{title}{The {$\Delta$QSD} Paradigm: Designing Systems with Predictable Performance at High Load. Full-day tutorial}
@@ -296,8 +267,8 @@
       \endverb
     \endentry
     \entry{pnsol}{misc}{}{}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
       \field{labeltitlesource}{title}
       \field{note}{Accessed: (31/05/2025)}
       \field{title}{PNSol: the network performance science company}
@@ -307,43 +278,6 @@
       \endverb
       \verb{url}
       \verb https://www.pnsol.com/
-      \endverb
-    \endentry
-    \entry{dq-br}{report}{}{}
-      \name{author}{2}{}{%
-        {{hash=f9d144a5938f9bc76e849a8d4d33e8d9}{%
-           family={Thompson},
-           familyi={T\bibinitperiod},
-           given={Peter},
-           giveni={P\bibinitperiod}}}%
-        {{hash=122118cf8308e035728be113bfb13523}{%
-           family={Hernandez},
-           familyi={H\bibinitperiod},
-           given={Rudy},
-           giveni={R\bibinitperiod}}}%
-      }
-      \strng{namehash}{c90d77d06234249e2ed9d886cd586562}
-      \strng{fullhash}{c90d77d06234249e2ed9d886cd586562}
-      \strng{fullhashraw}{c90d77d06234249e2ed9d886cd586562}
-      \strng{bibnamehash}{c90d77d06234249e2ed9d886cd586562}
-      \strng{authorbibnamehash}{c90d77d06234249e2ed9d886cd586562}
-      \strng{authornamehash}{c90d77d06234249e2ed9d886cd586562}
-      \strng{authorfullhash}{c90d77d06234249e2ed9d886cd586562}
-      \strng{authorfullhashraw}{c90d77d06234249e2ed9d886cd586562}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{month}{9}
-      \field{number}{MSU-CSE-06-2}
-      \field{title}{Quality Attenuation Measurement Architecture and Requirements}
-      \field{type}{techreport}
-      \field{year}{2020}
-      \verb{urlraw}
-      \verb https://www.broadband-forum.org/pdfs/tr-452.1-1-0-0.pdf
-      \endverb
-      \verb{url}
-      \verb https://www.broadband-forum.org/pdfs/tr-452.1-1-0-0.pdf
       \endverb
     \endentry
     \entry{myo}{article}{}{}
@@ -407,6 +341,43 @@
       \endverb
       \verb{url}
       \verb https://doi.org/10.3390/computers11030045
+      \endverb
+    \endentry
+    \entry{dq-br}{report}{}{}
+      \name{author}{2}{}{%
+        {{hash=f9d144a5938f9bc76e849a8d4d33e8d9}{%
+           family={Thompson},
+           familyi={T\bibinitperiod},
+           given={Peter},
+           giveni={P\bibinitperiod}}}%
+        {{hash=122118cf8308e035728be113bfb13523}{%
+           family={Hernandez},
+           familyi={H\bibinitperiod},
+           given={Rudy},
+           giveni={R\bibinitperiod}}}%
+      }
+      \strng{namehash}{c90d77d06234249e2ed9d886cd586562}
+      \strng{fullhash}{c90d77d06234249e2ed9d886cd586562}
+      \strng{fullhashraw}{c90d77d06234249e2ed9d886cd586562}
+      \strng{bibnamehash}{c90d77d06234249e2ed9d886cd586562}
+      \strng{authorbibnamehash}{c90d77d06234249e2ed9d886cd586562}
+      \strng{authornamehash}{c90d77d06234249e2ed9d886cd586562}
+      \strng{authorfullhash}{c90d77d06234249e2ed9d886cd586562}
+      \strng{authorfullhashraw}{c90d77d06234249e2ed9d886cd586562}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{9}
+      \field{number}{MSU-CSE-06-2}
+      \field{title}{Quality Attenuation Measurement Architecture and Requirements}
+      \field{type}{techreport}
+      \field{year}{2020}
+      \verb{urlraw}
+      \verb https://www.broadband-forum.org/pdfs/tr-452.1-1-0-0.pdf
+      \endverb
+      \verb{url}
+      \verb https://www.broadband-forum.org/pdfs/tr-452.1-1-0-0.pdf
       \endverb
     \endentry
     \entry{erl}{misc}{}{}
@@ -953,7 +924,6 @@
       \strng{authornamehash}{3983159b26a23291e755be54ac03be23}
       \strng{authorfullhash}{3983159b26a23291e755be54ac03be23}
       \strng{authorfullhashraw}{3983159b26a23291e755be54ac03be23}
-      \field{extraname}{2}
       \field{sortinit}{6}
       \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
       \field{labelnamesource}{author}
@@ -966,66 +936,6 @@
       \endverb
       \verb{url}
       \verb https://www.datadoghq.com/product/
-      \endverb
-    \endentry
-    \entry{otel-p}{misc}{}{}
-      \name{author}{1}{}{%
-        {{hash=92d4a90bb461cfbc6215c8fac5f4ecb4}{%
-           family={Horovits},
-           familyi={H\bibinitperiod},
-           given={Dotan},
-           giveni={D\bibinitperiod}}}%
-      }
-      \strng{namehash}{92d4a90bb461cfbc6215c8fac5f4ecb4}
-      \strng{fullhash}{92d4a90bb461cfbc6215c8fac5f4ecb4}
-      \strng{fullhashraw}{92d4a90bb461cfbc6215c8fac5f4ecb4}
-      \strng{bibnamehash}{92d4a90bb461cfbc6215c8fac5f4ecb4}
-      \strng{authorbibnamehash}{92d4a90bb461cfbc6215c8fac5f4ecb4}
-      \strng{authornamehash}{92d4a90bb461cfbc6215c8fac5f4ecb4}
-      \strng{authorfullhash}{92d4a90bb461cfbc6215c8fac5f4ecb4}
-      \strng{authorfullhashraw}{92d4a90bb461cfbc6215c8fac5f4ecb4}
-      \field{sortinit}{6}
-      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{note}{Accessed: (19/05/2025)}
-      \field{title}{From Distributed Tracing to APM: Taking OpenTelemetry \& Jaeger Up a Level}
-      \field{year}{2021}
-      \verb{urlraw}
-      \verb https://logz.io/blog/monitoring-microservices-opentelemetry-jaeger/
-      \endverb
-      \verb{url}
-      \verb https://logz.io/blog/monitoring-microservices-opentelemetry-jaeger/
-      \endverb
-    \endentry
-    \entry{tr-e}{misc}{}{}
-      \name{author}{1}{}{%
-        {{hash=85068a9d3967226abeb21467c20e5386}{%
-           family={Boddeti},
-           familyi={B\bibinitperiod},
-           given={Sampath\bibnamedelimb Siva\bibnamedelima Kumar},
-           giveni={S\bibinitperiod\bibinitdelim S\bibinitperiod\bibinitdelim K\bibinitperiod}}}%
-      }
-      \strng{namehash}{85068a9d3967226abeb21467c20e5386}
-      \strng{fullhash}{85068a9d3967226abeb21467c20e5386}
-      \strng{fullhashraw}{85068a9d3967226abeb21467c20e5386}
-      \strng{bibnamehash}{85068a9d3967226abeb21467c20e5386}
-      \strng{authorbibnamehash}{85068a9d3967226abeb21467c20e5386}
-      \strng{authornamehash}{85068a9d3967226abeb21467c20e5386}
-      \strng{authorfullhash}{85068a9d3967226abeb21467c20e5386}
-      \strng{authorfullhashraw}{85068a9d3967226abeb21467c20e5386}
-      \field{sortinit}{6}
-      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{note}{Accessed: (19/05/2025)}
-      \field{title}{Tracing Made Easy: A Beginner's Guide to Jaeger and Distributed Systems}
-      \field{year}{2024}
-      \verb{urlraw}
-      \verb https://openobserve.ai/blog/tracing-made-easy-a-beginners-guide-to-jaeger-and-distributed-systems/
-      \endverb
-      \verb{url}
-      \verb https://openobserve.ai/blog/tracing-made-easy-a-beginners-guide-to-jaeger-and-distributed-systems/
       \endverb
     \endentry
     \entry{active-s}{misc}{}{}
@@ -1045,8 +955,8 @@
       \strng{authorfullhash}{c9c2d3a24c7583a7e7f7f0789505c4ad}
       \strng{authorfullhashraw}{c9c2d3a24c7583a7e7f7f0789505c4ad}
       \field{extraname}{10}
-      \field{sortinit}{7}
-      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{note}{Accessed: (19/05/2025)}
@@ -1075,8 +985,8 @@
       \strng{authornamehash}{e72d3cf65177f6e72cd28c9adf030560}
       \strng{authorfullhash}{e72d3cf65177f6e72cd28c9adf030560}
       \strng{authorfullhashraw}{e72d3cf65177f6e72cd28c9adf030560}
-      \field{sortinit}{7}
-      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{note}{Accessed: (31/05/2025)}
@@ -1136,8 +1046,8 @@
       \strng{authorfullhash}{f669f61ee8de1a8b7351d817ea423497}
       \strng{authorfullhashraw}{f669f61ee8de1a8b7351d817ea423497}
       \field{extraname}{2}
-      \field{sortinit}{8}
-      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{note}{Accessed: (28/05/2025)}
@@ -1167,8 +1077,8 @@
       \strng{authorfullhash}{f669f61ee8de1a8b7351d817ea423497}
       \strng{authorfullhashraw}{f669f61ee8de1a8b7351d817ea423497}
       \field{extraname}{3}
-      \field{sortinit}{8}
-      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{note}{Accessed: (28/05/2025)}
@@ -1360,8 +1270,8 @@
       \strng{authornamehash}{424cb1e1c0315dbde42951125a3180aa}
       \strng{authorfullhash}{424cb1e1c0315dbde42951125a3180aa}
       \strng{authorfullhashraw}{424cb1e1c0315dbde42951125a3180aa}
-      \field{sortinit}{9}
-      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{note}{Accessed: (21/05/2025)}
@@ -1375,8 +1285,8 @@
       \endverb
     \endentry
     \entry{fft-h}{misc}{}{}
-      \field{sortinit}{9}
-      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
       \field{labeltitlesource}{title}
       \field{note}{Accessed: (23/05/2025)}
       \field{title}{Planning-rigor flags}
@@ -1386,6 +1296,45 @@
       \verb{url}
       \verb https://www.fftw.org/doc/Planner-Flags.html
       \endverb
+    \endentry
+    \entry{fft-book}{book}{}{}
+      \name{author}{3}{}{%
+        {{hash=ac43f815da41fee2d3b658d70162d205}{%
+           family={Rao},
+           familyi={R\bibinitperiod},
+           given={K.\bibnamedelimi R.},
+           giveni={K\bibinitperiod\bibinitdelim R\bibinitperiod}}}%
+        {{hash=2a0305cf97100c531863310295eff06f}{%
+           family={Kim},
+           familyi={K\bibinitperiod},
+           given={D.\bibnamedelimi N.},
+           giveni={D\bibinitperiod\bibinitdelim N\bibinitperiod}}}%
+        {{hash=9d03a45e04b0e951b3b34b63016ef7b5}{%
+           family={Hwang},
+           familyi={H\bibinitperiod},
+           given={J.-J.},
+           giveni={J\bibinithyphendelim J\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Springer Publishing Company, Incorporated}%
+      }
+      \strng{namehash}{f37243c594d895d14f9f3bd4eaa1291d}
+      \strng{fullhash}{f37243c594d895d14f9f3bd4eaa1291d}
+      \strng{fullhashraw}{f37243c594d895d14f9f3bd4eaa1291d}
+      \strng{bibnamehash}{f37243c594d895d14f9f3bd4eaa1291d}
+      \strng{authorbibnamehash}{f37243c594d895d14f9f3bd4eaa1291d}
+      \strng{authornamehash}{f37243c594d895d14f9f3bd4eaa1291d}
+      \strng{authorfullhash}{f37243c594d895d14f9f3bd4eaa1291d}
+      \strng{authorfullhashraw}{f37243c594d895d14f9f3bd4eaa1291d}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{This book presents an introduction to the principles of the fast Fourier transform. This book covers FFTs, frequency domain filtering, and applications to video and audio signal processing. As fields like communications, speech and image processing, and related areas are rapidly developing, the FFT as one of essential parts in digital signal processing has been widely used. Thus there is a pressing need from instructors and students for a book dealing with the latest FFT topics. This book provides thorough and detailed explanation of important or up-to-date FFTs. It also has adopted modern approaches like MATLAB examples and projects for better understanding of diverse FFTs.}
+      \field{edition}{1st}
+      \field{isbn}{1402066287}
+      \field{title}{Fast Fourier Transform - Algorithms and Applications}
+      \field{year}{2010}
     \endentry
     \entry{rebin}{misc}{}{}
       \name{author}{1}{}{%
@@ -1576,8 +1525,8 @@
       \strng{authornamehash}{d197ed976cbce56f965887b3ad17e4ca}
       \strng{authorfullhash}{d197ed976cbce56f965887b3ad17e4ca}
       \strng{authorfullhashraw}{d197ed976cbce56f965887b3ad17e4ca}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{note}{Accessed: (31/05/2025)}
@@ -1606,8 +1555,8 @@
       \strng{authornamehash}{143682a348e0d7a5b0ab079570c606e0}
       \strng{authorfullhash}{143682a348e0d7a5b0ab079570c606e0}
       \strng{authorfullhashraw}{143682a348e0d7a5b0ab079570c606e0}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{note}{Accessed: (31/05/2025)}
@@ -1659,8 +1608,8 @@
       \strng{editornamehash}{5631d18b62cc5e9ff492dce79c393f5a}
       \strng{editorfullhash}{5631d18b62cc5e9ff492dce79c393f5a}
       \strng{editorfullhashraw}{5631d18b62cc5e9ff492dce79c393f5a}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{booktitle}{Proceedings of the 32nd {ACM} {SIGPLAN} Conference on Programming Language Design and Implementation, {PLDI} 2011, San Jose, CA, USA, June 4-8, 2011}

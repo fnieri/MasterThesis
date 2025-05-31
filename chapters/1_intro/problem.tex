@@ -3,7 +3,7 @@
 
     In 2019, the merge of OpenCensus and OpenTracing led to the creation of OpenTelemetry \cite{openc}. It aims to provide a standard set of API to monitor running systems and avoid vendor lock-in \cite{otel-v}. As a result, multiple vendors' monitoring tools support OpenTelemetry metrics analysis \cite{otel-ven}. They allow engineers to follow requests in system, studying their time of execution, the paths they take, the various events and much more \cite{otel-t}. Nevertheless, open source non-commercial monitoring tools of large distributed system are few, and current solutions who may provide detailed insights about a system are commercial ones. \cite{otel-aw} 
 
-    Furthermore, while the tools may also provide insights about running systems, the execution times of various endpoints \cite{jag-spm}, they fail to capture essential requirements about timeliness. How can dependent behaviour be recognised instantly, even when it is not apparent? Dependency graphs are not sufficient \cite{otel-dep}. Moreover, dependent behaviour may not be apparent, it can appear at microseconds level! This may not be seen by normal analysis of average time analysis, it is not as evident. \\
+    Furthermore, while the tools may also provide insights about running systems and the execution times of various endpoints \cite{jag-spm}, they fail to capture essential requirements about timeliness. How can performance issues be recognised instantly, even when it is not apparent? These issues may not be even apparent in these monitoring tools, as they can appear at microseconds level. This may not be easily spotted by normal analysis of average time analysis, it is not as evident. \\
     This is where the $\Delta$QSD paradigm comes in.
 
 

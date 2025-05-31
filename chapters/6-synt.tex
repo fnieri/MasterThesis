@@ -1,5 +1,10 @@
 \chapter{Application on synthetic programs}
-    This section aims to provide an example of how the oscilloscope could be used to instrument an application, in this case, a synthetic one. We explain how the $\Delta$QSD paradigm can be applied to explore tradeoffs in design and to gain more insights into a running system.
+    This chapter provides three distinct examples of synthetic applications. Each application was first represented by an outcome diagram in the oscilloscope. It was then instrumented with the adapter to communicate to the oscilloscope.
+    We provide three different example with simple use cases.
+    \begin{itemize}
+        \item A system with sequentially composed outcomes. It server to show how non-linear behaviour can be detected with the paradigm and the oscilloscope, even when the difference in execution times is minimal. The example leverages M/M/1/K queues to show how typical queue behaviour is represented on the oscilloscope.
+        \item Then, we provide two applications with different operators: first-to-finish and all-to-finish. There, we show how these operators can aid in detecting slower components in the system.
+    \end{itemize}
     \input{chapters/6_synt/mm1k}
     \input{chapters/6_synt/ftf}
     \input{chapters/6_synt/atf}

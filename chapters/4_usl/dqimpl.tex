@@ -56,7 +56,7 @@ Let us explain the following equation:
             Both $\Delta$Qs have the same $dMax$, but the amount of precise information they provide is far different.}
         \end{figure}%
 
-    Setting a maximum delay for a probe is not a job that can be done one-off and blindly, it is something that is done with an underlying knowledge of the system inner-workings and must be thoroughly fine-tuned during the execution of the system by observing the resulting distributions of the obtained $\Delta$Qs. 
+    Setting a maximum delay for a probe is not a job that can be done one-off and blindly, it is something that is done with an underlying knowledge of the system inner-workings and must be thoroughly fine-tuned during the execution of the system by observing the resulting distributions of the obtained $\Delta$Qs. \label{subsec:dMax}
 
     Some tradeoffs must though be acknowledged when setting these parameters, a higher number of bins corresponds to a higher number of calculations and space complexity, a lower $dMax$ may correspond to more failures. The user must set these parameters carefully during execution.
 
@@ -71,7 +71,7 @@ Let us explain the following equation:
         $dMax$ can \textbf{not} be lower than 1 millisecond and will be rounded to the \textbf{nearest} integer in the adapter, this is a limitation of Erlang \texttt{send\_after} function which only accepts integers and milliseconds values. For example, if on the oscilloscope the $dMax$ is equal to $1.56 ms$, the adpater will fail spans after 2 ms.
 
     \subsection{QTA}
-        A simplified QTA is defined for probes. We define 4 points for the step function at 25, 50, 75 percentiles and the minimum amount of successful instances accepted for an observable (probability p $0 < p < 1$. The QTA is comparable to the one we have shown in Figure \cref{fig:qta_step}. The user can set the QTAs they want for the probes they have inserted, but the delays at the percentiles must be $< dMax$.
+        A simplified QTA is defined for probes. We define 4 points for the step function at 25, 50, 75 percentiles and the minimum amount of successful instances accepted for an observable (probability p $0 < p < 1$. The QTA is comparable to the one we have shown in \cref{fig:qta_step}. The user can set the QTAs they want for the probes they have inserted, but the delays at the percentiles must be $< dMax$.
 
 \subsection{Confidence bounds}
     To observe the stationarity of a probe we must observe its $\Delta$Qs over a polling window and calculate confidence bounds over said $\Delta$Qs. A single $\Delta$Q may fluctuate, moreover, as it is an CDF, it is not as precise as a CDF. This is why we include the mean and confidence bounds of $\Delta$Qs in the plot, which give a probability range over which the true CDF of the $\Delta$Q should fall. \cite{conf-b}

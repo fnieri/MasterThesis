@@ -5,7 +5,7 @@
     The $\Delta$Q adapter is the \texttt{dqsd\_otel} Erlang interface \cite{wrapper}. It starts and ends OpenTelemetry spans and translates them to outcome instances which are useful for the oscilloscope. This can be done thanks to probes being attached to the system under test, like an oscilloscope would! The outcome instances end normally like OpenTelemetry spans or, additionally, can timeout after a custom timeout ($dMax$), and fail, \textit{according to user's definition of failure}. 
     
     Handling of OpenTelemetry spans which goes beyond starting and ending them is delegated to the user, who may wish to do further operations with their spans. 
-    The adapter is called from the system under test and communicates outcome instances data to the oscilloscope via TCP. 
+    The adapter is called from the system under test and communicates outcome instances data to the oscilloscope via TCP sockets. 
     
     The adapter can receive messages from the oscilloscope, the messages are about updating probe's $dMax$ or starting and stopping the sending of data to the oscilloscope.
     \subsection{Inserting probes in Erlang - From spans to outcome instances}
@@ -29,4 +29,4 @@
         \end{minted}
 \caption{Example usage of the adapter}\label{code:adapter}
 \end{figure}
-    Further details about the implementation of the adapter are explained in the following chapters. 
+    Further details about the implementation of the adapter are explained in Chapter 5. 

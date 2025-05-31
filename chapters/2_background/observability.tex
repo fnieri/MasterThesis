@@ -1,7 +1,9 @@
 \section{Observability}
-        Observability refers to ``the ability to understand the internal state by examining its output. In the context of a distributed system, being able to understand the internal state of the system by examining its telemetry data.'' \cite{otel-o}
-
-    In the case of the Erlang programming language, we provide two tools that can be used to observe an Erlang program.
+    OpenTelemetry refers to observability as \cite{otel-o}:
+    \begin{quote}
+ ``The ability to understand the internal state by examining its output. In the context of a distributed system, being able to understand the internal state of the system by examining its telemetry data.''
+    \end{quote}
+    In the case of the Erlang programming language, we describe respectively two different ways to observe a running Erlang system: erlang:trace and OpenTelemetry.
     
     \subsection{erlang:trace}
         The Erlang programming language gives the users different ways to observe the behaviour of a system, one of those is the function \texttt{erlang:trace/3}. According to the documentation: ``The Erlang run-time system exposes several trace points that can be observed, observing the trace points allows users to be notified when they are triggered'' \cite{erl-t}. One can observe function calls, messages being sent and received, process being spawned, garbage collecting \dots. 
@@ -33,7 +35,7 @@
     \subsubsection{Traces}
         Traces are why we are basing our program on top of OpenTelemetry, traces follow the whole path of a request in an application, and they are comprised of one or more spans. Traces can propagate to multiple services and record multiple paths in different microservices \cite{otel-dt}. 
         
-        \paragraph{Span} A span is a unit of work or operation. Multiple spans can be assembled into a trace and can be causally linked. The spans can have a hierarchy, where \textit{root spans} represent a request from start to finish and a child span the requests that are completed inside the root span \cite{otel-dt}. We will see in later sections how this can relate to what the oscilloscope does.
+        \paragraph{Span} A span is a unit of work or operation. Multiple spans can be assembled into a trace and can be causally linked (\cref{fig:monitor}). The spans can have a hierarchy, where \textit{root spans} represent a request from start to finish and a child span the requests that are completed inside the root span \cite{otel-dt}. We will see in later sections how this can relate to what the oscilloscope does.
 
     The notion of spans and traces allows us to follow the execution of a request and carry a context. Spans can be linked to mark causal relationships between multiple spans \cite{otel-t}. This relation can be represented in the oscilloscope via \textbf{probes}, we will present how spans relate to probes in following sections.
     \begin{figure}[H]
@@ -44,7 +46,7 @@
     "trace_id": "5b8aa5a2d2c872e8321cf37308d69df2",
     "span_id": "5fb397be34d26b51"
   },
-  "parent_id": "0515505510cb55c13",
+  "parent_id": "051581bf3cb55c13",
   "start_time": "2022-04-29T18:52:58.114304Z",
   "end_time": "2022-04-29T22:52:58.114561Z",
   "attributes": {
@@ -52,30 +54,29 @@
   },
 }
     \end{minted}
-    \caption{Example of span from the OpenTelemetry website. The span has a parent, indicating that child and parent spans are related and are both part of the same trace \cite{otel-t}.}%
+    \caption{Example of span from the OpenTelemetry website \cite{otel-t}. The span has a parent, indicating that child and parent spans are related and are both part of the same trace.}%
     \end{figure}
 
     \subsubsection{Monitoring OpenTelemetry spans}
-        In OpenTelemetry, the user can export their traces export to backends and monitoring such as Jaeger, Zipkin, Datadog \cite{otel-exp}. There, a user can analyse the traces to troubleshoot their programs by observing the flow of the requests \cite{jg}. These monitoring tools give extensive details about a running system, but may fail to capture essential timeliness requirements and performances issues early enough.
+        In OpenTelemetry, the user can export their traces export to backends and monitoring such as Jaeger (\cref{fig:monitor}), Zipkin, Datadog \cite{otel-exp}. There, a user can analyse the traces to troubleshoot their programs by observing the flow of the requests \cite{jg}. These monitoring tools give extensive details about a running system, but may fail to capture essential timeliness requirements and performances issues early enough.
         
         Our oscilloscope is a kind of monitoring tool, one that gives precise statistical insights about a running system. It is clear that the oscilloscope does not have the same capabilities as Datadog \cite{datadog} might have, where you can observe cloud instances, instances cost, dependency graphs \dots but the oscilloscope can nevertheless provide precise insights about dependency, overload thanks to the $\Delta$QSD paradigm. 
 
-        This is also the reason why we work alongside OpenTelemetry, the oscilloscope can be put next to a monitoring tool where one might export spans to. An engineer might consult the main monitoring tool to get the global picture of a running app, and the oscilloscope to give more precise insights to understand the system's behaviour. 
+        This is also the reason why we work alongside OpenTelemetry. The oscilloscope can be put next to a monitoring tool where one might export spans to, so that an engineer might consult the main monitoring tool to get the global picture of a running app, and the oscilloscope to give more precise insights to understand the system's behaviour. 
        \begin{figure}[H]
             \centering
             \begin{subfigure}{.5\textwidth}
                 \centering
                 \includegraphics[width=0.98\textwidth]{img/jaeger.png}
-                \label{fig:sub1}
-                \subcaption{Jaeger interface. \cite{otel-p}}
+                \label{fig:jag}
             \end{subfigure}%
             \begin{subfigure}{.5\textwidth}
                 \centering
                 \includegraphics[width =0.98\textwidth]{img/jaeger2.jpg}
-                \label{fig:sub2}
-                \subcaption{A span analysis on OpenObserve. \cite{tr-e}}
+                \label{fig:openobs}
             \end{subfigure}
-            \label{fig:test}
+            \caption{Left: Jaeger interface. Right: Analysis of a span on OpenObserve.}
+            \label{fig:monitor}
             \end{figure}
 
     \subsubsection{Span macros}

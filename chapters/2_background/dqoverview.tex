@@ -8,13 +8,15 @@
     The following sections are a summary of multiple articles and presentations formalising the paradigm. Some of the graphs we present have too been adapted from the articles.
      
  \subsection{Outcome}
-    To build outcome diagrams, we need to first introduce outcomes. 
+    To build outcome diagrams, we need to first introduce outcomes.
 
-        Outcomes represent system behaviours or tasks that ``can start at some point in time and \textit{\textbf{may}} be observed to complete at some later time''. \cite{dq-br}
+        Outcomes represent system behaviours or tasks that ``can start at some point in time and \textit{\textbf{may}} be observed to complete at some later time'' \cite{dq-br}.
         The result produced by performing a system's task is mapped to an outcome. \cite{myo} 
      
-        The particularity of outcomes is that they can represent multiple levels of granularity. Suppose an outcome is beyond the current system's control (e.g. a database/cloud request), is non-atomic (can be broken down in multiple sub-outcomes). These outcomes can be represented as black boxes (you can observe their start and end, but do not know what is being executed). As the system gets refined, these outcomes can then be refined to model a single outcome or multiple outcomes, if needed. \cite{myo} \\ 
+        The particularity of outcomes is that they can represent multiple levels of granularity. Suppose an outcome is beyond the current system's control (e.g. a database/cloud request), is non-atomic (can be broken down in multiple sub-outcomes). These outcomes can be represented as black boxes: you can observe their start and end, but do not know what is being executed. As the system gets refined, these outcomes can then be refined to model a single outcome or multiple outcomes, if needed. \cite{myo} \\ 
         Even though these outcomes are defined as ``black boxes'', they still have timeliness constraints like any other outcome. 
+
+        Let us define some important concepts about outcomes.
 
      \paragraph{Observables}
      Key to outcomes is the notion of event. \\
@@ -32,51 +34,53 @@
         \end{center}
         \caption{The outcome (circle) and the starting set (left) and terminating set (right) of events.}
     \end{figure}
+   
+  \subsection{Failure semantics}
+       Failure indicates ``an input message $m_{in}$ \textbf{that has no output message} $m_{out}$'' \cite{art}. It models the probability that the delay is infinite.
+
 
 \subsection{Quality attenuation ($\Delta$Q)}
     $\Delta$Q is defined as ``a cumulative distribution function (CDF) that defines both \textit{latency} and \textit{failure probability} between a start and end event''. \cite{dq-tut}
     
-        As multiple instances of an outcome are executed, multiple delays can be observed for the executions. The delays can be represented as a CDF. In the $\Delta$Q's CDF, \textbf{$\Delta$Q(x)} is the probability that an outcome $O$ occurs in time $t \le x$ \cite{art}.  We may sometimes use the derivative of a $\Delta$Q, which is the probability density function (PDF).
+        As multiple instances of an outcome are executed, multiple delays can be observed for the executions. The observed delays can be represented as a CDF, $\Delta$Q$_{obs}$. In the $\Delta$Q's CDF, \textbf{$\Delta$Q(x)} is the probability that an outcome $O$ occurs in time $t \le x$ \cite{art}.  We may sometimes use the derivative of a $\Delta$Q, which is the probability density function (PDF). We show a typical CDF of a $\Delta$Q in \cref{fig:int_mass}.
 
     The key feature that makes $\Delta$Q stands out is the notion of failure incorporated in the representation of an outcome's behaviour. \\
  Ideally, a system would execute without errors, failure or delay. This is never the case. Since the ideal cannot be attained, the quality of the system's responses are ``\textit{attenuated to the relative ideal}''  \cite{myo}. This quality attenuation gives the name to $\Delta$Q.
 
     Since multiple factors can influence the delays of a response (geographical, physical) \cite{dq-tut}, $\Delta$Q can be firstly modeled as a random variable,  Nevertheless, as it incorporates failures, which are discrete variables, and delays, which are continuous variables, the authors describe it as an \text{Improper Random Variable}, as the probability of a finite or bounded delay is $<$ 1. \cite{myo}
    
-    \paragraph{Intangible mass} The \textbf{\textit{intangible mass}} $1 - \lim_{x\to\infty}\Delta Q(x)$ of a $\Delta$Q encodes the probability of failure/timeout/exception occurring \cite{art}. \label{int_mass}
+    \paragraph{Intangible mass} Depicted in \cref{fig:int_mass}, the \textbf{\textit{intangible mass}} $1 - \lim_{x\to\infty}\Delta Q(x)$ of a $\Delta$Q encodes the probability of failure/timeout/exception occurring \cite{art}. \label{int_mass}
         
     \begin{figure}[H]
         \begin{center}
             \includegraphics{tikz/intangible.pdf}
         \end{center}
         \caption{$\Delta$Q CDF representation with intangible mass (red). The failure rate is about 5\% }
+        \label{fig:int_mass}
     \end{figure}
-   
-  \subsection{Failure semantics}
-       Failure indicates ``an input message $m_{in}$ \textbf{that has no output message} $m_{out}$''. \cite{art}
-       Recall the intangible mass defined previously \ref{int_mass}, in the CDF representation of a $\Delta$Q, the failure models the probability that the delay is infinite.
-   
+
     \subsection{Partial ordering}
-        $\Delta$Q$_1$ is \textit{less than} another $\Delta$Q$_2$ if its CDF is everywhere to the left and above the other's CDF. This concept is represented mathematically as a partial order. \cite{dq-tut} 
+        We say $\Delta$Q$_1$ is \textit{less than} another $\Delta$Q$_2$ if its CDF is everywhere to the left and above the other's CDF. This concept is represented mathematically as a partial order. \cite{dq-tut} 
 
     \subsection{Timeliness}
         Timeliness is ``delivering results within required time bounds (sufficiently often)''. \cite{dq-tut}
-        Leveraging the definition of partial ordering, we can say that a system \textit{satisfies timeliness} if $\Delta$Q$_{obs}$ $\le$ $\Delta$Q$_{req}$. \cite{art}
-     
+       
     \subsection{QTA, required $\Delta$Q}
-        The Quantitative Timeliness Agreement (QTA) specifies the requirements of a $\Delta$Q and defines precise timeliness bounds on a $\Delta$Q. \cite{dq-br} \cite{art}
+        The Quantitative Timeliness Agreement (QTA) specifies the precise timeliness requirements ($\Delta$Q$_{req}$) of a $\Delta$Q$_{obs}$. \cite{dq-br} \cite{art}
+
+     Leveraging the definition of partial ordering and timeliness, we can say that a system \textit{satisfies timeliness} if $\Delta$Q$_{obs}$ $\le$ $\Delta$Q$_{req}$. \cite{art} 
     
-    \paragraph{Slack and hazard} There is performance \textit{slack} when ``a $\Delta$Q is strictly less than the requirement.'' \\
+    \paragraph{Slack and hazard} There is performance \textit{slack} when ``a $\Delta$Q is strictly less than the requirement.'' ($\Delta$Q$_{obs}$ < $\Delta$Q$_{req}$). \\
     There is performance \textit{hazard} when ``an observed $\Delta$Q$_{obs}$ intersects or is strictly greater than the required $\Delta$Q$_{req}$'' ($\Delta$Q$_{obs} \nless \Delta$Q$_{req}$). \cite{myo}
  
-    \paragraph{QTA example}: Imagine a system where 25\% of the executions should take $<$ 15 ms, 50\% $<$ 25 ms and 75\% $<$ 35 ms, all queries have a maximum delay of 50ms and 5\% of executions can timeout, the QTA can be represented as a step function.
-    
+    \paragraph{QTA example}: Imagine a system where 25\% of the executions should take $<$ 15 ms, 50\% $<$ 25 ms and 75\% $<$ 35 ms, all queries have a maximum delay of 50ms and 5\% of executions can timeout, the QTA can be represented as a step function. \\
+    We present in \cref{fig:qta_step} an example of systems satisfying showing slack and presenting hazard.
         \begin{figure}[H]
             \begin{center}
                 \includegraphics[scale=1]{tikz/cdf_qta_slack.pdf}
             \end{center}
-            \label{fig:qta_step}
             \caption{The system in blue is showing slack and satisfies the requirement. The system in orange is showing signs that it cannot handle the stress, it is not respecting the system requirements imposed by the QTA.}%
+            \label{fig:qta_step}
         \end{figure}
 
     \subsection{Outcome diagram}
@@ -175,16 +179,16 @@
         \begin{center}
             \includegraphics[width = \textwidth]{tikz/op.pdf}
         \end{center}
-        \caption{The possible operators in an outcome diagram: Probabilistic choice, first-to-finish, all-to-finish}
+        \caption{Graphical representation of the possible operators in an outcome diagram. From the left: Probabilistic choice, first-to-finish, all-to-finish}
         \label{fig:op}
     \end{figure}
-    First-to-finish, All-to-finish and probabilistic-choice are calculated on the CDF of the $\Delta$Q of their components.
+    First-to-finish, All-to-finish and probabilistic-choice are calculated on the CDF of the $\Delta$Qs of their components.
     
     These operators can be assembled together to create an outcome diagram, later on, we will see how one can go from the graphical representation to outcome diagrams which can be used in the $\Delta$Q oscilloscope.
     
     \subsection{Outcome diagrams refinement}
         An important feature of outcome diagrams is the ability to be able to design a system even with \textit{``black boxes''}, before the complete details of it are known. \cite{myo} \\
-        An outcome diagram can be ``unboxed'' by refining the outcomes that compose it. We can adapt a situation described by the previously cited article, ``Mind your Outcomes'', to understand how refinement can allow the user to have a very precise representation of a system. 
+        An outcome diagram can be ``unboxed'' by refining the outcomes that compose it. We can adapt a situation described by the previously cited article, called ``Mind your Outcomes'', to understand how refinement can allow the user to have a very precise representation of a system. 
         
         We first start with a black box, unnamed outcome with start event $A$ and end event $Z$, somewhere in the system. The first refinement step would be giving the outcome a name.
 
@@ -217,14 +221,16 @@
         \end{figure}
     In essence, the refinement could model a very fine-grained representation of the system by further refining the system, to represent the possibility of executing $n$ tasks. This demonstrates the power of outcome diagrams to represent system diagrams with high precision. They can help explore design decisions thanks to outcomes and operators.
 
-    \subsection{Independence hypothesis}  
+    \subsection{Independence hypothesis} \label{indep_hyp} 
         An important aspect of sequential composition is the assumption of outcomes having independent behaviour \cite{post}. Let us explain the following assumption clearly.
 
-        Assume two sequentially composed outcomes $o_1$, $o_2$ running on the same processor. The overall delay of execution can be observed from the start event of $o_1$ ($u_1$) to the end event of $o_2$ ($r_1$). 
+        Assume the situation described by \cref{otc_indep}, two sequentially composed outcomes $o_1$, $o_2$ running on the same processor. The overall delay of execution can be observed from the start event of $o_1$ ($u_1$) to the end event of $o_2$ ($r_1$). 
         \begin{figure}[H]
             \begin{center}
                 \includegraphics[scale=1]{tikz/indep.pdf}
             \end{center}
+            \label{fig:otc_indep}
+            \caption{Two sequentially composed outcomes, $o_1$, $o_2$. The end event of $o_1$ is the start event of $o_2$.}
         \end{figure}
         
         At low load, the two components behaviour will be independent, the system will behave \textbf{linearly}. According to the superposition principle, the overall delay will be the sum of the two delays, as will the overall processor utilisation. \cite{sup-p}

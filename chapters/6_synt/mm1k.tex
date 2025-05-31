@@ -1,49 +1,57 @@
 \section{System with sequential composition}
-    We model a first system with two sequentially composed component. We choose two model the two components as M/M/1/K queues. 
-   
-   \paragraph{Why M/M/1/K queues?} An average component in a distributed system can be modeled as an M/M/1/K, due to the exponential inter-arrival rate of messages $\lambda$, the exponential distribution of the execution delay $\mu$, the buffer size of messages $K$ of a component and the failure rate $f$. \cite{dq-tut}
+    We model a first system with two sequentially composed component. We choose to model the two components as M/M/1/K queues. \\
+    An average component in a distributed system can be modeled as an M/M/1/K queue. This is due to the exponential inter-arrival rate of messages, the exponential distribution of the execution delays, the buffer size of messages $K$ of a component and the failure rate $f$. \cite{dq-tut}
     
     Let us first provide a refresher about M/M/1/K queues:
     \begin{itemize}
         \item $\lambda$: The arrival rate.
-        \item s: The service time, is the time it takes to serve a message.
+        \item The service time $s$: is the time it takes to serve a message.
         \item $\mu$: The service \textbf{rate} and E[s] = $\dfrac{1}{\mu}$
         \item Offered load: $\rho = \dfrac{\lambda}{\mu}$
     \end{itemize}
 
-    We will control $\lambda$ to show its effects on the offered load. The offered load can tell much about the system:
+    We will control $\lambda$ to show its effects on the offered load. This is because the offered load can tell much about the system:
     \begin{itemize}
-        \item At low load ($\rho < 0.8$) the failure will tend to 0, the system is behaving correctly and the $\Delta$Q will show that, the delay will tend to 1.
-        \item Once $\rho$ is approaching high load ($\rho > 0.8$) we can observe the failure increasing quickly, but we can observe the system starting to get bad after $\rho > 0.5$! \cite{dq-tut}
+        \item At low load ($\rho < 0.8$) the failure will tend to 0. The system is behaving correctly and the $\Delta$Q will show that, as the delay will tend to 1.
+        \item Once $\rho$ is approaching high load ($\rho > 0.8$) we can observe the failure increasing quickly. However, we can observe the system starting to get bad after $\rho > 0.5$. \cite{dq-tut}
     \end{itemize}
     
-    \subsection{System composition}
-    The system has two components \texttt{worker\_1}, \texttt{worker\_2}. Each individual component is composed of a queue of size $K = 1000$ and a worker process.
+    \subsection{System's outcome diagram}
+    The system (\cref{fig:mm1k}) has two components \texttt{worker\_1}, \texttt{worker\_2}. Each individual component is composed of a queue of size $K = 1000$ and a worker process.
     
     The system sends $n$ messages per second following a Poisson distribution to \texttt{worker\_1}'s queue. 
-    The queue notifies its worker, which then does $N$ loops, which are defined upon start, of fictional work. Once done, worker\_1 then passes a message to \texttt{worker\_2}'s queue, which has another queue of same size, who passes the message to \texttt{worker\_2}'s worker, which does the same amount of loops as worker\_1. When a worker completes its work, it notifies its queue, freeing one message from its buffer size and allowing the next message to be processed.
+    The queue notifies its worker, which then does $N$ loops, which are defined upon start, of fictional work. Once done, \texttt{worker\_1} then passes a message to \texttt{worker\_2}'s queue, which has another queue of same size, who passes the message to \texttt{worker\_2}'s worker, which does the same amount of loops as \texttt{worker\_1}. When a worker completes its work, it notifies its queue, freeing one message from its buffer size and allowing the next message to be processed.
     
     If the queue's buffer is overloaded, it will drop the incoming message and consider the execution a failure.
     
     A probe named ``$probe$'' is defined, which observes the execution from when the message is sent to \texttt{worker\_1} up until \texttt{worker\_2} is done.
 
-    Lastly, both workers share the same processor, to observe potential non-linearity.
+    Lastly, both workers share the same processor, to observe the effects of non-linearity in a distributed setting.
+
+    The system can be defined via the previously defined syntax (\cref{out_syntax}) as: 
+    
+    \begin{minted}{text}
+        probe = worker_1 -> worker_2;
+    \end{minted}
+
     \begin{figure}[H]
         \begin{center}
             \includegraphics[scale=1.2, width=\textwidth]{tikz/mm1k.pdf} 
         \end{center}
-        \caption{Outcome diagram of the M/M/1/K queue with the label coloured lines representing the probes that were inserted.}
+        \caption{Outcome diagram of the system. The labeled coloured lines represent the probes that were inserted. $q_{1, 2}$ outcomes represent the queues. There the message is forwarded to the workers. $w_{1,2}$ represent the workers whose task is doing $n$ loops. \\
+        As we do not wish to observe the queues, but the whole behaviour of the worker components, we can insert probes from when the message is received to when the worker loops end.}
         \label{fig:mm1k}
     \end{figure}
 
     \subsection{Determining parameters dynamically}
-        We stated previously that determining parameters is something that must be done with an underlying knowledge of the system. The oscilloscope can provide knowledge of the system, here is an example of worker\_1 and worker\_2 as observed in the oscilloscope.
+        We stated previously that determining parameters is something that must be done with an underlying knowledge of the system (\cref{subsec:dMax}). The oscilloscope can provide knowledge of the system. \cref{fig:w1w2hb} shows an example of worker\_1 and worker\_2 as observed in the oscilloscope.
 
-        The engineer supposes that the workers executions should take a maximum of 4 ms to complete, but doesn't actually know how long the executions should take. The engineer, after having set the required parameters observes in the following graph in the oscilloscope \cref{fig:w1w2}.
+        The engineer supposes that the workers executions should take a maximum of 4 ms to complete, but doesn't actually know how long the executions should take. The engineer, after having set the required parameters observes in the following graph in the oscilloscope \cref{fig:w14}.
 
-    The oscilloscope shows the engineer that their assumptions do not correspond to the actual system $\Delta$Q, the user can then modify the parameters to observe the actual system's behaviour. By setting $dMax$ to 8 ms, they can observe the worker's $\Delta$Qs failure approaching 0.
+    The oscilloscope shows the engineer that their assumptions do not correspond to the actual system $\Delta$Q. The user can then modify the parameters to observe the actual worker's behaviour. By setting $dMax$ to 8 ms, they can observe the worker's $\Delta$Qs failure approaching $0$ in \cref{fig:w18}.
 
     On the other hand, the engineer's assumption could have been what they truly expected from the system, in this case, the oscilloscope tells him that the system is not behaving as expected. 
+
 \begin{figure}[H]
             \centering
             \begin{subfigure}{.5\textwidth}
@@ -56,16 +64,17 @@
                 \includegraphics[width =0.98\textwidth]{img/overload_2/worker_1_8.png}
                 \label{fig:w18}
             \end{subfigure}
-            \label{fig:w1w2hb}
             \caption{Left: worker\_1 $\Delta$Q with $dMax = 4ms$. (Green, between the arrow): Mean and confidence bounds. (1, blue): Observed $\Delta$Q. The worker failure tends to 0.25. \\
             Right: worker\_1 $\Delta$Q with $dMax$ = 8ms. The worker failure now tends to 0. \\
             In both graphs we can observe how the observed $\Delta$Q of the sampling window is not precise. The step function representation of it fluctuates. The mean and confidence bounds provide a more precise representation of the $\Delta$Qs of worker\_1 over a polling window.}%
+            \label{fig:w1w2hb}
             \end{figure}
-    \subsubsection{Low Load} 
-    Let's first observe the system at low load, we will send 50 messages per second to observe the system under test to get key properties.
-    We can observe that the average worker's execution takes $\approx$ 30ms. We then have $\mu_{worker} = \dfrac{1}{0.0033} \approx 300$ req/s. Thus, $\rho = \dfrac{50}{322} = 0.16$, we are in nice grounds!
 
-    At low load, the system is behaving \textbf{linearly}. We can observe in the oscilloscope the probe \textbf{observed $\Delta$Q} and \textbf{calculated $\Delta$Q} confidence bounds overlap. 
+    \subsubsection{Low Load} 
+    Let us first observe the system. We will send 50 messages per second to observe the system under test to get key properties. The workers do 1000000 loops. \\
+    We can observe in \cref{fig:norm_ex_1} that the average worker's execution takes $\approx$ 30ms. We then have $\mu_{worker} = \dfrac{1}{0.0033} \approx 300$ req/s. Thus, $\rho = \dfrac{50}{322} = 0.16$, we are in nice grounds. We can assume the system is at low load.
+
+    At low load (\cref{fig:norm_ex_2}), the system is behaving \textbf{linearly}. Recall \cref{indep_hyp}, at low load the sum of the two delays will overlap with the observed total delay. We can observe in the oscilloscope the probe \textbf{observed $\Delta$Q} and \textbf{calculated $\Delta$Q} confidence bounds overlap. 
         \begin{figure}[H]
             \centering
             \begin{subfigure}{.5\textwidth}
@@ -79,16 +88,16 @@
                 \label{fig:norm_ex_2}
             \end{subfigure}
             \label{fig:norm_ex}
-            \caption{Graphs for $\lambda = 50$. Left: worker\_1 $\Delta$Qs. (1, Blue): The observed $\Delta$Q. (Green, between arrows): The confidence bounds. \\
-            Right: ``probe'' $\Delta$Qs. (1, blue): The observed $\Delta$Q. (2, red): The calculated $\Delta$Q. (Magenta, between arrows): the observed and calculated $\Delta$Qs confidence bounds overlapping.}
+            \caption{Graphs for $\lambda = 50$. Left: worker\_1 $\Delta$Qs. (1, Blue): The observed $\Delta$Q. (Green, between arrows): Observed polling window confidence bounds. \\
+            Right: ``probe'' $\Delta$Qs. (1, blue): The sampling window observed $\Delta$Q. (2, red): The sampling window calculated $\Delta$Q. (Magenta, between arrows): the observed and calculated $\Delta$Qs confidence bounds overlapping.}
         \end{figure}
     
 \subsubsection{Early signs of overload}
     
-    At load = 0.5 the system should start showing dependent behaviour. Let us observe what happens when $\lambda = 150 \rightarrow \rho = 0.5$.
+    At load = 0.5 the system should start showing dependent behaviour. We can observe what happens when $\lambda = 150 \rightarrow \rho = 0.5$.
     
-    Recall \ref{fig:cdf_indep}, a linear system should obey superposition, and the sum of the delay of the workers should be equal to the overall delay of ``probe''. This is not the case! \\
-    We can start to observe early signs of dependency! At load 0.5 the calculated $\Delta$Q is deviating from the observed one. This is a sign that the performance is degrading. At the 50th percentile the deviation is minimal, around 0.4 ms. Nevertheless, the precision of the paradigm allows even for these minimal deviations to appear on the graphs, being able to recognise early signs of overload approaching. \\
+    Recall \ref{fig:cdf_indep}, a linear system should obey superposition, and the sum of the delay of the workers should be equal to the overall delay of ``probe''. In \cref{fig:ovovv}, this is not the case. \\
+    We can start to observe early signs of dependency even at $\rho = 0.5$. The polling window observed $\Delta$Q is deviating from the calculated one. At the 50th percentile the deviation is minimal, around 0.4 ms. Nevertheless, the precision of the paradigm allows even for these minimal deviations to appear on the graphs, being able to recognise non-linearity and early signs of overload. \\
     The superposition principle is not respected anymore, there is apparent \textbf{non-linearity}, and the fact that $\Delta$Q can recognise non-linear behaviour with \textbf{0.4ms precision} is impressive. The oscilloscope is a very powerful tool that can help assess dependent behaviour in running systems!
  
        \begin{figure}[H]
@@ -104,10 +113,11 @@
                 \label{fig:ovovv}
             \end{subfigure}
             \label{fig:avavv} 
+            \caption{\textbf{Left}: The ``probe'' $\Delta$Qs as observed in a snapshot. \textbf{Right}: Zooming in the oscilloscope, we can observe a slight, but noticeable deviation. (1, arrow): The observed polling window confidence bounds are $>$ than the observed $\Delta$Q.}
         \end{figure}
        
 \subsubsection{High load}
-    Performance degradation at 0.5 offered load is already remarkable, the $\Delta$Qs even if the difference is seemingly minimal. We can go even further and observe the system under high load situations. We set $\lambda = 200 \rightarrow \rho = 0.83$, just above the high load threshold.
+    Performance degradation at 0.5 offered load is already remarkable, the observed $\Delta$Qs and the calculated ones are slowly but surely deviating, even if the difference is seemingly minimal. We can go even further and observe the system under high load situations (\cref{early_ov}). We set $\lambda = 200 \rightarrow \rho = 0.83$, just above the high load threshold.
     
        \begin{figure}[H]
             \centering
@@ -126,9 +136,8 @@
             Right: probe $\Delta$Q, in blue (1), the observed $\Delta$Q with its confidence bounds, in red (2) the calculated $\Delta$Q with its confidence bounds.}
         \end{figure}
     
-    This is what we expected previously, and confirms what is expected by queueing theory, $\Delta$Q is capable of observing the basic observation requirements and capable of recognising dependency. While what is expected by the execution of the queue (observed $\Delta$Q) is a nice normally distributed CDF with little to no failure. What we can actually observe is a degraded performance in both workers and the probe observed execution.
-
-    The workers CDF has completely degraded, with the average request taking almost double the time as under normal queueing conditions. 
+    This is what we expected previously, and confirms what is expected by queueing theory, $\Delta$Q is capable of observing the basic observation requirements and capable of recognising dependency. While what is expected by the worker's observed $\Delta$Q is a nice normally distributed CDF with little to no failure. What we can observe on the probe is degraded performance in its observed $\Delta$Q. \\
+    Due to dependency, high load and processor utilisation, the queue is filling up and the worker is taking more time to complete. If you recall \cref{fig:norm_ex}, the worker's delay distribution was less than the current one. We can see that it has completely degraded, with the average request taking almost double the time as under normal queueing conditions. 
 
     Further degradation can be observed by increasing $\lambda = {300, 350} \rightarrow \rho \ge 1$.
 
@@ -148,7 +157,7 @@
             \caption{Left: (1) probe calculated $\Delta$Q and confidence bounds. (2) probe observed $\Delta$Q and confidence bounds at $\lambda = 300$. Right: probe $\Delta$Qs at $\lambda = 350$}
         \end{figure}
 
-    The system degrading clear, the $\Delta$Qs show how almost all messages are being dropped or take $> dMax$. Let us look at triggers and how they can be useful to diagnose such cases.
+    The system degrading is clear, the $\Delta$Qs show how almost all messages are being dropped or take $> dMax$. Let us look at triggers and how they can be useful to diagnose such cases.
   
     \subsubsection{Triggers}
         By observing the system under test in high load cases, we can set the load trigger by setting the sampling window to 1 second and trigger when outcome instances $\gtrapprox 150$. We can also set a trigger based on observation of the running system.
