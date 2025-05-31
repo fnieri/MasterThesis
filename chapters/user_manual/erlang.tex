@@ -1,4 +1,4 @@
-\section{Instrumenting the Erlang application}
+\section{Instrumenting the Erlang application} \label{app:instr_app}
     \subsection{Including the adapter}
 
     The Erlang project you need to instrument needs to include the adapter in its dependencies, to do that, you need to include it in your dependencies.
@@ -55,41 +55,4 @@
         \end{minted}
         Contrary to the other methods, this does not end OpenTelemetry spans, it is let up to you to decide how to handle failure in spans.
 
-\section{Establishing the adapter - oscilloscope connection}
-    To connect to the oscilloscope to the server, you first need to start the oscilloscope server by setting the oscilloscope listening IP and port on the dashboard.
 
-    \begin{figure}[H]
-        \begin{center}
-        \includegraphics[width = 0.8\textwidth]{img/manual/cserv.png}
-        \end{center}
-    \end{figure}
-
-    If the server cannot start, a popup will appear with the error.
-    
-    Once this is done, the adapter can establish a connection to the oscilloscope to send spans. The adapter can now connect to the oscilloscope server. 
-    
-    \begin{figure}[H]
-        \begin{center}
-        \includegraphics[width = 0.8 \textwidth]{img/manual/connectadapter.png}
-        \end{center}
-    \end{figure}
-    
-    We now need to start the listener on the adapter.
-
-     \begin{figure}[H]
-        \begin{center}
-        \includegraphics[width = 0.8 \textwidth]{img/manual/connectadapter.png}
-        \end{center}
-    \end{figure}
-
-    If an error may arrive during the start-up of the listener, it will be printed out.
-
-    Now, we can connect the oscilloscope to the adapter by setting the listener endpoint.
-    
-     \begin{figure}[H]
-        \begin{center}
-        \includegraphics[width = 0.8 \textwidth]{img/manual/endpoint.png}
-        \end{center}
-    \end{figure}
-
-    If the server cannot connect, an error will popup. Once connected, the server can start and stop the adapter sending of the spans by clicking the two buttons below.

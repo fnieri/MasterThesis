@@ -6,11 +6,13 @@
         \item \texttt{start\_span} $\rightarrow$ \texttt{fail\_span}.
     \end{itemize}
 
-    We ran the simulation for 25000 subsequent iterations, these are the results.
+    We ran the simulation for 25000 subsequent iterations, the results are shown in \cref{fig:stub_perf}:
     \begin{figure}[H]
         \begin{center}
-            \includegraphics[width=0.8\linewidth]{img/adapter.pdf}
+            \includegraphics[width=0.7\linewidth]{img/adapter.pdf}
         \end{center}
+        \caption{Adapter performance evaluation.}
+        \label{fig:stub_perf}
     \end{figure}
 
     The overhead is minimal, around 10 microseconds on average to start and end/fail a span. The same cannot be said about with span, the increased overhead is nevertheless due to a function needing to be called inside it for it to record a span. 

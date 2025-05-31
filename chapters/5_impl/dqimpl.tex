@@ -35,7 +35,7 @@
         We introduced $dMax$ in the previous chapters, we provide here the full equation that allows $dMax$ to be calculated:
         \begin{equation}
             \begin{split}
-                \Delta T &= \Delta t_{base} \cdot 2^n \\ 
+                \Delta t &= \Delta t_{base} \cdot 2^n \\ 
                 dMax &= \Delta t_{base} \cdot 2^n * N  
             \end{split}
             \label{eq:dMaxU}
@@ -62,7 +62,7 @@
     \subsubsection{Fast Fourier Transform Convolution}
         FFTW (Fastest Fourier Transform in the West) is a C subroutine library \cite{fftw3} for computing the discrete Fourier Transform in one or more dimensions, of arbitrary input size, and of both real and complex data. We use FFTW in our program to compute the convolution of $\Delta$Qs. We adapt our script from an already existing one found on GitHub. \cite{fft}
     
-    Whilst the previous algorithm is far too slow to handle a high number of bins, convolution leveraging Fast Fourier Transform (FFT) allows us to reduce the amount of calculations to $\mathcal{O}(N \text{log} N)$. This is why the naïve convolution algorithm is not used. We will analyse the time gains in a later chapter.
+    Whilst the previous algorithm is far too slow to handle a high number of bins, convolution leveraging Fast Fourier Transform (FFT) allows us to reduce the amount of calculations to $\mathcal{O}(N \text{log} N)$. This is why the naïve convolution algorithm is not used. We will analyse the time gains in Chapter 7.
     
     FFT and naïve convolution produce the same results in our program, barring $\varepsilon$ differences (around $10^{-18}$) in bins whose result should be 0. This is most likely due to rounding error.
     
@@ -103,16 +103,13 @@
             \end{equation}
         The lower confidence bound $CI_{i, l}$ and upper confidence bound $CI_{i, u}$ for a bin $i$ can be calculated as:
         \begin{equation}
-            \begin{split}
-                CI_{i, l} &= \mu_i - \dfrac{\sigma_i}{\sqrt{n}} \\
-                CI_{i, u} &= \mu_i + \dfrac{\sigma_i}{\sqrt{n}}
-            \end{split}
+                CI_{i, l} = \mu_i - \dfrac{\sigma_i}{\sqrt{n}} \ \text{,} \ CI_{i, u} = \mu_i + \dfrac{\sigma_i}{\sqrt{n}}
             \label{eq:ci_i}
         \end{equation}
         The confidence bounds for the cdf are the lower and confidence bounds for every bin $i$.
 
         \subsection{Rebinning}
-            Rebinning refers to the aggregation of multiple bins of a bin width $i$ to another bin width $j$. \cite{rebin}
+            Rebinning refers to the aggregation of multiple bins of a bin width $i$ to another bin width $j$ \cite{rebin}. 
             Previous operations between $\Delta$Qs must be done on $\Delta$Qs that have the same bin width. This is why it is fundamental that all probes have a common $\Delta t_{base}$ and why we have a $2^n$ factor to calculate the total bin width.
 
             Given two $\Delta$Qs $\Delta$Q$_i$, $\Delta$Q$_j$, the common bin width $\Delta t_{ij}$ is:

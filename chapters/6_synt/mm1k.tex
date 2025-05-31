@@ -46,9 +46,9 @@
     \subsection{Determining parameters dynamically}
         We stated previously that determining parameters is something that must be done with an underlying knowledge of the system (\cref{subsec:dMax}). The oscilloscope can provide knowledge of the system. \cref{fig:w1w2hb} shows an example of worker\_1 and worker\_2 as observed in the oscilloscope.
 
-        The engineer supposes that the workers executions should take a maximum of 4 ms to complete, but doesn't actually know how long the executions should take. The engineer, after having set the required parameters observes in the following graph in the oscilloscope \cref{fig:w14}.
+        The engineer supposes that the workers executions should take a maximum of 4 ms to complete, but doesn't actually know how long the executions should take. The engineer, after having set $dMax = 4ms$, observes the graph \cref{fig:w1w2hb} on the left in the oscilloscope.
 
-    The oscilloscope shows the engineer that their assumptions do not correspond to the actual system $\Delta$Q. The user can then modify the parameters to observe the actual worker's behaviour. By setting $dMax$ to 8 ms, they can observe the worker's $\Delta$Qs failure approaching $0$ in \cref{fig:w18}.
+    The oscilloscope shows the engineer that their assumptions do not correspond to the actual system $\Delta$Q. The user can then modify the parameters to observe the actual worker's behaviour. By setting $dMax$ to 8 ms, they can observe the worker's $\Delta$Qs failure approaching $0$ on the right Figure in \cref{fig:w1w2hb}.
 
     On the other hand, the engineer's assumption could have been what they truly expected from the system, in this case, the oscilloscope tells him that the system is not behaving as expected. 
 
@@ -71,10 +71,10 @@
             \end{figure}
 
     \subsubsection{Low Load} 
-    Let us first observe the system. We will send 50 messages per second to observe the system under test to get key properties. The workers do 1000000 loops. \\
-    We can observe in \cref{fig:norm_ex_1} that the average worker's execution takes $\approx$ 30ms. We then have $\mu_{worker} = \dfrac{1}{0.0033} \approx 300$ req/s. Thus, $\rho = \dfrac{50}{322} = 0.16$, we are in nice grounds. We can assume the system is at low load.
+   We will send 50 messages per second to observe the system under test to get key properties. The workers do a million loops. \\
+    We can observe in the left graph in \cref{fig:norm_ex} that the average worker's execution takes $\approx$ 33ms. We then have $\mu_{worker} = \dfrac{1}{0.0033 s} \approx 300$ req/s. Thus, $\rho = \dfrac{50}{300} = 0.1\overline{6}$, we are in a low load situation. We can assume the system is at low load.
 
-    At low load (\cref{fig:norm_ex_2}), the system is behaving \textbf{linearly}. Recall \cref{indep_hyp}, at low load the sum of the two delays will overlap with the observed total delay. We can observe in the oscilloscope the probe \textbf{observed $\Delta$Q} and \textbf{calculated $\Delta$Q} confidence bounds overlap. 
+    At low load (\cref{fig:norm_ex}), the system is behaving \textbf{linearly}. Recall \cref{indep_hyp}, at low load the sum of the two delays will overlap with the observed total delay. We can observe in the oscilloscope the probe \textbf{observed $\Delta$Q} and \textbf{calculated $\Delta$Q} confidence bounds overlap. 
         \begin{figure}[H]
             \centering
             \begin{subfigure}{.5\textwidth}
@@ -87,9 +87,9 @@
                 \includegraphics[width =0.98\textwidth]{img/overload_2/50_probe2.png}
                 \label{fig:norm_ex_2}
             \end{subfigure}
-            \label{fig:norm_ex}
             \caption{Graphs for $\lambda = 50$. Left: worker\_1 $\Delta$Qs. (1, Blue): The observed $\Delta$Q. (Green, between arrows): Observed polling window confidence bounds. \\
             Right: ``probe'' $\Delta$Qs. (1, blue): The sampling window observed $\Delta$Q. (2, red): The sampling window calculated $\Delta$Q. (Magenta, between arrows): the observed and calculated $\Delta$Qs confidence bounds overlapping.}
+            \label{fig:norm_ex}
         \end{figure}
     
 \subsubsection{Early signs of overload}
@@ -112,12 +112,12 @@
                 \includegraphics[width =0.98\textwidth]{img/overload_2/150_probe2zoom_cropped.pdf}
                 \label{fig:ovovv}
             \end{subfigure}
-            \label{fig:avavv} 
             \caption{\textbf{Left}: The ``probe'' $\Delta$Qs as observed in a snapshot. \textbf{Right}: Zooming in the oscilloscope, we can observe a slight, but noticeable deviation. (1, arrow): The observed polling window confidence bounds are $>$ than the observed $\Delta$Q.}
+            \label{fig:avavv} 
         \end{figure}
        
 \subsubsection{High load}
-    Performance degradation at 0.5 offered load is already remarkable, the observed $\Delta$Qs and the calculated ones are slowly but surely deviating, even if the difference is seemingly minimal. We can go even further and observe the system under high load situations (\cref{early_ov}). We set $\lambda = 200 \rightarrow \rho = 0.83$, just above the high load threshold.
+    Performance degradation at 0.5 offered load is already remarkable, the observed $\Delta$Qs and the calculated ones are slowly but surely deviating, even if the difference is seemingly minimal. We can go even further and observe the system under high load situations (\cref{fig:early_ov}). We set $\lambda = 200 \rightarrow \rho = 0.83$, just above the high load threshold.
     
        \begin{figure}[H]
             \centering
@@ -131,9 +131,9 @@
                 \includegraphics[width =0.98\textwidth]{img/overload_2/250_probe2.png}
                 \label{fig:high_load_2}
             \end{subfigure}
-            \label{fig:early_ov}
             \caption{Graphs for $\lambda = 250$. Left: worker\_1 $\Delta$Q with confidence bounds. \\
             Right: probe $\Delta$Q, in blue (1), the observed $\Delta$Q with its confidence bounds, in red (2) the calculated $\Delta$Q with its confidence bounds.}
+            \label{fig:early_ov}
         \end{figure}
     
     This is what we expected previously, and confirms what is expected by queueing theory, $\Delta$Q is capable of observing the basic observation requirements and capable of recognising dependency. While what is expected by the worker's observed $\Delta$Q is a nice normally distributed CDF with little to no failure. What we can observe on the probe is degraded performance in its observed $\Delta$Q. \\
@@ -153,8 +153,8 @@
                 \includegraphics[width =0.98\textwidth]{img/overload_2/350_probe2.png}
                 \label{fig:high_load_2}
             \end{subfigure}
-            \label{fig:early_ov}
             \caption{Left: (1) probe calculated $\Delta$Q and confidence bounds. (2) probe observed $\Delta$Q and confidence bounds at $\lambda = 300$. Right: probe $\Delta$Qs at $\lambda = 350$}
+            \label{fig:early_ov}
         \end{figure}
 
     The system degrading is clear, the $\Delta$Qs show how almost all messages are being dropped or take $> dMax$. Let us look at triggers and how they can be useful to diagnose such cases.
@@ -179,15 +179,17 @@
                 \includegraphics[width =0.98\textwidth]{img/overload_2/qta_triggerd2.png}
                 \label{fig:high_load_2}
             \end{subfigure}
+            \caption{\textbf{Left}: Snapshots for fired triggers. \\
+            \textbf{Right}: (1) Observed sampling window $\Delta$Q violating QTA (3). The confidence bounds for the observed polling window (blue, arrow, below) shows the system deteriorating. The calculated $\Delta$Q (2) is behaving worse than its confidence bounds (red, arrow, above). The system is overloaded and drgrading.} % 
+
             \label{fig:early_ov}
-            \caption{Left: Snapshots for fired triggers. \\
-            Right: (1) Observed $\Delta$Q violating QTA (3). The confidence bounds for the observed $\Delta$Q (blue, arrow, below) shows the system deteriorating. The calculated $\Delta$Q (2) is behaving worse than its confidence bounds (red, arrow, above).} % 
         \end{figure}
 
-    QTA triggers can help to detect overhead even before high load becomes evident!
 
         \paragraph{Instances trigger}
-        By knowing the inner details of the system, setting a QTA on the number of instances can be useful. Here is an example of a fired trigger on the number of instances.
+
+        QTA triggers can help detect non-linearity even before it becomes evident. \\
+        By knowing the inner details of the system, setting a QTA on the number of instances can be useful. \cref{fig:qta_trig} is an example of a fired trigger on the number of instances.
 
         Even though the QTA requirement isn't being violated, the number of instances fires a trigger, where the user can observe that the system is showing early signs of overload.
         \begin{figure}[H]
@@ -197,5 +199,6 @@
             \caption{Snapshot for a fired trigger observing the load of a probe. The trigger fires for observed load $> 150$ in a sampling window of 1 second. Even if the QTA requirement (step function) are not being violated, the system is showing early signs of non-linear behaviour.
             \\
             With knowledge about the system inner workings, smart triggers can be set on load to detect non-linear behaviour.}
+            \label{fig:qta_trig}
         \end{figure}
   
