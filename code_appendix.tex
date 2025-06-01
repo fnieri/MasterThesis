@@ -92,14 +92,14 @@ This tab holds the widgets to set/remove triggers and view fired ones.
 
 \section{Outcome diagram}
 
-The "diagram" folder contains everything related to outcome diagrams. Due to time related issues, there are some issues with the names. We will explain what each class represents, but it differs from the definitions which are explained in the thesis
+The "diagram" folder contains everything related to outcome diagrams. Due to time related issues, there are some issues with the names. We will explain what each class represents, but it differs from the definitions which are explained in the thesis.
 
 \subsection{Observable.cpp} \label{code:obs}
 The observable class represents a generic "observable" element of the outcome diagram, it is the base class for probes, outcome and operators. In this class one can calculate the observed $\Delta$Q, store the outcome instances (samples), set the parameters, set a QTA, add/remove triggers and get a snapshot. It is what we described throughout the whole paper as a probe.
 
 \lstinputlisting[style=mystyle, language=C++]{../RealTimeDeltaQSD/src/diagram/Observable.cpp}
 \subsection{Operator.cpp} \label{code:op}
-This class represent a generic operator, it can be either a FTF, ATF or PC. It allows calculating the "calculated $\Delta$Q".
+This class represent a generic operator, it can be either an FTF, ATF or PC. It allows calculating the "calculated $\Delta$Q".
 \lstinputlisting[style=mystyle, language=C++]{../RealTimeDeltaQSD/src/diagram/Operator.cpp}
 
 \subsection{Outcome.cpp} \label{code:outc}
@@ -144,11 +144,11 @@ This class contains the conditions of the triggers selected by the user. The tri
 \section{parser}
 
 \subsection{SystemBuilder.cpp} \label{code:sysb}
-This class builds a new outcome diagram (system class) given an AST biult when parsing.
+This class builds a new outcome diagram (system class) given an AST built when parsing.
 \lstinputlisting[style=mystyle, language=C++]{../RealTimeDeltaQSD/src/parser/SystemBuilder.cpp}
 
 \subsection{SystemParserInterface.cpp} \label{code:syspi}
-This class is an interface to be called by the dashboard to avoid communicating directly to ANTLR. It throws errors which are caught by the caller if the parsing was unsuccessful.
+This files contains functions to be called by the dashboard to avoid communicating directly to ANTLR. It throws errors which are caught by the caller if the parsing was unsuccessful.
 \lstinputlisting[style=mystyle, language=C++]{../RealTimeDeltaQSD/src/parser/SystemParserInterface.cpp}
 
 \section{server}

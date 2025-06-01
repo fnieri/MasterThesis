@@ -50,15 +50,15 @@
     The key feature that makes $\Delta$Q stands out is the notion of failure incorporated in the representation of an outcome's behaviour. \\
  Ideally, a system would execute without errors, failure or delay. This is never the case. Since the ideal cannot be attained, the quality of the system's responses are ``\textit{attenuated to the relative ideal}''  \cite{myo}. This quality attenuation gives the name to $\Delta$Q.
 
-    Since multiple factors can influence the delays of a response (geographical, physical) \cite{dq-tut}, $\Delta$Q can be firstly modeled as a random variable,  Nevertheless, as it incorporates failures, which are discrete variables, and delays, which are continuous variables, the authors describe it as an \text{Improper Random Variable}, as the probability of a finite or bounded delay is $<$ 1. \cite{myo}
+    Since multiple factors can influence the delays of a response (geographical, physical) \cite{dq-tut}, $\Delta$Q can be firstly modeled as a random variable. Nevertheless, as it incorporates failures, which are discrete variables, and delays, which are continuous random variables, the authors describe it as an \text{Improper Random Variable}, as the probability of a finite or bounded delay is $<$ 1. \cite{myo}
    
-    \paragraph{Intangible mass} Depicted in \cref{fig:int_mass}, the \textbf{\textit{intangible mass}} $1 - \lim_{x\to\infty}\Delta Q(x)$ of a $\Delta$Q encodes the probability of failure/timeout/exception occurring \cite{art}. \label{int_mass}
+    \paragraph{Intangible mass} Depicted in \cref{fig:int_mass}, the \textbf{\textit{intangible mass}} $1 - \lim_{x\to\infty}\Delta Q(x)$ of a $\Delta$Q encodes the probability of failure/timeout/exception occurring. \cite{art}\label{int_mass}
         
     \begin{figure}[H]
         \begin{center}
             \includegraphics{tikz/intangible.pdf}
         \end{center}
-        \caption{$\Delta$Q CDF representation with intangible mass (red). The failure rate is about 5\% }
+        \caption{$\Delta$Q CDF representation with intangible mass (red, dotted). The failure rate is about 5\% }
         \label{fig:int_mass}
     \end{figure}
 
@@ -76,13 +76,13 @@
     \paragraph{Slack and hazard} There is performance \textit{slack} when ``a $\Delta$Q is strictly less than the requirement.'' ($\Delta$Q$_{obs}$ < $\Delta$Q$_{req}$). \\
     There is performance \textit{hazard} when ``an observed $\Delta$Q$_{obs}$ intersects or is strictly greater than the required $\Delta$Q$_{req}$'' ($\Delta$Q$_{obs} \nless \Delta$Q$_{req}$). \cite{myo}
  
-    \paragraph{QTA example}: Imagine a system where 25\% of the executions should take $<$ 15 ms, 50\% $<$ 25 ms and 75\% $<$ 35 ms, all queries have a maximum delay of 50ms and 5\% of executions can timeout, the QTA can be represented as a step function. \\
+    \paragraph{QTA example} Imagine a system where 25\% of the executions should take $<$ 15 ms, 50\% $<$ 25 ms and 75\% $<$ 35 ms, all queries have a maximum delay of 50ms and 5\% of executions can timeout, the QTA can be represented as a step function. \\
     We present in \cref{fig:qta_step} an example of systems showing slack and hazard.
         \begin{figure}[H]
             \begin{center}
-                \includegraphics[scale=1]{tikz/cdf_qta_slack.pdf}
+                \includegraphics[scale=1.2]{tikz/cdf_qta_slack.pdf}
             \end{center}
-            \caption{The system in blue is showing slack and satisfies the requirement. The system in orange is showing signs that it cannot handle the stress, it is not respecting the system requirements imposed by the QTA. It intersects with the QTA in $p_1, p_2$, so it is not respecting the timeliness requirements. There is performance hazard.}%
+            \caption{The system in blue (circle) is showing slack and satisfies the requirement. The system in orange (diamond) is showing signs that it cannot handle the stress, it is not respecting the system requirements imposed by the QTA. It intersects with the QTA in $p_1, p_2$, so it is not respecting the timeliness requirements. There is performance hazard.}%
             \label{fig:qta_step}
         \end{figure}
 
@@ -90,8 +90,7 @@
         An outcome diagram is central to capture the causal relationships between the outcomes \cite{myo}. It shows the causal connections between all the outcomes we are interested in. Given an outcome diagram, one can compute the $\Delta$Q for the whole system. \\
         There are four different operators that represent the relationships between outcomes. \cite{dq-tut}
     \subsubsection{Sequential composition}
-        If we assume two outcomes $O_A$, $O_B$ where the end event of $O_A$ is the start event of $O_B$, then we say the two outcomes are sequentially composed. The total delay $\Delta$Q$_{AB}$ is given by the convolution of the PDFs of $O_A$ and $O_B$ ($O_A \circledast O_B$).
-        
+        If we assume two outcomes $O_A$, $O_B$ where the end event of $O_A$ is the start event of $O_B$, then we say the two outcomes are sequentially composed. The total delay $\Delta$Q$_{AB}$ is given by the convolution of the PDFs of $O_A$ and $O_B$ ($O_A \circledast O_B$). 
         \begin{figure}[H]
             \begin{center}
                 \includegraphics[scale=1]{tikz/seq_comp.pdf}
@@ -100,13 +99,13 @@
         \end{figure}
         Where convolution ($\circledast$) between two PDF is:
         \begin{equation}
-            PDF_A \circledast PDF_B (t) = PDF_{AB}(t) =\int\limits_0^t PDF_A(\delta) \cdot PDF_B(t-\delta)d \ \delta 
+            PDF_A \circledast PDF_B (t) = PDF_{AB}(t) =\int\limits_0^t PDF_A(\delta) \cdot PDF_B(t-\delta) \  d\delta 
             \label{eq:conv_1}
         \end{equation}
 
         Thus, $\Delta$Q$_{AB}$:
         \begin{equation}
-            \Delta Q_{AB} = \int_0^t PDF_{A} \circledast PDF_{B} d\delta
+            \Delta Q_{AB} = \int_0^t PDF_{A} \circledast PDF_{B} \ d\delta
             \label{eq:convolution_pdf}
         \end{equation}
 
@@ -138,7 +137,6 @@
             \caption{Left: $\Delta$Q$_{(A, B)}$. Right: FTF$_{(A, B)}$ = $\Delta$Q$_{AB}$}%
             \label{fig:ftf}
             \end{figure}
-
 
     \subsubsection{All to finish (ATF)}
         If we assume two independent outcomes $O_A$, $O_B$ with the same start event, all-to-finish occurs when both end events occur, it can be calculated as:
@@ -232,10 +230,9 @@
             \begin{center}
                 \includegraphics[scale=1]{tikz/indep.pdf}
             \end{center}
+            \caption{Two sequentially composed outcomes, $o_1$, $o_2$. The end event of $o_1$ is the start event of $o_2$.}%
             \label{fig:otc_indep}
-            \caption{Two sequentially composed outcomes, $o_1$, $o_2$. The end event of $o_1$ is the start event of $o_2$.}
-        \end{figure}
-        
+        \end{figure} 
         At low load, the two components behaviour will be independent (\cref{fig:cdf_indep}), the system will behave \textbf{linearly}. According to the superposition principle, the overall delay will be the sum of the two delays, as will the overall processor utilisation. \cite{sup-p}
         
         When load increases, the two components will start to show dependent behaviour due to the processor utilisation increasing. The $\Delta$Q of the observed total delay will then deviate from the sum of the two delays ($o_1 \circledast o_2$). This situation is observed in \cref{fig:cdf_indep}.

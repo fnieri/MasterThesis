@@ -17,7 +17,7 @@
         
     \begin{figure}[H]
             \begin{center}
-                \includegraphics[scale=1]{tikz/obs_calc.pdf} 
+                \includegraphics[scale=1.2]{tikz/obs_calc.pdf} 
             \end{center}
             \caption{(Red, circle, above): Sampling window \textbf{Calculated $\Delta$Q}. (Blue, diamond, below): Sampling window \textbf{Observed $\Delta$Q}}
         \end{figure}
@@ -51,8 +51,8 @@ Let us explain the following equation:
                 \label{fig:hist_100}%
             \end{subfigure}%
             \label{fig:hist_dmax}%
-            \caption{Left: Sample $\Delta$Q representation as a histogram with higher resolution but lower precision. \\
-            Right: Sample $\Delta$Q representation as a histogram with lower resolution but higher precision. \\
+            \caption{\textbf{Left}: Sample $\Delta$Q representation as a histogram with higher resolution but lower precision. \\
+            \textbf{Right}: Sample $\Delta$Q representation as a histogram with lower resolution but higher precision. \\
             Both $\Delta$Qs have the same $dMax$, but the amount of precise information they provide is far different.}
         \end{figure}%
 
@@ -79,7 +79,7 @@ Let us explain the following equation:
     Confidence bounds are given for \textit{observed} and \textit{calculated} $\Delta$Qs in a polling window (\cref{fig:bi}). \\
     We first calculate a mean of the $\Delta$Qs in the polling window, this gives an idea of how the probe has been behaving during the polling window. Given this mean, we can calculate its confidence bounds.
 
-    The bounds are updated dynamically by inserting or removing a $\Delta$Q to the current polling window. Every time a new $\Delta$Q is calculated, the oldest $\Delta$Q in a window is removed if \#$\Delta$Qs(polling window) $>$ limit. The new $\Delta$Q is added to the calculation of the mean and confidence bounds as it is calculated. 
+    The bounds are updated dynamically by inserting or removing a $\Delta$Q to the current polling window. Every time a new $\Delta$Q is sampled, the oldest $\Delta$Q in a window is removed if \#$\Delta$Qs(polling window) $>$ limit. The new $\Delta$Q is added to the calculation of the mean and confidence bounds as it is sampled. 
 
     This allows us to consider a small window of execution rather than observing the execution since the start of the system for the bounds. This can help in observing stationarity of the system, where a fewer number of past $\Delta$Qs can help observe short term behaviour.
 

@@ -108,7 +108,7 @@
 \contentsline {subsection}{\numberline {5.1.3}Rebinning}{36}{subsection.5.1.3}%
 \contentsline {subsection}{\numberline {5.1.4}Convolution}{37}{subsection.5.1.4}%
 \contentsline {subsubsection}{Naïve convolution}{37}{section*.77}%
-\contentsline {subsubsection}{Fast Fourier Transform Convolution}{37}{section*.78}%
+\contentsline {subsubsection}{Fast Fourier Transform Convolution}{38}{section*.78}%
 \contentsline {subsection}{\numberline {5.1.5}Arithmetical operations}{38}{subsection.5.1.5}%
 \contentsline {paragraph}{Scaling (multiplication)}{38}{section*.79}%
 \contentsline {paragraph}{Operations between $\Delta $Qs}{38}{section*.80}%
@@ -145,8 +145,8 @@
 \contentsline {subsection}{\numberline {6.2.1}First to finish application}{51}{subsection.6.2.1}%
 \contentsline {subsubsection}{Using the wrong operator}{51}{section*.105}%
 \contentsline {subsubsection}{Introducing a slower component}{52}{section*.108}%
-\contentsline {subsection}{\numberline {6.2.2}All to finish application}{53}{subsection.6.2.2}%
-\contentsline {subsubsection}{Introducing a slower component}{53}{section*.110}%
+\contentsline {subsection}{\numberline {6.2.2}All to finish application}{52}{subsection.6.2.2}%
+\contentsline {subsubsection}{Introducing a slower component}{52}{section*.110}%
 \contentsline {chapter}{\numberline {7}Performance study}{54}{chapter.7}%
 \contentsline {section}{\numberline {7.1}Convolution performance}{54}{section.7.1}%
 \contentsline {section}{\numberline {7.2}$\Delta $Q adapter performance}{55}{section.7.2}%
@@ -190,107 +190,107 @@
 \contentsline {subsection}{\numberline {D.6.3}With spans}{86}{subsection.D.6.3}%
 \contentsline {subsection}{\numberline {D.6.4}Ending spans}{86}{subsection.D.6.4}%
 \contentsline {subsection}{\numberline {D.6.5}Failing outcome instances}{86}{subsection.D.6.5}%
-\contentsline {part}{II\hspace {1em}Source Code Appendix}{88}{part.2}%
-\contentsline {chapter}{\numberline {E}Grammar}{89}{appendix.E}%
-\contentsline {chapter}{\numberline {F}C++ Source Files}{91}{appendix.F}%
-\contentsline {section}{\numberline {F.1}Root folder}{91}{section.F.1}%
-\contentsline {subsection}{\numberline {F.1.1}main.cpp}{91}{subsection.F.1.1}%
-\contentsline {subsection}{\numberline {F.1.2}Application.cpp}{92}{subsection.F.1.2}%
-\contentsline {section}{\numberline {F.2}Dashboard}{97}{section.F.2}%
-\contentsline {subsection}{\numberline {F.2.1}ColorRegistry.cpp}{97}{subsection.F.2.1}%
-\contentsline {subsection}{\numberline {F.2.2}CustomLegendEntry.cpp}{97}{subsection.F.2.2}%
-\contentsline {subsection}{\numberline {F.2.3}CustomLegendPanel.cpp}{98}{subsection.F.2.3}%
-\contentsline {subsection}{\numberline {F.2.4}DQPlotController.cpp}{99}{subsection.F.2.4}%
-\contentsline {subsection}{\numberline {F.2.5}DQPlotList.cpp}{109}{subsection.F.2.5}%
-\contentsline {subsection}{\numberline {F.2.6}DelaySettingsWidget.cpp}{111}{subsection.F.2.6}%
-\contentsline {subsection}{\numberline {F.2.7}DeltaQPlot.cpp}{113}{subsection.F.2.7}%
-\contentsline {subsection}{\numberline {F.2.8}MainWindow.cpp}{116}{subsection.F.2.8}%
-\contentsline {subsection}{\numberline {F.2.9}NewPlotList.cpp}{121}{subsection.F.2.9}%
-\contentsline {subsection}{\numberline {F.2.10}ObservableSettings.cpp}{123}{subsection.F.2.10}%
-\contentsline {subsection}{\numberline {F.2.11}SamplingRateWidget.cpp}{123}{subsection.F.2.11}%
-\contentsline {subsection}{\numberline {F.2.12}QTAInputWidget.cpp}{124}{subsection.F.2.12}%
-\contentsline {subsection}{\numberline {F.2.13}Sidebar.cpp}{127}{subsection.F.2.13}%
-\contentsline {subsection}{\numberline {F.2.14}SnapshotViewerWindow.cpp}{129}{subsection.F.2.14}%
-\contentsline {subsection}{\numberline {F.2.15}StubControlWidget.cpp}{134}{subsection.F.2.15}%
-\contentsline {subsection}{\numberline {F.2.16}SystemCreationWidget.cpp}{136}{subsection.F.2.16}%
-\contentsline {subsection}{\numberline {F.2.17}TriggersTab.cpp}{139}{subsection.F.2.17}%
-\contentsline {section}{\numberline {F.3}Outcome diagram}{144}{section.F.3}%
-\contentsline {subsection}{\numberline {F.3.1}Observable.cpp}{144}{subsection.F.3.1}%
-\contentsline {subsection}{\numberline {F.3.2}Operator.cpp}{147}{subsection.F.3.2}%
-\contentsline {subsection}{\numberline {F.3.3}Outcome.cpp}{149}{subsection.F.3.3}%
-\contentsline {subsection}{\numberline {F.3.4}Probe.cpp}{150}{subsection.F.3.4}%
-\contentsline {subsection}{\numberline {F.3.5}System.cpp}{151}{subsection.F.3.5}%
-\contentsline {section}{\numberline {F.4}$\Delta $Q (maths)}{155}{section.F.4}%
-\contentsline {subsection}{\numberline {F.4.1}ConfidenceInterval.cpp}{155}{subsection.F.4.1}%
-\contentsline {subsection}{\numberline {F.4.2}DeltaQ.cpp}{157}{subsection.F.4.2}%
-\contentsline {subsection}{\numberline {F.4.3}DeltaQOperations.cpp}{163}{subsection.F.4.3}%
-\contentsline {subsection}{\numberline {F.4.4}Snapshot.cpp}{168}{subsection.F.4.4}%
-\contentsline {subsection}{\numberline {F.4.5}TriggerManager.cpp}{170}{subsection.F.4.5}%
-\contentsline {subsection}{\numberline {F.4.6}Triggers.cpp}{172}{subsection.F.4.6}%
-\contentsline {section}{\numberline {F.5}parser}{173}{section.F.5}%
-\contentsline {subsection}{\numberline {F.5.1}SystemBuilder.cpp}{173}{subsection.F.5.1}%
-\contentsline {subsection}{\numberline {F.5.2}SystemParserInterface.cpp}{178}{subsection.F.5.2}%
-\contentsline {section}{\numberline {F.6}server}{180}{section.F.6}%
-\contentsline {subsection}{\numberline {F.6.1}Server.cpp}{180}{subsection.F.6.1}%
-\contentsline {chapter}{\numberline {G}C++ Header Files}{189}{appendix.G}%
-\contentsline {section}{\numberline {G.1}Root}{189}{section.G.1}%
-\contentsline {subsection}{\numberline {G.1.1}Application.h}{189}{subsection.G.1.1}%
-\contentsline {section}{\numberline {G.2}dashboard}{190}{section.G.2}%
-\contentsline {subsection}{\numberline {G.2.1}ColorRegistry.h}{190}{subsection.G.2.1}%
-\contentsline {subsection}{\numberline {G.2.2}CustomLegendEntry.h}{190}{subsection.G.2.2}%
-\contentsline {subsection}{\numberline {G.2.3}CustomLegendPanel.h}{191}{subsection.G.2.3}%
-\contentsline {subsection}{\numberline {G.2.4}DQPlotController.h}{192}{subsection.G.2.4}%
-\contentsline {subsection}{\numberline {G.2.5}DQPlotList.h}{194}{subsection.G.2.5}%
-\contentsline {subsection}{\numberline {G.2.6}DelaySettingsWidget.h}{196}{subsection.G.2.6}%
-\contentsline {subsection}{\numberline {G.2.7}DeltaQPlot.h}{197}{subsection.G.2.7}%
-\contentsline {subsection}{\numberline {G.2.8}MainWindow.h}{200}{subsection.G.2.8}%
-\contentsline {subsection}{\numberline {G.2.9}NewPlotList.h}{201}{subsection.G.2.9}%
-\contentsline {subsection}{\numberline {G.2.10}ObservableSettings.h}{202}{subsection.G.2.10}%
-\contentsline {subsection}{\numberline {G.2.11}SamplingRateWidget.h}{203}{subsection.G.2.11}%
-\contentsline {subsection}{\numberline {G.2.12}QTAInputWidget.h}{204}{subsection.G.2.12}%
-\contentsline {subsection}{\numberline {G.2.13}Sidebar.h}{206}{subsection.G.2.13}%
-\contentsline {subsection}{\numberline {G.2.14}SnapshotViewerWindow.h}{208}{subsection.G.2.14}%
-\contentsline {subsection}{\numberline {G.2.15}StubControlWidget.h}{209}{subsection.G.2.15}%
-\contentsline {subsection}{\numberline {G.2.16}SystemCreationWidget.h}{210}{subsection.G.2.16}%
-\contentsline {subsection}{\numberline {G.2.17}TriggersTab.h}{211}{subsection.G.2.17}%
-\contentsline {section}{\numberline {G.3}diagram}{213}{section.G.3}%
-\contentsline {subsection}{\numberline {G.3.1}Observable.h}{213}{subsection.G.3.1}%
-\contentsline {subsection}{\numberline {G.3.2}Operator.h}{216}{subsection.G.3.2}%
-\contentsline {subsection}{\numberline {G.3.3}OperatorType.h}{218}{subsection.G.3.3}%
-\contentsline {subsection}{\numberline {G.3.4}Outcome.h}{218}{subsection.G.3.4}%
-\contentsline {subsection}{\numberline {G.3.5}Probe.h}{218}{subsection.G.3.5}%
-\contentsline {subsection}{\numberline {G.3.6}Sample.h}{220}{subsection.G.3.6}%
-\contentsline {subsection}{\numberline {G.3.7}System.h}{220}{subsection.G.3.7}%
-\contentsline {section}{\numberline {G.4}$\Delta $Q (maths)}{222}{section.G.4}%
-\contentsline {subsection}{\numberline {G.4.1}ConfidenceInterval.h}{222}{subsection.G.4.1}%
-\contentsline {subsection}{\numberline {G.4.2}DeltaQ.h}{223}{subsection.G.4.2}%
-\contentsline {subsection}{\numberline {G.4.3}DeltaQOperations.h}{225}{subsection.G.4.3}%
-\contentsline {subsection}{\numberline {G.4.4}DeltaQRepr.h}{226}{subsection.G.4.4}%
-\contentsline {subsection}{\numberline {G.4.5}QTA.h}{227}{subsection.G.4.5}%
-\contentsline {subsection}{\numberline {G.4.6}Snapshot.h}{228}{subsection.G.4.6}%
-\contentsline {subsection}{\numberline {G.4.7}TriggerManager.h}{230}{subsection.G.4.7}%
-\contentsline {subsection}{\numberline {G.4.8}TriggerTypes.h}{232}{subsection.G.4.8}%
-\contentsline {subsection}{\numberline {G.4.9}Triggers.h}{232}{subsection.G.4.9}%
-\contentsline {section}{\numberline {G.5}parser}{233}{section.G.5}%
-\contentsline {subsection}{\numberline {G.5.1}SystemBuilder.h}{233}{subsection.G.5.1}%
-\contentsline {subsection}{\numberline {G.5.2}SystemErrorListener.h}{234}{subsection.G.5.2}%
-\contentsline {subsection}{\numberline {G.5.3}SystemParserInterface.h}{235}{subsection.G.5.3}%
-\contentsline {section}{\numberline {G.6}server}{236}{section.G.6}%
-\contentsline {subsection}{\numberline {G.6.1}Server.h}{236}{subsection.G.6.1}%
-\contentsline {chapter}{\numberline {H}Build Configuration Files}{239}{appendix.H}%
-\contentsline {section}{\numberline {H.1}src/CMakeLists.txt}{239}{section.H.1}%
-\contentsline {section}{\numberline {H.2}dashboard/CMakeLists.txt}{239}{section.H.2}%
-\contentsline {section}{\numberline {H.3}diagram/CMakeLists.txt}{240}{section.H.3}%
-\contentsline {section}{\numberline {H.4}maths/CMakeLists.txt}{241}{section.H.4}%
-\contentsline {section}{\numberline {H.5}parser/CMakeLists.txt}{242}{section.H.5}%
-\contentsline {section}{\numberline {H.6}server/CMakeLists.txt}{243}{section.H.6}%
-\contentsline {chapter}{\numberline {I}Erlang Source Files}{245}{appendix.I}%
-\contentsline {section}{\numberline {I.1}Root}{245}{section.I.1}%
-\contentsline {subsection}{\numberline {I.1.1}dqsd\_otel.erl}{245}{subsection.I.1.1}%
-\contentsline {subsection}{\numberline {I.1.2}dqsd\_otel\_app.erl}{249}{subsection.I.1.2}%
-\contentsline {subsection}{\numberline {I.1.3}dqsd\_otel\_sup.erl}{250}{subsection.I.1.3}%
-\contentsline {subsection}{\numberline {I.1.4}dqsd\_otel\_tcp\_client.erl}{250}{subsection.I.1.4}%
-\contentsline {subsection}{\numberline {I.1.5}dqsd\_otel\_tcp\_server.erl}{252}{subsection.I.1.5}%
-\contentsline {chapter}{\numberline {J}Erlang Application Files}{256}{appendix.J}%
-\contentsline {section}{\numberline {J.1}Root}{256}{section.J.1}%
-\contentsline {subsection}{\numberline {J.1.1}dqsd\_otel.app.src}{256}{subsection.J.1.1}%
+\contentsline {part}{II\hspace {1em}Source Code Appendix}{87}{part.2}%
+\contentsline {chapter}{\numberline {E}Grammar}{88}{appendix.E}%
+\contentsline {chapter}{\numberline {F}C++ Source Files}{89}{appendix.F}%
+\contentsline {section}{\numberline {F.1}Root folder}{89}{section.F.1}%
+\contentsline {subsection}{\numberline {F.1.1}main.cpp}{89}{subsection.F.1.1}%
+\contentsline {subsection}{\numberline {F.1.2}Application.cpp}{90}{subsection.F.1.2}%
+\contentsline {section}{\numberline {F.2}Dashboard}{95}{section.F.2}%
+\contentsline {subsection}{\numberline {F.2.1}ColorRegistry.cpp}{95}{subsection.F.2.1}%
+\contentsline {subsection}{\numberline {F.2.2}CustomLegendEntry.cpp}{95}{subsection.F.2.2}%
+\contentsline {subsection}{\numberline {F.2.3}CustomLegendPanel.cpp}{96}{subsection.F.2.3}%
+\contentsline {subsection}{\numberline {F.2.4}DQPlotController.cpp}{97}{subsection.F.2.4}%
+\contentsline {subsection}{\numberline {F.2.5}DQPlotList.cpp}{107}{subsection.F.2.5}%
+\contentsline {subsection}{\numberline {F.2.6}DelaySettingsWidget.cpp}{109}{subsection.F.2.6}%
+\contentsline {subsection}{\numberline {F.2.7}DeltaQPlot.cpp}{111}{subsection.F.2.7}%
+\contentsline {subsection}{\numberline {F.2.8}MainWindow.cpp}{114}{subsection.F.2.8}%
+\contentsline {subsection}{\numberline {F.2.9}NewPlotList.cpp}{119}{subsection.F.2.9}%
+\contentsline {subsection}{\numberline {F.2.10}ObservableSettings.cpp}{121}{subsection.F.2.10}%
+\contentsline {subsection}{\numberline {F.2.11}SamplingRateWidget.cpp}{121}{subsection.F.2.11}%
+\contentsline {subsection}{\numberline {F.2.12}QTAInputWidget.cpp}{122}{subsection.F.2.12}%
+\contentsline {subsection}{\numberline {F.2.13}Sidebar.cpp}{125}{subsection.F.2.13}%
+\contentsline {subsection}{\numberline {F.2.14}SnapshotViewerWindow.cpp}{127}{subsection.F.2.14}%
+\contentsline {subsection}{\numberline {F.2.15}StubControlWidget.cpp}{132}{subsection.F.2.15}%
+\contentsline {subsection}{\numberline {F.2.16}SystemCreationWidget.cpp}{134}{subsection.F.2.16}%
+\contentsline {subsection}{\numberline {F.2.17}TriggersTab.cpp}{137}{subsection.F.2.17}%
+\contentsline {section}{\numberline {F.3}Outcome diagram}{142}{section.F.3}%
+\contentsline {subsection}{\numberline {F.3.1}Observable.cpp}{142}{subsection.F.3.1}%
+\contentsline {subsection}{\numberline {F.3.2}Operator.cpp}{145}{subsection.F.3.2}%
+\contentsline {subsection}{\numberline {F.3.3}Outcome.cpp}{147}{subsection.F.3.3}%
+\contentsline {subsection}{\numberline {F.3.4}Probe.cpp}{148}{subsection.F.3.4}%
+\contentsline {subsection}{\numberline {F.3.5}System.cpp}{149}{subsection.F.3.5}%
+\contentsline {section}{\numberline {F.4}$\Delta $Q (maths)}{153}{section.F.4}%
+\contentsline {subsection}{\numberline {F.4.1}ConfidenceInterval.cpp}{153}{subsection.F.4.1}%
+\contentsline {subsection}{\numberline {F.4.2}DeltaQ.cpp}{155}{subsection.F.4.2}%
+\contentsline {subsection}{\numberline {F.4.3}DeltaQOperations.cpp}{161}{subsection.F.4.3}%
+\contentsline {subsection}{\numberline {F.4.4}Snapshot.cpp}{166}{subsection.F.4.4}%
+\contentsline {subsection}{\numberline {F.4.5}TriggerManager.cpp}{168}{subsection.F.4.5}%
+\contentsline {subsection}{\numberline {F.4.6}Triggers.cpp}{170}{subsection.F.4.6}%
+\contentsline {section}{\numberline {F.5}parser}{171}{section.F.5}%
+\contentsline {subsection}{\numberline {F.5.1}SystemBuilder.cpp}{171}{subsection.F.5.1}%
+\contentsline {subsection}{\numberline {F.5.2}SystemParserInterface.cpp}{176}{subsection.F.5.2}%
+\contentsline {section}{\numberline {F.6}server}{178}{section.F.6}%
+\contentsline {subsection}{\numberline {F.6.1}Server.cpp}{178}{subsection.F.6.1}%
+\contentsline {chapter}{\numberline {G}C++ Header Files}{187}{appendix.G}%
+\contentsline {section}{\numberline {G.1}Root}{187}{section.G.1}%
+\contentsline {subsection}{\numberline {G.1.1}Application.h}{187}{subsection.G.1.1}%
+\contentsline {section}{\numberline {G.2}dashboard}{188}{section.G.2}%
+\contentsline {subsection}{\numberline {G.2.1}ColorRegistry.h}{188}{subsection.G.2.1}%
+\contentsline {subsection}{\numberline {G.2.2}CustomLegendEntry.h}{188}{subsection.G.2.2}%
+\contentsline {subsection}{\numberline {G.2.3}CustomLegendPanel.h}{189}{subsection.G.2.3}%
+\contentsline {subsection}{\numberline {G.2.4}DQPlotController.h}{190}{subsection.G.2.4}%
+\contentsline {subsection}{\numberline {G.2.5}DQPlotList.h}{192}{subsection.G.2.5}%
+\contentsline {subsection}{\numberline {G.2.6}DelaySettingsWidget.h}{194}{subsection.G.2.6}%
+\contentsline {subsection}{\numberline {G.2.7}DeltaQPlot.h}{195}{subsection.G.2.7}%
+\contentsline {subsection}{\numberline {G.2.8}MainWindow.h}{198}{subsection.G.2.8}%
+\contentsline {subsection}{\numberline {G.2.9}NewPlotList.h}{199}{subsection.G.2.9}%
+\contentsline {subsection}{\numberline {G.2.10}ObservableSettings.h}{200}{subsection.G.2.10}%
+\contentsline {subsection}{\numberline {G.2.11}SamplingRateWidget.h}{201}{subsection.G.2.11}%
+\contentsline {subsection}{\numberline {G.2.12}QTAInputWidget.h}{202}{subsection.G.2.12}%
+\contentsline {subsection}{\numberline {G.2.13}Sidebar.h}{204}{subsection.G.2.13}%
+\contentsline {subsection}{\numberline {G.2.14}SnapshotViewerWindow.h}{206}{subsection.G.2.14}%
+\contentsline {subsection}{\numberline {G.2.15}StubControlWidget.h}{207}{subsection.G.2.15}%
+\contentsline {subsection}{\numberline {G.2.16}SystemCreationWidget.h}{208}{subsection.G.2.16}%
+\contentsline {subsection}{\numberline {G.2.17}TriggersTab.h}{209}{subsection.G.2.17}%
+\contentsline {section}{\numberline {G.3}diagram}{211}{section.G.3}%
+\contentsline {subsection}{\numberline {G.3.1}Observable.h}{211}{subsection.G.3.1}%
+\contentsline {subsection}{\numberline {G.3.2}Operator.h}{214}{subsection.G.3.2}%
+\contentsline {subsection}{\numberline {G.3.3}OperatorType.h}{216}{subsection.G.3.3}%
+\contentsline {subsection}{\numberline {G.3.4}Outcome.h}{216}{subsection.G.3.4}%
+\contentsline {subsection}{\numberline {G.3.5}Probe.h}{216}{subsection.G.3.5}%
+\contentsline {subsection}{\numberline {G.3.6}Sample.h}{218}{subsection.G.3.6}%
+\contentsline {subsection}{\numberline {G.3.7}System.h}{218}{subsection.G.3.7}%
+\contentsline {section}{\numberline {G.4}$\Delta $Q (maths)}{220}{section.G.4}%
+\contentsline {subsection}{\numberline {G.4.1}ConfidenceInterval.h}{220}{subsection.G.4.1}%
+\contentsline {subsection}{\numberline {G.4.2}DeltaQ.h}{221}{subsection.G.4.2}%
+\contentsline {subsection}{\numberline {G.4.3}DeltaQOperations.h}{223}{subsection.G.4.3}%
+\contentsline {subsection}{\numberline {G.4.4}DeltaQRepr.h}{224}{subsection.G.4.4}%
+\contentsline {subsection}{\numberline {G.4.5}QTA.h}{225}{subsection.G.4.5}%
+\contentsline {subsection}{\numberline {G.4.6}Snapshot.h}{226}{subsection.G.4.6}%
+\contentsline {subsection}{\numberline {G.4.7}TriggerManager.h}{228}{subsection.G.4.7}%
+\contentsline {subsection}{\numberline {G.4.8}TriggerTypes.h}{230}{subsection.G.4.8}%
+\contentsline {subsection}{\numberline {G.4.9}Triggers.h}{230}{subsection.G.4.9}%
+\contentsline {section}{\numberline {G.5}parser}{231}{section.G.5}%
+\contentsline {subsection}{\numberline {G.5.1}SystemBuilder.h}{231}{subsection.G.5.1}%
+\contentsline {subsection}{\numberline {G.5.2}SystemErrorListener.h}{232}{subsection.G.5.2}%
+\contentsline {subsection}{\numberline {G.5.3}SystemParserInterface.h}{233}{subsection.G.5.3}%
+\contentsline {section}{\numberline {G.6}server}{234}{section.G.6}%
+\contentsline {subsection}{\numberline {G.6.1}Server.h}{234}{subsection.G.6.1}%
+\contentsline {chapter}{\numberline {H}Build Configuration Files}{237}{appendix.H}%
+\contentsline {section}{\numberline {H.1}src/CMakeLists.txt}{237}{section.H.1}%
+\contentsline {section}{\numberline {H.2}dashboard/CMakeLists.txt}{237}{section.H.2}%
+\contentsline {section}{\numberline {H.3}diagram/CMakeLists.txt}{238}{section.H.3}%
+\contentsline {section}{\numberline {H.4}maths/CMakeLists.txt}{239}{section.H.4}%
+\contentsline {section}{\numberline {H.5}parser/CMakeLists.txt}{240}{section.H.5}%
+\contentsline {section}{\numberline {H.6}server/CMakeLists.txt}{241}{section.H.6}%
+\contentsline {chapter}{\numberline {I}Erlang Source Files}{243}{appendix.I}%
+\contentsline {section}{\numberline {I.1}Root}{243}{section.I.1}%
+\contentsline {subsection}{\numberline {I.1.1}dqsd\_otel.erl}{243}{subsection.I.1.1}%
+\contentsline {subsection}{\numberline {I.1.2}dqsd\_otel\_app.erl}{247}{subsection.I.1.2}%
+\contentsline {subsection}{\numberline {I.1.3}dqsd\_otel\_sup.erl}{248}{subsection.I.1.3}%
+\contentsline {subsection}{\numberline {I.1.4}dqsd\_otel\_tcp\_client.erl}{248}{subsection.I.1.4}%
+\contentsline {subsection}{\numberline {I.1.5}dqsd\_otel\_tcp\_server.erl}{250}{subsection.I.1.5}%
+\contentsline {chapter}{\numberline {J}Erlang Application Files}{254}{appendix.J}%
+\contentsline {section}{\numberline {J.1}Root}{254}{section.J.1}%
+\contentsline {subsection}{\numberline {J.1.1}dqsd\_otel.app.src}{254}{subsection.J.1.1}%

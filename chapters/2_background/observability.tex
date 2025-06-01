@@ -6,7 +6,7 @@
     In the case of the Erlang programming language, we describe respectively two different ways to observe a running Erlang system: erlang:trace and OpenTelemetry.
     
     \subsection{erlang:trace}
-        The Erlang programming language gives the users different ways to observe the behaviour of a system, one of those is the interface \texttt{erlang:trace}. According to the documentation: ``The Erlang run-time system exposes several trace points that can be observed, observing the trace points allows users to be notified when they are triggered'' \cite{erl-t}. One can observe function calls, messages being sent and received, process being spawned, garbage collecting and more. 
+        The Erlang programming language gives the users different ways to observe the behaviour of a system, one of those is the interface \texttt{erlang:trace}. According to the documentation: ``The Erlang run-time system exposes several trace points that can be observed, observing the trace points allows users to be notified when they are triggered'' \cite{erlang-t}. One can observe function calls, messages being sent and received, process being spawned, garbage collecting and more. 
         \begin{figure}[!ht]
         \centering
         \begin{minted}{erlang}
@@ -20,15 +20,15 @@
                    How :: boolean(),
                    FlagList :: [trace_flag()].
         \end{minted}
-        \caption{erlang:trace/3 specification.}
+            \caption{erlang:trace/3 specification. \cite{erlang-t}}
 \end{figure}
 
     Nevertheless, in Erlang trace there is no default way to follow a message and get its whole execution trace. This is a missing feature that is crucial for observing a program functioning and being able to connect an application to our oscilloscope.  This is where the OpenTelemetry framework comes in.
 
 \subsection{OpenTelemetry}
-    According to OpenTelemetry website \cite{otel-o}: OpenTelemetry is an open-source, vendor-agnostic observability framework and toolkit designed to generate, export and collect telemetry data, in particular traces, metrics and logs. OpenTelemetry provides a standard protocol, a single set of API and conventions and lets the user own the generated data, allowing to switch between observability backends freely.
+    According to OpenTelemetry's website \cite{otel-o}: OpenTelemetry is an open-source, vendor-agnostic observability framework and toolkit designed to generate, export and collect telemetry data, in particular traces, metrics and logs. OpenTelemetry provides a standard protocol, a single set of API and conventions and lets the user own the generated data, allowing to switch between observability backends freely.
    
-   OpenTelemetry is available for a plethora of languages \cite{otel-l}, including Erlang, although, as of writing this, only traces are available in Erlang \cite{otel-in}.
+   OpenTelemetry is available for a plethora of languages \cite{otel-lang}, including Erlang. As of writing this, logs and metrics are unstable in Erlang \cite{otel-in}.
      
     The Erlang Ecosystem Foundation has a working group focused on evolving the tools related to observability, including OpenTelemetry and the runtime observability monitoring tools \cite{obs-group}. 
     
@@ -106,5 +106,5 @@ proc_lib:spawn_link(fun() ->
                     end),
         \end{minted}
         \paragraph{?end\_span}
-            \texttt{?end\_span} ends a span started with \texttt{?start\_span}
+            \texttt{?end\_span} ends a span started with \texttt{?start\_span}.
 

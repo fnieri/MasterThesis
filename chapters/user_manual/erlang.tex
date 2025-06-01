@@ -10,9 +10,7 @@
         {applications, [
             kernel,
             stdlib,
-            opentelemetry,
-            opentelemetry_api,
-        opentelemetry_exporter,
+            ...
         dqsd_otel
         ]},
         ...
@@ -26,10 +24,8 @@
     {opentelemetry_exporter, "~> 1.0"},
     {dqsd_otel, {git, "https://github.com/fnieri/dqsd_otel.git", {tag, "the_latest_version_on_git"}}}
 ]}.
-    \end{minted}
-    
+    \end{minted} 
     Once you have the dependencies set up you can begin creating outcome instances for the oscilloscope.
-
     (\textbf{Note:} If the project was to change name, you can still find the project in https://github.com/fnieri/).
 
     \subsection{Starting spans}
@@ -45,12 +41,10 @@
     \subsection{With spans}
         To start with spans you need to call:
         \begin{minted}{erlang}
-
             dqsd_otel:with_span(<<"worker_2">>, fun() -> ok, #{attributes => [{attr, <<"my_attr">>}]})
             or without attributes
             dqsd_otel:with_span(<<"worker_2">>, fun() -> ok end)
         \end{minted}
-
         The second attribute is the function you want to evaluate.
     \subsection{Ending spans}
         To end spans you started with \texttt{dqsd\_otel:start\_span}, you need to call:
@@ -59,7 +53,6 @@
         \end{minted}
         This will end the span on the OpenTelemetry side and end the outcome instance if it hasn't timed out.
         The function calls OpenTelemetry \texttt{?end\_span} macro, effectively replacing it.
-
     \subsection{Failing outcome instances}
         To fail \textbf{custom} spans you need to call:
         \begin{minted}{erlang}

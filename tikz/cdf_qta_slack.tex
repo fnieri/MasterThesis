@@ -22,7 +22,7 @@
 ]
 
 % Main CDF plot
-\addplot[color=blue, mark=none] coordinates {
+\addplot[color=blue, mark=*, mark size = 0.8pt] coordinates {
     (0.001, 0.000000)
     (0.002, 0.000000)
     (0.003, 0.004695)
@@ -75,7 +75,7 @@
     (0.050, 1.000000)
 };
 
-\addplot[color=orange, mark=none, name path=A1] coordinates {
+\addplot[color=orange, mark=diamond*, mark size = 0.9pt, name path=A1] coordinates {
     (0.001, 0.000000)
     (0.002, 0.000000)
     (0.003, 0.000000)
@@ -141,7 +141,7 @@
 node[pos=0.25,below right] {QTA}
 ;
 
-\draw[line width = 0.25mm,color=violet, dashed, <->, ] (0.016, 0.5) -- (0.025,0.5) node[above left, black] {slack};
+\draw[line width = 0.25mm,color=violet, dashed, <->, label=slack] (0.016, 0.5) -- (0.025,0.5) node[pos=0.5, above, black] {slack};
 
 
 \path[name intersections={of=A1 and A2,name=i,total=\t}]

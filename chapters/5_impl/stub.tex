@@ -110,7 +110,7 @@ with_span/3: -spec with_span(binary(), fun(() -> any()), map()) -> any().
         \end{minted}
 
     \subsection{TCP connection}
-        The adapter is composed of two \texttt{gen\_server} which handle communication to and from the oscilloscope. This gen\_server behaviour allows the adapter to send spans asynchronously to the oscilloscope.
+        The adapter is composed of two \texttt{gen\_server} \cite{gen-s} which handle communication to and from the oscilloscope. This gen\_server behaviour allows the adapter to send spans asynchronously to the oscilloscope.
 
         \subsubsection{TCP server}
             The TCP server \texttt{dqsd\_otel\_tcp\_server} is responsible for receiving commands from the oscilloscope. It can be run by setting its IP and port via:

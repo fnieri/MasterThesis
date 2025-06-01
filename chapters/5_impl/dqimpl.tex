@@ -1,7 +1,7 @@
 \section{$\Delta$QSD implementation}
     In this section we provide the mathematical foundations of $\Delta$QSD as they are implemented in the oscilloscope.
     \subsection{Histogram representation of $\Delta$Q}
-    We approximate the probability distribution of $\Delta$Q via histograms.
+    We approximate the probability distribution of $\Delta$Q via histograms (\cref{fig:histo_pdf}).
    \subsubsection{PDF}
    We partition the values into $N$ bins of equal width, Given $\lbrack x_i, x_{i+1} \rbrack$ the interval of a bin $i$, where $x_i = i\Delta t$, and $\hat{p}(x_i)$ the value of the PDF at bin $i$, for $n$ bins \cite{stat}:
         \begin{equation}
@@ -27,6 +27,7 @@
                 \includegraphics[scale=1]{tikz/pdf_dq.pdf} 
             \end{center}
             \caption{Blue bins: PDF of a sample $\Delta$Q. Red: Resulting CDF of $\Delta$Q PDF, the CDF is what is displayed on the dashboard.}
+            \label{fig:histo_pdf}
         \end{figure}
 
     \subsection{dMax}
@@ -54,7 +55,7 @@
             \begin{center}
                 $\Delta t_{ij}$ = max \{$\Delta t_i, \Delta t_j \}$
             \end{center}
-            The PDF of the rebinned $\Delta$Q at bin $b$, from the original PDF of $n$ bins, where $\Delta t_i > \Delta t_j$ and k = $\frac{\Delta t_i}{\Delta t_j}$:
+            The PDF of the rebinned $\Delta$Q (see \cref{fig:rebinns}) at bin $b$, from the original PDF of $n$ bins, where $\Delta t_i > \Delta t_j$ and k = $\frac{\Delta t_i}{\Delta t_j}$:
             \begin{equation}
                 p'_b = \sum_{n=b \cdot k}^{b+ 1 \cdot k - 1} p_n, \quad b=0,1,\dots \lceil \frac{N}{k} \rceil  
                 \label{eq:rebin}
@@ -66,15 +67,14 @@
                 \centering
                 \includegraphics[width =0.98\textwidth]{tikz/cdf.pdf}
                 \label{fig:nrb}
-                \subcaption{Sample $\Delta$Q with 1ms bins}%
             \end{subfigure}%
             \begin{subfigure}{.5\textwidth}%
                 \centering%
                 \includegraphics[width =0.98\textwidth]{tikz/rebinned_cdf.pdf}%
                 \label{fig:sub2}%
-                \subcaption{$\Delta$Q on the left after rebinning to 4ms bins}%
             \end{subfigure}%
-            \label{fig:w1w2hb}%
+            \caption{\textbf{Left}: Sample $\Delta$Q with 1ms bins. \textbf{Right:} $\Delta$Q on the left after rebinning to 4ms bins.}%
+            \label{fig:rebinns}%
             \end{figure}%
 
     \subsection{Convolution} \label{convol}
@@ -120,7 +120,7 @@
     \subsection{Confidence bounds}
         Here is how we calculate the mean and lower/upper confidence for the $\Delta$Qs CDF at bin $i \quad \forall i < N$. \cite{stat}
 
-        For $x_{ij}$, the value of an CDF $j$ at bin $i$, the mean of $n$ CDFs for the bin $i$ in a polling window is:
+        For $x_{ij}$, the value of a CDF $j$ at bin $i$, the mean of $n$ CDFs for the bin $i$ in a polling window is:
             \begin{equation}
                 \mu_i = \dfrac{1}{n} \sum_{j=1}^{n} x_{ij}
                 \label{eq:mean_ecdf}

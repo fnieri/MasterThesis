@@ -726,34 +726,65 @@
       \verb https://opentelemetry.io/docs/what-is-opentelemetry/
       \endverb
     \endentry
-    \entry{otel-l}{misc}{}{}
+    \entry{erlang-t}{misc}{}{}
       \name{author}{1}{}{%
-        {{hash=a053036d92aa8736ee3b37dae9c563d8}{%
-           family={Weakly},
-           familyi={W\bibinitperiod},
-           given={Hazel},
-           giveni={H\bibinitperiod}}}%
+        {{hash=95d625a8cd38a439fe8f1e0ba288a3db}{%
+           family={Language},
+           familyi={L\bibinitperiod},
+           given={Erlang\bibnamedelima Programming},
+           giveni={E\bibinitperiod\bibinitdelim P\bibinitperiod}}}%
       }
-      \strng{namehash}{a053036d92aa8736ee3b37dae9c563d8}
-      \strng{fullhash}{a053036d92aa8736ee3b37dae9c563d8}
-      \strng{fullhashraw}{a053036d92aa8736ee3b37dae9c563d8}
-      \strng{bibnamehash}{a053036d92aa8736ee3b37dae9c563d8}
-      \strng{authorbibnamehash}{a053036d92aa8736ee3b37dae9c563d8}
-      \strng{authornamehash}{a053036d92aa8736ee3b37dae9c563d8}
-      \strng{authorfullhash}{a053036d92aa8736ee3b37dae9c563d8}
-      \strng{authorfullhashraw}{a053036d92aa8736ee3b37dae9c563d8}
+      \strng{namehash}{95d625a8cd38a439fe8f1e0ba288a3db}
+      \strng{fullhash}{95d625a8cd38a439fe8f1e0ba288a3db}
+      \strng{fullhashraw}{95d625a8cd38a439fe8f1e0ba288a3db}
+      \strng{bibnamehash}{95d625a8cd38a439fe8f1e0ba288a3db}
+      \strng{authorbibnamehash}{95d625a8cd38a439fe8f1e0ba288a3db}
+      \strng{authornamehash}{95d625a8cd38a439fe8f1e0ba288a3db}
+      \strng{authorfullhash}{95d625a8cd38a439fe8f1e0ba288a3db}
+      \strng{authorfullhashraw}{95d625a8cd38a439fe8f1e0ba288a3db}
       \field{sortinit}{5}
       \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{note}{Accessed: (21/05/2025)}
-      \field{title}{OpenTelemetry Challenges: Handling Long-Running Spans}
-      \field{year}{2024}
+      \field{note}{Accessed: (01/06/2025)}
+      \field{title}{Erlang - trace}
+      \field{year}{2025}
       \verb{urlraw}
-      \verb https://thenewstack.io/opentelemetry-challenges-handling-long-running-spans/
+      \verb https://www.erlang.org/doc/apps/kernel/trace.html
       \endverb
       \verb{url}
-      \verb https://thenewstack.io/opentelemetry-challenges-handling-long-running-spans/
+      \verb https://www.erlang.org/doc/apps/kernel/trace.html
+      \endverb
+    \endentry
+    \entry{otel-lang}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=c9c2d3a24c7583a7e7f7f0789505c4ad}{%
+           family={Authors},
+           familyi={A\bibinitperiod},
+           given={OpenTelemetry},
+           giveni={O\bibinitperiod}}}%
+      }
+      \strng{namehash}{c9c2d3a24c7583a7e7f7f0789505c4ad}
+      \strng{fullhash}{c9c2d3a24c7583a7e7f7f0789505c4ad}
+      \strng{fullhashraw}{c9c2d3a24c7583a7e7f7f0789505c4ad}
+      \strng{bibnamehash}{c9c2d3a24c7583a7e7f7f0789505c4ad}
+      \strng{authorbibnamehash}{c9c2d3a24c7583a7e7f7f0789505c4ad}
+      \strng{authornamehash}{c9c2d3a24c7583a7e7f7f0789505c4ad}
+      \strng{authorfullhash}{c9c2d3a24c7583a7e7f7f0789505c4ad}
+      \strng{authorfullhashraw}{c9c2d3a24c7583a7e7f7f0789505c4ad}
+      \field{extraname}{6}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Accessed: (28/05/2025)}
+      \field{title}{Language API \& SDKs}
+      \field{year}{2025}
+      \verb{urlraw}
+      \verb https://opentelemetry.io/docs/languages/
+      \endverb
+      \verb{url}
+      \verb https://opentelemetry.io/docs/languages/
       \endverb
     \endentry
     \entry{otel-in}{online}{}{}
@@ -772,7 +803,7 @@
       \strng{authornamehash}{c9c2d3a24c7583a7e7f7f0789505c4ad}
       \strng{authorfullhash}{c9c2d3a24c7583a7e7f7f0789505c4ad}
       \strng{authorfullhashraw}{c9c2d3a24c7583a7e7f7f0789505c4ad}
-      \field{extraname}{6}
+      \field{extraname}{7}
       \field{sortinit}{6}
       \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
       \field{labelnamesource}{author}
@@ -833,7 +864,7 @@
       \strng{authornamehash}{c9c2d3a24c7583a7e7f7f0789505c4ad}
       \strng{authorfullhash}{c9c2d3a24c7583a7e7f7f0789505c4ad}
       \strng{authorfullhashraw}{c9c2d3a24c7583a7e7f7f0789505c4ad}
-      \field{extraname}{7}
+      \field{extraname}{8}
       \field{sortinit}{6}
       \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
       \field{labelnamesource}{author}
@@ -864,9 +895,9 @@
       \strng{authornamehash}{c9c2d3a24c7583a7e7f7f0789505c4ad}
       \strng{authorfullhash}{c9c2d3a24c7583a7e7f7f0789505c4ad}
       \strng{authorfullhashraw}{c9c2d3a24c7583a7e7f7f0789505c4ad}
-      \field{extraname}{8}
-      \field{sortinit}{6}
-      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{extraname}{9}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{note}{Accessed: (28/05/2025)}
@@ -895,9 +926,9 @@
       \strng{authornamehash}{99843117a36cd53a2358856e619efe2a}
       \strng{authorfullhash}{99843117a36cd53a2358856e619efe2a}
       \strng{authorfullhashraw}{99843117a36cd53a2358856e619efe2a}
-      \field{extraname}{9}
-      \field{sortinit}{6}
-      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{extraname}{10}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{note}{Accessed: (19/05/2025)}
@@ -1014,7 +1045,7 @@
       \strng{authornamehash}{c9c2d3a24c7583a7e7f7f0789505c4ad}
       \strng{authorfullhash}{c9c2d3a24c7583a7e7f7f0789505c4ad}
       \strng{authorfullhashraw}{c9c2d3a24c7583a7e7f7f0789505c4ad}
-      \field{extraname}{10}
+      \field{extraname}{11}
       \field{sortinit}{7}
       \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
       \field{labelnamesource}{author}
@@ -1027,6 +1058,36 @@
       \endverb
       \verb{url}
       \verb https://opentelemetry.io/docs/languages/cpp/instrumentation/
+      \endverb
+    \endentry
+    \entry{otel-l}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=a053036d92aa8736ee3b37dae9c563d8}{%
+           family={Weakly},
+           familyi={W\bibinitperiod},
+           given={Hazel},
+           giveni={H\bibinitperiod}}}%
+      }
+      \strng{namehash}{a053036d92aa8736ee3b37dae9c563d8}
+      \strng{fullhash}{a053036d92aa8736ee3b37dae9c563d8}
+      \strng{fullhashraw}{a053036d92aa8736ee3b37dae9c563d8}
+      \strng{bibnamehash}{a053036d92aa8736ee3b37dae9c563d8}
+      \strng{authorbibnamehash}{a053036d92aa8736ee3b37dae9c563d8}
+      \strng{authornamehash}{a053036d92aa8736ee3b37dae9c563d8}
+      \strng{authorfullhash}{a053036d92aa8736ee3b37dae9c563d8}
+      \strng{authorfullhashraw}{a053036d92aa8736ee3b37dae9c563d8}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Accessed: (21/05/2025)}
+      \field{title}{OpenTelemetry Challenges: Handling Long-Running Spans}
+      \field{year}{2024}
+      \verb{urlraw}
+      \verb https://thenewstack.io/opentelemetry-challenges-handling-long-running-spans/
+      \endverb
+      \verb{url}
+      \verb https://thenewstack.io/opentelemetry-challenges-handling-long-running-spans/
       \endverb
     \endentry
     \entry{embr}{misc}{}{}
@@ -1045,8 +1106,8 @@
       \strng{authornamehash}{e72d3cf65177f6e72cd28c9adf030560}
       \strng{authorfullhash}{e72d3cf65177f6e72cd28c9adf030560}
       \strng{authorfullhashraw}{e72d3cf65177f6e72cd28c9adf030560}
-      \field{sortinit}{7}
-      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{note}{Accessed: (31/05/2025)}
@@ -1137,8 +1198,8 @@
       \strng{authorfullhash}{f669f61ee8de1a8b7351d817ea423497}
       \strng{authorfullhashraw}{f669f61ee8de1a8b7351d817ea423497}
       \field{extraname}{3}
-      \field{sortinit}{8}
-      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{note}{Accessed: (28/05/2025)}
@@ -1164,8 +1225,8 @@
       \strng{authornamehash}{6d3c848ff3868db127e40588306291bb}
       \strng{authorfullhash}{6d3c848ff3868db127e40588306291bb}
       \strng{authorfullhashraw}{6d3c848ff3868db127e40588306291bb}
-      \field{sortinit}{8}
-      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{note}{Accessed: (23/05/2025)}
@@ -1416,8 +1477,8 @@
       \strng{authornamehash}{f37243c594d895d14f9f3bd4eaa1291d}
       \strng{authorfullhash}{f37243c594d895d14f9f3bd4eaa1291d}
       \strng{authorfullhashraw}{f37243c594d895d14f9f3bd4eaa1291d}
-      \field{sortinit}{9}
-      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{This book presents an introduction to the principles of the fast Fourier transform. This book covers FFTs, frequency domain filtering, and applications to video and audio signal processing. As fields like communications, speech and image processing, and related areas are rapidly developing, the FFT as one of essential parts in digital signal processing has been widely used. Thus there is a pressing need from instructors and students for a book dealing with the latest FFT topics. This book provides thorough and detailed explanation of important or up-to-date FFTs. It also has adopted modern approaches like MATLAB examples and projects for better understanding of diverse FFTs.}
@@ -1541,6 +1602,36 @@
       \endverb
       \verb{url}
       \verb https://www.erlang.org/doc/system/ref_man_processes
+      \endverb
+    \endentry
+    \entry{gen-s}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=3a9cd59c480ddb4f87a850fa8225f38d}{%
+           family={Manual},
+           familyi={M\bibinitperiod},
+           given={Erlang\bibnamedelima Reference},
+           giveni={E\bibinitperiod\bibinitdelim R\bibinitperiod}}}%
+      }
+      \strng{namehash}{3a9cd59c480ddb4f87a850fa8225f38d}
+      \strng{fullhash}{3a9cd59c480ddb4f87a850fa8225f38d}
+      \strng{fullhashraw}{3a9cd59c480ddb4f87a850fa8225f38d}
+      \strng{bibnamehash}{3a9cd59c480ddb4f87a850fa8225f38d}
+      \strng{authorbibnamehash}{3a9cd59c480ddb4f87a850fa8225f38d}
+      \strng{authornamehash}{3a9cd59c480ddb4f87a850fa8225f38d}
+      \strng{authorfullhash}{3a9cd59c480ddb4f87a850fa8225f38d}
+      \strng{authorfullhashraw}{3a9cd59c480ddb4f87a850fa8225f38d}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Accessed: (01/06/2025)}
+      \field{title}{gen\_server}
+      \field{year}{2024}
+      \verb{urlraw}
+      \verb https://www.erlang.org/docs/24/man/gen_server
+      \endverb
+      \verb{url}
+      \verb https://www.erlang.org/docs/24/man/gen_server
       \endverb
     \endentry
     \entry{antlr4}{online}{}{}

@@ -20,7 +20,7 @@
     The system (\cref{fig:mm1k}) has two components \texttt{worker\_1}, \texttt{worker\_2}. Each individual component is composed of a queue of size $K = 1000$ and a worker process.
     
     The system sends $n$ messages per second following a Poisson distribution to \texttt{worker\_1}'s queue. 
-    The queue notifies its worker if the worker is not busy. The worker performs $N$ loops of fictional work, they are defined upon start and are done to simulate a component performing a task. Once done, \texttt{worker\_1} then passes a message to \texttt{worker\_2}'s queue, which has another queue of size = 1000, who passes the message to \texttt{worker\_2}'s worker, which does the same amount of loops as \texttt{worker\_1}. When a worker completes its work, it notifies its queue, freeing one message from its buffer size and allowing the next message to be processed.
+    The queue notifies its worker if the worker is not busy. The worker performs $N$ loops of fictional work, they are defined upon start and are done to simulate a component performing a task. Once done, \texttt{worker\_1} then passes a message to \texttt{worker\_2}'s queue, which has another queue of size = 1000, it then passes the message to \texttt{worker\_2}'s worker, which does the same amount of loops as \texttt{worker\_1}. When a worker completes its work, it notifies its queue, freeing one message from its buffer size and allowing the next message to be processed.
     
     If the queue's buffer is overloaded, it will drop the incoming message and consider the execution a failure.
     
@@ -44,12 +44,13 @@
 
     \subsection{Determining parameters dynamically}
         We stated previously that determining parameters is something that must be done with an underlying knowledge of the system (\cref{subsec:dMax}). The oscilloscope can provide knowledge of the system. \cref{fig:w1w2hb} shows an example of worker\_1 and worker\_2 as observed in the oscilloscope.
-
+We will send 50 messages per second to observe the system under test to get key
+properties. The workers do a million loops.
         The engineer supposes that the workers executions should take a maximum of 4 ms to complete, but doesn't actually know how long the executions should take. The engineer, after having set $dMax = 4ms$, observes the graph \cref{fig:w1w2hb} on the left in the oscilloscope.
 
     The oscilloscope shows the engineer that their assumptions do not correspond to the actual system $\Delta$Q. The user can then modify the parameters to observe the actual worker's behaviour. By setting $dMax$ to 8 ms, they can observe the worker's $\Delta$Qs failure approaching $0$ on the right Figure in \cref{fig:w1w2hb}.
 
-    On the other hand, the engineer's assumption could have been what they truly expected from the system. In this case, the oscilloscope tells him that the system is not behaving as expected. 
+    On the other hand, the engineer's assumption could have been what they truly expected from the system. In this case, the oscilloscope tells them that the system is not behaving as expected. 
 
 \begin{figure}[H]
             \centering
@@ -86,14 +87,14 @@
                 \includegraphics[width =0.98\textwidth]{img/overload_2/50_probe2.png}
                 \label{fig:norm_ex_2}
             \end{subfigure}
-            \caption{Graphs for $\lambda = 50$. Left: worker\_1 $\Delta$Qs. (1, Blue): The observed $\Delta$Q. (Green, between arrows): Observed polling window confidence bounds. \\
-            Right: ``probe'' $\Delta$Qs. (1, blue): The sampling window observed $\Delta$Q. (2, red): The sampling window calculated $\Delta$Q. (Magenta, between arrows): the observed and calculated $\Delta$Qs confidence bounds overlapping.}
+            \caption{Graphs for $\lambda = 50$. \textbf{Left}: worker\_1 $\Delta$Qs. (1, Blue): The observed $\Delta$Q. (Green, between arrows): Observed polling window confidence bounds. \\
+            \textbf{Right}: ``probe'' $\Delta$Qs. (1, blue): The sampling window observed $\Delta$Q. (2, red): The sampling window calculated $\Delta$Q. (Magenta, between arrows): the observed and calculated $\Delta$Qs confidence bounds overlapping.}
             \label{fig:norm_ex}
         \end{figure}
     
 \subsubsection{Early signs of overload}
     
-    At load = 0.5 the system should start showing dependent behaviour. We can observe what happens when $\lambda = 150 \rightarrow \rho = 0.5$.
+    At load = 0.5 the system should start showing early signs of dependent behaviour. We can observe what happens when $\lambda = 150 \rightarrow \rho = 0.5$.
     
     Recall \ref{fig:cdf_indep}, a non-linear system does not obey superposition. The sum of the delay of the workers will deviate from the overall delay of ``probe''. In \cref{fig:ovovv}, this is the case. \\
     We can start to observe early signs of dependency even at $\rho = 0.5$. The mean of the observed $\Delta$Q is deviating from the calculated one. At the 50th percentile the deviation is \textit{minimal}, around 0.4 ms. Nevertheless, the precision of the paradigm and the oscilloscope allows even for these minimal deviations to appear on the graphs, being able to recognise \textit{non-linearity} and \textit{early signs of overload}. \\
@@ -177,14 +178,13 @@
                 \label{fig:high_load_2}
             \end{subfigure}
             \caption{\textbf{Left}: Snapshots for fired triggers. \\
-            \textbf{Right}: (1, blue) Observed $\Delta$Q in sampling window violating QTA (3). The confidence bounds for the observed polling window (blue, arrow, below) show the system deteriorating. The sampling window calculated $\Delta$Q (2) is behaving worse than its confidence bounds (red, arrow, above). The system is overloaded, degrading and showing non-linear behaviour, this is captured by the QTA violation.} % 
+            \textbf{Right}: (1, blue) Observed $\Delta$Q in sampling window violating the QTA (3). (Blue arrow, below) The confidence bounds for the observed polling window show the system deteriorating. The sampling window calculated $\Delta$Q (2) is behaving worse than its confidence bounds (Red arrow, above). The system is overloaded, degrading and showing non-linear behaviour, this is captured by the QTA violation.} % 
             \label{fig:qta_viol_1}
         \end{figure}
         \paragraph{Instances trigger}
 
         QTA triggers can help detect non-linearity even before it becomes evident. \\
-        By knowing the inner details of the system, setting a QTA on the number of instances can be useful. \cref{fig:qta_trig} is an example of a fired trigger on the number of instances. Even though the QTA requirement isn't being violated, the number of instances fires a trigger, where the user can observe that the system is showing early signs of overload.
-
+        
         \begin{figure}[H]
             \begin{center}
                 \includegraphics[scale=0.5]{img/overload_2/fired_samplea.png}
@@ -193,3 +193,5 @@
             \label{fig:qta_trig}%
         \end{figure}
   
+        By knowing the inner details of the system, setting a QTA on the number of instances can be useful. \cref{fig:qta_trig} is an example of a fired trigger on the number of instances. Even though the QTA requirement isn't being violated, the number of instances fires a trigger, where the user can observe that the system is showing early signs of overload.
+
