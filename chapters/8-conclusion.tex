@@ -6,8 +6,7 @@
     
     The $\Delta$Q adapter, named \texttt{dqsd\_otel}, an Erlang interface which is able to work alongside OpenTelemetry to add the notion of failure according to $\Delta$QSD to spans. The adapter can communicate data about outcome instances from a running system directly to the oscilloscope and can directly receive commands from the oscilloscope. The \texttt{gen\_server} behaviour of the adapter client and server allows for this to be done fast and asynchronously.
 
-
-    The $\Delta$Q oscilloscope, a fully fledged Qt dashboard application that is able to observe running systems and provide real time plotting capabilities to the user. Moreover, it provides full control to the user of the outcome diagrams, the parameters of probes, their QTAs, the triggers they want to set for a given probe, the snapshots to observe the system as if it was frozen in time. In fine, the FFT convolution algorithms allows us to scale down from $\mathcal{O}(N^2)$ complexity to $\mathcal{O}(N\text{ log }N)$, bringing the time to provide precise insights significantly down.
+    The $\Delta$Q oscilloscope is a fully fledged Qt dashboard application that is able to observe running systems and provide real time plotting capabilities to the user. Moreover, it provides full control to the user of the outcome diagrams, the parameters of probes, their QTAs, the triggers they want to set for a given probe, and the snapshots to observe the system as if it was frozen in time. In fine, the FFT convolution algorithms allows us to scale down from $\mathcal{O}(N^2)$ complexity to $\mathcal{O}(N\text{ log }N)$, bringing the time to provide precise insights significantly down.
 
     The synthetic applications further prove the oscilloscope's usefulness in detecting early signs of overload and dependent behaviour. This reinforces the solid theoretical basis of $\Delta$QSD, which we remind has already been applied in many industrial projects.
 
@@ -22,9 +21,9 @@
             
                 \item A wider selection of \textbf{triggers}, as of writing this thesis, only the QTA trigger and load are available, this is a limitation due to time constraints. Nevertheless, triggers can be easily implemented in the available codebase.
             
-                \item \textbf{Better communication between stub - server - oscilloscope}. The current way of sending outcome instances may be a limiting factor under high load, if hundred of thousands of spans were to be sent, the current way the server and oscilloscope are tied together may throttle communications. TCP socket connections could quickly become the chokepoint which makes the oscilloscope temporarily unusable.
+                \item \textbf{Better communication between adapter - server - oscilloscope}. The current way of sending outcome instances may be a limiting factor under high load, if hundred of thousands of spans were to be sent, the current way the server and oscilloscope are tied together may throttle communications. TCP socket connections could quickly become the chokepoint which makes the oscilloscope temporarily unusable.
 
-            Future improvements on the server side could implement epoll system server calls to make the server more efficient; \textbf{Detaching server from client}, as of right now, the oscilloscope and the server are tied together, using ZeroMQ to assure real time server-client communications could be an interesting solution to explore.
+                    Future improvements on the server side could implement epoll system server calls to make the server more efficient; \textbf{Detaching server from client}, as of right now, the oscilloscope and the server are tied together, using ZeroMQ \cite{zero-mq} to assure real time server-client communications could be an interesting solution to explore.
 
                 \item \textbf{Improve real time graphs}. The class QtCharts does not perform correctly with high frequencies update. Moreover, since we are plotting multiple series (from a minimum 4 to a maximum of 9) per probe, which allows up to 1000 bins per probe, the performance quickly degrades with more probes being displayed. A better graphing class for Qt could definitely improve the experience.
 
@@ -38,13 +37,13 @@
            \end{itemize} 
                 
       \subsection{OpenTelemetry improvements}
-        As we explored in a previous chapter (\cref{subsec:long_spans}), long-lived spans are currently a problem. $\Delta$QSD requires that it must be possible to consider a span as failed if it takes longer than the maximum delay required by the user. This delay can be set by the user and depends on the application's required behaviour (\cref{subsec:dmaxsec}). This is not trivial to do within the current implementation of the OpenTelemetry standard in Erlang. We believe that what we have shown in this thesis should be the standard to improve observability requirements to capture essential timeliness requirements. This could be done via events that are triggered when the delay surpasses the required one and are directly exported to a monitoring tool. We are nevertheless aware that events are currently unstable in the current version of OpenTelemetry in Erlang.
+        As we explored in a previous chapter (\cref{subsec:long_spans}), long-lived spans are currently a problem. $\Delta$QSD requires that it must be possible to consider a span as failed if it takes longer than the maximum delay required by the user. This delay can be set by the user and depends on the application's required behaviour (\cref{subsec:dmaxsec}). This is not trivial to do within the current implementation of the OpenTelemetry standard in Erlang. We believe that what we have shown in this thesis should be the standard to improve observability requirements and to ensure essential timeliness requirements. This could be done via events that are triggered when the delay surpasses the required one and are directly exported to a monitoring tool. We are nevertheless aware that events are currently unstable in the current version of OpenTelemetry in Erlang.
 
         \subsection{Adapter improvement}
          As suggested by Bryan Naegele, a member of the observability group of Erlang, the adapter, instead of calling OpenTelemetry macros inside the interface, could directly use the OpenTelemetry span processor. Leveraging \texttt{erlang:send\_after} as we already do, we could create outcome instances with telemetry \cite{telem-erl} events (which must not be mistaken with OpenTelemetry ones) to handle successful executions and timeouts. The span processor will then be responsible for creating outcome instances, without creating the need for calling OpenTelemetry in the adapter, like we do now.
    
     \subsection{Real applications}
-       The current prototype of the $\Delta$Q oscilloscope has not been tested on real distributed applications. While their usefulness has been proven on synthetic applications, the lack of real life applications is a weakness.
+       The current prototype of the $\Delta$Q oscilloscope has not been tested on real distributed applications. While its usefulness has been proven on synthetic applications, the lack of real life applications is a weakness.
 
     \subsection{Licensing limitations}
     Lastly, a notable limitation is created by \textbf{Qt}, namely, QtCharts. QtCharts has a GPLv3 license. Therefore, the usage of Qt does not allow us to release our project under BSD/MIT licenses or LGPL license, but rather a GPLv3 one. \cite{qt-gpl}

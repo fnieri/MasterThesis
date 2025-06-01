@@ -827,8 +827,8 @@
       \strng{authornamehash}{95d625a8cd38a439fe8f1e0ba288a3db}
       \strng{authorfullhash}{95d625a8cd38a439fe8f1e0ba288a3db}
       \strng{authorfullhashraw}{95d625a8cd38a439fe8f1e0ba288a3db}
-      \field{sortinit}{5}
-      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{note}{Accessed: (01/06/2025)}
@@ -1221,6 +1221,7 @@
       \strng{authornamehash}{cf4fa8e5e026ca73ffd2a660516d8561}
       \strng{authorfullhash}{cf4fa8e5e026ca73ffd2a660516d8561}
       \strng{authorfullhashraw}{cf4fa8e5e026ca73ffd2a660516d8561}
+      \field{extraname}{1}
       \field{sortinit}{8}
       \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
       \field{labelnamesource}{author}
@@ -1476,8 +1477,8 @@
       \strng{authornamehash}{c91bdfd4de5d2ed142377c34b92e83c2}
       \strng{authorfullhash}{c91bdfd4de5d2ed142377c34b92e83c2}
       \strng{authorfullhashraw}{c91bdfd4de5d2ed142377c34b92e83c2}
-      \field{sortinit}{9}
-      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{note}{Accessed: (19/05/2025)}
@@ -1614,6 +1615,7 @@
       \strng{authornamehash}{f7e853158b776246c53345b938159cc1}
       \strng{authorfullhash}{f7e853158b776246c53345b938159cc1}
       \strng{authorfullhashraw}{f7e853158b776246c53345b938159cc1}
+      \field{extraname}{1}
       \field{sortinit}{1}
       \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
@@ -1656,6 +1658,35 @@
       \endverb
       \verb{url}
       \verb https://www.erlang.org/doc/system/bit_syntax.html
+      \endverb
+    \endentry
+    \entry{send-af}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=f7e853158b776246c53345b938159cc1}{%
+           family={Erlang},
+           familyi={E\bibinitperiod}}}%
+      }
+      \strng{namehash}{f7e853158b776246c53345b938159cc1}
+      \strng{fullhash}{f7e853158b776246c53345b938159cc1}
+      \strng{fullhashraw}{f7e853158b776246c53345b938159cc1}
+      \strng{bibnamehash}{f7e853158b776246c53345b938159cc1}
+      \strng{authorbibnamehash}{f7e853158b776246c53345b938159cc1}
+      \strng{authornamehash}{f7e853158b776246c53345b938159cc1}
+      \strng{authorfullhash}{f7e853158b776246c53345b938159cc1}
+      \strng{authorfullhashraw}{f7e853158b776246c53345b938159cc1}
+      \field{extraname}{2}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Accessed: (01/06/2025)}
+      \field{title}{Timer functions}
+      \field{year}{2025}
+      \verb{urlraw}
+      \verb https://www.erlang.org/doc/apps/stdlib/timer.html
+      \endverb
+      \verb{url}
+      \verb https://www.erlang.org/doc/apps/stdlib/timer.html
       \endverb
     \endentry
     \entry{erl-s}{misc}{}{}
@@ -1919,7 +1950,7 @@
       \verb https://en.wikipedia.org/wiki/Qt_(software)
       \endverb
     \endentry
-    \entry{qpointf}{misc}{}{}
+    \entry{qt-charts}{misc}{}{}
       \name{author}{1}{}{%
         {{hash=64658d3a36807e9ff9e0d0215b01c97a}{%
            family={Company},
@@ -1941,6 +1972,37 @@
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{note}{Accessed: (01/06/2025)}
+      \field{title}{QtCharts}
+      \field{year}{2025}
+      \verb{urlraw}
+      \verb https://doc.qt.io/qt-6/qtcharts-index.html
+      \endverb
+      \verb{url}
+      \verb https://doc.qt.io/qt-6/qtcharts-index.html
+      \endverb
+    \endentry
+    \entry{qpointf}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=64658d3a36807e9ff9e0d0215b01c97a}{%
+           family={Company},
+           familyi={C\bibinitperiod},
+           given={The\bibnamedelima Qt},
+           giveni={T\bibinitperiod\bibinitdelim Q\bibinitperiod}}}%
+      }
+      \strng{namehash}{64658d3a36807e9ff9e0d0215b01c97a}
+      \strng{fullhash}{64658d3a36807e9ff9e0d0215b01c97a}
+      \strng{fullhashraw}{64658d3a36807e9ff9e0d0215b01c97a}
+      \strng{bibnamehash}{64658d3a36807e9ff9e0d0215b01c97a}
+      \strng{authorbibnamehash}{64658d3a36807e9ff9e0d0215b01c97a}
+      \strng{authornamehash}{64658d3a36807e9ff9e0d0215b01c97a}
+      \strng{authorfullhash}{64658d3a36807e9ff9e0d0215b01c97a}
+      \strng{authorfullhashraw}{64658d3a36807e9ff9e0d0215b01c97a}
+      \field{extraname}{2}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Accessed: (01/06/2025)}
       \field{title}{QPointF class}
       \field{year}{2025}
       \verb{urlraw}
@@ -1948,6 +2010,37 @@
       \endverb
       \verb{url}
       \verb https://doc.qt.io/qt-6/qpointf.html
+      \endverb
+    \endentry
+    \entry{zero-mq}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=66dd0ec3314d1c6d1e3726f73a497fca}{%
+           family={authors},
+           familyi={a\bibinitperiod},
+           given={The\bibnamedelima ZeroMQ},
+           giveni={T\bibinitperiod\bibinitdelim Z\bibinitperiod}}}%
+      }
+      \strng{namehash}{66dd0ec3314d1c6d1e3726f73a497fca}
+      \strng{fullhash}{66dd0ec3314d1c6d1e3726f73a497fca}
+      \strng{fullhashraw}{66dd0ec3314d1c6d1e3726f73a497fca}
+      \strng{bibnamehash}{66dd0ec3314d1c6d1e3726f73a497fca}
+      \strng{authorbibnamehash}{66dd0ec3314d1c6d1e3726f73a497fca}
+      \strng{authornamehash}{66dd0ec3314d1c6d1e3726f73a497fca}
+      \strng{authorfullhash}{66dd0ec3314d1c6d1e3726f73a497fca}
+      \strng{authorfullhashraw}{66dd0ec3314d1c6d1e3726f73a497fca}
+      \field{extraname}{2}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Accessed: (01/06/2025)}
+      \field{title}{ZeroMQ}
+      \field{year}{2025}
+      \verb{urlraw}
+      \verb https://zeromq.org/
+      \endverb
+      \verb{url}
+      \verb https://zeromq.org/
       \endverb
     \endentry
     \entry{telem-erl}{misc}{}{}
@@ -1998,7 +2091,7 @@
       \strng{authornamehash}{64658d3a36807e9ff9e0d0215b01c97a}
       \strng{authorfullhash}{64658d3a36807e9ff9e0d0215b01c97a}
       \strng{authorfullhashraw}{64658d3a36807e9ff9e0d0215b01c97a}
-      \field{extraname}{2}
+      \field{extraname}{3}
       \field{sortinit}{1}
       \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}

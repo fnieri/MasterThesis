@@ -78,7 +78,7 @@
             \end{figure}%
 
     \subsection{Convolution} \label{convol}
-    We present the two solutions to perform convolution we explored during the implementation.  
+    We present the two solutions to perform convolution we explored during the implementation. \label{subsec:convol}
         \subsubsection{Naïve convolution}
         Given two $\Delta$Q binned PDFs $f$ and $g$ with equal bin widths, the result of the convolution $f \circledast g$ is given by \cite{conv}: 
         \begin{equation}
@@ -89,7 +89,7 @@
         The naïve way of calculating convolution has a time complexity of $\mathcal{O}(N^2)$, this quickly becomes a problem as soon as the user wants to have a more fine-grained understanding of a component. The oscilloscope presented noticeable lag and frame skipping with high resolution. This is why we decided to explore Fast Fourier Transform convolution. 
  
     \subsubsection{Fast Fourier Transform Convolution}
-        FFTW (Fastest Fourier Transform in the West) is a C subroutine library \cite{fftw3} for computing the discrete Fourier Transform in one or more dimensions, of arbitrary input size, and of both real and complex data. We use FFTW in our program to compute the convolution of $\Delta$Qs. We adapt our script from an already existing one found on GitHub. \cite{fft}
+        FFTW (Fastest Fourier Transform in the West) is a C subroutine library \cite{fftw3} for ``computing the discrete Fourier Transform in one or more dimensions, of arbitrary input size, and of both real and complex data''. We use FFTW in our program to compute the convolution of $\Delta$Qs. We adapt our script from an already existing one found on GitHub. \cite{fft}
     
     Whilst the previous algorithm is far too slow to handle a high number of bins, convolution leveraging Fast Fourier Transform (FFT) allows us to reduce the amount of calculations to $\mathcal{O}(N \text{log} N)$. This is why the naïve convolution algorithm is not used. We will analyse the time gains in Chapter 7.
     
@@ -135,6 +135,4 @@
                 CI_{i, l} = \mu_i - \dfrac{\sigma_i}{\sqrt{n}} \ \text{,} \ CI_{i, u} = \mu_i + \dfrac{\sigma_i}{\sqrt{n}}
             \label{eq:ci_i}
         \end{equation}
-        The confidence bounds for the CDF are the lower and confidence bounds for every bin $i$.
-
-     
+        The confidence bounds for the CDFs in a polling window are the lower and confidence bounds for every bin $i$. 

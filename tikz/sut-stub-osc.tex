@@ -8,7 +8,7 @@
 \node[rectangle,draw, minimum height = 3cm, minimum width = 2cm] (sut) at (-4, 0) {S.U.T};
 \node[rectangle,draw, minimum height = 2cm, minimum width = 1cm, right of = sut, anchor = west, xshift = 0.2cm] (stub) {$\Delta$Q Adapter};
 
-    \draw [->] (sut.south) to [bend right = 90] (stub.south) node[below=30pt] {\footnotesize convert spans to outcome instances};
+    \draw [->] (sut.south) to [bend right = 90] (stub.south) node[below=30pt] {\footnotesize convert spans to outcome instances via probes};
 
 
     \node [rectangle, draw, minimum height = 2cm, minimum width = 1cm] (server) at (4.5, 0) {Server};

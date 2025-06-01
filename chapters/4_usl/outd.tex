@@ -30,26 +30,26 @@
         \subsection{Outcomes}
             To attach a probe to an outcome observables, it is enough to declare an outcome with its name inside a diagram.
                 \begin{minted}{text}
-                    ... = outcomeName;
+                    ... = outcomeName ...
                 \end{minted}
         \subsection{Operators}
             First-to-finish, all-to-finish and probabilistic choice operators must contain at least two components.
               \subsubsection{All-to-finish operator}
             An all-to-finish operator needs to be defined as follows:
             \begin{minted}{text}
-                a:name(component1, component2...)
+                .. = a:name(component1, component2...) ...
             \end{minted}
 
         \subsubsection{First-to-finish operator}
             A first-to-finish operator needs to be defined as follows:
             \begin{minted}{text}
-                f:name(component1, component2...)
+                ... = f:name(component1, component2...) ...
             \end{minted} 
 
         \subsubsection{Probabilistic choice operator}
             A probabilistic choice operator needs to be defined as follows:
             \begin{minted}{text}
-                p:name[probability_1, probability_2, ... probability_i](component_1, component_2, ..., component_i) 
+                ... = p:name[probability_1, probability_2, ... probability_i](component_1, component_2, ..., component_i) ...
             \end{minted}
             In addition to being comma separated, the number of probabilities inside the brackets must match the number of components inside the parentheses. For $n$ probabilites $p_i$, $0 < p_i < 1$, $\sum_{i = 0}^{n} p_i = 1$ 
         

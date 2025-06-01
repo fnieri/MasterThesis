@@ -1,8 +1,8 @@
 \chapter{Evaluation on synthetic programs}
-    This chapter evaluates the usefulness of the oscilloscope by testing it on three distinct synthetic Erlang applications. Each application was first represented by an outcome diagram in the oscilloscope. It was then instrumented with the adapter to communicate to the oscilloscope.
-    We provide three different examples with simple use cases. Although these use cases may be simple and concise, we will show that the oscilloscope can be a powerful tool in detecting non-linear behaviour with microseconds precision. The examples are:
+    This chapter evaluates the usefulness of the oscilloscope by testing it on three distinct synthetic Erlang applications which can be found in \cref{app:synte}. Each application was first represented by an outcome diagram in the oscilloscope. It was then instrumented with the adapter to communicate to the oscilloscope.
+    Although these use cases may be simple, we show that the oscilloscope can be a powerful tool in detecting non-linear behaviour with microseconds precision. The examples are:
     \begin{itemize}
-        \item A system with sequentially composed outcomes. It server to show how non-linear behaviour can be detected with the paradigm and the oscilloscope, even when the difference in execution times is minimal. The example leverages M/M/1/K queues to show how typical queue behaviour is represented on the oscilloscope.
+        \item A system with sequentially composed outcomes. It shows how non-linear behaviour can be detected in the oscilloscope at the microseconds level. The example leverages M/M/1/K queues to show how typical queue behaviour is represented on the oscilloscope.
         \item Then, we provide two applications that perform synchronisation between components. For this application we use two different operators: first-to-finish and all-to-finish. There, we show how these operators can aid in detecting slower components in the system.
     \end{itemize}
     \input{chapters/6_synt/mm1k}

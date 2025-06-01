@@ -7,10 +7,10 @@
     Handling of OpenTelemetry spans which goes beyond starting and ending them is delegated to the user, who may wish to do further operations with their spans. 
     The adapter is called from the system under test and communicates outcome instances data to the oscilloscope via TCP sockets. 
     
-    The adapter can receive messages from the oscilloscope, the messages are about updating probe's $dMax$ or starting and stopping the sending of data to the oscilloscope.
+    The adapter can receive messages from the oscilloscope, the messages are about updating a probe's $dMax$ or starting and stopping the sending of data to the oscilloscope.
     \subsection{Inserting probes in Erlang - From spans to outcome instances}
         OpenTelemetry spans are useful to carry context, attributes and baggage in a program \cite{otel-t}. The plethora of attributes they have is nevertheless too much for the oscilloscope. 
-        To get the equivalent of spans for the oscilloscope, the adapter needs to be called at the starting events of a probe to start an instance of a probe, and at the ending events to end the outcome instance. The name given with \texttt{``start\_span/with\_span''} is the name of the probe. The PID which is returned by starting a span must be carried throughout the whole execution, and used when ending spans to create the correlation between a probe and an outcome instance.
+        To get the equivalent of spans for the oscilloscope, the adapter needs to be called at the starting events of a probe to start an instance of a probe, and at the ending events to end the outcome instance. The name given with the adapter functions \texttt{``start\_span/with\_span''} is the name of the probe (\cref{code:adapter}). The PID which is returned by starting a span must be carried throughout the whole execution, and used when ending spans to create the correlation between a probe and an outcome instance.
 \begin{figure}[H]
 \centering
    \begin{minted}{erlang}

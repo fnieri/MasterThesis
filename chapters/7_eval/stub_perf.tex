@@ -1,19 +1,21 @@
 \section{$\Delta$Q adapter performance}
-    We evaluated the performance of the adapter to measure its impact in a normal execution, namely we tested the following calls which represent a normal usage of the adapter.
+    We evaluated the performance of the adapter to measure its impact in a distributed application. We tested the following calls which represent a normal usage of the adapter.
     \begin{itemize}
         \item \texttt{start\_span} $\rightarrow$ \texttt{end\_span}.
         \item \texttt{with\_span} with the following function: \texttt{fun() $\rightarrow$ ok.}
         \item \texttt{start\_span} $\rightarrow$ \texttt{fail\_span}.
     \end{itemize}
 
-    We ran the simulation for 25000 subsequent iterations, the results are shown in \cref{fig:stub_perf}:
-    \begin{figure}[H]
+    We ran the simulation for 25000 subsequent iterations, the results are shown in \cref{fig:stub_perf}. 
+
+    The overhead is minimal, around 10 microseconds on average to start and end/fail a span. The same cannot be said about with span, the increased overhead is nevertheless due to a function needing to be called inside it for it to record a span.  
+    This shows that the adapter can be integrated seamlessly into an application that was instrumented with OpenTelemetry without presenting noticeable overhead.
+
+   \begin{figure}[H]
         \begin{center}
             \includegraphics[width=0.7\linewidth]{img/adapter.pdf}
         \end{center}
         \caption{Adapter performance evaluation.}
         \label{fig:stub_perf}
     \end{figure}
-
-    The overhead is minimal, around 10 microseconds on average to start and end/fail a span. The same cannot be said about with span, the increased overhead is nevertheless due to a function needing to be called inside it for it to record a span. 
 

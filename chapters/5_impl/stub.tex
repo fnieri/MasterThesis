@@ -1,10 +1,10 @@
-\section{Adapter}
-    The adapter, called \texttt{dqsd\_otel} is a rebar3 \cite{rebar3} application built to replace OpenTelemetry calls and create outcome instances. It is designed to be paired with the oscilloscope to observe an Erlang application.
+\section{$\Delta$Q Adapter}
+    The $\Delta$Q adapter, called \texttt{dqsd\_otel} is a rebar3 \cite{rebar3} application built to replace OpenTelemetry calls and create outcome instances. It is designed to be paired with the oscilloscope to observe an Erlang application.
     
     \subsection{API}
         The adapter functions to be used by the user are made to replace OpenTelemetry calls to \texttt{?start\_span} and \texttt{?with\_span} and \texttt{?end\_span} macros. This is to make the adapter less of an encumbrance for the user and to extend the tool usefulness in observing distributed programs. 
 
-        The adapter will always start OpenTelemetry spans but only start outcome instances if the adapter has been activated. The adapter can be activated by the oscilloscope by pressing the \textit{``start adapter''} button and can be stopped via the \textit{``stop adapter''} button.
+        The adapter will always start OpenTelemetry spans but only start outcome instances if the adapter has been activated. The adapter can be activated in the oscilloscope by pressing the \textit{``start adapter''} button and can be stopped via the \textit{``stop adapter''} button.
          
         \subsubsection{start\_span/1, start\_span/2}
         
@@ -39,7 +39,7 @@ with_span/3: -spec with_span(binary(), fun(() -> any()), map()) -> any().
         \paragraph{Parameters:}
             \begin{itemize}
                 \item Name: Binary name of the probe.
-                \item Fun: Zero-arity function representing the code of block that should run inside the \texttt{?with\_span} macro.
+                \item Fun: Zero-arity function representing the function that should run inside the \texttt{?with\_span} macro.
                 \item Attributes: The OpenTelemetry span attributes (Only for with\_span/3).
 
             \end{itemize}
@@ -73,7 +73,7 @@ with_span/3: -spec with_span(binary(), fun(() -> any()), map()) -> any().
         \subsubsection{span\_process}
             \texttt{span\_process} is the process, spawned by \texttt{start\_span}, responsible for handling the \texttt{end\_span, fail\_span, timeout} messages.
 
-            Upon being spawned, the process starts a timer with time equal to the $dMax$ set by a user for the probe being observed, thanks to \texttt{erlang:send\_after}. When the timer runs out, it sends a \texttt{timeout} message to the process.
+            Upon being spawned, the process starts a timer with time equal to the $dMax$ set by a user for the probe being observed, thanks to \texttt{erlang:send\_after} \cite{send-af}. When the timer runs out, it sends a \texttt{timeout} message to the process.
         
         The process can receive three kinds of messages:
         \begin{itemize}
@@ -125,7 +125,7 @@ with_span/3: -spec with_span(binary(), fun(() -> any()), map()) -> any().
             \end{itemize}
 
         \subsubsection{TCP client}
-            The TCP client \texttt{dqsd\_otel\_tcp\_client} allows the adapter to send the spans to the oscilloscope.
+            The TCP client \texttt{dqsd\_otel\_tcp\_client} allows the adapter to send the outcome instances to the oscilloscope.
             The client connects over TCP to the oscilloscope by connecting to the oscilloscope server's address and opens a socket where it can send the outcome instances.
             \begin{minted}{erlang}
                 -spec try_connect(string() | binary(), integer()) -> ok.

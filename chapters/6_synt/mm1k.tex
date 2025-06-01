@@ -1,6 +1,6 @@
 \section{System with sequential composition}
-    The first application has two sequentially composed components. We choose to model the two components as M/M/1/K queues.
-    This is because an average component in a distributed system can be modeled as an M/M/1/K queue. We assume inter-arrival times, execution times for both components are exponentially distributed and a buffer of size $K$. When the buffer is full, messages are discarded.
+    The first application has two sequentially composed components. We choose to model the two components as M/M/1/K queues. 
+    This is because an average component in a distributed system can be modeled as an M/M/1/K queue. We assume inter-arrival times, execution times for both components are exponentially distributed and a buffer of size $K$ \cite{dq-tut}. When the buffer is full, messages are discarded.
  
     Let us first provide a refresher about M/M/1/K queues:
     \begin{itemize}
@@ -43,8 +43,7 @@
 
     \subsection{Determining parameters dynamically}
         We stated previously that determining parameters is something that must be done with an underlying knowledge of the system (\cref{subsec:dMax}). The oscilloscope can provide knowledge of the system. \cref{fig:w1w2hb} shows an example of worker\_1 and worker\_2 as observed in the oscilloscope.
-We will send 50 messages per second to observe the system under test to get key
-properties. The workers do a million loops.
+
         The engineer supposes that the workers executions should take a maximum of 4 ms to complete, but doesn't actually know how long the executions should take. The engineer, after having set $dMax = 4ms$, observes the graph \cref{fig:w1w2hb} on the left in the oscilloscope.
 
     The oscilloscope shows the engineer that their assumptions do not correspond to the actual system $\Delta$Q. The user can then modify the parameters to observe the actual worker's behaviour. By setting $dMax$ to 8 ms, they can observe the worker's $\Delta$Qs failure approaching $0$ on the right Figure in \cref{fig:w1w2hb}.
@@ -63,7 +62,7 @@ properties. The workers do a million loops.
                 \includegraphics[width =0.98\textwidth]{img/overload_2/worker_1_8a.png}
                 \label{fig:w18}
             \end{subfigure}
-            \caption{\textbf{Left}: worker\_1 sampling window observed $\Delta$Q with $dMax = 4ms$. Failure tends to 0.25. \textbf{Right}: worker\_1 sampling window observed $\Delta$Q with $dMax$ = 8 ms. Failure tends to 0. Legend for both: (1, red) Sampling window observed $\Delta$Q. (Between red arrow): Its confidence bounds.\\
+            \caption{\textbf{Left}: worker\_1 sampling window observed $\Delta$Q with $dMax = 4ms$. Failure tends to 0.25. \textbf{Right}: worker\_1 sampling window observed $\Delta$Q with $dMax$ = 8 ms. Failure tends to 0. Legend for both: (1, red) Sampling window observed $\Delta$Q. (Between red arrow) Its confidence bounds.\\
             In both graphs we can observe how the sampling window observed $\Delta$Q (1) is not precise. The step function representation of it fluctuates. The confidence bounds (between red arrow) provide a more precise representation of worker\_1.}%
             \label{fig:w1w2hb}
             \end{figure}
@@ -71,7 +70,7 @@ properties. The workers do a million loops.
     We can observe the system under different loads to observe how non-linearity can appear in the oscilloscope and how it can be detected. 
     \subsubsection{Low Load} 
    We will send 50 messages per second to observe the system under test to get key properties. The workers do a million loops. \\
-    We can observe in the left graph in \cref{fig:norm_ex} that the average worker's execution takes $\approx$ 33ms. We then have $\mu_{worker} = \frac{1}{0.0033 s} \approx 300$ req/s. Thus, $\rho = \frac{50}{300} = 0.1\overline{6}$, we can assume the system is at low load.
+    We can observe in the left graph in \cref{fig:norm_ex} that the average worker's execution takes $\approx$ 3.3ms. We then have $\mu_{worker} = \frac{1}{0.0033 s} \approx 300$ req/s. Thus, $\rho = \frac{50}{300} = 0.1\overline{6}$, we can assume the system is at low load.
 
     At low load (\cref{fig:norm_ex}), the system is behaving \textbf{linearly}. Recall \cref{indep_hyp}, at low load the sum of the two delays will overlap with the observed total delay. We can observe in the oscilloscope the probe \textbf{observed $\Delta$Q} and \textbf{calculated $\Delta$Q} confidence bounds overlap. 
         \begin{figure}[H]
@@ -95,7 +94,7 @@ properties. The workers do a million loops.
     
     At load = 0.5 the system should start showing early signs of dependent behaviour. We can observe what happens when $\lambda = 150 \rightarrow \rho = 0.5$.
     
-    Recall \ref{fig:cdf_indep}, a non-linear system does not obey superposition. The sum of the delay of the workers will deviate from the overall delay of ``probe''. In \cref{fig:avavv}, this is the case. \\
+    Recall \cref{fig:cdf_indep}, a non-linear system does not obey superposition. The sum of the delay of the workers will deviate from the overall delay of ``probe''. In \cref{fig:avavv}, this is the case. \\
     We can start to observe early signs of dependency even at $\rho = 0.5$. The mean of the observed $\Delta$Q is deviating from the calculated one. At the 50th percentile the deviation is \textit{minimal}, around 0.4 ms. Nevertheless, the precision of the paradigm and the oscilloscope allows even for these minimal deviations to appear on the graphs, being able to recognise \textit{non-linearity} and \textit{early signs of overload}. \\
     The superposition principle is not respected anymore, there is apparent \textbf{non-linearity}, and the fact that $\Delta$Q can recognise non-linear behaviour with \textbf{0.4ms precision} is impressive. The oscilloscope is a powerful tool that can help assess dependent behaviour in running systems early on.
  
@@ -111,7 +110,7 @@ properties. The workers do a million loops.
                 \includegraphics[width =0.98\textwidth]{img/overload_2/150_probe2zoom_cropped.pdf}
                 \label{fig:ovovv}
             \end{subfigure}
-            \caption{\textbf{Left}: The probe ``probe'' $\Delta$Qs as observed in a snapshot. \textbf{Right}: Zooming in on the oscilloscope, we can observe non-linearity, the $\Delta$Qs are diverging. Legend for both: (1, blue) Sampling window observed $\Delta$Q. (Between blue arrow, above): Its confidence bounds. (2) Sampling window calculated $\Delta$Q. (Between red arrow, below) Its confidence bounds. \\ The observed confidence bounds are $>$ than the calculated $\Delta$Q bounds. The deviation at the median is of 0.4 ms, but it is noticeable in the oscilloscope.}
+            \caption{\textbf{Left}: The probe ``probe'' $\Delta$Qs as observed in a snapshot. \textbf{Right}: Zooming in on the oscilloscope, we can observe non-linearity. The observed and calculated means of the $\Delta$Qs are diverging. Legend for both: (1, blue) Sampling window observed $\Delta$Q. (Between blue arrow, above): Its confidence bounds. (2, red) Sampling window calculated $\Delta$Q. (Between red arrow, below) Its confidence bounds. \\ The observed confidence bounds are $>$ than the calculated $\Delta$Q bounds. The deviation at the median is of 0.4 ms, but it is noticeable in the oscilloscope.}
             \label{fig:avavv} 
         \end{figure}
        
@@ -151,7 +150,7 @@ properties. The workers do a million loops.
                 \includegraphics[width =0.98\textwidth]{img/overload_2/350_probe2.png}
                 \label{fig:high_load_2}
             \end{subfigure}
-            \caption{``probe'' $\Delta$Qs. \textbf{Left}: $\lambda = 300$. \textbf{Right}: $\lambda = 350$.  Legend for both: (1, red) Sampling window observed $\Delta$Q inside its confidence bounds. (2) Sampling window calculated $\Delta$Q inside its confidence bounds.}%
+            \caption{``probe'' $\Delta$Qs. \textbf{Left}: $\lambda = 300$. \textbf{Right}: $\lambda = 350$.  Legend for both: (1, red) Sampling window observed $\Delta$Q inside its confidence bounds. (2, red) Sampling window calculated $\Delta$Q inside its confidence bounds.}%
             \label{fig:hi_lo}%
         \end{figure}
     The system degradation is clear, the $\Delta$Qs show how almost all messages are being dropped or take $> dMax$. We can now look at triggers and how they can be useful to diagnose such cases.
@@ -160,9 +159,9 @@ properties. The workers do a million loops.
         We show examples of how triggers can be set to detected non-linearity after having observed the running system in the oscilloscope.
 
         \subsubsection{QTA trigger}
-            Recall the previous definition of $\Delta$Q (\cref{subsec:qta_i}), by observing the system, we create a QTA for the probe ``probe'' with: 25\% = 0.0075 s, 50\% = 0.0125 s, 75\% = 0.015s and minimum success rate = 0.9.
+            Recall the previous definition of QTA (\cref{subsec:qta_i}), by observing the system, we create a QTA for the probe ``probe'' with: 25\% = 0.0075 s, 50\% = 0.0125 s, 75\% = 0.015s and minimum success rate = 0.9.
 
-            By setting the trigger to fire for $\Delta$Q$_{obs} < QTA$. We captured a handful of snapshots. Here, $\lambda = 150$.
+            By setting the trigger to fire for $\Delta$Q$_{obs} \nless QTA$. We captured a handful of snapshots. Here, $\lambda = 150$.
         
         \begin{figure}[H]
             \centering
@@ -177,18 +176,18 @@ properties. The workers do a million loops.
                 \label{fig:high_load_2}
             \end{subfigure}
             \caption{\textbf{Left}: Snapshots for fired triggers.
-            \textbf{Right}: ``probe'' $\Delta$Qs. (1, red) Sampling window observed $\Delta$Q violating the QTA (3, red). (Between blue arrow, below) Its confidence bounds are deviating from the observed confidence bounds. (2) The sampling window calculated $\Delta$Q is behaving worse than its confidence bounds (Red arrow, above). The system is overloaded, degrading and showing non-linear behaviour, this is captured by the QTA violation.} % 
+            \textbf{Right}: ``probe'' $\Delta$Qs. (1, red) Sampling window observed $\Delta$Q violating the QTA (3, red). (Between blue arrow, below) Its confidence bounds are deviating from the calculated confidence bounds. (2) The sampling window calculated $\Delta$Q is behaving worse than its confidence bounds (Red arrow, above). The system is overloaded, degrading and showing non-linear behaviour, this is captured by the QTA violation.} % 
             \label{fig:qta_viol_1}
         \end{figure}
         
         \subsubsection{Trigger on number of instances}
         QTA triggers can help detect non-linearity even before it becomes evident.\\ 
-        By observing the system under test in high load cases, we have found that the system start showing non-linear behaviour with $\lambda = 150$. We set the sampling window to 1 seconds and then set a trigger on the load of ``probe'' when outcome instances $\gtrapprox 150$.
+        By observing the system under test in high load cases, we have found that the system starts showing non-linear behaviour with $\lambda = 150$. We set the sampling window to 1 seconds and then set a trigger on the load of ``probe'' when outcome instances $\gtrapprox 150$.
         \begin{figure}[H]
             \begin{center}
                 \includegraphics[scale=0.5]{img/overload_2/fired_samplea.png}
             \end{center}
-            \caption{Graph of a snapshot for a fired trigger on the load of ``probe''. (1, red) Sampling window observed $\Delta$Q inside its confidence bounds. (2, red) Sampling window calculated $\Delta$Q confidence bounds. The trigger fires for observed load $> 150$ in a sampling window of 1 second. Even if the QTA requirement (3, red) is not being violated, the system is showing early signs of non-linear behaviour.}%
+            \caption{Graph of a snapshot for a fired trigger on the load of ``probe''. (1, red) Sampling window observed $\Delta$Q inside its confidence bounds. (2, red) Sampling window calculated $\Delta$Q inside confidence bounds. The trigger fires for observed load $> 150$ in a sampling window of 1 second. Even if the QTA requirement (3, red) is not being violated, the system is showing early signs of non-linear behaviour.}%
             \label{fig:qta_trig}%
         \end{figure} 
         By knowing the inner details of the system, setting a QTA on the number of instances can be useful. \cref{fig:qta_trig} is an example of a fired trigger on the number of instances. Even though the QTA requirement isn't being violated, the number of instances fires a trigger, where the user can observe that the system is showing early signs of overload.
