@@ -1,5 +1,9 @@
 \subsection{All to finish application}
-    We can extend the previous application to an all-to-finish operator. This operator can for instance represent parallel work, a task that requires a lot of computation and can be done in separate pieces by separate workers. \cite{dq-tut}
+    We can extend the previous application to an all-to-finish operator. This operator can for instance represent parallel work, a task that requires a lot of computation and can be done in separate pieces by separate workers. \cite{dq-tut} \\
+    The outcome diagram is the one we presented in \cref{fig:op} and itcan be represented textually by:
+    \begin{minted}{text}
+        ... = a:atf(worker_1, worker_2);
+    \end{minted}
 
         \subsubsection{Introducing a slower component}
             Like we did for the FTF operator, let's introduce a slower worker into the system. We introduce a slight delay to show how even a few milliseconds can be noticeable right away by a keen eye (or by triggers, which avoids having to look constantly at the graphs). Worker\_2 is 2ms slower.
@@ -10,7 +14,7 @@
                 \begin{center}
                     \includegraphics[scale = 0.5]{img/overload_2/w1w2atfa.png}
                 \end{center}
-                \caption{\textbf{Left}: ATF plot with polling window confidence bounds (3) for observed and calculated $\Delta$Q. \textbf{Right}: Worker's plots, worker\_2 (2) is slower than worker\_1 (1).}
+                \caption{\textbf{Left}: ATF plot with observed and calculated $\Delta$Q confidence bounds overlapping. \textbf{Right}: Worker's plots, worker\_2 (2) is slower than worker\_1 (1).}
                 \label{fig:slower_atf}
             \end{figure}
 

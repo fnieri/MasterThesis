@@ -139,6 +139,37 @@
       \verb https://opentelemetry.io/ecosystem/vendors/
       \endverb
     \endentry
+    \entry{zipkin}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=10cb66cab367dbea61c007aef3e560a9}{%
+           family={Authors},
+           familyi={A\bibinitperiod},
+           given={The\bibnamedelima Zipkin},
+           giveni={T\bibinitperiod\bibinitdelim Z\bibinitperiod}}}%
+      }
+      \strng{namehash}{10cb66cab367dbea61c007aef3e560a9}
+      \strng{fullhash}{10cb66cab367dbea61c007aef3e560a9}
+      \strng{fullhashraw}{10cb66cab367dbea61c007aef3e560a9}
+      \strng{bibnamehash}{10cb66cab367dbea61c007aef3e560a9}
+      \strng{authorbibnamehash}{10cb66cab367dbea61c007aef3e560a9}
+      \strng{authornamehash}{10cb66cab367dbea61c007aef3e560a9}
+      \strng{authorfullhash}{10cb66cab367dbea61c007aef3e560a9}
+      \strng{authorfullhashraw}{10cb66cab367dbea61c007aef3e560a9}
+      \field{extraname}{2}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Accessed: (01/06/2025)}
+      \field{title}{Zipkin}
+      \field{year}{2025}
+      \verb{urlraw}
+      \verb https://zipkin.io/
+      \endverb
+      \verb{url}
+      \verb https://zipkin.io/
+      \endverb
+    \endentry
     \entry{otel-t}{misc}{}{}
       \name{author}{1}{}{%
         {{hash=c9c2d3a24c7583a7e7f7f0789505c4ad}{%
@@ -155,9 +186,9 @@
       \strng{authornamehash}{c9c2d3a24c7583a7e7f7f0789505c4ad}
       \strng{authorfullhash}{c9c2d3a24c7583a7e7f7f0789505c4ad}
       \strng{authorfullhashraw}{c9c2d3a24c7583a7e7f7f0789505c4ad}
-      \field{extraname}{2}
-      \field{sortinit}{5}
-      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{extraname}{3}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{note}{Accessed: (19/05/2025)}
@@ -184,8 +215,8 @@
       \strng{authornamehash}{5ef9b5e30a11e0edf2eac03f1faab234}
       \strng{authorfullhash}{5ef9b5e30a11e0edf2eac03f1faab234}
       \strng{authorfullhashraw}{5ef9b5e30a11e0edf2eac03f1faab234}
-      \field{sortinit}{6}
-      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{note}{Accessed: (31/05/2025)}
@@ -214,9 +245,9 @@
       \strng{authornamehash}{99843117a36cd53a2358856e619efe2a}
       \strng{authorfullhash}{99843117a36cd53a2358856e619efe2a}
       \strng{authorfullhashraw}{99843117a36cd53a2358856e619efe2a}
-      \field{extraname}{3}
-      \field{sortinit}{7}
-      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{extraname}{4}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{note}{Accessed: (31/05/2025)}
@@ -253,8 +284,8 @@
       \strng{authornamehash}{26c04e06c898f3628b37cc23fde0f94d}
       \strng{authorfullhash}{26c04e06c898f3628b37cc23fde0f94d}
       \strng{authorfullhashraw}{26c04e06c898f3628b37cc23fde0f94d}
-      \field{sortinit}{8}
-      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{title}{The {$\Delta$QSD} Paradigm: Designing Systems with Predictable Performance at High Load. Full-day tutorial}
@@ -267,8 +298,8 @@
       \endverb
     \endentry
     \entry{pnsol}{misc}{}{}
-      \field{sortinit}{9}
-      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labeltitlesource}{title}
       \field{note}{Accessed: (31/05/2025)}
       \field{title}{PNSol: the network performance science company}
@@ -378,6 +409,60 @@
       \endverb
       \verb{url}
       \verb https://www.broadband-forum.org/pdfs/tr-452.1-1-0-0.pdf
+      \endverb
+    \endentry
+    \entry{erl-art}{inproceedings}{}{}
+      \name{author}{3}{}{%
+        {{hash=302fb79f413e8b03dd3f1e60d6eef207}{%
+           family={Nyström},
+           familyi={N\bibinitperiod},
+           given={J.\bibnamedelimi H.},
+           giveni={J\bibinitperiod\bibinitdelim H\bibinitperiod}}}%
+        {{hash=d5e85dc6405f67ac76f7de5b80444180}{%
+           family={Trinder},
+           familyi={T\bibinitperiod},
+           given={P.\bibnamedelimi W.},
+           giveni={P\bibinitperiod\bibinitdelim W\bibinitperiod}}}%
+        {{hash=b36e556ced8d71651accb9c1688780be}{%
+           family={King},
+           familyi={K\bibinitperiod},
+           given={D.\bibnamedelimi J.},
+           giveni={D\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Uppsala, Sweden}%
+      }
+      \list{publisher}{1}{%
+        {Association for Computing Machinery}%
+      }
+      \strng{namehash}{0474b5ba3fc83dfa51011889206e15c5}
+      \strng{fullhash}{0474b5ba3fc83dfa51011889206e15c5}
+      \strng{fullhashraw}{0474b5ba3fc83dfa51011889206e15c5}
+      \strng{bibnamehash}{0474b5ba3fc83dfa51011889206e15c5}
+      \strng{authorbibnamehash}{0474b5ba3fc83dfa51011889206e15c5}
+      \strng{authornamehash}{0474b5ba3fc83dfa51011889206e15c5}
+      \strng{authorfullhash}{0474b5ba3fc83dfa51011889206e15c5}
+      \strng{authorfullhashraw}{0474b5ba3fc83dfa51011889206e15c5}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{The distributed telecommunications sector not only requires minimal time to market, but also software that is reliable, available, maintainable and scalable. High level programming languages have the potential to reduce development time and improve maintainability due to their compact code size. Moreover reliability is improved by safe type systems and relatively easy verification.This paper outlines plans and initial results from a joint project between Motorola and Heriot-Watt University that aims to evaluate the suitability of distributed functional languages for constructing telecommunications software. The evaluation will use the ERLANG and Glasgow distributed Haskell(GdH) languages, and be based on the construction of several typical applications. The evaluation will focus on reliability issues like ease of verification, availability issues like fault-tolerance or resilience, as well as whether the languages deliver the required functionalities, like real-time capabilities. The impact of specific languages techniques will also be assessed, including type system, strictness, validation and distributed coordination. The ERLANG and GdH implementations of the applications will be compared with existing C++/CORBA and Java/JINI implementations.The first application, a Dispatch Call Controller(DCC), has been constructed in ERLANG and measured on a Beowulf cluster. We find that the DCC scales, achieving a relative speedup of 14.5 on 16 processors. The DCC is resilient, achieving 105\% throughput at 200\% load and 56\% throughput at 9000\% load on 16 processors. The DCC is fault-tolerant, remaining available despite any one process or processor failure. The DCC has dynamic adaptability, remaining available as processors are added or removed.}
+      \field{booktitle}{Proceedings of the 2003 ACM SIGPLAN Workshop on Erlang}
+      \field{isbn}{1581137729}
+      \field{series}{ERLANG '03}
+      \field{title}{Evaluating distributed functional languages for telecommunications software}
+      \field{year}{2003}
+      \field{pages}{1\bibrangedash 7}
+      \range{pages}{7}
+      \verb{doi}
+      \verb 10.1145/940880.940881
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1145/940880.940881
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1145/940880.940881
       \endverb
     \endentry
     \entry{erl}{misc}{}{}
@@ -510,8 +595,8 @@
       \strng{editorfullhash}{c107a1d8d1580e0581e5d350919be0b3}
       \strng{editorfullhashraw}{c107a1d8d1580e0581e5d350919be0b3}
       \field{extraname}{2}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{booktitle}{Proceedings 16th Interaction and Concurrency Experience, {ICE} 2023, Lisbon, Portugal, 19th June 2023}
@@ -647,7 +732,7 @@
       \strng{authornamehash}{c9c2d3a24c7583a7e7f7f0789505c4ad}
       \strng{authorfullhash}{c9c2d3a24c7583a7e7f7f0789505c4ad}
       \strng{authorfullhashraw}{c9c2d3a24c7583a7e7f7f0789505c4ad}
-      \field{extraname}{4}
+      \field{extraname}{5}
       \field{sortinit}{2}
       \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
       \field{labelnamesource}{author}
@@ -711,7 +796,7 @@
       \strng{authornamehash}{c9c2d3a24c7583a7e7f7f0789505c4ad}
       \strng{authorfullhash}{c9c2d3a24c7583a7e7f7f0789505c4ad}
       \strng{authorfullhashraw}{c9c2d3a24c7583a7e7f7f0789505c4ad}
-      \field{extraname}{5}
+      \field{extraname}{6}
       \field{sortinit}{5}
       \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
       \field{labelnamesource}{author}
@@ -772,7 +857,7 @@
       \strng{authornamehash}{c9c2d3a24c7583a7e7f7f0789505c4ad}
       \strng{authorfullhash}{c9c2d3a24c7583a7e7f7f0789505c4ad}
       \strng{authorfullhashraw}{c9c2d3a24c7583a7e7f7f0789505c4ad}
-      \field{extraname}{6}
+      \field{extraname}{7}
       \field{sortinit}{6}
       \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
       \field{labelnamesource}{author}
@@ -803,7 +888,7 @@
       \strng{authornamehash}{c9c2d3a24c7583a7e7f7f0789505c4ad}
       \strng{authorfullhash}{c9c2d3a24c7583a7e7f7f0789505c4ad}
       \strng{authorfullhashraw}{c9c2d3a24c7583a7e7f7f0789505c4ad}
-      \field{extraname}{7}
+      \field{extraname}{8}
       \field{sortinit}{6}
       \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
       \field{labelnamesource}{author}
@@ -864,7 +949,7 @@
       \strng{authornamehash}{c9c2d3a24c7583a7e7f7f0789505c4ad}
       \strng{authorfullhash}{c9c2d3a24c7583a7e7f7f0789505c4ad}
       \strng{authorfullhashraw}{c9c2d3a24c7583a7e7f7f0789505c4ad}
-      \field{extraname}{8}
+      \field{extraname}{9}
       \field{sortinit}{6}
       \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
       \field{labelnamesource}{author}
@@ -895,7 +980,7 @@
       \strng{authornamehash}{c9c2d3a24c7583a7e7f7f0789505c4ad}
       \strng{authorfullhash}{c9c2d3a24c7583a7e7f7f0789505c4ad}
       \strng{authorfullhashraw}{c9c2d3a24c7583a7e7f7f0789505c4ad}
-      \field{extraname}{9}
+      \field{extraname}{10}
       \field{sortinit}{7}
       \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
       \field{labelnamesource}{author}
@@ -926,7 +1011,7 @@
       \strng{authornamehash}{99843117a36cd53a2358856e619efe2a}
       \strng{authorfullhash}{99843117a36cd53a2358856e619efe2a}
       \strng{authorfullhashraw}{99843117a36cd53a2358856e619efe2a}
-      \field{extraname}{10}
+      \field{extraname}{11}
       \field{sortinit}{7}
       \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
       \field{labelnamesource}{author}
@@ -1045,9 +1130,9 @@
       \strng{authornamehash}{c9c2d3a24c7583a7e7f7f0789505c4ad}
       \strng{authorfullhash}{c9c2d3a24c7583a7e7f7f0789505c4ad}
       \strng{authorfullhashraw}{c9c2d3a24c7583a7e7f7f0789505c4ad}
-      \field{extraname}{11}
-      \field{sortinit}{7}
-      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{extraname}{12}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{note}{Accessed: (19/05/2025)}
@@ -1076,8 +1161,8 @@
       \strng{authornamehash}{a053036d92aa8736ee3b37dae9c563d8}
       \strng{authorfullhash}{a053036d92aa8736ee3b37dae9c563d8}
       \strng{authorfullhashraw}{a053036d92aa8736ee3b37dae9c563d8}
-      \field{sortinit}{7}
-      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{note}{Accessed: (21/05/2025)}
@@ -1167,8 +1252,8 @@
       \strng{authorfullhash}{f669f61ee8de1a8b7351d817ea423497}
       \strng{authorfullhashraw}{f669f61ee8de1a8b7351d817ea423497}
       \field{extraname}{2}
-      \field{sortinit}{8}
-      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{note}{Accessed: (28/05/2025)}
@@ -1421,8 +1506,8 @@
       \strng{authornamehash}{424cb1e1c0315dbde42951125a3180aa}
       \strng{authorfullhash}{424cb1e1c0315dbde42951125a3180aa}
       \strng{authorfullhashraw}{424cb1e1c0315dbde42951125a3180aa}
-      \field{sortinit}{9}
-      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{note}{Accessed: (21/05/2025)}
@@ -1436,8 +1521,8 @@
       \endverb
     \endentry
     \entry{fft-h}{misc}{}{}
-      \field{sortinit}{9}
-      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labeltitlesource}{title}
       \field{note}{Accessed: (23/05/2025)}
       \field{title}{Planning-rigor flags}
@@ -1834,34 +1919,67 @@
       \verb https://en.wikipedia.org/wiki/Qt_(software)
       \endverb
     \endentry
-    \entry{ctx}{misc}{}{}
+    \entry{qpointf}{misc}{}{}
       \name{author}{1}{}{%
-        {{hash=9a30d9e0e65cd68ed533d5305f8cd1a7}{%
-           family={Sloughter},
-           familyi={S\bibinitperiod},
-           given={Tristan},
-           giveni={T\bibinitperiod}}}%
+        {{hash=64658d3a36807e9ff9e0d0215b01c97a}{%
+           family={Company},
+           familyi={C\bibinitperiod},
+           given={The\bibnamedelima Qt},
+           giveni={T\bibinitperiod\bibinitdelim Q\bibinitperiod}}}%
       }
-      \strng{namehash}{9a30d9e0e65cd68ed533d5305f8cd1a7}
-      \strng{fullhash}{9a30d9e0e65cd68ed533d5305f8cd1a7}
-      \strng{fullhashraw}{9a30d9e0e65cd68ed533d5305f8cd1a7}
-      \strng{bibnamehash}{9a30d9e0e65cd68ed533d5305f8cd1a7}
-      \strng{authorbibnamehash}{9a30d9e0e65cd68ed533d5305f8cd1a7}
-      \strng{authornamehash}{9a30d9e0e65cd68ed533d5305f8cd1a7}
-      \strng{authorfullhash}{9a30d9e0e65cd68ed533d5305f8cd1a7}
-      \strng{authorfullhashraw}{9a30d9e0e65cd68ed533d5305f8cd1a7}
+      \strng{namehash}{64658d3a36807e9ff9e0d0215b01c97a}
+      \strng{fullhash}{64658d3a36807e9ff9e0d0215b01c97a}
+      \strng{fullhashraw}{64658d3a36807e9ff9e0d0215b01c97a}
+      \strng{bibnamehash}{64658d3a36807e9ff9e0d0215b01c97a}
+      \strng{authorbibnamehash}{64658d3a36807e9ff9e0d0215b01c97a}
+      \strng{authornamehash}{64658d3a36807e9ff9e0d0215b01c97a}
+      \strng{authorfullhash}{64658d3a36807e9ff9e0d0215b01c97a}
+      \strng{authorfullhashraw}{64658d3a36807e9ff9e0d0215b01c97a}
+      \field{extraname}{1}
       \field{sortinit}{1}
       \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{note}{Accessed: (21/05/2025)}
-      \field{title}{ctx}
-      \field{year}{2023}
+      \field{note}{Accessed: (01/06/2025)}
+      \field{title}{QPointF class}
+      \field{year}{2025}
       \verb{urlraw}
-      \verb https://github.com/tsloughter/ctx
+      \verb https://doc.qt.io/qt-6/qpointf.html
       \endverb
       \verb{url}
-      \verb https://github.com/tsloughter/ctx
+      \verb https://doc.qt.io/qt-6/qpointf.html
+      \endverb
+    \endentry
+    \entry{telem-erl}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=2e417c51d8a465e11591ddb9176fdc10}{%
+           family={Erlang\bibnamedelimb programming\bibnamedelima language},
+           familyi={E\bibinitperiod\bibinitdelim p\bibinitperiod\bibinitdelim l\bibinitperiod},
+           given={ExDoc},
+           giveni={E\bibinitperiod},
+           prefix={for\bibnamedelima the},
+           prefixi={f\bibinitperiod\bibinitdelim t\bibinitperiod}}}%
+      }
+      \strng{namehash}{2e417c51d8a465e11591ddb9176fdc10}
+      \strng{fullhash}{2e417c51d8a465e11591ddb9176fdc10}
+      \strng{fullhashraw}{2e417c51d8a465e11591ddb9176fdc10}
+      \strng{bibnamehash}{2e417c51d8a465e11591ddb9176fdc10}
+      \strng{authorbibnamehash}{2e417c51d8a465e11591ddb9176fdc10}
+      \strng{authornamehash}{2e417c51d8a465e11591ddb9176fdc10}
+      \strng{authorfullhash}{2e417c51d8a465e11591ddb9176fdc10}
+      \strng{authorfullhashraw}{2e417c51d8a465e11591ddb9176fdc10}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Accessed: (01/06/2025)}
+      \field{title}{telemetry}
+      \field{year}{2025}
+      \verb{urlraw}
+      \verb https://hexdocs.pm/telemetry/telemetry.html
+      \endverb
+      \verb{url}
+      \verb https://hexdocs.pm/telemetry/telemetry.html
       \endverb
     \endentry
     \entry{qt-gpl}{misc}{}{}
@@ -1880,6 +1998,7 @@
       \strng{authornamehash}{64658d3a36807e9ff9e0d0215b01c97a}
       \strng{authorfullhash}{64658d3a36807e9ff9e0d0215b01c97a}
       \strng{authorfullhashraw}{64658d3a36807e9ff9e0d0215b01c97a}
+      \field{extraname}{2}
       \field{sortinit}{1}
       \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}

@@ -28,9 +28,9 @@
 \subsection{OpenTelemetry}
     According to OpenTelemetry's website \cite{otel-o}: OpenTelemetry is an open-source, vendor-agnostic observability framework and toolkit designed to generate, export and collect telemetry data, in particular traces, metrics and logs. OpenTelemetry provides a standard protocol, a single set of API and conventions and lets the user own the generated data, allowing to switch between observability backends freely.
    
-   OpenTelemetry is available for a plethora of languages \cite{otel-lang}, including Erlang. As of writing this, logs and metrics are unstable in Erlang \cite{otel-in}.
+   OpenTelemetry is available for a plethora of languages \cite{otel-lang}, including Erlang. As of writing this, logs and metrics are unstable in Erlang. \cite{otel-in}
      
-    The Erlang Ecosystem Foundation has a working group focused on evolving the tools related to observability, including OpenTelemetry and the runtime observability monitoring tools \cite{obs-group}. 
+    The Erlang Ecosystem Foundation has a working group focused on evolving the tools related to observability, including OpenTelemetry and the runtime observability monitoring tools. \cite{obs-group} 
     
     \subsubsection{Traces}
         Traces are why we are basing our program on top of OpenTelemetry, traces follow the whole path of a request in an application, and they are comprised of one or more spans \cite{otel-t}. Traces can propagate to multiple services and record multiple paths in different microservices \cite{otel-dt}. 
@@ -60,9 +60,9 @@
     \subsubsection{Monitoring OpenTelemetry spans}
         In OpenTelemetry, the user can export their traces export to backends and monitoring such as Jaeger (\cref{fig:monitor}), Zipkin, Datadog \cite{otel-exp}. There, a user can analyse the traces to troubleshoot their programs by observing the flow of the requests \cite{jg}. These monitoring tools give extensive details about a running system, but may fail to capture essential timeliness requirements and performances issues early enough.
         
-        Our oscilloscope is a kind of monitoring tool, one that gives precise statistical insights about a running system. It is clear that the oscilloscope does not have the same capabilities as Datadog \cite{datadog} might have, where you can observe cloud instances, instances cost, dependency graphs. But the oscilloscope can nevertheless provide precise insights about dependency, overload thanks to the $\Delta$QSD paradigm. 
+        Our oscilloscope is a kind of monitoring tool, one that gives precise statistical insights about a running system. It is clear that the oscilloscope does not have the same capabilities as Datadog \cite{datadog} might have, where you can observe cloud instances, instances cost, dependency graphs. But the oscilloscope can nevertheless provide precise insights about dependency, overload and much more, thanks to the $\Delta$QSD paradigm. 
 
-        This is also the reason why the adapter includes OpenTelemetry macros. The oscilloscope can be put next to a monitoring tool where one might export spans to, so that an engineer might consult the monitoring tool to get the global picture of a running app, as the oscilloscope can provide more precise insights to understand the system's behaviour. 
+        This is also the reason why the adapter includes OpenTelemetry macros. The oscilloscope can be put next to a monitoring tool where one exports spans to, so that an engineer might consult the monitoring tool to get the global picture of a running app, and the oscilloscope to provide precise insights to understand the system's behaviour. 
        \begin{figure}[H]
             \centering
             \begin{subfigure}{.5\textwidth}
@@ -80,7 +80,7 @@
             \end{figure}
 
     \subsubsection{Span macros}
-        OpenTelemetry provides macros to start, end and interact with spans in Erlang, the following code excerpts are taken from the OpenTelemetry instrumentation wiki. \cite{otel-in}
+        OpenTelemetry provides macros to start, end and interact with spans in Erlang. The following code excerpts are taken from the OpenTelemetry instrumentation wiki. \cite{otel-in}
         \paragraph{?with\_span}
             \texttt{?with\_span} creates active spans. An active span is the span that is currently set in the execution context and is considered the ``current'' span for the ongoing operation or thread. \cite{active-s}
         \begin{minted}{erlang}

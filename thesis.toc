@@ -58,239 +58,242 @@
 \contentsline {subsection}{\numberline {3.4.2}Polling window (Observing multiple $\Delta $Qs over a time interval)}{24}{subsection.3.4.2}%
 \contentsline {section}{\numberline {3.5}Triggers}{24}{section.3.5}%
 \contentsline {subsection}{\numberline {3.5.1}Snapshot}{24}{subsection.3.5.1}%
-\contentsline {chapter}{\numberline {4}Oscilloscope: User level concepts}{25}{chapter.4}%
-\contentsline {section}{\numberline {4.1}$\Delta $QSD concepts}{25}{section.4.1}%
-\contentsline {subsection}{\numberline {4.1.1}Representation of a $\Delta $Q}{25}{subsection.4.1.1}%
-\contentsline {paragraph}{Observed $\Delta $Q}{25}{section*.45}%
-\contentsline {paragraph}{Calculated $\Delta $Q}{25}{section*.46}%
-\contentsline {subsection}{\numberline {4.1.2}dMax = $\Delta $t $\cdot $ N}{26}{subsection.4.1.2}%
-\contentsline {subsubsection}{dMax limitation}{27}{section*.50}%
-\contentsline {subsection}{\numberline {4.1.3}QTA}{28}{subsection.4.1.3}%
-\contentsline {subsection}{\numberline {4.1.4}Confidence bounds}{28}{subsection.4.1.4}%
-\contentsline {section}{\numberline {4.2}$\Delta $Q display}{29}{section.4.2}%
-\contentsline {section}{\numberline {4.3}Outcome diagram}{30}{section.4.3}%
-\contentsline {subsection}{\numberline {4.3.1}Causal link}{30}{subsection.4.3.1}%
-\contentsline {subsection}{\numberline {4.3.2}Sub-outcome diagrams}{30}{subsection.4.3.2}%
-\contentsline {subsection}{\numberline {4.3.3}Outcomes}{31}{subsection.4.3.3}%
-\contentsline {subsection}{\numberline {4.3.4}Operators}{31}{subsection.4.3.4}%
-\contentsline {subsubsection}{All-to-finish operator}{31}{section*.53}%
-\contentsline {subsubsection}{First-to-finish operator}{31}{section*.54}%
-\contentsline {subsubsection}{Probabilistic choice operator}{31}{section*.55}%
-\contentsline {subsection}{\numberline {4.3.5}Limitations}{31}{subsection.4.3.5}%
-\contentsline {subsection}{\numberline {4.3.6}Outcome diagram example}{32}{subsection.4.3.6}%
-\contentsline {section}{\numberline {4.4}Dashboard}{32}{section.4.4}%
-\contentsline {subsection}{\numberline {4.4.1}Sidebar}{32}{subsection.4.4.1}%
-\contentsline {subsubsection}{System/Handle plots tab}{32}{section*.58}%
-\contentsline {paragraph}{System creation}{33}{section*.59}%
-\contentsline {paragraph}{Adding a plot}{33}{section*.60}%
-\contentsline {paragraph}{Sampling rate}{33}{section*.61}%
-\contentsline {paragraph}{Editing a plot}{33}{section*.62}%
-\contentsline {subsubsection}{Parameters tab}{33}{section*.63}%
-\contentsline {paragraph}{Set a QTA}{33}{section*.64}%
-\contentsline {paragraph}{dMax, bins}{33}{section*.65}%
-\contentsline {subsubsection}{Triggers tab}{33}{section*.66}%
-\contentsline {paragraph}{Set triggers}{33}{section*.67}%
-\contentsline {paragraph}{Fired triggers}{33}{section*.68}%
-\contentsline {paragraph}{Snapshot window}{34}{section*.69}%
-\contentsline {subsubsection}{Connection controls}{34}{section*.70}%
-\contentsline {paragraph}{Erlang controls}{34}{section*.71}%
-\contentsline {paragraph}{C++ server controls}{34}{section*.72}%
-\contentsline {subsection}{\numberline {4.4.2}Plots window}{34}{subsection.4.4.2}%
-\contentsline {section}{\numberline {4.5}Triggers}{34}{section.4.5}%
-\contentsline {subsection}{\numberline {4.5.1}Load}{34}{subsection.4.5.1}%
-\contentsline {subsection}{\numberline {4.5.2}QTA}{34}{subsection.4.5.2}%
-\contentsline {chapter}{\numberline {5}Oscilloscope: implementation}{35}{chapter.5}%
-\contentsline {section}{\numberline {5.1}$\Delta $QSD implementation}{35}{section.5.1}%
-\contentsline {subsection}{\numberline {5.1.1}Histogram representation of $\Delta $Q}{35}{subsection.5.1.1}%
-\contentsline {subsubsection}{PDF}{35}{section*.73}%
-\contentsline {subsubsection}{CDF}{36}{section*.74}%
-\contentsline {subsection}{\numberline {5.1.2}dMax}{36}{subsection.5.1.2}%
-\contentsline {subsection}{\numberline {5.1.3}Rebinning}{36}{subsection.5.1.3}%
-\contentsline {subsection}{\numberline {5.1.4}Convolution}{37}{subsection.5.1.4}%
-\contentsline {subsubsection}{Naïve convolution}{37}{section*.77}%
-\contentsline {subsubsection}{Fast Fourier Transform Convolution}{38}{section*.78}%
-\contentsline {subsection}{\numberline {5.1.5}Arithmetical operations}{38}{subsection.5.1.5}%
-\contentsline {paragraph}{Scaling (multiplication)}{38}{section*.79}%
-\contentsline {paragraph}{Operations between $\Delta $Qs}{38}{section*.80}%
-\contentsline {subsection}{\numberline {5.1.6}Confidence bounds}{38}{subsection.5.1.6}%
-\contentsline {section}{\numberline {5.2}Adapter}{39}{section.5.2}%
-\contentsline {subsection}{\numberline {5.2.1}API}{39}{subsection.5.2.1}%
-\contentsline {subsubsection}{start\_span/1, start\_span/2}{39}{section*.81}%
-\contentsline {subsubsection}{with\_span/2, with\_span/3}{40}{section*.82}%
-\contentsline {paragraph}{Parameters:}{40}{section*.83}%
-\contentsline {subsubsection}{end\_span/2}{40}{section*.84}%
-\contentsline {paragraph}{Parameters:}{40}{section*.85}%
-\contentsline {subsubsection}{fail\_span/1}{40}{section*.86}%
-\contentsline {subsubsection}{span\_process}{40}{section*.87}%
-\contentsline {subsection}{\numberline {5.2.2}Handling outcome instances}{41}{subsection.5.2.2}%
-\contentsline {subsection}{\numberline {5.2.3}TCP connection}{41}{subsection.5.2.3}%
-\contentsline {subsubsection}{TCP server}{42}{section*.88}%
-\contentsline {subsubsection}{TCP client}{42}{section*.89}%
-\contentsline {section}{\numberline {5.3}Parser}{42}{section.5.3}%
-\contentsline {subsection}{\numberline {5.3.1}ANTLR}{42}{subsection.5.3.1}%
-\contentsline {subsection}{\numberline {5.3.2}Grammar}{43}{subsection.5.3.2}%
-\contentsline {subsubsection}{Limitations}{43}{section*.90}%
-\contentsline {section}{\numberline {5.4}Oscilloscope GUI}{43}{section.5.4}%
-\contentsline {chapter}{\numberline {6}Application on synthetic programs}{44}{chapter.6}%
-\contentsline {section}{\numberline {6.1}System with sequential composition}{44}{section.6.1}%
-\contentsline {subsection}{\numberline {6.1.1}System's outcome diagram}{45}{subsection.6.1.1}%
-\contentsline {subsection}{\numberline {6.1.2}Determining parameters dynamically}{46}{subsection.6.1.2}%
-\contentsline {subsubsection}{Low Load}{46}{section*.93}%
-\contentsline {subsubsection}{Early signs of overload}{47}{section*.95}%
-\contentsline {subsubsection}{High load}{48}{section*.97}%
-\contentsline {subsubsection}{Triggers}{49}{section*.100}%
-\contentsline {paragraph}{QTA trigger}{49}{section*.101}%
-\contentsline {paragraph}{Instances trigger}{50}{section*.103}%
-\contentsline {section}{\numberline {6.2}Detecting slower workers in operators}{51}{section.6.2}%
-\contentsline {subsection}{\numberline {6.2.1}First to finish application}{51}{subsection.6.2.1}%
-\contentsline {subsubsection}{Using the wrong operator}{51}{section*.105}%
-\contentsline {subsubsection}{Introducing a slower component}{52}{section*.108}%
-\contentsline {subsection}{\numberline {6.2.2}All to finish application}{52}{subsection.6.2.2}%
-\contentsline {subsubsection}{Introducing a slower component}{52}{section*.110}%
-\contentsline {chapter}{\numberline {7}Performance study}{54}{chapter.7}%
-\contentsline {section}{\numberline {7.1}Convolution performance}{54}{section.7.1}%
-\contentsline {section}{\numberline {7.2}$\Delta $Q adapter performance}{55}{section.7.2}%
-\contentsline {section}{\numberline {7.3}GUI plotting performance}{56}{section.7.3}%
-\contentsline {chapter}{\numberline {8}Conclusions and future work}{58}{chapter.8}%
-\contentsline {section}{\numberline {8.1}Future improvements}{59}{section.8.1}%
-\contentsline {subsection}{\numberline {8.1.1}Oscilloscope improvements}{59}{subsection.8.1.1}%
-\contentsline {subsection}{\numberline {8.1.2}Adapter improvements}{60}{subsection.8.1.2}%
-\contentsline {subsection}{\numberline {8.1.3}Real applications}{60}{subsection.8.1.3}%
-\contentsline {subsection}{\numberline {8.1.4}Licensing limitations}{60}{subsection.8.1.4}%
-\contentsline {chapter}{Bibliography}{61}{chapter*.115}%
-\contentsline {chapter}{\numberline {A}Tests specifications}{65}{appendix.A}%
-\contentsline {chapter}{\numberline {B}Oscilloscope screenshots}{66}{appendix.B}%
-\contentsline {section}{\numberline {B.1}System/Handle plots tab}{66}{section.B.1}%
-\contentsline {section}{\numberline {B.2}Parameters tab}{66}{section.B.2}%
-\contentsline {section}{\numberline {B.3}Triggers tab}{67}{section.B.3}%
-\contentsline {section}{\numberline {B.4}Snapshot window}{68}{section.B.4}%
-\contentsline {section}{\numberline {B.5}Connection controls}{69}{section.B.5}%
-\contentsline {section}{\numberline {B.6}Widget view of GUI}{70}{section.B.6}%
-\contentsline {part}{I\hspace {1em}User manual}{71}{part.1}%
-\contentsline {chapter}{\numberline {C}How to download and launch}{72}{appendix.C}%
-\contentsline {chapter}{\numberline {D}Oscilloscope: How to use}{74}{appendix.D}%
-\contentsline {section}{\numberline {D.1}Establishing the adapter - oscilloscope connection}{74}{section.D.1}%
-\contentsline {section}{\numberline {D.2}Sidebar: Outcome diagram and plots}{75}{section.D.2}%
-\contentsline {subsection}{\numberline {D.2.1}Creating the system/outcome diagrams}{75}{subsection.D.2.1}%
-\contentsline {subsection}{\numberline {D.2.2}Saving the system definition}{77}{subsection.D.2.2}%
-\contentsline {subsection}{\numberline {D.2.3}Loading the system definition}{77}{subsection.D.2.3}%
-\contentsline {subsection}{\numberline {D.2.4}Changing the sampling rate}{78}{subsection.D.2.4}%
-\contentsline {subsection}{\numberline {D.2.5}Managing the plots}{78}{subsection.D.2.5}%
-\contentsline {subsubsection}{Adding a plot}{79}{section*.132}%
-\contentsline {subsubsection}{Editing a plot}{80}{section*.135}%
-\contentsline {subsection}{\numberline {D.2.6}Removing a plot}{81}{subsection.D.2.6}%
-\contentsline {section}{\numberline {D.3}Sidebar: Probes settings}{81}{section.D.3}%
-\contentsline {subsection}{\numberline {D.3.1}Setting a QTA}{81}{subsection.D.3.1}%
-\contentsline {subsection}{\numberline {D.3.2}Setting the parameters of a probe}{82}{subsection.D.3.2}%
-\contentsline {section}{\numberline {D.4}Triggers}{84}{section.D.4}%
-\contentsline {section}{\numberline {D.5}Snapshots}{84}{section.D.5}%
-\contentsline {section}{\numberline {D.6}Instrumenting the Erlang application}{85}{section.D.6}%
-\contentsline {subsection}{\numberline {D.6.1}Including the adapter}{85}{subsection.D.6.1}%
-\contentsline {subsection}{\numberline {D.6.2}Starting spans}{86}{subsection.D.6.2}%
-\contentsline {subsection}{\numberline {D.6.3}With spans}{86}{subsection.D.6.3}%
-\contentsline {subsection}{\numberline {D.6.4}Ending spans}{86}{subsection.D.6.4}%
-\contentsline {subsection}{\numberline {D.6.5}Failing outcome instances}{86}{subsection.D.6.5}%
-\contentsline {part}{II\hspace {1em}Source Code Appendix}{87}{part.2}%
-\contentsline {chapter}{\numberline {E}Grammar}{88}{appendix.E}%
-\contentsline {chapter}{\numberline {F}C++ Source Files}{89}{appendix.F}%
-\contentsline {section}{\numberline {F.1}Root folder}{89}{section.F.1}%
-\contentsline {subsection}{\numberline {F.1.1}main.cpp}{89}{subsection.F.1.1}%
-\contentsline {subsection}{\numberline {F.1.2}Application.cpp}{90}{subsection.F.1.2}%
-\contentsline {section}{\numberline {F.2}Dashboard}{95}{section.F.2}%
-\contentsline {subsection}{\numberline {F.2.1}ColorRegistry.cpp}{95}{subsection.F.2.1}%
-\contentsline {subsection}{\numberline {F.2.2}CustomLegendEntry.cpp}{95}{subsection.F.2.2}%
-\contentsline {subsection}{\numberline {F.2.3}CustomLegendPanel.cpp}{96}{subsection.F.2.3}%
-\contentsline {subsection}{\numberline {F.2.4}DQPlotController.cpp}{97}{subsection.F.2.4}%
-\contentsline {subsection}{\numberline {F.2.5}DQPlotList.cpp}{107}{subsection.F.2.5}%
-\contentsline {subsection}{\numberline {F.2.6}DelaySettingsWidget.cpp}{109}{subsection.F.2.6}%
-\contentsline {subsection}{\numberline {F.2.7}DeltaQPlot.cpp}{111}{subsection.F.2.7}%
-\contentsline {subsection}{\numberline {F.2.8}MainWindow.cpp}{114}{subsection.F.2.8}%
-\contentsline {subsection}{\numberline {F.2.9}NewPlotList.cpp}{119}{subsection.F.2.9}%
-\contentsline {subsection}{\numberline {F.2.10}ObservableSettings.cpp}{121}{subsection.F.2.10}%
-\contentsline {subsection}{\numberline {F.2.11}SamplingRateWidget.cpp}{121}{subsection.F.2.11}%
-\contentsline {subsection}{\numberline {F.2.12}QTAInputWidget.cpp}{122}{subsection.F.2.12}%
-\contentsline {subsection}{\numberline {F.2.13}Sidebar.cpp}{125}{subsection.F.2.13}%
-\contentsline {subsection}{\numberline {F.2.14}SnapshotViewerWindow.cpp}{127}{subsection.F.2.14}%
-\contentsline {subsection}{\numberline {F.2.15}StubControlWidget.cpp}{132}{subsection.F.2.15}%
-\contentsline {subsection}{\numberline {F.2.16}SystemCreationWidget.cpp}{134}{subsection.F.2.16}%
-\contentsline {subsection}{\numberline {F.2.17}TriggersTab.cpp}{137}{subsection.F.2.17}%
-\contentsline {section}{\numberline {F.3}Outcome diagram}{142}{section.F.3}%
-\contentsline {subsection}{\numberline {F.3.1}Observable.cpp}{142}{subsection.F.3.1}%
-\contentsline {subsection}{\numberline {F.3.2}Operator.cpp}{145}{subsection.F.3.2}%
-\contentsline {subsection}{\numberline {F.3.3}Outcome.cpp}{147}{subsection.F.3.3}%
-\contentsline {subsection}{\numberline {F.3.4}Probe.cpp}{148}{subsection.F.3.4}%
-\contentsline {subsection}{\numberline {F.3.5}System.cpp}{149}{subsection.F.3.5}%
-\contentsline {section}{\numberline {F.4}$\Delta $Q (maths)}{153}{section.F.4}%
-\contentsline {subsection}{\numberline {F.4.1}ConfidenceInterval.cpp}{153}{subsection.F.4.1}%
-\contentsline {subsection}{\numberline {F.4.2}DeltaQ.cpp}{155}{subsection.F.4.2}%
-\contentsline {subsection}{\numberline {F.4.3}DeltaQOperations.cpp}{161}{subsection.F.4.3}%
-\contentsline {subsection}{\numberline {F.4.4}Snapshot.cpp}{166}{subsection.F.4.4}%
-\contentsline {subsection}{\numberline {F.4.5}TriggerManager.cpp}{168}{subsection.F.4.5}%
-\contentsline {subsection}{\numberline {F.4.6}Triggers.cpp}{170}{subsection.F.4.6}%
-\contentsline {section}{\numberline {F.5}parser}{171}{section.F.5}%
-\contentsline {subsection}{\numberline {F.5.1}SystemBuilder.cpp}{171}{subsection.F.5.1}%
-\contentsline {subsection}{\numberline {F.5.2}SystemParserInterface.cpp}{176}{subsection.F.5.2}%
-\contentsline {section}{\numberline {F.6}server}{178}{section.F.6}%
-\contentsline {subsection}{\numberline {F.6.1}Server.cpp}{178}{subsection.F.6.1}%
-\contentsline {chapter}{\numberline {G}C++ Header Files}{187}{appendix.G}%
-\contentsline {section}{\numberline {G.1}Root}{187}{section.G.1}%
-\contentsline {subsection}{\numberline {G.1.1}Application.h}{187}{subsection.G.1.1}%
-\contentsline {section}{\numberline {G.2}dashboard}{188}{section.G.2}%
-\contentsline {subsection}{\numberline {G.2.1}ColorRegistry.h}{188}{subsection.G.2.1}%
-\contentsline {subsection}{\numberline {G.2.2}CustomLegendEntry.h}{188}{subsection.G.2.2}%
-\contentsline {subsection}{\numberline {G.2.3}CustomLegendPanel.h}{189}{subsection.G.2.3}%
-\contentsline {subsection}{\numberline {G.2.4}DQPlotController.h}{190}{subsection.G.2.4}%
-\contentsline {subsection}{\numberline {G.2.5}DQPlotList.h}{192}{subsection.G.2.5}%
-\contentsline {subsection}{\numberline {G.2.6}DelaySettingsWidget.h}{194}{subsection.G.2.6}%
-\contentsline {subsection}{\numberline {G.2.7}DeltaQPlot.h}{195}{subsection.G.2.7}%
-\contentsline {subsection}{\numberline {G.2.8}MainWindow.h}{198}{subsection.G.2.8}%
-\contentsline {subsection}{\numberline {G.2.9}NewPlotList.h}{199}{subsection.G.2.9}%
-\contentsline {subsection}{\numberline {G.2.10}ObservableSettings.h}{200}{subsection.G.2.10}%
-\contentsline {subsection}{\numberline {G.2.11}SamplingRateWidget.h}{201}{subsection.G.2.11}%
-\contentsline {subsection}{\numberline {G.2.12}QTAInputWidget.h}{202}{subsection.G.2.12}%
-\contentsline {subsection}{\numberline {G.2.13}Sidebar.h}{204}{subsection.G.2.13}%
-\contentsline {subsection}{\numberline {G.2.14}SnapshotViewerWindow.h}{206}{subsection.G.2.14}%
-\contentsline {subsection}{\numberline {G.2.15}StubControlWidget.h}{207}{subsection.G.2.15}%
-\contentsline {subsection}{\numberline {G.2.16}SystemCreationWidget.h}{208}{subsection.G.2.16}%
-\contentsline {subsection}{\numberline {G.2.17}TriggersTab.h}{209}{subsection.G.2.17}%
-\contentsline {section}{\numberline {G.3}diagram}{211}{section.G.3}%
-\contentsline {subsection}{\numberline {G.3.1}Observable.h}{211}{subsection.G.3.1}%
-\contentsline {subsection}{\numberline {G.3.2}Operator.h}{214}{subsection.G.3.2}%
-\contentsline {subsection}{\numberline {G.3.3}OperatorType.h}{216}{subsection.G.3.3}%
-\contentsline {subsection}{\numberline {G.3.4}Outcome.h}{216}{subsection.G.3.4}%
-\contentsline {subsection}{\numberline {G.3.5}Probe.h}{216}{subsection.G.3.5}%
-\contentsline {subsection}{\numberline {G.3.6}Sample.h}{218}{subsection.G.3.6}%
-\contentsline {subsection}{\numberline {G.3.7}System.h}{218}{subsection.G.3.7}%
-\contentsline {section}{\numberline {G.4}$\Delta $Q (maths)}{220}{section.G.4}%
-\contentsline {subsection}{\numberline {G.4.1}ConfidenceInterval.h}{220}{subsection.G.4.1}%
-\contentsline {subsection}{\numberline {G.4.2}DeltaQ.h}{221}{subsection.G.4.2}%
-\contentsline {subsection}{\numberline {G.4.3}DeltaQOperations.h}{223}{subsection.G.4.3}%
-\contentsline {subsection}{\numberline {G.4.4}DeltaQRepr.h}{224}{subsection.G.4.4}%
-\contentsline {subsection}{\numberline {G.4.5}QTA.h}{225}{subsection.G.4.5}%
-\contentsline {subsection}{\numberline {G.4.6}Snapshot.h}{226}{subsection.G.4.6}%
-\contentsline {subsection}{\numberline {G.4.7}TriggerManager.h}{228}{subsection.G.4.7}%
-\contentsline {subsection}{\numberline {G.4.8}TriggerTypes.h}{230}{subsection.G.4.8}%
-\contentsline {subsection}{\numberline {G.4.9}Triggers.h}{230}{subsection.G.4.9}%
-\contentsline {section}{\numberline {G.5}parser}{231}{section.G.5}%
-\contentsline {subsection}{\numberline {G.5.1}SystemBuilder.h}{231}{subsection.G.5.1}%
-\contentsline {subsection}{\numberline {G.5.2}SystemErrorListener.h}{232}{subsection.G.5.2}%
-\contentsline {subsection}{\numberline {G.5.3}SystemParserInterface.h}{233}{subsection.G.5.3}%
-\contentsline {section}{\numberline {G.6}server}{234}{section.G.6}%
-\contentsline {subsection}{\numberline {G.6.1}Server.h}{234}{subsection.G.6.1}%
-\contentsline {chapter}{\numberline {H}Build Configuration Files}{237}{appendix.H}%
-\contentsline {section}{\numberline {H.1}src/CMakeLists.txt}{237}{section.H.1}%
-\contentsline {section}{\numberline {H.2}dashboard/CMakeLists.txt}{237}{section.H.2}%
-\contentsline {section}{\numberline {H.3}diagram/CMakeLists.txt}{238}{section.H.3}%
-\contentsline {section}{\numberline {H.4}maths/CMakeLists.txt}{239}{section.H.4}%
-\contentsline {section}{\numberline {H.5}parser/CMakeLists.txt}{240}{section.H.5}%
-\contentsline {section}{\numberline {H.6}server/CMakeLists.txt}{241}{section.H.6}%
-\contentsline {chapter}{\numberline {I}Erlang Source Files}{243}{appendix.I}%
-\contentsline {section}{\numberline {I.1}Root}{243}{section.I.1}%
-\contentsline {subsection}{\numberline {I.1.1}dqsd\_otel.erl}{243}{subsection.I.1.1}%
-\contentsline {subsection}{\numberline {I.1.2}dqsd\_otel\_app.erl}{247}{subsection.I.1.2}%
-\contentsline {subsection}{\numberline {I.1.3}dqsd\_otel\_sup.erl}{248}{subsection.I.1.3}%
-\contentsline {subsection}{\numberline {I.1.4}dqsd\_otel\_tcp\_client.erl}{248}{subsection.I.1.4}%
-\contentsline {subsection}{\numberline {I.1.5}dqsd\_otel\_tcp\_server.erl}{250}{subsection.I.1.5}%
-\contentsline {chapter}{\numberline {J}Erlang Application Files}{254}{appendix.J}%
-\contentsline {section}{\numberline {J.1}Root}{254}{section.J.1}%
-\contentsline {subsection}{\numberline {J.1.1}dqsd\_otel.app.src}{254}{subsection.J.1.1}%
+\contentsline {chapter}{\numberline {4}Oscilloscope: User level concepts}{26}{chapter.4}%
+\contentsline {section}{\numberline {4.1}$\Delta $QSD concepts}{26}{section.4.1}%
+\contentsline {subsection}{\numberline {4.1.1}Representation of a $\Delta $Q}{26}{subsection.4.1.1}%
+\contentsline {paragraph}{Observed $\Delta $Q}{26}{section*.45}%
+\contentsline {paragraph}{Calculated $\Delta $Q}{26}{section*.46}%
+\contentsline {subsection}{\numberline {4.1.2}dMax = $\Delta $t $\cdot $ N}{27}{subsection.4.1.2}%
+\contentsline {subsubsection}{dMax limitation}{28}{section*.50}%
+\contentsline {subsection}{\numberline {4.1.3}QTA}{29}{subsection.4.1.3}%
+\contentsline {subsection}{\numberline {4.1.4}Confidence bounds}{29}{subsection.4.1.4}%
+\contentsline {section}{\numberline {4.2}$\Delta $Q display}{30}{section.4.2}%
+\contentsline {section}{\numberline {4.3}Outcome diagram}{31}{section.4.3}%
+\contentsline {subsection}{\numberline {4.3.1}Causal link}{31}{subsection.4.3.1}%
+\contentsline {subsection}{\numberline {4.3.2}Sub-outcome diagrams}{31}{subsection.4.3.2}%
+\contentsline {subsection}{\numberline {4.3.3}Outcomes}{32}{subsection.4.3.3}%
+\contentsline {subsection}{\numberline {4.3.4}Operators}{32}{subsection.4.3.4}%
+\contentsline {subsubsection}{All-to-finish operator}{32}{section*.53}%
+\contentsline {subsubsection}{First-to-finish operator}{32}{section*.54}%
+\contentsline {subsubsection}{Probabilistic choice operator}{32}{section*.55}%
+\contentsline {subsection}{\numberline {4.3.5}Limitations}{32}{subsection.4.3.5}%
+\contentsline {subsection}{\numberline {4.3.6}Outcome diagram example}{33}{subsection.4.3.6}%
+\contentsline {section}{\numberline {4.4}Dashboard}{33}{section.4.4}%
+\contentsline {subsection}{\numberline {4.4.1}Sidebar}{33}{subsection.4.4.1}%
+\contentsline {subsubsection}{System/Handle plots tab}{33}{section*.58}%
+\contentsline {paragraph}{System creation}{34}{section*.59}%
+\contentsline {paragraph}{Adding a plot}{34}{section*.60}%
+\contentsline {paragraph}{Sampling rate}{34}{section*.61}%
+\contentsline {paragraph}{Editing a plot}{34}{section*.62}%
+\contentsline {subsubsection}{Parameters tab}{34}{section*.63}%
+\contentsline {paragraph}{Set a QTA}{34}{section*.64}%
+\contentsline {paragraph}{dMax, bins}{34}{section*.65}%
+\contentsline {subsubsection}{Triggers tab}{34}{section*.66}%
+\contentsline {paragraph}{Set triggers}{34}{section*.67}%
+\contentsline {paragraph}{Fired triggers}{34}{section*.68}%
+\contentsline {paragraph}{Snapshot window}{35}{section*.69}%
+\contentsline {subsubsection}{Connection controls}{35}{section*.70}%
+\contentsline {paragraph}{Erlang controls}{35}{section*.71}%
+\contentsline {paragraph}{C++ server controls}{35}{section*.72}%
+\contentsline {subsection}{\numberline {4.4.2}Plots window}{35}{subsection.4.4.2}%
+\contentsline {section}{\numberline {4.5}Triggers}{35}{section.4.5}%
+\contentsline {subsection}{\numberline {4.5.1}Load}{35}{subsection.4.5.1}%
+\contentsline {subsection}{\numberline {4.5.2}QTA}{35}{subsection.4.5.2}%
+\contentsline {chapter}{\numberline {5}Oscilloscope: implementation}{36}{chapter.5}%
+\contentsline {section}{\numberline {5.1}$\Delta $QSD implementation}{36}{section.5.1}%
+\contentsline {subsection}{\numberline {5.1.1}Histogram representation of $\Delta $Q}{36}{subsection.5.1.1}%
+\contentsline {subsubsection}{PDF}{36}{section*.73}%
+\contentsline {subsubsection}{CDF}{37}{section*.74}%
+\contentsline {subsection}{\numberline {5.1.2}dMax}{37}{subsection.5.1.2}%
+\contentsline {subsection}{\numberline {5.1.3}Rebinning}{37}{subsection.5.1.3}%
+\contentsline {subsection}{\numberline {5.1.4}Convolution}{38}{subsection.5.1.4}%
+\contentsline {subsubsection}{Naïve convolution}{38}{section*.77}%
+\contentsline {subsubsection}{Fast Fourier Transform Convolution}{39}{section*.78}%
+\contentsline {subsection}{\numberline {5.1.5}Arithmetical operations}{39}{subsection.5.1.5}%
+\contentsline {paragraph}{Scaling (multiplication)}{39}{section*.79}%
+\contentsline {paragraph}{Operations between $\Delta $Qs}{39}{section*.80}%
+\contentsline {subsection}{\numberline {5.1.6}Confidence bounds}{39}{subsection.5.1.6}%
+\contentsline {section}{\numberline {5.2}Adapter}{40}{section.5.2}%
+\contentsline {subsection}{\numberline {5.2.1}API}{40}{subsection.5.2.1}%
+\contentsline {subsubsection}{start\_span/1, start\_span/2}{40}{section*.81}%
+\contentsline {subsubsection}{with\_span/2, with\_span/3}{41}{section*.82}%
+\contentsline {paragraph}{Parameters:}{41}{section*.83}%
+\contentsline {subsubsection}{end\_span/2}{41}{section*.84}%
+\contentsline {paragraph}{Parameters:}{41}{section*.85}%
+\contentsline {subsubsection}{fail\_span/1}{41}{section*.86}%
+\contentsline {subsubsection}{span\_process}{41}{section*.87}%
+\contentsline {subsection}{\numberline {5.2.2}Handling outcome instances}{42}{subsection.5.2.2}%
+\contentsline {subsection}{\numberline {5.2.3}TCP connection}{42}{subsection.5.2.3}%
+\contentsline {subsubsection}{TCP server}{43}{section*.88}%
+\contentsline {subsubsection}{TCP client}{43}{section*.89}%
+\contentsline {section}{\numberline {5.3}Parser}{43}{section.5.3}%
+\contentsline {subsection}{\numberline {5.3.1}ANTLR}{43}{subsection.5.3.1}%
+\contentsline {subsection}{\numberline {5.3.2}Grammar}{44}{subsection.5.3.2}%
+\contentsline {subsubsection}{Limitations}{44}{section*.90}%
+\contentsline {section}{\numberline {5.4}Oscilloscope GUI}{44}{section.5.4}%
+\contentsline {chapter}{\numberline {6}Evaluation on synthetic programs}{45}{chapter.6}%
+\contentsline {section}{\numberline {6.1}System with sequential composition}{45}{section.6.1}%
+\contentsline {subsection}{\numberline {6.1.1}System's outcome diagram}{46}{subsection.6.1.1}%
+\contentsline {subsection}{\numberline {6.1.2}Determining parameters dynamically}{47}{subsection.6.1.2}%
+\contentsline {subsection}{\numberline {6.1.3}Observing non-linearity in the oscilloscope}{47}{subsection.6.1.3}%
+\contentsline {subsubsection}{Low Load}{48}{section*.93}%
+\contentsline {subsubsection}{Early signs of overload}{48}{section*.95}%
+\contentsline {subsubsection}{High load}{49}{section*.97}%
+\contentsline {subsection}{\numberline {6.1.4}Detecting non-linearity with triggers}{51}{subsection.6.1.4}%
+\contentsline {subsubsection}{QTA trigger}{51}{section*.100}%
+\contentsline {subsubsection}{Trigger on number of instances}{51}{section*.102}%
+\contentsline {section}{\numberline {6.2}Detecting slower workers in operators}{52}{section.6.2}%
+\contentsline {subsection}{\numberline {6.2.1}First to finish application}{52}{subsection.6.2.1}%
+\contentsline {subsubsection}{Using the wrong operator}{52}{section*.104}%
+\contentsline {subsubsection}{Introducing a slower component}{53}{section*.107}%
+\contentsline {subsection}{\numberline {6.2.2}All to finish application}{54}{subsection.6.2.2}%
+\contentsline {subsubsection}{Introducing a slower component}{54}{section*.109}%
+\contentsline {chapter}{\numberline {7}Performance study}{56}{chapter.7}%
+\contentsline {section}{\numberline {7.1}Convolution performance}{56}{section.7.1}%
+\contentsline {section}{\numberline {7.2}GUI plotting performance}{57}{section.7.2}%
+\contentsline {section}{\numberline {7.3}$\Delta $Q adapter performance}{58}{section.7.3}%
+\contentsline {chapter}{\numberline {8}Conclusions and future work}{60}{chapter.8}%
+\contentsline {section}{\numberline {8.1}Future improvements}{61}{section.8.1}%
+\contentsline {subsection}{\numberline {8.1.1}Oscilloscope improvements}{61}{subsection.8.1.1}%
+\contentsline {subsection}{\numberline {8.1.2}OpenTelemetry improvements}{62}{subsection.8.1.2}%
+\contentsline {subsection}{\numberline {8.1.3}Adapter improvement}{62}{subsection.8.1.3}%
+\contentsline {subsection}{\numberline {8.1.4}Real applications}{62}{subsection.8.1.4}%
+\contentsline {subsection}{\numberline {8.1.5}Licensing limitations}{62}{subsection.8.1.5}%
+\contentsline {chapter}{Bibliography}{63}{chapter*.114}%
+\contentsline {chapter}{\numberline {A}Tests specifications}{67}{appendix.A}%
+\contentsline {part}{I\hspace {1em}Addendum to Chapters 4 \& 5}{68}{part.1}%
+\contentsline {chapter}{\numberline {B}Oscilloscope screenshots}{69}{appendix.B}%
+\contentsline {section}{\numberline {B.1}System/Handle plots tab}{69}{section.B.1}%
+\contentsline {section}{\numberline {B.2}Parameters tab}{70}{section.B.2}%
+\contentsline {section}{\numberline {B.3}Triggers tab}{71}{section.B.3}%
+\contentsline {section}{\numberline {B.4}Snapshot window}{72}{section.B.4}%
+\contentsline {section}{\numberline {B.5}Connection controls}{73}{section.B.5}%
+\contentsline {section}{\numberline {B.6}Widget view of GUI}{74}{section.B.6}%
+\contentsline {part}{II\hspace {1em}User manual}{75}{part.2}%
+\contentsline {chapter}{\numberline {C}How to download and launch}{76}{appendix.C}%
+\contentsline {chapter}{\numberline {D}Oscilloscope: How to use}{78}{appendix.D}%
+\contentsline {section}{\numberline {D.1}Establishing the adapter - oscilloscope connection}{78}{section.D.1}%
+\contentsline {section}{\numberline {D.2}Sidebar: Outcome diagram and plots}{79}{section.D.2}%
+\contentsline {subsection}{\numberline {D.2.1}Creating the system/outcome diagrams}{79}{subsection.D.2.1}%
+\contentsline {subsection}{\numberline {D.2.2}Saving the system definition}{81}{subsection.D.2.2}%
+\contentsline {subsection}{\numberline {D.2.3}Loading the system definition}{81}{subsection.D.2.3}%
+\contentsline {subsection}{\numberline {D.2.4}Changing the sampling rate}{82}{subsection.D.2.4}%
+\contentsline {subsection}{\numberline {D.2.5}Managing the plots}{82}{subsection.D.2.5}%
+\contentsline {subsubsection}{Adding a plot}{83}{section*.131}%
+\contentsline {subsubsection}{Editing a plot}{84}{section*.134}%
+\contentsline {subsection}{\numberline {D.2.6}Removing a plot}{85}{subsection.D.2.6}%
+\contentsline {section}{\numberline {D.3}Sidebar: Probes settings}{85}{section.D.3}%
+\contentsline {subsection}{\numberline {D.3.1}Setting a QTA}{85}{subsection.D.3.1}%
+\contentsline {subsection}{\numberline {D.3.2}Setting the parameters of a probe}{86}{subsection.D.3.2}%
+\contentsline {section}{\numberline {D.4}Triggers}{88}{section.D.4}%
+\contentsline {section}{\numberline {D.5}Snapshots}{88}{section.D.5}%
+\contentsline {section}{\numberline {D.6}Instrumenting the Erlang application}{89}{section.D.6}%
+\contentsline {subsection}{\numberline {D.6.1}Including the adapter}{89}{subsection.D.6.1}%
+\contentsline {subsection}{\numberline {D.6.2}Starting spans}{90}{subsection.D.6.2}%
+\contentsline {subsection}{\numberline {D.6.3}With spans}{90}{subsection.D.6.3}%
+\contentsline {subsection}{\numberline {D.6.4}Ending spans}{90}{subsection.D.6.4}%
+\contentsline {subsection}{\numberline {D.6.5}Failing outcome instances}{90}{subsection.D.6.5}%
+\contentsline {part}{III\hspace {1em}Source Code Appendix}{91}{part.3}%
+\contentsline {chapter}{\numberline {E}Grammar}{92}{appendix.E}%
+\contentsline {chapter}{\numberline {F}C++ Source Files}{93}{appendix.F}%
+\contentsline {section}{\numberline {F.1}Root folder}{93}{section.F.1}%
+\contentsline {subsection}{\numberline {F.1.1}main.cpp}{93}{subsection.F.1.1}%
+\contentsline {subsection}{\numberline {F.1.2}Application.cpp}{94}{subsection.F.1.2}%
+\contentsline {section}{\numberline {F.2}Dashboard}{99}{section.F.2}%
+\contentsline {subsection}{\numberline {F.2.1}ColorRegistry.cpp}{99}{subsection.F.2.1}%
+\contentsline {subsection}{\numberline {F.2.2}CustomLegendEntry.cpp}{99}{subsection.F.2.2}%
+\contentsline {subsection}{\numberline {F.2.3}CustomLegendPanel.cpp}{100}{subsection.F.2.3}%
+\contentsline {subsection}{\numberline {F.2.4}DQPlotController.cpp}{101}{subsection.F.2.4}%
+\contentsline {subsection}{\numberline {F.2.5}DQPlotList.cpp}{111}{subsection.F.2.5}%
+\contentsline {subsection}{\numberline {F.2.6}DelaySettingsWidget.cpp}{113}{subsection.F.2.6}%
+\contentsline {subsection}{\numberline {F.2.7}DeltaQPlot.cpp}{115}{subsection.F.2.7}%
+\contentsline {subsection}{\numberline {F.2.8}MainWindow.cpp}{118}{subsection.F.2.8}%
+\contentsline {subsection}{\numberline {F.2.9}NewPlotList.cpp}{123}{subsection.F.2.9}%
+\contentsline {subsection}{\numberline {F.2.10}ObservableSettings.cpp}{125}{subsection.F.2.10}%
+\contentsline {subsection}{\numberline {F.2.11}SamplingRateWidget.cpp}{125}{subsection.F.2.11}%
+\contentsline {subsection}{\numberline {F.2.12}QTAInputWidget.cpp}{126}{subsection.F.2.12}%
+\contentsline {subsection}{\numberline {F.2.13}Sidebar.cpp}{129}{subsection.F.2.13}%
+\contentsline {subsection}{\numberline {F.2.14}SnapshotViewerWindow.cpp}{131}{subsection.F.2.14}%
+\contentsline {subsection}{\numberline {F.2.15}StubControlWidget.cpp}{136}{subsection.F.2.15}%
+\contentsline {subsection}{\numberline {F.2.16}SystemCreationWidget.cpp}{138}{subsection.F.2.16}%
+\contentsline {subsection}{\numberline {F.2.17}TriggersTab.cpp}{141}{subsection.F.2.17}%
+\contentsline {section}{\numberline {F.3}Outcome diagram}{146}{section.F.3}%
+\contentsline {subsection}{\numberline {F.3.1}Observable.cpp}{146}{subsection.F.3.1}%
+\contentsline {subsection}{\numberline {F.3.2}Operator.cpp}{149}{subsection.F.3.2}%
+\contentsline {subsection}{\numberline {F.3.3}Outcome.cpp}{151}{subsection.F.3.3}%
+\contentsline {subsection}{\numberline {F.3.4}Probe.cpp}{152}{subsection.F.3.4}%
+\contentsline {subsection}{\numberline {F.3.5}System.cpp}{153}{subsection.F.3.5}%
+\contentsline {section}{\numberline {F.4}$\Delta $Q (maths)}{157}{section.F.4}%
+\contentsline {subsection}{\numberline {F.4.1}ConfidenceInterval.cpp}{157}{subsection.F.4.1}%
+\contentsline {subsection}{\numberline {F.4.2}DeltaQ.cpp}{159}{subsection.F.4.2}%
+\contentsline {subsection}{\numberline {F.4.3}DeltaQOperations.cpp}{165}{subsection.F.4.3}%
+\contentsline {subsection}{\numberline {F.4.4}Snapshot.cpp}{170}{subsection.F.4.4}%
+\contentsline {subsection}{\numberline {F.4.5}TriggerManager.cpp}{172}{subsection.F.4.5}%
+\contentsline {subsection}{\numberline {F.4.6}Triggers.cpp}{174}{subsection.F.4.6}%
+\contentsline {section}{\numberline {F.5}parser}{175}{section.F.5}%
+\contentsline {subsection}{\numberline {F.5.1}SystemBuilder.cpp}{175}{subsection.F.5.1}%
+\contentsline {subsection}{\numberline {F.5.2}SystemParserInterface.cpp}{180}{subsection.F.5.2}%
+\contentsline {section}{\numberline {F.6}server}{182}{section.F.6}%
+\contentsline {subsection}{\numberline {F.6.1}Server.cpp}{182}{subsection.F.6.1}%
+\contentsline {chapter}{\numberline {G}C++ Header Files}{191}{appendix.G}%
+\contentsline {section}{\numberline {G.1}Root}{191}{section.G.1}%
+\contentsline {subsection}{\numberline {G.1.1}Application.h}{191}{subsection.G.1.1}%
+\contentsline {section}{\numberline {G.2}dashboard}{192}{section.G.2}%
+\contentsline {subsection}{\numberline {G.2.1}ColorRegistry.h}{192}{subsection.G.2.1}%
+\contentsline {subsection}{\numberline {G.2.2}CustomLegendEntry.h}{192}{subsection.G.2.2}%
+\contentsline {subsection}{\numberline {G.2.3}CustomLegendPanel.h}{193}{subsection.G.2.3}%
+\contentsline {subsection}{\numberline {G.2.4}DQPlotController.h}{194}{subsection.G.2.4}%
+\contentsline {subsection}{\numberline {G.2.5}DQPlotList.h}{196}{subsection.G.2.5}%
+\contentsline {subsection}{\numberline {G.2.6}DelaySettingsWidget.h}{198}{subsection.G.2.6}%
+\contentsline {subsection}{\numberline {G.2.7}DeltaQPlot.h}{199}{subsection.G.2.7}%
+\contentsline {subsection}{\numberline {G.2.8}MainWindow.h}{202}{subsection.G.2.8}%
+\contentsline {subsection}{\numberline {G.2.9}NewPlotList.h}{203}{subsection.G.2.9}%
+\contentsline {subsection}{\numberline {G.2.10}ObservableSettings.h}{204}{subsection.G.2.10}%
+\contentsline {subsection}{\numberline {G.2.11}SamplingRateWidget.h}{205}{subsection.G.2.11}%
+\contentsline {subsection}{\numberline {G.2.12}QTAInputWidget.h}{206}{subsection.G.2.12}%
+\contentsline {subsection}{\numberline {G.2.13}Sidebar.h}{208}{subsection.G.2.13}%
+\contentsline {subsection}{\numberline {G.2.14}SnapshotViewerWindow.h}{210}{subsection.G.2.14}%
+\contentsline {subsection}{\numberline {G.2.15}StubControlWidget.h}{211}{subsection.G.2.15}%
+\contentsline {subsection}{\numberline {G.2.16}SystemCreationWidget.h}{212}{subsection.G.2.16}%
+\contentsline {subsection}{\numberline {G.2.17}TriggersTab.h}{213}{subsection.G.2.17}%
+\contentsline {section}{\numberline {G.3}diagram}{215}{section.G.3}%
+\contentsline {subsection}{\numberline {G.3.1}Observable.h}{215}{subsection.G.3.1}%
+\contentsline {subsection}{\numberline {G.3.2}Operator.h}{218}{subsection.G.3.2}%
+\contentsline {subsection}{\numberline {G.3.3}OperatorType.h}{220}{subsection.G.3.3}%
+\contentsline {subsection}{\numberline {G.3.4}Outcome.h}{220}{subsection.G.3.4}%
+\contentsline {subsection}{\numberline {G.3.5}Probe.h}{220}{subsection.G.3.5}%
+\contentsline {subsection}{\numberline {G.3.6}Sample.h}{222}{subsection.G.3.6}%
+\contentsline {subsection}{\numberline {G.3.7}System.h}{222}{subsection.G.3.7}%
+\contentsline {section}{\numberline {G.4}$\Delta $Q (maths)}{224}{section.G.4}%
+\contentsline {subsection}{\numberline {G.4.1}ConfidenceInterval.h}{224}{subsection.G.4.1}%
+\contentsline {subsection}{\numberline {G.4.2}DeltaQ.h}{225}{subsection.G.4.2}%
+\contentsline {subsection}{\numberline {G.4.3}DeltaQOperations.h}{227}{subsection.G.4.3}%
+\contentsline {subsection}{\numberline {G.4.4}DeltaQRepr.h}{228}{subsection.G.4.4}%
+\contentsline {subsection}{\numberline {G.4.5}QTA.h}{229}{subsection.G.4.5}%
+\contentsline {subsection}{\numberline {G.4.6}Snapshot.h}{230}{subsection.G.4.6}%
+\contentsline {subsection}{\numberline {G.4.7}TriggerManager.h}{232}{subsection.G.4.7}%
+\contentsline {subsection}{\numberline {G.4.8}TriggerTypes.h}{234}{subsection.G.4.8}%
+\contentsline {subsection}{\numberline {G.4.9}Triggers.h}{234}{subsection.G.4.9}%
+\contentsline {section}{\numberline {G.5}parser}{235}{section.G.5}%
+\contentsline {subsection}{\numberline {G.5.1}SystemBuilder.h}{235}{subsection.G.5.1}%
+\contentsline {subsection}{\numberline {G.5.2}SystemErrorListener.h}{236}{subsection.G.5.2}%
+\contentsline {subsection}{\numberline {G.5.3}SystemParserInterface.h}{237}{subsection.G.5.3}%
+\contentsline {section}{\numberline {G.6}server}{238}{section.G.6}%
+\contentsline {subsection}{\numberline {G.6.1}Server.h}{238}{subsection.G.6.1}%
+\contentsline {chapter}{\numberline {H}Build Configuration Files}{241}{appendix.H}%
+\contentsline {section}{\numberline {H.1}src/CMakeLists.txt}{241}{section.H.1}%
+\contentsline {section}{\numberline {H.2}dashboard/CMakeLists.txt}{241}{section.H.2}%
+\contentsline {section}{\numberline {H.3}diagram/CMakeLists.txt}{242}{section.H.3}%
+\contentsline {section}{\numberline {H.4}maths/CMakeLists.txt}{243}{section.H.4}%
+\contentsline {section}{\numberline {H.5}parser/CMakeLists.txt}{244}{section.H.5}%
+\contentsline {section}{\numberline {H.6}server/CMakeLists.txt}{245}{section.H.6}%
+\contentsline {chapter}{\numberline {I}Erlang Source Files}{247}{appendix.I}%
+\contentsline {section}{\numberline {I.1}Root}{247}{section.I.1}%
+\contentsline {subsection}{\numberline {I.1.1}dqsd\_otel.erl}{247}{subsection.I.1.1}%
+\contentsline {subsection}{\numberline {I.1.2}dqsd\_otel\_app.erl}{251}{subsection.I.1.2}%
+\contentsline {subsection}{\numberline {I.1.3}dqsd\_otel\_sup.erl}{252}{subsection.I.1.3}%
+\contentsline {subsection}{\numberline {I.1.4}dqsd\_otel\_tcp\_client.erl}{252}{subsection.I.1.4}%
+\contentsline {subsection}{\numberline {I.1.5}dqsd\_otel\_tcp\_server.erl}{254}{subsection.I.1.5}%
+\contentsline {chapter}{\numberline {J}Erlang Application Files}{258}{appendix.J}%
+\contentsline {section}{\numberline {J.1}Root}{258}{section.J.1}%
+\contentsline {subsection}{\numberline {J.1.1}dqsd\_otel.app.src}{258}{subsection.J.1.1}%

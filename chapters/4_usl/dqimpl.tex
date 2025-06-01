@@ -22,7 +22,7 @@
             \caption{(Red, circle, above): Sampling window \textbf{Calculated $\Delta$Q}. (Blue, diamond, below): Sampling window \textbf{Observed $\Delta$Q}}
         \end{figure}
 
-    \subsection{dMax = $\Delta$t $\cdot$ N}
+    \subsection{dMax = $\Delta$t $\cdot$ N} \label{subsec:dmaxsec}
         The key concept of $\Delta$QSD is having a maximum delay after which we consider that the execution is timed out. This is represented in the oscilloscope as $dMax$. Understanding this equation is key to correctly using the oscilloscope and exploring tradeoffs
 
 Let us explain the following equation:
@@ -88,6 +88,6 @@ Let us explain the following equation:
             \begin{center}
                 \includegraphics[scale=1]{tikz/ci.pdf} 
             \end{center}
-            \caption{Upper and lower bounds (dashed, red) of the mean (blue) of multiple $\Delta$Qs. In a system that behaves linearly, the bounds will be close to the mean, once the overload is approaching, or a system is showing behaviour that diverges from a linear one, the bounds will appear larger.}%
+            \caption{Upper and lower bounds (dashed, red) of the mean (blue) of multiple $\Delta$Qs. Confidence bounds can help recognise non-linearity. If the confidence bounds of calculated $\Delta$Qs are outside the observed $\Delta$Qs bounds, we know that the difference between the two is not just a measurement fluctuation, there is instead divergence from linear behaviour.}%
             \label{fig:bi}%
         \end{figure} 

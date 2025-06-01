@@ -14,7 +14,7 @@
     \end{figure} 
 
 
-    \subsection{Handling of long spans}
+    \subsection{Handling of long spans} \label{subsec:long_spans}
         OpenTelemetry presents a bigger problem, what happens when there are long-running spans? Even worse, what happens when spans are not actually terminated?
         
         An article has already tackled this problem \cite{otel-l}. In the article it is stated that OpenTelemetry limits the length of its spans, moreover, those which are not terminated are lost and not exported. \\ 

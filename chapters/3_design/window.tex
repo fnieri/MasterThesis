@@ -24,7 +24,7 @@
     \subsection{Polling window (Observing multiple $\Delta$Qs over a time interval)}
         The polling window is the window of past $\Delta$Qs which are stored to keep a snapshot of the system over time and over which confidence bounds are calculated. The polling window serves to improve the precision of the measurement of the confidence bounds for $\Delta$Qs.
         
-        Suppose we are at time $t = 0$, the polling window will have 0 $\Delta$Qs. As the sampling window advances, more $\Delta$Qs are sampled, which in turn are added to the polling window, to the snapshot, and to the confidence bounds.
+        Suppose we are at time $t = 0$, the polling window will have 0 $\Delta$Qs. As the sampling window advances, more $\Delta$Qs are sampled, which in turn are added to the polling window, to the snapshot, and to the confidence bounds calculation.
 
-        The limit of $\Delta$Qs for a polling window (subsequently snapshots and confidence bounds) is 30 $\Delta$Qs. At $t = 31$, the older $\Delta$Qs will be removed from the polling window and in turn from the confidence bounds. Newer sampled $\Delta$Qs will be added, keeping the limit of $\Delta$Qs in a polling window to 30.
+        The current limit of $\Delta$Qs for a polling window is 30 $\Delta$Qs. At $t = 31$, the older $\Delta$Qs will be removed from the polling window and in turn from the confidence bounds. Newer sampled $\Delta$Qs will be added, keeping the limit of $\Delta$Qs in a polling window to 30. A larger polling window could be used to increase precision of $\Delta$Q computation, i.e. to reduce the width of the confidence interval. This is nevertheless only valid for stationary systems where the $\Delta$Q does not vary over time.
 

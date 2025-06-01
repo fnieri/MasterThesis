@@ -1,16 +1,15 @@
 \section{Detecting slower workers in operators}
     \subsection{First to finish application}
-        Next, we provide a synthetic application modeling an application that can be modeled by a first to finish operator. \\
-        Recall the previous FTF graph \cref{fig:ftf}. Assume a send request to ``the cloud'' that waits for a response or a timeout, it is modeled by an FTF operator. \cite{dq-tut}
+        Next, we provide a synthetic application modeling an application that can be modeled by a first to finish operator. The outcome diagram is what is shown in \cref{fig:op}. Assume a send request to ``the cloud'' that waits for a response or a timeout, it is modeled by an FTF operator. \cite{dq-tut}
        \subsubsection{Using the wrong operator}
-            What happens if the wrong operator is chosen to represent the causal relationships between the outcomes? What if the user believes that the system diagram is the one we presented before in \cref{fig:mm1k} (1 in \cref{code:wrong_od})? The result on the oscilloscope will clearly show that something is wrong.
+            What happens if the wrong operator is chosen to represent the causal relationships between the outcomes? What if the user believes that the system diagram is the one we presented before in \cref{fig:mm1k} (1 in \cref{fig:wrong_od})? The result on the oscilloscope will clearly show that something is wrong.
             \begin{figure}[H]
             \begin{minted}{text}
                 ftf = worker_1 -> worker_2; (1)
                 ... = f:ftf(worker_1, worker_2); (2)
             \end{minted}
             \caption{Two outcome diagram definitions proposed by the engineer for ftf.}
-                \label{code:wrong_od}
+                \label{fig:wrong_od}
             \end{figure}
 
         \begin{figure}[H]
@@ -26,14 +25,14 @@
                     \label{fig:good}%
                 \end{subfigure}%
                 \caption{\textbf{Left}: FTF plot \textbf{with wrong outcome diagram definition} as shown in the oscilloscope. (1) Observed $\Delta$Q in sampling window with its confidence bounds between arrows next to it. (2) Calculated $\Delta$Q in sampling window with its confidence bounds between arrows next to it. \\
-                \textbf{Right}: FTF plot \textbf{with correct outcome diagram definition} as shown in the oscilloscope. Observed $\Delta$Q and calculated $\Delta$Q overlapping.}
+                \textbf{Right}: FTF plot \textbf{with correct outcome diagram definition}. (Red between arrow) Observed $\Delta$Q and calculated $\Delta$Q confidence bounds overlapping.}
                 \label{fig:ftf_osc}%
             \end{figure}%
 
-            On the left in \cref{fig:ftf_osc}, we can observe how the sampling window \textbf{calculated $\Delta$Q} and its confidence bounds (2) are clearly greater than the sampling window \textbf{observed $\Delta$Q} (1) and its confidence bounds. This difference tells us that the proposed outcome diagram does not correctly represent the actual system. On the right, if no dependencies are present and the correct operator is chosen (right figure in \cref{code:wrong_od}), the two $\Delta$Qs (observed and calculated) will overlap, as shown on the right in \cref{fig:ftf_osc}.
+            On the left in \cref{fig:ftf_osc}, we can observe how the sampling window \textbf{calculated $\Delta$Q} and its confidence bounds (2) are clearly greater than the sampling window \textbf{observed $\Delta$Q} (1) and its confidence bounds. This difference tells us that the proposed outcome diagram does not correctly represent the actual system. On the right, if no dependencies are present and the correct operator (2 in \cref{fig:wrong_od}) is chosen (right figure in \cref{fig:wrong_od}), the two $\Delta$Qs (observed and calculated) will overlap, as shown on the right in \cref{fig:ftf_osc}.
 
                   \subsubsection{Introducing a slower component}
-            Let us introduce a slower worker into the system, we introduce an artificial delay into worker\_2 (about 20ms). If the oscilloscope works correctly, the paradigm operations are sound and no dependencies are present in the system, we should not see any difference in the observed and calculated $\Delta$Qs of the FTF operator. Moreover, the FTF $\Delta$Q should be overlaid on top of the slower worker (\texttt{worker\_1}). In \cref{fig:ftf_w1w2}, this is the case, the FTF operator can be overlaid on top of worker\_1's graph. 
+            Let us introduce a slower worker into the system, we introduce an artificial delay into worker\_2 (about 20ms). If the oscilloscope works correctly, the paradigm operations are sound and no dependencies are present in the system, we should not see any difference in the observed and calculated $\Delta$Qs of the FTF operator. Moreover, the FTF $\Delta$Q could be overlaid on top of the faster worker (\texttt{worker\_1}). In \cref{fig:ftf_w1w2}, this is the case, the FTF operator can be overlaid on top of worker\_1's graph. 
 
             \begin{figure}[H]
                 \centering 
@@ -47,8 +46,8 @@
                     \includegraphics[width =0.98\textwidth]{img/delay32.png}%
                     \label{fig:ftf_art_dw}%
                 \end{subfigure}%
-                \caption{\textbf{Left}: FTF plot of worker\_1 and worker\_2, observed and calculated $\Delta$Qs (1) in sampling window overlapping. Between arrows, the observed and calculated $\Delta$Qs overlapping.\\
-                \textbf{Right}: worker\_1 (1) and worker\_2 (2) $\Delta$Qs confidence bounds. \\
+                \caption{\textbf{Left}: ``ftf'' $\Delta$Qs. Sampling window observed and calculated $\Delta$Qs (1) and their confidences bounds (between red arrow) overlapping.
+                \textbf{Right}: worker\_1 (1) and worker\_2 (2) $\Delta$Qs confidence bounds.
                 The FTF plot correctly displays how worker\_2 does not have an effect on the FTF plot.}
                 \label{fig:ftf_w1w2}%
             \end{figure}%

@@ -1,18 +1,18 @@
 [0] Config.pm:308> INFO - This is Biber 2.20
 [0] Config.pm:311> INFO - Logfile is 'thesis.blg'
-[147] biber:340> INFO - === dom giu  1, 2025, 12:52:50
-[165] Biber.pm:420> INFO - Reading 'thesis.bcf'
-[280] Biber.pm:994> INFO - Found 58 citekeys in bib section 0
-[309] Biber.pm:4463> INFO - Processing section 0
-[326] Biber.pm:4654> INFO - Looking for bibtex file 'biblio.bib' for section 0
-[328] bibtex.pm:1713> INFO - LaTeX decoding ...
-[426] bibtex.pm:1519> INFO - Found BibTeX data source 'biblio.bib'
-[845] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
-[845] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[845] Biber.pm:4283> INFO - Sorting list 'none/global//global/global/global' of type 'entry' with template 'none' and locale 'en-US'
-[845] Biber.pm:4289> INFO - No sort tailoring available for locale 'en-US'
-[929] bbl.pm:676> INFO - Writing 'thesis.bbl' with encoding 'UTF-8'
-[967] bbl.pm:779> INFO - Output to thesis.bbl
-[968] Biber.pm:131> WARN - legacy month field 'September' in entry 'dq-br' is not an integer - this will probably not sort properly.
-[969] Biber.pm:131> WARN - ISBN '9780080572284; 0080572286; 9780124808652; 0124808654' in entry 'sup-p' is invalid - run biber with '--validate_datamodel' for details.
-[969] Biber.pm:133> INFO - WARNINGS: 2
+[101] biber:340> INFO - === dom giu  1, 2025, 19:21:16
+[119] Biber.pm:420> INFO - Reading 'thesis.bcf'
+[220] Biber.pm:994> INFO - Found 61 citekeys in bib section 0
+[239] Biber.pm:4463> INFO - Processing section 0
+[257] Biber.pm:4654> INFO - Looking for bibtex file 'biblio.bib' for section 0
+[262] bibtex.pm:1713> INFO - LaTeX decoding ...
+[340] bibtex.pm:1519> INFO - Found BibTeX data source 'biblio.bib'
+[796] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[796] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[796] Biber.pm:4283> INFO - Sorting list 'none/global//global/global/global' of type 'entry' with template 'none' and locale 'en-US'
+[797] Biber.pm:4289> INFO - No sort tailoring available for locale 'en-US'
+[842] bbl.pm:676> INFO - Writing 'thesis.bbl' with encoding 'UTF-8'
+[887] bbl.pm:779> INFO - Output to thesis.bbl
+[887] Biber.pm:131> WARN - legacy month field 'September' in entry 'dq-br' is not an integer - this will probably not sort properly.
+[888] Biber.pm:131> WARN - ISBN '9780080572284; 0080572286; 9780124808652; 0124808654' in entry 'sup-p' is invalid - run biber with '--validate_datamodel' for details.
+[888] Biber.pm:133> INFO - WARNINGS: 2
